@@ -1,101 +1,105 @@
-import Image from "next/image";
+import Link from "next/link";
+import HeroBackground from "@/components/HeroBackground";
+import CaseBadge from "@/components/CaseBadge";
 
-export default function Home() {
+export default function LandingPage() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <main className="relative min-h-screen flex flex-col overflow-hidden bg-[#0d0b0a]">
+      <HeroBackground />
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      {/* ── Header bar ── */}
+      <header className="relative z-10 flex items-center justify-between px-8 py-4 border-b border-[rgba(201,147,58,0.15)]">
+        <span className="font-typewriter text-xs tracking-[0.3em] uppercase text-[#8b7355]">
+          Clase de Español · Nivel 1
+        </span>
+        <span className="font-typewriter text-xs tracking-[0.3em] uppercase text-[#8b7355]">
+          Archivo: Caso Abierto
+        </span>
+      </header>
+
+      {/* ── Hero content ── */}
+      <section className="relative z-10 flex flex-1 flex-col items-center justify-center px-6 text-center">
+
+        {/* Case file stamp */}
+        <div className="mb-6 inline-flex items-center gap-3 px-5 py-2 border border-[rgba(201,147,58,0.3)] bg-[rgba(201,147,58,0.05)]">
+          <span className="w-2 h-2 rounded-full bg-[#c0392b] animate-pulse" />
+          <span className="font-typewriter text-xs tracking-[0.25em] uppercase text-[#c9933a]">
+            Investigación Activa · 6 Países · 6 Casos
+          </span>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+
+        {/* Title */}
+        <h1 className="font-display font-black text-[clamp(3rem,8vw,6rem)] leading-none tracking-tight text-glow-mustard">
+          <span className="block text-[#e8b455]">La Liga</span>
+          <span className="block text-[#f5e6c8]">Sombra</span>
+        </h1>
+
+        {/* Rule line */}
+        <div className="my-6 flex items-center gap-4 w-full max-w-md">
+          <div className="flex-1 h-px bg-gradient-to-r from-transparent to-[#c9933a]" />
+          <span className="font-typewriter text-[#8b7355] text-xs tracking-widest">◆</span>
+          <div className="flex-1 h-px bg-gradient-to-l from-transparent to-[#c9933a]" />
+        </div>
+
+        {/* Tagline */}
+        <p className="font-typewriter text-[#c4a882] text-base leading-relaxed max-w-xl mb-2">
+          Una banda de ladrones recorre el mundo hispano robando
+          <span className="text-[#e8b455]"> tesoros culturales.</span>
+        </p>
+        <p className="font-typewriter text-[#8b7355] text-sm leading-relaxed max-w-lg mb-10">
+          Solo los agentes que dominen el español podrán seguirles la pista.
+          <span className="text-[#d4c9b8]"> ¿Estás listo para la misión?</span>
+        </p>
+
+        {/* CTAs */}
+        <div className="flex flex-col sm:flex-row gap-4 w-full max-w-sm sm:max-w-none sm:w-auto">
+          <Link
+            href="/login?mode=new"
+            className="clip-skew inline-flex items-center justify-center gap-3 px-10 py-4 font-typewriter text-sm tracking-[0.2em] uppercase transition-all duration-200 bg-[#8b1a1a] text-[#f5e6c8] border border-[#c0392b] hover:bg-[#c0392b] hover:shadow-[0_0_20px_rgba(192,57,43,0.5)] hover:-translate-y-px"
+          >
+            <span className="text-lg">🕵️</span>
+            Nuevo agente
+          </Link>
+          <Link
+            href="/login?mode=returning"
+            className="clip-skew inline-flex items-center justify-center gap-3 px-10 py-4 font-typewriter text-sm tracking-[0.2em] uppercase transition-all duration-200 bg-transparent text-[#e8b455] border border-[#c9933a] hover:bg-[rgba(201,147,58,0.1)] hover:shadow-[0_0_20px_rgba(201,147,58,0.3)] hover:-translate-y-px"
+          >
+            <span className="text-lg">📁</span>
+            Continuar misión
+          </Link>
+        </div>
+      </section>
+
+      {/* ── Country case badges ── */}
+      <section className="relative z-10 px-8 pb-8">
+        <p className="font-typewriter text-center text-xs tracking-[0.25em] uppercase text-[#8b7355] mb-5">
+          Destinos de la liga — 6 países · 6 casos
+        </p>
+        <div className="flex flex-wrap justify-center gap-3 max-w-3xl mx-auto">
+          {COUNTRIES.map((c) => (
+            <CaseBadge key={c.code} {...c} />
+          ))}
+        </div>
+      </section>
+
+      {/* ── Footer ── */}
+      <footer className="relative z-10 border-t border-[rgba(201,147,58,0.1)] px-8 py-3 flex items-center justify-between">
+        <span className="font-typewriter text-[10px] tracking-widest uppercase text-[#8b7355]">
+          Que Chevere Level 1
+        </span>
+        <span className="font-typewriter text-[10px] tracking-widest uppercase text-[#8b7355]">
+          © La Liga Sombra
+        </span>
       </footer>
-    </div>
+    </main>
   );
 }
+
+const COUNTRIES = [
+  { code: "MX", flag: "🇲🇽", country: "México",     unit: 1, label: "Caso I" },
+  { code: "PR", flag: "🇵🇷", country: "Puerto Rico", unit: 2, label: "Caso II" },
+  { code: "CO", flag: "🇨🇴", country: "Colombia",   unit: 3, label: "Caso III" },
+  { code: "AR", flag: "🇦🇷", country: "Argentina",  unit: 4, label: "Caso IV" },
+  { code: "ES", flag: "🇪🇸", country: "España",     unit: 5, label: "Caso V" },
+  { code: "PE", flag: "🇵🇪", country: "Perú",       unit: 6, label: "Caso VI" },
+];
