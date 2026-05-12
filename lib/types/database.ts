@@ -10,28 +10,71 @@ export type UnitStatus = "locked" | "available" | "in_progress" | "completed";
 export type ActivityType = "vocab_match" | "dialogue" | "listening" | "grammar" | "cultural";
 export type BadgeType = "case_solved" | "perfect_score" | "speed_run" | "cultural_expert" | "first_case";
 
+// Supabase v2 requires Relationships and CompositeTypes for correct type inference
 export interface Database {
   public: {
     Tables: {
+      classes: {
+        Row: {
+          id: string;
+          class_code: string;
+          teacher_name: string;
+          period_name: string;
+          created_at: string;
+        };
+        Insert: {
+          id?: string;
+          class_code: string;
+          teacher_name: string;
+          period_name: string;
+          created_at?: string;
+        };
+        Update: {
+          id?: string;
+          class_code?: string;
+          teacher_name?: string;
+          period_name?: string;
+          created_at?: string;
+        };
+        Relationships: [];
+      };
       students: {
         Row: {
           id: string;
           display_name: string;
+          class_id: string | null;
           class_code: string;
+          pin_hash: string | null;
+          pin_salt: string | null;
           created_at: string;
         };
         Insert: {
           id?: string;
           display_name: string;
+          class_id?: string | null;
           class_code: string;
+          pin_hash?: string | null;
+          pin_salt?: string | null;
           created_at?: string;
         };
         Update: {
           id?: string;
           display_name?: string;
+          class_id?: string | null;
           class_code?: string;
+          pin_hash?: string | null;
+          pin_salt?: string | null;
           created_at?: string;
         };
+        Relationships: [
+          {
+            foreignKeyName: "students_class_id_fkey";
+            columns: ["class_id"];
+            isOneToOne: false;
+            referencedRelation: "classes";
+            referencedColumns: ["id"];
+          }
+        ];
       };
       units: {
         Row: {
@@ -58,6 +101,7 @@ export interface Database {
           title_en?: string;
           description?: string;
         };
+        Relationships: [];
       };
       attempts: {
         Row: {
@@ -90,6 +134,22 @@ export interface Database {
           time_spent_seconds?: number;
           completed_at?: string;
         };
+        Relationships: [
+          {
+            foreignKeyName: "attempts_student_id_fkey";
+            columns: ["student_id"];
+            isOneToOne: false;
+            referencedRelation: "students";
+            referencedColumns: ["id"];
+          },
+          {
+            foreignKeyName: "attempts_unit_id_fkey";
+            columns: ["unit_id"];
+            isOneToOne: false;
+            referencedRelation: "units";
+            referencedColumns: ["id"];
+          }
+        ];
       };
       mastery: {
         Row: {
@@ -116,6 +176,15 @@ export interface Database {
           correct?: number;
           last_seen?: string;
         };
+        Relationships: [
+          {
+            foreignKeyName: "mastery_student_id_fkey";
+            columns: ["student_id"];
+            isOneToOne: false;
+            referencedRelation: "students";
+            referencedColumns: ["id"];
+          }
+        ];
       };
       badges: {
         Row: {
@@ -139,6 +208,22 @@ export interface Database {
           unit_id?: string | null;
           earned_at?: string;
         };
+        Relationships: [
+          {
+            foreignKeyName: "badges_student_id_fkey";
+            columns: ["student_id"];
+            isOneToOne: false;
+            referencedRelation: "students";
+            referencedColumns: ["id"];
+          },
+          {
+            foreignKeyName: "badges_unit_id_fkey";
+            columns: ["unit_id"];
+            isOneToOne: false;
+            referencedRelation: "units";
+            referencedColumns: ["id"];
+          }
+        ];
       };
       unit_progress: {
         Row: {
@@ -168,6 +253,22 @@ export interface Database {
           criminal_caught?: boolean;
           completed_at?: string | null;
         };
+        Relationships: [
+          {
+            foreignKeyName: "unit_progress_student_id_fkey";
+            columns: ["student_id"];
+            isOneToOne: false;
+            referencedRelation: "students";
+            referencedColumns: ["id"];
+          },
+          {
+            foreignKeyName: "unit_progress_unit_id_fkey";
+            columns: ["unit_id"];
+            isOneToOne: false;
+            referencedRelation: "units";
+            referencedColumns: ["id"];
+          }
+        ];
       };
     };
     Views: Record<string, never>;
@@ -177,5 +278,6 @@ export interface Database {
       activity_type: ActivityType;
       badge_type: BadgeType;
     };
+    CompositeTypes: Record<string, never>;
   };
 }

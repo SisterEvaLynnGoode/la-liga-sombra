@@ -54,14 +54,14 @@ export default function LandingPage() {
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row gap-4 w-full max-w-sm sm:max-w-none sm:w-auto">
           <Link
-            href="/login?mode=new"
+            href="/signup"
             className="clip-skew inline-flex items-center justify-center gap-3 px-10 py-4 font-typewriter text-sm tracking-[0.2em] uppercase transition-all duration-200 bg-[#8b1a1a] text-[#f5e6c8] border border-[#c0392b] hover:bg-[#c0392b] hover:shadow-[0_0_20px_rgba(192,57,43,0.5)] hover:-translate-y-px"
           >
             <span className="text-lg">🕵️</span>
             Nuevo agente
           </Link>
           <Link
-            href="/login?mode=returning"
+            href="/login"
             className="clip-skew inline-flex items-center justify-center gap-3 px-10 py-4 font-typewriter text-sm tracking-[0.2em] uppercase transition-all duration-200 bg-transparent text-[#e8b455] border border-[#c9933a] hover:bg-[rgba(201,147,58,0.1)] hover:shadow-[0_0_20px_rgba(201,147,58,0.3)] hover:-translate-y-px"
           >
             <span className="text-lg">📁</span>
@@ -87,9 +87,12 @@ export default function LandingPage() {
         <span className="font-typewriter text-[10px] tracking-widest uppercase text-[#8b7355]">
           Que Chevere Level 1
         </span>
-        <span className="font-typewriter text-[10px] tracking-widest uppercase text-[#8b7355]">
-          © La Liga Sombra
-        </span>
+        <Link
+          href="/teacher/login"
+          className="font-typewriter text-[10px] tracking-widest uppercase text-[#4a3a2a] hover:text-[#8b7355] transition-colors"
+        >
+          Maestros →
+        </Link>
       </footer>
     </main>
   );
