@@ -1,0 +1,277 @@
+{
+  "unitNumber": 2,
+  "country": "Puerto Rico",
+  "city": "San Juan",
+  "caseTitle": "El Robo en la Escuela",
+  "caseDescription": "Alguien robó equipos del laboratorio de computadoras de una escuela secundaria en el Viejo San Juan. La directora vio al sospechoso, pero solo recuerda su apariencia física. Usa ser y los adjetivos descriptivos para identificarlo en el anuario escolar.",
+  "criminalName": "El Tecladista",
+
+  "vocab": [
+    { "spanish": "el libro",        "english": "book",              "audio": "/audio/unit-02/libro.mp3" },
+    { "spanish": "la silla",        "english": "chair",             "audio": "/audio/unit-02/silla.mp3" },
+    { "spanish": "la pizarra",      "english": "whiteboard",        "audio": "/audio/unit-02/pizarra.mp3" },
+    { "spanish": "la mochila",      "english": "backpack",          "audio": "/audio/unit-02/mochila.mp3" },
+    { "spanish": "el lápiz",        "english": "pencil",            "audio": "/audio/unit-02/lapiz.mp3" },
+    { "spanish": "el cuaderno",     "english": "notebook",          "audio": "/audio/unit-02/cuaderno.mp3" },
+    { "spanish": "el bolígrafo",    "english": "pen",               "audio": "/audio/unit-02/boligrafo.mp3" },
+    { "spanish": "el escritorio",   "english": "desk",              "audio": "/audio/unit-02/escritorio.mp3" },
+    { "spanish": "las tijeras",     "english": "scissors",          "audio": "/audio/unit-02/tijeras.mp3" },
+    { "spanish": "la regla",        "english": "ruler",             "audio": "/audio/unit-02/regla.mp3" },
+    { "spanish": "el borrador",     "english": "eraser",            "audio": "/audio/unit-02/borrador.mp3" },
+    { "spanish": "el papel",        "english": "paper",             "audio": "/audio/unit-02/papel.mp3" },
+    { "spanish": "la computadora",  "english": "computer",          "audio": "/audio/unit-02/computadora.mp3" },
+    { "spanish": "el ratón",        "english": "mouse (computer)",  "audio": "/audio/unit-02/raton.mp3" },
+    { "spanish": "el teclado",      "english": "keyboard",          "audio": "/audio/unit-02/teclado.mp3" },
+    { "spanish": "la pantalla",     "english": "screen / monitor",  "audio": "/audio/unit-02/pantalla.mp3" },
+    { "spanish": "la impresora",    "english": "printer",           "audio": "/audio/unit-02/impresora.mp3" },
+    { "spanish": "los auriculares", "english": "headphones",        "audio": "/audio/unit-02/auriculares.mp3" },
+    { "spanish": "la tableta",      "english": "tablet",            "audio": "/audio/unit-02/tableta.mp3" },
+    { "spanish": "el proyector",    "english": "projector",         "audio": "/audio/unit-02/proyector.mp3" },
+    { "spanish": "alto / alta",            "english": "tall (m/f)",              "audio": "/audio/unit-02/alto.mp3" },
+    { "spanish": "bajo / baja",            "english": "short (m/f)",             "audio": "/audio/unit-02/bajo.mp3" },
+    { "spanish": "simpático / simpática",  "english": "nice, friendly (m/f)",    "audio": "/audio/unit-02/simpatico.mp3" },
+    { "spanish": "inteligente",            "english": "intelligent (m & f)",     "audio": "/audio/unit-02/inteligente.mp3" },
+    { "spanish": "rubio / rubia",          "english": "blond (m/f)",             "audio": "/audio/unit-02/rubio.mp3" },
+    { "spanish": "moreno / morena",        "english": "dark-haired / dark-skinned (m/f)", "audio": "/audio/unit-02/moreno.mp3" },
+    { "spanish": "serio / seria",          "english": "serious (m/f)",           "audio": "/audio/unit-02/serio.mp3" },
+    { "spanish": "trabajador / trabajadora","english": "hardworking (m/f)",      "audio": "/audio/unit-02/trabajador.mp3" },
+    { "spanish": "tímido / tímida",        "english": "shy (m/f)",               "audio": "/audio/unit-02/timido.mp3" },
+    { "spanish": "gracioso / graciosa",    "english": "funny (m/f)",             "audio": "/audio/unit-02/gracioso.mp3" },
+    { "spanish": "estudiar",  "english": "to study",          "audio": "/audio/unit-02/estudiar.mp3" },
+    { "spanish": "usar",      "english": "to use",            "audio": "/audio/unit-02/usar.mp3" },
+    { "spanish": "hablar",    "english": "to speak / to talk","audio": "/audio/unit-02/hablar.mp3" },
+    { "spanish": "escuchar",  "english": "to listen",         "audio": "/audio/unit-02/escuchar.mp3" },
+    { "spanish": "trabajar",  "english": "to work",           "audio": "/audio/unit-02/trabajar.mp3" }
+  ],
+
+  "stages": [
+
+    {
+      "type": "cutscene",
+      "videoUrl": "/videos/unit-02-intro.mp4",
+      "subtitleUrl": "/videos/unit-02-intro.vtt",
+      "chiefName": "Jefe Ramírez",
+      "chiefImageSeed": 60,
+      "briefingLines": [
+        "Bienvenido de nuevo, agente. Esta vez vas a San Juan, Puerto Rico.",
+        "Una escuela secundaria en el Viejo San Juan fue víctima de un robo grave.",
+        "El ladrón robó ratones, teclados y una pantalla nueva del laboratorio de computadoras.",
+        "La directora, la Sra. Torres, vio al sospechoso. Recuerda cómo es físicamente, pero no su nombre.",
+        "Para identificarlo necesitas dominar el verbo 'ser' y los adjetivos descriptivos.",
+        "Habla con los testigos, lee las pistas, y busca al sospechoso en el anuario. ¡Buena suerte!"
+      ]
+    },
+
+    {
+      "type": "vocabMatch",
+      "pairs": [
+        { "spanish": "el libro",       "english": "book" },
+        { "spanish": "la mochila",     "english": "backpack" },
+        { "spanish": "la pizarra",     "english": "whiteboard" },
+        { "spanish": "el cuaderno",    "english": "notebook" },
+        { "spanish": "el lápiz",       "english": "pencil" },
+        { "spanish": "el escritorio",  "english": "desk" },
+        { "spanish": "la computadora", "english": "computer" },
+        { "spanish": "el teclado",     "english": "keyboard" },
+        { "spanish": "el ratón",       "english": "mouse" },
+        { "spanish": "la pantalla",    "english": "screen" },
+        { "spanish": "la impresora",   "english": "printer" },
+        { "spanish": "los auriculares","english": "headphones" }
+      ]
+    },
+
+    {
+      "type": "dialogueChoice",
+      "clueReward": "El sospechoso usa mucho la computadora y siempre está en el laboratorio de informática.",
+      "npcName": "Sra. Torres",
+      "npcAvatar": "👩‍💼",
+      "startNodeId": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "npcLine": "¡Ay bendito! Buenos días. Estoy muy preocupada por el robo. Aquí en la Escuela Secundaria del Viejo San Juan nunca pasa algo así. ¿Cómo te llamas tú?",
+          "options": [
+            {
+              "text": "Me llamo [nombre]. Soy detective de la agencia. ¿Cómo se llama usted, señora?",
+              "isCorrect": true,
+              "nextNodeId": "description"
+            },
+            {
+              "text": "Tengo quince años y soy muy inteligente.",
+              "isCorrect": false,
+              "feedback": "She asked your name! Use 'Me llamo...' to introduce yourself, then ask who she is."
+            },
+            {
+              "text": "¿Cuántos estudiantes hay en la escuela?",
+              "isCorrect": false,
+              "feedback": "Stay focused — she asked your name first. Introduce yourself and ask hers."
+            }
+          ]
+        },
+        {
+          "id": "description",
+          "npcLine": "Me llamo Carmen Torres. Soy la directora de esta escuela. Ayer vi a un estudiante muy sospechoso en el laboratorio. Él usa la computadora todo el día — ¡incluso se toma mi café puertorriqueño de la oficina! ¿Cómo es él, me pregunta?",
+          "options": [
+            {
+              "text": "Sí, señora. ¿Cómo es el sospechoso? ¿Es alto o bajo? ¿De dónde es?",
+              "isCorrect": true,
+              "nextNodeId": "farewell"
+            },
+            {
+              "text": "¿Sra. Torres, usted es simpática o seria?",
+              "isCorrect": false,
+              "feedback": "That's not the right question right now! Ask what the suspect looks like."
+            },
+            {
+              "text": "¿Cuántas computadoras robaron exactamente?",
+              "isCorrect": false,
+              "feedback": "Important question, but first ask about the suspect's appearance — that's your key to the lineup."
+            }
+          ]
+        },
+        {
+          "id": "farewell",
+          "npcLine": "Él es un muchacho, no una muchacha. Usa el teclado muy rápido — ¡como un profesional! Siempre está en el laboratorio de informática después de clases. ¡Ese muchacho es el sospechoso número uno!",
+          "options": [
+            {
+              "text": "Muchas gracias, Sra. Torres. Esta información es muy importante para la investigación.",
+              "isCorrect": true,
+              "nextNodeId": "end"
+            },
+            {
+              "text": "¿Sra. Torres, usted trabaja mucho?",
+              "isCorrect": false,
+              "feedback": "You already have the clue you need. Thank her professionally and move on."
+            },
+            {
+              "text": "¿Dónde está el laboratorio de informática?",
+              "isCorrect": false,
+              "feedback": "You got the key information! Thank the Sra. Torres and continue the investigation."
+            }
+          ]
+        },
+        {
+          "id": "end",
+          "npcLine": "",
+          "isEnd": true,
+          "endMessage": "¡Con mucho gusto, detective! ¡Ay bendito! Espero que atrapes al ladrón pronto. La Sra. Torres sips her cafecito boricua and hands you the lab's access log."
+        }
+      ]
+    },
+
+    {
+      "type": "readingComp",
+      "clueReward": "El sospechoso es alto y moreno.",
+      "passage": "Querido diario,\n\nHoy es lunes en la Escuela Secundaria del Viejo San Juan. Mis compañeros son muy interesantes. Mi amiga Valentina es alta y rubia — ella estudia mucho y trabaja muy duro en todas las clases.\n\nCarlos es alto y moreno, pero él es de Ponce, Puerto Rico. Carlos escucha música con auriculares todo el día. Rodrigo también es alto y moreno. Rodrigo es de la República Dominicana. Él usa la computadora en el laboratorio de informática todos los días. Es muy serio y habla poco.\n\n¡Hasta mañana, diario!",
+      "glossary": [
+        { "word": "querido",       "translation": "dear / beloved" },
+        { "word": "compañeros",    "translation": "classmates" },
+        { "word": "estudia",       "translation": "studies (from estudiar)" },
+        { "word": "trabaja",       "translation": "works (from trabajar)" },
+        { "word": "duro",          "translation": "hard / tough" },
+        { "word": "escucha",       "translation": "listens (from escuchar)" },
+        { "word": "también",       "translation": "also / too" },
+        { "word": "laboratorio de informática", "translation": "computer lab" },
+        { "word": "habla",         "translation": "speaks (from hablar)" }
+      ],
+      "questions": [
+        {
+          "id": "r1",
+          "text": "¿Cómo es Valentina?",
+          "type": "multiple_choice",
+          "options": ["Alta y rubia", "Alta y morena", "Baja y rubia", "Baja y morena"],
+          "correctIndex": 0
+        },
+        {
+          "id": "r2",
+          "text": "¿De dónde es Rodrigo?",
+          "type": "multiple_choice",
+          "options": ["De Puerto Rico", "De México", "De la República Dominicana", "De España"],
+          "correctIndex": 2
+        },
+        {
+          "id": "r3",
+          "text": "¿Qué hace Rodrigo todos los días?",
+          "type": "multiple_choice",
+          "options": [
+            "Estudia en la biblioteca",
+            "Usa la computadora en el laboratorio de informática",
+            "Escucha música con auriculares",
+            "Trabaja en la cafetería"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "id": "r4",
+          "text": "¿Cómo es Rodrigo físicamente? (Write two adjectives.)",
+          "type": "short_answer",
+          "acceptableAnswers": [
+            "alto y moreno",
+            "moreno y alto",
+            "alto moreno",
+            "moreno alto",
+            "es alto y moreno",
+            "es moreno y alto"
+          ]
+        }
+      ]
+    },
+
+    {
+      "type": "listeningComp",
+      "clueReward": "El sospechoso es de la República Dominicana, no de Puerto Rico.",
+      "audioUrl": "/audio/unit-02/intercom.mp3",
+      "transcript": "Atención, estudiantes y maestros. La policía busca a un estudiante en relación con el robo en el laboratorio de informática. El sospechoso es un muchacho alto y moreno. Importante: él no es de Puerto Rico — es de otro país del Caribe. Si tienes información, habla con la Sra. Torres inmediatamente. Gracias y buen día.",
+      "question": "Según el aviso del intercomunicador, ¿cuál es una característica importante del sospechoso?",
+      "options": [
+        "Es alto, moreno, y no es de Puerto Rico",
+        "Es bajo, rubio, y habla inglés en clase",
+        "Es una chica tímida con mochila azul",
+        "Es el maestro de informática de la escuela"
+      ],
+      "correctIndex": 0,
+      "maxReplays": 3
+    },
+
+    {
+      "type": "lineup",
+      "correctSuspectId": "rodrigo",
+      "hint": "Recuerda las tres pistas: el sospechoso (1) usa mucho la computadora, (2) es alto y moreno, y (3) es de la República Dominicana — no de Puerto Rico. ¿Quién tiene TODAS estas características?",
+      "suspects": [
+        {
+          "id": "rodrigo",
+          "name": "El Tecladista",
+          "realName": "Rodrigo Mateo Herrera",
+          "age": 17,
+          "description": "Es un muchacho alto y moreno. Tiene diecisiete años y es muy serio. Usa la computadora todos los días en el laboratorio de informática. Es de la República Dominicana.",
+          "imageSeed": 15
+        },
+        {
+          "id": "isabella",
+          "name": "La Estudiosa",
+          "realName": "Isabella María Santos Colón",
+          "age": 16,
+          "description": "Es una muchacha alta y morena. Es muy simpática y trabajadora. Estudia mucho en la biblioteca todos los días después de clases. Es de San Juan, Puerto Rico.",
+          "imageSeed": 35
+        },
+        {
+          "id": "alejandro",
+          "name": "El Gracioso",
+          "realName": "Alejandro Cruz Pérez",
+          "age": 16,
+          "description": "Es un muchacho bajo y rubio. Es muy gracioso y simpático. Le gusta mucho el fútbol y escucha música en clase. Es de Bayamón, Puerto Rico.",
+          "imageSeed": 64
+        },
+        {
+          "id": "carlos",
+          "name": "El Tranquilo",
+          "realName": "Carlos Medina Rivera",
+          "age": 18,
+          "description": "Es un muchacho alto y moreno, pero es muy tímido. Tiene dieciocho años. Escucha música con auriculares en clase y trabaja en la cafetería. Es de Ponce, Puerto Rico.",
+          "imageSeed": 48
+        }
+      ]
+    }
+
+  ]
+}
