@@ -191,6 +191,54 @@
     },
 
     {
+      "type": "listeningComp",
+      "clueReward": "La sospechosa tiene 25 años, llega el 15 de marzo, y tiene una computadora portátil, un celular, y una tableta.",
+      "audioUrl": "/audio/unit-05/intercepted-call.mp3",
+      "transcript": "—Hola. ¿Tienes la computadora portátil? —Sí, la tengo. Y también tengo el celular y la tableta. —Excelente. ¿Cuándo vienes a Buenos Aires? —Vengo el quince de marzo. Tengo prisa. —Tenemos los datos de mil personas. Necesitamos los datos de dos mil más. —Los tengo aquí. Tengo veinticinco años, no soy nueva en esto. Adiós.",
+      "translation": "—Hello. Do you have the laptop? —Yes, I have it. And I also have the cell phone and the tablet. —Excellent. When are you coming to Buenos Aires? —I'm coming on March 15th. I'm in a hurry. —We have the data of one thousand people. We need the data of two thousand more. —I have it here. I'm twenty-five years old, I'm not new at this. Goodbye.",
+      "maxReplays": 3,
+      "passingScore": 0.75,
+      "retryHint": "Pista: Escucha los aparatos electrónicos, la fecha, y los números grandes.",
+      "questions": [
+        {
+          "question": "¿Qué tiene la mujer?",
+          "options": ["Solo la computadora", "Computadora portátil, celular y tableta", "Cámara y audífonos", "Solo la tableta"],
+          "correctIndex": 1,
+          "explanationEs": "La mujer dice 'la tengo. Y también tengo el celular y la tableta'.",
+          "explanationEn": "She lists laptop, cell phone, and tablet."
+        },
+        {
+          "question": "¿Cuándo viene a Buenos Aires?",
+          "options": ["El 5 de marzo", "El 15 de marzo", "El 15 de mayo", "El 25 de marzo"],
+          "correctIndex": 1,
+          "explanationEs": "Dice 'Vengo el quince de marzo' — quince = 15.",
+          "explanationEn": "She says March 15th."
+        },
+        {
+          "question": "¿De cuántas personas tienen los datos AHORA?",
+          "options": ["100", "1.000", "2.000", "10.000"],
+          "correctIndex": 1,
+          "explanationEs": "El hombre dice 'Tenemos los datos de mil personas' — mil = 1.000. Necesitan 2.000 más.",
+          "explanationEn": "He says they have 1,000 — but they NEED 2,000 more."
+        },
+        {
+          "question": "¿Cuántos años tiene la mujer?",
+          "options": ["15", "25", "35", "45"],
+          "correctIndex": 1,
+          "explanationEs": "La mujer dice 'Tengo veinticinco años' — veinticinco = 25.",
+          "explanationEn": "She says she's 25 years old."
+        },
+        {
+          "question": "¿Quién tiene los datos en este momento?",
+          "options": ["El hombre", "La mujer", "Los dos", "Nadie"],
+          "correctIndex": 1,
+          "explanationEs": "La mujer dice 'Los tengo aquí' — el pronombre 'los' se refiere a los datos.",
+          "explanationEn": "She says 'I have them here' — 'los' refers to the data."
+        }
+      ]
+    },
+
+    {
       "type": "dialogueChoice",
       "clueReward": "El sospechoso tiene unos 28 años, tiene cabello oscuro y lleva audífonos. Lo ven salir del edificio el 18 de marzo a las 02:50 con mucha prisa.",
       "npcName": "Tomás García",
