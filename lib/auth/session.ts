@@ -17,7 +17,8 @@ const TEACHER_COOKIE = "teacher_session";
 const THIRTY_DAYS = 60 * 60 * 24 * 30;
 
 function getSecret() {
-  const s = process.env.SESSION_SECRET ?? "dev-secret-must-be-at-least-32-chars!!";
+  // Use || not ?? so an empty-string env var falls back to the dev default
+  const s = process.env.SESSION_SECRET || "dev-secret-must-be-at-least-32-chars!!";
   return new TextEncoder().encode(s);
 }
 

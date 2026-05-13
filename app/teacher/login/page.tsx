@@ -15,20 +15,25 @@ export default function TeacherLoginPage() {
     setLoading(true);
     setError(null);
 
-    const res = await fetch("/api/teacher/auth", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ password }),
-    });
+    try {
+      const res = await fetch("/api/teacher/auth", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ password }),
+      });
 
-    const data = await res.json();
-    if (!res.ok) {
-      setError(data.error ?? "Incorrect password.");
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) {
+        setError((data as { error?: string }).error ?? "Incorrect password.");
+        setLoading(false);
+        return;
+      }
+
+      router.push("/teacher/setup");
+    } catch {
+      setError("Server error — please try again.");
       setLoading(false);
-      return;
     }
-
-    router.push("/teacher/setup");
   }
 
   return (

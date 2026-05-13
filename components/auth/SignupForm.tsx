@@ -44,20 +44,25 @@ export default function SignupForm() {
     setLoading(true);
     setErrors({});
 
-    const res = await fetch("/api/auth/signup", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ classCode, displayName: displayName.trim(), pin }),
-    });
+    try {
+      const res = await fetch("/api/auth/signup", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ classCode, displayName: displayName.trim(), pin }),
+      });
 
-    const data = await res.json();
-    if (!res.ok) {
-      setErrors({ global: data.error ?? "Something went wrong. Try again." });
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) {
+        setErrors({ global: (data as { error?: string }).error ?? "Something went wrong. Try again." });
+        setLoading(false);
+        return;
+      }
+
+      router.push("/mission-board");
+    } catch {
+      setErrors({ global: "Server error — please try again." });
       setLoading(false);
-      return;
     }
-
-    router.push("/mission-board");
   }
 
   return (

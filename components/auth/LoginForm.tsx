@@ -21,24 +21,29 @@ export default function LoginForm() {
     setLoading(true);
     setError(null);
 
-    const res = await fetch("/api/auth/login", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        classCode: classCode.trim().toUpperCase(),
-        displayName: displayName.trim(),
-        pin,
-      }),
-    });
+    try {
+      const res = await fetch("/api/auth/login", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          classCode: classCode.trim().toUpperCase(),
+          displayName: displayName.trim(),
+          pin,
+        }),
+      });
 
-    const data = await res.json();
-    if (!res.ok) {
-      setError(data.error ?? "Login failed. Try again.");
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok) {
+        setError((data as { error?: string }).error ?? "Login failed. Try again.");
+        setLoading(false);
+        return;
+      }
+
+      router.push("/mission-board");
+    } catch {
+      setError("Server error — please try again.");
       setLoading(false);
-      return;
     }
-
-    router.push("/mission-board");
   }
 
   return (
