@@ -117,7 +117,7 @@ export default function LineupStage({ suspects, correctSuspectId, hint, earnedCl
               <div className="relative">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img
-                  src={`https://i.pravatar.cc/300?img=${suspect.imageSeed}`}
+                  src={suspect.imageUrl ?? `https://i.pravatar.cc/300?img=${suspect.imageSeed}`}
                   alt={`Suspect: ${suspect.name}`}
                   width={300}
                   height={200}

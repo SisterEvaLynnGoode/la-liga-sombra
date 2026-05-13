@@ -176,7 +176,8 @@
           "realName": "Carlos Mendoza Ruiz",
           "age": 34,
           "description": "Es un hombre alto y delgado. Tiene bigote negro. Siempre lleva un sombrero de charro negro y elegante. Es de Guadalajara y habla muy, muy rápido.",
-          "imageSeed": 48
+          "imageSeed": 48,
+          "imageUrl": "https://randomuser.me/api/portraits/men/46.jpg"
         },
         {
           "id": "serpiente",
@@ -184,7 +185,8 @@
           "realName": "Ana López García",
           "age": 28,
           "description": "Es una mujer joven y muy elegante. Tiene pelo largo y negro. Es de Ciudad de México. Habla despacio y con mucha calma. No lleva sombrero.",
-          "imageSeed": 25
+          "imageSeed": 25,
+          "imageUrl": "https://randomuser.me/api/portraits/women/44.jpg"
         },
         {
           "id": "toro",
@@ -192,7 +194,8 @@
           "realName": "Miguel Reyes Vásquez",
           "age": 50,
           "description": "Es un hombre bajo y muy fuerte. Tiene cincuenta años y no tiene bigote. Es de Monterrey. Es tranquilo y habla poco.",
-          "imageSeed": 57
+          "imageSeed": 57,
+          "imageUrl": "https://randomuser.me/api/portraits/men/60.jpg"
         },
         {
           "id": "pajaro",
@@ -200,7 +203,8 @@
           "realName": "Juan Torres Silva",
           "age": 22,
           "description": "Es un hombre joven y alto pero sin bigote. Tiene veintidós años. Es de Cancún. Habla inglés y español perfectamente. No lleva sombrero.",
-          "imageSeed": 44
+          "imageSeed": 44,
+          "imageUrl": "https://randomuser.me/api/portraits/men/22.jpg"
         }
       ]
     }

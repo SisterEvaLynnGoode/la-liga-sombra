@@ -13,7 +13,8 @@ export interface Suspect {
   realName: string;
   age: number;
   description: string;  // 2-3 sentences in Spanish
-  imageSeed: number;    // pravatar.cc ?img=N
+  imageSeed: number;    // pravatar.cc ?img=N (fallback)
+  imageUrl?: string;    // explicit URL — use this to guarantee correct gender/appearance
 }
 
 // ── Stage shapes ──────────────────────────────────────────────────────────────

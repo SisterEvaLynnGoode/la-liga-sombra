@@ -61,6 +61,7 @@ export const SuspectSchema = z.object({
   age: z.number().int().min(10).max(80),
   description: z.string().min(20, "Description must be at least 20 characters (2-3 Spanish sentences)"),
   imageSeed: z.number().int().min(1).max(70, "pravatar.cc supports seeds 1-70"),
+  imageUrl: z.string().optional(), // explicit URL overrides imageSeed — use for guaranteed gender/appearance
 });
 
 // ─── Stages ───────────────────────────────────────────────────────────────────
