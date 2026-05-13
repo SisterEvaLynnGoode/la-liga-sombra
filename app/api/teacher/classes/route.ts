@@ -35,7 +35,11 @@ export async function POST(request: Request) {
 
   if (error) {
     console.error("Class insert error:", error);
-    return NextResponse.json({ error: "Could not create class." }, { status: 500 });
+    // Surface the real DB message so setup errors are diagnosable
+    return NextResponse.json(
+      { error: `Could not create class: ${error.message}` },
+      { status: 500 }
+    );
   }
 
   return NextResponse.json({ classCode: data.class_code, id: data.id });
