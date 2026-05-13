@@ -6,6 +6,7 @@ import { unit04Scripts } from "./scripts/unit-04.js";
 import { unit05Scripts } from "./scripts/unit-05.js";
 import { unit06Scripts } from "./scripts/unit-06.js";
 import { unit07Scripts } from "./scripts/unit-07.js";
+import { unit08Scripts } from "./scripts/unit-08.js";
 
 // ─── Audio script registry ────────────────────────────────────────────────────
 // Import each unit's script array and spread it into `scripts`.
@@ -19,4 +20,5 @@ export const scripts: AudioScript[] = [
   ...unit05Scripts,
   ...unit06Scripts,
   ...unit07Scripts,
+  ...unit08Scripts,
 ];

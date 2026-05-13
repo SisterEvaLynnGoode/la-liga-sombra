@@ -173,6 +173,54 @@
     },
 
     {
+      "type": "listeningComp",
+      "clueReward": "Ayer a las 10am, el ladrón entró al mercado, le dio una bolsa grande a un cómplice, y estuvo 30 minutos en el puesto de artesanías. Es alto y mayor.",
+      "audioUrl": "/audio/unit-08/vendor-testimony.mp3",
+      "transcript": "Buenos días. Me llamo María. Trabajo en el mercado. Ayer vi al ladrón. Él entró al mercado a las diez. Compró frutas y verduras. Habló con otro hombre. Le dio una bolsa grande al otro hombre. Después, caminó al puesto de artesanías. Estuvo allí treinta minutos. Es más alto que yo. Es menos joven que mi hijo. Acabo de hablar con la policía. Oí su voz claramente. Traje todo lo que recuerdo. Necesitan encontrarlo rápido.",
+      "translation": "Good morning. My name is María. I work in the market. Yesterday I saw the thief. He entered the market at ten. He bought fruits and vegetables. He talked with another man. He gave a big bag to the other man. Then, he walked to the crafts stall. He was there thirty minutes. He's taller than me. He's older than my son. I just spoke with the police. I heard his voice clearly. I brought everything I remember. They need to find him quickly.",
+      "maxReplays": 3,
+      "passingScore": 0.75,
+      "retryHint": "Pista: Las acciones en pretérito te dicen QUÉ pasó AYER. Escucha la hora, qué compró, y a quién le dio algo.",
+      "questions": [
+        {
+          "question": "¿A qué hora entró el ladrón al mercado?",
+          "options": ["A las dos", "A las diez", "A las doce", "A las cinco"],
+          "correctIndex": 1,
+          "explanationEs": "María dice 'Él entró al mercado a las diez'. 'Entró' es pretérito de entrar.",
+          "explanationEn": "María says he entered at ten. 'Entró' is the preterite form of entrar (to enter)."
+        },
+        {
+          "question": "¿Qué compró?",
+          "options": ["Carne y pescado", "Pan y leche", "Frutas y verduras", "Artesanías"],
+          "correctIndex": 2,
+          "explanationEs": "María dice 'Compró frutas y verduras'. 'Compró' es pretérito de comprar.",
+          "explanationEn": "María says he bought fruits and vegetables. 'Compró' is preterite of comprar."
+        },
+        {
+          "question": "¿A quién le dio una bolsa grande?",
+          "options": ["A María", "A la policía", "A otro hombre", "A su hijo"],
+          "correctIndex": 2,
+          "explanationEs": "María dice 'Le dio una bolsa grande al otro hombre'. 'Le' es pronombre indirecto.",
+          "explanationEn": "María says he gave it to the other man. 'Le' is the indirect object pronoun."
+        },
+        {
+          "question": "¿Cuánto tiempo estuvo en el puesto de artesanías?",
+          "options": ["3 minutos", "13 minutos", "30 minutos", "3 horas"],
+          "correctIndex": 2,
+          "explanationEs": "María dice 'Estuvo allí treinta minutos'. 'Estuvo' es pretérito de estar.",
+          "explanationEn": "María says he was there 30 minutes. 'Estuvo' is preterite of estar."
+        },
+        {
+          "question": "¿Cómo es físicamente el ladrón?",
+          "options": ["Bajo y joven", "Alto y joven", "Más alto que María, mayor que su hijo", "Bajo y mayor"],
+          "correctIndex": 2,
+          "explanationEs": "María dice 'Es más alto que yo. Es menos joven que mi hijo' = mayor que su hijo.",
+          "explanationEn": "She uses comparisons: taller than her, less young (= older) than her son."
+        }
+      ]
+    },
+
+    {
       "type": "dialogueChoice",
       "clueReward": "El sospechoso es más alto que Don Aurelio. Le dijo que acababa de llegar de Lima. Cuando Don Aurelio le dijo que no, él no salió del mercado de inmediato — esperó. La bolsa que llevaba era tan grande como un costal de quinoa.",
       "npcName": "Don Aurelio",
