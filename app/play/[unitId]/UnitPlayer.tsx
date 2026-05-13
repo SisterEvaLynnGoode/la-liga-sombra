@@ -16,6 +16,7 @@ import DialogueChoice from "@/components/games/DialogueChoice";
 import ReadingComprehension from "@/components/games/ReadingComprehension";
 import ListeningComprehension from "@/components/games/ListeningComprehension";
 import ChaseMap from "@/components/games/ChaseMap";
+import TimedFlashcards from "@/components/games/TimedFlashcards";
 import SentenceBuilderStage from "@/components/games/SentenceBuilderStage";
 import Interrogation from "@/components/games/Interrogation";
 import type { BadgeType } from "@/lib/types/database";
@@ -47,6 +48,7 @@ const STAGE_LABELS: Record<StageData["type"], string> = {
   chaseMap: "Persecución",
   sentenceBuilder: "Gramática",
   interrogation: "Interrogatorio",
+  timedFlashcards: "Flashcards",
 };
 
 export default function UnitPlayer({ content, unitId, unitNumber, classId, initialStageIndex, isCompleted }: Props) {
@@ -304,6 +306,17 @@ export default function UnitPlayer({ content, unitId, unitNumber, classId, initi
           <SentenceBuilderStage
             key={`stage-${currentStage}`}
             sentences={stage.sentences}
+            unitId={unitId}
+            onComplete={handleStageComplete}
+          />
+        )}
+
+        {stage?.type === "timedFlashcards" && (
+          <TimedFlashcards
+            key={`stage-${currentStage}`}
+            title={stage.title}
+            cards={stage.cards}
+            timeLimit={stage.timeLimit}
             unitId={unitId}
             onComplete={handleStageComplete}
           />

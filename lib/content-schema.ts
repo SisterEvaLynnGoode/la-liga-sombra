@@ -191,6 +191,19 @@ export const SentenceBuilderStageSchema = z.object({
   sentences: z.array(SentenceItemSchema).min(1).max(10),
 });
 
+export const FlashcardItemSchema = z.object({
+  prompt: z.string().min(1),
+  answer: z.string().min(1),
+});
+
+export const TimedFlashcardsStageSchema = z.object({
+  type: z.literal("timedFlashcards"),
+  clueReward: z.string().optional(),
+  title: z.string().optional(),
+  cards: z.array(FlashcardItemSchema).min(4).max(30),
+  timeLimit: z.number().int().min(15).max(300),
+});
+
 export const StageSchema = z.discriminatedUnion("type", [
   CutsceneStageSchema,
   VocabMatchStageSchema,
@@ -201,6 +214,7 @@ export const StageSchema = z.discriminatedUnion("type", [
   ChaseMapStageSchema,
   SentenceBuilderStageSchema,
   InterrogationStageSchema,
+  TimedFlashcardsStageSchema,
 ]);
 
 // ─── Unit root ────────────────────────────────────────────────────────────────

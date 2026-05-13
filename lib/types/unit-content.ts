@@ -122,6 +122,14 @@ export interface SentenceBuilderStageData {
   sentences: SentenceItem[];
 }
 
+export interface TimedFlashcardsStageData {
+  type: "timedFlashcards";
+  clueReward?: string;
+  title?: string;
+  cards: Array<{ prompt: string; answer: string }>;
+  timeLimit: number;
+}
+
 export type StageData =
   | CutsceneStageData
   | VocabMatchStageData
@@ -131,7 +139,8 @@ export type StageData =
   | LineupStageData
   | ChaseMapStageData
   | SentenceBuilderStageData
-  | InterrogationStageData;
+  | InterrogationStageData
+  | TimedFlashcardsStageData;
 
 // ── Unit root ─────────────────────────────────────────────────────────────────
 

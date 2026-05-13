@@ -1,0 +1,317 @@
+{
+  "unitNumber": 5,
+  "country": "Argentina",
+  "city": "Buenos Aires",
+  "caseTitle": "Hackeo en Buenos Aires",
+  "caseDescription": "Un hacker roba datos de identidad de 2.847 argentinos desde un edificio en el barrio de Palermo. Usa el verbo tener, los pronombres de objeto directo (lo, la, los, las) y los números grandes para identificar las fechas de ataque, rastrear los objetos robados e identificar al culpable.",
+  "criminalName": "El Fantasma Digital",
+
+  "vocab": [
+    { "spanish": "la computadora portátil",  "english": "laptop computer",            "audio": "/audio/unit-05/computadora-portatil.mp3" },
+    { "spanish": "el celular",               "english": "cell phone",                  "audio": "/audio/unit-05/celular.mp3" },
+    { "spanish": "la tableta",               "english": "tablet",                      "audio": "/audio/unit-05/tableta.mp3" },
+    { "spanish": "la cámara",                "english": "camera",                      "audio": "/audio/unit-05/camara.mp3" },
+    { "spanish": "los audífonos",            "english": "headphones",                  "audio": "/audio/unit-05/audifonos.mp3" },
+    { "spanish": "el cargador",              "english": "charger",                     "audio": "/audio/unit-05/cargador.mp3" },
+    { "spanish": "el teclado",               "english": "keyboard",                    "audio": "/audio/unit-05/teclado.mp3" },
+    { "spanish": "el ratón",                 "english": "mouse (computer)",            "audio": "/audio/unit-05/raton.mp3" },
+    { "spanish": "el servidor",              "english": "server",                      "audio": "/audio/unit-05/servidor.mp3" },
+    { "spanish": "la red",                   "english": "network",                     "audio": "/audio/unit-05/red.mp3" },
+    { "spanish": "la contraseña",            "english": "password",                    "audio": "/audio/unit-05/contrasena.mp3" },
+    { "spanish": "el disco duro",            "english": "hard drive",                  "audio": "/audio/unit-05/disco-duro.mp3" },
+    { "spanish": "enero",                    "english": "January",                     "audio": "/audio/unit-05/enero.mp3" },
+    { "spanish": "febrero",                  "english": "February",                    "audio": "/audio/unit-05/febrero.mp3" },
+    { "spanish": "marzo",                    "english": "March",                       "audio": "/audio/unit-05/marzo.mp3" },
+    { "spanish": "abril",                    "english": "April",                       "audio": "/audio/unit-05/abril.mp3" },
+    { "spanish": "mayo",                     "english": "May",                         "audio": "/audio/unit-05/mayo.mp3" },
+    { "spanish": "junio",                    "english": "June",                        "audio": "/audio/unit-05/junio.mp3" },
+    { "spanish": "julio",                    "english": "July",                        "audio": "/audio/unit-05/julio.mp3" },
+    { "spanish": "agosto",                   "english": "August",                      "audio": "/audio/unit-05/agosto.mp3" },
+    { "spanish": "septiembre",               "english": "September",                   "audio": "/audio/unit-05/septiembre.mp3" },
+    { "spanish": "octubre",                  "english": "October",                     "audio": "/audio/unit-05/octubre.mp3" },
+    { "spanish": "noviembre",                "english": "November",                    "audio": "/audio/unit-05/noviembre.mp3" },
+    { "spanish": "diciembre",                "english": "December",                    "audio": "/audio/unit-05/diciembre.mp3" },
+    { "spanish": "cien (100)",               "english": "one hundred",                 "audio": "/audio/unit-05/cien.mp3" },
+    { "spanish": "doscientos (200)",         "english": "two hundred",                 "audio": "/audio/unit-05/doscientos.mp3" },
+    { "spanish": "quinientos (500)",         "english": "five hundred",                "audio": "/audio/unit-05/quinientos.mp3" },
+    { "spanish": "mil (1.000)",              "english": "one thousand",                "audio": "/audio/unit-05/mil.mp3" },
+    { "spanish": "dos mil (2.000)",          "english": "two thousand",                "audio": "/audio/unit-05/dos-mil.mp3" },
+    { "spanish": "un millón (1.000.000)",    "english": "one million",                 "audio": "/audio/unit-05/millon.mp3" },
+    { "spanish": "tener X años",             "english": "to be X years old",           "audio": "/audio/unit-05/tener-anos.mp3" },
+    { "spanish": "tener hambre",             "english": "to be hungry",                "audio": "/audio/unit-05/tener-hambre.mp3" },
+    { "spanish": "tener sed",                "english": "to be thirsty",               "audio": "/audio/unit-05/tener-sed.mp3" },
+    { "spanish": "tener miedo",              "english": "to be afraid / scared",       "audio": "/audio/unit-05/tener-miedo.mp3" },
+    { "spanish": "tener prisa",              "english": "to be in a hurry",            "audio": "/audio/unit-05/tener-prisa.mp3" },
+    { "spanish": "yo vengo",                 "english": "I come / I arrive",           "audio": "/audio/unit-05/vengo.mp3" },
+    { "spanish": "tú vienes",                "english": "you come (informal)",          "audio": "/audio/unit-05/vienes.mp3" },
+    { "spanish": "él/ella viene",            "english": "he/she comes",                "audio": "/audio/unit-05/viene.mp3" }
+  ],
+
+  "stages": [
+
+    {
+      "type": "cutscene",
+      "videoUrl": "/videos/unit-05-intro.mp4",
+      "subtitleUrl": "/videos/unit-05-intro.vtt",
+      "chiefName": "Jefa Ramírez",
+      "chiefImageSeed": 60,
+      "briefingLines": [
+        "Bienvenido a Buenos Aires, agente — la capital de Argentina, ciudad del tango, el mate y el dulce de leche.",
+        "Tenemos una situación muy seria. Un hacker roba datos de identidad de dos mil ochocientos cuarenta y siete argentinos.",
+        "El ataque ocurre en el Edificio Omega, en el barrio de Palermo — uno de los barrios más modernos de la ciudad.",
+        "El hacker viene al edificio siempre después de las once de la noche y tiene mucha prisa cuando sale.",
+        "Para resolver este caso necesitas dominar el verbo tener, los pronombres de objeto directo — lo, la, los, las — y los números grandes.",
+        "¡Atención! En Argentina las fechas se escriben así: 15/03/2024 significa el quince de marzo. ¡No confundas el día con el mes!",
+        "El portero lo ve pero no lo reconoce. Tu trabajo es identificarlo. ¡Mucha suerte, agente!"
+      ]
+    },
+
+    {
+      "type": "vocabMatch",
+      "pairs": [
+        { "spanish": "la computadora portátil", "english": "laptop" },
+        { "spanish": "el celular",              "english": "cell phone" },
+        { "spanish": "el cargador",             "english": "charger" },
+        { "spanish": "la contraseña",           "english": "password" },
+        { "spanish": "el servidor",             "english": "server" },
+        { "spanish": "el disco duro",           "english": "hard drive" },
+        { "spanish": "enero",                   "english": "January" },
+        { "spanish": "julio",                   "english": "July" },
+        { "spanish": "diciembre",               "english": "December" },
+        { "spanish": "tener prisa",             "english": "to be in a hurry" },
+        { "spanish": "tener miedo",             "english": "to be afraid" },
+        { "spanish": "mil",                     "english": "one thousand" }
+      ]
+    },
+
+    {
+      "type": "timedFlashcards",
+      "clueReward": "El hacker accede al sistema exactamente 4 veces: el 15 de marzo, el 18 de marzo, el 22 de marzo y el 1 de abril. El total de víctimas: 2.847 argentinos.",
+      "title": "Números — Fichas Rápidas (60 segundos)",
+      "timeLimit": 60,
+      "cards": [
+        { "prompt": "100",            "answer": "cien" },
+        { "prompt": "101",            "answer": "ciento uno" },
+        { "prompt": "200",            "answer": "doscientos" },
+        { "prompt": "300",            "answer": "trescientos" },
+        { "prompt": "400",            "answer": "cuatrocientos" },
+        { "prompt": "500",            "answer": "quinientos" },
+        { "prompt": "600",            "answer": "seiscientos" },
+        { "prompt": "700",            "answer": "setecientos" },
+        { "prompt": "800",            "answer": "ochocientos" },
+        { "prompt": "900",            "answer": "novecientos" },
+        { "prompt": "1.000",          "answer": "mil" },
+        { "prompt": "1.001",          "answer": "mil uno" },
+        { "prompt": "1.500",          "answer": "mil quinientos" },
+        { "prompt": "2.000",          "answer": "dos mil" },
+        { "prompt": "2.847",          "answer": "dos mil ochocientos cuarenta y siete" },
+        { "prompt": "5.000",          "answer": "cinco mil" },
+        { "prompt": "10.000",         "answer": "diez mil" },
+        { "prompt": "100.000",        "answer": "cien mil" },
+        { "prompt": "1.000.000",      "answer": "un millón" },
+        { "prompt": "250",            "answer": "doscientos cincuenta" }
+      ]
+    },
+
+    {
+      "type": "readingComp",
+      "clueReward": "El hacker roba el servidor portátil (el 22/03) y el disco duro con 2.000 contraseñas (el 01/04). Viene siempre después de las 23:00 con una mochila negra grande.",
+      "passage": "REGISTRO DE SEGURIDAD — EDIFICIO OMEGA\nAvenida Santa Fe 2847, Palermo, Buenos Aires\n\n⚠ BRECHA DE DATOS DETECTADA\nFecha del informe: 05/04/2024\n\nNOTA SOBRE FECHAS (importante): En Argentina las fechas se escriben en formato DD/MM/AAAA. Por ejemplo: 15/03/2024 = el 15 de marzo de 2024 — ¡no el 3 de enero!\n\nACCESOS NO AUTORIZADOS:\n• 15/03/2024 a las 23:14 — Acceso al servidor principal (Sala B)\n• 18/03/2024 a las 02:47 — Descarga de 847 archivos de clientes\n• 22/03/2024 a las 01:33 — Acceso al servidor de respaldo; lo roban esa noche\n• 01/04/2024 a las 03:15 — Última conexión; el disco duro lo roban aquí\n\nTOTAL DE CUENTAS AFECTADAS: 2.847\n\nARTÍCULOS FÍSICOS ROBADOS:\n• Servidor portátil marca OMEGA — lo roban el 22/03\n• Disco duro externo con 2.000 contraseñas — lo roban el 01/04\n• Cámara de seguridad de la Sala B — la desconectan antes de entrar cada noche\n\nDESCRIPCIÓN DEL INTRUSO (según el portero Tomás García):\n— Hombre joven, unos 25–30 años. Tiene cabello oscuro.\n— Tiene audífonos en el cuello siempre.\n— Viene después de las 23:00 — nunca antes.\n— Lleva una mochila negra grande.\n— Tiene mucha prisa cuando sale del edificio.\n— El portero lo ve el 18/03 pero no lo reconoce.",
+      "glossary": [
+        { "word": "brecha",           "translation": "breach / gap" },
+        { "word": "afectadas",        "translation": "affected (feminine plural)" },
+        { "word": "no autorizado",    "translation": "unauthorized" },
+        { "word": "descarga",         "translation": "download" },
+        { "word": "respaldo",         "translation": "backup" },
+        { "word": "lo roban",         "translation": "they steal it (lo = the object)" },
+        { "word": "la desconectan",   "translation": "they disconnect it (la = the camera)" },
+        { "word": "intrusión",        "translation": "intrusion" },
+        { "word": "portero",          "translation": "doorman / concierge" },
+        { "word": "no lo reconoce",   "translation": "doesn't recognize him (lo = him)" },
+        { "word": "DD/MM/AAAA",       "translation": "day/month/year (Argentine date format)" }
+      ],
+      "questions": [
+        {
+          "id": "r1",
+          "text": "¿Cuántas cuentas están afectadas por la brecha de datos?",
+          "type": "multiple_choice",
+          "options": ["2.847", "847", "2.000", "1.000"],
+          "correctIndex": 0
+        },
+        {
+          "id": "r2",
+          "text": "¿En qué fecha ocurre el primer acceso no autorizado?",
+          "type": "multiple_choice",
+          "options": [
+            "El 15 de marzo",
+            "El 18 de marzo",
+            "El 22 de marzo",
+            "El 1 de abril"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "id": "r3",
+          "text": "¿Cuándo viene el intruso al edificio?",
+          "type": "multiple_choice",
+          "options": [
+            "Siempre después de las 23:00",
+            "Por la mañana temprano",
+            "A las 12:00 del mediodía",
+            "Los fines de semana únicamente"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "id": "r4",
+          "text": "¿Qué artículos roba el hacker del edificio Omega?",
+          "type": "multiple_choice",
+          "options": [
+            "El servidor portátil y el disco duro con contraseñas",
+            "La cámara de seguridad y el teclado",
+            "El celular y la tableta",
+            "Los audífonos y el cargador"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "id": "r5",
+          "text": "En Argentina, ¿cómo se escribe '15/03/2024' en palabras? (Escribe en español.)",
+          "type": "short_answer",
+          "acceptableAnswers": [
+            "el quince de marzo de dos mil veinticuatro",
+            "el quince de marzo",
+            "quince de marzo de dos mil veinticuatro",
+            "quince de marzo",
+            "el 15 de marzo",
+            "el 15 de marzo de 2024"
+          ]
+        }
+      ]
+    },
+
+    {
+      "type": "dialogueChoice",
+      "clueReward": "El sospechoso tiene unos 28 años, tiene cabello oscuro y lleva audífonos. Lo ven salir del edificio el 18 de marzo a las 02:50 con mucha prisa.",
+      "npcName": "Tomás García",
+      "npcAvatar": "👨‍✈️",
+      "startNodeId": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "npcLine": "Buenas noches. Soy Tomás García, el portero del Edificio Omega. Estoy muy nervioso por todo esto — nunca en treinta años de trabajo veo algo así. ¿Puedo ayudarle, agente?",
+          "options": [
+            {
+              "text": "Soy agente de La Liga Sombra. Necesito hablar sobre el hombre que usted ve en el edificio a las once de la noche. ¿Lo recuerda bien?",
+              "isCorrect": true,
+              "nextNodeId": "saw_him"
+            },
+            {
+              "text": "¿Cuántos años tiene usted, señor García?",
+              "isCorrect": false,
+              "feedback": "His age isn't relevant to the investigation! Introduce yourself as an agent and ask about the suspect he saw late at night."
+            },
+            {
+              "text": "¿Tiene usted hambre? Es muy tarde para trabajar.",
+              "isCorrect": false,
+              "feedback": "Stay professional — this is an active investigation! Ask him about the suspicious person he saw entering the building."
+            }
+          ]
+        },
+        {
+          "id": "saw_him",
+          "npcLine": "¡Sí, lo recuerdo muy bien! Lo veo tres veces en marzo — lo veo entrar siempre después de las once de la noche con una mochila negra muy grande. No lo paro porque tiene el código de acceso correcto. ¿Me entiende usted?",
+          "options": [
+            {
+              "text": "Sí, lo entiendo. ¿Puede usted describirlo físicamente? ¿Cuántos años tiene él aproximadamente?",
+              "isCorrect": true,
+              "nextNodeId": "description"
+            },
+            {
+              "text": "¿Por qué no lo para usted? ¡Es su trabajo!",
+              "isCorrect": false,
+              "feedback": "Don't put the witness on the defensive — he's trying to help! Ask for a physical description of the suspect instead."
+            },
+            {
+              "text": "¿Cuándo lo ve usted por primera vez exactamente?",
+              "isCorrect": false,
+              "feedback": "He just told you — March 15th! Move forward and ask him to describe the suspect physically."
+            }
+          ]
+        },
+        {
+          "id": "description",
+          "npcLine": "Claro que lo describo. Tiene unos veintiocho años — no tiene más de treinta, seguro. Tiene cabello oscuro y tiene los audífonos en el cuello — siempre los tiene ahí. Lo veo salir del edificio el dieciocho de marzo a las dos y cincuenta de la madrugada. ¡Tiene mucha prisa cuando lo veo salir! Casi lo pierdo de vista.",
+          "options": [
+            {
+              "text": "Muchas gracias, señor García. Esta información es muy valiosa. ¿Tiene usted algo más que decirme?",
+              "isCorrect": true,
+              "nextNodeId": "farewell"
+            },
+            {
+              "text": "¿Tiene usted miedo del sospechoso, señor García?",
+              "isCorrect": false,
+              "feedback": "You already have the description you need! Thank him professionally and ask if he has any additional information."
+            },
+            {
+              "text": "¿Le gusta tomar mate mientras trabaja?",
+              "isCorrect": false,
+              "feedback": "That is very off-topic! Thank him for his description and wrap up the interview."
+            }
+          ]
+        },
+        {
+          "id": "farewell",
+          "npcLine": "",
+          "isEnd": true,
+          "endMessage": "¡De nada, agente! Si lo veo otra vez, lo llamo de inmediato. Tomás García returns to his desk, circles three entries in the visitor log, and slides it across the counter."
+        }
+      ]
+    },
+
+    {
+      "type": "lineup",
+      "correctSuspectId": "rodrigo",
+      "hint": "Recuerda las tres pistas: (1) el hacker viene DESPUÉS de las 23:00 — nunca por la mañana, (2) tiene unos 28 años con cabello oscuro — no 45 años con cabello canoso, (3) lleva una mochila NEGRA — no azul. ¿Cuál de los cuatro perfiles es consistente con TODAS las pistas del caso?",
+      "suspects": [
+        {
+          "id": "rodrigo",
+          "name": "El Fantasma Digital",
+          "realName": "Rodrigo Kessler Martínez",
+          "age": 28,
+          "description": "Tiene veintiocho años y tiene cabello oscuro. Viene al edificio siempre después de las once de la noche — lo ven el 15/03, el 18/03, el 22/03 y el 01/04. Tiene una mochila negra grande. La computadora portátil y el disco duro los lleva consigo siempre. Tiene mucha prisa cuando sale.",
+          "imageSeed": 30,
+          "imageUrl": "https://randomuser.me/api/portraits/men/30.jpg"
+        },
+        {
+          "id": "valentina",
+          "name": "La Ingeniera",
+          "realName": "Valentina Russo Díaz",
+          "age": 31,
+          "description": "Tiene treinta y un años. Viene al edificio el 15 de marzo a las nueve de la mañana — no de noche. La ven entrar con una tableta y una carpeta azul. Tiene los auriculares en la bolsa. No tiene prisa — trabaja todo el día en el Edificio Omega.",
+          "imageSeed": 30,
+          "imageUrl": "https://randomuser.me/api/portraits/women/30.jpg"
+        },
+        {
+          "id": "marcos",
+          "name": "El Consultor",
+          "realName": "Marcos Ferreira Gómez",
+          "age": 45,
+          "description": "Tiene cuarenta y cinco años y tiene cabello canoso — no oscuro. Viene al edificio el 18 de marzo después de las diez de la noche. Lo ven con una mochila negra y una computadora portátil. Tiene prisa cuando sale del edificio.",
+          "imageSeed": 50,
+          "imageUrl": "https://randomuser.me/api/portraits/men/50.jpg"
+        },
+        {
+          "id": "carolina",
+          "name": "La Programadora",
+          "realName": "Carolina Benzecri Alvarado",
+          "age": 27,
+          "description": "Tiene veintisiete años y tiene cabello oscuro. Viene al edificio el 22 de marzo a la medianoche. La ven entrar con una mochila azul — no negra. Los audífonos los tiene en el cuello. Tiene mucha prisa cuando sale.",
+          "imageSeed": 25,
+          "imageUrl": "https://randomuser.me/api/portraits/women/25.jpg"
+        }
+      ]
+    }
+
+  ]
+}
