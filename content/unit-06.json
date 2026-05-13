@@ -1,0 +1,597 @@
+{
+  "unitNumber": 6,
+  "country": "Colombia",
+  "city": "Cartagena",
+  "caseTitle": "El Chef Misterioso",
+  "caseDescription": "Alguien roba la receta secreta del ajiaco bogotano del Chef Valentina Cruz — un plato que es parte del patrimonio cultural de Colombia. Cuatro cocineros son sospechosos. Usa tener que + infinitivo, los verbos de cambio de raíz (querer, poder, preferir) y los adjetivos demostrativos (este, ese, aquel) para descubrir quién miente sobre qué ingredientes toca y qué tiene que hacer.",
+  "criminalName": "El Cocinero Secreto",
+
+  "vocab": [
+    { "spanish": "el mango",             "english": "mango",                              "audio": "/audio/unit-06/mango.mp3" },
+    { "spanish": "la guanábana",         "english": "soursop",                            "audio": "/audio/unit-06/guanabana.mp3" },
+    { "spanish": "la papaya",            "english": "papaya",                             "audio": "/audio/unit-06/papaya.mp3" },
+    { "spanish": "el banano",            "english": "banana",                             "audio": "/audio/unit-06/banano.mp3" },
+    { "spanish": "la piña",              "english": "pineapple",                          "audio": "/audio/unit-06/pina.mp3" },
+    { "spanish": "la papa",              "english": "potato",                             "audio": "/audio/unit-06/papa.mp3" },
+    { "spanish": "la zanahoria",         "english": "carrot",                             "audio": "/audio/unit-06/zanahoria.mp3" },
+    { "spanish": "el maíz",              "english": "corn",                               "audio": "/audio/unit-06/maiz.mp3" },
+    { "spanish": "el aguacate",          "english": "avocado",                            "audio": "/audio/unit-06/aguacate.mp3" },
+    { "spanish": "la cebolla",           "english": "onion",                              "audio": "/audio/unit-06/cebolla.mp3" },
+    { "spanish": "el pollo",             "english": "chicken",                            "audio": "/audio/unit-06/pollo.mp3" },
+    { "spanish": "la res",               "english": "beef",                               "audio": "/audio/unit-06/res.mp3" },
+    { "spanish": "el cerdo",             "english": "pork",                               "audio": "/audio/unit-06/cerdo.mp3" },
+    { "spanish": "el pescado",           "english": "fish",                               "audio": "/audio/unit-06/pescado.mp3" },
+    { "spanish": "el camarón",           "english": "shrimp",                             "audio": "/audio/unit-06/camaron.mp3" },
+    { "spanish": "el café",              "english": "coffee",                             "audio": "/audio/unit-06/cafe.mp3" },
+    { "spanish": "el jugo",              "english": "juice",                              "audio": "/audio/unit-06/jugo.mp3" },
+    { "spanish": "el agua",              "english": "water",                              "audio": "/audio/unit-06/agua.mp3" },
+    { "spanish": "la leche",             "english": "milk",                               "audio": "/audio/unit-06/leche.mp3" },
+    { "spanish": "la limonada",          "english": "lemonade",                           "audio": "/audio/unit-06/limonada.mp3" },
+    { "spanish": "el ajiaco",            "english": "traditional Colombian potato and chicken soup", "audio": "/audio/unit-06/ajiaco.mp3" },
+    { "spanish": "la bandeja paisa",     "english": "traditional Colombian mixed platter", "audio": "/audio/unit-06/bandeja-paisa.mp3" },
+    { "spanish": "las arepas",           "english": "corn cakes",                         "audio": "/audio/unit-06/arepas.mp3" },
+    { "spanish": "el sancocho",          "english": "hearty Colombian stew",              "audio": "/audio/unit-06/sancocho.mp3" },
+    { "spanish": "las empanadas",        "english": "stuffed pastries",                   "audio": "/audio/unit-06/empanadas.mp3" },
+    { "spanish": "querer (e→ie)",        "english": "to want (stem-changing)",            "audio": "/audio/unit-06/querer.mp3" },
+    { "spanish": "poder (o→ue)",         "english": "to be able to / can (stem-changing)","audio": "/audio/unit-06/poder.mp3" },
+    { "spanish": "preferir (e→ie)",      "english": "to prefer (stem-changing)",          "audio": "/audio/unit-06/preferir.mp3" },
+    { "spanish": "pensar (e→ie)",        "english": "to think / to plan (stem-changing)", "audio": "/audio/unit-06/pensar.mp3" },
+    { "spanish": "dormir (o→ue)",        "english": "to sleep (stem-changing)",           "audio": "/audio/unit-06/dormir.mp3" },
+    { "spanish": "volver (o→ue)",        "english": "to return / to come back (stem-changing)", "audio": "/audio/unit-06/volver.mp3" },
+    { "spanish": "este / esta",          "english": "this (near speaker, m/f)",           "audio": "/audio/unit-06/este.mp3" },
+    { "spanish": "ese / esa",            "english": "that (near listener, m/f)",          "audio": "/audio/unit-06/ese.mp3" },
+    { "spanish": "aquel / aquella",      "english": "that over there (far away, m/f)",    "audio": "/audio/unit-06/aquel.mp3" },
+    { "spanish": "estos / estas",        "english": "these (plural, m/f)",                "audio": "/audio/unit-06/estos.mp3" },
+    { "spanish": "la cuenta",            "english": "the bill / check",                   "audio": "/audio/unit-06/cuenta.mp3" },
+    { "spanish": "la propina",           "english": "the tip",                            "audio": "/audio/unit-06/propina.mp3" },
+    { "spanish": "el menú",              "english": "the menu",                           "audio": "/audio/unit-06/menu.mp3" },
+    { "spanish": "el plato",             "english": "the dish / plate",                   "audio": "/audio/unit-06/plato.mp3" },
+    { "spanish": "tener que + infinitivo","english": "to have to + verb",                 "audio": "/audio/unit-06/tener-que.mp3" },
+    { "spanish": "decir",                "english": "to say / to tell",                   "audio": "/audio/unit-06/decir.mp3" },
+    { "spanish": "la receta",            "english": "the recipe",                         "audio": "/audio/unit-06/receta.mp3" }
+  ],
+
+  "stages": [
+
+    {
+      "type": "cutscene",
+      "videoUrl": "/videos/unit-06-intro.mp4",
+      "subtitleUrl": "/videos/unit-06-intro.vtt",
+      "chiefName": "Jefa Ramírez",
+      "chiefImageSeed": 60,
+      "briefingLines": [
+        "¡Bienvenido a Cartagena de Indias, agente! Esta ciudad colonial en la costa caribeña de Colombia es uno de los lugares más hermosos del mundo.",
+        "Tenemos una situación muy delicada. El Chef Valentina Cruz, famosa en toda Colombia, llora hoy en su restaurante La Candelaria en la Ciudad Amurallada.",
+        "Alguien roba su receta secreta del ajiaco bogotano — un plato que es parte del patrimonio cultural de Colombia. El ajiaco es historia, no solo comida.",
+        "Cuatro cocineros trabajan en la cocina esta mañana. Uno de ellos tiene que ser el ladrón.",
+        "Para encontrarlo necesitas dominar tener que + infinitivo, los verbos de cambio de raíz — querer, poder, preferir, volver — y los adjetivos demostrativos: este, ese, aquel.",
+        "¡Atención! Escucha bien qué dicen que quieren hacer, qué tienen que hacer, y qué ingredientes — 'este', 'ese', o 'aquel' — tocan. Las palabras del culpable no concuerdan con el registro de preparación.",
+        "El ajiaco es más que una receta — es historia colombiana. ¡Encuéntrala, agente!"
+      ]
+    },
+
+    {
+      "type": "vocabMatch",
+      "pairs": [
+        { "spanish": "el ajiaco",        "english": "Colombian potato and chicken soup" },
+        { "spanish": "las arepas",       "english": "corn cakes" },
+        { "spanish": "el sancocho",      "english": "hearty Colombian stew" },
+        { "spanish": "el aguacate",      "english": "avocado" },
+        { "spanish": "la zanahoria",     "english": "carrot" },
+        { "spanish": "el camarón",       "english": "shrimp" },
+        { "spanish": "el maíz",          "english": "corn" },
+        { "spanish": "querer",           "english": "to want" },
+        { "spanish": "poder",            "english": "can / to be able to" },
+        { "spanish": "este / esta",      "english": "this" },
+        { "spanish": "ese / esa",        "english": "that" },
+        { "spanish": "tener que",        "english": "to have to" }
+      ]
+    },
+
+    {
+      "type": "sentenceBuilder",
+      "sentences": [
+        {
+          "sentence": "Yo tengo que preparar la sopa",
+          "translation": "I have to prepare the soup. (tener que + infinitive)"
+        },
+        {
+          "sentence": "El cocinero quiere usar este cuchillo",
+          "translation": "The cook wants to use this knife. (querer e→ie + este)"
+        },
+        {
+          "sentence": "Ella prefiere ese pollo fresco",
+          "translation": "She prefers that fresh chicken. (preferir e→ie + ese)"
+        },
+        {
+          "sentence": "Puedes volver a la cocina ahora",
+          "translation": "You can return to the kitchen now. (poder o→ue + volver o→ue)"
+        },
+        {
+          "sentence": "Nosotros tenemos que encontrar la receta",
+          "translation": "We have to find the recipe. (tener que + infinitive)"
+        }
+      ]
+    },
+
+    {
+      "type": "interrogation",
+      "character": {
+        "name": "Andrés Morales",
+        "role": "el jefe de cocina (head cook)",
+        "imageUrl": "https://randomuser.me/api/portraits/men/40.jpg",
+        "description": "Es el jefe de cocina del restaurante. Tiene treinta y cinco años. Es serio y trabajador — conoce bien su trabajo y sus responsabilidades."
+      },
+      "maxQuestions": 5,
+      "requiredInfo": [
+        "📍 Prepara las arepas toda la mañana — lejos de la receta",
+        "💡 Diego entra a la oficina del chef varias veces con el celular"
+      ],
+      "questionBank": [
+        {
+          "id": "a1",
+          "spanish": "¿Cuál es su trabajo en el restaurante esta mañana?",
+          "english": "What is your job at the restaurant this morning?",
+          "response": "Tengo que preparar cincuenta arepas de maíz para el desayuno. Es mi responsabilidad principal. Las preparo con este maíz de aquí — siempre el mismo.",
+          "responseEnglish": "I have to prepare fifty corn arepas for breakfast. That is my main responsibility. I make them with this corn right here — always the same.",
+          "infoRevealed": "📍 Prepara las arepas toda la mañana — lejos de la receta",
+          "isUseful": true
+        },
+        {
+          "id": "a2",
+          "spanish": "¿Dónde está usted entre las ocho y las diez de la mañana?",
+          "english": "Where are you between eight and ten in the morning?",
+          "response": "Estoy en mi estación de las arepas toda la mañana. Ese trabajo lo hago yo solo — nadie me ayuda. No puedo dejar ese puesto.",
+          "responseEnglish": "I am at my arepa station all morning. That work I do alone — nobody helps me. I cannot leave that station.",
+          "isUseful": false
+        },
+        {
+          "id": "a3",
+          "spanish": "¿Quiere usted ver la receta del ajiaco del chef?",
+          "english": "Do you want to see the chef's ajiaco recipe?",
+          "response": "No la necesito. Conozco mis arepas de memoria. Ese ajiaco es el plato especial del chef — no es mi receta. Yo no pienso en eso.",
+          "responseEnglish": "I don't need it. I know my arepas by heart. That ajiaco is the chef's special dish — it is not my recipe. I don't think about it.",
+          "isUseful": false
+        },
+        {
+          "id": "a4",
+          "spanish": "¿Puede usted entrar a la oficina del Chef Valentina?",
+          "english": "Can you enter Chef Valentina's office?",
+          "response": "Sí, puedo, pero no quiero interrumpir. Ese espacio es privado. Solo entro si tengo que entregar algo urgente.",
+          "responseEnglish": "Yes I can, but I don't want to interrupt. That space is private. I only enter if I have to deliver something urgent.",
+          "isUseful": false
+        },
+        {
+          "id": "a5",
+          "spanish": "¿Quién entra a la oficina del chef esta mañana?",
+          "english": "Who enters the chef's office this morning?",
+          "response": "Diego entra allá varias veces. Lo veo dos o tres veces. Tiene el celular en la mano cada vez. Eso me parece muy raro — aquí no podemos usar el celular en la cocina.",
+          "responseEnglish": "Diego enters there several times. I see him two or three times. He has his cell phone in his hand each time. That seems very strange to me — here we cannot use cell phones in the kitchen.",
+          "infoRevealed": "💡 Diego entra a la oficina del chef varias veces con el celular",
+          "isUseful": true
+        },
+        {
+          "id": "a6",
+          "spanish": "¿Prefiere usted este ingrediente o ese de allá?",
+          "english": "Do you prefer this ingredient or that one over there?",
+          "response": "Prefiero trabajar con estos ingredientes de aquí — los frescos de esta mañana. Esos de allá son para otros platos. Cada ingrediente tiene su lugar.",
+          "responseEnglish": "I prefer to work with these ingredients here — the fresh ones from this morning. Those over there are for other dishes. Each ingredient has its place.",
+          "isUseful": false
+        },
+        {
+          "id": "a7",
+          "spanish": "¿Qué piensa usted sobre la receta del ajiaco?",
+          "english": "What do you think about the ajiaco recipe?",
+          "response": "El ajiaco del Chef Valentina es único en toda Colombia. Esa receta es un tesoro. Si alguien la roba, comete un crimen muy grave.",
+          "responseEnglish": "Chef Valentina's ajiaco is unique in all of Colombia. That recipe is a treasure. If someone steals it, they commit a very serious crime.",
+          "isUseful": false
+        },
+        {
+          "id": "a8",
+          "spanish": "¿Puede describir lo que ve esta mañana?",
+          "english": "Can you describe what you see this morning?",
+          "response": "Veo a Diego salir de la oficina con el celular en la mano — parece nervioso. Quiere volver rápido a su puesto cuando me ve. Ese comportamiento es extraño.",
+          "responseEnglish": "I see Diego leaving the office with his cell phone in his hand — he seems nervous. He wants to return quickly to his station when he sees me. That behavior is strange.",
+          "isUseful": false
+        },
+        {
+          "id": "a9",
+          "spanish": "¿Tiene usted acceso a la receta del ajiaco?",
+          "english": "Do you have access to the ajiaco recipe?",
+          "response": "No tengo acceso directo. Solo el Chef Valentina puede leer ese libro de recetas. Ese armario siempre está cerrado. Nadie más puede abrirlo.",
+          "responseEnglish": "I don't have direct access. Only Chef Valentina can read that recipe book. That cabinet is always closed. Nobody else can open it.",
+          "isUseful": false
+        }
+      ]
+    },
+
+    {
+      "type": "interrogation",
+      "character": {
+        "name": "Carmen Villegas",
+        "role": "la sous chef",
+        "imageUrl": "https://randomuser.me/api/portraits/women/42.jpg",
+        "description": "Es la sous chef del restaurante. Tiene veintiocho años. Es precisa y profesional — conoce todas las reglas de la cocina y las hace respetar."
+      },
+      "maxQuestions": 5,
+      "requiredInfo": [
+        "📍 Prepara el sancocho toda la mañana — tiene coartada sólida",
+        "💡 Diego vuelve con el celular — viola las reglas del restaurante"
+      ],
+      "questionBank": [
+        {
+          "id": "c1",
+          "spanish": "¿Cuál es su responsabilidad esta mañana?",
+          "english": "What is your responsibility this morning?",
+          "response": "Tengo que supervisar la cocina y preparar el sancocho para el almuerzo. Es un plato muy especial aquí — la gente viene desde Bogotá solo para comerlo.",
+          "responseEnglish": "I have to supervise the kitchen and prepare the sancocho for lunch. It is a very special dish here — people come from Bogotá just to eat it.",
+          "isUseful": false
+        },
+        {
+          "id": "c2",
+          "spanish": "¿Qué tiene que preparar usted exactamente hoy?",
+          "english": "What exactly do you have to prepare today?",
+          "response": "Tengo que hacer el sancocho con ese pollo de allá, esa papa y esa cebolla. Estos ingredientes son perfectos — los escojo yo misma esta mañana en el mercado.",
+          "responseEnglish": "I have to make the sancocho with that chicken over there, that potato and that onion. These ingredients are perfect — I choose them myself this morning at the market.",
+          "isUseful": false
+        },
+        {
+          "id": "c3",
+          "spanish": "¿Dónde está usted entre las ocho y las diez de la mañana?",
+          "english": "Where are you between eight and ten in the morning?",
+          "response": "Estoy en la cocina principal con ese sancocho toda la mañana. No puedo dejarlo solo — si lo dejo, se quema. Ese sancocho necesita atención constante.",
+          "responseEnglish": "I am in the main kitchen with that sancocho all morning. I cannot leave it alone — if I leave it, it burns. That sancocho needs constant attention.",
+          "infoRevealed": "📍 Prepara el sancocho toda la mañana — tiene coartada sólida",
+          "isUseful": true
+        },
+        {
+          "id": "c4",
+          "spanish": "¿Qué piensa usted sobre Diego?",
+          "english": "What do you think about Diego?",
+          "response": "Diego quiere aprender todo muy rápido. Prefiere los platos especiales — siempre pregunta sobre el ajiaco. A veces pienso que quiere demasiado para su poca experiencia.",
+          "responseEnglish": "Diego wants to learn everything very fast. He prefers the special dishes — he always asks about the ajiaco. Sometimes I think he wants too much for his little experience.",
+          "isUseful": false
+        },
+        {
+          "id": "c5",
+          "spanish": "¿Puede Diego copiar la receta del ajiaco?",
+          "english": "Can Diego copy the ajiaco recipe?",
+          "response": "Técnicamente no puede — ese libro está en la oficina privada. Pero ese muchacho es muy curioso. Siempre prefiere preguntar sobre ese plato específico.",
+          "responseEnglish": "Technically he cannot — that book is in the private office. But that young man is very curious. He always prefers to ask about that specific dish.",
+          "isUseful": false
+        },
+        {
+          "id": "c6",
+          "spanish": "¿Estos ingredientes son para el sancocho o para el ajiaco?",
+          "english": "Are these ingredients for the sancocho or for the ajiaco?",
+          "response": "Estos de aquí son para mi sancocho. Esos ingredientes del ajiaco están en el armario de la oficina. Son platos completamente diferentes — no puedo confundirlos.",
+          "responseEnglish": "These here are for my sancocho. Those ajiaco ingredients are in the office cabinet. They are completely different dishes — I cannot confuse them.",
+          "isUseful": false
+        },
+        {
+          "id": "c7",
+          "spanish": "¿Nota usted algo raro esta mañana?",
+          "english": "Do you notice anything strange this morning?",
+          "response": "Sí. Diego vuelve a la cocina con el celular en la mano. Aquí tenemos una regla clara: no queremos celulares en la cocina. Ese comportamiento viola las reglas del restaurante.",
+          "responseEnglish": "Yes. Diego returns to the kitchen with his cell phone in his hand. We have a clear rule here: we don't want cell phones in the kitchen. That behavior violates the restaurant's rules.",
+          "infoRevealed": "💡 Diego vuelve con el celular — viola las reglas del restaurante",
+          "isUseful": true
+        },
+        {
+          "id": "c8",
+          "spanish": "¿Tiene usted la receta del ajiaco?",
+          "english": "Do you have the ajiaco recipe?",
+          "response": "No, esa receta solo la tiene el Chef Valentina. Es un secreto familiar — su abuela la creó en Bogotá hace muchos años. No quiero esa receta — tengo las mías.",
+          "responseEnglish": "No, only Chef Valentina has that recipe. It is a family secret — her grandmother created it in Bogotá many years ago. I don't want that recipe — I have my own.",
+          "isUseful": false
+        },
+        {
+          "id": "c9",
+          "spanish": "¿Prefiere usted trabajar aquí o en otro restaurante?",
+          "english": "Do you prefer to work here or at another restaurant?",
+          "response": "Prefiero este restaurante. El ajiaco del Chef Valentina es único en toda Colombia. Por eso quiero proteger esa receta — es un patrimonio cultural.",
+          "responseEnglish": "I prefer this restaurant. Chef Valentina's ajiaco is unique in all of Colombia. That is why I want to protect that recipe — it is a cultural heritage.",
+          "isUseful": false
+        }
+      ]
+    },
+
+    {
+      "type": "interrogation",
+      "character": {
+        "name": "Lucía Paredes",
+        "role": "la repostera (pastry chef)",
+        "imageUrl": "https://randomuser.me/api/portraits/women/38.jpg",
+        "description": "Es la repostera del restaurante. Tiene treinta años. Es tranquila y observadora — nota todo lo que pasa en la cocina desde su sección de postres."
+      },
+      "maxQuestions": 5,
+      "requiredInfo": [
+        "📍 Trabaja solo en la sección de postres — no tiene acceso a la receta",
+        "💡 Ve a Diego fotografiar algo con el celular cerca de la oficina del chef"
+      ],
+      "questionBank": [
+        {
+          "id": "l1",
+          "spanish": "¿Qué hace usted en el restaurante?",
+          "english": "What do you do at the restaurant?",
+          "response": "Soy la repostera. Tengo que preparar todos los postres y el pan artesanal. Esa es mi especialidad — los dulces y los panes de este restaurante.",
+          "responseEnglish": "I am the pastry chef. I have to prepare all the desserts and artisanal bread. That is my specialty — the sweets and breads of this restaurant.",
+          "isUseful": false
+        },
+        {
+          "id": "l2",
+          "spanish": "¿Dónde está usted esta mañana?",
+          "english": "Where are you this morning?",
+          "response": "Estoy en mi sección de postres toda la mañana. Aquellos ingredientes de allá no son míos — esos son para los platos principales. Mi sección está aquí, al otro lado de la cocina.",
+          "responseEnglish": "I am in my pastry section all morning. Those ingredients way over there are not mine — those are for the main dishes. My section is here, on the other side of the kitchen.",
+          "infoRevealed": "📍 Trabaja solo en la sección de postres — no tiene acceso a la receta",
+          "isUseful": true
+        },
+        {
+          "id": "l3",
+          "spanish": "¿Puede usted entrar a la oficina del Chef Valentina?",
+          "english": "Can you enter Chef Valentina's office?",
+          "response": "Puedo entrar si tengo que entregar algo, pero esta mañana no tengo razón para ir allá. Esa oficina está al otro lado del restaurante — lejos de mi sección de postres.",
+          "responseEnglish": "I can enter if I have to deliver something, but this morning I have no reason to go there. That office is on the other side of the restaurant — far from my pastry section.",
+          "isUseful": false
+        },
+        {
+          "id": "l4",
+          "spanish": "¿Ve usted algo raro esta mañana?",
+          "english": "Do you see anything strange this morning?",
+          "response": "Sí, veo a Diego sacar el celular cerca de la oficina del chef. Lo veo apuntar el celular hacia la puerta de la oficina — como si quisiera fotografiar algo dentro. Ese comportamiento es muy sospechoso.",
+          "responseEnglish": "Yes, I see Diego take out his cell phone near the chef's office. I see him point the phone toward the office door — as if he wanted to photograph something inside. That behavior is very suspicious.",
+          "infoRevealed": "💡 Ve a Diego fotografiar algo con el celular cerca de la oficina del chef",
+          "isUseful": true
+        },
+        {
+          "id": "l5",
+          "spanish": "¿Quiere usted saber la receta del ajiaco?",
+          "english": "Do you want to know the ajiaco recipe?",
+          "response": "No, mi trabajo son los postres. Ese plato no es mi especialidad. No quiero saber esa receta — no la necesito para hacer mis postres.",
+          "responseEnglish": "No, my work is pastries. That dish is not my specialty. I don't want to know that recipe — I don't need it to make my desserts.",
+          "isUseful": false
+        },
+        {
+          "id": "l6",
+          "spanish": "¿Qué dice Diego sobre su trabajo en la cocina?",
+          "english": "What does Diego say about his work in the kitchen?",
+          "response": "Dice que tiene que 'investigar' los ingredientes de todos los platos. Eso me parece una excusa extraña para un cocinero de preparación. Ese no es su trabajo.",
+          "responseEnglish": "He says he has to 'research' the ingredients of all the dishes. That seems like a strange excuse for a prep cook. That is not his job.",
+          "isUseful": false
+        },
+        {
+          "id": "l7",
+          "spanish": "¿Prefiere usted esta sección o aquella otra parte de la cocina?",
+          "english": "Do you prefer this section or that other part of the kitchen?",
+          "response": "Prefiero esta sección de postres. Aquí puedo trabajar tranquila con estos ingredientes dulces. Aquel lado de la cocina es muy ruidoso y agitado.",
+          "responseEnglish": "I prefer this pastry section. Here I can work calmly with these sweet ingredients. That side of the kitchen is very noisy and hectic.",
+          "isUseful": false
+        },
+        {
+          "id": "l8",
+          "spanish": "¿Puede usted describir ese momento con Diego?",
+          "english": "Can you describe that moment with Diego?",
+          "response": "Lo veo sacar el celular, apuntarlo hacia la oficina... y luego volver rápido a su puesto cuando alguien pasa. Quiere que nadie lo vea. Eso me parece muy raro.",
+          "responseEnglish": "I see him take out his cell phone, point it toward the office... and then quickly return to his station when someone passes. He wants nobody to see him. That seems very strange to me.",
+          "isUseful": false
+        },
+        {
+          "id": "l9",
+          "spanish": "¿Tiene usted acceso a ese libro de recetas del chef?",
+          "english": "Do you have access to the chef's recipe book?",
+          "response": "No tengo acceso. Solo el Chef Valentina puede abrir aquel armario donde guarda sus recetas secretas. No quiero abrirlo — esas recetas son de ella.",
+          "responseEnglish": "I don't have access. Only Chef Valentina can open that cabinet where she keeps her secret recipes. I don't want to open it — those recipes belong to her.",
+          "isUseful": false
+        }
+      ]
+    },
+
+    {
+      "type": "interrogation",
+      "clueReward": "Diego dice que 'tiene que limpiar estas verduras', pero esas verduras no son de su sección. Quiere salir pronto. Las fotos en ese celular muestran la receta robada del ajiaco bogotano.",
+      "character": {
+        "name": "Diego Reyes",
+        "role": "el cocinero de preparación (prep cook)",
+        "imageUrl": "https://randomuser.me/api/portraits/men/27.jpg",
+        "description": "Es el cocinero de preparación. Tiene veintidós años. Normalmente es alegre, pero hoy está muy nervioso y sus respuestas son contradictorias."
+      },
+      "maxQuestions": 5,
+      "requiredInfo": [
+        "⚠️ Dice que tiene que limpiar 'estas verduras' — pero esas verduras no son de su sección",
+        "😰 Quiere salir pronto — dice que 'tiene que ir a un lugar' después del trabajo",
+        "💡 Su celular tiene fotos — dice que son 'personales' pero no quiere mostrarlas"
+      ],
+      "questionBank": [
+        {
+          "id": "d1",
+          "spanish": "¿Cuál es su trabajo esta mañana?",
+          "english": "What is your job this morning?",
+          "response": "Tengo que limpiar estas verduras aquí y preparar los ingredientes. Es mi trabajo normal. Estas verduras de aquí... sí, estas son las mías. Las limpio yo.",
+          "responseEnglish": "I have to clean these vegetables here and prepare the ingredients. That is my normal job. These vegetables here... yes, these are mine. I clean them.",
+          "infoRevealed": "⚠️ Dice que tiene que limpiar 'estas verduras' — pero esas verduras no son de su sección",
+          "isUseful": true
+        },
+        {
+          "id": "d2",
+          "spanish": "¿Dónde está usted entre las ocho y las diez de la mañana?",
+          "english": "Where are you between eight and ten in the morning?",
+          "response": "Estoy en mi puesto limpiando estas verduras. Todo este tiempo estoy aquí... con estos ingredientes. No salgo de esta sección. No.",
+          "responseEnglish": "I am at my station cleaning these vegetables. All this time I am here... with these ingredients. I don't leave this section. No.",
+          "isUseful": false
+        },
+        {
+          "id": "d3",
+          "spanish": "¿Puede usted entrar a la oficina del Chef Valentina?",
+          "english": "Can you enter Chef Valentina's office?",
+          "response": "No... no puedo. No quiero entrar ahí. Esa oficina es privada. Yo no entro a ese espacio. Nunca.",
+          "responseEnglish": "No... I cannot. I don't want to enter there. That office is private. I don't enter that space. Never.",
+          "isUseful": false
+        },
+        {
+          "id": "d4",
+          "spanish": "¿Quiere usted aprender la receta del ajiaco?",
+          "english": "Do you want to learn the ajiaco recipe?",
+          "response": "No, no quiero... es decir, claro que quiero aprender, pero no así. No tengo que saber esa receta específica. Yo solo tengo que limpiar mis verduras de aquí.",
+          "responseEnglish": "No, I don't want to... that is to say, of course I want to learn, but not like this. I don't have to know that specific recipe. I just have to clean my vegetables here.",
+          "isUseful": false
+        },
+        {
+          "id": "d5",
+          "spanish": "¿Qué hay en su celular?",
+          "english": "What is on your cell phone?",
+          "response": "Solo... fotos personales. No tengo nada especial. Ese celular es mío y esas fotos son privadas. No quiero mostrarlas. Son fotos de mi familia.",
+          "responseEnglish": "Just... personal photos. I have nothing special. That cell phone is mine and those photos are private. I don't want to show them. They are photos of my family.",
+          "infoRevealed": "💡 Su celular tiene fotos — dice que son 'personales' pero no quiere mostrarlas",
+          "isUseful": true
+        },
+        {
+          "id": "d6",
+          "spanish": "¿Prefiere usted estas verduras de aquí o esas del ajiaco?",
+          "english": "Do you prefer these vegetables here or those from the ajiaco?",
+          "response": "Pre-prefiero estas de aquí. Esas de allá son para el ajiaco — yo no trabajo con ese plato. No... no las toco. Esas no son mías.",
+          "responseEnglish": "I-I prefer these here. Those over there are for the ajiaco — I don't work with that dish. No... I don't touch them. Those are not mine.",
+          "isUseful": false
+        },
+        {
+          "id": "d7",
+          "spanish": "¿Tiene que ir a algún lugar después del trabajo hoy?",
+          "english": "Do you have to go somewhere after work today?",
+          "response": "Sí... tengo que ir a un lugar importante. No puedo quedarme mucho tiempo aquí esta tarde. Tengo que salir pronto cuando termino.",
+          "responseEnglish": "Yes... I have to go to an important place. I cannot stay here long this afternoon. I have to leave quickly when I finish.",
+          "infoRevealed": "😰 Quiere salir pronto — dice que 'tiene que ir a un lugar' después del trabajo",
+          "isUseful": true
+        },
+        {
+          "id": "d8",
+          "spanish": "¿Qué dice usted sobre la receta robada?",
+          "english": "What do you say about the stolen recipe?",
+          "response": "No sé nada de eso. Esa receta no la veo yo. No tengo que saber nada de ese libro. Yo solo quiero hacer mi trabajo y volver a casa.",
+          "responseEnglish": "I don't know anything about that. I don't see that recipe. I don't have to know anything about that book. I just want to do my job and return home.",
+          "isUseful": false
+        },
+        {
+          "id": "d9",
+          "spanish": "¿Puede usted mostrar su celular al agente?",
+          "english": "Can you show your cell phone to the agent?",
+          "response": "No... tengo que proteger mi privacidad. Esas fotos son personales. No quiero mostrar ese celular. No puedo. Es mi derecho.",
+          "responseEnglish": "No... I have to protect my privacy. Those photos are personal. I don't want to show that cell phone. I cannot. It is my right.",
+          "isUseful": false
+        }
+      ]
+    },
+
+    {
+      "type": "readingComp",
+      "clueReward": "El registro confirma: Diego solo tiene que limpiar 'esas verduras de la sección B'. Ese maíz de la sección B es DIFERENTE al maíz del ajiaco. Diego no tiene razón para estar cerca del armario donde está la receta.",
+      "passage": "REGISTRO DE PREPARACIÓN — RESTAURANTE LA CANDELARIA\nCartagena de Indias, Colombia — 14 de junio\n\nASIGNACIONES DE LA MAÑANA:\n\nANDRÉS MORALES (Jefe de cocina):\n• Tiene que preparar 50 arepas de maíz para el desayuno.\n• Estos son sus ingredientes: ese maíz de aquí, esa mantequilla de allá.\n• No tiene acceso a aquel armario de la oficina donde está la receta.\n\nCARMEN VILLEGAS (Sous chef):\n• Tiene que supervisar ese sancocho en la cocina principal.\n• Estos son sus ingredientes: esa papa, ese pollo, esa cebolla.\n• No tiene que entrar a la oficina del chef esta mañana.\n\nLUCÍA PAREDES (Repostera):\n• Tiene que preparar aquellos postres en su sección especial.\n• Estos son sus ingredientes: esa harina, ese azúcar, aquella mantequilla.\n• Esa sección de postres está lejos de la oficina del chef.\n\nDIEGO REYES (Cocinero de preparación):\n• Tiene que limpiar esas verduras de la sección B.\n• Estos son sus ingredientes: esas zanahorias y ese maíz de la SECCIÓN B.\n• ¡IMPORTANTE! Ese maíz de la sección B es diferente a este maíz del ajiaco. Son ingredientes distintos en secciones distintas.\n\nNOTA DEL CHEF VALENTINA:\n\"Las verduras del ajiaco están en este armario de mi oficina. Ese libro de recetas está en aquel escritorio. Nadie tiene que entrar a esa oficina excepto yo — ¡es mi espacio privado!\"",
+      "glossary": [
+        { "word": "asignaciones",  "translation": "assignments" },
+        { "word": "harina",        "translation": "flour" },
+        { "word": "azúcar",        "translation": "sugar" },
+        { "word": "mantequilla",   "translation": "butter" },
+        { "word": "sección",       "translation": "section / station" },
+        { "word": "armario",       "translation": "cabinet / closet" },
+        { "word": "escritorio",    "translation": "desk" },
+        { "word": "distintos",     "translation": "different / distinct" },
+        { "word": "privado",       "translation": "private" }
+      ],
+      "questions": [
+        {
+          "id": "r1",
+          "text": "¿Cuáles son los ingredientes de Diego esta mañana según el registro?",
+          "type": "multiple_choice",
+          "options": [
+            "Esas zanahorias y ese maíz de la sección B",
+            "Este maíz del ajiaco y esa papa",
+            "Ese pollo y esa cebolla",
+            "Esa harina, ese azúcar y aquella mantequilla"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "id": "r2",
+          "text": "¿Dónde está el libro de recetas del Chef Valentina?",
+          "type": "multiple_choice",
+          "options": [
+            "En aquel escritorio de la oficina del chef",
+            "En la cocina principal con Carmen",
+            "En la sección de postres de Lucía",
+            "En la estación de las arepas de Andrés"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "id": "r3",
+          "text": "¿Qué tiene que preparar Carmen Villegas esta mañana?",
+          "type": "multiple_choice",
+          "options": [
+            "El sancocho en la cocina principal",
+            "Las arepas de maíz para el desayuno",
+            "Los postres en su sección especial",
+            "El ajiaco del Chef Valentina"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "id": "r4",
+          "text": "¿Por qué es importante la diferencia entre 'ese maíz de la sección B' y 'este maíz del ajiaco'? (Escribe en español.)",
+          "type": "short_answer",
+          "acceptableAnswers": [
+            "son ingredientes distintos",
+            "son diferentes",
+            "son ingredientes distintos en secciones distintas",
+            "ese maíz es de la sección B y este es del ajiaco",
+            "son ingredientes diferentes",
+            "Diego no necesita el maíz del ajiaco"
+          ]
+        }
+      ]
+    },
+
+    {
+      "type": "lineup",
+      "correctSuspectId": "diego",
+      "hint": "Recuerda las pistas: (1) Diego dice que 'tiene que limpiar estas verduras' pero esas verduras no son de su sección, (2) quiere salir pronto — 'tiene que ir a un lugar importante', (3) su celular tiene fotos que no quiere mostrar, (4) Andrés y Lucía lo ven cerca de la oficina. ¿Quién tiene una coartada inconsistente?",
+      "suspects": [
+        {
+          "id": "diego",
+          "name": "El Cocinero Secreto",
+          "realName": "Diego Reyes Castillo",
+          "age": 22,
+          "description": "Tiene veintidós años. Esta mañana dice que tiene que limpiar 'estas verduras' — pero esas verduras no son de su sección. Su celular tiene fotos que no quiere mostrar. Quiere salir pronto: dice que 'tiene que ir a un lugar importante' después del trabajo.",
+          "imageSeed": 27,
+          "imageUrl": "https://randomuser.me/api/portraits/men/27.jpg"
+        },
+        {
+          "id": "andres",
+          "name": "El Jefe de Cocina",
+          "realName": "Andrés Morales Suárez",
+          "age": 35,
+          "description": "Tiene treinta y cinco años. Esta mañana tiene que preparar cincuenta arepas — trabaja con ese maíz y esa mantequilla de su estación. Está lejos de la oficina del chef. Lo ven en su puesto toda la mañana. Él mismo reporta que Diego entra a la oficina.",
+          "imageSeed": 40,
+          "imageUrl": "https://randomuser.me/api/portraits/men/40.jpg"
+        },
+        {
+          "id": "carmen",
+          "name": "La Sous Chef",
+          "realName": "Carmen Villegas Ospina",
+          "age": 28,
+          "description": "Tiene veintiocho años. Esta mañana tiene que supervisar ese sancocho en la cocina principal. No puede dejar ese sancocho — si lo deja, se quema. Trabaja con esa papa, ese pollo y esa cebolla. Tiene coartada perfecta y conoce bien las reglas.",
+          "imageSeed": 42,
+          "imageUrl": "https://randomuser.me/api/portraits/women/42.jpg"
+        },
+        {
+          "id": "lucia",
+          "name": "La Repostera",
+          "realName": "Lucía Paredes Mendoza",
+          "age": 30,
+          "description": "Tiene treinta años. Esta mañana tiene que preparar aquellos postres en su sección, al otro lado del restaurante. Trabaja con esa harina, ese azúcar y aquella mantequilla. No tiene acceso a la oficina del chef. Es ella quien ve a Diego fotografiar algo con el celular.",
+          "imageSeed": 38,
+          "imageUrl": "https://randomuser.me/api/portraits/women/38.jpg"
+        }
+      ]
+    }
+
+  ]
+}
