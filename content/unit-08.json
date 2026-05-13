@@ -1,0 +1,329 @@
+{
+  "unitNumber": 8,
+  "country": "Perú",
+  "city": "Cusco",
+  "caseTitle": "El Mercado Robado",
+  "caseDescription": "⚠️ PRIMERA VEZ CON EL PRETÉRITO — Este caso ocurrió ayer. Los testigos describen lo que pasó, no lo que está pasando. Usa el pretérito de los verbos -AR, el pretérito de dar y estar, los pronombres de objeto indirecto (me, te, le, les) y las comparaciones para reconstruir quién llegó cuándo, qué le dio a quién, y quién tomó las figurillas de oro del Mercado de San Pedro en Cusco.",
+  "criminalName": "El Coleccionista",
+
+  "vocab": [
+    { "spanish": "barrer",           "english": "to sweep",                              "audio": "/audio/unit-08/barrer.mp3" },
+    { "spanish": "limpiar",          "english": "to clean",                              "audio": "/audio/unit-08/limpiar.mp3" },
+    { "spanish": "cocinar",          "english": "to cook",                               "audio": "/audio/unit-08/cocinar.mp3" },
+    { "spanish": "lavar",            "english": "to wash",                               "audio": "/audio/unit-08/lavar.mp3" },
+    { "spanish": "planchar",         "english": "to iron",                               "audio": "/audio/unit-08/planchar.mp3" },
+    { "spanish": "comprar",          "english": "to buy / to shop",                      "audio": "/audio/unit-08/comprar.mp3" },
+    { "spanish": "llevar",           "english": "to carry / to take",                    "audio": "/audio/unit-08/llevar.mp3" },
+    { "spanish": "dejar",            "english": "to leave behind / to let",              "audio": "/audio/unit-08/dejar.mp3" },
+    { "spanish": "olvidar",          "english": "to forget",                             "audio": "/audio/unit-08/olvidar.mp3" },
+    { "spanish": "guardar",          "english": "to put away / to keep",                 "audio": "/audio/unit-08/guardar.mp3" },
+    { "spanish": "buscar",           "english": "to look for / to search",               "audio": "/audio/unit-08/buscar.mp3" },
+    { "spanish": "arreglar",         "english": "to arrange / to tidy up",               "audio": "/audio/unit-08/arreglar.mp3" },
+    { "spanish": "el mercado",       "english": "market",                                "audio": "/audio/unit-08/mercado.mp3" },
+    { "spanish": "el puesto",        "english": "market stall / booth",                  "audio": "/audio/unit-08/puesto.mp3" },
+    { "spanish": "la quinoa",        "english": "quinoa",                                "audio": "/audio/unit-08/quinoa.mp3" },
+    { "spanish": "el arroz",         "english": "rice",                                  "audio": "/audio/unit-08/arroz.mp3" },
+    { "spanish": "los mariscos",     "english": "seafood",                               "audio": "/audio/unit-08/mariscos.mp3" },
+    { "spanish": "el ajo",           "english": "garlic",                                "audio": "/audio/unit-08/ajo.mp3" },
+    { "spanish": "el limón",         "english": "lemon / lime",                          "audio": "/audio/unit-08/limon.mp3" },
+    { "spanish": "el azúcar",        "english": "sugar",                                 "audio": "/audio/unit-08/azucar.mp3" },
+    { "spanish": "el aceite",        "english": "cooking oil",                           "audio": "/audio/unit-08/aceite.mp3" },
+    { "spanish": "las especias",     "english": "spices",                                "audio": "/audio/unit-08/especias.mp3" },
+    { "spanish": "los frijoles",     "english": "beans",                                 "audio": "/audio/unit-08/frijoles.mp3" },
+    { "spanish": "el maíz",          "english": "corn / maize",                          "audio": "/audio/unit-08/maiz.mp3" },
+    { "spanish": "más...que",        "english": "more...than",                           "audio": "/audio/unit-08/mas-que.mp3" },
+    { "spanish": "menos...que",      "english": "less/fewer...than",                     "audio": "/audio/unit-08/menos-que.mp3" },
+    { "spanish": "tan...como",       "english": "as...as",                               "audio": "/audio/unit-08/tan-como.mp3" },
+    { "spanish": "mejor",            "english": "better (irregular comparison)",          "audio": "/audio/unit-08/mejor.mp3" },
+    { "spanish": "peor",             "english": "worse (irregular comparison)",           "audio": "/audio/unit-08/peor.mp3" },
+    { "spanish": "el/la mayor",      "english": "the oldest / the greatest",             "audio": "/audio/unit-08/mayor.mp3" },
+    { "spanish": "me",               "english": "(to) me — indirect object pronoun",     "audio": "/audio/unit-08/me.mp3" },
+    { "spanish": "te",               "english": "(to) you — indirect object pronoun",    "audio": "/audio/unit-08/te.mp3" },
+    { "spanish": "le",               "english": "(to) him/her/you formal — indirect object pronoun", "audio": "/audio/unit-08/le.mp3" },
+    { "spanish": "les",              "english": "(to) them/you all — indirect object pronoun",       "audio": "/audio/unit-08/les.mp3" },
+    { "spanish": "acabar de + infinitivo", "english": "to have just (done something) — e.g., acabo de llegar = I just arrived", "audio": "/audio/unit-08/acabar-de.mp3" },
+    { "spanish": "oír",              "english": "to hear",                               "audio": "/audio/unit-08/oir.mp3" },
+    { "spanish": "traer",            "english": "to bring",                              "audio": "/audio/unit-08/traer.mp3" },
+    { "spanish": "-é  (hablé)",      "english": "★ Mini-Glosario Pretérito: yo spoke / arrived / cleaned", "audio": "/audio/unit-08/preterite-e.mp3" },
+    { "spanish": "-aste  (hablaste)","english": "★ Mini-Glosario Pretérito: tú spoke / arrived / cleaned", "audio": "/audio/unit-08/preterite-aste.mp3" },
+    { "spanish": "-ó  (habló)",      "english": "★ Mini-Glosario Pretérito: él/ella spoke / arrived / cleaned", "audio": "/audio/unit-08/preterite-o.mp3" },
+    { "spanish": "-amos  (hablamos)","english": "★ Mini-Glosario Pretérito: nosotros spoke / arrived / cleaned", "audio": "/audio/unit-08/preterite-amos.mp3" },
+    { "spanish": "-aron  (hablaron)","english": "★ Mini-Glosario Pretérito: ellos/ellas spoke / arrived / cleaned", "audio": "/audio/unit-08/preterite-aron.mp3" }
+  ],
+
+  "stages": [
+
+    {
+      "type": "cutscene",
+      "videoUrl": "/videos/unit-08-intro.mp4",
+      "subtitleUrl": "/videos/unit-08-intro.vtt",
+      "chiefName": "Jefa Ramírez",
+      "chiefImageSeed": 60,
+      "briefingLines": [
+        "Bienvenido a Cusco, agente — la ciudad imperial de los Incas, a más de tres mil metros sobre el nivel del mar en los Andes del Perú.",
+        "Ayer, alguien robó figurillas de oro precolombinas del puesto de Don Aurelio en el Mercado de San Pedro. El ladrón ya salió.",
+        "¡Atención! Esta es tu primera misión con el pretérito. Ya no usamos el presente — necesitamos reconstruir lo que PASÓ ayer.",
+        "El pretérito de los verbos -AR es así: yo llegué, tú llegaste, él/ella llegó, nosotros llegamos, ellos llegaron. ¡Memorizalo!",
+        "También necesitas los pronombres de objeto indirecto: 'Le ofreció dinero' — le = a Don Aurelio. '¿Quién te dijo eso?' — te = a ti.",
+        "Los testigos recuerdan quién llegó cuándo, qué le dijo a quién, y quién tomó las figurillas. Hay comparaciones también — 'más alto que', 'tan grande como'.",
+        "El Mercado de San Pedro existe desde la época colonial. Sus figurillas son parte del patrimonio inca de Cusco. ¡Encuéntralas, agente!"
+      ]
+    },
+
+    {
+      "type": "vocabMatch",
+      "pairs": [
+        { "spanish": "el mercado",       "english": "market" },
+        { "spanish": "el puesto",        "english": "market stall" },
+        { "spanish": "la quinoa",        "english": "quinoa" },
+        { "spanish": "los mariscos",     "english": "seafood" },
+        { "spanish": "barrer",           "english": "to sweep" },
+        { "spanish": "buscar",           "english": "to look for" },
+        { "spanish": "llevar",           "english": "to carry / to take" },
+        { "spanish": "más...que",        "english": "more...than" },
+        { "spanish": "mejor",            "english": "better" },
+        { "spanish": "me",               "english": "to me (indirect object)" },
+        { "spanish": "acabar de",        "english": "to have just (done something)" },
+        { "spanish": "oír",              "english": "to hear" }
+      ]
+    },
+
+    {
+      "type": "readingComp",
+      "clueReward": "Las figurillas desaparecieron entre las ocho y las diez de la mañana. Un hombre alto llegó ANTES de que abriera el mercado al público. Le ofreció dinero a Don Aurelio, pero Don Aurelio no le vendió nada.",
+      "passage": "TESTIMONIO DE DOÑA ROSA HUANCA MAMANI\nVendedora del Mercado de San Pedro, Cusco — Perú\n\nYo llegué al mercado a las seis de la mañana, como todos los días. Primero limpié mi puesto y después arreglé mis productos — la quinoa, los frijoles y el maíz del Valle Sagrado.\n\nA las siete, Don Aurelio llegó con sus figurillas de oro inca. Las arregló en su puesto con mucho cuidado — las limpió con un trapo especial y las colocó en la vitrina.\n\nA las ocho, un hombre alto llegó al mercado. Lo miré con atención porque llegó ANTES de que abriera el mercado al público. El hombre no compró nada al principio — solo caminó por el mercado y miró las figurillas de Don Aurelio con mucho interés.\n\nA las nueve, el hombre habló con Don Aurelio. Le ofreció dinero — mucho dinero, más de lo normal. Pero Don Aurelio no le vendió las figurillas. Después, Don Aurelio me llamó: 'Doña Rosa, ese hombre quiere comprar mis figurillas, pero no las vendo. Son de mi familia.' Yo le respondí: 'Hiciste bien, Don Aurelio.'\n\nA las diez, Don Aurelio me llamó otra vez — esta vez con la voz asustada: '¡Doña Rosa! ¡Mis figurillas desaparecieron!' Busqué por todo el mercado, pero no las encontré. El hombre alto ya no estaba.\n\nNota cultural: En Perú, el ceviche y el lomo saltado son platos nacionales. El Mercado de San Pedro vende ingredientes para estos platos famosos — limón, mariscos frescos y especias del Ande.",
+      "glossary": [
+        { "word": "limpié",        "translation": "I cleaned (pretérito: limpiar → limpié)" },
+        { "word": "arreglé",       "translation": "I arranged (pretérito: arreglar → arreglé)" },
+        { "word": "llegó",         "translation": "he/she arrived (pretérito: llegar → llegó)" },
+        { "word": "caminó",        "translation": "he/she walked (pretérito: caminar → caminó)" },
+        { "word": "habló",         "translation": "he/she spoke (pretérito: hablar → habló)" },
+        { "word": "le ofreció",    "translation": "he/she offered him — le = to him (indirect object pronoun)" },
+        { "word": "me llamó",      "translation": "he called me — me = to me (indirect object pronoun)" },
+        { "word": "le respondí",   "translation": "I responded to him — le = to him" },
+        { "word": "busqué",        "translation": "I searched (pretérito: buscar → busqué)" },
+        { "word": "encontré",      "translation": "I found (pretérito: encontrar → encontré)" },
+        { "word": "desaparecieron","translation": "they disappeared (pretérito: desaparecer)" },
+        { "word": "Valle Sagrado", "translation": "Sacred Valley — the Inca heartland near Cusco" },
+        { "word": "vitrina",       "translation": "display case / glass case" }
+      ],
+      "questions": [
+        {
+          "id": "r1",
+          "text": "¿A qué hora llegó el hombre sospechoso al mercado?",
+          "type": "multiple_choice",
+          "options": [
+            "A las ocho — antes de que abriera el mercado al público",
+            "A las seis de la mañana, con Doña Rosa",
+            "A las nueve, cuando llegaron los compradores normales",
+            "A las diez, cuando desaparecieron las figurillas"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "id": "r2",
+          "text": "¿Qué le ofreció el hombre a Don Aurelio?",
+          "type": "multiple_choice",
+          "options": [
+            "Mucho dinero — más de lo normal",
+            "Sus propias figurillas a cambio",
+            "Frutas y especias del mercado",
+            "Una fotografía de las figurillas"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "id": "r3",
+          "text": "¿Le vendió Don Aurelio las figurillas al hombre?",
+          "type": "multiple_choice",
+          "options": [
+            "No — Don Aurelio no le vendió nada, son de su familia",
+            "Sí, le vendió las figurillas por mucho dinero",
+            "Sí, pero a precio normal de mercado",
+            "No, porque el hombre no trajo suficiente dinero"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "id": "r4",
+          "text": "¿Qué hizo Doña Rosa cuando desaparecieron las figurillas?",
+          "type": "multiple_choice",
+          "options": [
+            "Buscó por todo el mercado, pero no las encontró",
+            "Llamó a la policía inmediatamente",
+            "Esperó a Don Aurelio en su puesto",
+            "Compró otras figurillas en el mercado"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "id": "r5",
+          "text": "¿Por qué fue sospechosa la llegada del hombre? (Escribe en español.)",
+          "type": "short_answer",
+          "acceptableAnswers": [
+            "llegó antes de que abriera el mercado",
+            "llegó antes de que abriera",
+            "llegó temprano",
+            "llegó a las ocho antes de la apertura",
+            "llegó antes de los compradores normales",
+            "llegó antes de que el mercado abriera al público"
+          ]
+        }
+      ]
+    },
+
+    {
+      "type": "dialogueChoice",
+      "clueReward": "El sospechoso es más alto que Don Aurelio. Le dijo que acababa de llegar de Lima. Cuando Don Aurelio le dijo que no, él no salió del mercado de inmediato — esperó. La bolsa que llevaba era tan grande como un costal de quinoa.",
+      "npcName": "Don Aurelio",
+      "npcAvatar": "👴",
+      "startNodeId": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "npcLine": "Agente, ¡gracias por venir! Acabo de hablar con la policía también. Mis figurillas — las heredé de mi abuelo inca — desaparecieron ayer. Son irreemplazables. ¿Me puede ayudar a encontrar al ladrón?",
+          "options": [
+            {
+              "text": "Sí, Don Aurelio. Cuénteme lo que pasó ayer. ¿Quién llegó a su puesto? ¿Qué le dijo?",
+              "isCorrect": true,
+              "nextNodeId": "description"
+            },
+            {
+              "text": "¿Cuánto valen las figurillas exactamente?",
+              "isCorrect": false,
+              "feedback": "That's not the priority right now! The value of the artifacts matters less than who took them. Ask him to describe what happened and who came to his stall."
+            },
+            {
+              "text": "¿Trajo usted las figurillas al mercado esta mañana también?",
+              "isCorrect": false,
+              "feedback": "The theft was yesterday and the figurines are already gone! Ask him about what happened yesterday — use the past (pretérito)."
+            }
+          ]
+        },
+        {
+          "id": "description",
+          "npcLine": "¡Llegó un hombre muy alto — más alto que yo, y yo soy bastante alto! Me habló en español y algo de quechua. Me dijo que acababa de llegar de Lima para comprar artesanías. Me ofreció mucho dinero — más de lo que valen mis figurillas. Pero yo le dije que no. Son familia, no mercancía.",
+          "options": [
+            {
+              "text": "¿Puede describir más al hombre? ¿Era mayor o menor que usted?",
+              "isCorrect": true,
+              "nextNodeId": "more_description"
+            },
+            {
+              "text": "¿Por qué no le vendió las figurillas? Podría tener el dinero.",
+              "isCorrect": false,
+              "feedback": "Don't question his decision — he's the victim! He already explained the figurines are family heirlooms. Ask for a better physical description of the suspect."
+            },
+            {
+              "text": "¿Trajo la policía alguna evidencia ya?",
+              "isCorrect": false,
+              "feedback": "Focus on what Don Aurelio personally witnessed! Ask him to describe the suspect in more detail."
+            }
+          ]
+        },
+        {
+          "id": "more_description",
+          "npcLine": "Era mayor que yo — lo menos de cincuenta años, creo. Y la bolsa que llevaba era tan grande como un costal de quinoa — no era una bolsa de compras normal. Cuando yo le dije que no, él no salió del mercado inmediatamente. Se quedó cerca. Y cuando yo fui a buscar a Doña Rosa para contarle... mis figurillas desaparecieron.",
+          "options": [
+            {
+              "text": "Muchas gracias, Don Aurelio. Esta información es muy valiosa. ¡Vamos a encontrar al ladrón!",
+              "isCorrect": true,
+              "nextNodeId": "end"
+            },
+            {
+              "text": "¿Por qué fue a buscar a Doña Rosa en ese momento?",
+              "isCorrect": false,
+              "feedback": "That detail is less important than the suspect description. You now have what you need — thank Don Aurelio and move on."
+            },
+            {
+              "text": "¿Acaba de ver al hombre otra vez hoy?",
+              "isCorrect": false,
+              "feedback": "The suspect already left yesterday! Use 'acabar de' for things that just happened — but right now, thank Don Aurelio and use the clues you have."
+            }
+          ]
+        },
+        {
+          "id": "end",
+          "npcLine": "",
+          "isEnd": true,
+          "endMessage": "¡Que los encuentren, agente! Esas figurillas son irreemplazables — las heredé de mi abuelo y él las heredó de su abuelo. Don Aurelio covers his empty display case with a cloth as tears fill his eyes, then straightens up with dignity and nods you on your way."
+        }
+      ]
+    },
+
+    {
+      "type": "sentenceBuilder",
+      "sentences": [
+        {
+          "sentence": "El ladrón llegó temprano al mercado",
+          "translation": "The thief arrived early at the market. (pretérito: llegar → llegó)"
+        },
+        {
+          "sentence": "Doña Rosa miró al hombre con atención",
+          "translation": "Doña Rosa watched the man closely. (pretérito: mirar → miró)"
+        },
+        {
+          "sentence": "El hombre le ofreció dinero a Don Aurelio",
+          "translation": "The man offered Don Aurelio money. (pretérito + le = indirect object pronoun)"
+        },
+        {
+          "sentence": "Don Aurelio no le vendió las figurillas",
+          "translation": "Don Aurelio did not sell him the figurines. (pretérito + le = to him)"
+        },
+        {
+          "sentence": "El ladrón tomó las figurillas y salió rápido",
+          "translation": "The thief took the figurines and left quickly. (pretérito: tomar → tomó)"
+        },
+        {
+          "sentence": "Don Aurelio llamó a la policía inmediatamente",
+          "translation": "Don Aurelio called the police immediately. (pretérito: llamar → llamó)"
+        }
+      ]
+    },
+
+    {
+      "type": "lineup",
+      "correctSuspectId": "don_huanca",
+      "hint": "Recuerda las pistas: (1) el ladrón llegó ANTES de que abriera el mercado — a las ocho de la mañana, (2) es más alto que Don Aurelio, (3) llevaba una bolsa tan grande como un costal de quinoa, (4) dijo que 'acababa de llegar de Lima', (5) Don Aurelio le dijo que no pero el hombre esperó en vez de salir. ¿Cuál de los cuatro tiene TODAS estas características?",
+      "suspects": [
+        {
+          "id": "don_huanca",
+          "name": "El Coleccionista",
+          "realName": "Donato Huanca Vargas",
+          "age": 55,
+          "description": "Tiene cincuenta y cinco años. Llegó al mercado antes de las ocho de la mañana — más temprano que cualquier comprador normal. Dijo que acababa de llegar de Lima, pero el tren de Lima llega a las seis. Le ofreció mucho dinero a Don Aurelio, pero Don Aurelio no le vendió nada. Después esperó cerca del puesto — no salió del mercado. Es el más alto de todos los sospechosos.",
+          "imageSeed": 55,
+          "imageUrl": "https://randomuser.me/api/portraits/men/55.jpg"
+        },
+        {
+          "id": "senora_mamani",
+          "name": "La Vendedora",
+          "realName": "Rosa Mamani Quispe",
+          "age": 48,
+          "description": "Tiene cuarenta y ocho años. Llegó al mercado a las siete de la mañana con sus textiles de alpaca. Estuvo en su puesto todo el día — sus clientes la vieron allá toda la mañana. Le vendió un tejido andino a una turista italiana. Es menos sospechosa que los demás porque nunca salió de su sección del mercado.",
+          "imageSeed": 48,
+          "imageUrl": "https://randomuser.me/api/portraits/women/48.jpg"
+        },
+        {
+          "id": "javier_torres",
+          "name": "El Turista",
+          "realName": "Javier Torres Medina",
+          "age": 28,
+          "description": "Tiene veintiocho años. Acabó de llegar de Machu Picchu esa misma mañana — el recibo del bus turístico lo confirma. Llegó al mercado a las diez, después de que desaparecieron las figurillas. Le sacó fotos a muchos puestos del mercado. Es tan alto como Don Donato Huanca, pero llegó mucho más tarde.",
+          "imageSeed": 23,
+          "imageUrl": "https://randomuser.me/api/portraits/men/23.jpg"
+        },
+        {
+          "id": "carmen_quispe",
+          "name": "La Estudiante",
+          "realName": "Carmen Quispe Flores",
+          "age": 21,
+          "description": "Tiene veintiún años. Es estudiante en la Universidad San Antonio Abad del Cusco. Llegó al mercado a las nueve para comprar quinoa y frijoles para su familia. Doña Rosa le vendió quinoa y la recuerda bien. Estuvo en el mercado menos de veinte minutos. Es la menor de los sospechosos.",
+          "imageSeed": 19,
+          "imageUrl": "https://randomuser.me/api/portraits/women/19.jpg"
+        }
+      ]
+    }
+
+  ]
+}
