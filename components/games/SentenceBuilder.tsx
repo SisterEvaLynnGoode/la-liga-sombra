@@ -10,6 +10,7 @@ import {
   useSensor,
   useSensors,
   closestCenter,
+  useDroppable,
   type DragStartEvent,
   type DragOverEvent,
   type DragEndEvent,
@@ -43,7 +44,35 @@ function makeTiles(sentence: string): WordTile[] {
   return sentence.split(/\s+/).map((word, i) => ({ id: `w-${i}`, word }));
 }
 
-function SortableWord({ id, word, container }: { id: string; word: string; container: "bank" | "sentence" }) {
+// Registers a div as a droppable zone so dnd-kit can detect drops on empty containers
+function DroppableZone({
+  id,
+  children,
+  className,
+}: {
+  id: string;
+  children: React.ReactNode;
+  className: string;
+}) {
+  const { setNodeRef } = useDroppable({ id });
+  return (
+    <div ref={setNodeRef} id={id} className={className}>
+      {children}
+    </div>
+  );
+}
+
+function SortableWord({
+  id,
+  word,
+  container,
+  onTap,
+}: {
+  id: string;
+  word: string;
+  container: "bank" | "sentence";
+  onTap: () => void;
+}) {
   const { attributes, listeners, setNodeRef, transform, transition, isDragging } = useSortable({ id });
   const style = {
     transform: CSS.Transform.toString(transform),
@@ -57,13 +86,14 @@ function SortableWord({ id, word, container }: { id: string; word: string; conta
       style={style}
       {...attributes}
       {...listeners}
+      onClick={onTap}
       className={`
-        px-3 py-2 border font-typewriter text-sm cursor-grab active:cursor-grabbing
+        px-3 py-2 border font-typewriter text-sm cursor-pointer active:cursor-grabbing
         select-none touch-none rounded-sm transition-colors
         focus:outline-none focus:ring-2 focus:ring-[#c9933a] focus:ring-offset-1 focus:ring-offset-[#0d0b0a]
         ${container === "bank"
-          ? "bg-[#1a1614] border-[rgba(201,147,58,0.25)] text-[#c4a882] hover:border-[rgba(201,147,58,0.5)]"
-          : "bg-gradient-to-br from-[#f8e9cc] to-[#efd9a0] border-[rgba(139,94,16,0.4)] text-[#2c1a08] shadow-sm"
+          ? "bg-[#1a1614] border-[rgba(201,147,58,0.25)] text-[#c4a882] hover:border-[rgba(201,147,58,0.5)] active:bg-[rgba(201,147,58,0.1)]"
+          : "bg-gradient-to-br from-[#f8e9cc] to-[#efd9a0] border-[rgba(139,94,16,0.4)] text-[#2c1a08] shadow-sm active:opacity-70"
         }
       `}
     >
@@ -134,11 +164,32 @@ export default function SentenceBuilder({
       const activeItems = [...prev[activeContainer]];
       const overItems = [...prev[overContainer]];
       const activeIndex = activeItems.indexOf(activeId);
-      const overIndex = overItems.indexOf(overId);
       activeItems.splice(activeIndex, 1);
-      overItems.splice(overIndex < 0 ? overItems.length : overIndex + 1, 0, activeId);
+      // If dragging onto the empty container itself (overId is the container id),
+      // append to end rather than trying to find an item index
+      const overIndex = overItems.indexOf(overId);
+      const insertAt = overIndex < 0 ? overItems.length : overIndex + 1;
+      overItems.splice(insertAt, 0, activeId);
       return { ...prev, [activeContainer]: activeItems, [overContainer]: overItems };
     });
+  }
+
+  // Tap-to-move: tapping a word moves it to the other container (reliable on mobile/touch)
+  function handleWordTap(id: string) {
+    const from = findContainer(id);
+    if (!from) return;
+    setFeedback(null);
+    if (from === "bank") {
+      setContainers((prev) => ({
+        bank: prev.bank.filter((i) => i !== id),
+        sentence: [...prev.sentence, id],
+      }));
+    } else {
+      setContainers((prev) => ({
+        sentence: prev.sentence.filter((i) => i !== id),
+        bank: [...prev.bank, id],
+      }));
+    }
   }
 
   function handleDragEnd(event: DragEndEvent) {
@@ -211,13 +262,13 @@ export default function SentenceBuilder({
           {/* Instructions */}
           <div>
             <p className="font-typewriter text-xs text-[#8b7355]">
-              Drag the words below to build the correct sentence. You can also reorder words in the sentence area.
+              <span className="text-[#c4a882]">Toca</span> una palabra para moverla — o <span className="text-[#c4a882]">arrástrala</span> a la posición exacta. Toca las palabras colocadas para devolverlas.
             </p>
             <button
               onClick={() => setShowHint((v) => !v)}
               className="font-typewriter text-[10px] text-[#c9933a] hover:underline mt-1"
             >
-              {showHint ? "▲ Hide translation" : "▼ Show translation (hint)"}
+              {showHint ? "▲ Ocultar traducción" : "▼ Ver traducción (pista)"}
             </button>
             {showHint && (
               <p className="font-typewriter text-xs text-[#8b7355] italic mt-1 border-l-2 border-[rgba(201,147,58,0.3)] pl-3">
@@ -232,7 +283,7 @@ export default function SentenceBuilder({
               Tu oración:
             </p>
             <SortableContext id="sentence" items={containers.sentence} strategy={horizontalListSortingStrategy}>
-              <div
+              <DroppableZone
                 id="sentence"
                 className={`
                   min-h-[56px] border-2 border-dashed p-3 flex flex-wrap gap-2 rounded-sm transition-colors
@@ -243,13 +294,13 @@ export default function SentenceBuilder({
               >
                 {containers.sentence.length === 0 && (
                   <span className="font-typewriter text-xs text-[#4a3a2a] self-center">
-                    Drop words here…
+                    Toca o arrastra palabras aquí…
                   </span>
                 )}
                 {containers.sentence.map((id) => (
-                  <SortableWord key={id} id={id} word={tileMap[id]} container="sentence" />
+                  <SortableWord key={id} id={id} word={tileMap[id]} container="sentence" onTap={() => handleWordTap(id)} />
                 ))}
-              </div>
+              </DroppableZone>
             </SortableContext>
           </div>
 
@@ -259,7 +310,7 @@ export default function SentenceBuilder({
               Palabras disponibles:
             </p>
             <SortableContext id="bank" items={containers.bank} strategy={horizontalListSortingStrategy}>
-              <div
+              <DroppableZone
                 id="bank"
                 className="min-h-[56px] border border-[rgba(201,147,58,0.1)] bg-[#110f0d] p-3 flex flex-wrap gap-2 rounded-sm"
               >
@@ -269,9 +320,9 @@ export default function SentenceBuilder({
                   </span>
                 )}
                 {containers.bank.map((id) => (
-                  <SortableWord key={id} id={id} word={tileMap[id]} container="bank" />
+                  <SortableWord key={id} id={id} word={tileMap[id]} container="bank" onTap={() => handleWordTap(id)} />
                 ))}
-              </div>
+              </DroppableZone>
             </SortableContext>
           </div>
 
@@ -291,7 +342,7 @@ export default function SentenceBuilder({
                 onClick={handleReset}
                 className="px-4 py-2.5 font-typewriter text-xs tracking-[0.2em] uppercase border border-[rgba(201,147,58,0.2)] text-[#8b7355] hover:border-[rgba(201,147,58,0.4)] transition-colors"
               >
-                ↺ Reset
+                ↺ Reiniciar
               </button>
               <button
                 onClick={handleCheck}
