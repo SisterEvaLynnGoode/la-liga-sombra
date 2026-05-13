@@ -191,6 +191,54 @@
     },
 
     {
+      "type": "listeningComp",
+      "clueReward": "La ruta del sospechoso: Museo Reina Sofía → metro → hospital → restaurante → café (Retiro) → Estación de Atocha.",
+      "audioUrl": "/audio/unit-03/police-radio.mp3",
+      "transcript": "¡Atención! ¡Atención! Tenemos información del sospechoso. Está en el Museo Reina Sofía. Va a salir muy pronto. Primero, va a tomar el metro. Va a ir al hospital. Después, va a comer en un restaurante. Luego, va a beber café en un café cerca del Parque del Retiro. Finalmente, va a correr a la Estación de Atocha. ¿Comprenden? ¡Rápido!",
+      "translation": "Attention! Attention! We have information about the suspect. She's at the Reina Sofía Museum. She's going to leave very soon. First, she's going to take the metro. She's going to go to the hospital. Then, she's going to eat at a restaurant. Then, she's going to drink coffee at a café near Retiro Park. Finally, she's going to run to Atocha Station. Do you understand? Quickly!",
+      "maxReplays": 3,
+      "passingScore": 0.75,
+      "retryHint": "Pista: Escucha el orden de los lugares y los verbos ir + a + infinitivo.",
+      "questions": [
+        {
+          "question": "¿Dónde está la sospechosa ahora?",
+          "options": ["En el hospital", "En el Museo Reina Sofía", "En el parque", "En la estación"],
+          "correctIndex": 1,
+          "explanationEs": "La radio dice 'Está en el Museo Reina Sofía'.",
+          "explanationEn": "The radio says she's at the Reina Sofía Museum."
+        },
+        {
+          "question": "¿Cómo va a viajar primero?",
+          "options": ["A pie", "En taxi", "En metro", "En autobús"],
+          "correctIndex": 2,
+          "explanationEs": "La radio dice 'Primero, va a tomar el metro'.",
+          "explanationEn": "The radio says 'First, she's going to take the metro.'"
+        },
+        {
+          "question": "¿Adónde va después del hospital?",
+          "options": ["A un hotel", "A una biblioteca", "A un restaurante", "Al museo"],
+          "correctIndex": 2,
+          "explanationEs": "La radio dice 'Después, va a comer en un restaurante'.",
+          "explanationEn": "The radio says after the hospital she's going to eat at a restaurant."
+        },
+        {
+          "question": "¿Dónde va a beber café?",
+          "options": ["Cerca del museo", "Cerca de la estación", "Cerca del Parque del Retiro", "Cerca del hospital"],
+          "correctIndex": 2,
+          "explanationEs": "La radio dice 'va a beber café en un café cerca del Parque del Retiro'.",
+          "explanationEn": "The radio says she'll drink coffee near Retiro Park."
+        },
+        {
+          "question": "¿Cuál es el destino final?",
+          "options": ["El aeropuerto", "El hotel", "La Estación de Atocha", "El museo"],
+          "correctIndex": 2,
+          "explanationEs": "La radio dice 'Finalmente, va a correr a la Estación de Atocha'.",
+          "explanationEn": "The radio says finally she's going to run to Atocha Station."
+        }
+      ]
+    },
+
+    {
       "type": "chaseMap",
       "clueReward": "La Sombra intenta escapar a París en tren desde la Estación de Atocha.",
       "locations": [
