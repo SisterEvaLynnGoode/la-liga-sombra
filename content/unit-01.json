@@ -25,6 +25,7 @@
     {
       "type": "cutscene",
       "videoUrl": "/videos/unit-01-intro.mp4",
+      "subtitleUrl": "/videos/unit-01-intro.vtt",
       "fallbackImage": "/images/unit-01-briefing.jpg",
       "chiefName": "Jefe Ramírez",
       "chiefImageSeed": 60,

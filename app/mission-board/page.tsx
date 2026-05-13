@@ -5,6 +5,7 @@ import { UNITS } from "@/lib/game/units";
 import type { UnitStatus } from "@/lib/types/database";
 import MissionHeader from "@/components/mission-board/MissionHeader";
 import CorkBoard from "@/components/mission-board/CorkBoard";
+import AlertToast from "@/components/ui/AlertToast";
 
 export const metadata = { title: "Sala de Investigación — La Liga Sombra" };
 
@@ -69,6 +70,7 @@ export default async function MissionBoardPage() {
         badgeCount={badgeCount}
       />
       <CorkBoard caseFiles={caseFiles} />
+      <AlertToast classId={session.classId} />
     </div>
   );
 }

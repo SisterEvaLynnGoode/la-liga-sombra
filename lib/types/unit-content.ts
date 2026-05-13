@@ -21,6 +21,7 @@ export interface Suspect {
 export interface CutsceneStageData {
   type: "cutscene";
   videoUrl: string;
+  subtitleUrl?: string;
   fallbackImage?: string;
   chiefName: string;
   chiefImageSeed: number;

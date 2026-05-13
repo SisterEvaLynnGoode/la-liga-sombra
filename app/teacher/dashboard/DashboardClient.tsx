@@ -11,6 +11,14 @@ import ExportTab from "@/components/dashboard/tabs/ExportTab";
 
 interface ClassRow { id: string; class_code: string; teacher_name: string; period_name: string; student_count: number }
 
+const PRESET_MESSAGES = [
+  "⏰ 5 minutos restantes",
+  "⏰ 2 minutos restantes",
+  "⏸ Pausa ahora, por favor",
+  "🎉 ¡Excelente trabajo a todos!",
+  "👀 Miren su pantalla",
+];
+
 type TabId = "overview" | "students" | "units" | "vocab" | "leaderboard" | "export";
 
 const TABS: Array<{ id: TabId; label: string; emoji: string }> = [
@@ -28,6 +36,10 @@ export default function DashboardClient() {
   const [selectedClassId, setSelectedClassId] = useState("");
   const [activeTab, setActiveTab] = useState<TabId>("overview");
   const [loadingClasses, setLoadingClasses] = useState(true);
+  const [alertOpen, setAlertOpen] = useState(false);
+  const [alertMsg, setAlertMsg] = useState("");
+  const [alertSending, setAlertSending] = useState(false);
+  const [alertSent, setAlertSent] = useState(false);
 
   useEffect(() => {
     fetch("/api/teacher/classes")
@@ -43,6 +55,19 @@ export default function DashboardClient() {
   async function handleLogout() {
     await fetch("/api/teacher/auth", { method: "DELETE" });
     router.push("/");
+  }
+
+  async function sendAlert() {
+    if (!alertMsg.trim() || !selectedClassId) return;
+    setAlertSending(true);
+    await fetch("/api/teacher/alerts", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ classId: selectedClassId, message: alertMsg.trim() }),
+    }).catch(() => {});
+    setAlertSent(true);
+    setAlertSending(false);
+    setTimeout(() => { setAlertSent(false); setAlertOpen(false); setAlertMsg(""); }, 2000);
   }
 
   const selectedClass = classes.find((c) => c.id === selectedClassId);
@@ -83,6 +108,43 @@ export default function DashboardClient() {
         </div>
 
         <div className="flex items-center gap-4">
+          {/* Send class alert */}
+          <div className="relative">
+            <button
+              onClick={() => { setAlertOpen((v) => !v); setAlertSent(false); }}
+              disabled={!selectedClassId}
+              className="font-typewriter text-[10px] tracking-[0.2em] uppercase px-3 py-1.5 border border-[rgba(201,147,58,0.25)] text-[#8b7355] hover:text-[#e8b455] hover:border-[rgba(201,147,58,0.5)] transition-colors disabled:opacity-40"
+            >
+              📢 Alerta
+            </button>
+            {alertOpen && (
+              <div className="absolute right-0 top-full mt-1 z-50 w-72 border border-[rgba(201,147,58,0.3)] bg-[#1a1614] shadow-xl p-4 space-y-3">
+                <p className="font-typewriter text-[9px] tracking-[0.3em] uppercase text-[#8b7355]">Enviar alerta a la clase</p>
+                <div className="flex flex-col gap-1.5">
+                  {PRESET_MESSAGES.map((m) => (
+                    <button key={m} onClick={() => setAlertMsg(m)}
+                      className={`text-left font-typewriter text-xs px-2 py-1.5 border transition-colors ${alertMsg === m ? "border-[rgba(201,147,58,0.4)] text-[#e8b455] bg-[rgba(201,147,58,0.08)]" : "border-[rgba(201,147,58,0.1)] text-[#8b7355] hover:text-[#c4a882]"}`}>
+                      {m}
+                    </button>
+                  ))}
+                </div>
+                <textarea
+                  value={alertMsg}
+                  onChange={(e) => setAlertMsg(e.target.value)}
+                  placeholder="Custom message…"
+                  rows={2}
+                  className="w-full bg-[#0d0b0a] border border-[rgba(201,147,58,0.25)] focus:border-[#c9933a] focus:outline-none px-3 py-2 font-typewriter text-xs text-[#f5e6c8] placeholder-[#3a3028] resize-none"
+                />
+                <button
+                  onClick={sendAlert}
+                  disabled={!alertMsg.trim() || alertSending}
+                  className="w-full clip-skew py-2 font-typewriter text-[10px] tracking-[0.2em] uppercase bg-[#8b1a1a] text-[#f5e6c8] border border-[#c0392b] hover:bg-[#c0392b] transition-colors disabled:opacity-40"
+                >
+                  {alertSent ? "✓ Enviado!" : alertSending ? "Enviando…" : "Enviar a todos →"}
+                </button>
+              </div>
+            )}
+          </div>
           <a href="/teacher/setup" className="font-typewriter text-[10px] tracking-widest uppercase text-[#8b7355] hover:text-[#c9933a] transition-colors">
             ⚙ Setup
           </a>

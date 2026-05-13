@@ -8,7 +8,9 @@ export type Json =
 
 export type UnitStatus = "locked" | "available" | "in_progress" | "completed";
 export type ActivityType = "vocab_match" | "dialogue" | "listening" | "grammar" | "cultural" | "lineup";
-export type BadgeType = "case_solved" | "perfect_score" | "speed_run" | "cultural_expert" | "first_case";
+export type BadgeType =
+  | "case_solved" | "perfect_score" | "speed_run" | "cultural_expert" | "first_case"
+  | "unit_completed" | "speed_demon" | "vocab_master" | "streak_3" | "streak_7";
 
 // Supabase v2 requires Relationships and CompositeTypes for correct type inference
 export interface Database {
@@ -37,6 +39,12 @@ export interface Database {
           created_at?: string;
         };
         Relationships: [];
+      };
+      class_alerts: {
+        Row: { id: string; class_id: string; message: string; sent_at: string };
+        Insert: { id?: string; class_id: string; message: string; sent_at?: string };
+        Update: { id?: string; class_id?: string; message?: string; sent_at?: string };
+        Relationships: [{ foreignKeyName: "class_alerts_class_id_fkey"; columns: ["class_id"]; isOneToOne: false; referencedRelation: "classes"; referencedColumns: ["id"] }];
       };
       students: {
         Row: {

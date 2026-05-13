@@ -1,6 +1,7 @@
 "use client";
 
 import { useRouter } from "next/navigation";
+import Link from "next/link";
 
 interface Props {
   displayName: string;
@@ -70,13 +71,21 @@ export default function MissionHeader({ displayName, casesSolved, totalCases, ba
           </div>
         </div>
 
-        {/* Logout — pushed right */}
-        <button
-          onClick={handleLogout}
-          className="ml-auto font-typewriter text-[10px] tracking-widest uppercase text-[#8b7355] hover:text-[#c0392b] transition-colors shrink-0"
-        >
-          Salir →
-        </button>
+        {/* Mi Expediente + Logout */}
+        <div className="ml-auto flex items-center gap-4 shrink-0">
+          <Link
+            href="/expediente"
+            className="font-typewriter text-[10px] tracking-widest uppercase text-[#8b7355] hover:text-[#c9933a] transition-colors"
+          >
+            📁 Expediente
+          </Link>
+          <button
+            onClick={handleLogout}
+            className="font-typewriter text-[10px] tracking-widest uppercase text-[#8b7355] hover:text-[#c0392b] transition-colors"
+          >
+            Salir →
+          </button>
+        </div>
       </div>
     </header>
   );

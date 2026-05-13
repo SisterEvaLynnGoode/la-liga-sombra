@@ -9,15 +9,19 @@ import CutsceneStage from "@/components/play/CutsceneStage";
 import ClueReveal from "@/components/play/ClueReveal";
 import BadgeModal from "@/components/play/BadgeModal";
 import LineupStage from "@/components/play/LineupStage";
+import BadgeEarned from "@/components/games/BadgeEarned";
+import AlertToast from "@/components/ui/AlertToast";
 import VocabMatch from "@/components/games/VocabMatch";
 import DialogueChoice from "@/components/games/DialogueChoice";
 import ReadingComprehension from "@/components/games/ReadingComprehension";
 import ListeningComprehension from "@/components/games/ListeningComprehension";
+import type { BadgeType } from "@/lib/types/database";
 
 interface Props {
   content: UnitContent;
   unitId: string;       // Supabase DB unit UUID
   unitNumber: number;
+  classId: string;
   initialStageIndex: number;
   isCompleted: boolean;
 }
@@ -39,7 +43,7 @@ const STAGE_LABELS: Record<StageData["type"], string> = {
   lineup: "Identificación",
 };
 
-export default function UnitPlayer({ content, unitId, unitNumber, initialStageIndex, isCompleted }: Props) {
+export default function UnitPlayer({ content, unitId, unitNumber, classId, initialStageIndex, isCompleted }: Props) {
   useRouter(); // reserved for future navigation (chase mechanic)
   const [currentStage, setCurrentStage] = useState(
     isCompleted ? content.stages.length : initialStageIndex
@@ -49,6 +53,8 @@ export default function UnitPlayer({ content, unitId, unitNumber, initialStageIn
   );
   const [pendingClue, setPendingClue] = useState<string | null>(null);
   const [showBadge, setShowBadge] = useState(isCompleted);
+  const [newBadges, setNewBadges] = useState<BadgeType[]>([]);
+  const [showBadgeEarned, setShowBadgeEarned] = useState(false);
   const [totalTime, setTotalTime] = useState(0);
   const [lineupScore, setLineupScore] = useState(1);
   const stageStartRef = useRef(Date.now());
@@ -100,7 +106,7 @@ export default function UnitPlayer({ content, unitId, unitNumber, initialStageIn
       setLineupScore(score);
       setTotalTime((t) => t + result.timeSpent);
 
-      await fetch("/api/game/unit-complete", {
+      const res = await fetch("/api/game/unit-complete", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
@@ -109,8 +115,17 @@ export default function UnitPlayer({ content, unitId, unitNumber, initialStageIn
           maxScore: result.maxScore,
           timeSpentSeconds: result.timeSpent,
         }),
-      }).catch(() => {});
+      }).catch(() => null);
 
+      if (res?.ok) {
+        const data = await res.json() as { ok: boolean; newBadges: BadgeType[] };
+        if (data.newBadges?.length) {
+          setNewBadges(data.newBadges);
+          setShowBadgeEarned(true);
+          // BadgeModal shown after BadgeEarned dismisses
+          return;
+        }
+      }
       setShowBadge(true);
     },
     [unitNumber]
@@ -260,6 +275,17 @@ export default function UnitPlayer({ content, unitId, unitNumber, initialStageIn
           onDismiss={handleClueDismissed}
         />
       )}
+
+      {/* ── Badge earned celebration ─────────────────────────────────────── */}
+      {showBadgeEarned && newBadges.length > 0 && (
+        <BadgeEarned
+          badges={newBadges}
+          onDismiss={() => { setShowBadgeEarned(false); setShowBadge(true); }}
+        />
+      )}
+
+      {/* ── Teacher alert toasts ─────────────────────────────────────────── */}
+      <AlertToast classId={classId} />
     </div>
   );
 }

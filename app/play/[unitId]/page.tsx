@@ -66,6 +66,7 @@ export default async function PlayPage({ params }: PageProps) {
       content={content}
       unitId={unitId}
       unitNumber={unitNumber}
+      classId={session.classId}
       initialStageIndex={initialStageIndex}
       isCompleted={isCompleted}
     />
