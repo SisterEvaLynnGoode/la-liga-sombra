@@ -115,6 +115,54 @@
     },
 
     {
+      "type": "listeningComp",
+      "clueReward": "El chef sospechoso prepara la bandeja paisa secretamente y es para él mismo, no para los clientes.",
+      "audioUrl": "/audio/unit-06/kitchen-mic.mp3",
+      "transcript": "Tengo que preparar este plato muy rápido. Quiero usar estas verduras frescas. No quiero esa carne vieja. Mi jefe dice que necesito más ingredientes. Yo digo que tengo todo aquí. Pienso preparar la bandeja paisa. Tengo que cocinar el arroz, los frijoles, y la carne. Aquellos platos en la mesa son para los clientes. Este plato especial es para mí. Puedo hacerlo en treinta minutos.",
+      "translation": "I have to prepare this dish very quickly. I want to use these fresh vegetables. I don't want that old meat. My boss says I need more ingredients. I say I have everything here. I'm thinking of preparing bandeja paisa. I have to cook the rice, the beans, and the meat. Those dishes on the table are for the customers. This special dish is for me. I can do it in thirty minutes.",
+      "maxReplays": 3,
+      "passingScore": 0.75,
+      "retryHint": "Pista: Escucha qué plato prepara, qué ingredientes usa, y para quién es.",
+      "questions": [
+        {
+          "question": "¿Qué tiene que preparar el chef?",
+          "options": ["Las arepas", "El ajiaco", "La bandeja paisa", "El sancocho"],
+          "correctIndex": 2,
+          "explanationEs": "El chef dice 'Pienso preparar la bandeja paisa'.",
+          "explanationEn": "He says he's planning to prepare bandeja paisa."
+        },
+        {
+          "question": "¿Qué verduras quiere usar?",
+          "options": ["Esas (allá lejos)", "Estas (las frescas, aquí)", "Aquellas (muy lejos)", "Ninguna"],
+          "correctIndex": 1,
+          "explanationEs": "Dice 'Quiero usar estas verduras frescas' — estas = these (here).",
+          "explanationEn": "He says 'these fresh vegetables' — estas means right here."
+        },
+        {
+          "question": "¿Para quién es el plato especial?",
+          "options": ["Para el jefe", "Para los clientes", "Para él mismo", "Para su familia"],
+          "correctIndex": 2,
+          "explanationEs": "Dice 'Este plato especial es para mí'.",
+          "explanationEn": "He says 'This special dish is for me.'"
+        },
+        {
+          "question": "¿Qué tres ingredientes tiene que cocinar?",
+          "options": ["Pollo, arroz y verduras", "Arroz, frijoles y carne", "Pescado, verduras y arroz", "Carne, papas y pan"],
+          "correctIndex": 1,
+          "explanationEs": "Dice 'Tengo que cocinar el arroz, los frijoles, y la carne'.",
+          "explanationEn": "He lists rice, beans, and meat."
+        },
+        {
+          "question": "¿En cuánto tiempo puede hacerlo?",
+          "options": ["3 minutos", "13 minutos", "30 minutos", "3 horas"],
+          "correctIndex": 2,
+          "explanationEs": "Dice 'Puedo hacerlo en treinta minutos' — treinta = 30.",
+          "explanationEn": "He says 30 minutes."
+        }
+      ]
+    },
+
+    {
       "type": "interrogation",
       "character": {
         "name": "Andrés Morales",
