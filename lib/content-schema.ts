@@ -149,16 +149,40 @@ export const ReadingStageSchema = z.object({
     .max(5, "Maximum 5 questions"),
 });
 
+export const ListeningQuestionSchema = z.object({
+  question: z.string().min(1),
+  options: z.array(z.string().min(1)).length(4, "Exactly 4 options required"),
+  correctIndex: z.number().int().min(0).max(3),
+  explanationEs: z.string().optional(),
+  explanationEn: z.string().optional(),
+});
+
 export const ListeningStageSchema = z.object({
   type: z.literal("listeningComp"),
   clueReward: z.string().optional(),
   audioUrl: z.string().min(1, "Audio file URL required"),
   transcript: z.string().optional(),
-  question: z.string().min(1, "Question required"),
-  options: z.array(z.string().min(1)).length(4, "Exactly 4 answer options required"),
-  correctIndex: z.number().int().min(0).max(3),
+  translation: z.string().optional(),
+  retryHint: z.string().optional(),
+  passingScore: z.number().min(0).max(1).optional(),
   maxReplays: z.number().int().min(1).max(5).optional(),
-});
+  // Legacy single-question (backward-compat with units 2+)
+  question: z.string().optional(),
+  options: z.array(z.string().min(1)).length(4).optional(),
+  correctIndex: z.number().int().min(0).max(3).optional(),
+  // New multi-question format
+  questions: z.array(ListeningQuestionSchema).min(1).max(10).optional(),
+}).refine(
+  (d) => {
+    const hasLegacy =
+      typeof d.question === "string" &&
+      Array.isArray(d.options) &&
+      typeof d.correctIndex === "number";
+    const hasMulti = Array.isArray(d.questions) && d.questions.length > 0;
+    return hasLegacy || hasMulti;
+  },
+  { message: "listeningComp requires either (question + options + correctIndex) or a questions array" }
+);
 
 export const LineupStageSchema = z.object({
   type: z.literal("lineup"),

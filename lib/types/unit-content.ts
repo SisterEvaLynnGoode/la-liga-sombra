@@ -51,15 +51,29 @@ export interface ReadingStageData {
   questions: ReadingQuestion[];
 }
 
+export interface ListeningQuestion {
+  question: string;
+  options: string[];
+  correctIndex: number;
+  explanationEs?: string;
+  explanationEn?: string;
+}
+
 export interface ListeningStageData {
   type: "listeningComp";
   clueReward?: string;
   audioUrl: string;
   transcript?: string;
-  question: string;
-  options: string[];
-  correctIndex: number;
+  translation?: string;
+  retryHint?: string;
+  passingScore?: number;
   maxReplays?: number;
+  // Legacy single-question (units 2+)
+  question?: string;
+  options?: string[];
+  correctIndex?: number;
+  // Multi-question (unit 1+)
+  questions?: ListeningQuestion[];
 }
 
 export interface LineupStageData {

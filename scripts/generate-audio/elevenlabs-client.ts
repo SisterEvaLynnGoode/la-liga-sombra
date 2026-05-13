@@ -1,12 +1,22 @@
 import { ElevenLabsClient } from "elevenlabs";
 import { existsSync, mkdirSync, writeFileSync } from "fs";
+import { fileURLToPath } from "url";
 import { dirname, join } from "path";
 import type { AudioScript, VoiceKey, VoiceSettings } from "./types.js";
 
 // ─── Project root ─────────────────────────────────────────────────────────────
-// This file lives at scripts/generate-audio/elevenlabs-client.ts
-// so __dirname is <root>/scripts/generate-audio
-const PROJECT_ROOT = join(new URL(import.meta.url).pathname.replace(/^\/([A-Z]:)/, "$1"), "..", "..", "..");
+// elevenlabs-client.ts lives at <root>/scripts/generate-audio/
+// → two levels up = project root
+const __filenameLocal = fileURLToPath(import.meta.url);
+const __dirnameLocal  = dirname(__filenameLocal);
+const PROJECT_ROOT    = join(__dirnameLocal, "..", "..");
+
+// ─── Voice setting normalization ──────────────────────────────────────────────
+// Accept both 0-1 and 0-100 ranges for stability/similarityBoost/style.
+// (speed is a multiplier like 0.88, so it is never divided by 100)
+function normalizeSetting(val: number): number {
+  return val > 1 ? val / 100 : val;
+}
 
 // ─── Env helpers ─────────────────────────────────────────────────────────────
 
@@ -96,9 +106,9 @@ async function generateOneLine(
     model_id: "eleven_multilingual_v2",
     text,
     voice_settings: {
-      stability:        settings.stability,
-      similarity_boost: settings.similarityBoost,
-      style:            settings.style,
+      stability:        normalizeSetting(settings.stability),
+      similarity_boost: normalizeSetting(settings.similarityBoost),
+      style:            normalizeSetting(settings.style),
       use_speaker_boost: true,
       // speed is not part of the standard ElevenLabs VoiceSettings type
       // but newer model versions accept it; we cast to allow it
@@ -119,8 +129,9 @@ export async function generateAudio(
   const apiKey = requireEnv("ELEVENLABS_API_KEY");
   const client = new ElevenLabsClient({ apiKey });
 
-  // 2. Resolve output path (relative → absolute)
-  const absOutputPath = join(PROJECT_ROOT, script.outputPath);
+  // 2. Resolve output path (strip leading slash so join works on all OS)
+  const relPath = script.outputPath.replace(/^[/\\]/, "");
+  const absOutputPath = join(PROJECT_ROOT, relPath);
   const outputDir = dirname(absOutputPath);
 
   // 3. Ensure output directory exists

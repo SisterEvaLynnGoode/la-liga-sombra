@@ -151,18 +151,50 @@
 
     {
       "type": "listeningComp",
-      "clueReward": "El sospechoso tiene bigote negro y habla muy rápido.",
-      "audioUrl": "/audio/unit-01/phone-call.mp3",
-      "transcript": "Oye, ya tengo la guitarra. Sí... el hombre del bigote negro... habla rapidísimo... ¡perfecto! Nos vemos esta noche. Adiós.",
-      "question": "Según la llamada, ¿qué características tiene el sospechoso?",
-      "options": [
-        "Tiene bigote negro y habla muy rápido",
-        "Es una mujer joven y elegante",
-        "No tiene bigote y habla despacio",
-        "Tiene pelo largo y rubio"
-      ],
-      "correctIndex": 0,
-      "maxReplays": 3
+      "clueReward": "El sospechoso tiene bigote y treinta años.",
+      "audioUrl": "/audio/unit-01/witness-call.mp3",
+      "transcript": "Hola, buenos días. Me llamo Carmen Ruiz. Soy de Guadalajara. Yo vi al hombre que robó la guitarra. Son las tres de la tarde. El hombre tiene treinta años. Tiene bigote. No tiene barba. Adiós.",
+      "translation": "Hello, good morning. My name is Carmen Ruiz. I'm from Guadalajara. I saw the man who stole the guitar. It's three in the afternoon. The man is thirty years old. He has a mustache. He doesn't have a beard. Goodbye.",
+      "maxReplays": 3,
+      "passingScore": 0.75,
+      "retryHint": "Pista: Escucha el nombre, la hora, la edad y la descripción física del sospechoso.",
+      "questions": [
+        {
+          "question": "¿Cómo se llama la mujer?",
+          "options": ["Carmen Ruiz", "Carmen Gómez", "Carmen López", "María Ruiz"],
+          "correctIndex": 0,
+          "explanationEs": "La mujer dice claramente: 'Me llamo Carmen Ruiz'.",
+          "explanationEn": "She clearly says 'My name is Carmen Ruiz.'"
+        },
+        {
+          "question": "¿De dónde es Carmen?",
+          "options": ["Madrid", "San Juan", "Guadalajara", "Bogotá"],
+          "correctIndex": 2,
+          "explanationEs": "Carmen dice: 'Soy de Guadalajara' — la ciudad en México, no España.",
+          "explanationEn": "Carmen says 'I'm from Guadalajara' — the Mexican city, not the one in Spain."
+        },
+        {
+          "question": "¿Qué hora es según Carmen?",
+          "options": ["1:00 PM", "3:00 AM", "3:00 PM", "5:00 PM"],
+          "correctIndex": 2,
+          "explanationEs": "Carmen dice: 'Son las tres de la tarde' — la tarde = PM en español.",
+          "explanationEn": "Carmen says 'It's three in the afternoon' — 'la tarde' means PM."
+        },
+        {
+          "question": "¿Cuántos años tiene el sospechoso según Carmen?",
+          "options": ["13", "30", "40", "23"],
+          "correctIndex": 1,
+          "explanationEs": "Carmen dice: 'El hombre tiene treinta años.' Treinta = 30.",
+          "explanationEn": "Carmen says 'The man is thirty years old.' Treinta = 30."
+        },
+        {
+          "question": "¿Qué tiene el hombre en la cara?",
+          "options": ["Barba", "Bigote", "Gafas", "Sombrero"],
+          "correctIndex": 1,
+          "explanationEs": "Carmen dice: 'Tiene bigote. No tiene barba.' Bigote = mustache, barba = beard.",
+          "explanationEn": "Carmen says 'He has a mustache. He doesn't have a beard.' Bigote = mustache."
+        }
+      ]
     },
 
     {

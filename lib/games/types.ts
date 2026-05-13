@@ -46,13 +46,28 @@ export interface DialogueNode {
 }
 
 // ── ListeningComprehension ───────────────────────────────────────────────────
-export interface ListeningData {
-  audioUrl: string;
-  transcript?: string;
+
+export interface ListeningQuestion {
   question: string;
   options: string[];
   correctIndex: number;
+  explanationEs?: string; // shown after answering in Spanish
+  explanationEn?: string; // shown after answering in English
+}
+
+export interface ListeningData {
+  audioUrl: string;
+  transcript?: string;
+  translation?: string;   // English translation of transcript, toggle-able
+  retryHint?: string;     // hint shown when score < passingScore
+  passingScore?: number;  // 0–1 threshold; purely informational in the UI
   maxReplays?: number;
+  // Legacy single-question format (units 2+)
+  question?: string;
+  options?: string[];
+  correctIndex?: number;
+  // New multi-question format
+  questions?: ListeningQuestion[];
 }
 
 // ── ReadingComprehension ─────────────────────────────────────────────────────

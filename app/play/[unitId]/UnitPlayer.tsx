@@ -273,9 +273,13 @@ export default function UnitPlayer({ content, unitId, unitNumber, classId, initi
             title="Audio de Vigilancia"
             audioUrl={stage.audioUrl}
             transcript={stage.transcript}
+            translation={stage.translation}
+            retryHint={stage.retryHint}
+            passingScore={stage.passingScore}
             question={stage.question}
             options={stage.options}
             correctIndex={stage.correctIndex}
+            questions={stage.questions}
             maxReplays={stage.maxReplays}
             unitId={unitId}
             onComplete={handleStageComplete}
