@@ -1,0 +1,83 @@
+import { NextRequest, NextResponse } from "next/server";
+import { getStudentSession } from "@/lib/auth/session";
+import { createClient } from "@/lib/supabase/server";
+
+export async function POST(request: NextRequest) {
+  const session = await getStudentSession();
+  if (!session) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+
+  const { unitNumber, score, maxScore, timeSpentSeconds } =
+    await request.json() as {
+      unitNumber: number;
+      score: number;
+      maxScore: number;
+      timeSpentSeconds: number;
+    };
+
+  if (!unitNumber) return NextResponse.json({ error: "Missing unitNumber" }, { status: 400 });
+
+  const supabase = createClient();
+
+  // Resolve unit id
+  const { data: unitRows } = await supabase
+    .from("units").select("id").eq("number", unitNumber).limit(1);
+  const unitId = (unitRows as Array<{ id: string }> | null)?.[0]?.id;
+  if (!unitId) return NextResponse.json({ error: "Unit not found" }, { status: 404 });
+
+  // Record lineup attempt
+  await supabase.from("attempts").insert({
+    student_id: session.studentId,
+    unit_id: unitId,
+    activity_type: "lineup",
+    score: score ?? 1,
+    max_score: maxScore ?? 1,
+    time_spent_seconds: timeSpentSeconds ?? 0,
+  });
+
+  // Mark unit completed
+  await supabase
+    .from("unit_progress")
+    .update({
+      status: "completed",
+      case_solved: true,
+      criminal_caught: true,
+      completed_at: new Date().toISOString(),
+    })
+    .eq("student_id", session.studentId)
+    .eq("unit_id", unitId);
+
+  // Award case_solved badge if not already earned
+  const { data: existingBadge } = await supabase
+    .from("badges")
+    .select("id")
+    .eq("student_id", session.studentId)
+    .eq("unit_id", unitId)
+    .eq("badge_type", "case_solved")
+    .limit(1);
+
+  let badgeEarned = false;
+  if (!existingBadge || existingBadge.length === 0) {
+    await supabase.from("badges").insert({
+      student_id: session.studentId,
+      badge_type: "case_solved",
+      unit_id: unitId,
+    });
+    badgeEarned = true;
+  }
+
+  // Unlock next unit
+  const { data: nextUnitRows } = await supabase
+    .from("units").select("id").eq("number", unitNumber + 1).limit(1);
+  const nextUnitId = (nextUnitRows as Array<{ id: string }> | null)?.[0]?.id;
+
+  if (nextUnitId) {
+    await supabase
+      .from("unit_progress")
+      .update({ status: "available" })
+      .eq("student_id", session.studentId)
+      .eq("unit_id", nextUnitId)
+      .eq("status", "locked"); // only unlock if still locked
+  }
+
+  return NextResponse.json({ ok: true, badgeEarned });
+}

@@ -162,7 +162,7 @@ export default function CaseFileCard({ unit, status, caseSolved }: Props) {
   }
 
   return (
-    <Link href={`/game?unit=${unit.number}`} className="block pt-4 group">
+    <Link href={`/play/${unit.number}`} className="block pt-4 group">
       {cardContent}
     </Link>
   );

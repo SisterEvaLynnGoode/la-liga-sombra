@@ -2,6 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+@keyframes stampIn {
+  0%   { transform: scale(2.5) rotate(-8deg); opacity: 0; filter: blur(3px); }
+  70%  { transform: scale(0.95) rotate(1deg); opacity: 1; filter: blur(0); }
+  100% { transform: scale(1) rotate(0deg);    opacity: 1; }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(14px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
 :root {
   --noir-black:   #0d0b0a;
   --noir-dark:    #1a1614;

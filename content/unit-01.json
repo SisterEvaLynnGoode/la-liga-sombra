@@ -1,0 +1,207 @@
+{
+  "unitNumber": 1,
+  "country": "México",
+  "city": "Guadalajara",
+  "caseTitle": "El Misterio del Mariachi Perdido",
+  "caseDescription": "Una famosa guitarra de mariachi fue robada del Museo de la Música en Guadalajara. Los testigos solo hablan español. Tú debes investigar, recopilar pistas e identificar al ladrón.",
+  "criminalName": "El Camaleón",
+
+  "vocab": [
+    { "spanish": "hola",             "english": "hello",            "audio": "/audio/unit-01/hola.mp3" },
+    { "spanish": "adiós",            "english": "goodbye",          "audio": "/audio/unit-01/adios.mp3" },
+    { "spanish": "buenos días",      "english": "good morning",     "audio": "/audio/unit-01/buenos-dias.mp3" },
+    { "spanish": "buenas tardes",    "english": "good afternoon",   "audio": "/audio/unit-01/buenas-tardes.mp3" },
+    { "spanish": "buenas noches",    "english": "good night",       "audio": "/audio/unit-01/buenas-noches.mp3" },
+    { "spanish": "por favor",        "english": "please",           "audio": "/audio/unit-01/por-favor.mp3" },
+    { "spanish": "gracias",          "english": "thank you",        "audio": "/audio/unit-01/gracias.mp3" },
+    { "spanish": "de nada",          "english": "you're welcome",   "audio": "/audio/unit-01/de-nada.mp3" },
+    { "spanish": "me llamo",         "english": "my name is",       "audio": "/audio/unit-01/me-llamo.mp3" },
+    { "spanish": "¿cómo te llamas?", "english": "what's your name?","audio": "/audio/unit-01/como-te-llamas.mp3" },
+    { "spanish": "¿de dónde eres?",  "english": "where are you from?","audio": "/audio/unit-01/de-donde-eres.mp3" },
+    { "spanish": "soy de...",        "english": "I'm from...",      "audio": "/audio/unit-01/soy-de.mp3" }
+  ],
+
+  "stages": [
+    {
+      "type": "cutscene",
+      "videoUrl": "/videos/unit-01-intro.mp4",
+      "fallbackImage": "/images/unit-01-briefing.jpg",
+      "chiefName": "Jefe Ramírez",
+      "chiefImageSeed": 60,
+      "briefingLines": [
+        "Bienvenido a La Liga Sombra, agente. Tenemos una situación urgente.",
+        "Anoche alguien robó la Guitarra del Sol — una guitarra de mariachi de 200 años — del Museo de la Música de Guadalajara.",
+        "Nuestro principal sospechoso es conocido como 'El Camaleón'. Es experto en disfraces y habla varios idiomas.",
+        "Pero hay un problema: todos los testigos en Guadalajara solo hablan español.",
+        "Tu misión: habla con los testigos, analiza la evidencia, e identifica al ladrón antes de que escape.",
+        "¿Estás listo para tu primera misión? El caso está abierto. ¡Buena suerte, agente!"
+      ]
+    },
+
+    {
+      "type": "vocabMatch",
+      "pairs": [
+        { "spanish": "hola",        "english": "hello" },
+        { "spanish": "gracias",     "english": "thank you" },
+        { "spanish": "buenos días", "english": "good morning" },
+        { "spanish": "por favor",   "english": "please" },
+        { "spanish": "adiós",       "english": "goodbye" },
+        { "spanish": "de nada",     "english": "you're welcome" },
+        { "spanish": "me llamo",    "english": "my name is" },
+        { "spanish": "soy de...",   "english": "I'm from..." }
+      ]
+    },
+
+    {
+      "type": "dialogueChoice",
+      "clueReward": "El sospechoso lleva un sombrero de charro negro.",
+      "npcName": "Don Rodrigo",
+      "npcAvatar": "👴",
+      "startNodeId": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "npcLine": "¡Buenos días! Soy el dueño de esta tienda de guitarras. ¿Eres el detective nuevo de la agencia?",
+          "options": [
+            {
+              "text": "Buenos días, señor. Sí, soy detective. ¿Vio algo sospechoso esta mañana?",
+              "isCorrect": true,
+              "nextNodeId": "info"
+            },
+            {
+              "text": "¡Adiós! No tengo tiempo para hablar.",
+              "isCorrect": false,
+              "feedback": "This witness can help you! Greet him respectfully — say 'Buenos días' and introduce yourself."
+            },
+            {
+              "text": "¿Cuánto cuesta esa guitarra?",
+              "isCorrect": false,
+              "feedback": "Stay focused, detective! You're on a case. Try greeting him and asking what he saw."
+            }
+          ]
+        },
+        {
+          "id": "info",
+          "npcLine": "¡Sí! Esta mañana vi a un hombre muy alto y sospechoso cerca del museo. ¡Llevaba un sombrero de charro negro muy elegante!",
+          "options": [
+            {
+              "text": "Muchas gracias, señor. Usted es muy amable y muy útil.",
+              "isCorrect": true,
+              "nextNodeId": "farewell"
+            },
+            {
+              "text": "¿Cómo se llama usted exactamente?",
+              "isCorrect": false,
+              "feedback": "You already have the clue you need! Thank him and move on."
+            },
+            {
+              "text": "No entiendo nada. No hablo español.",
+              "isCorrect": false,
+              "feedback": "But you do speak Spanish — you've been following this whole conversation! Try thanking him politely."
+            }
+          ]
+        },
+        {
+          "id": "farewell",
+          "npcLine": "",
+          "isEnd": true,
+          "endMessage": "¡De nada, detective! ¡Buena suerte con el caso! Don Rodrigo gives you a knowing nod and returns to his shop."
+        }
+      ]
+    },
+
+    {
+      "type": "readingComp",
+      "clueReward": "El sospechoso tiene 34 años y es muy alto — casi dos metros.",
+      "passage": "Querida guitarra,\n\nFinalmente te tengo. Me llamo 'El Camaleón'. Soy de Guadalajara — la ciudad más bella de todo México. Tengo treinta y cuatro años y soy muy alto. Casi dos metros de altura.\n\nLa música es mi vida. Toco la guitarra desde los cinco años. Esta guitarra es perfecta para un artista como yo.\n\nHasta pronto,\n— Tu nuevo dueño",
+      "glossary": [
+        { "word": "querida",   "translation": "dear / beloved" },
+        { "word": "finalmente","translation": "finally" },
+        { "word": "bella",     "translation": "beautiful" },
+        { "word": "altura",    "translation": "height" },
+        { "word": "toco",      "translation": "I play" },
+        { "word": "artista",   "translation": "artist" },
+        { "word": "dueño",     "translation": "owner" },
+        { "word": "desde",     "translation": "since / from" }
+      ],
+      "questions": [
+        {
+          "id": "r1",
+          "text": "¿Cómo se llama el ladrón?",
+          "type": "multiple_choice",
+          "options": ["El Camaleón", "Don Rodrigo", "El Mariachi", "El Detective"],
+          "correctIndex": 0
+        },
+        {
+          "id": "r2",
+          "text": "¿Cuántos años tiene el ladrón?",
+          "type": "short_answer",
+          "acceptableAnswers": ["34", "treinta y cuatro", "treinta y cuatro años", "34 años"]
+        },
+        {
+          "id": "r3",
+          "text": "¿De dónde es el ladrón?",
+          "type": "multiple_choice",
+          "options": ["Ciudad de México", "Cancún", "Monterrey", "Guadalajara"],
+          "correctIndex": 3
+        }
+      ]
+    },
+
+    {
+      "type": "listeningComp",
+      "clueReward": "El sospechoso tiene bigote negro y habla muy rápido.",
+      "audioUrl": "/audio/unit-01/phone-call.mp3",
+      "transcript": "Oye, ya tengo la guitarra. Sí... el hombre del bigote negro... habla rapidísimo... ¡perfecto! Nos vemos esta noche. Adiós.",
+      "question": "Según la llamada, ¿qué características tiene el sospechoso?",
+      "options": [
+        "Tiene bigote negro y habla muy rápido",
+        "Es una mujer joven y elegante",
+        "No tiene bigote y habla despacio",
+        "Tiene pelo largo y rubio"
+      ],
+      "correctIndex": 0,
+      "maxReplays": 3
+    },
+
+    {
+      "type": "lineup",
+      "correctSuspectId": "camaleon",
+      "hint": "Recuerda las pistas: lleva sombrero negro, tiene 34 años y es muy alto, tiene bigote negro. ¿Quién tiene TODAS estas características?",
+      "suspects": [
+        {
+          "id": "camaleon",
+          "name": "El Camaleón",
+          "realName": "Carlos Mendoza Ruiz",
+          "age": 34,
+          "description": "Es un hombre alto y delgado. Tiene bigote negro. Siempre lleva un sombrero de charro negro y elegante. Es de Guadalajara y habla muy, muy rápido.",
+          "imageSeed": 48
+        },
+        {
+          "id": "serpiente",
+          "name": "La Serpiente",
+          "realName": "Ana López García",
+          "age": 28,
+          "description": "Es una mujer joven y muy elegante. Tiene pelo largo y negro. Es de Ciudad de México. Habla despacio y con mucha calma. No lleva sombrero.",
+          "imageSeed": 25
+        },
+        {
+          "id": "toro",
+          "name": "El Toro",
+          "realName": "Miguel Reyes Vásquez",
+          "age": 50,
+          "description": "Es un hombre bajo y muy fuerte. Tiene cincuenta años y no tiene bigote. Es de Monterrey. Es tranquilo y habla poco.",
+          "imageSeed": 57
+        },
+        {
+          "id": "pajaro",
+          "name": "El Pájaro",
+          "realName": "Juan Torres Silva",
+          "age": 22,
+          "description": "Es un hombre joven y alto pero sin bigote. Tiene veintidós años. Es de Cancún. Habla inglés y español perfectamente. No lleva sombrero.",
+          "imageSeed": 44
+        }
+      ]
+    }
+  ]
+}

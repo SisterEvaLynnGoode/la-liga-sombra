@@ -7,7 +7,7 @@ export type Json =
   | Json[];
 
 export type UnitStatus = "locked" | "available" | "in_progress" | "completed";
-export type ActivityType = "vocab_match" | "dialogue" | "listening" | "grammar" | "cultural";
+export type ActivityType = "vocab_match" | "dialogue" | "listening" | "grammar" | "cultural" | "lineup";
 export type BadgeType = "case_solved" | "perfect_score" | "speed_run" | "cultural_expert" | "first_case";
 
 // Supabase v2 requires Relationships and CompositeTypes for correct type inference
@@ -234,6 +234,7 @@ export interface Database {
           case_solved: boolean;
           criminal_caught: boolean;
           completed_at: string | null;
+          stage_index: number;
         };
         Insert: {
           id?: string;
@@ -243,6 +244,7 @@ export interface Database {
           case_solved?: boolean;
           criminal_caught?: boolean;
           completed_at?: string | null;
+          stage_index?: number;
         };
         Update: {
           id?: string;
@@ -252,6 +254,7 @@ export interface Database {
           case_solved?: boolean;
           criminal_caught?: boolean;
           completed_at?: string | null;
+          stage_index?: number;
         };
         Relationships: [
           {

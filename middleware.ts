@@ -20,7 +20,7 @@ export async function middleware(request: NextRequest) {
   }
 
   // ── Student-protected routes ───────────────────────────────────────────────
-  if (pathname.startsWith("/mission-board") || pathname.startsWith("/game")) {
+  if (pathname.startsWith("/mission-board") || pathname.startsWith("/game") || pathname.startsWith("/play")) {
     const token = request.cookies.get(AGENT_COOKIE)?.value;
     if (!token) return NextResponse.redirect(new URL("/login", request.url));
     const payload = await verifyToken(token);
@@ -36,5 +36,5 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/mission-board/:path*", "/game/:path*", "/teacher/:path*"],
+  matcher: ["/mission-board/:path*", "/game/:path*", "/play/:path*", "/teacher/:path*"],
 };
