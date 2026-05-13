@@ -1,0 +1,296 @@
+{
+  "unitNumber": 7,
+  "country": "Chile",
+  "city": "Viña del Mar",
+  "caseTitle": "Sabotaje en el Festival",
+  "caseDescription": "Alguien está saboteando los equipos de sonido en el Festival de Viña del Mar — el festival de música más famoso de América Latina. El saboteador está entre el público ahora mismo. Usa el presente progresivo (estar + -ando/-iendo), los verbos de cambio radical y los números ordinales para observar las cámaras de vigilancia e identificarlo antes de que escape.",
+  "criminalName": "El Técnico Oscuro",
+
+  "vocab": [
+    { "spanish": "el cine",                "english": "movie theater / the cinema",      "audio": "/audio/unit-07/cine.mp3" },
+    { "spanish": "el concierto",           "english": "concert",                         "audio": "/audio/unit-07/concierto.mp3" },
+    { "spanish": "la fiesta",              "english": "party / celebration",             "audio": "/audio/unit-07/fiesta.mp3" },
+    { "spanish": "el parque",              "english": "park",                            "audio": "/audio/unit-07/parque.mp3" },
+    { "spanish": "el deporte",             "english": "sport",                           "audio": "/audio/unit-07/deporte.mp3" },
+    { "spanish": "el estadio",             "english": "stadium",                         "audio": "/audio/unit-07/estadio.mp3" },
+    { "spanish": "el festival",            "english": "festival",                        "audio": "/audio/unit-07/festival.mp3" },
+    { "spanish": "el teatro",              "english": "theater",                         "audio": "/audio/unit-07/teatro.mp3" },
+    { "spanish": "la playa",               "english": "beach",                           "audio": "/audio/unit-07/playa.mp3" },
+    { "spanish": "la discoteca",           "english": "nightclub / dance club",          "audio": "/audio/unit-07/discoteca.mp3" },
+    { "spanish": "el verano",              "english": "summer",                          "audio": "/audio/unit-07/verano.mp3" },
+    { "spanish": "el otoño",               "english": "autumn / fall",                  "audio": "/audio/unit-07/otono.mp3" },
+    { "spanish": "el invierno",            "english": "winter",                          "audio": "/audio/unit-07/invierno.mp3" },
+    { "spanish": "la primavera",           "english": "spring",                          "audio": "/audio/unit-07/primavera.mp3" },
+    { "spanish": "hace calor",             "english": "it's hot",                        "audio": "/audio/unit-07/hace-calor.mp3" },
+    { "spanish": "hace frío",              "english": "it's cold",                       "audio": "/audio/unit-07/hace-frio.mp3" },
+    { "spanish": "hace viento",            "english": "it's windy",                      "audio": "/audio/unit-07/hace-viento.mp3" },
+    { "spanish": "hace sol",               "english": "it's sunny",                      "audio": "/audio/unit-07/hace-sol.mp3" },
+    { "spanish": "está nublado",           "english": "it's cloudy",                     "audio": "/audio/unit-07/esta-nublado.mp3" },
+    { "spanish": "el/la cantante",         "english": "singer",                          "audio": "/audio/unit-07/cantante.mp3" },
+    { "spanish": "el bailarín / la bailarina","english": "dancer (m/f)",                 "audio": "/audio/unit-07/bailarin.mp3" },
+    { "spanish": "el jugador / la jugadora","english": "player / athlete (m/f)",         "audio": "/audio/unit-07/jugador.mp3" },
+    { "spanish": "el/la artista",          "english": "artist",                          "audio": "/audio/unit-07/artista.mp3" },
+    { "spanish": "el/la periodista",       "english": "journalist / reporter",           "audio": "/audio/unit-07/periodista.mp3" },
+    { "spanish": "el/la guitarrista",      "english": "guitarist",                       "audio": "/audio/unit-07/guitarrista.mp3" },
+    { "spanish": "el pintor / la pintora", "english": "painter (m/f)",                   "audio": "/audio/unit-07/pintor.mp3" },
+    { "spanish": "el/la tenista",          "english": "tennis player",                   "audio": "/audio/unit-07/tenista.mp3" },
+    { "spanish": "el actor / la actriz",   "english": "actor / actress",                 "audio": "/audio/unit-07/actor.mp3" },
+    { "spanish": "el/la turista",          "english": "tourist",                         "audio": "/audio/unit-07/turista.mp3" },
+    { "spanish": "jugar (u→ue)",           "english": "to play — sports/games (stem-changing)", "audio": "/audio/unit-07/jugar.mp3" },
+    { "spanish": "encontrar (o→ue)",       "english": "to find / to encounter (stem-changing)",  "audio": "/audio/unit-07/encontrar.mp3" },
+    { "spanish": "poder (o→ue)",           "english": "to be able to / can (stem-changing)",     "audio": "/audio/unit-07/poder.mp3" },
+    { "spanish": "dormir (o→ue)",          "english": "to sleep (stem-changing)",                "audio": "/audio/unit-07/dormir.mp3" },
+    { "spanish": "volver (o→ue)",          "english": "to return / come back (stem-changing)",   "audio": "/audio/unit-07/volver.mp3" },
+    { "spanish": "almorzar (o→ue)",        "english": "to have lunch (stem-changing)",           "audio": "/audio/unit-07/almorzar.mp3" },
+    { "spanish": "primero / primera",      "english": "first (m/f)",                     "audio": "/audio/unit-07/primero.mp3" },
+    { "spanish": "segundo / segunda",      "english": "second (m/f)",                    "audio": "/audio/unit-07/segundo.mp3" },
+    { "spanish": "tercero / tercera",      "english": "third (m/f)",                     "audio": "/audio/unit-07/tercero.mp3" },
+    { "spanish": "cuarto / cuarta",        "english": "fourth (m/f)",                    "audio": "/audio/unit-07/cuarto.mp3" },
+    { "spanish": "quinto / quinta",        "english": "fifth (m/f)",                     "audio": "/audio/unit-07/quinto.mp3" }
+  ],
+
+  "stages": [
+
+    {
+      "type": "cutscene",
+      "videoUrl": "/videos/unit-07-intro.mp4",
+      "subtitleUrl": "/videos/unit-07-intro.vtt",
+      "chiefName": "Jefa Ramírez",
+      "chiefImageSeed": 60,
+      "briefingLines": [
+        "¡Bienvenido a Viña del Mar, agente! Estás en Chile, en la costa del Pacífico — hogar del Festival de la Canción más famoso de América Latina.",
+        "El Festival de Viña del Mar está en crisis. Alguien está saboteando los equipos de sonido de las bandas principales del festival esta tarde.",
+        "Un técnico deshonesto está actuando ahora mismo — está mezclando algo con los cables del equipo principal para arruinar el concierto.",
+        "El saboteador está en el festival en este momento. Las cámaras de vigilancia lo están capturando, pero hay muchas escenas y poco tiempo.",
+        "Para atraparlo necesitas dominar el presente progresivo — estar + -ando/-iendo — y los números ordinales para identificar su posición.",
+        "¡Atención! Chile es el país de Pablo Neruda, el Desierto de Atacama y la Patagonia. Viña del Mar está en la costa del Pacífico — hace sol hoy, pero el viento del Pacífico es fuerte.",
+        "Las cámaras están rotando. El tiempo corre. ¡Encuentra al técnico oscuro antes de que escape por la puerta trasera, agente!"
+      ]
+    },
+
+    {
+      "type": "vocabMatch",
+      "pairs": [
+        { "spanish": "el festival",      "english": "festival" },
+        { "spanish": "el concierto",     "english": "concert" },
+        { "spanish": "la playa",         "english": "beach" },
+        { "spanish": "el/la cantante",   "english": "singer" },
+        { "spanish": "el bailarín",      "english": "dancer (male)" },
+        { "spanish": "el/la periodista", "english": "journalist" },
+        { "spanish": "el/la guitarrista","english": "guitarist" },
+        { "spanish": "jugar",            "english": "to play (sports)" },
+        { "spanish": "encontrar",        "english": "to find" },
+        { "spanish": "primero/a",        "english": "first" },
+        { "spanish": "segundo/a",        "english": "second" },
+        { "spanish": "hace calor",       "english": "it's hot" }
+      ]
+    },
+
+    {
+      "type": "readingComp",
+      "clueReward": "El saboteador lleva uniforme negro (los demás técnicos llevan azul). Está saliendo por la puerta trasera con una bolsa negra grande. Está escribiendo mensajes en el celular mientras sale.",
+      "passage": "TRANSCRIPCIÓN DEL TESTIGO — FESTIVAL DE VIÑA DEL MAR\nViña del Mar, Chile — sábado, 14:32 horas\n\nEl testigo Patricio Rojas, artista invitado del festival, reporta lo siguiente:\n\n\"Estoy cerca del escenario principal. Un técnico de sonido está saliendo por la puerta trasera del escenario ahora mismo. Está cargando una bolsa negra grande — es demasiado grande para sus herramientas normales de trabajo.\n\nEl técnico no está corriendo, pero está caminando muy rápido. Los otros técnicos están trabajando normalmente en el escenario principal — están poniendo los micrófonos y los cables para el próximo concierto. Pero este hombre está yendo directamente a la salida de emergencia.\n\nAdemás, el técnico está llevando un uniforme negro. Eso también es raro — los otros técnicos están llevando uniformes azules con el logo del festival. Este hombre está llevando algo diferente.\n\nTambién lo veo sacar el celular. Está escribiendo un mensaje mientras está saliendo — eso es muy sospechoso aquí. Los cantantes están cantando en el escenario y el público está aplaudiendo, pero nadie más está mirando a este técnico.\n\n¡Es muy sospechoso! Por favor, envíen un agente inmediatamente.\"",
+      "glossary": [
+        { "word": "trasera",      "translation": "rear / back (adjective)" },
+        { "word": "herramientas", "translation": "tools" },
+        { "word": "cables",       "translation": "cables / wires" },
+        { "word": "aplaudiendo",  "translation": "applauding (present progressive)" },
+        { "word": "micrófono",    "translation": "microphone" },
+        { "word": "emergencia",   "translation": "emergency" },
+        { "word": "logo",         "translation": "logo" },
+        { "word": "invitado",     "translation": "guest / invited" }
+      ],
+      "questions": [
+        {
+          "id": "r1",
+          "text": "¿Qué está haciendo el técnico sospechoso según el testigo?",
+          "type": "multiple_choice",
+          "options": [
+            "Está saliendo por la puerta trasera con una bolsa negra grande",
+            "Está cantando en el escenario principal",
+            "Está poniendo los micrófonos con los otros técnicos",
+            "Está corriendo hacia el público del festival"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "id": "r2",
+          "text": "¿Qué están haciendo los otros técnicos del festival?",
+          "type": "multiple_choice",
+          "options": [
+            "Están trabajando en el escenario — poniendo micrófonos y cables",
+            "Están saliendo también por la puerta trasera",
+            "Están mirando al técnico sospechoso",
+            "Están cantando con los artistas del festival"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "id": "r3",
+          "text": "¿Cómo es diferente el uniforme del técnico sospechoso?",
+          "type": "multiple_choice",
+          "options": [
+            "Está llevando uniforme negro — los otros llevan uniforme azul",
+            "Está llevando uniforme blanco con logo rojo",
+            "No está llevando ningún uniforme — está de civil",
+            "Su uniforme es igual al de los otros técnicos"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "id": "r4",
+          "text": "¿Qué están haciendo los cantantes y el público en ese momento?",
+          "type": "multiple_choice",
+          "options": [
+            "Los cantantes están cantando y el público está aplaudiendo",
+            "Están mirando al técnico sospechoso",
+            "Están buscando al agente de La Liga Sombra",
+            "Están corriendo hacia la salida de emergencia"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "id": "r5",
+          "text": "¿Qué está haciendo el técnico con su celular? (Escribe en español.)",
+          "type": "short_answer",
+          "acceptableAnswers": [
+            "está escribiendo un mensaje",
+            "está mandando un mensaje",
+            "está enviando un mensaje",
+            "escribe un mensaje",
+            "está usando el celular",
+            "está escribiendo"
+          ]
+        }
+      ]
+    },
+
+    {
+      "type": "sentenceBuilder",
+      "sentences": [
+        {
+          "sentence": "El técnico está saliendo por la puerta trasera",
+          "translation": "The technician is leaving through the back door. (present progressive)"
+        },
+        {
+          "sentence": "Nosotros estamos buscando al saboteador ahora",
+          "translation": "We are looking for the saboteur right now. (present progressive)"
+        },
+        {
+          "sentence": "La cantante está cantando en el escenario",
+          "translation": "The singer is singing on stage. (present progressive: -ando)"
+        },
+        {
+          "sentence": "Están poniendo algo en el equipo de sonido",
+          "translation": "They are putting something in the sound equipment. (present progressive: -iendo)"
+        },
+        {
+          "sentence": "El periodista está grabando todo el festival",
+          "translation": "The journalist is recording the entire festival. (present progressive)"
+        }
+      ]
+    },
+
+    {
+      "type": "liveStakeout",
+      "clueReward": "El saboteador es capturado en la cámara de la puerta trasera: está saliendo con una bolsa negra grande y uniforme negro. Está escribiendo mensajes en el celular.",
+      "targetActionDescription": "Busca al técnico que está saliendo por la puerta trasera del escenario con una bolsa negra grande y uniforme negro",
+      "timeLimit": 90,
+      "scenes": [
+        {
+          "imageUrl": "https://picsum.photos/400/300?random=71",
+          "description": "Escenario principal",
+          "currentAction": "La cantante está cantando en el escenario principal",
+          "isTarget": false
+        },
+        {
+          "imageUrl": "https://picsum.photos/400/300?random=72",
+          "description": "Área del público",
+          "currentAction": "Los bailarines están bailando cerca del público",
+          "isTarget": false
+        },
+        {
+          "imageUrl": "https://picsum.photos/400/300?random=73",
+          "description": "Zona de prensa",
+          "currentAction": "El periodista está grabando el concierto con su cámara",
+          "isTarget": false
+        },
+        {
+          "imageUrl": "https://picsum.photos/400/300?random=74",
+          "description": "Puerta trasera — CAM 4",
+          "currentAction": "El técnico está saliendo con una bolsa negra — uniforme negro",
+          "isTarget": true
+        },
+        {
+          "imageUrl": "https://picsum.photos/400/300?random=75",
+          "description": "Parque lateral",
+          "currentAction": "Los turistas están tomando fotos del festival y la playa",
+          "isTarget": false
+        },
+        {
+          "imageUrl": "https://picsum.photos/400/300?random=76",
+          "description": "Backstage norte",
+          "currentAction": "Los músicos están poniendo los instrumentos en el escenario",
+          "isTarget": false
+        },
+        {
+          "imageUrl": "https://picsum.photos/400/300?random=77",
+          "description": "Camerinos",
+          "currentAction": "Los artistas están preparándose para el próximo concierto",
+          "isTarget": false
+        },
+        {
+          "imageUrl": "https://picsum.photos/400/300?random=78",
+          "description": "Plaza exterior",
+          "currentAction": "Una jugadora está corriendo cerca del estadio del festival",
+          "isTarget": false
+        }
+      ]
+    },
+
+    {
+      "type": "lineup",
+      "correctSuspectId": "sebastian",
+      "hint": "Recuerda las pistas: el primer sospechoso es el técnico de sonido que sale por la puerta trasera con uniforme negro — los otros llevan azul. No está cantando, no está tocando, no está grabando. Está saliendo con una bolsa negra. ¿Cuál de los cuatro sospechosos es el técnico de sonido que aparece en la cámara trasera?",
+      "suspects": [
+        {
+          "id": "sebastian",
+          "name": "El Técnico Oscuro",
+          "realName": "Sebastián Fuentes Rojas",
+          "age": 26,
+          "description": "Es el primer sospechoso de la lista. Tiene veintiséis años. Es técnico de sonido del festival. La cámara lo capta saliendo por la puerta trasera con una bolsa negra grande — llevando uniforme negro, no azul. Está escribiendo mensajes en el celular mientras sale.",
+          "imageSeed": 28,
+          "imageUrl": "https://randomuser.me/api/portraits/men/28.jpg"
+        },
+        {
+          "id": "valentina",
+          "name": "La Cantante Famosa",
+          "realName": "Valentina Soto Muñoz",
+          "age": 24,
+          "description": "Es la segunda sospechosa. Tiene veinticuatro años. Es cantante profesional y artista principal del festival. Está cantando en el escenario principal durante todo el evento — miles de personas la están viendo en ese momento.",
+          "imageSeed": 24,
+          "imageUrl": "https://randomuser.me/api/portraits/women/24.jpg"
+        },
+        {
+          "id": "alejandro",
+          "name": "El Guitarrista",
+          "realName": "Alejandro Bravo Díaz",
+          "age": 29,
+          "description": "Es el tercer sospechoso. Tiene veintinueve años. Es guitarrista de la banda principal. Está tocando su guitarra en el escenario cuando ocurre el sabotaje. Está llevando uniforme azul del festival — igual que los demás técnicos honestos.",
+          "imageSeed": 32,
+          "imageUrl": "https://randomuser.me/api/portraits/men/32.jpg"
+        },
+        {
+          "id": "mariajose",
+          "name": "La Periodista",
+          "realName": "María José Cerda López",
+          "age": 31,
+          "description": "Es la cuarta sospechosa. Tiene treinta y un años. Es periodista del canal de televisión. Está grabando el concierto con su cámara profesional, frente al escenario principal. La cámara de seguridad la muestra allí durante todo el evento.",
+          "imageSeed": 36,
+          "imageUrl": "https://randomuser.me/api/portraits/women/36.jpg"
+        }
+      ]
+    }
+
+  ]
+}

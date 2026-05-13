@@ -10,9 +10,10 @@ import ConjugationDragDrop from "@/components/games/ConjugationDragDrop";
 import TimedFlashcards from "@/components/games/TimedFlashcards";
 import ChaseMap from "@/components/games/ChaseMap";
 import Interrogation from "@/components/games/Interrogation";
+import LiveStakeout from "@/components/games/LiveStakeout";
 import type { GameResult } from "@/lib/games/types";
 import type { DialogueNode, VocabPair, ReadingQuestion, GlossaryEntry, FlashcardItem } from "@/lib/games/types";
-import type { ChaseLocation, QuestionItem, InterrogationCharacter } from "@/lib/types/unit-content";
+import type { ChaseLocation, QuestionItem, InterrogationCharacter, StakeoutScene } from "@/lib/types/unit-content";
 
 // ── Sample data (Unit 1 — México — Greetings & Intros) ──────────────────────
 
@@ -213,6 +214,17 @@ const INTERROGATION_QUESTIONS: QuestionItem[] = [
   },
 ];
 
+const STAKEOUT_SCENES: StakeoutScene[] = [
+  { imageUrl: "https://picsum.photos/400/300?random=81", description: "Escenario principal", currentAction: "La cantante está cantando en el escenario", isTarget: false },
+  { imageUrl: "https://picsum.photos/400/300?random=82", description: "Área del público",   currentAction: "Los turistas están tomando fotos del festival", isTarget: false },
+  { imageUrl: "https://picsum.photos/400/300?random=83", description: "Zona de prensa",      currentAction: "El periodista está grabando la actuación", isTarget: false },
+  { imageUrl: "https://picsum.photos/400/300?random=84", description: "Puerta trasera",      currentAction: "El técnico está saliendo con una bolsa negra", isTarget: true },
+  { imageUrl: "https://picsum.photos/400/300?random=85", description: "Parque lateral",      currentAction: "Los músicos están descansando antes del show", isTarget: false },
+  { imageUrl: "https://picsum.photos/400/300?random=86", description: "Entrada principal",   currentAction: "Los guardias están revisando los boletos", isTarget: false },
+  { imageUrl: "https://picsum.photos/400/300?random=87", description: "Backstage norte",     currentAction: "Los bailarines están practicando su coreografía", isTarget: false },
+  { imageUrl: "https://picsum.photos/400/300?random=88", description: "Camerinos",           currentAction: "Los artistas están preparándose para el concierto", isTarget: false },
+];
+
 const GAMES = [
   { id: "vocab",          label: "Memoria",        emoji: "🃏" },
   { id: "sentence",       label: "Oraciones",      emoji: "🧩" },
@@ -223,6 +235,7 @@ const GAMES = [
   { id: "flashcards",     label: "Fichas",         emoji: "⚡" },
   { id: "chasemap",       label: "Persecución",    emoji: "🗺️" },
   { id: "interrogation",  label: "Interrogatorio", emoji: "🔦" },
+  { id: "stakeout",       label: "Vigilancia",     emoji: "📹" },
 ] as const;
 
 type GameId = (typeof GAMES)[number]["id"];
@@ -386,6 +399,16 @@ export default function ShowcasePage() {
               "💡 Marco está en la zona de la habitación de la abuela esta mañana",
             ]}
             maxQuestions={5}
+            onComplete={handleComplete}
+          />
+        )}
+
+        {active === "stakeout" && (
+          <LiveStakeout
+            key={gameKey}
+            scenes={STAKEOUT_SCENES}
+            targetActionDescription="Busca al técnico que está saliendo por la puerta trasera del escenario con una bolsa negra grande"
+            timeLimit={90}
             onComplete={handleComplete}
           />
         )}

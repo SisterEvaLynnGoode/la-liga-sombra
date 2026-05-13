@@ -191,6 +191,28 @@ export const SentenceBuilderStageSchema = z.object({
   sentences: z.array(SentenceItemSchema).min(1).max(10),
 });
 
+// ─── Live Stakeout ────────────────────────────────────────────────────────────
+
+export const StakeoutSceneSchema = z.object({
+  imageUrl: z.string().min(1),
+  description: z.string().min(1),   // camera/location label
+  currentAction: z.string().min(1), // Spanish present-progressive caption
+  isTarget: z.boolean(),
+});
+
+export const LiveStakeoutStageSchema = z.object({
+  type: z.literal("liveStakeout"),
+  clueReward: z.string().optional(),
+  scenes: z.array(StakeoutSceneSchema)
+    .min(4, "Need at least 4 scenes (shows 4 at a time)")
+    .max(12, "Maximum 12 scenes"),
+  targetActionDescription: z.string().min(1),
+  timeLimit: z.number().int().min(30).max(180),
+}).refine(
+  (d) => d.scenes.filter((s) => s.isTarget).length === 1,
+  { message: "Exactly one scene must have isTarget: true", path: ["scenes"] }
+);
+
 export const FlashcardItemSchema = z.object({
   prompt: z.string().min(1),
   answer: z.string().min(1),
@@ -215,6 +237,7 @@ export const StageSchema = z.discriminatedUnion("type", [
   SentenceBuilderStageSchema,
   InterrogationStageSchema,
   TimedFlashcardsStageSchema,
+  LiveStakeoutStageSchema,
 ]);
 
 // ─── Unit root ────────────────────────────────────────────────────────────────

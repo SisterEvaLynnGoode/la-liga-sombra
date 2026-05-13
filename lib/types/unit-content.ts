@@ -122,6 +122,21 @@ export interface SentenceBuilderStageData {
   sentences: SentenceItem[];
 }
 
+export interface StakeoutScene {
+  imageUrl: string;
+  description: string;    // camera / location label
+  currentAction: string;  // Spanish present-progressive caption
+  isTarget: boolean;
+}
+
+export interface LiveStakeoutStageData {
+  type: "liveStakeout";
+  clueReward?: string;
+  scenes: StakeoutScene[];
+  targetActionDescription: string;
+  timeLimit: number;
+}
+
 export interface TimedFlashcardsStageData {
   type: "timedFlashcards";
   clueReward?: string;
@@ -140,7 +155,8 @@ export type StageData =
   | ChaseMapStageData
   | SentenceBuilderStageData
   | InterrogationStageData
-  | TimedFlashcardsStageData;
+  | TimedFlashcardsStageData
+  | LiveStakeoutStageData;
 
 // ── Unit root ─────────────────────────────────────────────────────────────────
 
