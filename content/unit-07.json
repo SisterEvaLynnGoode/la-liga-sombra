@@ -166,6 +166,54 @@
     },
 
     {
+      "type": "listeningComp",
+      "clueReward": "El sospechoso es bailarín, está saboteando los cables del escenario, y es la tercera persona desde la izquierda.",
+      "audioUrl": "/audio/unit-07/festival-witness.mp3",
+      "transcript": "¡Lo veo! ¡Está aquí! El sospechoso está corriendo por el festival. Está poniendo algo en el escenario. Es un hombre joven. Es bailarín. No es cantante. Está jugando con los cables. Ahora está volviendo al escenario principal. Está dando algo a otra persona. Es la tercera persona desde la izquierda. Hace mucho calor aquí. Estamos en verano. ¡Atrápenlo!",
+      "translation": "I see him! He's here! The suspect is running through the festival. He's putting something on the stage. He's a young man. He's a dancer. He's not a singer. He's playing with the cables. Now he's returning to the main stage. He's giving something to another person. He's the third person from the left. It's very hot here. We're in summer. Catch him!",
+      "maxReplays": 3,
+      "passingScore": 0.75,
+      "retryHint": "Pista: Escucha qué está haciendo el sospechoso AHORA, su profesión, y su posición en la fila.",
+      "questions": [
+        {
+          "question": "¿Qué está haciendo el sospechoso AHORA?",
+          "options": ["Está cantando", "Está comiendo", "Está poniendo algo en el escenario", "Está bailando"],
+          "correctIndex": 2,
+          "explanationEs": "La testigo dice 'Está poniendo algo en el escenario'.",
+          "explanationEn": "She says 'He's putting something on the stage.'"
+        },
+        {
+          "question": "¿Cuál es su profesión?",
+          "options": ["Cantante", "Bailarín", "Jugador", "Periodista"],
+          "correctIndex": 1,
+          "explanationEs": "La testigo dice 'Es bailarín. No es cantante.'",
+          "explanationEn": "She says 'He's a dancer. He's not a singer.'"
+        },
+        {
+          "question": "¿Adónde está volviendo?",
+          "options": ["Al hotel", "Al escenario principal", "Al parque", "A la calle"],
+          "correctIndex": 1,
+          "explanationEs": "La testigo dice 'Ahora está volviendo al escenario principal'.",
+          "explanationEn": "She says he's returning to the main stage."
+        },
+        {
+          "question": "¿Qué posición tiene en la fila?",
+          "options": ["Primera persona", "Segunda persona", "Tercera persona", "Quinta persona"],
+          "correctIndex": 2,
+          "explanationEs": "La testigo dice 'Es la tercera persona desde la izquierda'.",
+          "explanationEn": "She says he's the third person from the left."
+        },
+        {
+          "question": "¿Qué estación es?",
+          "options": ["Invierno", "Primavera", "Verano", "Otoño"],
+          "correctIndex": 2,
+          "explanationEs": "La testigo dice 'Hace mucho calor aquí. Estamos en verano.'",
+          "explanationEn": "She says 'It's hot here. We're in summer.'"
+        }
+      ]
+    },
+
+    {
       "type": "sentenceBuilder",
       "sentences": [
         {
