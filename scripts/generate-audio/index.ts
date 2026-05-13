@@ -1,5 +1,6 @@
 import type { AudioScript } from "./types.js";
 import { unit01Scripts } from "./scripts/unit-01.js";
+import { unit02Scripts } from "./scripts/unit-02.js";
 
 // ─── Audio script registry ────────────────────────────────────────────────────
 // Import each unit's script array and spread it into `scripts`.
@@ -7,4 +8,5 @@ import { unit01Scripts } from "./scripts/unit-01.js";
 
 export const scripts: AudioScript[] = [
   ...unit01Scripts,
+  ...unit02Scripts,
 ];

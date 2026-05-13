@@ -219,18 +219,50 @@
 
     {
       "type": "listeningComp",
-      "clueReward": "El sospechoso es de la República Dominicana, no de Puerto Rico.",
-      "audioUrl": "/audio/unit-02/intercom.mp3",
-      "transcript": "Atención, estudiantes y maestros. La policía busca a un estudiante en relación con el robo en el laboratorio de informática. El sospechoso es un muchacho alto y moreno. Importante: él no es de Puerto Rico — es de otro país del Caribe. Si tienes información, habla con la Sra. Torres inmediatamente. Gracias y buen día.",
-      "question": "Según el aviso del intercomunicador, ¿cuál es una característica importante del sospechoso?",
-      "options": [
-        "Es alto, moreno, y no es de Puerto Rico",
-        "Es bajo, rubio, y habla inglés en clase",
-        "Es una chica tímida con mochila azul",
-        "Es el maestro de informática de la escuela"
-      ],
-      "correctIndex": 0,
-      "maxReplays": 3
+      "clueReward": "El sospechoso es alto, moreno, inteligente, y es de la República Dominicana.",
+      "audioUrl": "/audio/unit-02/principal-voicemail.mp3",
+      "transcript": "Buenos días, habla el director de la escuela. Tengo información sobre el sospechoso. Es un estudiante alto. Tiene pelo moreno. No es rubio. Es muy inteligente. Estudia mucho en la biblioteca. Usa la computadora todos los días. Es de la República Dominicana. No es de Puerto Rico. Por favor, necesito ayuda. Gracias.",
+      "translation": "Good morning, this is the school principal speaking. I have information about the suspect. He's a tall student. He has dark hair. He's not blonde. He's very intelligent. He studies a lot in the library. He uses the computer every day. He's from the Dominican Republic. He's not from Puerto Rico. Please, I need help. Thank you.",
+      "maxReplays": 3,
+      "passingScore": 0.75,
+      "retryHint": "Pista: Escucha la descripción física, dónde estudia, y de dónde es.",
+      "questions": [
+        {
+          "question": "¿Cómo es el sospechoso físicamente?",
+          "options": ["Alto y rubio", "Bajo y rubio", "Alto y moreno", "Bajo y moreno"],
+          "correctIndex": 2,
+          "explanationEs": "El director dice 'Es un estudiante alto. Tiene pelo moreno. No es rubio.'",
+          "explanationEn": "The principal says he's tall with dark hair and not blonde."
+        },
+        {
+          "question": "¿Dónde estudia mucho?",
+          "options": ["En la cafetería", "En la biblioteca", "En el gimnasio", "En el laboratorio"],
+          "correctIndex": 1,
+          "explanationEs": "El director dice 'Estudia mucho en la biblioteca'.",
+          "explanationEn": "The principal says he studies a lot in the library."
+        },
+        {
+          "question": "¿Qué usa todos los días?",
+          "options": ["El libro", "La pizarra", "La mochila", "La computadora"],
+          "correctIndex": 3,
+          "explanationEs": "El director dice 'Usa la computadora todos los días'.",
+          "explanationEn": "The principal says he uses the computer every day."
+        },
+        {
+          "question": "¿De dónde es el sospechoso?",
+          "options": ["Puerto Rico", "República Dominicana", "México", "España"],
+          "correctIndex": 1,
+          "explanationEs": "El director dice 'Es de la República Dominicana. No es de Puerto Rico.'",
+          "explanationEn": "The principal says he's from the Dominican Republic, not Puerto Rico."
+        },
+        {
+          "question": "¿Cómo es su personalidad?",
+          "options": ["Simpático", "Cómico", "Inteligente", "Tímido"],
+          "correctIndex": 2,
+          "explanationEs": "El director dice 'Es muy inteligente'.",
+          "explanationEn": "The principal says he's very intelligent."
+        }
+      ]
     },
 
     {
