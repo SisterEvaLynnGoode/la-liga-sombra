@@ -141,6 +141,54 @@
     },
 
     {
+      "type": "listeningComp",
+      "clueReward": "El nieto está nervioso y miente sobre su ubicación. Está mintiendo.",
+      "audioUrl": "/audio/unit-04/abuela-voicemail.mp3",
+      "transcript": "Hola, habla la abuela Rosa. Estoy muy triste. Mi collar de esmeraldas no está. Mi familia es muy importante para mí. Mi hijo está contento. Está en su trabajo. Mi hija está cansada. Está en la cocina. Mi nieto está nervioso. Dice que está en la escuela, pero no es verdad. Mi nieta está preocupada por mí. Es muy buena. ¿Quién tiene mi collar? Por favor, ayuda.",
+      "translation": "Hello, this is grandmother Rosa speaking. I'm very sad. My emerald necklace is gone. My family is very important to me. My son is happy. He's at his job. My daughter is tired. She's in the kitchen. My grandson is nervous. He says he's at school, but it's not true. My granddaughter is worried about me. She's very good. Who has my necklace? Please, help.",
+      "maxReplays": 3,
+      "passingScore": 0.75,
+      "retryHint": "Pista: Escucha cómo está cada miembro de la familia y dónde está.",
+      "questions": [
+        {
+          "question": "¿Cómo está la abuela?",
+          "options": ["Contenta", "Triste", "Enojada", "Cansada"],
+          "correctIndex": 1,
+          "explanationEs": "La abuela dice 'Estoy muy triste'.",
+          "explanationEn": "Grandmother says 'I am very sad.'"
+        },
+        {
+          "question": "¿Dónde está el hijo?",
+          "options": ["En la cocina", "En la escuela", "En su trabajo", "En la casa"],
+          "correctIndex": 2,
+          "explanationEs": "La abuela dice 'Mi hijo está contento. Está en su trabajo.'",
+          "explanationEn": "Grandmother says her son is happy and at his job."
+        },
+        {
+          "question": "¿Cómo está la hija?",
+          "options": ["Triste", "Nerviosa", "Contenta", "Cansada"],
+          "correctIndex": 3,
+          "explanationEs": "La abuela dice 'Mi hija está cansada'.",
+          "explanationEn": "Grandmother says her daughter is tired."
+        },
+        {
+          "question": "¿Quién está nervioso?",
+          "options": ["El hijo", "La hija", "El nieto", "La nieta"],
+          "correctIndex": 2,
+          "explanationEs": "La abuela dice 'Mi nieto está nervioso'.",
+          "explanationEn": "Grandmother says her grandson is nervous."
+        },
+        {
+          "question": "¿Quién está mintiendo sobre su ubicación?",
+          "options": ["El hijo", "La hija", "El nieto", "La nieta"],
+          "correctIndex": 2,
+          "explanationEs": "La abuela dice del nieto: 'Dice que está en la escuela, pero no es verdad'.",
+          "explanationEn": "Grandmother says of the grandson: 'He says he's at school, but it's not true.'"
+        }
+      ]
+    },
+
+    {
       "type": "interrogation",
       "character": {
         "name": "Tía Elena",
