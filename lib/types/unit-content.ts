@@ -69,13 +69,41 @@ export interface LineupStageData {
   hint: string;
 }
 
+export interface ChaseLocation {
+  id: string;
+  name: string;
+  coordinates: { x: number; y: number };
+}
+
+export interface ChaseMapStageData {
+  type: "chaseMap";
+  clueReward?: string;
+  locations: ChaseLocation[];
+  correctRoute: string[];
+  clues: string[];
+  wrongPenalty?: number;
+}
+
+export interface SentenceItem {
+  sentence: string;
+  translation: string;
+}
+
+export interface SentenceBuilderStageData {
+  type: "sentenceBuilder";
+  clueReward?: string;
+  sentences: SentenceItem[];
+}
+
 export type StageData =
   | CutsceneStageData
   | VocabMatchStageData
   | DialogueStageData
   | ReadingStageData
   | ListeningStageData
-  | LineupStageData;
+  | LineupStageData
+  | ChaseMapStageData
+  | SentenceBuilderStageData;
 
 // ── Unit root ─────────────────────────────────────────────────────────────────
 

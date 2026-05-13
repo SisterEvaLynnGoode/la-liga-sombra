@@ -8,8 +8,10 @@ import ListeningComprehension from "@/components/games/ListeningComprehension";
 import ReadingComprehension from "@/components/games/ReadingComprehension";
 import ConjugationDragDrop from "@/components/games/ConjugationDragDrop";
 import TimedFlashcards from "@/components/games/TimedFlashcards";
+import ChaseMap from "@/components/games/ChaseMap";
 import type { GameResult } from "@/lib/games/types";
 import type { DialogueNode, VocabPair, ReadingQuestion, GlossaryEntry, FlashcardItem } from "@/lib/games/types";
+import type { ChaseLocation } from "@/lib/types/unit-content";
 
 // ── Sample data (Unit 1 — México — Greetings & Intros) ──────────────────────
 
@@ -115,6 +117,16 @@ const FLASHCARDS: FlashcardItem[] = [
 
 // ── Game tab config ──────────────────────────────────────────────────────────
 
+const CHASE_LOCATIONS: ChaseLocation[] = [
+  { id: "puerta_sol",  name: "Puerta del Sol",     coordinates: { x: 48, y: 50 } },
+  { id: "museo_prado", name: "Museo del Prado",    coordinates: { x: 63, y: 67 } },
+  { id: "retiro",      name: "Parque del Retiro",  coordinates: { x: 77, y: 53 } },
+  { id: "gran_via",    name: "Gran Vía",            coordinates: { x: 35, y: 33 } },
+  { id: "atocha",      name: "Estación de Atocha", coordinates: { x: 58, y: 83 } },
+  { id: "plaza_mayor", name: "Plaza Mayor",         coordinates: { x: 42, y: 62 } },
+  { id: "banco_espana",name: "Banco de España",    coordinates: { x: 62, y: 48 } },
+];
+
 const GAMES = [
   { id: "vocab",     label: "Memoria",       emoji: "🃏" },
   { id: "sentence",  label: "Oraciones",     emoji: "🧩" },
@@ -123,6 +135,7 @@ const GAMES = [
   { id: "reading",   label: "Lectora",       emoji: "📖" },
   { id: "conjugation", label: "Conjugación", emoji: "✍️" },
   { id: "flashcards", label: "Fichas",       emoji: "⚡" },
+  { id: "chasemap",  label: "Persecución",   emoji: "🗺️" },
 ] as const;
 
 type GameId = (typeof GAMES)[number]["id"];
@@ -272,6 +285,22 @@ export default function ShowcasePage() {
             key={gameKey}
             cards={FLASHCARDS}
             timeLimit={60}
+            onComplete={handleComplete}
+          />
+        )}
+
+        {active === "chasemap" && (
+          <ChaseMap
+            key={gameKey}
+            locations={CHASE_LOCATIONS}
+            correctRoute={["puerta_sol", "museo_prado", "retiro", "atocha"]}
+            clues={[
+              "¡La sospechosa va a la Puerta del Sol ahora mismo! ¡Corre!",
+              "Ahora ella va al Museo del Prado a pie. ¡Síguela!",
+              "¡Va al Parque del Retiro en taxi! ¡Rápido!",
+              "¡Va a la Estación de Atocha en metro! ¡Es la última parada!",
+            ]}
+            wrongPenalty={15}
             onComplete={handleComplete}
           />
         )}

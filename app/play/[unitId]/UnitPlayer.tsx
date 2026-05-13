@@ -15,6 +15,8 @@ import VocabMatch from "@/components/games/VocabMatch";
 import DialogueChoice from "@/components/games/DialogueChoice";
 import ReadingComprehension from "@/components/games/ReadingComprehension";
 import ListeningComprehension from "@/components/games/ListeningComprehension";
+import ChaseMap from "@/components/games/ChaseMap";
+import SentenceBuilderStage from "@/components/games/SentenceBuilderStage";
 import type { BadgeType } from "@/lib/types/database";
 
 interface Props {
@@ -41,6 +43,8 @@ const STAGE_LABELS: Record<StageData["type"], string> = {
   readingComp: "Evidencia",
   listeningComp: "Vigilancia",
   lineup: "Identificación",
+  chaseMap: "Persecución",
+  sentenceBuilder: "Gramática",
 };
 
 export default function UnitPlayer({ content, unitId, unitNumber, classId, initialStageIndex, isCompleted }: Props) {
@@ -58,6 +62,33 @@ export default function UnitPlayer({ content, unitId, unitNumber, classId, initi
   const [totalTime, setTotalTime] = useState(0);
   const [lineupScore, setLineupScore] = useState(1);
   const stageStartRef = useRef(Date.now());
+
+  // ── Shared unit-complete logic ────────────────────────────────────────────────
+  const completeUnit = useCallback(
+    async (result: GameResult) => {
+      const res = await fetch("/api/game/unit-complete", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          unitNumber,
+          score: result.score,
+          maxScore: result.maxScore,
+          timeSpentSeconds: result.timeSpent,
+        }),
+      }).catch(() => null);
+
+      if (res?.ok) {
+        const data = await res.json() as { ok: boolean; newBadges: BadgeType[] };
+        if (data.newBadges?.length) {
+          setNewBadges(data.newBadges);
+          setShowBadgeEarned(true);
+          return;
+        }
+      }
+      setShowBadge(true);
+    },
+    [unitNumber]
+  );
 
   // ── Save stage progress + advance ────────────────────────────────────────────
   const handleStageComplete = useCallback(
@@ -77,14 +108,25 @@ export default function UnitPlayer({ content, unitId, unitNumber, classId, initi
             : stage.type === "dialogueChoice" ? "dialogue"
             : stage.type === "readingComp" ? "dialogue"
             : stage.type === "listeningComp" ? "listening"
+            : stage.type === "chaseMap" ? "cultural"
+            : stage.type === "sentenceBuilder" ? "vocab_match"
             : "cultural",
           score: result.score,
           maxScore: result.maxScore,
           timeSpentSeconds: result.timeSpent,
         }),
-      }).catch(() => {}); // never crash gameplay on a network error
+      }).catch(() => {});
 
       setTotalTime((t) => t + result.timeSpent);
+
+      const isLastStage = currentStage === content.stages.length - 1;
+
+      // If this is the last stage and it's not a lineup (which has its own handler),
+      // treat it as unit completion
+      if (isLastStage && stage.type !== "lineup") {
+        await completeUnit(result);
+        return;
+      }
 
       // Check for clue reward
       const clue = "clueReward" in stage && !result.isSkipped ? (stage.clueReward ?? null) : null;
@@ -97,7 +139,7 @@ export default function UnitPlayer({ content, unitId, unitNumber, classId, initi
         stageStartRef.current = Date.now();
       }
     },
-    [content.stages, currentStage, unitNumber]
+    [content.stages, currentStage, unitNumber, completeUnit]
   );
 
   // ── Lineup (final stage) ─────────────────────────────────────────────────────
@@ -105,30 +147,9 @@ export default function UnitPlayer({ content, unitId, unitNumber, classId, initi
     async (result: GameResult, score: number) => {
       setLineupScore(score);
       setTotalTime((t) => t + result.timeSpent);
-
-      const res = await fetch("/api/game/unit-complete", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          unitNumber,
-          score: result.score,
-          maxScore: result.maxScore,
-          timeSpentSeconds: result.timeSpent,
-        }),
-      }).catch(() => null);
-
-      if (res?.ok) {
-        const data = await res.json() as { ok: boolean; newBadges: BadgeType[] };
-        if (data.newBadges?.length) {
-          setNewBadges(data.newBadges);
-          setShowBadgeEarned(true);
-          // BadgeModal shown after BadgeEarned dismisses
-          return;
-        }
-      }
-      setShowBadge(true);
+      await completeUnit(result);
     },
-    [unitNumber]
+    [completeUnit]
   );
 
   // ── Clue dismissed → advance stage ──────────────────────────────────────────
@@ -263,6 +284,26 @@ export default function UnitPlayer({ content, unitId, unitNumber, classId, initi
             hint={stage.hint}
             earnedClues={earnedClues}
             onComplete={handleLineupComplete}
+          />
+        )}
+
+        {stage?.type === "chaseMap" && (
+          <ChaseMap
+            key={`stage-${currentStage}`}
+            locations={stage.locations}
+            correctRoute={stage.correctRoute}
+            clues={stage.clues}
+            wrongPenalty={stage.wrongPenalty}
+            onComplete={handleStageComplete}
+          />
+        )}
+
+        {stage?.type === "sentenceBuilder" && (
+          <SentenceBuilderStage
+            key={`stage-${currentStage}`}
+            sentences={stage.sentences}
+            unitId={unitId}
+            onComplete={handleStageComplete}
           />
         )}
       </div>

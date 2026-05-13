@@ -1,0 +1,283 @@
+{
+  "unitNumber": 3,
+  "country": "España",
+  "city": "Madrid",
+  "caseTitle": "Persecución por Madrid",
+  "caseDescription": "Una experta ladrona de arte conocida como 'La Sombra' robó una pintura de Velázquez del Museo del Prado. Sigue sus pasos por Madrid usando el verbo 'ir' y el vocabulario de lugares y transportes. ¡No la dejes escapar!",
+  "criminalName": "La Sombra",
+
+  "vocab": [
+    { "spanish": "la Puerta del Sol",      "english": "Puerta del Sol (main square)", "audio": "/audio/unit-03/puerta-del-sol.mp3" },
+    { "spanish": "el Museo del Prado",     "english": "Prado Museum",                  "audio": "/audio/unit-03/museo-del-prado.mp3" },
+    { "spanish": "el Parque del Retiro",   "english": "Retiro Park",                   "audio": "/audio/unit-03/parque-del-retiro.mp3" },
+    { "spanish": "la Gran Vía",            "english": "Gran Vía (main street)",         "audio": "/audio/unit-03/gran-via.mp3" },
+    { "spanish": "la Estación de Atocha",  "english": "Atocha Train Station",           "audio": "/audio/unit-03/atocha.mp3" },
+    { "spanish": "el aeropuerto",          "english": "airport",                        "audio": "/audio/unit-03/aeropuerto.mp3" },
+    { "spanish": "el hotel",               "english": "hotel",                          "audio": "/audio/unit-03/hotel.mp3" },
+    { "spanish": "la farmacia",            "english": "pharmacy",                       "audio": "/audio/unit-03/farmacia.mp3" },
+    { "spanish": "el restaurante",         "english": "restaurant",                     "audio": "/audio/unit-03/restaurante.mp3" },
+    { "spanish": "el mercado",             "english": "market",                         "audio": "/audio/unit-03/mercado.mp3" },
+    { "spanish": "la plaza",               "english": "plaza / town square",            "audio": "/audio/unit-03/plaza.mp3" },
+    { "spanish": "la calle",               "english": "street",                         "audio": "/audio/unit-03/calle.mp3" },
+    { "spanish": "el banco",               "english": "bank",                           "audio": "/audio/unit-03/banco.mp3" },
+    { "spanish": "la comisaría",           "english": "police station",                 "audio": "/audio/unit-03/comisaria.mp3" },
+    { "spanish": "el metro",               "english": "subway / metro",                 "audio": "/audio/unit-03/metro.mp3" },
+    { "spanish": "el autobús",             "english": "bus",                            "audio": "/audio/unit-03/autobus.mp3" },
+    { "spanish": "el taxi",                "english": "taxi",                           "audio": "/audio/unit-03/taxi.mp3" },
+    { "spanish": "el tren",                "english": "train",                          "audio": "/audio/unit-03/tren.mp3" },
+    { "spanish": "a pie",                  "english": "on foot",                        "audio": "/audio/unit-03/a-pie.mp3" },
+    { "spanish": "la bicicleta",           "english": "bicycle",                        "audio": "/audio/unit-03/bicicleta.mp3" },
+    { "spanish": "el coche",               "english": "car",                            "audio": "/audio/unit-03/coche.mp3" },
+    { "spanish": "el avión",               "english": "airplane",                       "audio": "/audio/unit-03/avion.mp3" },
+    { "spanish": "comer",                  "english": "to eat",                         "audio": "/audio/unit-03/comer.mp3" },
+    { "spanish": "beber",                  "english": "to drink",                       "audio": "/audio/unit-03/beber.mp3" },
+    { "spanish": "correr",                 "english": "to run",                         "audio": "/audio/unit-03/correr.mp3" },
+    { "spanish": "leer",                   "english": "to read",                        "audio": "/audio/unit-03/leer.mp3" },
+    { "spanish": "vender",                 "english": "to sell",                        "audio": "/audio/unit-03/vender.mp3" },
+    { "spanish": "aprender",               "english": "to learn",                       "audio": "/audio/unit-03/aprender.mp3" },
+    { "spanish": "comprender",             "english": "to understand",                  "audio": "/audio/unit-03/comprender.mp3" },
+    { "spanish": "ver",                    "english": "to see",                         "audio": "/audio/unit-03/ver.mp3" },
+    { "spanish": "¿adónde?",              "english": "where to?",                      "audio": "/audio/unit-03/adonde.mp3" },
+    { "spanish": "¿cuándo?",              "english": "when?",                           "audio": "/audio/unit-03/cuando.mp3" },
+    { "spanish": "¿cómo?",               "english": "how?",                            "audio": "/audio/unit-03/como.mp3" },
+    { "spanish": "¿por qué?",            "english": "why?",                            "audio": "/audio/unit-03/por-que.mp3" },
+    { "spanish": "¿quién?",              "english": "who?",                            "audio": "/audio/unit-03/quien.mp3" },
+    { "spanish": "¿cuánto?",             "english": "how much / how many?",            "audio": "/audio/unit-03/cuanto.mp3" },
+    { "spanish": "ir + a",               "english": "to go to (verb + preposition)",   "audio": "/audio/unit-03/ir-a.mp3" },
+    { "spanish": "voy a",                "english": "I go to / I am going to",          "audio": "/audio/unit-03/voy-a.mp3" }
+  ],
+
+  "stages": [
+
+    {
+      "type": "cutscene",
+      "videoUrl": "/videos/unit-03-intro.mp4",
+      "subtitleUrl": "/videos/unit-03-intro.vtt",
+      "chiefName": "Jefa Ramírez",
+      "chiefImageSeed": 60,
+      "briefingLines": [
+        "Bienvenido de nuevo, agente. Esta misión te lleva a Madrid, la capital de España.",
+        "Anoche alguien robó 'El Infante', una pintura histórica de Diego Velázquez, del Museo del Prado.",
+        "La sospechosa se llama 'La Sombra'. Es una ladrona experta — rápida, inteligente y muy peligrosa.",
+        "Los testigos la vieron correr por las calles de Madrid con una bolsa grande y oscura.",
+        "Para atraparla necesitas dominar el verbo 'ir', los lugares de la ciudad y los medios de transporte.",
+        "Sigue su ruta por Madrid: de la Puerta del Sol al Museo del Prado, al Retiro, y finalmente a la Estación de Atocha.",
+        "¡Corre, agente! La Sombra va a tomar un tren. ¡No la dejes escapar!"
+      ]
+    },
+
+    {
+      "type": "vocabMatch",
+      "pairs": [
+        { "spanish": "el metro",                "english": "subway" },
+        { "spanish": "el autobús",              "english": "bus" },
+        { "spanish": "el taxi",                 "english": "taxi" },
+        { "spanish": "a pie",                   "english": "on foot" },
+        { "spanish": "la Puerta del Sol",       "english": "main square" },
+        { "spanish": "el Museo del Prado",      "english": "Prado Museum" },
+        { "spanish": "el Parque del Retiro",    "english": "Retiro Park" },
+        { "spanish": "la Estación de Atocha",   "english": "train station" },
+        { "spanish": "comer",                   "english": "to eat" },
+        { "spanish": "correr",                  "english": "to run" },
+        { "spanish": "¿adónde?",               "english": "where to?" },
+        { "spanish": "¿quién?",                "english": "who?" }
+      ]
+    },
+
+    {
+      "type": "sentenceBuilder",
+      "clueReward": "La Sombra va al Museo del Prado primero — a pie desde la Puerta del Sol.",
+      "sentences": [
+        {
+          "sentence": "Yo voy al museo en metro",
+          "translation": "I go to the museum by metro."
+        },
+        {
+          "sentence": "Ella va a la plaza a pie",
+          "translation": "She goes to the plaza on foot."
+        },
+        {
+          "sentence": "Nosotros vamos al parque en autobús",
+          "translation": "We go to the park by bus."
+        },
+        {
+          "sentence": "Tú vas a la estación en taxi",
+          "translation": "You go to the station by taxi."
+        },
+        {
+          "sentence": "Él va a correr en el parque",
+          "translation": "He is going to run in the park."
+        }
+      ]
+    },
+
+    {
+      "type": "dialogueChoice",
+      "clueReward": "La Sombra lleva una bolsa grande y negra. Va a la Puerta del Sol con mucha prisa.",
+      "npcName": "Carlos el Metroista",
+      "npcAvatar": "👷",
+      "startNodeId": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "npcLine": "¡Oiga! Soy el jefe de seguridad del metro. ¿Usted tiene autorización para estar aquí? ¿Adónde va tan rápido?",
+          "options": [
+            {
+              "text": "Soy agente de La Liga Sombra. Busco a una sospechosa. ¿Puede ayudarme, por favor?",
+              "isCorrect": true,
+              "nextNodeId": "info"
+            },
+            {
+              "text": "¡No tengo tiempo! ¿Adónde va una mujer con bolsa grande?",
+              "isCorrect": false,
+              "feedback": "That's too rude — and you haven't identified yourself! Introduce yourself as an agent and ask politely."
+            },
+            {
+              "text": "Voy al Museo del Prado. ¿Cómo voy en metro?",
+              "isCorrect": false,
+              "feedback": "You're not a tourist right now! Identify yourself as an agent and ask about the suspect."
+            }
+          ]
+        },
+        {
+          "id": "info",
+          "npcLine": "¡Ah, un agente! Sí, vi a una mujer con una bolsa muy grande y negra. Sale del metro y va a pie hacia la Puerta del Sol. ¡Corre muy rápido — como una atleta! ¿Busca usted a esa mujer?",
+          "options": [
+            {
+              "text": "Sí, exacto. ¿Adónde va exactamente? ¿Va a la Puerta del Sol o a otro lugar?",
+              "isCorrect": true,
+              "nextNodeId": "farewell"
+            },
+            {
+              "text": "¿Cuánto cuesta el billete de metro?",
+              "isCorrect": false,
+              "feedback": "Not the time to check prices! Ask about where the suspect is going."
+            },
+            {
+              "text": "¿Usted come o bebe algo en el trabajo?",
+              "isCorrect": false,
+              "feedback": "That's a strange question right now! Stay focused — ask about the suspect's direction."
+            }
+          ]
+        },
+        {
+          "id": "farewell",
+          "npcLine": "¡Sí! Va directamente a la Puerta del Sol. Lleva algo muy pesado en esa bolsa. Después... no sé. Pero va con mucha prisa. ¡Corra, agente — ella corre muy rápido!",
+          "options": [
+            {
+              "text": "Muchas gracias, señor. Esta información es muy valiosa. ¡Voy a la Puerta del Sol ahora mismo!",
+              "isCorrect": true,
+              "nextNodeId": "end"
+            },
+            {
+              "text": "¿Cómo se llama usted exactamente?",
+              "isCorrect": false,
+              "feedback": "You have the information you need! Thank him and go chase the suspect."
+            },
+            {
+              "text": "¿Aprende usted inglés?",
+              "isCorrect": false,
+              "feedback": "Very off-topic! Thank him professionally and start the chase."
+            }
+          ]
+        },
+        {
+          "id": "end",
+          "npcLine": "",
+          "isEnd": true,
+          "endMessage": "¡De nada, agente! ¡Buena suerte! ¡Esa mujer corre rapidísimo — como el viento madrileño! Carlos el Metroista radios his colleagues and points you toward the exit."
+        }
+      ]
+    },
+
+    {
+      "type": "chaseMap",
+      "clueReward": "La Sombra intenta escapar a París en tren desde la Estación de Atocha.",
+      "locations": [
+        { "id": "puerta_sol",   "name": "Puerta del Sol",     "coordinates": { "x": 48, "y": 50 } },
+        { "id": "museo_prado",  "name": "Museo del Prado",    "coordinates": { "x": 63, "y": 67 } },
+        { "id": "retiro",       "name": "Parque del Retiro",  "coordinates": { "x": 77, "y": 53 } },
+        { "id": "gran_via",     "name": "Gran Vía",           "coordinates": { "x": 35, "y": 33 } },
+        { "id": "atocha",       "name": "Estación de Atocha", "coordinates": { "x": 58, "y": 83 } },
+        { "id": "plaza_mayor",  "name": "Plaza Mayor",        "coordinates": { "x": 42, "y": 62 } },
+        { "id": "banco_espana", "name": "Banco de España",    "coordinates": { "x": 62, "y": 48 } }
+      ],
+      "correctRoute": ["puerta_sol", "museo_prado", "retiro", "atocha"],
+      "clues": [
+        "¡La Sombra va a la Puerta del Sol! Un testigo la ve correr hacia el centro. ¡Síguela!",
+        "Ahora ella va al Museo del Prado a pie. Quiere ver si dejó algo allí. ¡Corre!",
+        "¡Va al Parque del Retiro en taxi! Inteligencia dice que esconde algo entre los árboles.",
+        "¡Alerta! ¡La Sombra va a la Estación de Atocha en metro! ¡Tiene un billete para París!"
+      ],
+      "wrongPenalty": 15
+    },
+
+    {
+      "type": "readingComp",
+      "passage": "EL PAÍS — MADRID\n\nAGENTE CAPTURA A 'LA SOMBRA' EN ATOCHA\n\nAyer por la tarde, una agente especial de la Liga Sombra capturó a Elena Vásquez Morales, conocida en el mundo criminal como 'La Sombra', en el andén número tres de la Estación de Atocha de Madrid.\n\nLa Sombra es una mujer alta y morena de veintinueve años. Es de Madrid. Ella es experta en robar arte famoso de los museos de España y Europa.\n\nLa noche del lunes, La Sombra robó el cuadro 'El Infante' del Museo del Prado. El cuadro pesa mucho y ella lo lleva en una bolsa grande y oscura. La agente la captura cuando La Sombra compra un billete para París, Francia.\n\nLa policía de Madrid lleva a La Sombra a la comisaría central. El cuadro 'El Infante' vuelve al Museo del Prado esta misma tarde. ¡Caso resuelto, agente!",
+      "glossary": [
+        { "word": "captura",     "translation": "captures (from capturar)" },
+        { "word": "andén",       "translation": "platform (train station)" },
+        { "word": "conocida",    "translation": "known (female)" },
+        { "word": "mundo criminal", "translation": "criminal world" },
+        { "word": "experta",     "translation": "expert (female)" },
+        { "word": "cuadro",      "translation": "painting" },
+        { "word": "pesa",        "translation": "weighs (from pesar)" },
+        { "word": "oscura",      "translation": "dark (feminine)" },
+        { "word": "comisaría",   "translation": "police station" },
+        { "word": "vuelve",      "translation": "returns (from volver)" }
+      ],
+      "questions": [
+        {
+          "id": "r1",
+          "text": "¿Dónde capturan a La Sombra?",
+          "type": "multiple_choice",
+          "options": [
+            "En la Estación de Atocha",
+            "En el Museo del Prado",
+            "En la Puerta del Sol",
+            "En el aeropuerto"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "id": "r2",
+          "text": "¿Qué robó La Sombra del Museo del Prado?",
+          "type": "short_answer",
+          "acceptableAnswers": [
+            "El Infante",
+            "el cuadro El Infante",
+            "un cuadro",
+            "'El Infante'",
+            "El Infante de Velázquez"
+          ]
+        },
+        {
+          "id": "r3",
+          "text": "¿Cómo es La Sombra físicamente?",
+          "type": "multiple_choice",
+          "options": [
+            "Alta y morena",
+            "Baja y rubia",
+            "Alta y rubia",
+            "Baja y morena"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "id": "r4",
+          "text": "¿Adónde iba La Sombra en el tren?",
+          "type": "multiple_choice",
+          "options": [
+            "A París, Francia",
+            "A Barcelona, España",
+            "A Londres, Inglaterra",
+            "A Roma, Italia"
+          ],
+          "correctIndex": 0
+        }
+      ]
+    }
+
+  ]
+}

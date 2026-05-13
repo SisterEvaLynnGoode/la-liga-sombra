@@ -52,6 +52,21 @@ export const ReadingQuestionSchema = z.discriminatedUnion("type", [
   SAQuestionSchema,
 ]);
 
+// ─── Chase Map ────────────────────────────────────────────────────────────────
+
+export const ChaseLocationSchema = z.object({
+  id: z.string().min(1),
+  name: z.string().min(1),
+  coordinates: z.object({ x: z.number().min(0).max(100), y: z.number().min(0).max(100) }),
+});
+
+// ─── Sentence Builder (multi-sentence) ───────────────────────────────────────
+
+export const SentenceItemSchema = z.object({
+  sentence: z.string().min(1, "Sentence required"),
+  translation: z.string().min(1, "Translation required"),
+});
+
 // ─── Suspects ─────────────────────────────────────────────────────────────────
 
 export const SuspectSchema = z.object({
@@ -123,6 +138,27 @@ export const LineupStageSchema = z.object({
   { message: "correctSuspectId must match one of the suspect ids", path: ["correctSuspectId"] }
 );
 
+export const ChaseMapStageSchema = z.object({
+  type: z.literal("chaseMap"),
+  clueReward: z.string().optional(),
+  locations: z.array(ChaseLocationSchema).min(4).max(12),
+  correctRoute: z.array(z.string().min(1)).min(2),
+  clues: z.array(z.string().min(1)).min(1),
+  wrongPenalty: z.number().int().min(5).max(60).optional(),
+}).refine(
+  (d) => d.clues.length >= d.correctRoute.length,
+  { message: "Must have at least one clue per route step", path: ["clues"] }
+).refine(
+  (d) => d.correctRoute.every((id) => d.locations.some((l) => l.id === id)),
+  { message: "All correctRoute IDs must exist in locations", path: ["correctRoute"] }
+);
+
+export const SentenceBuilderStageSchema = z.object({
+  type: z.literal("sentenceBuilder"),
+  clueReward: z.string().optional(),
+  sentences: z.array(SentenceItemSchema).min(1).max(10),
+});
+
 export const StageSchema = z.discriminatedUnion("type", [
   CutsceneStageSchema,
   VocabMatchStageSchema,
@@ -130,6 +166,8 @@ export const StageSchema = z.discriminatedUnion("type", [
   ReadingStageSchema,
   ListeningStageSchema,
   LineupStageSchema,
+  ChaseMapStageSchema,
+  SentenceBuilderStageSchema,
 ]);
 
 // ─── Unit root ────────────────────────────────────────────────────────────────
@@ -143,14 +181,11 @@ export const UnitContentSchema = z.object({
   criminalName: z.string().min(1),
   vocab: z.array(VocabPairSchema).min(1),
   stages: z.array(StageSchema)
-    .length(6, "Each unit must have exactly 6 stages: cutscene, vocabMatch, dialogueChoice, readingComp, listeningComp, lineup"),
+    .min(3, "Each unit must have at least 3 stages")
+    .max(10, "Maximum 10 stages per unit"),
 }).refine(
-  (data) => {
-    const types = data.stages.map((s) => s.type);
-    const expected = ["cutscene", "vocabMatch", "dialogueChoice", "readingComp", "listeningComp", "lineup"];
-    return expected.every((t, i) => types[i] === t);
-  },
-  { message: "Stages must appear in order: cutscene → vocabMatch → dialogueChoice → readingComp → listeningComp → lineup", path: ["stages"] }
+  (data) => data.stages[0]?.type === "cutscene",
+  { message: "First stage must be a cutscene", path: ["stages", "0"] }
 );
 
 export type UnitContentInput = z.input<typeof UnitContentSchema>;
