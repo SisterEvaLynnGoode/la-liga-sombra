@@ -87,12 +87,14 @@ export default function LandingPage() {
         <span className="font-typewriter text-[10px] tracking-widest uppercase text-[#8b7355]">
           Que Chevere Level 1
         </span>
-        <Link
-          href="/teacher/login"
-          className="font-typewriter text-[10px] tracking-widest uppercase text-[#4a3a2a] hover:text-[#8b7355] transition-colors"
-        >
-          Maestros →
-        </Link>
+        <div className="flex items-center gap-4">
+          <Link href="/about" className="font-typewriter text-[10px] tracking-widest uppercase text-[#4a3a2a] hover:text-[#8b7355] transition-colors">
+            Acerca de
+          </Link>
+          <Link href="/teacher/login" className="font-typewriter text-[10px] tracking-widest uppercase text-[#4a3a2a] hover:text-[#8b7355] transition-colors">
+            Maestros →
+          </Link>
+        </div>
       </footer>
     </main>
   );

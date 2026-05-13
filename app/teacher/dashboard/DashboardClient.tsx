@@ -145,6 +145,9 @@ export default function DashboardClient() {
               </div>
             )}
           </div>
+          <a href="/teacher/author" className="font-typewriter text-[10px] tracking-widest uppercase text-[#8b7355] hover:text-[#c9933a] transition-colors">
+            ✏ Crear unidad
+          </a>
           <a href="/teacher/setup" className="font-typewriter text-[10px] tracking-widest uppercase text-[#8b7355] hover:text-[#c9933a] transition-colors">
             ⚙ Setup
           </a>

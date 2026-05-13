@@ -42,7 +42,7 @@ export default function AlertToast({ classId }: Props) {
   if (!alerts.length) return null;
 
   return (
-    <div className="fixed top-14 right-4 z-50 flex flex-col gap-2 max-w-xs w-full pointer-events-none">
+    <div className="fixed top-14 right-4 z-50 flex flex-col gap-2 max-w-xs w-full pointer-events-none" aria-live="polite" aria-label="Class announcements">
       {alerts.map((alert) => (
         <div
           key={alert.id}

@@ -15,7 +15,16 @@ export default function RootLayout({
   return (
     <html lang="es">
       <body className="antialiased bg-[#0d0b0a] text-[#d4c9b8]">
-        {children}
+        {/* Skip navigation for screen readers / keyboard users */}
+        <a
+          href="#main"
+          className="sr-only focus:not-sr-only focus:fixed focus:top-2 focus:left-2 focus:z-[100] focus:px-4 focus:py-2 focus:bg-[#c9933a] focus:text-[#0d0b0a] focus:font-typewriter focus:text-xs focus:uppercase focus:tracking-widest"
+        >
+          Skip to content
+        </a>
+        <div id="main">
+          {children}
+        </div>
       </body>
     </html>
   );

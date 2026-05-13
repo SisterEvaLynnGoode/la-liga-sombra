@@ -1,0 +1,206 @@
+{
+  "_comment": "UNIT TEMPLATE — copy this file, rename to unit-XX.json, fill in every field.",
+  "_comment2": "Fields marked [REQUIRED] must be filled in. Fields marked [OPTIONAL] can be removed.",
+  "_comment3": "Run 'npm run validate' to check your file before committing.",
+
+  "unitNumber": 2,
+  "country": "España",
+  "city": "Madrid",
+  "caseTitle": "El Título del Caso",
+  "caseDescription": "A 1-2 sentence summary of what was stolen and why students must investigate.",
+  "criminalName": "El Alias del Criminal",
+
+  "vocab": [
+    { "spanish": "hola",        "english": "hello",       "audio": "/audio/unit-02/hola.mp3" },
+    { "spanish": "adiós",       "english": "goodbye",     "audio": "/audio/unit-02/adios.mp3" },
+    { "spanish": "gracias",     "english": "thank you"    },
+    { "spanish": "por favor",   "english": "please"       },
+    { "spanish": "¿cómo estás?","english": "how are you?" },
+    { "spanish": "bien",        "english": "well/good"    },
+    { "spanish": "mal",         "english": "bad/not well" },
+    { "spanish": "y tú",        "english": "and you?"     }
+  ],
+
+  "stages": [
+
+    {
+      "_comment": "STAGE 1 — Cutscene. Drop your video in /public/videos/unit-XX-intro.mp4",
+      "_comment2": "The fallback (no video) shows chiefImageSeed photo + briefingLines as typed text.",
+      "type": "cutscene",
+      "videoUrl": "/videos/unit-02-intro.mp4",
+      "subtitleUrl": "/videos/unit-02-intro.vtt",
+      "fallbackImage": "",
+      "chiefName": "Jefe Ramírez",
+      "chiefImageSeed": 60,
+      "briefingLines": [
+        "Bienvenido de nuevo, agente. Tenemos una nueva misión urgente.",
+        "Alguien ha robado [OBJECT] de [LOCATION] en [CITY].",
+        "El sospechoso es conocido como '[CRIMINAL]'. Es muy peligroso.",
+        "Todos los testigos solo hablan español — tus habilidades serán esenciales.",
+        "¿Estás listo para tu segunda misión? ¡Buena suerte!"
+      ]
+    },
+
+    {
+      "_comment": "STAGE 2 — Vocab Match. 6-10 pairs from the unit's vocab list work best.",
+      "type": "vocabMatch",
+      "pairs": [
+        { "spanish": "hola",        "english": "hello" },
+        { "spanish": "adiós",       "english": "goodbye" },
+        { "spanish": "gracias",     "english": "thank you" },
+        { "spanish": "por favor",   "english": "please" },
+        { "spanish": "¿cómo estás?","english": "how are you?" },
+        { "spanish": "bien",        "english": "well/good" }
+      ]
+    },
+
+    {
+      "_comment": "STAGE 3 — Dialogue / Witness Interview.",
+      "_comment2": "Each node has an id, npcLine, and either options[] or isEnd:true.",
+      "_comment3": "One option per node must be isCorrect:true with a nextNodeId pointing to the next node.",
+      "_comment4": "clueReward is shown to students after completing this stage successfully.",
+      "type": "dialogueChoice",
+      "clueReward": "El sospechoso [description clue 1].",
+      "npcName": "Doña Carmen",
+      "npcAvatar": "👩",
+      "startNodeId": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "npcLine": "¡Buenos días! ¿Puedo ayudarte en algo?",
+          "options": [
+            {
+              "text": "Buenos días, señora. Soy detective. ¿Vio algo sospechoso?",
+              "isCorrect": true,
+              "nextNodeId": "clue"
+            },
+            {
+              "text": "¡Adiós!",
+              "isCorrect": false,
+              "feedback": "You just arrived! Try greeting her and explaining why you're here."
+            },
+            {
+              "text": "¿Cuánto cuesta?",
+              "isCorrect": false,
+              "feedback": "Stay focused on the investigation! Try introducing yourself."
+            }
+          ]
+        },
+        {
+          "id": "clue",
+          "npcLine": "¡Sí! Vi a alguien muy sospechoso esta mañana. [Describe what they saw here].",
+          "options": [
+            {
+              "text": "Muchas gracias, señora. Es muy útil.",
+              "isCorrect": true,
+              "nextNodeId": "end"
+            },
+            {
+              "text": "No entiendo.",
+              "isCorrect": false,
+              "feedback": "You understood! Try thanking her politely."
+            }
+          ]
+        },
+        {
+          "id": "end",
+          "npcLine": "",
+          "isEnd": true,
+          "endMessage": "¡De nada, detective! The witness waves you off with a knowing smile."
+        }
+      ]
+    },
+
+    {
+      "_comment": "STAGE 4 — Reading Comprehension.",
+      "_comment2": "passage: the text to display. glossary: words students can click for translation.",
+      "_comment3": "questions: mix of multiple_choice and short_answer. 2-4 questions works best.",
+      "type": "readingComp",
+      "clueReward": "El sospechoso [description clue 2].",
+      "passage": "Write a short note, letter, or document in Spanish, 50-150 words. This is something the thief left behind. Example:\n\nQuerido amigo,\nYa tengo el objeto. Soy [name]. Tengo [age] años y soy de [city]. [More details...]",
+      "glossary": [
+        { "word": "querido",   "translation": "dear / beloved" },
+        { "word": "ya",        "translation": "already / now" },
+        { "word": "tengo",     "translation": "I have / I am (age)" }
+      ],
+      "questions": [
+        {
+          "id": "r1",
+          "text": "¿Cómo se llama el sospechoso?",
+          "type": "multiple_choice",
+          "options": ["Option A", "Option B ✓", "Option C", "Option D"],
+          "correctIndex": 1
+        },
+        {
+          "id": "r2",
+          "text": "¿Cuántos años tiene?",
+          "type": "short_answer",
+          "acceptableAnswers": ["25", "veinticinco", "veinticinco años"]
+        }
+      ]
+    },
+
+    {
+      "_comment": "STAGE 5 — Listening Comprehension.",
+      "_comment2": "audioUrl: drop your .mp3 file in /public/audio/unit-XX/phone-call.mp3",
+      "_comment3": "transcript: shown to students after they answer correctly (optional).",
+      "type": "listeningComp",
+      "clueReward": "El sospechoso [description clue 3].",
+      "audioUrl": "/audio/unit-02/phone-call.mp3",
+      "transcript": "Optional: paste the exact Spanish words from the audio clip here.",
+      "question": "Según la llamada, ¿qué característica tiene el sospechoso?",
+      "options": [
+        "Correct answer describing the suspect",
+        "Wrong answer — plausible but false",
+        "Wrong answer — clearly different",
+        "Wrong answer — another distractor"
+      ],
+      "correctIndex": 0,
+      "maxReplays": 3
+    },
+
+    {
+      "_comment": "STAGE 6 — Lineup. Exactly 4 suspects. correctSuspectId must match one id.",
+      "_comment2": "Descriptions should be 2-3 Spanish sentences. Students must read them to solve the case.",
+      "_comment3": "Use different imageSeed values (1-70) for visual variety at i.pravatar.cc/?img=N",
+      "type": "lineup",
+      "correctSuspectId": "suspect-a",
+      "hint": "Recuerda las pistas: [clue 1], [clue 2], [clue 3]. ¿Quién tiene TODAS estas características?",
+      "suspects": [
+        {
+          "id": "suspect-a",
+          "name": "El Alias",
+          "realName": "Nombre Apellido",
+          "age": 35,
+          "description": "Es un hombre alto y delgado. Tiene [feature matching clue]. Es de [city] y habla [manner].",
+          "imageSeed": 12
+        },
+        {
+          "id": "suspect-b",
+          "name": "La Serpiente",
+          "realName": "Otra Persona",
+          "age": 28,
+          "description": "Es una mujer joven. No tiene [feature]. Es de [different city]. Habla despacio.",
+          "imageSeed": 25
+        },
+        {
+          "id": "suspect-c",
+          "name": "El Toro",
+          "realName": "Tercera Persona",
+          "age": 50,
+          "description": "Es un hombre bajo y fuerte. Tiene cincuenta años. No tiene [feature]. Es tranquilo.",
+          "imageSeed": 57
+        },
+        {
+          "id": "suspect-d",
+          "name": "El Pájaro",
+          "realName": "Cuarta Persona",
+          "age": 22,
+          "description": "Es un hombre joven. Tiene veintidós años. No tiene [feature]. Es de [city].",
+          "imageSeed": 44
+        }
+      ]
+    }
+
+  ]
+}
