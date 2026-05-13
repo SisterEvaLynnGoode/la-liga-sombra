@@ -92,14 +92,16 @@ export default function TeacherSetupPage() {
             <p className="font-typewriter text-xs tracking-[0.25em] uppercase text-[#8b7355]">
               Panel del Maestro
             </p>
-            <h1 className="font-display text-3xl font-bold text-[#f5e6c8]">Cuartel General</h1>
+            <h1 className="font-display text-3xl font-bold text-[#f5e6c8]">Configuración</h1>
           </div>
-          <button
-            onClick={handleLogout}
-            className="font-typewriter text-xs tracking-widest uppercase text-[#8b7355] hover:text-[#c0392b] transition-colors"
-          >
-            Cerrar sesión →
-          </button>
+          <div className="flex items-center gap-4">
+            <a href="/teacher/dashboard" className="clip-skew px-4 py-2 font-typewriter text-xs tracking-[0.2em] uppercase bg-[rgba(201,147,58,0.1)] text-[#e8b455] border border-[rgba(201,147,58,0.3)] hover:bg-[rgba(201,147,58,0.2)] transition-colors">
+              📊 Dashboard →
+            </a>
+            <button onClick={handleLogout} className="font-typewriter text-xs tracking-widest uppercase text-[#8b7355] hover:text-[#c0392b] transition-colors">
+              Cerrar sesión →
+            </button>
+          </div>
         </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
