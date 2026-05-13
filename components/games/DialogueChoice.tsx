@@ -179,11 +179,26 @@ export default function DialogueChoice({
           </div>
         )}
 
-        {/* Complete */}
-        {(status === "complete" || currentNode.isEnd) && (
+        {/* End node reached — show message + continue button */}
+        {currentNode.isEnd && status !== "complete" && (
+          <div className="border border-[rgba(201,147,58,0.3)] bg-[rgba(201,147,58,0.06)] p-5 text-center rounded-sm space-y-4">
+            <p className="font-display text-xl font-bold text-[#e8b455]">
+              {currentNode.endMessage ?? "¡Conversación completada!"}
+            </p>
+            <button
+              onClick={() => finish(correctChoices, totalNodes, elapsed)}
+              className="clip-skew px-8 py-3 font-typewriter text-sm tracking-[0.2em] uppercase bg-[#8b1a1a] text-[#f5e6c8] border border-[#c0392b] hover:bg-[#c0392b] transition-colors"
+            >
+              Continuar →
+            </button>
+          </div>
+        )}
+
+        {/* Stage finished (onComplete already called) */}
+        {status === "complete" && (
           <div className="border border-[rgba(201,147,58,0.3)] bg-[rgba(201,147,58,0.06)] p-5 text-center rounded-sm">
             <p className="font-display text-xl font-bold text-[#e8b455] mb-1">
-              {currentNode.endMessage ?? "¡Conversación completada!"}
+              ¡Conversación completada!
             </p>
             <p className="font-typewriter text-xs text-[#c4a882]">
               {correctChoices}/{totalNodes} correct choices · {elapsed}s
