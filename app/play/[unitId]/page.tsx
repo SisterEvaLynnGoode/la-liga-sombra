@@ -8,6 +8,8 @@ import UnitPlayer from "./UnitPlayer";
 function getUnitContent(unitNumber: number): UnitContent | null {
   // eslint-disable-next-line @typescript-eslint/no-require-imports
   if (unitNumber === 1) return require("@/content/unit-01.json") as UnitContent;
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
+  if (unitNumber === 2) return require("@/content/unit-02.json") as UnitContent;
   return null;
 }
 
