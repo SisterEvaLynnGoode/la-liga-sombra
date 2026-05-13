@@ -192,10 +192,65 @@ Drop `.mp3` files in `/public/audio/unit-0N/` and reference them in vocab:
 { "spanish": "hola", "english": "hello", "audio": "/audio/unit-02/hola.mp3" }
 ```
 
-**Free audio generation options:**
-- [Google Cloud Text-to-Speech](https://cloud.google.com/text-to-speech) — excellent Spanish voices
-- [ElevenLabs](https://elevenlabs.io) — high quality, free tier available
-- The **Vocab CSV Importer** at `/teacher/author` has a "Listen" button using browser TTS for pronunciation checking
+---
+
+## Listening comprehension audio (ElevenLabs CLI)
+
+Audio files are pre-generated locally with ElevenLabs and committed to `public/audio/`. The generator is a CLI tool in `scripts/generate-audio/` — it never runs on Vercel.
+
+### 1. Get credentials
+
+1. Sign up at [elevenlabs.io](https://elevenlabs.io) (free tier = 10,000 chars/month).
+2. Copy your **API key** from your profile → add to `.env.local` as `ELEVENLABS_API_KEY`.
+3. Browse [elevenlabs.io/voices](https://elevenlabs.io/voices), find four voices (2 female, 2 male) with neutral Latin American Spanish accents.
+4. Open each voice → copy its **Voice ID** (not the display name) → add to `.env.local`:
+   ```
+   ELEVENLABS_VOICE_FEMALE_1=abc123...
+   ELEVENLABS_VOICE_MALE_1=def456...
+   ELEVENLABS_VOICE_FEMALE_2=ghi789...
+   ELEVENLABS_VOICE_MALE_2=jkl012...
+   ```
+
+### 2. Dry-run first — always
+
+```bash
+npm run audio:generate -- --dry-run
+```
+
+Shows every file that would be generated, its voice assignment, character count, and total free-tier impact — without making any API calls.
+
+### 3. Generate one unit
+
+```bash
+npm run audio:generate -- --unit 1
+```
+
+The CLI shows an estimated character count and prompts for confirmation before spending any credits.
+
+### 4. Generate everything
+
+```bash
+npm run audio:generate -- --all
+```
+
+### Recommended workflow
+
+1. `--dry-run` to verify the character budget
+2. `--unit N` to generate and listen to one unit at a time
+3. If the voice sounds off, adjust `voiceSettings` in `scripts/generate-audio/index.ts` (stability, similarityBoost, style, speed) and regenerate just that unit
+4. Commit the generated MP3s to `public/audio/`
+
+### Free tier notes
+
+- 10,000 characters/month on the free plan
+- All 8 units total ~3,500–4,000 characters — well within the monthly limit if generated once
+- `<break time="Xs"/>` SSML pause tags are accepted by the API and do **not** count toward quota
+- For cleaner multi-line audio stitching, optionally install `fluent-ffmpeg`:
+  ```bash
+  npm install -D fluent-ffmpeg @types/fluent-ffmpeg
+  # also requires the ffmpeg binary: https://ffmpeg.org/download.html
+  ```
+  Without it, lines are raw-concatenated (usually fine for short clips).
 
 ---
 
@@ -237,13 +292,14 @@ vercel --prod
 - [x] Student auth (class code + display name, no email)
 - [x] Mission board / world map
 - [x] Cutscene player (Higgsfield-ready + text fallback)
-- [x] 7 mini-game types (vocab match, sentence builder, dialogue, listening, reading, conjugation, flashcards)
+- [x] 10 mini-game types (vocab match, sentence builder, dialogue, listening, reading, conjugation, flashcards, chase map, interrogation, live stakeout)
 - [x] Spaced repetition mastery tracking
 - [x] Teacher dashboard with 6-tab analytics
 - [x] Badge / achievement system (6 badge types, passport stamps)
 - [x] Supabase Realtime class alerts
 - [x] Content authoring helper + Zod validation
-- [ ] Units 2-10 content (vocab, dialogue, suspects)
+- [x] Units 1–8 complete (México → Puerto Rico → España → Costa Rica → Argentina → Colombia → Chile → Perú)
+- [x] ElevenLabs audio generation CLI (`npm run audio:generate`)
+- [ ] Audio scripts for units 1–8 (next phase)
 - [ ] Higgsfield cutscene video integration
-- [ ] Chase mechanic (future sprint)
-- [ ] Interrogation mechanic (future sprint)
+- [ ] Units 9–10 content
