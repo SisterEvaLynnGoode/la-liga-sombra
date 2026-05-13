@@ -21,7 +21,7 @@ export const unit01Scripts: AudioScript[] = [
       {
         voiceKey: "female1",
         text:
-          'Hola, <break time="0.3s"/> buenos días. <break time="0.5s"/> Me llamo Carmen Ruiz. <break time="0.5s"/> Soy de Guadalajara. <break time="0.5s"/> Yo vi al hombre que robó la guitarra. <break time="0.7s"/> Son las tres de la tarde. <break time="0.5s"/> El hombre tiene treinta años. <break time="0.5s"/> Tiene bigote. <break time="0.5s"/> No tiene barba. <break time="0.5s"/> Adiós.',
+          'Hola, <break time="0.3s"/> buenos días. <break time="0.5s"/> Me llamo Carmen Ruiz. <break time="0.5s"/> Soy de Guadalajara. <break time="0.5s"/> Yo vi al hombre que robó la guitarra. <break time="0.7s"/> Son las tres de la tarde. <break time="0.5s"/> El hombre tiene treinta y cuatro años. <break time="0.5s"/> Tiene bigote. <break time="0.5s"/> No tiene barba. <break time="0.5s"/> Adiós.',
       },
     ],
   },

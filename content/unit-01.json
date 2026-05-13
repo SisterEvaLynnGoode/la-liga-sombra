@@ -153,8 +153,8 @@
       "type": "listeningComp",
       "clueReward": "El sospechoso tiene bigote y treinta años.",
       "audioUrl": "/audio/unit-01/witness-call.mp3",
-      "transcript": "Hola, buenos días. Me llamo Carmen Ruiz. Soy de Guadalajara. Yo vi al hombre que robó la guitarra. Son las tres de la tarde. El hombre tiene treinta años. Tiene bigote. No tiene barba. Adiós.",
-      "translation": "Hello, good morning. My name is Carmen Ruiz. I'm from Guadalajara. I saw the man who stole the guitar. It's three in the afternoon. The man is thirty years old. He has a mustache. He doesn't have a beard. Goodbye.",
+      "transcript": "Hola, buenos días. Me llamo Carmen Ruiz. Soy de Guadalajara. Yo vi al hombre que robó la guitarra. Son las tres de la tarde. El hombre tiene treinta y cuatro años. Tiene bigote. No tiene barba. Adiós.",
+      "translation": "Hello, good morning. My name is Carmen Ruiz. I'm from Guadalajara. I saw the man who stole the guitar. It's three in the afternoon. The man is thirty-four years old. He has a mustache. He doesn't have a beard. Goodbye.",
       "maxReplays": 3,
       "passingScore": 0.75,
       "retryHint": "Pista: Escucha el nombre, la hora, la edad y la descripción física del sospechoso.",
@@ -182,10 +182,10 @@
         },
         {
           "question": "¿Cuántos años tiene el sospechoso según Carmen?",
-          "options": ["13", "30", "40", "23"],
-          "correctIndex": 1,
-          "explanationEs": "Carmen dice: 'El hombre tiene treinta años.' Treinta = 30.",
-          "explanationEn": "Carmen says 'The man is thirty years old.' Treinta = 30."
+          "options": ["13", "40", "34", "23"],
+          "correctIndex": 2,
+          "explanationEs": "Carmen dice: 'El hombre tiene treinta y cuatro años.' Treinta y cuatro = 34.",
+          "explanationEn": "Carmen says 'The man is thirty-four years old.' Treinta y cuatro = 34."
         },
         {
           "question": "¿Qué tiene el hombre en la cara?",
