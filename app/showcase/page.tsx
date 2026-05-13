@@ -9,9 +9,10 @@ import ReadingComprehension from "@/components/games/ReadingComprehension";
 import ConjugationDragDrop from "@/components/games/ConjugationDragDrop";
 import TimedFlashcards from "@/components/games/TimedFlashcards";
 import ChaseMap from "@/components/games/ChaseMap";
+import Interrogation from "@/components/games/Interrogation";
 import type { GameResult } from "@/lib/games/types";
 import type { DialogueNode, VocabPair, ReadingQuestion, GlossaryEntry, FlashcardItem } from "@/lib/games/types";
-import type { ChaseLocation } from "@/lib/types/unit-content";
+import type { ChaseLocation, QuestionItem, InterrogationCharacter } from "@/lib/types/unit-content";
 
 // ── Sample data (Unit 1 — México — Greetings & Intros) ──────────────────────
 
@@ -127,15 +128,101 @@ const CHASE_LOCATIONS: ChaseLocation[] = [
   { id: "banco_espana",name: "Banco de España",    coordinates: { x: 62, y: 48 } },
 ];
 
+const INTERROGATION_CHARACTER: InterrogationCharacter = {
+  name: "Tía Elena",
+  role: "la tía (sample — Unit 4)",
+  imageUrl: "https://randomuser.me/api/portraits/women/20.jpg",
+  description: "Es la esposa de Carlos, el hijo de la abuela. Es simpática y generosa, pero hoy está muy preocupada por el collar desaparecido.",
+};
+
+const INTERROGATION_QUESTIONS: QuestionItem[] = [
+  {
+    id: "q1",
+    spanish: "¿Cómo se llama usted y quién es en la familia?",
+    english: "What is your name and who are you in the family?",
+    response: "Me llamo Elena Vargas de Montoya. Soy la esposa de Carlos, el hijo de la abuela Carmen.",
+    responseEnglish: "My name is Elena Vargas de Montoya. I am the wife of Carlos, grandmother Carmen's son.",
+    isUseful: false,
+  },
+  {
+    id: "q2",
+    spanish: "¿Dónde está usted esta mañana?",
+    english: "Where are you this morning?",
+    response: "Estoy en el mercado central de San José desde las ocho de la mañana. Tengo los recibos aquí en mi bolsa.",
+    responseEnglish: "I am at the central market in San José since eight in the morning. I have the receipts right here in my bag.",
+    infoRevealed: "📍 Está en el mercado de San José (tiene recibos como prueba)",
+    isUseful: true,
+  },
+  {
+    id: "q3",
+    spanish: "¿Cómo está usted hoy?",
+    english: "How are you feeling today?",
+    response: "Estoy muy preocupada y un poco asustada. ¡El collar de la abuela es un objeto muy especial para toda la familia!",
+    responseEnglish: "I am very worried and a little scared. Grandmother's necklace is a very special object for the whole family!",
+    infoRevealed: "😟 Está preocupada y asustada — no está nerviosa por culpa",
+    isUseful: true,
+  },
+  {
+    id: "q4",
+    spanish: "¿Le gusta el collar de la abuela?",
+    english: "Do you like grandmother's necklace?",
+    response: "Es muy bonito, pero no es mío. Es de la abuela — un regalo de su esposo. Yo nunca toco el collar.",
+    responseEnglish: "It is very pretty, but it is not mine. It belongs to grandmother — a gift from her husband. I never touch the necklace.",
+    isUseful: false,
+  },
+  {
+    id: "q5",
+    spanish: "¿Quién tiene acceso a la habitación de la abuela?",
+    english: "Who has access to grandmother's room?",
+    response: "Toda la familia puede entrar. Pero esta mañana, Marco está mucho tiempo en esa parte de la casa. Es raro.",
+    responseEnglish: "The whole family can enter. But this morning, Marco spends a lot of time in that part of the house. That is strange.",
+    infoRevealed: "💡 Marco está en la zona de la habitación de la abuela esta mañana",
+    isUseful: true,
+  },
+  {
+    id: "q6",
+    spanish: "¿Cómo es Marco, el nieto?",
+    english: "What is Marco, the grandson, like?",
+    response: "Marco es inteligente, pero últimamente está muy raro. No habla mucho y parece nervioso. No sé por qué.",
+    responseEnglish: "Marco is intelligent, but lately he has been very strange. He doesn't talk much and seems nervous. I don't know why.",
+    isUseful: false,
+  },
+  {
+    id: "q7",
+    spanish: "¿Su esposo Carlos está en casa esta mañana?",
+    english: "Is your husband Carlos home this morning?",
+    response: "No, Carlos está en la finca de café desde las seis de la mañana. Es un hombre muy trabajador.",
+    responseEnglish: "No, Carlos has been at the coffee farm since six in the morning. He is a very hard-working man.",
+    isUseful: false,
+  },
+  {
+    id: "q8",
+    spanish: "¿Usted necesita dinero?",
+    english: "Do you need money?",
+    response: "¡No! Nuestra familia está bien económicamente. No necesitamos el dinero del collar. ¡Qué pregunta tan extraña!",
+    responseEnglish: "No! Our family is doing fine financially. We don't need the necklace's money. What a strange question!",
+    isUseful: false,
+  },
+  {
+    id: "q9",
+    spanish: "¿Le gusta vivir en la finca cerca del volcán?",
+    english: "Do you like living on the farm near the volcano?",
+    response: "¡Sí, me encanta! La vista del Volcán Arenal es preciosa. Es un lugar muy tranquilo y hermoso.",
+    responseEnglish: "Yes, I love it! The view of Arenal Volcano is beautiful. It is a very peaceful and beautiful place.",
+    isUseful: false,
+  },
+];
+
 const GAMES = [
-  { id: "vocab",     label: "Memoria",       emoji: "🃏" },
-  { id: "sentence",  label: "Oraciones",     emoji: "🧩" },
-  { id: "dialogue",  label: "Diálogo",       emoji: "💬" },
-  { id: "listening", label: "Auditiva",      emoji: "🎧" },
-  { id: "reading",   label: "Lectora",       emoji: "📖" },
-  { id: "conjugation", label: "Conjugación", emoji: "✍️" },
-  { id: "flashcards", label: "Fichas",       emoji: "⚡" },
-  { id: "chasemap",  label: "Persecución",   emoji: "🗺️" },
+  { id: "vocab",          label: "Memoria",        emoji: "🃏" },
+  { id: "sentence",       label: "Oraciones",      emoji: "🧩" },
+  { id: "dialogue",       label: "Diálogo",        emoji: "💬" },
+  { id: "listening",      label: "Auditiva",       emoji: "🎧" },
+  { id: "reading",        label: "Lectora",        emoji: "📖" },
+  { id: "conjugation",    label: "Conjugación",    emoji: "✍️" },
+  { id: "flashcards",     label: "Fichas",         emoji: "⚡" },
+  { id: "chasemap",       label: "Persecución",    emoji: "🗺️" },
+  { id: "interrogation",  label: "Interrogatorio", emoji: "🔦" },
 ] as const;
 
 type GameId = (typeof GAMES)[number]["id"];
@@ -285,6 +372,20 @@ export default function ShowcasePage() {
             key={gameKey}
             cards={FLASHCARDS}
             timeLimit={60}
+            onComplete={handleComplete}
+          />
+        )}
+
+        {active === "interrogation" && (
+          <Interrogation
+            key={gameKey}
+            character={INTERROGATION_CHARACTER}
+            questionBank={INTERROGATION_QUESTIONS}
+            requiredInfo={[
+              "📍 Está en el mercado de San José (tiene recibos como prueba)",
+              "💡 Marco está en la zona de la habitación de la abuela esta mañana",
+            ]}
+            maxQuestions={5}
             onComplete={handleComplete}
           />
         )}

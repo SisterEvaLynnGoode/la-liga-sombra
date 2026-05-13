@@ -52,6 +52,38 @@ export const ReadingQuestionSchema = z.discriminatedUnion("type", [
   SAQuestionSchema,
 ]);
 
+// ─── Interrogation ────────────────────────────────────────────────────────────
+
+export const QuestionItemSchema = z.object({
+  id: z.string().min(1),
+  spanish: z.string().min(1, "Spanish question required"),
+  english: z.string().min(1, "English translation required"),
+  response: z.string().min(1, "Spanish response required"),
+  responseEnglish: z.string().min(1, "English response required"),
+  infoRevealed: z.string().optional(), // display text added to notepad
+  isUseful: z.boolean(),
+});
+
+export const InterrogationCharacterSchema = z.object({
+  name: z.string().min(1),
+  role: z.string().min(1),            // e.g., "la tía"
+  imageUrl: z.string().optional(),
+  imageSeed: z.number().int().optional(),
+  description: z.string().min(1),
+});
+
+export const InterrogationStageSchema = z.object({
+  type: z.literal("interrogation"),
+  clueReward: z.string().optional(),
+  character: InterrogationCharacterSchema,
+  questionBank: z.array(QuestionItemSchema).min(4).max(12),
+  requiredInfo: z.array(z.string().min(1)).min(1),
+  maxQuestions: z.number().int().min(2).max(10),
+}).refine(
+  (d) => d.requiredInfo.every((req) => d.questionBank.some((q) => q.infoRevealed === req)),
+  { message: "Every requiredInfo item must match an infoRevealed value in the questionBank", path: ["requiredInfo"] }
+);
+
 // ─── Chase Map ────────────────────────────────────────────────────────────────
 
 export const ChaseLocationSchema = z.object({
@@ -168,6 +200,7 @@ export const StageSchema = z.discriminatedUnion("type", [
   LineupStageSchema,
   ChaseMapStageSchema,
   SentenceBuilderStageSchema,
+  InterrogationStageSchema,
 ]);
 
 // ─── Unit root ────────────────────────────────────────────────────────────────

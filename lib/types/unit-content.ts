@@ -69,6 +69,33 @@ export interface LineupStageData {
   hint: string;
 }
 
+export interface QuestionItem {
+  id: string;
+  spanish: string;
+  english: string;
+  response: string;
+  responseEnglish: string;
+  infoRevealed?: string;
+  isUseful: boolean;
+}
+
+export interface InterrogationCharacter {
+  name: string;
+  role: string;
+  imageUrl?: string;
+  imageSeed?: number;
+  description: string;
+}
+
+export interface InterrogationStageData {
+  type: "interrogation";
+  clueReward?: string;
+  character: InterrogationCharacter;
+  questionBank: QuestionItem[];
+  requiredInfo: string[];
+  maxQuestions: number;
+}
+
 export interface ChaseLocation {
   id: string;
   name: string;
@@ -103,7 +130,8 @@ export type StageData =
   | ListeningStageData
   | LineupStageData
   | ChaseMapStageData
-  | SentenceBuilderStageData;
+  | SentenceBuilderStageData
+  | InterrogationStageData;
 
 // ── Unit root ─────────────────────────────────────────────────────────────────
 
