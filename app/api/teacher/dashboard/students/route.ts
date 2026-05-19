@@ -16,13 +16,14 @@ export async function GET(request: NextRequest) {
   if (!students.length) return NextResponse.json({ students: [] });
 
   const ids = students.map((s) => s.id);
-  const [progressRes, attemptsRes, masteryRes, badgesRes, academiaRes, stakeoutRes] = await Promise.all([
+  const [progressRes, attemptsRes, masteryRes, badgesRes, academiaRes, stakeoutRes, briefingRes] = await Promise.all([
     supabase.from("unit_progress").select("student_id, status").in("student_id", ids),
     supabase.from("attempts").select("student_id, activity_type, score, max_score, time_spent_seconds, completed_at").in("student_id", ids),
     supabase.from("mastery").select("student_id, attempts, correct").in("student_id", ids),
     supabase.from("badges").select("student_id, id").in("student_id", ids),
     supabase.from("academia_sessions").select("student_id, retry_count").in("student_id", ids),
     supabase.from("attempts").select("student_id, score, max_score").in("student_id", ids).eq("activity_type", "stakeout").eq("max_score", 90),
+    supabase.from("daily_briefings").select("student_id, briefing_date, completed, skipped").in("student_id", ids).order("briefing_date", { ascending: false }).limit(ids.length * 35),
   ]);
 
   const progress         = (progressRes.data  ?? []) as Array<{ student_id: string; status: string }>;
@@ -31,6 +32,7 @@ export async function GET(request: NextRequest) {
   const badges           = (badgesRes.data    ?? []) as Array<{ student_id: string; id: string }>;
   const academiaSessions = (academiaRes.data  ?? []) as Array<{ student_id: string; retry_count: number }>;
   const stakeoutRows     = (stakeoutRes.data  ?? []) as Array<{ student_id: string; score: number; max_score: number }>;
+  const briefingRows     = (briefingRes.data  ?? []) as Array<{ student_id: string; briefing_date: string; completed: boolean; skipped: boolean }>;
 
   const result = students.map((s) => {
     const myProgress  = progress.filter((p) => p.student_id === s.id);
@@ -59,6 +61,26 @@ export async function GET(request: NextRequest) {
     const stakeoutAvgTime = myStakeouts.length
       ? Math.round(myStakeouts.reduce((sum, r) => sum + r.score, 0) / myStakeouts.length)
       : null;
+
+    // Daily briefing streak
+    const myBriefings = briefingRows.filter((b) => b.student_id === s.id);
+    const completedDates = myBriefings.filter((b) => b.completed).map((b) => b.briefing_date);
+    const briefingStreakCount = (() => {
+      const unique = Array.from(new Set(completedDates)).sort().reverse();
+      let streak = 0;
+      const todayS = new Date().toISOString().slice(0, 10);
+      let check = todayS;
+      for (const d of unique) {
+        if (d === check) {
+          streak++;
+          const dt = new Date(check); dt.setUTCDate(dt.getUTCDate() - 1);
+          check = dt.toISOString().slice(0, 10);
+        } else if (d < check) break;
+      }
+      return streak;
+    })();
+    const briefingSkips = myBriefings.filter((b) => b.skipped).length;
+    const briefingTotal = myBriefings.length;
 
     // Training metrics
     const myTraining = myAttempts.filter((a) => a.activity_type.startsWith("training_"));
@@ -104,6 +126,9 @@ export async function GET(request: NextRequest) {
       trainingMinutesWeek,
       trainingDrillsTotal,
       trainingStreak,
+      briefingStreak:  briefingStreakCount,
+      briefingSkips,
+      briefingTotal,
     };
   });
 

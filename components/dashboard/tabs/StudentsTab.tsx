@@ -22,6 +22,9 @@ interface StudentRow {
   trainingMinutesWeek?: number;
   trainingDrillsTotal?: number;
   trainingStreak?: number;
+  briefingStreak?: number;
+  briefingSkips?: number;
+  briefingTotal?: number;
 }
 
 interface StudentsData { students: StudentRow[] }
@@ -78,6 +81,7 @@ export default function StudentsTab({ classId }: { classId: string }) {
               <SortTh k="academiaRetries" label="Academia ↺" />
               <SortTh k="stakeoutAvgTime" label="Vigilancia ⏱" />
               <SortTh k="trainingMinutesWeek" label="Training /sem" />
+              <SortTh k="briefingStreak" label="Informe 📋" />
             </tr>
           </thead>
           <tbody>
@@ -109,6 +113,25 @@ export default function StudentsTab({ classId }: { classId: string }) {
                       <span title={`${s.academiaSessions} unit(s) trained`}>
                         {s.academiaRetries ?? 0}
                         <span className="text-[10px] text-[#4a3a2a] ml-1">/{s.academiaSessions}</span>
+                      </span>
+                    )
+                    : <span className="text-[#4a3a2a]">—</span>
+                  }
+                </td>
+                <td className="py-2.5 pr-4 font-typewriter text-sm">
+                  {s.briefingTotal != null && s.briefingTotal > 0
+                    ? (
+                      <span
+                        title={`${s.briefingTotal} total · ${s.briefingSkips ?? 0} skipped`}
+                        className={
+                          (s.briefingStreak ?? 0) >= 5 ? "text-[#4a9eff]"
+                          : (s.briefingStreak ?? 0) > 0 ? "text-[rgba(74,158,255,0.6)]"
+                          : "text-[#4a3a2a]"
+                        }>
+                        🔵 {s.briefingStreak ?? 0}
+                        {(s.briefingSkips ?? 0) > 0 && (
+                          <span className="text-[10px] text-[#c0392b] ml-1">↷{s.briefingSkips}</span>
+                        )}
                       </span>
                     )
                     : <span className="text-[#4a3a2a]">—</span>

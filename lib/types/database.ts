@@ -11,12 +11,14 @@ export type ActivityType =
   | "vocab_match" | "dialogue" | "listening" | "grammar" | "cultural" | "lineup"
   | "academia_recognition" | "academia_memorization" | "academia_production" | "academia_application"
   | "stakeout"
-  | "training_vocab" | "training_grammar" | "training_drill";
+  | "training_vocab" | "training_grammar" | "training_drill"
+  | "daily_briefing";
 export type BadgeType =
   | "case_solved" | "perfect_score" | "speed_run" | "cultural_expert" | "first_case"
   | "unit_completed" | "speed_demon" | "vocab_master" | "streak_3" | "streak_7"
   | "distinguished_recruit" | "vigilancia_exitosa"
-  | "entrenamiento_diario" | "maestro_vocabulario" | "poliglota";
+  | "entrenamiento_diario" | "maestro_vocabulario" | "poliglota"
+  | "informe_completo" | "estudiante_disciplinado" | "agente_elite";
 
 // Supabase v2 requires Relationships and CompositeTypes for correct type inference
 export interface Database {
@@ -235,6 +237,50 @@ export interface Database {
             columns: ["unit_id"];
             isOneToOne: false;
             referencedRelation: "units";
+            referencedColumns: ["id"];
+          }
+        ];
+      };
+      daily_briefings: {
+        Row: {
+          id: string;
+          student_id: string;
+          briefing_date: string;  // ISO date string YYYY-MM-DD
+          terms_shown: string[];
+          terms_correct: number;
+          completed: boolean;
+          skipped: boolean;
+          time_spent_seconds: number;
+          created_at: string;
+        };
+        Insert: {
+          id?: string;
+          student_id: string;
+          briefing_date: string;
+          terms_shown: string[];
+          terms_correct?: number;
+          completed?: boolean;
+          skipped?: boolean;
+          time_spent_seconds?: number;
+          created_at?: string;
+        };
+        Update: {
+          id?: string;
+          student_id?: string;
+          briefing_date?: string;
+          terms_shown?: string[];
+          terms_correct?: number;
+          completed?: boolean;
+          skipped?: boolean;
+          time_spent_seconds?: number;
+          created_at?: string;
+        };
+        Relationships: [
+          {
+            foreignKeyName: "daily_briefings_student_id_fkey";
+            columns: ["student_id"];
+            isOneToOne: false;
+            referencedRelation: "students";
             referencedColumns: ["id"];
           }
         ];

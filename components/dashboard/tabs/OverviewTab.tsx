@@ -10,6 +10,12 @@ interface OverviewData {
   avgTimeMinutes: number;
   unitCompletion: Array<{ number: number; country: string; completed: number; total: number }>;
   inactiveStudents: Array<{ id: string; displayName: string; lastActive: string | null; daysInactive: number }>;
+  briefing?: {
+    participationPct: number;
+    completionPct: number;
+    avgWeeklyCompleted: number;
+    participantsToday: number;
+  };
 }
 
 const TooltipContent = ({ active, payload, label }: Record<string, unknown>) => {
@@ -77,6 +83,37 @@ export default function OverviewTab({ classId }: { classId: string }) {
         ) : (
           <div className="h-[200px] flex items-center justify-center">
             <p className="font-typewriter text-xs text-[#8b7355]">No activity yet</p>
+          </div>
+        )}
+      </div>
+
+      {/* Daily Briefing tile */}
+      <div className="border border-[rgba(74,158,255,0.2)] bg-[#111928] p-5">
+        <div className="flex items-center gap-2 mb-4">
+          <div className="w-1.5 h-1.5 rounded-full bg-[#4a9eff] animate-pulse" />
+          <p className="font-typewriter text-[10px] tracking-[0.25em] uppercase text-[rgba(74,158,255,0.6)]">
+            Informe Diario — Participación
+          </p>
+        </div>
+        {!data?.briefing ? (
+          <p className="font-typewriter text-xs text-[#4a3a2a]">Sin datos de informe aún.</p>
+        ) : (
+          <div className="grid grid-cols-3 gap-4">
+            <div className="text-center">
+              <p className="font-typewriter text-[9px] uppercase text-[rgba(74,158,255,0.5)] mb-1">Hoy</p>
+              <p className="font-display text-2xl font-bold text-[#4a9eff]">{data.briefing.participationPct}%</p>
+              <p className="font-typewriter text-[9px] text-[rgba(74,158,255,0.4)]">{data.briefing.participantsToday} estudiantes</p>
+            </div>
+            <div className="text-center">
+              <p className="font-typewriter text-[9px] uppercase text-[rgba(74,158,255,0.5)] mb-1">Completado</p>
+              <p className="font-display text-2xl font-bold text-[#4a9eff]">{data.briefing.completionPct}%</p>
+              <p className="font-typewriter text-[9px] text-[rgba(74,158,255,0.4)]">de los que lo iniciaron</p>
+            </div>
+            <div className="text-center">
+              <p className="font-typewriter text-[9px] uppercase text-[rgba(74,158,255,0.5)] mb-1">Semana</p>
+              <p className="font-display text-2xl font-bold text-[#4a9eff]">{data.briefing.avgWeeklyCompleted}</p>
+              <p className="font-typewriter text-[9px] text-[rgba(74,158,255,0.4)]">prom completados</p>
+            </div>
           </div>
         )}
       </div>

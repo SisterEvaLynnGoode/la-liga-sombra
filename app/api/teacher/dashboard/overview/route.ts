@@ -19,18 +19,25 @@ export async function GET(request: NextRequest) {
     return NextResponse.json({ totalStudents: 0, avgCompletionPct: 0, avgTimeMinutes: 0, unitCompletion: [], inactiveStudents: [] });
   }
 
+  const todayUtc = new Date().toISOString().slice(0, 10);
+  const weekAgoStr = new Date(Date.now() - 7 * 86_400_000).toISOString();
+
   // Fetch in parallel
-  const [studentsRes, progressRes, attemptsRes, unitsRes] = await Promise.all([
+  const [studentsRes, progressRes, attemptsRes, unitsRes, briefingTodayRes, briefingWeekRes] = await Promise.all([
     supabase.from("students").select("id, display_name, created_at").eq("class_id", classId),
     supabase.from("unit_progress").select("student_id, unit_id, status").in("student_id", studentIds),
     supabase.from("attempts").select("student_id, time_spent_seconds, completed_at").in("student_id", studentIds),
     supabase.from("units").select("id, number, country").order("number"),
+    supabase.from("daily_briefings").select("student_id, completed, skipped").in("student_id", studentIds).eq("briefing_date", todayUtc),
+    supabase.from("daily_briefings").select("student_id, completed").in("student_id", studentIds).gte("created_at", weekAgoStr),
   ]);
 
-  const students = (studentsRes.data ?? []) as Array<{ id: string; display_name: string; created_at: string }>;
-  const progress = (progressRes.data ?? []) as Array<{ student_id: string; unit_id: string; status: string }>;
-  const attempts = (attemptsRes.data ?? []) as Array<{ student_id: string; time_spent_seconds: number; completed_at: string }>;
-  const units = (unitsRes.data ?? []) as Array<{ id: string; number: number; country: string }>;
+  const students      = (studentsRes.data       ?? []) as Array<{ id: string; display_name: string; created_at: string }>;
+  const progress      = (progressRes.data       ?? []) as Array<{ student_id: string; unit_id: string; status: string }>;
+  const attempts      = (attemptsRes.data       ?? []) as Array<{ student_id: string; time_spent_seconds: number; completed_at: string }>;
+  const units         = (unitsRes.data          ?? []) as Array<{ id: string; number: number; country: string }>;
+  const briefingsToday = (briefingTodayRes.data ?? []) as Array<{ student_id: string; completed: boolean; skipped: boolean }>;
+  const briefingsWeek  = (briefingWeekRes.data  ?? []) as Array<{ student_id: string; completed: boolean }>;
 
   // Avg completion %: per student → number of completed / total units
   const totalUnits = units.length;
@@ -71,5 +78,31 @@ export async function GET(request: NextRequest) {
     .filter((s) => s.daysInactive >= 7)
     .sort((a, b) => b.daysInactive - a.daysInactive);
 
-  return NextResponse.json({ totalStudents: students.length, avgCompletionPct, avgTimeMinutes, unitCompletion, inactiveStudents });
+  // Daily briefing engagement
+  const briefingParticipantsToday = new Set(briefingsToday.map((b) => b.student_id)).size;
+  const briefingCompletedToday    = briefingsToday.filter((b) => b.completed).length;
+  const briefingParticipationPct  = students.length ? Math.round((briefingParticipantsToday / students.length) * 100) : 0;
+  const briefingCompletionPct     = briefingParticipantsToday
+    ? Math.round((briefingCompletedToday / briefingParticipantsToday) * 100)
+    : 0;
+  // Average completions this week per student who participated
+  const briefingWeekParticipants = new Set(briefingsWeek.map((b) => b.student_id)).size;
+  const briefingWeekCompleted    = briefingsWeek.filter((b) => b.completed).length;
+  const briefingAvgWeekly        = briefingWeekParticipants
+    ? Math.round((briefingWeekCompleted / briefingWeekParticipants) * 10) / 10
+    : 0;
+
+  return NextResponse.json({
+    totalStudents: students.length,
+    avgCompletionPct,
+    avgTimeMinutes,
+    unitCompletion,
+    inactiveStudents,
+    briefing: {
+      participationPct: briefingParticipationPct,
+      completionPct:    briefingCompletionPct,
+      avgWeeklyCompleted: briefingAvgWeekly,
+      participantsToday:  briefingParticipantsToday,
+    },
+  });
 }

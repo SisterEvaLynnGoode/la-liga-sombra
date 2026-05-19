@@ -4,9 +4,11 @@ import { createClient } from "@/lib/supabase/server";
 import { UNITS } from "@/lib/game/units";
 import type { UnitStatus } from "@/lib/types/database";
 import { getVocabReadinessScore } from "@/lib/mastery";
+import { getOverdueTermsForBriefing } from "@/lib/spaced-repetition";
 import MissionHeader from "@/components/mission-board/MissionHeader";
 import CorkBoard from "@/components/mission-board/CorkBoard";
 import AlertToast from "@/components/ui/AlertToast";
+import DailyBriefingTrigger from "@/components/briefing/DailyBriefingTrigger";
 
 export const metadata = { title: "Sala de Investigación — La Liga Sombra" };
 
@@ -16,11 +18,12 @@ export default async function MissionBoardPage() {
 
   const supabase = createClient();
 
-  // Fetch units + student progress + badges in parallel
-  const [unitsRes, progressRes, badgesRes] = await Promise.all([
+  // Fetch units + student progress + badges + briefing terms in parallel
+  const [unitsRes, progressRes, badgesRes, briefingTerms] = await Promise.all([
     supabase.from("units").select("id, number").order("number"),
     supabase.from("unit_progress").select("unit_id, status, case_solved, criminal_caught").eq("student_id", session.studentId),
     supabase.from("badges").select("id").eq("student_id", session.studentId),
+    getOverdueTermsForBriefing(session.studentId, supabase),
   ]);
 
   const dbUnits = unitsRes.data ?? [];
@@ -100,6 +103,9 @@ export default async function MissionBoardPage() {
       />
       <CorkBoard caseFiles={caseFiles} />
       <AlertToast classId={session.classId} />
+      {briefingTerms.length > 0 && (
+        <DailyBriefingTrigger terms={briefingTerms} />
+      )}
     </div>
   );
 }
