@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import GameShell from "./GameShell";
 import { useAttemptTracker } from "@/lib/hooks/useAttemptTracker";
-import { shuffle, normalizeAnswer, formatTime } from "@/lib/games/utils";
+import { shuffle, flexibleMatch, formatTime } from "@/lib/games/utils";
 import type { FlashcardItem, OnComplete } from "@/lib/games/types";
 
 interface Props {
@@ -70,7 +70,7 @@ export default function TimedFlashcards({
     if (status !== "playing" || cardStatus !== "idle" || index >= deck.length) return;
 
     const card = deck[index];
-    const correct = normalizeAnswer(input) === normalizeAnswer(card.answer);
+    const correct = flexibleMatch(input, card.answer);
     const newAttempts = attempts + 1;
     setAttempts(newAttempts);
     setCardStatus(correct ? "correct" : "wrong");
