@@ -1,11 +1,13 @@
 import CaseFileCard from "./CaseFileCard";
 import type { UnitMeta } from "@/lib/game/units";
 import type { UnitStatus } from "@/lib/types/database";
+import type { ReadinessTier } from "@/lib/mastery";
 
-interface CaseFile {
+export interface CaseFile {
   unit: UnitMeta;
   status: UnitStatus;
   caseSolved: boolean;
+  readinessLevel?: ReadinessTier; // only set for "available" units
 }
 
 interface Props {
@@ -75,12 +77,13 @@ export default function CorkBoard({ caseFiles }: Props) {
 
       {/* Case file grid */}
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 px-8 pb-10 max-w-6xl mx-auto">
-        {caseFiles.map(({ unit, status, caseSolved }) => (
+        {caseFiles.map(({ unit, status, caseSolved, readinessLevel }) => (
           <CaseFileCard
             key={unit.number}
             unit={unit}
             status={status}
             caseSolved={caseSolved}
+            readinessLevel={readinessLevel}
           />
         ))}
       </div>

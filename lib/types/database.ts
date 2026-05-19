@@ -7,10 +7,13 @@ export type Json =
   | Json[];
 
 export type UnitStatus = "locked" | "available" | "in_progress" | "completed";
-export type ActivityType = "vocab_match" | "dialogue" | "listening" | "grammar" | "cultural" | "lineup";
+export type ActivityType =
+  | "vocab_match" | "dialogue" | "listening" | "grammar" | "cultural" | "lineup"
+  | "academia_recognition" | "academia_memorization" | "academia_production" | "academia_application";
 export type BadgeType =
   | "case_solved" | "perfect_score" | "speed_run" | "cultural_expert" | "first_case"
-  | "unit_completed" | "speed_demon" | "vocab_master" | "streak_3" | "streak_7";
+  | "unit_completed" | "speed_demon" | "vocab_master" | "streak_3" | "streak_7"
+  | "distinguished_recruit";
 
 // Supabase v2 requires Relationships and CompositeTypes for correct type inference
 export interface Database {
@@ -226,6 +229,51 @@ export interface Database {
           },
           {
             foreignKeyName: "badges_unit_id_fkey";
+            columns: ["unit_id"];
+            isOneToOne: false;
+            referencedRelation: "units";
+            referencedColumns: ["id"];
+          }
+        ];
+      };
+      academia_sessions: {
+        Row: {
+          id: string;
+          student_id: string;
+          unit_id: string;
+          routing_tier: "ready" | "recommended" | "required";
+          retry_count: number;
+          passed_first_try: boolean;
+          completed_at: string;
+        };
+        Insert: {
+          id?: string;
+          student_id: string;
+          unit_id: string;
+          routing_tier: "ready" | "recommended" | "required";
+          retry_count?: number;
+          passed_first_try?: boolean;
+          completed_at?: string;
+        };
+        Update: {
+          id?: string;
+          student_id?: string;
+          unit_id?: string;
+          routing_tier?: "ready" | "recommended" | "required";
+          retry_count?: number;
+          passed_first_try?: boolean;
+          completed_at?: string;
+        };
+        Relationships: [
+          {
+            foreignKeyName: "academia_sessions_student_id_fkey";
+            columns: ["student_id"];
+            isOneToOne: false;
+            referencedRelation: "students";
+            referencedColumns: ["id"];
+          },
+          {
+            foreignKeyName: "academia_sessions_unit_id_fkey";
             columns: ["unit_id"];
             isOneToOne: false;
             referencedRelation: "units";

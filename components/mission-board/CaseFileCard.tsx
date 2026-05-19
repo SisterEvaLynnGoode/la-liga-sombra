@@ -4,14 +4,22 @@ import Link from "next/link";
 import type { UnitMeta } from "@/lib/game/units";
 import { ROMAN } from "@/lib/game/units";
 import type { UnitStatus } from "@/lib/types/database";
+import type { ReadinessTier } from "@/lib/mastery";
+
+const READINESS_BADGE: Record<ReadinessTier, { emoji: string; label: string; color: string }> = {
+  ready:       { emoji: "🟢", label: "Listo",       color: "text-[#4ade80]" },
+  recommended: { emoji: "🟡", label: "Recomendado", color: "text-[#e8b455]" },
+  required:    { emoji: "🔴", label: "Entrenar",    color: "text-[#c0392b]" },
+};
 
 interface Props {
   unit: UnitMeta;
   status: UnitStatus;
   caseSolved: boolean;
+  readinessLevel?: ReadinessTier;
 }
 
-export default function CaseFileCard({ unit, status, caseSolved }: Props) {
+export default function CaseFileCard({ unit, status, caseSolved, readinessLevel }: Props) {
   const romanNumeral = ROMAN[unit.number - 1];
   const isLocked = status === "locked";
   const isAvailable = status === "available";
@@ -108,13 +116,21 @@ export default function CaseFileCard({ unit, status, caseSolved }: Props) {
             </div>
           )}
 
-          {/* AVAILABLE — pulsing ACTIVO badge */}
+          {/* AVAILABLE — pulsing ACTIVO badge + readiness indicator */}
           {isAvailable && (
-            <div className="mt-3 flex justify-center">
+            <div className="mt-3 flex flex-col items-center gap-1.5">
               <span className="inline-flex items-center gap-1 px-2 py-0.5 bg-[#8b1a1a] border border-[#c0392b] font-typewriter text-[9px] tracking-[0.2em] uppercase text-[#f5e6c8]">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#c0392b] animate-pulse" />
                 ACTIVO
               </span>
+              {readinessLevel && (
+                <span
+                  className={`font-typewriter text-[9px] tracking-[0.15em] ${READINESS_BADGE[readinessLevel].color}`}
+                  title={`Academia: ${READINESS_BADGE[readinessLevel].label}`}
+                >
+                  {READINESS_BADGE[readinessLevel].emoji} {READINESS_BADGE[readinessLevel].label}
+                </span>
+              )}
             </div>
           )}
 
@@ -162,7 +178,7 @@ export default function CaseFileCard({ unit, status, caseSolved }: Props) {
   }
 
   return (
-    <Link href={`/play/${unit.number}`} className="block pt-4 group">
+    <Link href={`/play/${unit.number}/gate`} className="block pt-4 group">
       {cardContent}
     </Link>
   );

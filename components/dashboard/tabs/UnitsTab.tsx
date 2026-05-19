@@ -14,6 +14,12 @@ interface UnitData {
   avgTimeMinutes: number;
   activityBreakdown: Array<{ type: string; avgScore: number; count: number }>;
   hardestVocab: Array<{ term: string; masteryPct: number; studentsSeen: number }>;
+  academia?: {
+    total: number;
+    readyPct: number | null;
+    recommendedPct: number | null;
+    requiredPct: number | null;
+  };
 }
 
 interface UnitsData { units: UnitData[] }
@@ -76,6 +82,30 @@ export default function UnitsTab({ classId }: { classId: string }) {
                   </span>
                 </div>
               </div>
+
+              {/* Academia tier breakdown */}
+              {u.academia && u.academia.total > 0 && (
+                <div className="px-5 pb-3">
+                  <p className="font-typewriter text-[9px] tracking-widest uppercase text-[#8b7355] mb-2">
+                    La Academia · {u.academia.total} estudiante(s) evaluado(s)
+                  </p>
+                  <div className="flex gap-4">
+                    {[
+                      { emoji: "🟢", label: "Listo",       pct: u.academia.readyPct       },
+                      { emoji: "🟡", label: "Recomendado", pct: u.academia.recommendedPct },
+                      { emoji: "🔴", label: "Obligatorio", pct: u.academia.requiredPct    },
+                    ].map((tier) => (
+                      <div key={tier.label} className="flex items-center gap-1.5">
+                        <span className="text-xs">{tier.emoji}</span>
+                        <span className="font-typewriter text-[10px] text-[#8b7355]">{tier.label}</span>
+                        <span className="font-typewriter text-xs text-[#e8b455]">
+                          {tier.pct != null ? `${tier.pct}%` : "—"}
+                        </span>
+                      </div>
+                    ))}
+                  </div>
+                </div>
+              )}
 
               {/* Two-column detail */}
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-0 px-5 pb-4">

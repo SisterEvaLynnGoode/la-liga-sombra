@@ -172,6 +172,21 @@ export type StageData =
   | TimedFlashcardsStageData
   | LiveStakeoutStageData;
 
+// ── Academia config ──────────────────────────────────────────────────────────
+
+/**
+ * Optional per-unit configuration for La Academia pre-case training gate.
+ *
+ * If omitted, the gate still runs but skips the Aplicación (SentenceBuilder)
+ * stage because there are no sentences to build.
+ *
+ * `sentences` powers the 4th Academia stage (Aplicación).
+ * Each sentence should use vocabulary from this unit.
+ */
+export interface AcademiaConfig {
+  sentences?: SentenceItem[];
+}
+
 // ── Unit root ─────────────────────────────────────────────────────────────────
 
 export interface UnitContent {
@@ -183,4 +198,5 @@ export interface UnitContent {
   criminalName: string;
   vocab: VocabItem[];
   stages: StageData[];
+  academiaConfig?: AcademiaConfig;
 }

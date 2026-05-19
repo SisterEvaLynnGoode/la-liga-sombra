@@ -3,6 +3,7 @@ import { getStudentSession } from "@/lib/auth/session";
 import { createClient } from "@/lib/supabase/server";
 import { UNITS } from "@/lib/game/units";
 import type { UnitStatus } from "@/lib/types/database";
+import { getVocabReadinessScore } from "@/lib/mastery";
 import MissionHeader from "@/components/mission-board/MissionHeader";
 import CorkBoard from "@/components/mission-board/CorkBoard";
 import AlertToast from "@/components/ui/AlertToast";
@@ -47,14 +48,42 @@ export default async function MissionBoardPage() {
   const progressByUnitId = new Map(progress.map((p) => [p.unit_id, p]));
   const unitIdByNumber = new Map(dbUnits.map((u) => [u.number, u.id]));
 
+  // Identify available units so we can fetch readiness scores for them
+  const availableUnits = UNITS.filter((unit) => {
+    const unitId = unitIdByNumber.get(unit.number);
+    const prog = unitId ? progressByUnitId.get(unitId) : undefined;
+    return prog?.status === "available";
+  });
+
+  // Load vocab for available units and compute readiness in parallel
+  const readinessMap = new Map<number, "ready" | "recommended" | "required">();
+  if (availableUnits.length > 0) {
+    await Promise.all(
+      availableUnits.map(async (unit) => {
+        try {
+          // eslint-disable-next-line @typescript-eslint/no-require-imports
+          const content = require(`@/content/unit-0${unit.number}.json`) as { vocab: Array<{ spanish: string }> };
+          const terms = content.vocab.map((v) => v.spanish);
+          const r = await getVocabReadinessScore(session.studentId, terms);
+          readinessMap.set(unit.number, r.tier);
+        } catch {
+          // content not yet built — treat as ready (no gate friction)
+          readinessMap.set(unit.number, "ready");
+        }
+      })
+    );
+  }
+
   // Merge static unit metadata with live progress
   const caseFiles = UNITS.map((unit) => {
     const unitId = unitIdByNumber.get(unit.number);
     const prog = unitId ? progressByUnitId.get(unitId) : undefined;
+    const status = (prog?.status ?? "locked") as UnitStatus;
     return {
       unit,
-      status: (prog?.status ?? "locked") as UnitStatus,
+      status,
       caseSolved: prog?.case_solved ?? false,
+      readinessLevel: status === "available" ? readinessMap.get(unit.number) : undefined,
     };
   });
 

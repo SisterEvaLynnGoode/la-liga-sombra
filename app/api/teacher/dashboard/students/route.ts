@@ -16,17 +16,19 @@ export async function GET(request: NextRequest) {
   if (!students.length) return NextResponse.json({ students: [] });
 
   const ids = students.map((s) => s.id);
-  const [progressRes, attemptsRes, masteryRes, badgesRes] = await Promise.all([
+  const [progressRes, attemptsRes, masteryRes, badgesRes, academiaRes] = await Promise.all([
     supabase.from("unit_progress").select("student_id, status").in("student_id", ids),
     supabase.from("attempts").select("student_id, time_spent_seconds, completed_at").in("student_id", ids),
     supabase.from("mastery").select("student_id, attempts, correct").in("student_id", ids),
     supabase.from("badges").select("student_id, id").in("student_id", ids),
+    supabase.from("academia_sessions").select("student_id, retry_count").in("student_id", ids),
   ]);
 
   const progress = (progressRes.data ?? []) as Array<{ student_id: string; status: string }>;
   const attempts = (attemptsRes.data ?? []) as Array<{ student_id: string; time_spent_seconds: number; completed_at: string }>;
   const mastery = (masteryRes.data ?? []) as Array<{ student_id: string; attempts: number; correct: number }>;
   const badges = (badgesRes.data ?? []) as Array<{ student_id: string; id: string }>;
+  const academiaSessions = (academiaRes.data ?? []) as Array<{ student_id: string; retry_count: number }>;
 
   const result = students.map((s) => {
     const myProgress = progress.filter((p) => p.student_id === s.id);
@@ -45,6 +47,10 @@ export async function GET(request: NextRequest) {
     const totalCorrect = myMastery.reduce((s, m) => s + m.correct, 0);
     const masteryPct = totalAttempts > 0 ? Math.round((totalCorrect / totalAttempts) * 100) : 0;
 
+    // Total academia retries across all units for this student
+    const myAcademia = academiaSessions.filter((a) => a.student_id === s.id);
+    const totalAcademiaRetries = myAcademia.reduce((sum, a) => sum + (a.retry_count ?? 0), 0);
+
     return {
       id: s.id,
       displayName: s.display_name,
@@ -54,6 +60,8 @@ export async function GET(request: NextRequest) {
       lastActive: lastAttempt,
       masteryPct,
       badgeCount: badges.filter((b) => b.student_id === s.id).length,
+      academiaRetries: totalAcademiaRetries,
+      academiaSessions: myAcademia.length,
     };
   });
 

@@ -14,6 +14,8 @@ interface StudentRow {
   lastActive: string | null;
   masteryPct: number;
   badgeCount: number;
+  academiaRetries?: number;
+  academiaSessions?: number;
 }
 
 interface StudentsData { students: StudentRow[] }
@@ -67,6 +69,7 @@ export default function StudentsTab({ classId }: { classId: string }) {
               <SortTh k="lastActive" label="Última sesión" />
               <SortTh k="masteryPct" label="Dominio" />
               <SortTh k="badgeCount" label="Insignias" />
+              <SortTh k="academiaRetries" label="Academia ↺" />
             </tr>
           </thead>
           <tbody>
@@ -92,6 +95,17 @@ export default function StudentsTab({ classId }: { classId: string }) {
                   </div>
                 </td>
                 <td className="py-2.5 pr-4 font-typewriter text-sm text-[#c9933a]">{s.badgeCount}</td>
+                <td className="py-2.5 pr-4 font-typewriter text-sm text-[#8b7355]">
+                  {s.academiaSessions != null && s.academiaSessions > 0
+                    ? (
+                      <span title={`${s.academiaSessions} unit(s) trained`}>
+                        {s.academiaRetries ?? 0}
+                        <span className="text-[10px] text-[#4a3a2a] ml-1">/{s.academiaSessions}</span>
+                      </span>
+                    )
+                    : <span className="text-[#4a3a2a]">—</span>
+                  }
+                </td>
               </tr>
             ))}
           </tbody>

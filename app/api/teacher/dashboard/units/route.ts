@@ -13,17 +13,19 @@ export async function GET(request: NextRequest) {
   const studentIds = (studentsData as Array<{ id: string }> | null)?.map((s) => s.id) ?? [];
   const totalStudents = studentIds.length;
 
-  const [progressRes, attemptsRes, masteryRes, unitsRes] = await Promise.all([
+  const [progressRes, attemptsRes, masteryRes, unitsRes, academiaRes] = await Promise.all([
     studentIds.length ? supabase.from("unit_progress").select("student_id, unit_id, status").in("student_id", studentIds) : Promise.resolve({ data: [] }),
     studentIds.length ? supabase.from("attempts").select("unit_id, activity_type, score, max_score, time_spent_seconds").in("student_id", studentIds) : Promise.resolve({ data: [] }),
     studentIds.length ? supabase.from("mastery").select("student_id, vocab_term, attempts, correct").in("student_id", studentIds) : Promise.resolve({ data: [] }),
     supabase.from("units").select("id, number, country, title_es").order("number"),
+    studentIds.length ? supabase.from("academia_sessions").select("student_id, unit_id, routing_tier").in("student_id", studentIds) : Promise.resolve({ data: [] }),
   ]);
 
   const progress = (progressRes.data ?? []) as Array<{ student_id: string; unit_id: string; status: string }>;
   const attempts = (attemptsRes.data ?? []) as Array<{ unit_id: string; activity_type: string; score: number; max_score: number; time_spent_seconds: number }>;
   const mastery = (masteryRes.data ?? []) as Array<{ student_id: string; vocab_term: string; attempts: number; correct: number }>;
   const units = (unitsRes.data ?? []) as Array<{ id: string; number: number; country: string; title_es: string }>;
+  const academiaSessions = (academiaRes.data ?? []) as Array<{ student_id: string; unit_id: string; routing_tier: string }>;
 
   const result = units.map((u) => {
     const unitProgress = progress.filter((p) => p.unit_id === u.id);
@@ -65,10 +67,23 @@ export async function GET(request: NextRequest) {
       .sort((a, b) => a.masteryPct - b.masteryPct)
       .slice(0, 5);
 
+    // Academia routing tier breakdown for this unit
+    const unitAcademia = academiaSessions.filter((a) => a.unit_id === u.id);
+    const academiaReady       = unitAcademia.filter((a) => a.routing_tier === "ready").length;
+    const academiaRecommended = unitAcademia.filter((a) => a.routing_tier === "recommended").length;
+    const academiaRequired    = unitAcademia.filter((a) => a.routing_tier === "required").length;
+    const academiaTotal = unitAcademia.length;
+
     return {
       number: u.number, country: u.country, titleEs: u.title_es,
       completionCount, inProgressCount, totalStudents,
       avgScore, avgTimeMinutes, activityBreakdown, hardestVocab,
+      academia: {
+        total: academiaTotal,
+        readyPct:       academiaTotal ? Math.round((academiaReady       / academiaTotal) * 100) : null,
+        recommendedPct: academiaTotal ? Math.round((academiaRecommended / academiaTotal) * 100) : null,
+        requiredPct:    academiaTotal ? Math.round((academiaRequired    / academiaTotal) * 100) : null,
+      },
     };
   });
 

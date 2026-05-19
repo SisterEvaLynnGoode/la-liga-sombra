@@ -264,6 +264,14 @@ export const StageSchema = z.discriminatedUnion("type", [
   LiveStakeoutStageSchema,
 ]);
 
+// ─── Academia config ──────────────────────────────────────────────────────────
+
+export const AcademiaConfigSchema = z.object({
+  /** Sentences used in the Aplicación (SentenceBuilder) stage.
+   *  If omitted, the 4th training stage is skipped. */
+  sentences: z.array(SentenceItemSchema).min(2).max(8).optional(),
+});
+
 // ─── Unit root ────────────────────────────────────────────────────────────────
 
 export const UnitContentSchema = z.object({
@@ -277,6 +285,7 @@ export const UnitContentSchema = z.object({
   stages: z.array(StageSchema)
     .min(3, "Each unit must have at least 3 stages")
     .max(10, "Maximum 10 stages per unit"),
+  academiaConfig: AcademiaConfigSchema.optional(),
 }).refine(
   (data) => data.stages[0]?.type === "cutscene",
   { message: "First stage must be a cutscene", path: ["stages", "0"] }
