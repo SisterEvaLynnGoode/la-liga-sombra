@@ -19,6 +19,9 @@ interface StudentRow {
   stakeoutAttempts?: number;
   stakeoutPassed?: number;
   stakeoutAvgTime?: number | null;
+  trainingMinutesWeek?: number;
+  trainingDrillsTotal?: number;
+  trainingStreak?: number;
 }
 
 interface StudentsData { students: StudentRow[] }
@@ -74,6 +77,7 @@ export default function StudentsTab({ classId }: { classId: string }) {
               <SortTh k="badgeCount" label="Insignias" />
               <SortTh k="academiaRetries" label="Academia ↺" />
               <SortTh k="stakeoutAvgTime" label="Vigilancia ⏱" />
+              <SortTh k="trainingMinutesWeek" label="Training /sem" />
             </tr>
           </thead>
           <tbody>
@@ -105,6 +109,22 @@ export default function StudentsTab({ classId }: { classId: string }) {
                       <span title={`${s.academiaSessions} unit(s) trained`}>
                         {s.academiaRetries ?? 0}
                         <span className="text-[10px] text-[#4a3a2a] ml-1">/{s.academiaSessions}</span>
+                      </span>
+                    )
+                    : <span className="text-[#4a3a2a]">—</span>
+                  }
+                </td>
+                <td className="py-2.5 pr-4 font-typewriter text-sm">
+                  {s.trainingMinutesWeek != null
+                    ? (
+                      <span title={`${s.trainingDrillsTotal} drills · ${s.trainingStreak} day streak`}
+                        className={s.trainingStreak && s.trainingStreak >= 3
+                          ? "text-[#c9933a]"
+                          : s.trainingMinutesWeek > 0
+                          ? "text-[#e8b455]"
+                          : "text-[#4a3a2a]"}>
+                        {s.trainingMinutesWeek}m
+                        {s.trainingStreak ? <span className="text-[10px] text-[#4a3a2a] ml-1">🔥{s.trainingStreak}</span> : null}
                       </span>
                     )
                     : <span className="text-[#4a3a2a]">—</span>

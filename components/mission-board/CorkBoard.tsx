@@ -1,3 +1,4 @@
+import Link from "next/link";
 import CaseFileCard from "./CaseFileCard";
 import type { UnitMeta } from "@/lib/game/units";
 import type { UnitStatus } from "@/lib/types/database";
@@ -56,6 +57,25 @@ export default function CorkBoard({ caseFiles }: Props) {
             La Liga Sombra · 10 países · 10 casos
           </p>
         </div>
+      </div>
+
+      {/* Training Room access button */}
+      <div className="flex justify-center px-6 pb-2">
+        <Link
+          href="/training"
+          className="inline-flex items-center gap-2.5 px-5 py-2.5 border border-[rgba(201,147,58,0.3)] bg-[rgba(201,147,58,0.06)] hover:border-[rgba(201,147,58,0.6)] hover:bg-[rgba(201,147,58,0.12)] transition-all group"
+        >
+          <span className="text-lg">🥊</span>
+          <div className="text-left">
+            <p className="font-typewriter text-[10px] tracking-[0.25em] uppercase text-[#c9933a] group-hover:text-[#e8b455] transition-colors leading-none">
+              La Sala de Entrenamiento
+            </p>
+            <p className="font-typewriter text-[9px] text-[#4a3a2a] mt-0.5">
+              Practica vocabulario y gramática
+            </p>
+          </div>
+          <span className="font-typewriter text-[10px] text-[#4a3a2a] group-hover:text-[#c9933a] transition-colors ml-1">→</span>
+        </Link>
       </div>
 
       {/* Legend */}

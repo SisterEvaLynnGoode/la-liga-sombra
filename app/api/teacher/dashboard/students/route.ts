@@ -22,11 +22,7 @@ export async function GET(request: NextRequest) {
     supabase.from("mastery").select("student_id, attempts, correct").in("student_id", ids),
     supabase.from("badges").select("student_id, id").in("student_id", ids),
     supabase.from("academia_sessions").select("student_id, retry_count").in("student_id", ids),
-    supabase.from("attempts")
-      .select("student_id, score, max_score")
-      .in("student_id", ids)
-      .eq("activity_type", "stakeout")
-      .eq("max_score", 90),
+    supabase.from("attempts").select("student_id, score, max_score").in("student_id", ids).eq("activity_type", "stakeout").eq("max_score", 90),
   ]);
 
   const progress         = (progressRes.data  ?? []) as Array<{ student_id: string; status: string }>;
@@ -64,6 +60,33 @@ export async function GET(request: NextRequest) {
       ? Math.round(myStakeouts.reduce((sum, r) => sum + r.score, 0) / myStakeouts.length)
       : null;
 
+    // Training metrics
+    const myTraining = myAttempts.filter((a) => a.activity_type.startsWith("training_"));
+    const trainingMinutesWeek = (() => {
+      const weekAgo = new Date();
+      weekAgo.setDate(weekAgo.getDate() - 7);
+      const weekAgoStr = weekAgo.toISOString();
+      return Math.round(
+        myTraining
+          .filter((a) => a.completed_at >= weekAgoStr)
+          .reduce((sum, a) => sum + a.time_spent_seconds, 0) / 60
+      );
+    })();
+    const trainingDrillsTotal = myTraining.length;
+    // Training streak
+    const trainingDatesSet = new Set(myTraining.map((a) => a.completed_at.slice(0, 10)));
+    const trainingDates = Array.from(trainingDatesSet).sort().reverse();
+    let trainingStreak = 0;
+    const todayStr = new Date().toISOString().slice(0, 10);
+    let check = todayStr;
+    for (const d of trainingDates) {
+      if (d === check) {
+        trainingStreak++;
+        const dt = new Date(check); dt.setUTCDate(dt.getUTCDate() - 1);
+        check = dt.toISOString().slice(0, 10);
+      } else if (d < check) break;
+    }
+
     return {
       id: s.id,
       displayName: s.display_name,
@@ -77,7 +100,10 @@ export async function GET(request: NextRequest) {
       academiaSessions: myAcademia.length,
       stakeoutAttempts: myStakeouts.length,
       stakeoutPassed,
-      stakeoutAvgTime,   // avg seconds remaining — higher = faster/stronger
+      stakeoutAvgTime,
+      trainingMinutesWeek,
+      trainingDrillsTotal,
+      trainingStreak,
     };
   });
 
