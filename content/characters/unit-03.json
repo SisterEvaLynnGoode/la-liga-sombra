@@ -1,0 +1,42 @@
+[
+  {
+    "id": "unit-03-la-sombra",
+    "role": "villain",
+    "unitNumber": 3,
+    "name": "La Sombra",
+    "age": 35,
+    "gender": "mujer",
+    "skinTone": "blanca, pálida",
+    "build": "mediana, ágil, se mueve rápido",
+    "hair": "cabello negro liso, corto, siempre cubierto con gorra o capucha",
+    "distinctiveFeatures": ["siempre va de oscuro", "se mueve sin hacer ruido", "raramente se le ve el rostro completo"],
+    "clothing": "ropa oscura, chaqueta negra, gorra negra",
+    "accessories": ["gorra negra", "mochila oscura"],
+    "expression": "mirada esquiva, calculadora, siempre alerta",
+    "pose": "retrato de busto, mirando ligeramente hacia un lado",
+    "spanishDescription": "La Sombra es la criminal de la Unidad 3. Se mueve por Madrid sin ser vista. Siempre lleva ropa oscura y una gorra negra.",
+    "country": "España",
+    "currentImageUrl": null,
+    "notes": "CRIMINAL — Unit 3. Chase unit — students follow her through Madrid. She's rarely shown directly. Cap is critical feature."
+  },
+  {
+    "id": "unit-03-carlos-metroista",
+    "role": "witness",
+    "unitNumber": 3,
+    "name": "Carlos el Metroista",
+    "age": 40,
+    "gender": "hombre",
+    "skinTone": "blanca mediterránea",
+    "build": "mediano, algo cansado por el trabajo",
+    "hair": "cabello castaño corto",
+    "distinctiveFeatures": ["uniforme del metro de Madrid", "expresión de trabajador cansado pero amable"],
+    "clothing": "uniforme oficial del Metro de Madrid, chaleco reflectante",
+    "accessories": ["chaleco reflectante", "tarjeta de empleado"],
+    "expression": "amable, algo cansado, dispuesto a ayudar",
+    "pose": "retrato de busto, mirando ligeramente hacia un lado",
+    "spanishDescription": "Carlos trabaja en el metro de Madrid. Vio a la sospechosa en la estación y puede describir su ruta.",
+    "country": "España",
+    "currentImageUrl": null,
+    "notes": "Witness in Unit 3 dialogue. Metro worker uniform is the key visual identifier."
+  }
+]

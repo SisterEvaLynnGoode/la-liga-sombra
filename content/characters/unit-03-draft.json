@@ -1,0 +1,23 @@
+[
+  {
+    "id": "unit-03-witness-carlos-el-metroista",
+    "role": "witness",
+    "unitNumber": 3,
+    "name": "Carlos el Metroista",
+    "realName": "",
+    "age": 0,
+    "gender": "",
+    "skinTone": "",
+    "build": "",
+    "hair": "",
+    "distinctiveFeatures": [],
+    "clothing": "",
+    "accessories": [],
+    "expression": "",
+    "pose": "retrato de busto, mirando ligeramente hacia un lado",
+    "spanishDescription": "",
+    "country": "",
+    "currentImageUrl": null,
+    "notes": "⚠ AUTO-EXTRACTED witness — all fields need manual review"
+  }
+]
