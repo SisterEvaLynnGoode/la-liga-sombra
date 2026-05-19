@@ -194,9 +194,12 @@ export default function ChaseMap({
   const [phase, setPhase] = useState<"chase" | "transport" | "done">("chase");
   const [wrongFlashId, setWrongFlashId] = useState<string | null>(null);
   const [penalty, setPenalty] = useState<number | null>(null); // show penalty flash
+  const [transportChosen, setTransportChosen] = useState(false); // locks buttons after first tap
   const [startTime] = useState(Date.now());
   const [attempts, setAttempts] = useState(0);
   const timerRef = useRef<ReturnType<typeof setInterval> | null>(null);
+  // Single-fire guard — prevents double onComplete from any race condition
+  const calledComplete = useRef(false);
 
   const isFinished = phase === "done";
   const currentTargetId = correctRoute[routeStep];
@@ -219,19 +222,23 @@ export default function ChaseMap({
 
   // ── Time ran out ───────────────────────────────────────────────────────────
   useEffect(() => {
-    if (timeLeft === 0 && !isFinished) {
-      setPhase("done");
-      onComplete({
-        score: 0,
-        maxScore: MAX_TIME,
-        timeSpent: Math.round((Date.now() - startTime) / 1000),
-        attempts,
-      });
-    }
-  }, [timeLeft, isFinished, onComplete, startTime, attempts]);
+    if (timeLeft !== 0) return;
+    if (calledComplete.current) return; // finishChase already fired
+    calledComplete.current = true;
+    clearInterval(timerRef.current!);
+    setPhase("done");
+    onComplete({
+      score: 0,
+      maxScore: MAX_TIME,
+      timeSpent: Math.round((Date.now() - startTime) / 1000),
+      attempts,
+    });
+  }, [timeLeft, onComplete, startTime, attempts]);
 
   // ── Finish chase ──────────────────────────────────────────────────────────
   const finishChase = useCallback(() => {
+    if (calledComplete.current) return; // guard: prevent double-call from any race
+    calledComplete.current = true;
     clearInterval(timerRef.current!);
     setPhase("done");
     onComplete({
@@ -263,14 +270,16 @@ export default function ChaseMap({
 
   // ── Pick transport (any choice is fine — it's practice) ──────────────────
   function handleTransportChoice() {
+    if (transportChosen) return; // block double-tap on mobile
+    setTransportChosen(true);    // disable all buttons immediately
     const nextStep = routeStep + 1;
     if (nextStep >= correctRoute.length) {
-      // Chase complete!
-      setPhase("done");
+      // Chase complete — finishChase handles setPhase + onComplete
       finishChase();
     } else {
       setRouteStep(nextStep);
       setPhase("chase");
+      setTransportChosen(false); // re-enable for next transport phase
     }
   }
 
@@ -309,7 +318,12 @@ export default function ChaseMap({
                 <button
                   key={t.id}
                   onClick={handleTransportChoice}
-                  className="flex items-center gap-2 px-4 py-3 border border-[rgba(201,147,58,0.2)] bg-[#1a1614] text-[#c4a882] font-typewriter text-sm hover:border-[rgba(201,147,58,0.5)] hover:bg-[rgba(201,147,58,0.06)] transition-all"
+                  disabled={transportChosen}
+                  className={`flex items-center gap-2 px-4 py-3 border font-typewriter text-sm transition-all ${
+                    transportChosen
+                      ? "border-[rgba(201,147,58,0.1)] bg-[#110f0d] text-[#4a3a2a] cursor-not-allowed opacity-50"
+                      : "border-[rgba(201,147,58,0.2)] bg-[#1a1614] text-[#c4a882] hover:border-[rgba(201,147,58,0.5)] hover:bg-[rgba(201,147,58,0.06)]"
+                  }`}
                 >
                   <span className="text-xl">{t.emoji}</span>
                   <span>{t.label}</span>
