@@ -5,6 +5,7 @@
   "caseTitle": "El Misterio del Mariachi Perdido",
   "caseDescription": "Una famosa guitarra de mariachi fue robada del Museo de la Música en Guadalajara. Los testigos solo hablan español. Tú debes investigar, recopilar pistas e identificar al ladrón.",
   "criminalName": "El Camaleón",
+  "bonusClue": "El sospechoso es zurdo — siempre usa la mano izquierda para escribir y llevar objetos. Ningún otro sospechoso es zurdo.",
 
   "vocab": [
     { "spanish": "hola",             "english": "hello",            "audio": "/audio/unit-01/hola.mp3" },

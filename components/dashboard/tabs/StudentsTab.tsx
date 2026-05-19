@@ -16,6 +16,9 @@ interface StudentRow {
   badgeCount: number;
   academiaRetries?: number;
   academiaSessions?: number;
+  stakeoutAttempts?: number;
+  stakeoutPassed?: number;
+  stakeoutAvgTime?: number | null;
 }
 
 interface StudentsData { students: StudentRow[] }
@@ -70,6 +73,7 @@ export default function StudentsTab({ classId }: { classId: string }) {
               <SortTh k="masteryPct" label="Dominio" />
               <SortTh k="badgeCount" label="Insignias" />
               <SortTh k="academiaRetries" label="Academia ↺" />
+              <SortTh k="stakeoutAvgTime" label="Vigilancia ⏱" />
             </tr>
           </thead>
           <tbody>
@@ -101,6 +105,24 @@ export default function StudentsTab({ classId }: { classId: string }) {
                       <span title={`${s.academiaSessions} unit(s) trained`}>
                         {s.academiaRetries ?? 0}
                         <span className="text-[10px] text-[#4a3a2a] ml-1">/{s.academiaSessions}</span>
+                      </span>
+                    )
+                    : <span className="text-[#4a3a2a]">—</span>
+                  }
+                </td>
+                <td className="py-2.5 pr-4 font-typewriter text-sm">
+                  {s.stakeoutAttempts
+                    ? (
+                      <span title={`${s.stakeoutPassed}/${s.stakeoutAttempts} passed`}
+                        className={s.stakeoutAvgTime != null && s.stakeoutAvgTime > 30
+                          ? "text-[#c9933a]"
+                          : s.stakeoutAvgTime != null && s.stakeoutAvgTime > 0
+                          ? "text-[#e8b455]"
+                          : "text-[#c0392b]"}>
+                        {s.stakeoutPassed}/{s.stakeoutAttempts}
+                        {s.stakeoutAvgTime != null && (
+                          <span className="text-[#4a3a2a] text-[10px] ml-1">({s.stakeoutAvgTime}s)</span>
+                        )}
                       </span>
                     )
                     : <span className="text-[#4a3a2a]">—</span>

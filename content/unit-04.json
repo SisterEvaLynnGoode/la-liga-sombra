@@ -5,6 +5,7 @@
   "caseTitle": "La Familia Sospechosa",
   "caseDescription": "El collar de esmeraldas de la abuela Carmen desaparece en su finca familiar cerca del Volcán Arenal. Alguien en la familia es culpable. Usa ser vs. estar, los adjetivos posesivos y los verbos -IR para interrogar a cada familiar, detectar quién miente sobre dónde está y cómo se siente, y hacer la acusación correcta.",
   "criminalName": "El Heredero",
+  "bonusClue": "El sospechoso tiene polvo de pintura amarilla en la manga derecha — la misma pintura que hay en el armario donde estaba el collar. Solo uno de los sospechosos tiene esa pintura.",
 
   "vocab": [
     { "spanish": "la madre / la mamá",         "english": "mother / mom",              "audio": "/audio/unit-04/madre.mp3" },

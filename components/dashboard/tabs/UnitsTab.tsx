@@ -14,6 +14,11 @@ interface UnitData {
   avgTimeMinutes: number;
   activityBreakdown: Array<{ type: string; avgScore: number; count: number }>;
   hardestVocab: Array<{ term: string; masteryPct: number; studentsSeen: number }>;
+  stakeout?: {
+    attempted: number;
+    passedPct: number | null;
+    avgTimeRemaining: number | null;
+  };
   academia?: {
     total: number;
     readyPct: number | null;
@@ -82,6 +87,29 @@ export default function UnitsTab({ classId }: { classId: string }) {
                   </span>
                 </div>
               </div>
+
+              {/* Vigilancia stakeout stats */}
+              {u.stakeout && u.stakeout.attempted > 0 && (
+                <div className="px-5 pb-3 flex items-center gap-6">
+                  <div className="flex items-center gap-1.5">
+                    <span className="text-sm">🚨</span>
+                    <span className="font-typewriter text-[9px] tracking-widest uppercase text-[#8b7355]">Vigilancia</span>
+                    <span className="font-typewriter text-[9px] text-[#4a3a2a]">({u.stakeout.attempted})</span>
+                  </div>
+                  <div className="flex items-center gap-1.5">
+                    <span className="font-typewriter text-[10px] text-[#8b7355]">Aprobaron</span>
+                    <span className="font-typewriter text-xs text-[#e8b455]">
+                      {u.stakeout.passedPct != null ? `${u.stakeout.passedPct}%` : "—"}
+                    </span>
+                  </div>
+                  {u.stakeout.avgTimeRemaining != null && (
+                    <div className="flex items-center gap-1.5">
+                      <span className="font-typewriter text-[10px] text-[#8b7355]">Tiempo promedio restante</span>
+                      <span className="font-typewriter text-xs text-[#c9933a]">{u.stakeout.avgTimeRemaining}s</span>
+                    </div>
+                  )}
+                </div>
+              )}
 
               {/* Academia tier breakdown */}
               {u.academia && u.academia.total > 0 && (

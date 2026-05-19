@@ -5,6 +5,7 @@
   "caseTitle": "El Chef Misterioso",
   "caseDescription": "Alguien roba la receta secreta del ajiaco bogotano del Chef Valentina Cruz — un plato que es parte del patrimonio cultural de Colombia. Cuatro cocineros son sospechosos. Usa tener que + infinitivo, los verbos de cambio de raíz (querer, poder, preferir) y los adjetivos demostrativos (este, ese, aquel) para descubrir quién miente sobre qué ingredientes toca y qué tiene que hacer.",
   "criminalName": "El Cocinero Secreto",
+  "bonusClue": "El sospechoso tiene tierra de jardín fresco en las suelas de los zapatos — no es tierra de cocina sino de exterior. Solo uno de los cocineros estuvo fuera del restaurante esta mañana.",
 
   "vocab": [
     { "spanish": "el mango",             "english": "mango",                              "audio": "/audio/unit-06/mango.mp3" },

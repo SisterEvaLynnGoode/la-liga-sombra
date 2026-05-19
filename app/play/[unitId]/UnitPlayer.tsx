@@ -20,6 +20,9 @@ import TimedFlashcards from "@/components/games/TimedFlashcards";
 import LiveStakeout from "@/components/games/LiveStakeout";
 import SentenceBuilderStage from "@/components/games/SentenceBuilderStage";
 import Interrogation from "@/components/games/Interrogation";
+import Stakeout from "@/components/games/Stakeout";
+import type { StakeoutQuestion } from "@/lib/question-generator";
+import type { StakeoutResult } from "@/components/games/Stakeout";
 import type { BadgeType } from "@/lib/types/database";
 
 interface Props {
@@ -29,6 +32,7 @@ interface Props {
   classId: string;
   initialStageIndex: number;
   isCompleted: boolean;
+  stakeoutQuestions: StakeoutQuestion[];  // pre-generated server-side; empty = no stakeout
 }
 
 // Compute which clues have already been earned given a stage index
@@ -53,20 +57,34 @@ const STAGE_LABELS: Record<StageData["type"], string> = {
   liveStakeout: "Vigilancia",
 };
 
-export default function UnitPlayer({ content, unitId, unitNumber, classId, initialStageIndex, isCompleted }: Props) {
+export default function UnitPlayer({ content, unitId, unitNumber, classId, initialStageIndex, isCompleted, stakeoutQuestions }: Props) {
   useRouter(); // reserved for future navigation (chase mechanic)
+
+  // Does this unit have a stakeout checkpoint? (only when last stage is lineup)
+  const lineupIndex   = content.stages.length - 1;
+  const hasStakeout   = stakeoutQuestions.length > 0 &&
+                        content.stages[lineupIndex]?.type === "lineup";
+
   const [currentStage, setCurrentStage] = useState(
     isCompleted ? content.stages.length : initialStageIndex
   );
   const [earnedClues, setEarnedClues] = useState<string[]>(
     () => computeEarnedClues(content.stages, initialStageIndex)
   );
-  const [pendingClue, setPendingClue] = useState<string | null>(null);
-  const [showBadge, setShowBadge] = useState(isCompleted);
-  const [newBadges, setNewBadges] = useState<BadgeType[]>([]);
+  const [pendingClue, setPendingClue]       = useState<string | null>(null);
+  const [showBadge, setShowBadge]           = useState(isCompleted);
+  const [newBadges, setNewBadges]           = useState<BadgeType[]>([]);
   const [showBadgeEarned, setShowBadgeEarned] = useState(false);
-  const [totalTime, setTotalTime] = useState(0);
-  const [lineupScore, setLineupScore] = useState(1);
+  const [totalTime, setTotalTime]           = useState(0);
+  const [lineupScore, setLineupScore]       = useState(1);
+
+  // Stakeout state — injected between stage (lineupIndex-1) and lineupIndex
+  const [stakeoutPhase, setStakeoutPhase]   = useState<"pending" | "active" | "done">("pending");
+  const [stakeoutPassed, setStakeoutPassed] = useState<boolean | null>(null);
+  // When a stage completes with a clue AND the next stage is the stakeout intercept,
+  // we need to delay showing the stakeout until the clue banner is dismissed.
+  const [pendingStakeoutAfterClue, setPendingStakeoutAfterClue] = useState(false);
+
   const stageStartRef = useRef(Date.now());
 
   // ── Shared unit-complete logic ────────────────────────────────────────────────
@@ -134,18 +152,30 @@ export default function UnitPlayer({ content, unitId, unitNumber, classId, initi
         return;
       }
 
+      // Determine whether the NEXT stage is the lineup (stakeout intercept point)
+      const nextIndex = currentStage + 1;
+      const interceptForStakeout =
+        hasStakeout &&
+        stakeoutPhase === "pending" &&
+        nextIndex === lineupIndex;
+
       // Check for clue reward
       const clue = "clueReward" in stage && !result.isSkipped ? (stage.clueReward ?? null) : null;
       if (clue) {
         setEarnedClues((prev) => [...prev, clue]);
         setPendingClue(clue);
-        // Actual stage advance happens after clue is dismissed
+        // If stakeout should fire after this clue, flag it
+        if (interceptForStakeout) setPendingStakeoutAfterClue(true);
+        // Actual advance happens in handleClueDismissed
+      } else if (interceptForStakeout) {
+        // No clue — go straight to stakeout
+        setStakeoutPhase("active");
       } else {
         setCurrentStage((s) => s + 1);
         stageStartRef.current = Date.now();
       }
     },
-    [content.stages, currentStage, unitNumber, completeUnit]
+    [content.stages, currentStage, unitNumber, completeUnit, hasStakeout, stakeoutPhase, lineupIndex]
   );
 
   // ── Lineup (final stage) ─────────────────────────────────────────────────────
@@ -158,17 +188,92 @@ export default function UnitPlayer({ content, unitId, unitNumber, classId, initi
     [completeUnit]
   );
 
-  // ── Clue dismissed → advance stage ──────────────────────────────────────────
+  // ── Clue dismissed → advance stage (or activate stakeout) ──────────────────
   function handleClueDismissed() {
     setPendingClue(null);
-    setCurrentStage((s) => s + 1);
-    stageStartRef.current = Date.now();
+    if (pendingStakeoutAfterClue) {
+      setPendingStakeoutAfterClue(false);
+      setStakeoutPhase("active");
+    } else {
+      setCurrentStage((s) => s + 1);
+      stageStartRef.current = Date.now();
+    }
   }
 
+  // ── Stakeout complete ────────────────────────────────────────────────────────
+  const handleStakeoutComplete = useCallback(
+    async (result: StakeoutResult) => {
+      setStakeoutPhase("done");
+      setStakeoutPassed(result.passed);
+
+      // Modify earned clues based on result
+      if (result.passed) {
+        setEarnedClues((prev) => [...prev, content.bonusClue]);
+      } else {
+        // Remove the most recent clue
+        setEarnedClues((prev) => (prev.length > 0 ? prev.slice(0, -1) : prev));
+      }
+
+      // Record stakeout attempt (fire-and-forget)
+      fetch("/api/game/stage-complete", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          unitNumber,
+          stageIndex: lineupIndex - 1,   // virtual position
+          activityType: "stakeout",
+          score: result.timeRemaining,   // time left = performance indicator
+          maxScore: 90,
+          timeSpentSeconds: Math.max(0, 90 - result.timeRemaining),
+        }),
+      }).catch(() => {});
+
+      // Award badge + 100-point bonus if passed
+      if (result.passed) {
+        fetch("/api/game/stakeout-reward", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ unitNumber }),
+        })
+          .then((r) => r.json())
+          .then((d: { newBadges?: BadgeType[] }) => {
+            if (d.newBadges?.length) {
+              setNewBadges(d.newBadges);
+              setShowBadgeEarned(true);
+            }
+          })
+          .catch(() => {});
+      }
+
+      // Advance to lineup
+      setCurrentStage(lineupIndex);
+      stageStartRef.current = Date.now();
+    },
+    [content.bonusClue, unitNumber, lineupIndex]
+  );
+
   // ── Render ───────────────────────────────────────────────────────────────────
-  const stages = content.stages;
-  const stage = stages[currentStage] as StageData | undefined;
-  const allDone = currentStage >= stages.length;
+  const stages   = content.stages;
+  const stage    = stages[currentStage] as StageData | undefined;
+  const allDone  = currentStage >= stages.length && stakeoutPhase !== "active";
+
+  // Build a virtual stages list for the progress bar that includes a stakeout dot
+  // Virtual index: each real stage maps 1:1, then the stakeout dot sits at lineupIndex
+  // (pushing real lineupIndex to lineupIndex + 1 visually).
+  const progressDots: Array<{ label: string; isStakeout?: boolean }> = stages.map((s) => ({
+    label: STAGE_LABELS[s.type],
+  }));
+  if (hasStakeout) {
+    // Insert a stakeout dot just before the lineup dot
+    progressDots.splice(lineupIndex, 0, { label: "Vigilancia", isStakeout: true });
+  }
+
+  // Map currentStage → visual dot index
+  const visualIndex = hasStakeout && stakeoutPhase !== "pending" && currentStage >= lineupIndex
+    ? currentStage + 1  // stakeout dot consumed one slot
+    : stakeoutPhase === "active"
+    ? lineupIndex       // stakeout dot is active
+    : currentStage;
 
   // Already completed — show badge immediately
   if (showBadge || (allDone && !pendingClue)) {
@@ -189,15 +294,23 @@ export default function UnitPlayer({ content, unitId, unitNumber, classId, initi
       {/* ── Progress bar ────────────────────────────────────────────────── */}
       <div className="border-b border-[rgba(201,147,58,0.12)] bg-[#110f0d] px-5 py-2.5 shrink-0">
         <div className="flex items-center gap-1 max-w-4xl mx-auto">
-          {stages.map((s, i) => {
-            const done = i < currentStage;
-            const active = i === currentStage;
+          {progressDots.map((dot, i) => {
+            const done   = i < visualIndex;
+            const active = i === visualIndex;
             return (
               <div key={i} className="flex items-center flex-1 min-w-0">
                 <div className="flex flex-col items-center shrink-0">
                   <div
                     className={`w-3 h-3 rounded-full border transition-colors ${
-                      done
+                      dot.isStakeout
+                        ? done
+                          ? stakeoutPassed === true
+                            ? "bg-[#c9933a] border-[#c9933a]"
+                            : "bg-[#c0392b] border-[#c0392b]"
+                          : active
+                          ? "bg-[#8b1a1a] border-[#c0392b] shadow-[0_0_8px_rgba(192,57,43,0.8)] animate-pulse"
+                          : "bg-transparent border-[rgba(192,57,43,0.3)]"
+                        : done
                         ? "bg-[#c9933a] border-[#c9933a]"
                         : active
                         ? "bg-[#8b1a1a] border-[#c0392b] shadow-[0_0_6px_rgba(192,57,43,0.6)]"
@@ -209,11 +322,11 @@ export default function UnitPlayer({ content, unitId, unitNumber, classId, initi
                       active ? "text-[#e8b455]" : done ? "text-[#c9933a]" : "text-[#4a3a2a]"
                     }`}
                   >
-                    {STAGE_LABELS[s.type]}
+                    {dot.label}
                   </span>
                 </div>
-                {i < stages.length - 1 && (
-                  <div className={`flex-1 h-px mx-1 ${i < currentStage ? "bg-[#c9933a]" : "bg-[rgba(201,147,58,0.15)]"}`} />
+                {i < progressDots.length - 1 && (
+                  <div className={`flex-1 h-px mx-1 ${i < visualIndex ? "bg-[#c9933a]" : "bg-[rgba(201,147,58,0.15)]"}`} />
                 )}
               </div>
             );
@@ -222,15 +335,27 @@ export default function UnitPlayer({ content, unitId, unitNumber, classId, initi
 
         {/* Mobile label */}
         <p className="font-typewriter text-[9px] text-[#8b7355] text-center mt-1 sm:hidden">
-          {stage ? STAGE_LABELS[stage.type] : ""} · {currentStage + 1}/{stages.length}
+          {stakeoutPhase === "active" ? "Vigilancia" : (stage ? STAGE_LABELS[stage.type] : "")} · {visualIndex + 1}/{progressDots.length}
         </p>
       </div>
 
       {/* ── Stage content ────────────────────────────────────────────────── */}
       <div className="flex-1 overflow-auto">
-        {stage?.type === "cutscene" && (
+
+        {/* Stakeout intercept — shown INSTEAD of regular stage content */}
+        {stakeoutPhase === "active" && (
+          <Stakeout
+            key="stakeout"
+            questions={stakeoutQuestions}
+            unitNumber={unitNumber}
+            onComplete={handleStakeoutComplete}
+          />
+        )}
+
+        {stakeoutPhase !== "active" && stage?.type === "cutscene" && (
           <CutsceneStage {...stage} onComplete={handleStageComplete} />
         )}
+
 
         {stage?.type === "vocabMatch" && (
           <VocabMatch

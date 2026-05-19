@@ -2,6 +2,8 @@ import { redirect } from "next/navigation";
 import { getStudentSession } from "@/lib/auth/session";
 import { createClient } from "@/lib/supabase/server";
 import type { UnitContent } from "@/lib/types/unit-content";
+import { getSkillWeights } from "@/lib/mastery";
+import { generateStakeoutQuestions } from "@/lib/question-generator";
 import UnitPlayer from "./UnitPlayer";
 
 // Unit content registry — add new units here as they're built
@@ -75,6 +77,20 @@ export default async function PlayPage({ params }: PageProps) {
   const initialStageIndex = rawStageIndex ?? 0;
   const isCompleted = progress.status === "completed" || progress.case_solved;
 
+  // Pre-generate stakeout questions using student's skill weights.
+  // Only needed for units whose last stage is a lineup (the stakeout precedes it).
+  const hasLineup = content.stages[content.stages.length - 1]?.type === "lineup";
+  const stakeoutQuestions = hasLineup
+    ? generateStakeoutQuestions(
+        content,
+        await getSkillWeights(
+          session.studentId,
+          unitId,
+          content.vocab.map((v) => v.spanish)
+        )
+      )
+    : [];
+
   return (
     <UnitPlayer
       content={content}
@@ -83,6 +99,7 @@ export default async function PlayPage({ params }: PageProps) {
       classId={session.classId}
       initialStageIndex={initialStageIndex}
       isCompleted={isCompleted}
+      stakeoutQuestions={stakeoutQuestions}
     />
   );
 }

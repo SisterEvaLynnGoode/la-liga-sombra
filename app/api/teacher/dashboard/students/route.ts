@@ -16,24 +16,31 @@ export async function GET(request: NextRequest) {
   if (!students.length) return NextResponse.json({ students: [] });
 
   const ids = students.map((s) => s.id);
-  const [progressRes, attemptsRes, masteryRes, badgesRes, academiaRes] = await Promise.all([
+  const [progressRes, attemptsRes, masteryRes, badgesRes, academiaRes, stakeoutRes] = await Promise.all([
     supabase.from("unit_progress").select("student_id, status").in("student_id", ids),
-    supabase.from("attempts").select("student_id, time_spent_seconds, completed_at").in("student_id", ids),
+    supabase.from("attempts").select("student_id, activity_type, score, max_score, time_spent_seconds, completed_at").in("student_id", ids),
     supabase.from("mastery").select("student_id, attempts, correct").in("student_id", ids),
     supabase.from("badges").select("student_id, id").in("student_id", ids),
     supabase.from("academia_sessions").select("student_id, retry_count").in("student_id", ids),
+    supabase.from("attempts")
+      .select("student_id, score, max_score")
+      .in("student_id", ids)
+      .eq("activity_type", "stakeout")
+      .eq("max_score", 90),
   ]);
 
-  const progress = (progressRes.data ?? []) as Array<{ student_id: string; status: string }>;
-  const attempts = (attemptsRes.data ?? []) as Array<{ student_id: string; time_spent_seconds: number; completed_at: string }>;
-  const mastery = (masteryRes.data ?? []) as Array<{ student_id: string; attempts: number; correct: number }>;
-  const badges = (badgesRes.data ?? []) as Array<{ student_id: string; id: string }>;
-  const academiaSessions = (academiaRes.data ?? []) as Array<{ student_id: string; retry_count: number }>;
+  const progress         = (progressRes.data  ?? []) as Array<{ student_id: string; status: string }>;
+  const attempts         = (attemptsRes.data  ?? []) as Array<{ student_id: string; activity_type: string; score: number; max_score: number; time_spent_seconds: number; completed_at: string }>;
+  const mastery          = (masteryRes.data   ?? []) as Array<{ student_id: string; attempts: number; correct: number }>;
+  const badges           = (badgesRes.data    ?? []) as Array<{ student_id: string; id: string }>;
+  const academiaSessions = (academiaRes.data  ?? []) as Array<{ student_id: string; retry_count: number }>;
+  const stakeoutRows     = (stakeoutRes.data  ?? []) as Array<{ student_id: string; score: number; max_score: number }>;
 
   const result = students.map((s) => {
-    const myProgress = progress.filter((p) => p.student_id === s.id);
-    const myAttempts = attempts.filter((a) => a.student_id === s.id);
-    const myMastery = mastery.filter((m) => m.student_id === s.id);
+    const myProgress  = progress.filter((p) => p.student_id === s.id);
+    const myAttempts  = attempts.filter((a) => a.student_id === s.id);
+    const myMastery   = mastery.filter((m) => m.student_id === s.id);
+    const myStakeouts = stakeoutRows.filter((r) => r.student_id === s.id);
 
     const unitsCompleted = myProgress.filter((p) => p.status === "completed").length;
     const totalTimeSeconds = myAttempts.reduce((sum, a) => sum + a.time_spent_seconds, 0);
@@ -47,9 +54,15 @@ export async function GET(request: NextRequest) {
     const totalCorrect = myMastery.reduce((s, m) => s + m.correct, 0);
     const masteryPct = totalAttempts > 0 ? Math.round((totalCorrect / totalAttempts) * 100) : 0;
 
-    // Total academia retries across all units for this student
+    // Academia retries
     const myAcademia = academiaSessions.filter((a) => a.student_id === s.id);
     const totalAcademiaRetries = myAcademia.reduce((sum, a) => sum + (a.retry_count ?? 0), 0);
+
+    // Stakeout performance
+    const stakeoutPassed  = myStakeouts.filter((r) => r.score > 0).length;
+    const stakeoutAvgTime = myStakeouts.length
+      ? Math.round(myStakeouts.reduce((sum, r) => sum + r.score, 0) / myStakeouts.length)
+      : null;
 
     return {
       id: s.id,
@@ -62,6 +75,9 @@ export async function GET(request: NextRequest) {
       badgeCount: badges.filter((b) => b.student_id === s.id).length,
       academiaRetries: totalAcademiaRetries,
       academiaSessions: myAcademia.length,
+      stakeoutAttempts: myStakeouts.length,
+      stakeoutPassed,
+      stakeoutAvgTime,   // avg seconds remaining — higher = faster/stronger
     };
   });
 

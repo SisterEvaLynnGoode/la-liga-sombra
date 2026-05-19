@@ -5,6 +5,7 @@
   "caseTitle": "El Robo en la Escuela",
   "caseDescription": "Alguien robó equipos del laboratorio de computadoras de una escuela secundaria en el Viejo San Juan. La directora vio al sospechoso, pero solo recuerda su apariencia física. Usa ser y los adjetivos descriptivos para identificarlo en el anuario escolar.",
   "criminalName": "El Tecladista",
+  "bonusClue": "El sospechoso nunca se quita los auriculares — los lleva puestos en todo momento, incluso durante clases. Ningún otro sospechoso usa auriculares.",
 
   "vocab": [
     { "spanish": "el libro",        "english": "book",              "audio": "/audio/unit-02/libro.mp3" },

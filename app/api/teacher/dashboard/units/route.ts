@@ -18,7 +18,9 @@ export async function GET(request: NextRequest) {
     studentIds.length ? supabase.from("attempts").select("unit_id, activity_type, score, max_score, time_spent_seconds").in("student_id", studentIds) : Promise.resolve({ data: [] }),
     studentIds.length ? supabase.from("mastery").select("student_id, vocab_term, attempts, correct").in("student_id", studentIds) : Promise.resolve({ data: [] }),
     supabase.from("units").select("id, number, country, title_es").order("number"),
-    studentIds.length ? supabase.from("academia_sessions").select("student_id, unit_id, routing_tier").in("student_id", studentIds) : Promise.resolve({ data: [] }),
+    studentIds.length
+      ? supabase.from("academia_sessions").select("student_id, unit_id, routing_tier").in("student_id", studentIds)
+      : Promise.resolve({ data: [] }),
   ]);
 
   const progress = (progressRes.data ?? []) as Array<{ student_id: string; unit_id: string; status: string }>;
@@ -67,6 +69,19 @@ export async function GET(request: NextRequest) {
       .sort((a, b) => a.masteryPct - b.masteryPct)
       .slice(0, 5);
 
+    // Stakeout stats: % passed, avg time remaining
+    const unitStakeout = attempts.filter(
+      (a) => a.unit_id === u.id && a.activity_type === "stakeout" && a.max_score === 90
+    );
+    const stakeoutAttempted = unitStakeout.length;
+    const stakeoutPassed    = unitStakeout.filter((a) => a.score > 0).length;
+    const stakeoutPassPct   = stakeoutAttempted
+      ? Math.round((stakeoutPassed / stakeoutAttempted) * 100)
+      : null;
+    const stakeoutAvgTime   = stakeoutAttempted
+      ? Math.round(unitStakeout.reduce((s, a) => s + a.score, 0) / stakeoutAttempted)
+      : null;
+
     // Academia routing tier breakdown for this unit
     const unitAcademia = academiaSessions.filter((a) => a.unit_id === u.id);
     const academiaReady       = unitAcademia.filter((a) => a.routing_tier === "ready").length;
@@ -78,6 +93,11 @@ export async function GET(request: NextRequest) {
       number: u.number, country: u.country, titleEs: u.title_es,
       completionCount, inProgressCount, totalStudents,
       avgScore, avgTimeMinutes, activityBreakdown, hardestVocab,
+      stakeout: {
+        attempted: stakeoutAttempted,
+        passedPct: stakeoutPassPct,
+        avgTimeRemaining: stakeoutAvgTime,
+      },
       academia: {
         total: academiaTotal,
         readyPct:       academiaTotal ? Math.round((academiaReady       / academiaTotal) * 100) : null,

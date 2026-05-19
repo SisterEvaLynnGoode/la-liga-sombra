@@ -5,6 +5,7 @@
   "caseTitle": "Persecución por Madrid",
   "caseDescription": "Una experta ladrona de arte conocida como 'La Sombra' robó una pintura de Velázquez del Museo del Prado. Sigue sus pasos por Madrid usando el verbo 'ir' y el vocabulario de lugares y transportes. ¡No la dejes escapar!",
   "criminalName": "La Sombra",
+  "bonusClue": "La Sombra deja siempre una pequeña flor de papel origami en la escena del crimen — su firma personal. Solo una persona en este caso lleva papel de origami.",
 
   "vocab": [
     { "spanish": "la Puerta del Sol",      "english": "Puerta del Sol (main square)", "audio": "/audio/unit-03/puerta-del-sol.mp3" },

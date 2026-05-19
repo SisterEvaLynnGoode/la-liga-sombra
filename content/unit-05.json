@@ -5,6 +5,7 @@
   "caseTitle": "Hackeo en Buenos Aires",
   "caseDescription": "Un hacker roba datos de identidad de 2.847 argentinos desde un edificio en el barrio de Palermo. Usa el verbo tener, los pronombres de objeto directo (lo, la, los, las) y los números grandes para identificar las fechas de ataque, rastrear los objetos robados e identificar al culpable.",
   "criminalName": "El Fantasma Digital",
+  "bonusClue": "El sospechoso tiene una pegatina del equipo de fútbol local en su mochila negra. Las cámaras del edificio confirman: solo uno de los sospechosos lleva exactamente esa mochila.",
 
   "vocab": [
     { "spanish": "la computadora portátil",  "english": "laptop computer",            "audio": "/audio/unit-05/computadora-portatil.mp3" },

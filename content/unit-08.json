@@ -5,6 +5,7 @@
   "caseTitle": "El Mercado Robado",
   "caseDescription": "⚠️ PRIMERA VEZ CON EL PRETÉRITO — Este caso ocurrió ayer. Los testigos describen lo que pasó, no lo que está pasando. Usa el pretérito de los verbos -AR, el pretérito de dar y estar, los pronombres de objeto indirecto (me, te, le, les) y las comparaciones para reconstruir quién llegó cuándo, qué le dio a quién, y quién tomó las figurillas de oro del Mercado de San Pedro en Cusco.",
   "criminalName": "El Coleccionista",
+  "bonusClue": "El coleccionista lleva un catálogo de antigüedades en el bolsillo con el objeto robado marcado en círculo rojo. Es el único sospechoso con ese catálogo específico.",
 
   "vocab": [
     { "spanish": "barrer",           "english": "to sweep",                              "audio": "/audio/unit-08/barrer.mp3" },

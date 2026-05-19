@@ -281,6 +281,7 @@ export const UnitContentSchema = z.object({
   caseTitle: z.string().min(1),
   caseDescription: z.string().min(10),
   criminalName: z.string().min(1),
+  bonusClue: z.string().min(10, "bonusClue must be a descriptive sentence (≥10 chars)"),
   vocab: z.array(VocabPairSchema).min(1),
   stages: z.array(StageSchema)
     .min(3, "Each unit must have at least 3 stages")

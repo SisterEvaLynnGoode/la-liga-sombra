@@ -5,6 +5,7 @@
   "caseTitle": "Sabotaje en el Festival",
   "caseDescription": "Alguien está saboteando los equipos de sonido en el Festival de Viña del Mar — el festival de música más famoso de América Latina. El saboteador está entre el público ahora mismo. Usa el presente progresivo (estar + -ando/-iendo), los verbos de cambio radical y los números ordinales para observar las cámaras de vigilancia e identificarlo antes de que escape.",
   "criminalName": "El Técnico Oscuro",
+  "bonusClue": "El sospechoso lleva un micrófono de marca desconocida — no figura en el inventario oficial del festival. Solo uno de los técnicos lleva equipo no registrado.",
 
   "vocab": [
     { "spanish": "el cine",                "english": "movie theater / the cinema",      "audio": "/audio/unit-07/cine.mp3" },

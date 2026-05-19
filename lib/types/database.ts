@@ -9,11 +9,12 @@ export type Json =
 export type UnitStatus = "locked" | "available" | "in_progress" | "completed";
 export type ActivityType =
   | "vocab_match" | "dialogue" | "listening" | "grammar" | "cultural" | "lineup"
-  | "academia_recognition" | "academia_memorization" | "academia_production" | "academia_application";
+  | "academia_recognition" | "academia_memorization" | "academia_production" | "academia_application"
+  | "stakeout";
 export type BadgeType =
   | "case_solved" | "perfect_score" | "speed_run" | "cultural_expert" | "first_case"
   | "unit_completed" | "speed_demon" | "vocab_master" | "streak_3" | "streak_7"
-  | "distinguished_recruit";
+  | "distinguished_recruit" | "vigilancia_exitosa";
 
 // Supabase v2 requires Relationships and CompositeTypes for correct type inference
 export interface Database {

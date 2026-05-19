@@ -196,6 +196,12 @@ export interface UnitContent {
   caseTitle: string;
   caseDescription: string;
   criminalName: string;
+  /**
+   * Bonus clue awarded when the student passes the Vigilancia stakeout.
+   * Appears in the lineup as a 4th clue. Must be a detail that uniquely
+   * distinguishes the correct suspect (e.g. handedness, tattoo, distinctive habit).
+   */
+  bonusClue: string;
   vocab: VocabItem[];
   stages: StageData[];
   academiaConfig?: AcademiaConfig;
