@@ -25,9 +25,10 @@ export async function POST(request: NextRequest) {
     routingTier: "ready" | "recommended" | "required";
     retryCount: number;
     passedFirstTry: boolean;
+    advancedWithoutPassing?: boolean;
   };
 
-  const { unitNumber, routingTier, retryCount, passedFirstTry } = body;
+  const { unitNumber, routingTier, retryCount, passedFirstTry, advancedWithoutPassing } = body;
   if (!unitNumber || !routingTier) {
     return NextResponse.json({ error: "Missing required fields" }, { status: 400 });
   }
@@ -47,6 +48,7 @@ export async function POST(request: NextRequest) {
     routing_tier: routingTier,
     retry_count: retryCount ?? 0,
     passed_first_try: passedFirstTry ?? false,
+    advanced_without_passing: advancedWithoutPassing ?? false,
   });
 
   const newBadges: string[] = [];

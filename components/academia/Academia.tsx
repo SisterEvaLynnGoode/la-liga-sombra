@@ -36,7 +36,7 @@ interface Props {
   sentences?: SentenceItem[];  // optional Aplicación stage
   unitId?: string;
   unitNumber: number;
-  onComplete: (opts: { passedFirstTry: boolean; retries: number }) => void;
+  onComplete: (opts: { passedFirstTry: boolean; retries: number; advancedWithoutPassing: boolean }) => void;
 }
 
 // ── Helper: build initial stage list ─────────────────────────────────────────
@@ -132,8 +132,21 @@ export default function Academia({
 
   // ── Summary — tell parent we're done ────────────────────────────────────
 
-  function handleContinue() {
-    onComplete({ passedFirstTry, retries });
+  function handleContinue(advancedWithoutPassing: boolean) {
+    onComplete({ passedFirstTry, retries, advancedWithoutPassing });
+  }
+
+  // ── Retry — reset to beginning ───────────────────────────────────────────
+
+  function handleRetryAll() {
+    stageCompletedRef.current = false;
+    setCycle(0);
+    setRetries(0);
+    setCurrentIndex(0);
+    setPassedFirstTry(true);
+    setAllPassed(false);
+    setStages(buildStages(hasSentences));
+    setPhase("training");
   }
 
   // ── Render: Intro ─────────────────────────────────────────────────────────
@@ -204,6 +217,8 @@ export default function Academia({
   // ── Render: Summary ───────────────────────────────────────────────────────
 
   if (phase === "summary") {
+    const hasFailed = stages.some((s) => !s.passed);
+
     return (
       <div className="min-h-screen bg-[#0d0b0a] flex flex-col items-center justify-center px-6 py-12">
         <div className="max-w-md w-full">
@@ -211,19 +226,24 @@ export default function Academia({
             <div className={`w-20 h-20 rounded-full flex items-center justify-center shadow-lg mb-4 ${
               allPassed
                 ? "bg-gradient-to-br from-[#c9933a] to-[#8b5e10] shadow-[0_0_40px_rgba(201,147,58,0.4)]"
-                : "bg-gradient-to-br from-[#2c8b1a] to-[#1a5e0a] shadow-[0_0_40px_rgba(44,139,26,0.4)]"
+                : "bg-gradient-to-br from-[#3a2a1a] to-[#2c1a08] border-2 border-[rgba(201,147,58,0.3)]"
             }`}>
-              <span className="text-4xl">{allPassed ? "🏅" : "✅"}</span>
+              <span className="text-4xl">{allPassed ? "🏅" : "📋"}</span>
             </div>
-            <h2 className="font-display font-black text-3xl text-[#e8b455] mt-1">
-              {allPassed ? "¡Entrenamiento completo!" : "¡Listo para la misión!"}
+            <h2 className="font-display font-black text-3xl text-[#e8b455] mt-1 text-center">
+              {allPassed ? "¡Entrenamiento completo!" : "Resumen del entrenamiento"}
             </h2>
             <p className="font-typewriter text-xs text-[#8b7355] mt-1">
-              {retries === 0 ? "Aprobaste a la primera" : `${retries} intento(s) adicional(es)`}
+              {retries === 0 && allPassed
+                ? "Aprobaste a la primera"
+                : allPassed
+                ? `Aprobado en ${retries + 1} intento(s)`
+                : "Puedes continuar o intentarlo de nuevo"}
             </p>
           </div>
 
-          <div className="border border-[rgba(201,147,58,0.2)] bg-[#1a1614] p-5 mb-6 space-y-3">
+          {/* Stage results */}
+          <div className="border border-[rgba(201,147,58,0.2)] bg-[#1a1614] p-5 mb-4 space-y-3">
             {stages.map((s) => {
               const m = STAGE_META[s.type];
               return (
@@ -232,8 +252,8 @@ export default function Academia({
                     <span className="text-base w-6 text-center">{m.emoji}</span>
                     <span className="font-typewriter text-xs text-[#c4a882]">{m.labelEs}</span>
                   </div>
-                  <span className={`font-typewriter text-xs ${s.passed ? "text-[#c9933a]" : "text-[#8b7355]"}`}>
-                    {s.passed ? "✓ Aprobado" : "— Omitido"}
+                  <span className={`font-typewriter text-xs ${s.passed ? "text-[#c9933a]" : "text-[#c0392b]"}`}>
+                    {s.passed ? "✓ Aprobado" : "✗ No aprobado"}
                   </span>
                 </div>
               );
@@ -249,12 +269,33 @@ export default function Academia({
             )}
           </div>
 
-          <button
-            onClick={handleContinue}
-            className="w-full clip-skew py-3 font-typewriter text-sm tracking-[0.2em] uppercase bg-[#8b1a1a] text-[#f5e6c8] border border-[#c0392b] hover:bg-[#c0392b] transition-colors"
-          >
-            Comenzar misión →
-          </button>
+          {/* Buttons */}
+          <div className="space-y-3">
+            {/* Always available: advance to mission */}
+            <button
+              onClick={() => handleContinue(hasFailed)}
+              className="w-full clip-skew py-3 font-typewriter text-sm tracking-[0.2em] uppercase bg-[#8b1a1a] text-[#f5e6c8] border border-[#c0392b] hover:bg-[#c0392b] transition-colors"
+            >
+              {allPassed ? "Comenzar misión →" : "Continuar a la misión →"}
+            </button>
+
+            {/* Retry option when not all passed */}
+            {hasFailed && (
+              <button
+                onClick={handleRetryAll}
+                className="w-full py-2.5 font-typewriter text-xs tracking-[0.2em] uppercase border border-[rgba(201,147,58,0.3)] text-[#8b7355] hover:text-[#c9933a] hover:border-[rgba(201,147,58,0.5)] transition-colors"
+              >
+                🔄 Reintentar entrenamiento
+              </button>
+            )}
+
+            {/* Soft note when advancing without full pass */}
+            {hasFailed && (
+              <p className="font-typewriter text-[10px] text-[#4a3a2a] text-center leading-relaxed">
+                Tu profesor/a sabrá que puedes necesitar apoyo adicional con este vocabulario.
+              </p>
+            )}
+          </div>
         </div>
       </div>
     );

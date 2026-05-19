@@ -24,7 +24,7 @@ export default function AcademiaWrapper({
   const router = useRouter();
 
   const handleComplete = useCallback(
-    async (opts: { passedFirstTry: boolean; retries: number }) => {
+    async (opts: { passedFirstTry: boolean; retries: number; advancedWithoutPassing: boolean }) => {
       // Record the session for teacher analytics + award badge if first-try pass
       await fetch("/api/game/academia-complete", {
         method: "POST",
@@ -34,6 +34,7 @@ export default function AcademiaWrapper({
           routingTier,
           retryCount: opts.retries,
           passedFirstTry: opts.passedFirstTry,
+          advancedWithoutPassing: opts.advancedWithoutPassing,
         }),
       }).catch(() => {});
 

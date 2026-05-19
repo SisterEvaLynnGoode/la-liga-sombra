@@ -359,6 +359,7 @@ export interface Database {
           routing_tier: "ready" | "recommended" | "required";
           retry_count: number;
           passed_first_try: boolean;
+          advanced_without_passing: boolean;
           completed_at: string;
         };
         Insert: {
@@ -368,6 +369,7 @@ export interface Database {
           routing_tier: "ready" | "recommended" | "required";
           retry_count?: number;
           passed_first_try?: boolean;
+          advanced_without_passing?: boolean;
           completed_at?: string;
         };
         Update: {
@@ -377,6 +379,7 @@ export interface Database {
           routing_tier?: "ready" | "recommended" | "required";
           retry_count?: number;
           passed_first_try?: boolean;
+          advanced_without_passing?: boolean;
           completed_at?: string;
         };
         Relationships: [

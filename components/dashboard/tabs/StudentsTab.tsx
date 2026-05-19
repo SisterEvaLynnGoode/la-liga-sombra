@@ -16,6 +16,7 @@ interface StudentRow {
   badgeCount: number;
   academiaRetries?: number;
   academiaSessions?: number;
+  needsSupportCount?: number;
   stakeoutAttempts?: number;
   stakeoutPassed?: number;
   stakeoutAvgTime?: number | null;
@@ -109,12 +110,22 @@ export default function StudentsTab({ classId }: { classId: string }) {
                   </div>
                 </td>
                 <td className="py-2.5 pr-4 font-typewriter text-sm text-[#c9933a]">{s.badgeCount}</td>
-                <td className="py-2.5 pr-4 font-typewriter text-sm text-[#8b7355]">
+                <td className="py-2.5 pr-4 font-typewriter text-sm">
                   {s.academiaSessions != null && s.academiaSessions > 0
                     ? (
-                      <span title={`${s.academiaSessions} unit(s) trained`}>
-                        {s.academiaRetries ?? 0}
-                        <span className="text-[10px] text-[#4a3a2a] ml-1">/{s.academiaSessions}</span>
+                      <span className="flex items-center gap-1.5">
+                        <span className="text-[#8b7355]" title={`${s.academiaSessions} unit(s) trained · ${s.academiaRetries} retries`}>
+                          {s.academiaRetries ?? 0}
+                          <span className="text-[10px] text-[#4a3a2a] ml-0.5">/{s.academiaSessions}</span>
+                        </span>
+                        {(s.needsSupportCount ?? 0) > 0 && (
+                          <span
+                            title={`Avanzó sin aprobar en ${s.needsSupportCount} unidad(es) — puede necesitar apoyo`}
+                            className="font-typewriter text-[10px] px-1.5 py-0.5 bg-[rgba(192,57,43,0.15)] border border-[rgba(192,57,43,0.3)] text-[#c0392b] leading-none"
+                          >
+                            ⚠ apoyo
+                          </span>
+                        )}
                       </span>
                     )
                     : <span className="text-[#4a3a2a]">—</span>

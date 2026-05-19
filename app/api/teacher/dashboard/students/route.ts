@@ -21,7 +21,7 @@ export async function GET(request: NextRequest) {
     supabase.from("attempts").select("student_id, activity_type, score, max_score, time_spent_seconds, completed_at").in("student_id", ids),
     supabase.from("mastery").select("student_id, attempts, correct").in("student_id", ids),
     supabase.from("badges").select("student_id, id").in("student_id", ids),
-    supabase.from("academia_sessions").select("student_id, retry_count").in("student_id", ids),
+    supabase.from("academia_sessions").select("student_id, retry_count, advanced_without_passing").in("student_id", ids),
     supabase.from("attempts").select("student_id, score, max_score").in("student_id", ids).eq("activity_type", "stakeout").eq("max_score", 90),
     supabase.from("daily_briefings").select("student_id, briefing_date, completed, skipped").in("student_id", ids).order("briefing_date", { ascending: false }).limit(ids.length * 35),
   ]);
@@ -30,7 +30,9 @@ export async function GET(request: NextRequest) {
   const attempts         = (attemptsRes.data  ?? []) as Array<{ student_id: string; activity_type: string; score: number; max_score: number; time_spent_seconds: number; completed_at: string }>;
   const mastery          = (masteryRes.data   ?? []) as Array<{ student_id: string; attempts: number; correct: number }>;
   const badges           = (badgesRes.data    ?? []) as Array<{ student_id: string; id: string }>;
-  const academiaSessions = (academiaRes.data  ?? []) as Array<{ student_id: string; retry_count: number }>;
+  const academiaSessions = (academiaRes.data  ?? []) as Array<{
+    student_id: string; retry_count: number; advanced_without_passing: boolean;
+  }>;
   const stakeoutRows     = (stakeoutRes.data  ?? []) as Array<{ student_id: string; score: number; max_score: number }>;
   const briefingRows     = (briefingRes.data  ?? []) as Array<{ student_id: string; briefing_date: string; completed: boolean; skipped: boolean }>;
 
@@ -52,9 +54,10 @@ export async function GET(request: NextRequest) {
     const totalCorrect = myMastery.reduce((s, m) => s + m.correct, 0);
     const masteryPct = totalAttempts > 0 ? Math.round((totalCorrect / totalAttempts) * 100) : 0;
 
-    // Academia retries
+    // Academia retries + support flag
     const myAcademia = academiaSessions.filter((a) => a.student_id === s.id);
     const totalAcademiaRetries = myAcademia.reduce((sum, a) => sum + (a.retry_count ?? 0), 0);
+    const needsSupportCount = myAcademia.filter((a) => a.advanced_without_passing).length;
 
     // Stakeout performance
     const stakeoutPassed  = myStakeouts.filter((r) => r.score > 0).length;
@@ -123,6 +126,7 @@ export async function GET(request: NextRequest) {
       badgeCount: badges.filter((b) => b.student_id === s.id).length,
       academiaRetries: totalAcademiaRetries,
       academiaSessions: myAcademia.length,
+      needsSupportCount,
       stakeoutAttempts: myStakeouts.length,
       stakeoutPassed,
       stakeoutAvgTime,
