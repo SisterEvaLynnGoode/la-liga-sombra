@@ -186,7 +186,7 @@ export const ListeningStageSchema = z.object({
 
 export const LineupStageSchema = z.object({
   type: z.literal("lineup"),
-  suspects: z.array(SuspectSchema).length(4, "The lineup must have exactly 4 suspects"),
+  suspects: z.array(SuspectSchema).min(4, "At least 4 suspects required").max(5, "Maximum 5 suspects (cold cases only)"),
   correctSuspectId: z.string().min(1),
   hint: z.string().min(10, "Hint must be descriptive enough to guide students"),
 }).refine(
@@ -282,6 +282,7 @@ export const UnitContentSchema = z.object({
   caseDescription: z.string().min(10),
   criminalName: z.string().min(1),
   bonusClue: z.string().min(10, "bonusClue must be a descriptive sentence (≥10 chars)"),
+  isColdCase: z.boolean().optional(),
   vocab: z.array(VocabPairSchema).min(1),
   stages: z.array(StageSchema)
     .min(3, "Each unit must have at least 3 stages")

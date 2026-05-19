@@ -17,7 +17,7 @@ export async function GET(request: NextRequest) {
 
   const ids = students.map((s) => s.id);
   const [progressRes, attemptsRes, masteryRes, badgesRes, academiaRes, stakeoutRes, briefingRes] = await Promise.all([
-    supabase.from("unit_progress").select("student_id, status").in("student_id", ids),
+    supabase.from("unit_progress").select("student_id, status, cold_case_completed_at").in("student_id", ids),
     supabase.from("attempts").select("student_id, activity_type, score, max_score, time_spent_seconds, completed_at").in("student_id", ids),
     supabase.from("mastery").select("student_id, attempts, correct").in("student_id", ids),
     supabase.from("badges").select("student_id, id").in("student_id", ids),
@@ -26,7 +26,7 @@ export async function GET(request: NextRequest) {
     supabase.from("daily_briefings").select("student_id, briefing_date, completed, skipped").in("student_id", ids).order("briefing_date", { ascending: false }).limit(ids.length * 35),
   ]);
 
-  const progress         = (progressRes.data  ?? []) as Array<{ student_id: string; status: string }>;
+  const progress         = (progressRes.data  ?? []) as Array<{ student_id: string; status: string; cold_case_completed_at?: string | null }>;
   const attempts         = (attemptsRes.data  ?? []) as Array<{ student_id: string; activity_type: string; score: number; max_score: number; time_spent_seconds: number; completed_at: string }>;
   const mastery          = (masteryRes.data   ?? []) as Array<{ student_id: string; attempts: number; correct: number }>;
   const badges           = (badgesRes.data    ?? []) as Array<{ student_id: string; id: string }>;
@@ -61,6 +61,9 @@ export async function GET(request: NextRequest) {
     const stakeoutAvgTime = myStakeouts.length
       ? Math.round(myStakeouts.reduce((sum, r) => sum + r.score, 0) / myStakeouts.length)
       : null;
+
+    // Cold case engagement
+    const coldCasesCompleted = myProgress.filter((p) => p.cold_case_completed_at).length;
 
     // Daily briefing streak
     const myBriefings = briefingRows.filter((b) => b.student_id === s.id);
@@ -129,6 +132,7 @@ export async function GET(request: NextRequest) {
       briefingStreak:  briefingStreakCount,
       briefingSkips,
       briefingTotal,
+      coldCasesCompleted,
     };
   });
 

@@ -1,0 +1,263 @@
+{
+  "unitNumber": 1,
+  "country": "México",
+  "city": "Guadalajara",
+  "caseTitle": "El Segundo Robo en Guadalajara",
+  "caseDescription": "Tres semanas después de resolver el primer caso, otra joya musical ha desaparecido — la Trompeta Ceremonial de Mariachi Vargas, una pieza de 150 años. El patrón sugiere que alguien está construyendo una colección ilegal de instrumentos históricos. El sospechoso es diferente. Las pistas son más difíciles. ¿Estás listo, agente?",
+  "criminalName": "La Trompetista",
+  "bonusClue": "La sospechosa tiene un tatuaje de una nota musical en la muñeca derecha. Solo uno de los sospechosos tiene ese tatuaje visible.",
+  "isColdCase": true,
+
+  "vocab": [
+    { "spanish": "hola",             "english": "hello",            "audio": "/audio/unit-01/hola.mp3" },
+    { "spanish": "adiós",            "english": "goodbye",          "audio": "/audio/unit-01/adios.mp3" },
+    { "spanish": "buenos días",      "english": "good morning",     "audio": "/audio/unit-01/buenos-dias.mp3" },
+    { "spanish": "buenas tardes",    "english": "good afternoon",   "audio": "/audio/unit-01/buenas-tardes.mp3" },
+    { "spanish": "buenas noches",    "english": "good night",       "audio": "/audio/unit-01/buenas-noches.mp3" },
+    { "spanish": "por favor",        "english": "please",           "audio": "/audio/unit-01/por-favor.mp3" },
+    { "spanish": "gracias",          "english": "thank you",        "audio": "/audio/unit-01/gracias.mp3" },
+    { "spanish": "de nada",          "english": "you're welcome",   "audio": "/audio/unit-01/de-nada.mp3" },
+    { "spanish": "me llamo",         "english": "my name is",       "audio": "/audio/unit-01/me-llamo.mp3" },
+    { "spanish": "¿cómo te llamas?", "english": "what's your name?","audio": "/audio/unit-01/como-te-llamas.mp3" },
+    { "spanish": "¿de dónde eres?",  "english": "where are you from?","audio": "/audio/unit-01/de-donde-eres.mp3" },
+    { "spanish": "soy de...",        "english": "I'm from...",      "audio": "/audio/unit-01/soy-de.mp3" }
+  ],
+
+  "stages": [
+    {
+      "type": "cutscene",
+      "videoUrl": "/videos/unit-01-cold-intro.mp4",
+      "fallbackImage": "/images/unit-01-briefing.jpg",
+      "chiefName": "Jefe Ramírez",
+      "chiefImageSeed": 60,
+      "briefingLines": [
+        "Agente, bienvenido de nuevo. No hay tiempo para descansar.",
+        "Tres semanas después del caso del mariachi, alguien robó la Trompeta Ceremonial de Mariachi Vargas — 150 años de historia, desaparecida en minutos del museo.",
+        "El ladrón es diferente. Más profesional. Más inteligente.",
+        "Tenemos indicios de un patrón. Alguien paga por instrumentos históricos en toda América Latina. Lo llamamos 'El Coleccionista'. Esta trompeta puede ser su segundo encargo.",
+        "Todos los testigos del museo solo hablan español. El caso es más difícil. Tienes menos tiempo.",
+        "¿Estás listo para tu misión más difícil? El caso está abierto. No failles, agente."
+      ]
+    },
+
+    {
+      "type": "vocabMatch",
+      "pairs": [
+        { "spanish": "hola",        "english": "hello" },
+        { "spanish": "gracias",     "english": "thank you" },
+        { "spanish": "buenos días", "english": "good morning" },
+        { "spanish": "por favor",   "english": "please" },
+        { "spanish": "adiós",       "english": "goodbye" },
+        { "spanish": "de nada",     "english": "you're welcome" },
+        { "spanish": "me llamo",    "english": "my name is" },
+        { "spanish": "soy de...",   "english": "I'm from..." }
+      ]
+    },
+
+    {
+      "type": "dialogueChoice",
+      "clueReward": "La sospechosa lleva un estuche de música negro y muy grande. Entró directamente a la sala principal sin mirar otras salas.",
+      "npcName": "Don Mauricio García",
+      "npcAvatar": "👮",
+      "startNodeId": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "npcLine": "¡Buenos días! Soy el guardia de seguridad del museo. ¿Eres el detective de la agencia?",
+          "options": [
+            {
+              "text": "Buenos días, Don Mauricio. Sí, soy detective. Necesito información sobre el robo.",
+              "isCorrect": true,
+              "nextNodeId": "info"
+            },
+            {
+              "text": "Adiós, no tengo tiempo para hablar.",
+              "isCorrect": false,
+              "feedback": "¡Este guardia vio todo! Salúdalo correctamente — di 'Buenos días' y preséntate."
+            },
+            {
+              "text": "¿A qué hora abre el museo?",
+              "isCorrect": false,
+              "feedback": "El museo no es lo importante aquí. Preséntate y pregunta sobre el robo."
+            }
+          ]
+        },
+        {
+          "id": "info",
+          "npcLine": "¡Sí! Vi a una mujer. Alta, con ropa negra muy elegante. Llevaba un estuche de música negro y muy grande. Raro, ¿no? No vino a escuchar música — fue directamente a la sala principal.",
+          "options": [
+            {
+              "text": "Muchas gracias, Don Mauricio. ¿Algo más que recuerde de ella?",
+              "isCorrect": true,
+              "nextNodeId": "detail"
+            },
+            {
+              "text": "De nada. Goodbye.",
+              "isCorrect": false,
+              "feedback": "Espera — el guardia tiene más información. Agradécele correctamente y pide más detalles."
+            },
+            {
+              "text": "¿Cómo te llamas exactamente?",
+              "isCorrect": false,
+              "feedback": "Ya sabes su nombre. Pregúntale más sobre la sospechosa."
+            }
+          ]
+        },
+        {
+          "id": "detail",
+          "npcLine": "Sí. Hablaba muy rápido y con mucha confianza — como alguien que sabe exactamente lo que busca. Y el estuche... cuando entró estaba vacío. Cuando salió estaba muy pesado.",
+          "isEnd": true,
+          "endMessage": "Don Mauricio te da una mirada seria y regresa a su puesto. Tienes una pista importante."
+        }
+      ]
+    },
+
+    {
+      "type": "readingComp",
+      "clueReward": "La sospechosa entró a las 14:45, fue directamente a la vitrina de la trompeta, y salió a las 15:10 con el estuche más pesado.",
+      "passage": "REGISTRO DE SEGURIDAD — MUSEO MARIACHI VARGAS\nFecha: 15 de octubre, martes\nVigilante en turno: Carlos Herrera\n\n14:30 — Llegaron 12 visitantes al museo. Todo normal.\n14:45 — Una mujer de unos 45 años entró a la Sala de Instrumentos Históricos. Llevaba un estuche de música grande y negro. Estaba sola y no habló con nadie al entrar.\n14:50 — La mujer habló con el conservador sobre la Trompeta Ceremonial de Vargas. Preguntó cuántos años tiene el instrumento y cuánto vale en el mercado internacional.\n15:00 — La alarma electrónica de la vitrina número 3 registró una actividad de 3 minutos y 12 segundos. El sistema falló brevemente.\n15:10 — La mujer salió rápidamente del museo por la puerta principal. El estuche se veía considerablemente más pesado que cuando entró.\n15:12 — El vigilante descubrió que la Trompeta Ceremonial no estaba en la vitrina número 3.\nNota: El conservador declara que no autorizó ninguna remoción del instrumento.",
+      "glossary": [
+        { "word": "registro",        "translation": "log / record" },
+        { "word": "vigilante",       "translation": "security guard" },
+        { "word": "vitrina",         "translation": "display case / showcase" },
+        { "word": "conservador",     "translation": "conservator / curator" },
+        { "word": "remoción",        "translation": "removal" },
+        { "word": "actividad",       "translation": "activity" },
+        { "word": "considerablemente","translation": "considerably" },
+        { "word": "declara",         "translation": "declares / states" },
+        { "word": "instrumento",     "translation": "instrument" },
+        { "word": "internacional",   "translation": "international" }
+      ],
+      "questions": [
+        {
+          "id": "cr1",
+          "text": "¿A qué hora entró la mujer sospechosa a la Sala de Instrumentos Históricos?",
+          "type": "multiple_choice",
+          "options": ["14:30", "14:45", "15:00", "15:10"],
+          "correctIndex": 1
+        },
+        {
+          "id": "cr2",
+          "text": "¿Qué preguntó la sospechosa sobre la trompeta?",
+          "type": "short_answer",
+          "acceptableAnswers": ["cuántos años tiene", "cuánto vale", "su valor", "su edad", "años y valor"]
+        },
+        {
+          "id": "cr3",
+          "text": "¿A qué hora descubrieron que la trompeta faltaba?",
+          "type": "multiple_choice",
+          "options": ["14:45", "15:00", "15:10", "15:12"],
+          "correctIndex": 3
+        },
+        {
+          "id": "cr4",
+          "text": "¿Cuánto tiempo duró la actividad irregular en la vitrina número 3?",
+          "type": "multiple_choice",
+          "options": ["1 minuto", "2 minutos", "3 minutos 12 segundos", "5 minutos"],
+          "correctIndex": 2
+        }
+      ]
+    },
+
+    {
+      "type": "listeningComp",
+      "clueReward": "La sospechosa tiene cuarenta y cinco años, pelo negro y largo, y ropa negra formal.",
+      "audioUrl": "/audio/unit-01-cold/witness-call.mp3",
+      "transcript": "Buenos días. Soy el guardia del museo. Me llamo Rodolfo Torres. Son las tres y media de la tarde. Vi a la mujer que robó la trompeta. Tiene cuarenta y cinco años. Es alta. Tiene pelo negro y largo. Lleva ropa negra y formal. Tiene un estuche de música muy grande. Entró al museo a las dos y cuarenta y cinco. Salió a las tres y diez. Habló con el conservador. Preguntó por la trompeta. Después de salir, la trompeta no estaba. Adiós.",
+      "translation": "Good morning. I am the museum guard. My name is Rodolfo Torres. It is three-thirty in the afternoon. I saw the woman who stole the trumpet. She is forty-five years old. She is tall. She has black, long hair. She wears black, formal clothes. She has a very large music case. She entered the museum at two forty-five. She left at three ten. She spoke with the conservator. She asked about the trumpet. After she left, the trumpet was gone. Goodbye.",
+      "maxReplays": 1,
+      "passingScore": 0.75,
+      "retryHint": "Pista: Escucha el nombre del guardia, la hora, la edad y la descripción física de la sospechosa.",
+      "questions": [
+        {
+          "question": "¿Cómo se llama el guardia?",
+          "options": ["Rodolfo Torres", "Mauricio García", "Carlos Herrera", "Rodrigo Torres"],
+          "correctIndex": 0,
+          "explanationEs": "El guardia dice: 'Me llamo Rodolfo Torres.'",
+          "explanationEn": "He clearly says 'My name is Rodolfo Torres.'"
+        },
+        {
+          "question": "¿Qué hora es según el guardia?",
+          "options": ["2:30 PM", "3:00 PM", "3:30 PM", "4:00 PM"],
+          "correctIndex": 2,
+          "explanationEs": "Dice: 'Son las tres y media de la tarde.' Tres y media = 3:30.",
+          "explanationEn": "'Son las tres y media de la tarde' = three-thirty in the afternoon."
+        },
+        {
+          "question": "¿Cuántos años tiene la sospechosa?",
+          "options": ["34", "40", "45", "50"],
+          "correctIndex": 2,
+          "explanationEs": "El guardia dice: 'Tiene cuarenta y cinco años.' Cuarenta y cinco = 45.",
+          "explanationEn": "He says 'She is forty-five years old.' Cuarenta y cinco = 45."
+        },
+        {
+          "question": "¿Cómo es el pelo de la sospechosa?",
+          "options": ["Corto y rubio", "Largo y castaño", "Corto y negro", "Negro y largo"],
+          "correctIndex": 3,
+          "explanationEs": "El guardia dice: 'Tiene pelo negro y largo.'",
+          "explanationEn": "He says 'She has black, long hair.' Negro = black, largo = long."
+        },
+        {
+          "question": "¿A qué hora salió la sospechosa del museo?",
+          "options": ["2:45 PM", "3:00 PM", "3:10 PM", "3:30 PM"],
+          "correctIndex": 2,
+          "explanationEs": "El guardia dice: 'Salió a las tres y diez.' Las tres y diez = 3:10.",
+          "explanationEn": "'Salió a las tres y diez' = she left at three ten."
+        }
+      ]
+    },
+
+    {
+      "type": "lineup",
+      "correctSuspectId": "la-trompetista",
+      "hint": "Recuerda las pistas: mujer alta con ropa negra formal, 45 años, pelo negro y largo, tiene un estuche de música negro, entró a las 14:45. ¿Quién tiene TODAS estas características?",
+      "suspects": [
+        {
+          "id": "la-trompetista",
+          "name": "La Trompetista",
+          "realName": "Valentina Cruz Ríos",
+          "age": 45,
+          "description": "Es una mujer alta y elegante. Tiene cuarenta y cinco años y pelo negro muy largo. Siempre lleva ropa negra y formal. Tiene un estuche de música negro y muy grande. Habla muy rápido y con mucha confianza.",
+          "imageSeed": 52,
+          "imageUrl": "https://randomuser.me/api/portraits/women/52.jpg"
+        },
+        {
+          "id": "el-fotografo",
+          "name": "El Fotógrafo",
+          "realName": "Marcos Reyes Fuentes",
+          "age": 30,
+          "description": "Es un hombre joven y bajo, con barba corta. Tiene treinta años y es turista de Ciudad de México. Siempre lleva una cámara grande. Es muy curioso y habla despacio.",
+          "imageSeed": 33,
+          "imageUrl": "https://randomuser.me/api/portraits/men/33.jpg"
+        },
+        {
+          "id": "la-estudiante",
+          "name": "La Estudiante",
+          "realName": "Isabel Navarro Pérez",
+          "age": 19,
+          "description": "Es una chica joven y nerviosa. Tiene diecinueve años y estudia en el conservatorio. Tiene pelo corto y castaño. Lleva libros de música y una mochila pequeña.",
+          "imageSeed": 28,
+          "imageUrl": "https://randomuser.me/api/portraits/women/28.jpg"
+        },
+        {
+          "id": "el-guia",
+          "name": "El Guía",
+          "realName": "Roberto Castellanos Vega",
+          "age": 55,
+          "description": "Es un hombre delgado de cincuenta y cinco años con lentes redondos. Trabaja en el museo hace veinte años y conoce cada instrumento perfectamente. Habla muy bien de la historia del mariachi.",
+          "imageSeed": 54,
+          "imageUrl": "https://randomuser.me/api/portraits/men/54.jpg"
+        },
+        {
+          "id": "el-conservador",
+          "name": "El Conservador",
+          "realName": "Diego Morales Soto",
+          "age": 40,
+          "description": "Es un hombre alto y serio de cuarenta años. Tiene acceso a todas las salas del museo. Habló con una mujer sobre la trompeta esa tarde, pero dice que no autorizó ninguna remoción.",
+          "imageSeed": 41,
+          "imageUrl": "https://randomuser.me/api/portraits/men/41.jpg"
+        }
+      ]
+    }
+  ]
+}

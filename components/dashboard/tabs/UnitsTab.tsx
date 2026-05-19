@@ -14,6 +14,10 @@ interface UnitData {
   avgTimeMinutes: number;
   activityBreakdown: Array<{ type: string; avgScore: number; count: number }>;
   hardestVocab: Array<{ term: string; masteryPct: number; studentsSeen: number }>;
+  coldCase?: {
+    completions: number;
+    pct: number | null;
+  };
   stakeout?: {
     attempted: number;
     passedPct: number | null;
@@ -87,6 +91,20 @@ export default function UnitsTab({ classId }: { classId: string }) {
                   </span>
                 </div>
               </div>
+
+              {/* Cold Case stats */}
+              {u.coldCase && u.coldCase.completions > 0 && (
+                <div className="px-5 pb-2 flex items-center gap-4">
+                  <div className="flex items-center gap-1.5">
+                    <span className="text-sm">❄</span>
+                    <span className="font-typewriter text-[9px] tracking-widest uppercase text-[rgba(74,158,255,0.7)]">Caso Frío</span>
+                  </div>
+                  <span className="font-typewriter text-xs text-[#4a9eff]">
+                    {u.coldCase.completions} completado(s)
+                    {u.coldCase.pct != null && <span className="text-[rgba(74,158,255,0.5)] ml-1">({u.coldCase.pct}% de completados del caso original)</span>}
+                  </span>
+                </div>
+              )}
 
               {/* Vigilancia stakeout stats */}
               {u.stakeout && u.stakeout.attempted > 0 && (

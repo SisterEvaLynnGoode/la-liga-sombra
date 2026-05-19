@@ -14,7 +14,7 @@ export async function GET(request: NextRequest) {
   const totalStudents = studentIds.length;
 
   const [progressRes, attemptsRes, masteryRes, unitsRes, academiaRes] = await Promise.all([
-    studentIds.length ? supabase.from("unit_progress").select("student_id, unit_id, status").in("student_id", studentIds) : Promise.resolve({ data: [] }),
+    studentIds.length ? supabase.from("unit_progress").select("student_id, unit_id, status, cold_case_completed_at").in("student_id", studentIds) : Promise.resolve({ data: [] }),
     studentIds.length ? supabase.from("attempts").select("unit_id, activity_type, score, max_score, time_spent_seconds").in("student_id", studentIds) : Promise.resolve({ data: [] }),
     studentIds.length ? supabase.from("mastery").select("student_id, vocab_term, attempts, correct").in("student_id", studentIds) : Promise.resolve({ data: [] }),
     supabase.from("units").select("id, number, country, title_es").order("number"),
@@ -89,10 +89,23 @@ export async function GET(request: NextRequest) {
     const academiaRequired    = unitAcademia.filter((a) => a.routing_tier === "required").length;
     const academiaTotal = unitAcademia.length;
 
+    // Cold case completion %
+    const coldCaseCompletions = (progressRes.data ?? []).filter(
+      (p: { unit_id: string; cold_case_completed_at?: string | null }) =>
+        p.unit_id === u.id && p.cold_case_completed_at
+    ).length;
+    const coldCasePct = completionCount > 0
+      ? Math.round((coldCaseCompletions / completionCount) * 100)
+      : null;
+
     return {
       number: u.number, country: u.country, titleEs: u.title_es,
       completionCount, inProgressCount, totalStudents,
       avgScore, avgTimeMinutes, activityBreakdown, hardestVocab,
+      coldCase: {
+        completions: coldCaseCompletions,
+        pct: coldCasePct,
+      },
       stakeout: {
         attempted: stakeoutAttempted,
         passedPct: stakeoutPassPct,

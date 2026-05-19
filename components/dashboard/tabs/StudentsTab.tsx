@@ -25,6 +25,7 @@ interface StudentRow {
   briefingStreak?: number;
   briefingSkips?: number;
   briefingTotal?: number;
+  coldCasesCompleted?: number;
 }
 
 interface StudentsData { students: StudentRow[] }
@@ -82,6 +83,7 @@ export default function StudentsTab({ classId }: { classId: string }) {
               <SortTh k="stakeoutAvgTime" label="Vigilancia ⏱" />
               <SortTh k="trainingMinutesWeek" label="Training /sem" />
               <SortTh k="briefingStreak" label="Informe 📋" />
+              <SortTh k="coldCasesCompleted" label="❄ Frío" />
             </tr>
           </thead>
           <tbody>
@@ -168,6 +170,12 @@ export default function StudentsTab({ classId }: { classId: string }) {
                         )}
                       </span>
                     )
+                    : <span className="text-[#4a3a2a]">—</span>
+                  }
+                </td>
+                <td className="py-2.5 pr-4 font-typewriter text-sm">
+                  {(s.coldCasesCompleted ?? 0) > 0
+                    ? <span className="text-[#4a9eff]">❄ {s.coldCasesCompleted}</span>
                     : <span className="text-[#4a3a2a]">—</span>
                   }
                 </td>

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import CaseFileCard from "./CaseFileCard";
+import ColdCaseCard, { type ColdCaseStatus } from "./ColdCaseCard";
 import type { UnitMeta } from "@/lib/game/units";
 import type { UnitStatus } from "@/lib/types/database";
 import type { ReadinessTier } from "@/lib/mastery";
@@ -9,6 +10,8 @@ export interface CaseFile {
   status: UnitStatus;
   caseSolved: boolean;
   readinessLevel?: ReadinessTier; // only set for "available" units
+  coldCaseStatus?: ColdCaseStatus; // only set for units with cold case content
+  coldCaseUnlocksAt?: string | null; // ISO timestamp for locked cold cases
 }
 
 interface Props {
@@ -95,17 +98,30 @@ export default function CorkBoard({ caseFiles }: Props) {
         ))}
       </div>
 
-      {/* Case file grid */}
+      {/* Case file grid — cold case cards inserted after their matching original */}
       <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-6 px-8 pb-10 max-w-6xl mx-auto">
-        {caseFiles.map(({ unit, status, caseSolved, readinessLevel }) => (
-          <CaseFileCard
-            key={unit.number}
-            unit={unit}
-            status={status}
-            caseSolved={caseSolved}
-            readinessLevel={readinessLevel}
-          />
-        ))}
+        {caseFiles.flatMap(({ unit, status, caseSolved, readinessLevel, coldCaseStatus, coldCaseUnlocksAt }) => {
+          const cards = [
+            <CaseFileCard
+              key={`case-${unit.number}`}
+              unit={unit}
+              status={status}
+              caseSolved={caseSolved}
+              readinessLevel={readinessLevel}
+            />
+          ];
+          if (coldCaseStatus) {
+            cards.push(
+              <ColdCaseCard
+                key={`cold-${unit.number}`}
+                unit={unit}
+                status={coldCaseStatus}
+                unlocksAt={coldCaseUnlocksAt}
+              />
+            );
+          }
+          return cards;
+        })}
       </div>
 
       {/* Board border trim */}

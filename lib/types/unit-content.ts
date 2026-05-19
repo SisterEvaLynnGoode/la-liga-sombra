@@ -202,6 +202,14 @@ export interface UnitContent {
    * distinguishes the correct suspect (e.g. handedness, tattoo, distinctive habit).
    */
   bonusClue: string;
+  /**
+   * Marks this file as a Cold Case. When true:
+   * - Accessed via /play/[unitId]/cold
+   * - Lineup may have 5 suspects
+   * - Listening comp maxReplays capped at 1 by the game engine
+   * - Stakeout timer is 70s instead of 90s
+   */
+  isColdCase?: boolean;
   vocab: VocabItem[];
   stages: StageData[];
   academiaConfig?: AcademiaConfig;

@@ -25,6 +25,8 @@ import type { StakeoutQuestion } from "@/lib/question-generator";
 import type { StakeoutResult } from "@/components/games/Stakeout";
 import type { BadgeType } from "@/lib/types/database";
 
+export type GameDifficulty = "standard" | "cold";
+
 interface Props {
   content: UnitContent;
   unitId: string;       // Supabase DB unit UUID
@@ -33,6 +35,7 @@ interface Props {
   initialStageIndex: number;
   isCompleted: boolean;
   stakeoutQuestions: StakeoutQuestion[];  // pre-generated server-side; empty = no stakeout
+  difficulty?: GameDifficulty;            // default "standard"; "cold" applies harder modifiers
 }
 
 // Compute which clues have already been earned given a stage index
@@ -57,7 +60,8 @@ const STAGE_LABELS: Record<StageData["type"], string> = {
   liveStakeout: "Vigilancia",
 };
 
-export default function UnitPlayer({ content, unitId, unitNumber, classId, initialStageIndex, isCompleted, stakeoutQuestions }: Props) {
+export default function UnitPlayer({ content, unitId, unitNumber, classId, initialStageIndex, isCompleted, stakeoutQuestions, difficulty = "standard" }: Props) {
+  const isCold = difficulty === "cold";
   useRouter(); // reserved for future navigation (chase mechanic)
 
   // Does this unit have a stakeout checkpoint? (only when last stage is lineup)
@@ -90,13 +94,15 @@ export default function UnitPlayer({ content, unitId, unitNumber, classId, initi
   // ── Shared unit-complete logic ────────────────────────────────────────────────
   const completeUnit = useCallback(
     async (result: GameResult) => {
-      const res = await fetch("/api/game/unit-complete", {
+      const apiPath = isCold ? "/api/game/cold-case-complete" : "/api/game/unit-complete";
+      const scoreMultiplier = isCold ? 2 : 1;
+      const res = await fetch(apiPath, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           unitNumber,
-          score: result.score,
-          maxScore: result.maxScore,
+          score: result.score * scoreMultiplier,
+          maxScore: result.maxScore * scoreMultiplier,
           timeSpentSeconds: result.timeSpent,
         }),
       }).catch(() => null);
@@ -348,6 +354,8 @@ export default function UnitPlayer({ content, unitId, unitNumber, classId, initi
             key="stakeout"
             questions={stakeoutQuestions}
             unitNumber={unitNumber}
+            startTime={isCold ? 70  : 90}
+            wrongCost={isCold ? 15  : 10}
             onComplete={handleStakeoutComplete}
           />
         )}
@@ -405,7 +413,7 @@ export default function UnitPlayer({ content, unitId, unitNumber, classId, initi
             options={stage.options}
             correctIndex={stage.correctIndex}
             questions={stage.questions}
-            maxReplays={stage.maxReplays}
+            maxReplays={isCold ? 1 : (stage.maxReplays ?? 3)}
             unitId={unitId}
             onComplete={handleStageComplete}
           />

@@ -16,15 +16,17 @@ export interface StakeoutResult {
 interface Props {
   questions: StakeoutQuestion[];
   unitNumber: number;
+  /** Starting countdown seconds. Default 90; Cold Case uses 70. */
+  startTime?: number;
+  /** Seconds deducted per wrong answer. Default 10; Cold Case uses 15. */
+  wrongCost?: number;
   onComplete: (result: StakeoutResult) => void;
 }
 
 type Phase = "briefing" | "challenge" | "result";
 type Feedback = "correct" | "wrong" | null;
 
-const START_TIME   = 90;
 const CORRECT_GAIN = 5;
-const WRONG_COST   = 10;
 
 // ── Helpers ────────────────────────────────────────────────────────────────────
 
@@ -244,7 +246,10 @@ function ListeningQuestion({
 
 // ── Main component ────────────────────────────────────────────────────────────
 
-export default function Stakeout({ questions, unitNumber, onComplete }: Props) {
+export default function Stakeout({ questions, unitNumber, startTime: startTimeProp, wrongCost: wrongCostProp, onComplete }: Props) {
+  const START_TIME = startTimeProp ?? 90;
+  const WRONG_COST = wrongCostProp ?? 10;
+
   const [phase, setPhase]           = useState<Phase>("briefing");
   const [qIndex, setQIndex]         = useState(0);
   const [timeLeft, setTimeLeft]     = useState(START_TIME);
@@ -344,9 +349,9 @@ export default function Stakeout({ questions, unitNumber, onComplete }: Props) {
           {/* Rules */}
           <div className="border border-[rgba(201,147,58,0.15)] bg-[#1a1614] p-4 mb-6 space-y-2">
             {[
-              { icon: "⏱", text: `Tiempo inicial: ${START_TIME} segundos` },
+              { icon: "⏱", text: `Tiempo inicial: ${START_TIME} segundos${START_TIME < 90 ? " ⚠️" : ""}` },
               { icon: "✅", text: `Respuesta correcta: +${CORRECT_GAIN} segundos` },
-              { icon: "❌", text: `Respuesta incorrecta: −${WRONG_COST} segundos` },
+              { icon: "❌", text: `Respuesta incorrecta: −${WRONG_COST} segundos${WRONG_COST > 10 ? " ⚠️" : ""}` },
               { icon: "📋", text: `${questions.length} preguntas en total` },
             ].map((r) => (
               <div key={r.text} className="flex items-center gap-3">

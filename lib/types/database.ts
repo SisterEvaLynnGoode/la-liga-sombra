@@ -18,7 +18,8 @@ export type BadgeType =
   | "unit_completed" | "speed_demon" | "vocab_master" | "streak_3" | "streak_7"
   | "distinguished_recruit" | "vigilancia_exitosa"
   | "entrenamiento_diario" | "maestro_vocabulario" | "poliglota"
-  | "informe_completo" | "estudiante_disciplinado" | "agente_elite";
+  | "informe_completo" | "estudiante_disciplinado" | "agente_elite"
+  | "detective_frio";
 
 // Supabase v2 requires Relationships and CompositeTypes for correct type inference
 export interface Database {
@@ -340,6 +341,8 @@ export interface Database {
           criminal_caught: boolean;
           completed_at: string | null;
           stage_index: number;
+          cold_case_completed_at: string | null;
+          cold_case_score: number | null;
         };
         Insert: {
           id?: string;
@@ -350,6 +353,8 @@ export interface Database {
           criminal_caught?: boolean;
           completed_at?: string | null;
           stage_index?: number;
+          cold_case_completed_at?: string | null;
+          cold_case_score?: number | null;
         };
         Update: {
           id?: string;
@@ -360,6 +365,8 @@ export interface Database {
           criminal_caught?: boolean;
           completed_at?: string | null;
           stage_index?: number;
+          cold_case_completed_at?: string | null;
+          cold_case_score?: number | null;
         };
         Relationships: [
           {

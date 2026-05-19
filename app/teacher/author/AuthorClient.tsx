@@ -130,12 +130,107 @@ const TEXTAREA = INPUT + " resize-y min-h-[80px]";
 
 // ── Author client ─────────────────────────────────────────────────────────────
 
+/** Generate a cold case template JSON from an existing unit's vocab/structure. */
+function buildColdCaseTemplate(sourceUnitNumber: number, vocab: AuthorState["vocab"]) {
+  return {
+    unitNumber: sourceUnitNumber,
+    country: "— fill in —",
+    city: "— fill in —",
+    caseTitle: "— El Caso Frío de [ciudad] —",
+    caseDescription: "— Describe the cold case in Spanish. Use the same grammar focus as the original unit. —",
+    criminalName: "— El/La [Apodo] —",
+    bonusClue: "— A specific detail that uniquely identifies the correct suspect. —",
+    isColdCase: true,
+    vocab: vocab.filter((v) => v.spanish && v.english),
+    stages: [
+      {
+        type: "cutscene",
+        videoUrl: `/videos/unit-0${sourceUnitNumber}-cold-intro.mp4`,
+        fallbackImage: `/images/unit-0${sourceUnitNumber}-briefing.jpg`,
+        chiefName: "Jefe Ramírez",
+        chiefImageSeed: 60,
+        briefingLines: [
+          "Agente, bienvenido de nuevo. Un nuevo caso te espera.",
+          "— [Second sentence about what was stolen and where] —",
+          "— [Third sentence: hint connecting to El Coleccionista or larger conspiracy] —",
+          "Los testigos solo hablan español. Tienes menos tiempo. ¡Buena suerte!",
+        ],
+      },
+      { type: "vocabMatch", pairs: vocab.filter((v) => v.spanish && v.english) },
+      {
+        type: "dialogueChoice",
+        clueReward: "— Clue 1: what the witness observed (suspect appearance/behavior) —",
+        npcName: "— Nombre del testigo —",
+        npcAvatar: "👮",
+        startNodeId: "start",
+        nodes: [
+          { id: "start", npcLine: "— Opening line. Greets the detective. —", options: [
+            { text: "— Correct greeting + question —", isCorrect: true, nextNodeId: "info" },
+            { text: "— Wrong response (rude/off-topic) —", isCorrect: false, feedback: "— Hint to greet politely —" },
+            { text: "— Wrong response (irrelevant) —", isCorrect: false, feedback: "— Hint —" },
+          ]},
+          { id: "info", npcLine: "— Witness describes what they saw —", options: [
+            { text: "— Polite thanks + follow-up —", isCorrect: true, nextNodeId: "end" },
+            { text: "— Wrong response —", isCorrect: false, feedback: "— Hint —" },
+          ]},
+          { id: "end", npcLine: "", isEnd: true, endMessage: "— Closing line from witness —" },
+        ],
+      },
+      {
+        type: "readingComp",
+        clueReward: "— Clue 2: timeline/location detail from the document —",
+        passage: "— Security log, official report, or letter. ~120 words. Uses unit vocab/grammar. —",
+        glossary: [
+          { word: "— word —", translation: "— English translation —" },
+        ],
+        questions: [
+          { id: "cr1", text: "— Question 1 about the passage —", type: "multiple_choice", options: ["", "", "", ""], correctIndex: 0 },
+          { id: "cr2", text: "— Question 2 —", type: "short_answer", acceptableAnswers: ["— answer —"] },
+          { id: "cr3", text: "— Question 3 —", type: "multiple_choice", options: ["", "", "", ""], correctIndex: 0 },
+          { id: "cr4", text: "— Question 4 —", type: "multiple_choice", options: ["", "", "", ""], correctIndex: 0 },
+        ],
+      },
+      {
+        type: "listeningComp",
+        clueReward: "— Clue 3: physical description or other identifying detail —",
+        audioUrl: `/audio/unit-0${sourceUnitNumber}-cold/witness-call.mp3`,
+        transcript: "— Spanish transcript for the audio (30-40 seconds). Use unit vocab. —",
+        translation: "— English translation of the transcript —",
+        maxReplays: 1,
+        passingScore: 0.75,
+        retryHint: "— Listening hint in Spanish —",
+        questions: [
+          { question: "— Q1 —", options: ["", "", "", ""], correctIndex: 0, explanationEs: "", explanationEn: "" },
+          { question: "— Q2 —", options: ["", "", "", ""], correctIndex: 0, explanationEs: "", explanationEn: "" },
+          { question: "— Q3 —", options: ["", "", "", ""], correctIndex: 0, explanationEs: "", explanationEn: "" },
+          { question: "— Q4 —", options: ["", "", "", ""], correctIndex: 0, explanationEs: "", explanationEn: "" },
+          { question: "— Q5 —", options: ["", "", "", ""], correctIndex: 0, explanationEs: "", explanationEn: "" },
+        ],
+      },
+      {
+        type: "lineup",
+        correctSuspectId: "suspect-1",
+        hint: "— Remind students of all 3 clues. Ask who matches ALL characteristics. —",
+        suspects: [
+          { id: "suspect-1", name: "— El/La [Apodo] —", realName: "— Nombre Completo —", age: 35, description: "— 2-3 Spanish sentences. Matches all clues. —", imageSeed: 12, imageUrl: "https://randomuser.me/api/portraits/women/__.jpg" },
+          { id: "suspect-2", name: "— [Apodo] —", realName: "— Nombre —", age: 28, description: "— Does NOT match at least one clue. —", imageSeed: 25, imageUrl: "https://randomuser.me/api/portraits/men/__.jpg" },
+          { id: "suspect-3", name: "— [Apodo] —", realName: "— Nombre —", age: 50, description: "— Does NOT match at least one clue. —", imageSeed: 57, imageUrl: "https://randomuser.me/api/portraits/men/__.jpg" },
+          { id: "suspect-4", name: "— [Apodo] —", realName: "— Nombre —", age: 22, description: "— Does NOT match at least one clue. —", imageSeed: 44, imageUrl: "https://randomuser.me/api/portraits/men/__.jpg" },
+          { id: "suspect-5", name: "— [Apodo] —", realName: "— Nombre —", age: 40, description: "— Does NOT match at least one clue. —", imageSeed: 33, imageUrl: "https://randomuser.me/api/portraits/men/__.jpg" },
+        ],
+      },
+    ],
+  };
+}
+
 export default function AuthorClient() {
   const [step, setStep] = useState<Step>("meta");
   const [state, setState] = useState<AuthorState>(EMPTY_STATE);
   const [preview, setPreview] = useState(false);
   const [validationErrors, setValidationErrors] = useState<string[]>([]);
   const [showCsvImporter, setShowCsvImporter] = useState(false);
+  const [showColdGen, setShowColdGen] = useState(false);
+  const [coldSourceUnit, setColdSourceUnit] = useState(1);
 
   const set = useCallback(<K extends keyof AuthorState>(key: K, val: AuthorState[K]) => {
     setState((s) => ({ ...s, [key]: val }));
@@ -185,6 +280,12 @@ export default function AuthorClient() {
           >
             ↓ Descargar JSON
           </button>
+          <button
+            onClick={() => setShowColdGen((v) => !v)}
+            className="px-4 py-2 font-typewriter text-[10px] tracking-[0.2em] uppercase border border-[rgba(74,158,255,0.3)] text-[rgba(74,158,255,0.7)] hover:text-[#4a9eff] hover:border-[rgba(74,158,255,0.6)] transition-colors"
+          >
+            ❄ Generar Caso Frío
+          </button>
           <a href="/teacher/dashboard" className="font-typewriter text-[10px] text-[#8b7355] hover:text-[#c9933a] transition-colors">
             ← Dashboard
           </a>
@@ -206,6 +307,55 @@ export default function AuthorClient() {
           <p className="font-typewriter text-[10px] text-[#4a3a2a]">
             Fill in each section → Validate → Download JSON → drop in <code className="text-[#8b7355]">/content/</code> → commit.
             Run <code className="text-[#8b7355]">npm run validate</code> locally to double-check.
+          </p>
+        </div>
+      )}
+
+      {/* ── Cold Case Generator Panel ─────────────────────────────────────────── */}
+      {showColdGen && (
+        <div className="border-b border-[rgba(74,158,255,0.2)] bg-[rgba(74,158,255,0.04)] px-6 py-4 space-y-3">
+          <div className="flex items-center gap-3">
+            <span className="text-lg">❄</span>
+            <div>
+              <p className="font-display font-bold text-sm text-[#4a9eff]">Generador de Caso Frío</p>
+              <p className="font-typewriter text-[10px] text-[rgba(74,158,255,0.5)]">
+                Genera un template JSON con la misma vocab de la unidad seleccionada y ranuras narrativas vacías.
+                Descarga → llena los campos en blanco → guarda como <code>unit-0X-cold.json</code>.
+              </p>
+            </div>
+          </div>
+          <div className="flex items-center gap-3">
+            <label className="font-typewriter text-[10px] text-[rgba(74,158,255,0.6)] uppercase tracking-widest">
+              Basado en Unidad:
+            </label>
+            <select
+              value={coldSourceUnit}
+              onChange={(e) => setColdSourceUnit(parseInt(e.target.value))}
+              className="bg-[#0d0b0a] border border-[rgba(74,158,255,0.3)] px-3 py-1.5 font-typewriter text-sm text-[#c8d8f0] focus:outline-none focus:border-[#4a9eff]"
+            >
+              {[1,2,3,4,5,6,7,8].map((n) => (
+                <option key={n} value={n}>Unidad {n}</option>
+              ))}
+            </select>
+            <button
+              onClick={() => {
+                const template = buildColdCaseTemplate(coldSourceUnit, state.vocab);
+                const blob = new Blob([JSON.stringify(template, null, 2)], { type: "application/json" });
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement("a");
+                a.href = url;
+                a.download = `unit-0${coldSourceUnit}-cold.json`;
+                a.click();
+                URL.revokeObjectURL(url);
+              }}
+              className="px-5 py-2 font-typewriter text-[10px] tracking-[0.2em] uppercase bg-[rgba(74,158,255,0.1)] text-[#4a9eff] border border-[rgba(74,158,255,0.3)] hover:bg-[rgba(74,158,255,0.2)] transition-colors"
+            >
+              ↓ Descargar template frío
+            </button>
+          </div>
+          <p className="font-typewriter text-[9px] text-[rgba(74,158,255,0.3)]">
+            Tip: Carga el vocab de la unidad primero (pestaña Vocabulario) para que el template incluya los pares correctos.
+            Archivo: <code>content/unit-0{coldSourceUnit}-cold.json</code> · Route: <code>/play/{coldSourceUnit}/cold</code>
           </p>
         </div>
       )}

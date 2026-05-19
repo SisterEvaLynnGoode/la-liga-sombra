@@ -9,6 +9,10 @@ import MissionHeader from "@/components/mission-board/MissionHeader";
 import CorkBoard from "@/components/mission-board/CorkBoard";
 import AlertToast from "@/components/ui/AlertToast";
 import DailyBriefingTrigger from "@/components/briefing/DailyBriefingTrigger";
+import type { ColdCaseStatus } from "@/components/mission-board/ColdCaseCard";
+
+// Units that have cold case content built — update as new cold cases are authored
+const COLD_CASE_UNITS = new Set([1]);
 
 export const metadata = { title: "Sala de Investigación — La Liga Sombra" };
 
@@ -21,7 +25,9 @@ export default async function MissionBoardPage() {
   // Fetch units + student progress + badges + briefing terms in parallel
   const [unitsRes, progressRes, badgesRes, briefingTerms] = await Promise.all([
     supabase.from("units").select("id, number").order("number"),
-    supabase.from("unit_progress").select("unit_id, status, case_solved, criminal_caught").eq("student_id", session.studentId),
+    supabase.from("unit_progress")
+      .select("unit_id, status, case_solved, criminal_caught, completed_at, cold_case_completed_at")
+      .eq("student_id", session.studentId),
     supabase.from("badges").select("id").eq("student_id", session.studentId),
     getOverdueTermsForBriefing(session.studentId, supabase),
   ]);
@@ -44,6 +50,8 @@ export default async function MissionBoardPage() {
       status: r.status as UnitStatus,
       case_solved: r.case_solved,
       criminal_caught: r.criminal_caught,
+      completed_at: null,
+      cold_case_completed_at: null,
     }));
   }
 
@@ -78,15 +86,39 @@ export default async function MissionBoardPage() {
   }
 
   // Merge static unit metadata with live progress
+  const now = Date.now();
+  const COLD_UNLOCK_DELAY_MS = 24 * 3_600_000; // 24 hours
+
   const caseFiles = UNITS.map((unit) => {
     const unitId = unitIdByNumber.get(unit.number);
     const prog = unitId ? progressByUnitId.get(unitId) : undefined;
     const status = (prog?.status ?? "locked") as UnitStatus;
+
+    // Compute cold case status for units that have cold content
+    let coldCaseStatus: ColdCaseStatus | undefined;
+    let coldCaseUnlocksAt: string | null = null;
+
+    if (COLD_CASE_UNITS.has(unit.number) && prog?.case_solved) {
+      if ((prog as { cold_case_completed_at?: string | null }).cold_case_completed_at) {
+        coldCaseStatus = "completed";
+      } else if (prog.completed_at) {
+        const unlocksMs = new Date(prog.completed_at).getTime() + COLD_UNLOCK_DELAY_MS;
+        if (now >= unlocksMs) {
+          coldCaseStatus = "available";
+        } else {
+          coldCaseStatus = "locked";
+          coldCaseUnlocksAt = new Date(unlocksMs).toISOString();
+        }
+      }
+    }
+
     return {
       unit,
       status,
       caseSolved: prog?.case_solved ?? false,
       readinessLevel: status === "available" ? readinessMap.get(unit.number) : undefined,
+      coldCaseStatus,
+      coldCaseUnlocksAt,
     };
   });
 
