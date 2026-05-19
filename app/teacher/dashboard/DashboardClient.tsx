@@ -8,6 +8,7 @@ import UnitsTab from "@/components/dashboard/tabs/UnitsTab";
 import VocabTab from "@/components/dashboard/tabs/VocabTab";
 import LeaderboardTab from "@/components/dashboard/tabs/LeaderboardTab";
 import ExportTab from "@/components/dashboard/tabs/ExportTab";
+import BossTab from "@/components/dashboard/tabs/BossTab";
 
 interface ClassRow { id: string; class_code: string; teacher_name: string; period_name: string; student_count: number }
 
@@ -19,12 +20,13 @@ const PRESET_MESSAGES = [
   "👀 Miren su pantalla",
 ];
 
-type TabId = "overview" | "students" | "units" | "vocab" | "leaderboard" | "export";
+type TabId = "overview" | "students" | "units" | "vocab" | "leaderboard" | "export" | "boss";
 
 const TABS: Array<{ id: TabId; label: string; emoji: string }> = [
   { id: "overview",    label: "Resumen",      emoji: "📊" },
   { id: "students",    label: "Estudiantes",  emoji: "👤" },
   { id: "units",       label: "Unidades",     emoji: "🗺️" },
+  { id: "boss",        label: "Jefes",        emoji: "🎯" },
   { id: "vocab",       label: "Vocabulario",  emoji: "📖" },
   { id: "leaderboard", label: "Tablero",      emoji: "🏆" },
   { id: "export",      label: "Exportar",     emoji: "↓" },
@@ -185,6 +187,7 @@ export default function DashboardClient() {
         {activeTab === "vocab"       && <VocabTab       classId={selectedClassId} />}
         {activeTab === "leaderboard" && <LeaderboardTab classId={selectedClassId} />}
         {activeTab === "export"      && <ExportTab      classId={selectedClassId} />}
+        {activeTab === "boss"        && <BossTab        classId={selectedClassId} />}
       </main>
     </div>
   );

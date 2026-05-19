@@ -8,6 +8,7 @@ import { unit06Scripts } from "./scripts/unit-06.js";
 import { unit07Scripts } from "./scripts/unit-07.js";
 import { unit08Scripts } from "./scripts/unit-08.js";
 import { unit01ColdScripts } from "./scripts/unit-01-cold.js";
+import { bossEclipseScripts } from "./scripts/boss-eclipse.js";
 
 // ─── Audio script registry ────────────────────────────────────────────────────
 // Import each unit's script array and spread it into `scripts`.
@@ -25,4 +26,6 @@ export const scripts: AudioScript[] = [
   ...unit08Scripts,
   // ── Cold Cases ──────────────────────────────────────────────────────────────
   ...unit01ColdScripts,
+  // ── Boss Fights ─────────────────────────────────────────────────────────────
+  ...bossEclipseScripts,
 ];

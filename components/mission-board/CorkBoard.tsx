@@ -1,9 +1,21 @@
 import Link from "next/link";
 import CaseFileCard from "./CaseFileCard";
 import ColdCaseCard, { type ColdCaseStatus } from "./ColdCaseCard";
+import BossCard, { type BossCardStatus } from "@/components/boss/BossCard";
 import type { UnitMeta } from "@/lib/game/units";
 import type { UnitStatus } from "@/lib/types/database";
 import type { ReadinessTier } from "@/lib/mastery";
+
+export interface BossEntry {
+  id: string;
+  title: string;
+  subtitle: string;
+  afterUnitNumber: number;
+  status: BossCardStatus;
+  currentStage?: number;
+  totalStages?: number;
+  finalEnding?: string | null;
+}
 
 export interface CaseFile {
   unit: UnitMeta;
@@ -16,9 +28,11 @@ export interface CaseFile {
 
 interface Props {
   caseFiles: CaseFile[];
+  bossEntries?: BossEntry[];
 }
 
-export default function CorkBoard({ caseFiles }: Props) {
+export default function CorkBoard({ caseFiles, bossEntries = [] }: Props) {
+  const bossByAfterUnit = new Map(bossEntries.map((b) => [b.afterUnitNumber, b]));
   return (
     <div
       className="relative flex-1 w-full overflow-auto"
@@ -117,6 +131,22 @@ export default function CorkBoard({ caseFiles }: Props) {
                 unit={unit}
                 status={coldCaseStatus}
                 unlocksAt={coldCaseUnlocksAt}
+              />
+            );
+          }
+          // Inject boss card after this unit if applicable
+          const boss = bossByAfterUnit.get(unit.number);
+          if (boss) {
+            cards.push(
+              <BossCard
+                key={`boss-${boss.id}`}
+                bossId={boss.id}
+                title={boss.title}
+                subtitle={boss.subtitle}
+                status={boss.status}
+                currentStage={boss.currentStage}
+                totalStages={boss.totalStages}
+                finalEnding={boss.finalEnding}
               />
             );
           }

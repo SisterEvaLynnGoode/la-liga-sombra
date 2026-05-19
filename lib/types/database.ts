@@ -19,7 +19,10 @@ export type BadgeType =
   | "distinguished_recruit" | "vigilancia_exitosa"
   | "entrenamiento_diario" | "maestro_vocabulario" | "poliglota"
   | "informe_completo" | "estudiante_disciplinado" | "agente_elite"
-  | "detective_frio";
+  | "detective_frio"
+  | "operacion_eclipse_completada"
+  | "diplomatico" | "cazador_implacable" | "maestro_negociador_boss"
+  | "agente_elite_boss" | "agente_estandar" | "agente_cuidadoso";
 
 // Supabase v2 requires Relationships and CompositeTypes for correct type inference
 export interface Database {
@@ -238,6 +241,68 @@ export interface Database {
             columns: ["unit_id"];
             isOneToOne: false;
             referencedRelation: "units";
+            referencedColumns: ["id"];
+          }
+        ];
+      };
+      boss_progress: {
+        Row: {
+          id: string;
+          primary_student_id: string;
+          partner_student_id: string | null;
+          boss_id: string;
+          difficulty: "easy" | "normal" | "hard" | null;
+          current_stage: number;
+          stage_data: Record<string, unknown>;
+          ethical_choices: Array<{ stage: number; choice: string; sentence?: string }>;
+          partner_name: string | null;
+          started_at: string;
+          last_saved_at: string;
+          completed_at: string | null;
+          skipped_at: string | null;
+          final_score: number | null;
+          final_ending: string | null;
+        };
+        Insert: {
+          id?: string;
+          primary_student_id: string;
+          partner_student_id?: string | null;
+          boss_id: string;
+          difficulty?: "easy" | "normal" | "hard" | null;
+          current_stage?: number;
+          stage_data?: Record<string, unknown>;
+          ethical_choices?: Array<{ stage: number; choice: string; sentence?: string }>;
+          partner_name?: string | null;
+          started_at?: string;
+          last_saved_at?: string;
+          completed_at?: string | null;
+          skipped_at?: string | null;
+          final_score?: number | null;
+          final_ending?: string | null;
+        };
+        Update: {
+          id?: string;
+          primary_student_id?: string;
+          partner_student_id?: string | null;
+          boss_id?: string;
+          difficulty?: "easy" | "normal" | "hard" | null;
+          current_stage?: number;
+          stage_data?: Record<string, unknown>;
+          ethical_choices?: Array<{ stage: number; choice: string; sentence?: string }>;
+          partner_name?: string | null;
+          started_at?: string;
+          last_saved_at?: string;
+          completed_at?: string | null;
+          skipped_at?: string | null;
+          final_score?: number | null;
+          final_ending?: string | null;
+        };
+        Relationships: [
+          {
+            foreignKeyName: "boss_progress_primary_student_id_fkey";
+            columns: ["primary_student_id"];
+            isOneToOne: false;
+            referencedRelation: "students";
             referencedColumns: ["id"];
           }
         ];

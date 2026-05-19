@@ -14,6 +14,11 @@ import type { ColdCaseStatus } from "@/components/mission-board/ColdCaseCard";
 // Units that have cold case content built — update as new cold cases are authored
 const COLD_CASE_UNITS = new Set([1]);
 
+// Boss definitions: { afterUnit → boss metadata }
+const BOSS_AFTER_UNIT: Record<number, { id: string; title: string; subtitle: string }> = {
+  5: { id: "unit-5-eclipse", title: "Operación Eclipse", subtitle: "Misión Especial — La Liga Sombra" },
+};
+
 export const metadata = { title: "Sala de Investigación — La Liga Sombra" };
 
 export default async function MissionBoardPage() {
@@ -23,13 +28,14 @@ export default async function MissionBoardPage() {
   const supabase = createClient();
 
   // Fetch units + student progress + badges + briefing terms in parallel
-  const [unitsRes, progressRes, badgesRes, briefingTerms] = await Promise.all([
+  const [unitsRes, progressRes, badgesRes, briefingTerms, bossRows] = await Promise.all([
     supabase.from("units").select("id, number").order("number"),
     supabase.from("unit_progress")
       .select("unit_id, status, case_solved, criminal_caught, completed_at, cold_case_completed_at")
       .eq("student_id", session.studentId),
     supabase.from("badges").select("id").eq("student_id", session.studentId),
     getOverdueTermsForBriefing(session.studentId, supabase),
+    supabase.from("boss_progress").select("boss_id, current_stage, completed_at, skipped_at, final_ending").eq("primary_student_id", session.studentId),
   ]);
 
   const dbUnits = unitsRes.data ?? [];
@@ -122,6 +128,41 @@ export default async function MissionBoardPage() {
     };
   });
 
+  // Boss entries for the CorkBoard
+  type BossEntryType = import("@/components/mission-board/CorkBoard").BossEntry;
+  const bossEntries: BossEntryType[] = Object.entries(BOSS_AFTER_UNIT).flatMap(([unitNumStr, meta]) => {
+    const unitNum = parseInt(unitNumStr);
+    const unitId = unitIdByNumber.get(unitNum);
+    const prog = unitId ? progressByUnitId.get(unitId) : undefined;
+    if (!prog?.case_solved) return []; // hide boss until original unit completed
+
+    const bp = bossProgressMap.get(meta.id);
+    let status: import("@/components/boss/BossCard").BossCardStatus;
+    if (bp?.completed_at) status = "completed";
+    else if (bp?.skipped_at) status = "skipped";
+    else if (bp && (bp.current_stage ?? 0) > 0) status = "in_progress";
+    else status = "available";
+
+    return [{
+      id: meta.id,
+      title: meta.title,
+      subtitle: meta.subtitle,
+      afterUnitNumber: unitNum,
+      status,
+      currentStage: bp?.current_stage,
+      totalStages: 8, // 0-7 phases
+      finalEnding: bp?.final_ending,
+    } as BossEntryType];
+  });
+
+  // Boss progress map
+  const bossProgressMap = new Map(
+    ((bossRows?.data ?? []) as Array<{
+      boss_id: string; current_stage: number;
+      completed_at: string | null; skipped_at: string | null; final_ending: string | null;
+    }>).map((b) => [b.boss_id, b])
+  );
+
   const casesSolved = progress.filter((p) => p.case_solved).length;
   const badgeCount = badgesRes.data?.length ?? 0;
 
@@ -133,7 +174,7 @@ export default async function MissionBoardPage() {
         totalCases={UNITS.length}
         badgeCount={badgeCount}
       />
-      <CorkBoard caseFiles={caseFiles} />
+      <CorkBoard caseFiles={caseFiles} bossEntries={bossEntries} />
       <AlertToast classId={session.classId} />
       {briefingTerms.length > 0 && (
         <DailyBriefingTrigger terms={briefingTerms} />
