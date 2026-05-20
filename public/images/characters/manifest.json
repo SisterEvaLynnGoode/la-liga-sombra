@@ -97,5 +97,60 @@
     "status": "generated",
     "creditsUsed": 1.5,
     "sourcePrompt": "Don Rodrigo — Unit 1 witness. Elderly 65yo man, white hair, white mustache, plaid shirt, kind serious expression. Guadalajara market vendor. Noir watercolor style."
+  },
+  {
+    "characterId": "unit-02-tecladista",
+    "localPath": "images/characters/unit-02-tecladista.png",
+    "publicUrl": "/images/characters/unit-02-tecladista.png",
+    "higgsfieldJobId": "e22a74d6-2143-446c-bbb5-c1ac49cac157",
+    "higgsfieldUrl": "https://d8j0ntlcm91z4.cloudfront.net/user_3DQG5ve4hcMymLqHAOYWqsoLTCo/hf_20260520_014637_e22a74d6-2143-446c-bbb5-c1ac49cac157.png",
+    "timestamp": "2026-05-20T01:46:37Z",
+    "status": "generated",
+    "creditsUsed": 1.5,
+    "sourcePrompt": "El Tecladista — Unit 2 criminal. Tall 17yo teen boy, school uniform, very serious expression unusual for his age."
+  },
+  {
+    "characterId": "unit-02-estudiosa",
+    "localPath": "images/characters/unit-02-estudiosa.png",
+    "publicUrl": "/images/characters/unit-02-estudiosa.png",
+    "higgsfieldJobId": "d3a21113-35ae-4de0-bc7b-ea5f5a395f45",
+    "higgsfieldUrl": "https://d8j0ntlcm91z4.cloudfront.net/user_3DQG5ve4hcMymLqHAOYWqsoLTCo/hf_20260520_014649_d3a21113-35ae-4de0-bc7b-ea5f5a395f45.png",
+    "timestamp": "2026-05-20T01:46:49Z",
+    "status": "generated",
+    "creditsUsed": 1.5,
+    "sourcePrompt": "La Estudiosa — Unit 2 distractor. Tall teenage girl, school uniform, warm friendly studious expression."
+  },
+  {
+    "characterId": "unit-02-gracioso",
+    "localPath": "images/characters/unit-02-gracioso.png",
+    "publicUrl": "/images/characters/unit-02-gracioso.png",
+    "higgsfieldJobId": "03d565cc-fb46-4cfd-81a3-5fad77bd86bc",
+    "higgsfieldUrl": "https://d8j0ntlcm91z4.cloudfront.net/user_3DQG5ve4hcMymLqHAOYWqsoLTCo/hf_20260520_014702_03d565cc-fb46-4cfd-81a3-5fad77bd86bc.png",
+    "timestamp": "2026-05-20T01:47:02Z",
+    "status": "generated",
+    "creditsUsed": 1.5,
+    "sourcePrompt": "El Gracioso — Unit 2 distractor. Short stocky teen, BLONDE hair (unique in lineup), big goofy grin, school uniform."
+  },
+  {
+    "characterId": "unit-02-tranquilo",
+    "localPath": "images/characters/unit-02-tranquilo.png",
+    "publicUrl": "/images/characters/unit-02-tranquilo.png",
+    "higgsfieldJobId": "81f5f694-c77d-4225-8fce-ee79b74b0118",
+    "higgsfieldUrl": "https://d8j0ntlcm91z4.cloudfront.net/user_3DQG5ve4hcMymLqHAOYWqsoLTCo/hf_20260520_014724_81f5f694-c77d-4225-8fce-ee79b74b0118.png",
+    "timestamp": "2026-05-20T01:47:24Z",
+    "status": "generated",
+    "creditsUsed": 1.5,
+    "sourcePrompt": "El Tranquilo — Unit 2 distractor. Tall shy teen boy, school uniform, headphones visible around neck, introverted posture."
+  },
+  {
+    "characterId": "unit-02-sra-torres",
+    "localPath": "images/characters/unit-02-sra-torres.png",
+    "publicUrl": "/images/characters/unit-02-sra-torres.png",
+    "higgsfieldJobId": "5f8d7d3e-75d2-4999-88fd-0c6aa1c64bb5",
+    "higgsfieldUrl": "https://d8j0ntlcm91z4.cloudfront.net/user_3DQG5ve4hcMymLqHAOYWqsoLTCo/hf_20260520_014740_5f8d7d3e-75d2-4999-88fd-0c6aa1c64bb5.png",
+    "timestamp": "2026-05-20T01:47:40Z",
+    "status": "generated",
+    "creditsUsed": 1.5,
+    "sourcePrompt": "Sra. Torres — Unit 2 teacher witness. Professional woman, dark-rimmed glasses, dark blazer, authority figure."
   }
 ]
