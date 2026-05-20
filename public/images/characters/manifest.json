@@ -6,7 +6,7 @@
     "higgsfieldJobId": "9c930276-c2c9-4ffd-aeb2-544f56c83b43",
     "higgsfieldUrl": "https://d8j0ntlcm91z4.cloudfront.net/user_3DQG5ve4hcMymLqHAOYWqsoLTCo/hf_20260520_013338_9c930276-c2c9-4ffd-aeb2-544f56c83b43.png",
     "timestamp": "2026-05-20T01:33:38Z",
-    "status": "generated",
+    "status": "approved",
     "creditsUsed": 1.5,
     "sourcePrompt": "Jefe Ramírez — recurring agency chief. Dark formal suit, white shirt, burgundy tie, silver agency badge on lapel. Short black hair with grey temples. Illustrated graphic novel / noir watercolor style."
   },
@@ -17,7 +17,7 @@
     "higgsfieldJobId": "6d6bf27c-cfdc-4a90-a674-f12cd6409a82",
     "higgsfieldUrl": "https://d8j0ntlcm91z4.cloudfront.net/user_3DQG5ve4hcMymLqHAOYWqsoLTCo/hf_20260520_013403_6d6bf27c-cfdc-4a90-a674-f12cd6409a82.png",
     "timestamp": "2026-05-20T01:34:03Z",
-    "status": "generated",
+    "status": "approved",
     "creditsUsed": 1.5,
     "sourcePrompt": "El Coleccionista — master villain. Gold monocle, white leather gloves, eagle-head cane, charcoal suit. White hair, pale skin. One side slightly shadowed. Illustrated graphic novel / noir watercolor style."
   },
@@ -28,7 +28,7 @@
     "higgsfieldJobId": "fd5e8eef-0323-4f6b-99ae-b798801a2240",
     "higgsfieldUrl": "https://d8j0ntlcm91z4.cloudfront.net/user_3DQG5ve4hcMymLqHAOYWqsoLTCo/hf_20260520_013417_fd5e8eef-0323-4f6b-99ae-b798801a2240.png",
     "timestamp": "2026-05-20T01:34:17Z",
-    "status": "generated",
+    "status": "approved",
     "creditsUsed": 1.5,
     "sourcePrompt": "El Tejedor — Unit 5 boss lieutenant. Dark unkempt hair, dark circles, rumpled dark linen jacket. Tense exhausted expression, still intelligent. Illustrated graphic novel / noir watercolor style."
   },
@@ -39,8 +39,63 @@
     "higgsfieldJobId": "004a6dde-7bda-42b5-8b9d-041272aa376b",
     "higgsfieldUrl": "https://d8j0ntlcm91z4.cloudfront.net/user_3DQG5ve4hcMymLqHAOYWqsoLTCo/hf_20260520_013430_004a6dde-7bda-42b5-8b9d-041272aa376b.png",
     "timestamp": "2026-05-20T01:34:30Z",
-    "status": "generated",
+    "status": "approved",
     "creditsUsed": 1.5,
     "sourcePrompt": "El Genio (Ricardo Montoya Díaz) — boss fight accomplice. Very voluminous dark curly hair, medium brown skin, dark t-shirt. Confident self-assured expression. Illustrated graphic novel / noir watercolor style."
+  },
+  {
+    "characterId": "unit-01-camaleon",
+    "localPath": "images/characters/unit-01-camaleon.png",
+    "publicUrl": "/images/characters/unit-01-camaleon.png",
+    "higgsfieldJobId": "ba95583f-ed2f-4425-9bd8-727d5cd5a21c",
+    "higgsfieldUrl": "https://d8j0ntlcm91z4.cloudfront.net/user_3DQG5ve4hcMymLqHAOYWqsoLTCo/hf_20260520_014015_ba95583f-ed2f-4425-9bd8-727d5cd5a21c.png",
+    "timestamp": "2026-05-20T01:40:15Z",
+    "status": "generated",
+    "creditsUsed": 1.5,
+    "sourcePrompt": "El Camaleón — Unit 1 criminal. Tall slender man, black charro hat (sombrero de charro negro) MUST be visible, thick black mustache MUST be visible, dark casual shirt. Guadalajara México. Noir watercolor style."
+  },
+  {
+    "characterId": "unit-01-serpiente",
+    "localPath": "images/characters/unit-01-serpiente.png",
+    "publicUrl": "/images/characters/unit-01-serpiente.png",
+    "higgsfieldJobId": "b6673090-8a5d-45d8-b03d-cb910264b482",
+    "higgsfieldUrl": "https://d8j0ntlcm91z4.cloudfront.net/user_3DQG5ve4hcMymLqHAOYWqsoLTCo/hf_20260520_014029_b6673090-8a5d-45d8-b03d-cb910264b482.png",
+    "timestamp": "2026-05-20T01:40:29Z",
+    "status": "generated",
+    "creditsUsed": 1.5,
+    "sourcePrompt": "La Serpiente — Unit 1 suspect. Elegant young woman, long straight black hair, NO hat, Ciudad de México. Calm calculating expression. Noir watercolor style."
+  },
+  {
+    "characterId": "unit-01-toro",
+    "localPath": "images/characters/unit-01-toro.png",
+    "publicUrl": "/images/characters/unit-01-toro.png",
+    "higgsfieldJobId": "a0f7257f-8330-4d84-bc3c-cf4ba6809ff0",
+    "higgsfieldUrl": "https://d8j0ntlcm91z4.cloudfront.net/user_3DQG5ve4hcMymLqHAOYWqsoLTCo/hf_20260520_014040_a0f7257f-8330-4d84-bc3c-cf4ba6809ff0.png",
+    "timestamp": "2026-05-20T01:40:40Z",
+    "status": "generated",
+    "creditsUsed": 1.5,
+    "sourcePrompt": "El Toro — Unit 1 suspect. Short stocky powerful man, NO mustache, NO hat, Monterrey México. Quiet calm expression. Noir watercolor style."
+  },
+  {
+    "characterId": "unit-01-pajaro",
+    "localPath": "images/characters/unit-01-pajaro.png",
+    "publicUrl": "/images/characters/unit-01-pajaro.png",
+    "higgsfieldJobId": "6c65f0c0-c64f-49b3-966a-daf27f1ca285",
+    "higgsfieldUrl": "https://d8j0ntlcm91z4.cloudfront.net/user_3DQG5ve4hcMymLqHAOYWqsoLTCo/hf_20260520_014055_6c65f0c0-c64f-49b3-966a-daf27f1ca285.png",
+    "timestamp": "2026-05-20T01:40:55Z",
+    "status": "generated",
+    "creditsUsed": 1.5,
+    "sourcePrompt": "El Pájaro — Unit 1 suspect. Young 22yo man, tall slim, NO mustache, NO hat, Cancún. Friendly relaxed bilingual expression. Noir watercolor style."
+  },
+  {
+    "characterId": "unit-01-don-rodrigo",
+    "localPath": "images/characters/unit-01-don-rodrigo.png",
+    "publicUrl": "/images/characters/unit-01-don-rodrigo.png",
+    "higgsfieldJobId": "e1076646-e226-4018-af93-0197042042c6",
+    "higgsfieldUrl": "https://d8j0ntlcm91z4.cloudfront.net/user_3DQG5ve4hcMymLqHAOYWqsoLTCo/hf_20260520_014106_e1076646-e226-4018-af93-0197042042c6.png",
+    "timestamp": "2026-05-20T01:41:06Z",
+    "status": "generated",
+    "creditsUsed": 1.5,
+    "sourcePrompt": "Don Rodrigo — Unit 1 witness. Elderly 65yo man, white hair, white mustache, plaid shirt, kind serious expression. Guadalajara market vendor. Noir watercolor style."
   }
 ]
