@@ -6,54 +6,219 @@
   "caseDescription": "⚠️ PRIMERA VEZ CON EL PRETÉRITO — Este caso ocurrió ayer. Los testigos describen lo que pasó, no lo que está pasando. Usa el pretérito de los verbos -AR, el pretérito de dar y estar, los pronombres de objeto indirecto (me, te, le, les) y las comparaciones para reconstruir quién llegó cuándo, qué le dio a quién, y quién tomó las figurillas de oro del Mercado de San Pedro en Cusco.",
   "criminalName": "El Coleccionista",
   "bonusClue": "El coleccionista lleva un catálogo de antigüedades en el bolsillo con el objeto robado marcado en círculo rojo. Es el único sospechoso con ese catálogo específico.",
-
   "vocab": [
-    { "spanish": "barrer",           "english": "to sweep",                              "audio": "/audio/unit-08/barrer.mp3" },
-    { "spanish": "limpiar",          "english": "to clean",                              "audio": "/audio/unit-08/limpiar.mp3" },
-    { "spanish": "cocinar",          "english": "to cook",                               "audio": "/audio/unit-08/cocinar.mp3" },
-    { "spanish": "lavar",            "english": "to wash",                               "audio": "/audio/unit-08/lavar.mp3" },
-    { "spanish": "planchar",         "english": "to iron",                               "audio": "/audio/unit-08/planchar.mp3" },
-    { "spanish": "comprar",          "english": "to buy / to shop",                      "audio": "/audio/unit-08/comprar.mp3" },
-    { "spanish": "llevar",           "english": "to carry / to take",                    "audio": "/audio/unit-08/llevar.mp3" },
-    { "spanish": "dejar",            "english": "to leave behind / to let",              "audio": "/audio/unit-08/dejar.mp3" },
-    { "spanish": "olvidar",          "english": "to forget",                             "audio": "/audio/unit-08/olvidar.mp3" },
-    { "spanish": "guardar",          "english": "to put away / to keep",                 "audio": "/audio/unit-08/guardar.mp3" },
-    { "spanish": "buscar",           "english": "to look for / to search",               "audio": "/audio/unit-08/buscar.mp3" },
-    { "spanish": "arreglar",         "english": "to arrange / to tidy up",               "audio": "/audio/unit-08/arreglar.mp3" },
-    { "spanish": "el mercado",       "english": "market",                                "audio": "/audio/unit-08/mercado.mp3" },
-    { "spanish": "el puesto",        "english": "market stall / booth",                  "audio": "/audio/unit-08/puesto.mp3" },
-    { "spanish": "la quinoa",        "english": "quinoa",                                "audio": "/audio/unit-08/quinoa.mp3" },
-    { "spanish": "el arroz",         "english": "rice",                                  "audio": "/audio/unit-08/arroz.mp3" },
-    { "spanish": "los mariscos",     "english": "seafood",                               "audio": "/audio/unit-08/mariscos.mp3" },
-    { "spanish": "el ajo",           "english": "garlic",                                "audio": "/audio/unit-08/ajo.mp3" },
-    { "spanish": "el limón",         "english": "lemon / lime",                          "audio": "/audio/unit-08/limon.mp3" },
-    { "spanish": "el azúcar",        "english": "sugar",                                 "audio": "/audio/unit-08/azucar.mp3" },
-    { "spanish": "el aceite",        "english": "cooking oil",                           "audio": "/audio/unit-08/aceite.mp3" },
-    { "spanish": "las especias",     "english": "spices",                                "audio": "/audio/unit-08/especias.mp3" },
-    { "spanish": "los frijoles",     "english": "beans",                                 "audio": "/audio/unit-08/frijoles.mp3" },
-    { "spanish": "el maíz",          "english": "corn / maize",                          "audio": "/audio/unit-08/maiz.mp3" },
-    { "spanish": "más...que",        "english": "more...than",                           "audio": "/audio/unit-08/mas-que.mp3" },
-    { "spanish": "menos...que",      "english": "less/fewer...than",                     "audio": "/audio/unit-08/menos-que.mp3" },
-    { "spanish": "tan...como",       "english": "as...as",                               "audio": "/audio/unit-08/tan-como.mp3" },
-    { "spanish": "mejor",            "english": "better (irregular comparison)",          "audio": "/audio/unit-08/mejor.mp3" },
-    { "spanish": "peor",             "english": "worse (irregular comparison)",           "audio": "/audio/unit-08/peor.mp3" },
-    { "spanish": "el/la mayor",      "english": "the oldest / the greatest",             "audio": "/audio/unit-08/mayor.mp3" },
-    { "spanish": "me",               "english": "(to) me — indirect object pronoun",     "audio": "/audio/unit-08/me.mp3" },
-    { "spanish": "te",               "english": "(to) you — indirect object pronoun",    "audio": "/audio/unit-08/te.mp3" },
-    { "spanish": "le",               "english": "(to) him/her/you formal — indirect object pronoun", "audio": "/audio/unit-08/le.mp3" },
-    { "spanish": "les",              "english": "(to) them/you all — indirect object pronoun",       "audio": "/audio/unit-08/les.mp3" },
-    { "spanish": "acabar de + infinitivo", "english": "to have just (done something) — e.g., acabo de llegar = I just arrived", "audio": "/audio/unit-08/acabar-de.mp3" },
-    { "spanish": "oír",              "english": "to hear",                               "audio": "/audio/unit-08/oir.mp3" },
-    { "spanish": "traer",            "english": "to bring",                              "audio": "/audio/unit-08/traer.mp3" },
-    { "spanish": "-é  (hablé)",      "english": "★ Mini-Glosario Pretérito: yo spoke / arrived / cleaned", "audio": "/audio/unit-08/preterite-e.mp3" },
-    { "spanish": "-aste  (hablaste)","english": "★ Mini-Glosario Pretérito: tú spoke / arrived / cleaned", "audio": "/audio/unit-08/preterite-aste.mp3" },
-    { "spanish": "-ó  (habló)",      "english": "★ Mini-Glosario Pretérito: él/ella spoke / arrived / cleaned", "audio": "/audio/unit-08/preterite-o.mp3" },
-    { "spanish": "-amos  (hablamos)","english": "★ Mini-Glosario Pretérito: nosotros spoke / arrived / cleaned", "audio": "/audio/unit-08/preterite-amos.mp3" },
-    { "spanish": "-aron  (hablaron)","english": "★ Mini-Glosario Pretérito: ellos/ellas spoke / arrived / cleaned", "audio": "/audio/unit-08/preterite-aron.mp3" }
+    {
+      "spanish": "barrer",
+      "english": "to sweep",
+      "audio": "/audio/unit-08/barrer.mp3"
+    },
+    {
+      "spanish": "limpiar",
+      "english": "to clean",
+      "audio": "/audio/unit-08/limpiar.mp3"
+    },
+    {
+      "spanish": "cocinar",
+      "english": "to cook",
+      "audio": "/audio/unit-08/cocinar.mp3"
+    },
+    {
+      "spanish": "lavar",
+      "english": "to wash",
+      "audio": "/audio/unit-08/lavar.mp3"
+    },
+    {
+      "spanish": "planchar",
+      "english": "to iron",
+      "audio": "/audio/unit-08/planchar.mp3"
+    },
+    {
+      "spanish": "comprar",
+      "english": "to buy / to shop",
+      "audio": "/audio/unit-08/comprar.mp3"
+    },
+    {
+      "spanish": "llevar",
+      "english": "to carry / to take",
+      "audio": "/audio/unit-08/llevar.mp3"
+    },
+    {
+      "spanish": "dejar",
+      "english": "to leave behind / to let",
+      "audio": "/audio/unit-08/dejar.mp3"
+    },
+    {
+      "spanish": "olvidar",
+      "english": "to forget",
+      "audio": "/audio/unit-08/olvidar.mp3"
+    },
+    {
+      "spanish": "guardar",
+      "english": "to put away / to keep",
+      "audio": "/audio/unit-08/guardar.mp3"
+    },
+    {
+      "spanish": "buscar",
+      "english": "to look for / to search",
+      "audio": "/audio/unit-08/buscar.mp3"
+    },
+    {
+      "spanish": "arreglar",
+      "english": "to arrange / to tidy up",
+      "audio": "/audio/unit-08/arreglar.mp3"
+    },
+    {
+      "spanish": "el mercado",
+      "english": "market",
+      "audio": "/audio/unit-08/mercado.mp3"
+    },
+    {
+      "spanish": "el puesto",
+      "english": "market stall / booth",
+      "audio": "/audio/unit-08/puesto.mp3"
+    },
+    {
+      "spanish": "la quinoa",
+      "english": "quinoa",
+      "audio": "/audio/unit-08/quinoa.mp3"
+    },
+    {
+      "spanish": "el arroz",
+      "english": "rice",
+      "audio": "/audio/unit-08/arroz.mp3"
+    },
+    {
+      "spanish": "los mariscos",
+      "english": "seafood",
+      "audio": "/audio/unit-08/mariscos.mp3"
+    },
+    {
+      "spanish": "el ajo",
+      "english": "garlic",
+      "audio": "/audio/unit-08/ajo.mp3"
+    },
+    {
+      "spanish": "el limón",
+      "english": "lemon / lime",
+      "audio": "/audio/unit-08/limon.mp3"
+    },
+    {
+      "spanish": "el azúcar",
+      "english": "sugar",
+      "audio": "/audio/unit-08/azucar.mp3"
+    },
+    {
+      "spanish": "el aceite",
+      "english": "cooking oil",
+      "audio": "/audio/unit-08/aceite.mp3"
+    },
+    {
+      "spanish": "las especias",
+      "english": "spices",
+      "audio": "/audio/unit-08/especias.mp3"
+    },
+    {
+      "spanish": "los frijoles",
+      "english": "beans",
+      "audio": "/audio/unit-08/frijoles.mp3"
+    },
+    {
+      "spanish": "el maíz",
+      "english": "corn / maize",
+      "audio": "/audio/unit-08/maiz.mp3"
+    },
+    {
+      "spanish": "más...que",
+      "english": "more...than",
+      "audio": "/audio/unit-08/mas-que.mp3"
+    },
+    {
+      "spanish": "menos...que",
+      "english": "less/fewer...than",
+      "audio": "/audio/unit-08/menos-que.mp3"
+    },
+    {
+      "spanish": "tan...como",
+      "english": "as...as",
+      "audio": "/audio/unit-08/tan-como.mp3"
+    },
+    {
+      "spanish": "mejor",
+      "english": "better (irregular comparison)",
+      "audio": "/audio/unit-08/mejor.mp3"
+    },
+    {
+      "spanish": "peor",
+      "english": "worse (irregular comparison)",
+      "audio": "/audio/unit-08/peor.mp3"
+    },
+    {
+      "spanish": "el/la mayor",
+      "english": "the oldest / the greatest",
+      "audio": "/audio/unit-08/mayor.mp3"
+    },
+    {
+      "spanish": "me",
+      "english": "(to) me — indirect object pronoun",
+      "audio": "/audio/unit-08/me.mp3"
+    },
+    {
+      "spanish": "te",
+      "english": "(to) you — indirect object pronoun",
+      "audio": "/audio/unit-08/te.mp3"
+    },
+    {
+      "spanish": "le",
+      "english": "(to) him/her/you formal — indirect object pronoun",
+      "audio": "/audio/unit-08/le.mp3"
+    },
+    {
+      "spanish": "les",
+      "english": "(to) them/you all — indirect object pronoun",
+      "audio": "/audio/unit-08/les.mp3"
+    },
+    {
+      "spanish": "acabar de + infinitivo",
+      "english": "to have just (done something) — e.g., acabo de llegar = I just arrived",
+      "audio": "/audio/unit-08/acabar-de.mp3"
+    },
+    {
+      "spanish": "oír",
+      "english": "to hear",
+      "audio": "/audio/unit-08/oir.mp3"
+    },
+    {
+      "spanish": "traer",
+      "english": "to bring",
+      "audio": "/audio/unit-08/traer.mp3"
+    },
+    {
+      "spanish": "-é  (hablé)",
+      "english": "★ Mini-Glosario Pretérito: yo spoke / arrived / cleaned",
+      "audio": "/audio/unit-08/preterite-e.mp3"
+    },
+    {
+      "spanish": "-aste  (hablaste)",
+      "english": "★ Mini-Glosario Pretérito: tú spoke / arrived / cleaned",
+      "audio": "/audio/unit-08/preterite-aste.mp3"
+    },
+    {
+      "spanish": "-ó  (habló)",
+      "english": "★ Mini-Glosario Pretérito: él/ella spoke / arrived / cleaned",
+      "audio": "/audio/unit-08/preterite-o.mp3"
+    },
+    {
+      "spanish": "-amos  (hablamos)",
+      "english": "★ Mini-Glosario Pretérito: nosotros spoke / arrived / cleaned",
+      "audio": "/audio/unit-08/preterite-amos.mp3"
+    },
+    {
+      "spanish": "-aron  (hablaron)",
+      "english": "★ Mini-Glosario Pretérito: ellos/ellas spoke / arrived / cleaned",
+      "audio": "/audio/unit-08/preterite-aron.mp3"
+    }
   ],
-
   "stages": [
-
     {
       "type": "cutscene",
       "videoUrl": "/videos/unit-08-intro.mp4",
@@ -68,45 +233,119 @@
         "También necesitas los pronombres de objeto indirecto: 'Le ofreció dinero' — le = a Don Aurelio. '¿Quién te dijo eso?' — te = a ti.",
         "Los testigos recuerdan quién llegó cuándo, qué le dijo a quién, y quién tomó las figurillas. Hay comparaciones también — 'más alto que', 'tan grande como'.",
         "El Mercado de San Pedro existe desde la época colonial. Sus figurillas son parte del patrimonio inca de Cusco. ¡Encuéntralas, agente!"
-      ]
+      ],
+      "chiefImageUrl": "/images/characters/chief-ramirez.png"
     },
-
     {
       "type": "vocabMatch",
       "pairs": [
-        { "spanish": "el mercado",       "english": "market" },
-        { "spanish": "el puesto",        "english": "market stall" },
-        { "spanish": "la quinoa",        "english": "quinoa" },
-        { "spanish": "los mariscos",     "english": "seafood" },
-        { "spanish": "barrer",           "english": "to sweep" },
-        { "spanish": "buscar",           "english": "to look for" },
-        { "spanish": "llevar",           "english": "to carry / to take" },
-        { "spanish": "más...que",        "english": "more...than" },
-        { "spanish": "mejor",            "english": "better" },
-        { "spanish": "me",               "english": "to me (indirect object)" },
-        { "spanish": "acabar de",        "english": "to have just (done something)" },
-        { "spanish": "oír",              "english": "to hear" }
+        {
+          "spanish": "el mercado",
+          "english": "market"
+        },
+        {
+          "spanish": "el puesto",
+          "english": "market stall"
+        },
+        {
+          "spanish": "la quinoa",
+          "english": "quinoa"
+        },
+        {
+          "spanish": "los mariscos",
+          "english": "seafood"
+        },
+        {
+          "spanish": "barrer",
+          "english": "to sweep"
+        },
+        {
+          "spanish": "buscar",
+          "english": "to look for"
+        },
+        {
+          "spanish": "llevar",
+          "english": "to carry / to take"
+        },
+        {
+          "spanish": "más...que",
+          "english": "more...than"
+        },
+        {
+          "spanish": "mejor",
+          "english": "better"
+        },
+        {
+          "spanish": "me",
+          "english": "to me (indirect object)"
+        },
+        {
+          "spanish": "acabar de",
+          "english": "to have just (done something)"
+        },
+        {
+          "spanish": "oír",
+          "english": "to hear"
+        }
       ]
     },
-
     {
       "type": "readingComp",
       "clueReward": "Las figurillas desaparecieron entre las ocho y las diez de la mañana. Un hombre alto llegó ANTES de que abriera el mercado al público. Le ofreció dinero a Don Aurelio, pero Don Aurelio no le vendió nada.",
       "passage": "TESTIMONIO DE DOÑA ROSA HUANCA MAMANI\nVendedora del Mercado de San Pedro, Cusco — Perú\n\nYo llegué al mercado a las seis de la mañana, como todos los días. Primero limpié mi puesto y después arreglé mis productos — la quinoa, los frijoles y el maíz del Valle Sagrado.\n\nA las siete, Don Aurelio llegó con sus figurillas de oro inca. Las arregló en su puesto con mucho cuidado — las limpió con un trapo especial y las colocó en la vitrina.\n\nA las ocho, un hombre alto llegó al mercado. Lo miré con atención porque llegó ANTES de que abriera el mercado al público. El hombre no compró nada al principio — solo caminó por el mercado y miró las figurillas de Don Aurelio con mucho interés.\n\nA las nueve, el hombre habló con Don Aurelio. Le ofreció dinero — mucho dinero, más de lo normal. Pero Don Aurelio no le vendió las figurillas. Después, Don Aurelio me llamó: 'Doña Rosa, ese hombre quiere comprar mis figurillas, pero no las vendo. Son de mi familia.' Yo le respondí: 'Hiciste bien, Don Aurelio.'\n\nA las diez, Don Aurelio me llamó otra vez — esta vez con la voz asustada: '¡Doña Rosa! ¡Mis figurillas desaparecieron!' Busqué por todo el mercado, pero no las encontré. El hombre alto ya no estaba.\n\nNota cultural: En Perú, el ceviche y el lomo saltado son platos nacionales. El Mercado de San Pedro vende ingredientes para estos platos famosos — limón, mariscos frescos y especias del Ande.",
       "glossary": [
-        { "word": "limpié",        "translation": "I cleaned (pretérito: limpiar → limpié)" },
-        { "word": "arreglé",       "translation": "I arranged (pretérito: arreglar → arreglé)" },
-        { "word": "llegó",         "translation": "he/she arrived (pretérito: llegar → llegó)" },
-        { "word": "caminó",        "translation": "he/she walked (pretérito: caminar → caminó)" },
-        { "word": "habló",         "translation": "he/she spoke (pretérito: hablar → habló)" },
-        { "word": "le ofreció",    "translation": "he/she offered him — le = to him (indirect object pronoun)" },
-        { "word": "me llamó",      "translation": "he called me — me = to me (indirect object pronoun)" },
-        { "word": "le respondí",   "translation": "I responded to him — le = to him" },
-        { "word": "busqué",        "translation": "I searched (pretérito: buscar → busqué)" },
-        { "word": "encontré",      "translation": "I found (pretérito: encontrar → encontré)" },
-        { "word": "desaparecieron","translation": "they disappeared (pretérito: desaparecer)" },
-        { "word": "Valle Sagrado", "translation": "Sacred Valley — the Inca heartland near Cusco" },
-        { "word": "vitrina",       "translation": "display case / glass case" }
+        {
+          "word": "limpié",
+          "translation": "I cleaned (pretérito: limpiar → limpié)"
+        },
+        {
+          "word": "arreglé",
+          "translation": "I arranged (pretérito: arreglar → arreglé)"
+        },
+        {
+          "word": "llegó",
+          "translation": "he/she arrived (pretérito: llegar → llegó)"
+        },
+        {
+          "word": "caminó",
+          "translation": "he/she walked (pretérito: caminar → caminó)"
+        },
+        {
+          "word": "habló",
+          "translation": "he/she spoke (pretérito: hablar → habló)"
+        },
+        {
+          "word": "le ofreció",
+          "translation": "he/she offered him — le = to him (indirect object pronoun)"
+        },
+        {
+          "word": "me llamó",
+          "translation": "he called me — me = to me (indirect object pronoun)"
+        },
+        {
+          "word": "le respondí",
+          "translation": "I responded to him — le = to him"
+        },
+        {
+          "word": "busqué",
+          "translation": "I searched (pretérito: buscar → busqué)"
+        },
+        {
+          "word": "encontré",
+          "translation": "I found (pretérito: encontrar → encontré)"
+        },
+        {
+          "word": "desaparecieron",
+          "translation": "they disappeared (pretérito: desaparecer)"
+        },
+        {
+          "word": "Valle Sagrado",
+          "translation": "Sacred Valley — the Inca heartland near Cusco"
+        },
+        {
+          "word": "vitrina",
+          "translation": "display case / glass case"
+        }
       ],
       "questions": [
         {
@@ -172,7 +411,6 @@
         }
       ]
     },
-
     {
       "type": "listeningComp",
       "clueReward": "Ayer a las 10am, el ladrón entró al mercado, le dio una bolsa grande a un cómplice, y estuvo 30 minutos en el puesto de artesanías. Es alto y mayor.",
@@ -185,42 +423,66 @@
       "questions": [
         {
           "question": "¿A qué hora entró el ladrón al mercado?",
-          "options": ["A las dos", "A las diez", "A las doce", "A las cinco"],
+          "options": [
+            "A las dos",
+            "A las diez",
+            "A las doce",
+            "A las cinco"
+          ],
           "correctIndex": 1,
           "explanationEs": "María dice 'Él entró al mercado a las diez'. 'Entró' es pretérito de entrar.",
           "explanationEn": "María says he entered at ten. 'Entró' is the preterite form of entrar (to enter)."
         },
         {
           "question": "¿Qué compró?",
-          "options": ["Carne y pescado", "Pan y leche", "Frutas y verduras", "Artesanías"],
+          "options": [
+            "Carne y pescado",
+            "Pan y leche",
+            "Frutas y verduras",
+            "Artesanías"
+          ],
           "correctIndex": 2,
           "explanationEs": "María dice 'Compró frutas y verduras'. 'Compró' es pretérito de comprar.",
           "explanationEn": "María says he bought fruits and vegetables. 'Compró' is preterite of comprar."
         },
         {
           "question": "¿A quién le dio una bolsa grande?",
-          "options": ["A María", "A la policía", "A otro hombre", "A su hijo"],
+          "options": [
+            "A María",
+            "A la policía",
+            "A otro hombre",
+            "A su hijo"
+          ],
           "correctIndex": 2,
           "explanationEs": "María dice 'Le dio una bolsa grande al otro hombre'. 'Le' es pronombre indirecto.",
           "explanationEn": "María says he gave it to the other man. 'Le' is the indirect object pronoun."
         },
         {
           "question": "¿Cuánto tiempo estuvo en el puesto de artesanías?",
-          "options": ["3 minutos", "13 minutos", "30 minutos", "3 horas"],
+          "options": [
+            "3 minutos",
+            "13 minutos",
+            "30 minutos",
+            "3 horas"
+          ],
           "correctIndex": 2,
           "explanationEs": "María dice 'Estuvo allí treinta minutos'. 'Estuvo' es pretérito de estar.",
           "explanationEn": "María says he was there 30 minutes. 'Estuvo' is preterite of estar."
         },
         {
           "question": "¿Cómo es físicamente el ladrón?",
-          "options": ["Bajo y joven", "Alto y joven", "Más alto que María, mayor que su hijo", "Bajo y mayor"],
+          "options": [
+            "Bajo y joven",
+            "Alto y joven",
+            "Más alto que María, mayor que su hijo",
+            "Bajo y mayor"
+          ],
           "correctIndex": 2,
           "explanationEs": "María dice 'Es más alto que yo. Es menos joven que mi hijo' = mayor que su hijo.",
           "explanationEn": "She uses comparisons: taller than her, less young (= older) than her son."
         }
       ]
     },
-
     {
       "type": "dialogueChoice",
       "clueReward": "El sospechoso es más alto que Don Aurelio. Le dijo que acababa de llegar de Lima. Cuando Don Aurelio le dijo que no, él no salió del mercado de inmediato — esperó. La bolsa que llevaba era tan grande como un costal de quinoa.",
@@ -299,7 +561,6 @@
         }
       ]
     },
-
     {
       "type": "sentenceBuilder",
       "sentences": [
@@ -329,7 +590,6 @@
         }
       ]
     },
-
     {
       "type": "lineup",
       "correctSuspectId": "don_huanca",
@@ -342,7 +602,7 @@
           "age": 55,
           "description": "Tiene cincuenta y cinco años. Llegó al mercado antes de las ocho de la mañana — más temprano que cualquier comprador normal. Dijo que acababa de llegar de Lima, pero el tren de Lima llega a las seis. Le ofreció mucho dinero a Don Aurelio, pero Don Aurelio no le vendió nada. Después esperó cerca del puesto — no salió del mercado. Es el más alto de todos los sospechosos.",
           "imageSeed": 55,
-          "imageUrl": "https://randomuser.me/api/portraits/men/55.jpg"
+          "imageUrl": "/images/characters/unit-08-coleccionista-local.png"
         },
         {
           "id": "senora_mamani",
@@ -351,7 +611,7 @@
           "age": 48,
           "description": "Tiene cuarenta y ocho años. Llegó al mercado a las siete de la mañana con sus textiles de alpaca. Estuvo en su puesto todo el día — sus clientes la vieron allá toda la mañana. Le vendió un tejido andino a una turista italiana. Es menos sospechosa que los demás porque nunca salió de su sección del mercado.",
           "imageSeed": 48,
-          "imageUrl": "https://randomuser.me/api/portraits/women/48.jpg"
+          "imageUrl": "/images/characters/unit-08-vendedora.png"
         },
         {
           "id": "javier_torres",
@@ -360,7 +620,7 @@
           "age": 28,
           "description": "Tiene veintiocho años. Acabó de llegar de Machu Picchu esa misma mañana — el recibo del bus turístico lo confirma. Llegó al mercado a las diez, después de que desaparecieron las figurillas. Le sacó fotos a muchos puestos del mercado. Es tan alto como Don Donato Huanca, pero llegó mucho más tarde.",
           "imageSeed": 23,
-          "imageUrl": "https://randomuser.me/api/portraits/men/23.jpg"
+          "imageUrl": "/images/characters/unit-08-turista.png"
         },
         {
           "id": "carmen_quispe",
@@ -369,10 +629,9 @@
           "age": 21,
           "description": "Tiene veintiún años. Es estudiante en la Universidad San Antonio Abad del Cusco. Llegó al mercado a las nueve para comprar quinoa y frijoles para su familia. Doña Rosa le vendió quinoa y la recuerda bien. Estuvo en el mercado menos de veinte minutos. Es la menor de los sospechosos.",
           "imageSeed": 19,
-          "imageUrl": "https://randomuser.me/api/portraits/women/19.jpg"
+          "imageUrl": "/images/characters/unit-08-estudiante-quispe.png"
         }
       ]
     }
-
   ]
 }

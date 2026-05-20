@@ -9,7 +9,7 @@ interface Props extends CutsceneStageData {
 }
 
 export default function CutsceneStage({
-  videoUrl, subtitleUrl, fallbackImage, chiefName, chiefImageSeed,
+  videoUrl, subtitleUrl, fallbackImage, chiefName, chiefImageSeed, chiefImageUrl,
   briefingLines, onComplete,
 }: Props) {
   return (
@@ -19,6 +19,7 @@ export default function CutsceneStage({
       fallbackImage={fallbackImage}
       chiefName={chiefName}
       chiefImageSeed={chiefImageSeed}
+      chiefImageUrl={chiefImageUrl}
       briefingLines={briefingLines}
       onComplete={onComplete}
     />

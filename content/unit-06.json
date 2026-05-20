@@ -6,54 +6,219 @@
   "caseDescription": "Alguien roba la receta secreta del ajiaco bogotano del Chef Valentina Cruz — un plato que es parte del patrimonio cultural de Colombia. Cuatro cocineros son sospechosos. Usa tener que + infinitivo, los verbos de cambio de raíz (querer, poder, preferir) y los adjetivos demostrativos (este, ese, aquel) para descubrir quién miente sobre qué ingredientes toca y qué tiene que hacer.",
   "criminalName": "El Cocinero Secreto",
   "bonusClue": "El sospechoso tiene tierra de jardín fresco en las suelas de los zapatos — no es tierra de cocina sino de exterior. Solo uno de los cocineros estuvo fuera del restaurante esta mañana.",
-
   "vocab": [
-    { "spanish": "el mango",             "english": "mango",                              "audio": "/audio/unit-06/mango.mp3" },
-    { "spanish": "la guanábana",         "english": "soursop",                            "audio": "/audio/unit-06/guanabana.mp3" },
-    { "spanish": "la papaya",            "english": "papaya",                             "audio": "/audio/unit-06/papaya.mp3" },
-    { "spanish": "el banano",            "english": "banana",                             "audio": "/audio/unit-06/banano.mp3" },
-    { "spanish": "la piña",              "english": "pineapple",                          "audio": "/audio/unit-06/pina.mp3" },
-    { "spanish": "la papa",              "english": "potato",                             "audio": "/audio/unit-06/papa.mp3" },
-    { "spanish": "la zanahoria",         "english": "carrot",                             "audio": "/audio/unit-06/zanahoria.mp3" },
-    { "spanish": "el maíz",              "english": "corn",                               "audio": "/audio/unit-06/maiz.mp3" },
-    { "spanish": "el aguacate",          "english": "avocado",                            "audio": "/audio/unit-06/aguacate.mp3" },
-    { "spanish": "la cebolla",           "english": "onion",                              "audio": "/audio/unit-06/cebolla.mp3" },
-    { "spanish": "el pollo",             "english": "chicken",                            "audio": "/audio/unit-06/pollo.mp3" },
-    { "spanish": "la res",               "english": "beef",                               "audio": "/audio/unit-06/res.mp3" },
-    { "spanish": "el cerdo",             "english": "pork",                               "audio": "/audio/unit-06/cerdo.mp3" },
-    { "spanish": "el pescado",           "english": "fish",                               "audio": "/audio/unit-06/pescado.mp3" },
-    { "spanish": "el camarón",           "english": "shrimp",                             "audio": "/audio/unit-06/camaron.mp3" },
-    { "spanish": "el café",              "english": "coffee",                             "audio": "/audio/unit-06/cafe.mp3" },
-    { "spanish": "el jugo",              "english": "juice",                              "audio": "/audio/unit-06/jugo.mp3" },
-    { "spanish": "el agua",              "english": "water",                              "audio": "/audio/unit-06/agua.mp3" },
-    { "spanish": "la leche",             "english": "milk",                               "audio": "/audio/unit-06/leche.mp3" },
-    { "spanish": "la limonada",          "english": "lemonade",                           "audio": "/audio/unit-06/limonada.mp3" },
-    { "spanish": "el ajiaco",            "english": "traditional Colombian potato and chicken soup", "audio": "/audio/unit-06/ajiaco.mp3" },
-    { "spanish": "la bandeja paisa",     "english": "traditional Colombian mixed platter", "audio": "/audio/unit-06/bandeja-paisa.mp3" },
-    { "spanish": "las arepas",           "english": "corn cakes",                         "audio": "/audio/unit-06/arepas.mp3" },
-    { "spanish": "el sancocho",          "english": "hearty Colombian stew",              "audio": "/audio/unit-06/sancocho.mp3" },
-    { "spanish": "las empanadas",        "english": "stuffed pastries",                   "audio": "/audio/unit-06/empanadas.mp3" },
-    { "spanish": "querer (e→ie)",        "english": "to want (stem-changing)",            "audio": "/audio/unit-06/querer.mp3" },
-    { "spanish": "poder (o→ue)",         "english": "to be able to / can (stem-changing)","audio": "/audio/unit-06/poder.mp3" },
-    { "spanish": "preferir (e→ie)",      "english": "to prefer (stem-changing)",          "audio": "/audio/unit-06/preferir.mp3" },
-    { "spanish": "pensar (e→ie)",        "english": "to think / to plan (stem-changing)", "audio": "/audio/unit-06/pensar.mp3" },
-    { "spanish": "dormir (o→ue)",        "english": "to sleep (stem-changing)",           "audio": "/audio/unit-06/dormir.mp3" },
-    { "spanish": "volver (o→ue)",        "english": "to return / to come back (stem-changing)", "audio": "/audio/unit-06/volver.mp3" },
-    { "spanish": "este / esta",          "english": "this (near speaker, m/f)",           "audio": "/audio/unit-06/este.mp3" },
-    { "spanish": "ese / esa",            "english": "that (near listener, m/f)",          "audio": "/audio/unit-06/ese.mp3" },
-    { "spanish": "aquel / aquella",      "english": "that over there (far away, m/f)",    "audio": "/audio/unit-06/aquel.mp3" },
-    { "spanish": "estos / estas",        "english": "these (plural, m/f)",                "audio": "/audio/unit-06/estos.mp3" },
-    { "spanish": "la cuenta",            "english": "the bill / check",                   "audio": "/audio/unit-06/cuenta.mp3" },
-    { "spanish": "la propina",           "english": "the tip",                            "audio": "/audio/unit-06/propina.mp3" },
-    { "spanish": "el menú",              "english": "the menu",                           "audio": "/audio/unit-06/menu.mp3" },
-    { "spanish": "el plato",             "english": "the dish / plate",                   "audio": "/audio/unit-06/plato.mp3" },
-    { "spanish": "tener que + infinitivo","english": "to have to + verb",                 "audio": "/audio/unit-06/tener-que.mp3" },
-    { "spanish": "decir",                "english": "to say / to tell",                   "audio": "/audio/unit-06/decir.mp3" },
-    { "spanish": "la receta",            "english": "the recipe",                         "audio": "/audio/unit-06/receta.mp3" }
+    {
+      "spanish": "el mango",
+      "english": "mango",
+      "audio": "/audio/unit-06/mango.mp3"
+    },
+    {
+      "spanish": "la guanábana",
+      "english": "soursop",
+      "audio": "/audio/unit-06/guanabana.mp3"
+    },
+    {
+      "spanish": "la papaya",
+      "english": "papaya",
+      "audio": "/audio/unit-06/papaya.mp3"
+    },
+    {
+      "spanish": "el banano",
+      "english": "banana",
+      "audio": "/audio/unit-06/banano.mp3"
+    },
+    {
+      "spanish": "la piña",
+      "english": "pineapple",
+      "audio": "/audio/unit-06/pina.mp3"
+    },
+    {
+      "spanish": "la papa",
+      "english": "potato",
+      "audio": "/audio/unit-06/papa.mp3"
+    },
+    {
+      "spanish": "la zanahoria",
+      "english": "carrot",
+      "audio": "/audio/unit-06/zanahoria.mp3"
+    },
+    {
+      "spanish": "el maíz",
+      "english": "corn",
+      "audio": "/audio/unit-06/maiz.mp3"
+    },
+    {
+      "spanish": "el aguacate",
+      "english": "avocado",
+      "audio": "/audio/unit-06/aguacate.mp3"
+    },
+    {
+      "spanish": "la cebolla",
+      "english": "onion",
+      "audio": "/audio/unit-06/cebolla.mp3"
+    },
+    {
+      "spanish": "el pollo",
+      "english": "chicken",
+      "audio": "/audio/unit-06/pollo.mp3"
+    },
+    {
+      "spanish": "la res",
+      "english": "beef",
+      "audio": "/audio/unit-06/res.mp3"
+    },
+    {
+      "spanish": "el cerdo",
+      "english": "pork",
+      "audio": "/audio/unit-06/cerdo.mp3"
+    },
+    {
+      "spanish": "el pescado",
+      "english": "fish",
+      "audio": "/audio/unit-06/pescado.mp3"
+    },
+    {
+      "spanish": "el camarón",
+      "english": "shrimp",
+      "audio": "/audio/unit-06/camaron.mp3"
+    },
+    {
+      "spanish": "el café",
+      "english": "coffee",
+      "audio": "/audio/unit-06/cafe.mp3"
+    },
+    {
+      "spanish": "el jugo",
+      "english": "juice",
+      "audio": "/audio/unit-06/jugo.mp3"
+    },
+    {
+      "spanish": "el agua",
+      "english": "water",
+      "audio": "/audio/unit-06/agua.mp3"
+    },
+    {
+      "spanish": "la leche",
+      "english": "milk",
+      "audio": "/audio/unit-06/leche.mp3"
+    },
+    {
+      "spanish": "la limonada",
+      "english": "lemonade",
+      "audio": "/audio/unit-06/limonada.mp3"
+    },
+    {
+      "spanish": "el ajiaco",
+      "english": "traditional Colombian potato and chicken soup",
+      "audio": "/audio/unit-06/ajiaco.mp3"
+    },
+    {
+      "spanish": "la bandeja paisa",
+      "english": "traditional Colombian mixed platter",
+      "audio": "/audio/unit-06/bandeja-paisa.mp3"
+    },
+    {
+      "spanish": "las arepas",
+      "english": "corn cakes",
+      "audio": "/audio/unit-06/arepas.mp3"
+    },
+    {
+      "spanish": "el sancocho",
+      "english": "hearty Colombian stew",
+      "audio": "/audio/unit-06/sancocho.mp3"
+    },
+    {
+      "spanish": "las empanadas",
+      "english": "stuffed pastries",
+      "audio": "/audio/unit-06/empanadas.mp3"
+    },
+    {
+      "spanish": "querer (e→ie)",
+      "english": "to want (stem-changing)",
+      "audio": "/audio/unit-06/querer.mp3"
+    },
+    {
+      "spanish": "poder (o→ue)",
+      "english": "to be able to / can (stem-changing)",
+      "audio": "/audio/unit-06/poder.mp3"
+    },
+    {
+      "spanish": "preferir (e→ie)",
+      "english": "to prefer (stem-changing)",
+      "audio": "/audio/unit-06/preferir.mp3"
+    },
+    {
+      "spanish": "pensar (e→ie)",
+      "english": "to think / to plan (stem-changing)",
+      "audio": "/audio/unit-06/pensar.mp3"
+    },
+    {
+      "spanish": "dormir (o→ue)",
+      "english": "to sleep (stem-changing)",
+      "audio": "/audio/unit-06/dormir.mp3"
+    },
+    {
+      "spanish": "volver (o→ue)",
+      "english": "to return / to come back (stem-changing)",
+      "audio": "/audio/unit-06/volver.mp3"
+    },
+    {
+      "spanish": "este / esta",
+      "english": "this (near speaker, m/f)",
+      "audio": "/audio/unit-06/este.mp3"
+    },
+    {
+      "spanish": "ese / esa",
+      "english": "that (near listener, m/f)",
+      "audio": "/audio/unit-06/ese.mp3"
+    },
+    {
+      "spanish": "aquel / aquella",
+      "english": "that over there (far away, m/f)",
+      "audio": "/audio/unit-06/aquel.mp3"
+    },
+    {
+      "spanish": "estos / estas",
+      "english": "these (plural, m/f)",
+      "audio": "/audio/unit-06/estos.mp3"
+    },
+    {
+      "spanish": "la cuenta",
+      "english": "the bill / check",
+      "audio": "/audio/unit-06/cuenta.mp3"
+    },
+    {
+      "spanish": "la propina",
+      "english": "the tip",
+      "audio": "/audio/unit-06/propina.mp3"
+    },
+    {
+      "spanish": "el menú",
+      "english": "the menu",
+      "audio": "/audio/unit-06/menu.mp3"
+    },
+    {
+      "spanish": "el plato",
+      "english": "the dish / plate",
+      "audio": "/audio/unit-06/plato.mp3"
+    },
+    {
+      "spanish": "tener que + infinitivo",
+      "english": "to have to + verb",
+      "audio": "/audio/unit-06/tener-que.mp3"
+    },
+    {
+      "spanish": "decir",
+      "english": "to say / to tell",
+      "audio": "/audio/unit-06/decir.mp3"
+    },
+    {
+      "spanish": "la receta",
+      "english": "the recipe",
+      "audio": "/audio/unit-06/receta.mp3"
+    }
   ],
-
   "stages": [
-
     {
       "type": "cutscene",
       "videoUrl": "/videos/unit-06-intro.mp4",
@@ -68,27 +233,62 @@
         "Para encontrarlo necesitas dominar tener que + infinitivo, los verbos de cambio de raíz — querer, poder, preferir, volver — y los adjetivos demostrativos: este, ese, aquel.",
         "¡Atención! Escucha bien qué dicen que quieren hacer, qué tienen que hacer, y qué ingredientes — 'este', 'ese', o 'aquel' — tocan. Las palabras del culpable no concuerdan con el registro de preparación.",
         "El ajiaco es más que una receta — es historia colombiana. ¡Encuéntrala, agente!"
-      ]
+      ],
+      "chiefImageUrl": "/images/characters/chief-ramirez.png"
     },
-
     {
       "type": "vocabMatch",
       "pairs": [
-        { "spanish": "el ajiaco",        "english": "Colombian potato and chicken soup" },
-        { "spanish": "las arepas",       "english": "corn cakes" },
-        { "spanish": "el sancocho",      "english": "hearty Colombian stew" },
-        { "spanish": "el aguacate",      "english": "avocado" },
-        { "spanish": "la zanahoria",     "english": "carrot" },
-        { "spanish": "el camarón",       "english": "shrimp" },
-        { "spanish": "el maíz",          "english": "corn" },
-        { "spanish": "querer",           "english": "to want" },
-        { "spanish": "poder",            "english": "can / to be able to" },
-        { "spanish": "este / esta",      "english": "this" },
-        { "spanish": "ese / esa",        "english": "that" },
-        { "spanish": "tener que",        "english": "to have to" }
+        {
+          "spanish": "el ajiaco",
+          "english": "Colombian potato and chicken soup"
+        },
+        {
+          "spanish": "las arepas",
+          "english": "corn cakes"
+        },
+        {
+          "spanish": "el sancocho",
+          "english": "hearty Colombian stew"
+        },
+        {
+          "spanish": "el aguacate",
+          "english": "avocado"
+        },
+        {
+          "spanish": "la zanahoria",
+          "english": "carrot"
+        },
+        {
+          "spanish": "el camarón",
+          "english": "shrimp"
+        },
+        {
+          "spanish": "el maíz",
+          "english": "corn"
+        },
+        {
+          "spanish": "querer",
+          "english": "to want"
+        },
+        {
+          "spanish": "poder",
+          "english": "can / to be able to"
+        },
+        {
+          "spanish": "este / esta",
+          "english": "this"
+        },
+        {
+          "spanish": "ese / esa",
+          "english": "that"
+        },
+        {
+          "spanish": "tener que",
+          "english": "to have to"
+        }
       ]
     },
-
     {
       "type": "sentenceBuilder",
       "sentences": [
@@ -114,7 +314,6 @@
         }
       ]
     },
-
     {
       "type": "listeningComp",
       "clueReward": "El chef sospechoso prepara la bandeja paisa secretamente y es para él mismo, no para los clientes.",
@@ -127,42 +326,66 @@
       "questions": [
         {
           "question": "¿Qué tiene que preparar el chef?",
-          "options": ["Las arepas", "El ajiaco", "La bandeja paisa", "El sancocho"],
+          "options": [
+            "Las arepas",
+            "El ajiaco",
+            "La bandeja paisa",
+            "El sancocho"
+          ],
           "correctIndex": 2,
           "explanationEs": "El chef dice 'Pienso preparar la bandeja paisa'.",
           "explanationEn": "He says he's planning to prepare bandeja paisa."
         },
         {
           "question": "¿Qué verduras quiere usar?",
-          "options": ["Esas (allá lejos)", "Estas (las frescas, aquí)", "Aquellas (muy lejos)", "Ninguna"],
+          "options": [
+            "Esas (allá lejos)",
+            "Estas (las frescas, aquí)",
+            "Aquellas (muy lejos)",
+            "Ninguna"
+          ],
           "correctIndex": 1,
           "explanationEs": "Dice 'Quiero usar estas verduras frescas' — estas = these (here).",
           "explanationEn": "He says 'these fresh vegetables' — estas means right here."
         },
         {
           "question": "¿Para quién es el plato especial?",
-          "options": ["Para el jefe", "Para los clientes", "Para él mismo", "Para su familia"],
+          "options": [
+            "Para el jefe",
+            "Para los clientes",
+            "Para él mismo",
+            "Para su familia"
+          ],
           "correctIndex": 2,
           "explanationEs": "Dice 'Este plato especial es para mí'.",
           "explanationEn": "He says 'This special dish is for me.'"
         },
         {
           "question": "¿Qué tres ingredientes tiene que cocinar?",
-          "options": ["Pollo, arroz y verduras", "Arroz, frijoles y carne", "Pescado, verduras y arroz", "Carne, papas y pan"],
+          "options": [
+            "Pollo, arroz y verduras",
+            "Arroz, frijoles y carne",
+            "Pescado, verduras y arroz",
+            "Carne, papas y pan"
+          ],
           "correctIndex": 1,
           "explanationEs": "Dice 'Tengo que cocinar el arroz, los frijoles, y la carne'.",
           "explanationEn": "He lists rice, beans, and meat."
         },
         {
           "question": "¿En cuánto tiempo puede hacerlo?",
-          "options": ["3 minutos", "13 minutos", "30 minutos", "3 horas"],
+          "options": [
+            "3 minutos",
+            "13 minutos",
+            "30 minutos",
+            "3 horas"
+          ],
           "correctIndex": 2,
           "explanationEs": "Dice 'Puedo hacerlo en treinta minutos' — treinta = 30.",
           "explanationEn": "He says 30 minutes."
         }
       ]
     },
-
     {
       "type": "interrogation",
       "character": {
@@ -253,7 +476,6 @@
         }
       ]
     },
-
     {
       "type": "interrogation",
       "character": {
@@ -344,7 +566,6 @@
         }
       ]
     },
-
     {
       "type": "interrogation",
       "character": {
@@ -435,7 +656,6 @@
         }
       ]
     },
-
     {
       "type": "interrogation",
       "clueReward": "Diego dice que 'tiene que limpiar estas verduras', pero esas verduras no son de su sección. Quiere salir pronto. Las fotos en ese celular muestran la receta robada del ajiaco bogotano.",
@@ -529,21 +749,47 @@
         }
       ]
     },
-
     {
       "type": "readingComp",
       "clueReward": "El registro confirma: Diego solo tiene que limpiar 'esas verduras de la sección B'. Ese maíz de la sección B es DIFERENTE al maíz del ajiaco. Diego no tiene razón para estar cerca del armario donde está la receta.",
       "passage": "REGISTRO DE PREPARACIÓN — RESTAURANTE LA CANDELARIA\nCartagena de Indias, Colombia — 14 de junio\n\nASIGNACIONES DE LA MAÑANA:\n\nANDRÉS MORALES (Jefe de cocina):\n• Tiene que preparar 50 arepas de maíz para el desayuno.\n• Estos son sus ingredientes: ese maíz de aquí, esa mantequilla de allá.\n• No tiene acceso a aquel armario de la oficina donde está la receta.\n\nCARMEN VILLEGAS (Sous chef):\n• Tiene que supervisar ese sancocho en la cocina principal.\n• Estos son sus ingredientes: esa papa, ese pollo, esa cebolla.\n• No tiene que entrar a la oficina del chef esta mañana.\n\nLUCÍA PAREDES (Repostera):\n• Tiene que preparar aquellos postres en su sección especial.\n• Estos son sus ingredientes: esa harina, ese azúcar, aquella mantequilla.\n• Esa sección de postres está lejos de la oficina del chef.\n\nDIEGO REYES (Cocinero de preparación):\n• Tiene que limpiar esas verduras de la sección B.\n• Estos son sus ingredientes: esas zanahorias y ese maíz de la SECCIÓN B.\n• ¡IMPORTANTE! Ese maíz de la sección B es diferente a este maíz del ajiaco. Son ingredientes distintos en secciones distintas.\n\nNOTA DEL CHEF VALENTINA:\n\"Las verduras del ajiaco están en este armario de mi oficina. Ese libro de recetas está en aquel escritorio. Nadie tiene que entrar a esa oficina excepto yo — ¡es mi espacio privado!\"",
       "glossary": [
-        { "word": "asignaciones",  "translation": "assignments" },
-        { "word": "harina",        "translation": "flour" },
-        { "word": "azúcar",        "translation": "sugar" },
-        { "word": "mantequilla",   "translation": "butter" },
-        { "word": "sección",       "translation": "section / station" },
-        { "word": "armario",       "translation": "cabinet / closet" },
-        { "word": "escritorio",    "translation": "desk" },
-        { "word": "distintos",     "translation": "different / distinct" },
-        { "word": "privado",       "translation": "private" }
+        {
+          "word": "asignaciones",
+          "translation": "assignments"
+        },
+        {
+          "word": "harina",
+          "translation": "flour"
+        },
+        {
+          "word": "azúcar",
+          "translation": "sugar"
+        },
+        {
+          "word": "mantequilla",
+          "translation": "butter"
+        },
+        {
+          "word": "sección",
+          "translation": "section / station"
+        },
+        {
+          "word": "armario",
+          "translation": "cabinet / closet"
+        },
+        {
+          "word": "escritorio",
+          "translation": "desk"
+        },
+        {
+          "word": "distintos",
+          "translation": "different / distinct"
+        },
+        {
+          "word": "privado",
+          "translation": "private"
+        }
       ],
       "questions": [
         {
@@ -597,7 +843,6 @@
         }
       ]
     },
-
     {
       "type": "lineup",
       "correctSuspectId": "diego",
@@ -610,7 +855,7 @@
           "age": 22,
           "description": "Tiene veintidós años. Esta mañana dice que tiene que limpiar 'estas verduras' — pero esas verduras no son de su sección. Su celular tiene fotos que no quiere mostrar. Quiere salir pronto: dice que 'tiene que ir a un lugar importante' después del trabajo.",
           "imageSeed": 27,
-          "imageUrl": "https://randomuser.me/api/portraits/men/27.jpg"
+          "imageUrl": "/images/characters/unit-06-cocinero-secreto.png"
         },
         {
           "id": "andres",
@@ -619,7 +864,7 @@
           "age": 35,
           "description": "Tiene treinta y cinco años. Esta mañana tiene que preparar cincuenta arepas — trabaja con ese maíz y esa mantequilla de su estación. Está lejos de la oficina del chef. Lo ven en su puesto toda la mañana. Él mismo reporta que Diego entra a la oficina.",
           "imageSeed": 40,
-          "imageUrl": "https://randomuser.me/api/portraits/men/40.jpg"
+          "imageUrl": "/images/characters/unit-06-jefe-cocina.png"
         },
         {
           "id": "carmen",
@@ -628,7 +873,7 @@
           "age": 28,
           "description": "Tiene veintiocho años. Esta mañana tiene que supervisar ese sancocho en la cocina principal. No puede dejar ese sancocho — si lo deja, se quema. Trabaja con esa papa, ese pollo y esa cebolla. Tiene coartada perfecta y conoce bien las reglas.",
           "imageSeed": 42,
-          "imageUrl": "https://randomuser.me/api/portraits/women/42.jpg"
+          "imageUrl": "/images/characters/unit-06-sous-chef.png"
         },
         {
           "id": "lucia",
@@ -637,10 +882,9 @@
           "age": 30,
           "description": "Tiene treinta años. Esta mañana tiene que preparar aquellos postres en su sección, al otro lado del restaurante. Trabaja con esa harina, ese azúcar y aquella mantequilla. No tiene acceso a la oficina del chef. Es ella quien ve a Diego fotografiar algo con el celular.",
           "imageSeed": 38,
-          "imageUrl": "https://randomuser.me/api/portraits/women/38.jpg"
+          "imageUrl": "/images/characters/unit-06-repostera.png"
         }
       ]
     }
-
   ]
 }

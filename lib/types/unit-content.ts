@@ -26,6 +26,7 @@ export interface CutsceneStageData {
   fallbackImage?: string;
   chiefName: string;
   chiefImageSeed: number;
+  chiefImageUrl?: string;  // generated portrait (overrides chiefImageSeed / pravatar fallback)
   briefingLines: string[];  // paragraphs of the chief's briefing
 }
 

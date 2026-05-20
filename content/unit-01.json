@@ -6,22 +6,68 @@
   "caseDescription": "Una famosa guitarra de mariachi fue robada del Museo de la Música en Guadalajara. Los testigos solo hablan español. Tú debes investigar, recopilar pistas e identificar al ladrón.",
   "criminalName": "El Camaleón",
   "bonusClue": "El sospechoso es zurdo — siempre usa la mano izquierda para escribir y llevar objetos. Ningún otro sospechoso es zurdo.",
-
   "vocab": [
-    { "spanish": "hola",             "english": "hello",            "audio": "/audio/unit-01/hola.mp3" },
-    { "spanish": "adiós",            "english": "goodbye",          "audio": "/audio/unit-01/adios.mp3" },
-    { "spanish": "buenos días",      "english": "good morning",     "audio": "/audio/unit-01/buenos-dias.mp3" },
-    { "spanish": "buenas tardes",    "english": "good afternoon",   "audio": "/audio/unit-01/buenas-tardes.mp3" },
-    { "spanish": "buenas noches",    "english": "good night",       "audio": "/audio/unit-01/buenas-noches.mp3" },
-    { "spanish": "por favor",        "english": "please",           "audio": "/audio/unit-01/por-favor.mp3" },
-    { "spanish": "gracias",          "english": "thank you",        "audio": "/audio/unit-01/gracias.mp3" },
-    { "spanish": "de nada",          "english": "you're welcome",   "audio": "/audio/unit-01/de-nada.mp3" },
-    { "spanish": "me llamo",         "english": "my name is",       "audio": "/audio/unit-01/me-llamo.mp3" },
-    { "spanish": "¿cómo te llamas?", "english": "what's your name?","audio": "/audio/unit-01/como-te-llamas.mp3" },
-    { "spanish": "¿de dónde eres?",  "english": "where are you from?","audio": "/audio/unit-01/de-donde-eres.mp3" },
-    { "spanish": "soy de...",        "english": "I'm from...",      "audio": "/audio/unit-01/soy-de.mp3" }
+    {
+      "spanish": "hola",
+      "english": "hello",
+      "audio": "/audio/unit-01/hola.mp3"
+    },
+    {
+      "spanish": "adiós",
+      "english": "goodbye",
+      "audio": "/audio/unit-01/adios.mp3"
+    },
+    {
+      "spanish": "buenos días",
+      "english": "good morning",
+      "audio": "/audio/unit-01/buenos-dias.mp3"
+    },
+    {
+      "spanish": "buenas tardes",
+      "english": "good afternoon",
+      "audio": "/audio/unit-01/buenas-tardes.mp3"
+    },
+    {
+      "spanish": "buenas noches",
+      "english": "good night",
+      "audio": "/audio/unit-01/buenas-noches.mp3"
+    },
+    {
+      "spanish": "por favor",
+      "english": "please",
+      "audio": "/audio/unit-01/por-favor.mp3"
+    },
+    {
+      "spanish": "gracias",
+      "english": "thank you",
+      "audio": "/audio/unit-01/gracias.mp3"
+    },
+    {
+      "spanish": "de nada",
+      "english": "you're welcome",
+      "audio": "/audio/unit-01/de-nada.mp3"
+    },
+    {
+      "spanish": "me llamo",
+      "english": "my name is",
+      "audio": "/audio/unit-01/me-llamo.mp3"
+    },
+    {
+      "spanish": "¿cómo te llamas?",
+      "english": "what's your name?",
+      "audio": "/audio/unit-01/como-te-llamas.mp3"
+    },
+    {
+      "spanish": "¿de dónde eres?",
+      "english": "where are you from?",
+      "audio": "/audio/unit-01/de-donde-eres.mp3"
+    },
+    {
+      "spanish": "soy de...",
+      "english": "I'm from...",
+      "audio": "/audio/unit-01/soy-de.mp3"
+    }
   ],
-
   "stages": [
     {
       "type": "cutscene",
@@ -37,23 +83,46 @@
         "Pero hay un problema: todos los testigos en Guadalajara solo hablan español.",
         "Tu misión: habla con los testigos, analiza la evidencia, e identifica al ladrón antes de que escape.",
         "¿Estás listo para tu primera misión? El caso está abierto. ¡Buena suerte, agente!"
-      ]
+      ],
+      "chiefImageUrl": "/images/characters/chief-ramirez.png"
     },
-
     {
       "type": "vocabMatch",
       "pairs": [
-        { "spanish": "hola",        "english": "hello" },
-        { "spanish": "gracias",     "english": "thank you" },
-        { "spanish": "buenos días", "english": "good morning" },
-        { "spanish": "por favor",   "english": "please" },
-        { "spanish": "adiós",       "english": "goodbye" },
-        { "spanish": "de nada",     "english": "you're welcome" },
-        { "spanish": "me llamo",    "english": "my name is" },
-        { "spanish": "soy de...",   "english": "I'm from..." }
+        {
+          "spanish": "hola",
+          "english": "hello"
+        },
+        {
+          "spanish": "gracias",
+          "english": "thank you"
+        },
+        {
+          "spanish": "buenos días",
+          "english": "good morning"
+        },
+        {
+          "spanish": "por favor",
+          "english": "please"
+        },
+        {
+          "spanish": "adiós",
+          "english": "goodbye"
+        },
+        {
+          "spanish": "de nada",
+          "english": "you're welcome"
+        },
+        {
+          "spanish": "me llamo",
+          "english": "my name is"
+        },
+        {
+          "spanish": "soy de...",
+          "english": "I'm from..."
+        }
       ]
     },
-
     {
       "type": "dialogueChoice",
       "clueReward": "El sospechoso lleva un sombrero de charro negro.",
@@ -111,45 +180,82 @@
         }
       ]
     },
-
     {
       "type": "readingComp",
       "clueReward": "El sospechoso tiene 34 años y es muy alto — casi dos metros.",
       "passage": "Querida guitarra,\n\nFinalmente te tengo. Me llamo 'El Camaleón'. Soy de Guadalajara — la ciudad más bella de todo México. Tengo treinta y cuatro años y soy muy alto. Casi dos metros de altura.\n\nLa música es mi vida. Toco la guitarra desde los cinco años. Esta guitarra es perfecta para un artista como yo.\n\nHasta pronto,\n— Tu nuevo dueño",
       "glossary": [
-        { "word": "querida",   "translation": "dear / beloved" },
-        { "word": "finalmente","translation": "finally" },
-        { "word": "bella",     "translation": "beautiful" },
-        { "word": "altura",    "translation": "height" },
-        { "word": "toco",      "translation": "I play" },
-        { "word": "artista",   "translation": "artist" },
-        { "word": "dueño",     "translation": "owner" },
-        { "word": "desde",     "translation": "since / from" }
+        {
+          "word": "querida",
+          "translation": "dear / beloved"
+        },
+        {
+          "word": "finalmente",
+          "translation": "finally"
+        },
+        {
+          "word": "bella",
+          "translation": "beautiful"
+        },
+        {
+          "word": "altura",
+          "translation": "height"
+        },
+        {
+          "word": "toco",
+          "translation": "I play"
+        },
+        {
+          "word": "artista",
+          "translation": "artist"
+        },
+        {
+          "word": "dueño",
+          "translation": "owner"
+        },
+        {
+          "word": "desde",
+          "translation": "since / from"
+        }
       ],
       "questions": [
         {
           "id": "r1",
           "text": "¿Cómo se llama el ladrón?",
           "type": "multiple_choice",
-          "options": ["El Camaleón", "Don Rodrigo", "El Mariachi", "El Detective"],
+          "options": [
+            "El Camaleón",
+            "Don Rodrigo",
+            "El Mariachi",
+            "El Detective"
+          ],
           "correctIndex": 0
         },
         {
           "id": "r2",
           "text": "¿Cuántos años tiene el ladrón?",
           "type": "short_answer",
-          "acceptableAnswers": ["34", "treinta y cuatro", "treinta y cuatro años", "34 años"]
+          "acceptableAnswers": [
+            "34",
+            "treinta y cuatro",
+            "treinta y cuatro años",
+            "34 años"
+          ]
         },
         {
           "id": "r3",
           "text": "¿De dónde es el ladrón?",
           "type": "multiple_choice",
-          "options": ["Ciudad de México", "Cancún", "Monterrey", "Guadalajara"],
+          "options": [
+            "Ciudad de México",
+            "Cancún",
+            "Monterrey",
+            "Guadalajara"
+          ],
           "correctIndex": 3
         }
       ]
     },
-
     {
       "type": "listeningComp",
       "clueReward": "El sospechoso tiene bigote y treinta años.",
@@ -162,42 +268,66 @@
       "questions": [
         {
           "question": "¿Cómo se llama la mujer?",
-          "options": ["Carmen Ruiz", "Carmen Gómez", "Carmen López", "María Ruiz"],
+          "options": [
+            "Carmen Ruiz",
+            "Carmen Gómez",
+            "Carmen López",
+            "María Ruiz"
+          ],
           "correctIndex": 0,
           "explanationEs": "La mujer dice claramente: 'Me llamo Carmen Ruiz'.",
           "explanationEn": "She clearly says 'My name is Carmen Ruiz.'"
         },
         {
           "question": "¿De dónde es Carmen?",
-          "options": ["Madrid", "San Juan", "Guadalajara", "Bogotá"],
+          "options": [
+            "Madrid",
+            "San Juan",
+            "Guadalajara",
+            "Bogotá"
+          ],
           "correctIndex": 2,
           "explanationEs": "Carmen dice: 'Soy de Guadalajara' — la ciudad en México, no España.",
           "explanationEn": "Carmen says 'I'm from Guadalajara' — the Mexican city, not the one in Spain."
         },
         {
           "question": "¿Qué hora es según Carmen?",
-          "options": ["1:00 PM", "3:00 AM", "3:00 PM", "5:00 PM"],
+          "options": [
+            "1:00 PM",
+            "3:00 AM",
+            "3:00 PM",
+            "5:00 PM"
+          ],
           "correctIndex": 2,
           "explanationEs": "Carmen dice: 'Son las tres de la tarde' — la tarde = PM en español.",
           "explanationEn": "Carmen says 'It's three in the afternoon' — 'la tarde' means PM."
         },
         {
           "question": "¿Cuántos años tiene el sospechoso según Carmen?",
-          "options": ["13", "40", "34", "23"],
+          "options": [
+            "13",
+            "40",
+            "34",
+            "23"
+          ],
           "correctIndex": 2,
           "explanationEs": "Carmen dice: 'El hombre tiene treinta y cuatro años.' Treinta y cuatro = 34.",
           "explanationEn": "Carmen says 'The man is thirty-four years old.' Treinta y cuatro = 34."
         },
         {
           "question": "¿Qué tiene el hombre en la cara?",
-          "options": ["Barba", "Bigote", "Gafas", "Sombrero"],
+          "options": [
+            "Barba",
+            "Bigote",
+            "Gafas",
+            "Sombrero"
+          ],
           "correctIndex": 1,
           "explanationEs": "Carmen dice: 'Tiene bigote. No tiene barba.' Bigote = mustache, barba = beard.",
           "explanationEn": "Carmen says 'He has a mustache. He doesn't have a beard.' Bigote = mustache."
         }
       ]
     },
-
     {
       "type": "lineup",
       "correctSuspectId": "camaleon",
@@ -210,7 +340,7 @@
           "age": 34,
           "description": "Es un hombre alto y delgado. Tiene bigote negro. Siempre lleva un sombrero de charro negro y elegante. Es de Guadalajara y habla muy, muy rápido.",
           "imageSeed": 48,
-          "imageUrl": "https://randomuser.me/api/portraits/men/46.jpg"
+          "imageUrl": "/images/characters/unit-01-camaleon.png"
         },
         {
           "id": "serpiente",
@@ -219,7 +349,7 @@
           "age": 28,
           "description": "Es una mujer joven y muy elegante. Tiene pelo largo y negro. Es de Ciudad de México. Habla despacio y con mucha calma. No lleva sombrero.",
           "imageSeed": 25,
-          "imageUrl": "https://randomuser.me/api/portraits/women/44.jpg"
+          "imageUrl": "/images/characters/unit-01-serpiente.png"
         },
         {
           "id": "toro",
@@ -228,7 +358,7 @@
           "age": 50,
           "description": "Es un hombre bajo y muy fuerte. Tiene cincuenta años y no tiene bigote. Es de Monterrey. Es tranquilo y habla poco.",
           "imageSeed": 57,
-          "imageUrl": "https://randomuser.me/api/portraits/men/60.jpg"
+          "imageUrl": "/images/characters/unit-01-toro.png"
         },
         {
           "id": "pajaro",
@@ -237,7 +367,7 @@
           "age": 22,
           "description": "Es un hombre joven y alto pero sin bigote. Tiene veintidós años. Es de Cancún. Habla inglés y español perfectamente. No lleva sombrero.",
           "imageSeed": 44,
-          "imageUrl": "https://randomuser.me/api/portraits/men/22.jpg"
+          "imageUrl": "/images/characters/unit-01-pajaro.png"
         }
       ]
     }

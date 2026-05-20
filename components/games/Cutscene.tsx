@@ -16,6 +16,7 @@ interface Props {
   chiefName?: string;
   briefingLines?: string[];
   chiefImageSeed?: number;
+  chiefImageUrl?: string;   // generated portrait (overrides pravatar seed)
   postQuestion?: PostQuestion;
   onComplete: (result: GameResult) => void;
 }
@@ -23,7 +24,7 @@ interface Props {
 type Phase = "idle" | "playing" | "ended" | "question" | "error";
 
 export default function Cutscene({
-  videoUrl, subtitleUrl, fallbackImage, chiefName, chiefImageSeed = 60,
+  videoUrl, subtitleUrl, fallbackImage, chiefName, chiefImageSeed = 60, chiefImageUrl,
   briefingLines = [], postQuestion, onComplete,
 }: Props) {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -78,7 +79,7 @@ export default function Cutscene({
 
   // Fallback: if video errors, show briefing-lines UI
   if (phase === "error" || (phase === "idle" && !videoUrl)) {
-    return <FallbackBriefing chiefName={chiefName} chiefImageSeed={chiefImageSeed} briefingLines={briefingLines} fallbackImage={fallbackImage} onComplete={() => finish(1, 0)} />;
+    return <FallbackBriefing chiefName={chiefName} chiefImageSeed={chiefImageSeed} chiefImageUrl={chiefImageUrl} briefingLines={briefingLines} fallbackImage={fallbackImage} onComplete={() => finish(1, 0)} />;
   }
 
   return (
@@ -164,8 +165,8 @@ export default function Cutscene({
   );
 }
 
-function FallbackBriefing({ chiefName, chiefImageSeed, briefingLines, fallbackImage, onComplete }:
-  { chiefName?: string; chiefImageSeed?: number; briefingLines: string[]; fallbackImage?: string; onComplete: () => void }) {
+function FallbackBriefing({ chiefName, chiefImageSeed, chiefImageUrl, briefingLines, fallbackImage, onComplete }:
+  { chiefName?: string; chiefImageSeed?: number; chiefImageUrl?: string; briefingLines: string[]; fallbackImage?: string; onComplete: () => void }) {
   const [lineIndex, setLineIndex] = useState(0);
   const [started, setStarted] = useState(false);
 
@@ -196,7 +197,7 @@ function FallbackBriefing({ chiefName, chiefImageSeed, briefingLines, fallbackIm
               ? <img src={fallbackImage} alt="Chief" width={80} height={80} className="rounded-sm border-2 border-[rgba(201,147,58,0.3)] grayscale" />
               : (
                 // eslint-disable-next-line @next/next/no-img-element
-                <img src={`https://i.pravatar.cc/80?img=${chiefImageSeed ?? 60}`} alt={chiefName ?? "Chief"} width={80} height={80} className="rounded-sm border-2 border-[rgba(201,147,58,0.3)] grayscale contrast-125" />
+                <img src={chiefImageUrl ?? `https://i.pravatar.cc/80?img=${chiefImageSeed ?? 60}`} alt={chiefName ?? "Chief"} width={80} height={80} className="rounded-sm border-2 border-[rgba(201,147,58,0.3)]" />
               )
             }
             <p className="font-typewriter text-[9px] tracking-widest uppercase text-[#8b7355] text-center mt-1">{chiefName}</p>

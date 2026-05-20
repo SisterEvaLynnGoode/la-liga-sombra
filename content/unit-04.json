@@ -6,48 +6,189 @@
   "caseDescription": "El collar de esmeraldas de la abuela Carmen desaparece en su finca familiar cerca del Volcán Arenal. Alguien en la familia es culpable. Usa ser vs. estar, los adjetivos posesivos y los verbos -IR para interrogar a cada familiar, detectar quién miente sobre dónde está y cómo se siente, y hacer la acusación correcta.",
   "criminalName": "El Heredero",
   "bonusClue": "El sospechoso tiene polvo de pintura amarilla en la manga derecha — la misma pintura que hay en el armario donde estaba el collar. Solo uno de los sospechosos tiene esa pintura.",
-
   "vocab": [
-    { "spanish": "la madre / la mamá",         "english": "mother / mom",              "audio": "/audio/unit-04/madre.mp3" },
-    { "spanish": "el padre / el papá",         "english": "father / dad",              "audio": "/audio/unit-04/padre.mp3" },
-    { "spanish": "el hermano",                 "english": "brother",                   "audio": "/audio/unit-04/hermano.mp3" },
-    { "spanish": "la hermana",                 "english": "sister",                    "audio": "/audio/unit-04/hermana.mp3" },
-    { "spanish": "la abuela",                  "english": "grandmother",               "audio": "/audio/unit-04/abuela.mp3" },
-    { "spanish": "el abuelo",                  "english": "grandfather",               "audio": "/audio/unit-04/abuelo.mp3" },
-    { "spanish": "el tío",                     "english": "uncle",                     "audio": "/audio/unit-04/tio.mp3" },
-    { "spanish": "la tía",                     "english": "aunt",                      "audio": "/audio/unit-04/tia.mp3" },
-    { "spanish": "el primo",                   "english": "male cousin",               "audio": "/audio/unit-04/primo.mp3" },
-    { "spanish": "la prima",                   "english": "female cousin",             "audio": "/audio/unit-04/prima.mp3" },
-    { "spanish": "el nieto",                   "english": "grandson",                  "audio": "/audio/unit-04/nieto.mp3" },
-    { "spanish": "el esposo / el marido",      "english": "husband",                   "audio": "/audio/unit-04/esposo.mp3" },
-    { "spanish": "contento / contenta",        "english": "happy / pleased (m/f)",     "audio": "/audio/unit-04/contento.mp3" },
-    { "spanish": "triste",                     "english": "sad",                       "audio": "/audio/unit-04/triste.mp3" },
-    { "spanish": "nervioso / nerviosa",        "english": "nervous (m/f)",             "audio": "/audio/unit-04/nervioso.mp3" },
-    { "spanish": "enojado / enojada",          "english": "angry (m/f)",               "audio": "/audio/unit-04/enojado.mp3" },
-    { "spanish": "cansado / cansada",          "english": "tired (m/f)",               "audio": "/audio/unit-04/cansado.mp3" },
-    { "spanish": "preocupado / preocupada",    "english": "worried (m/f)",             "audio": "/audio/unit-04/preocupado.mp3" },
-    { "spanish": "emocionado / emocionada",    "english": "excited (m/f)",             "audio": "/audio/unit-04/emocionado.mp3" },
-    { "spanish": "aburrido / aburrida",        "english": "bored (m/f)",               "audio": "/audio/unit-04/aburrido.mp3" },
-    { "spanish": "asustado / asustada",        "english": "scared / frightened (m/f)", "audio": "/audio/unit-04/asustado.mp3" },
-    { "spanish": "sorprendido / sorprendida",  "english": "surprised (m/f)",           "audio": "/audio/unit-04/sorprendido.mp3" },
-    { "spanish": "feliz",                      "english": "happy / joyful",            "audio": "/audio/unit-04/feliz.mp3" },
-    { "spanish": "tranquilo / tranquila",      "english": "calm / relaxed (m/f)",      "audio": "/audio/unit-04/tranquilo.mp3" },
-    { "spanish": "vivir",                      "english": "to live",                   "audio": "/audio/unit-04/vivir.mp3" },
-    { "spanish": "escribir",                   "english": "to write",                  "audio": "/audio/unit-04/escribir.mp3" },
-    { "spanish": "abrir",                      "english": "to open",                   "audio": "/audio/unit-04/abrir.mp3" },
-    { "spanish": "recibir",                    "english": "to receive",                "audio": "/audio/unit-04/recibir.mp3" },
-    { "spanish": "compartir",                  "english": "to share",                  "audio": "/audio/unit-04/compartir.mp3" },
-    { "spanish": "describir",                  "english": "to describe",               "audio": "/audio/unit-04/describir.mp3" },
-    { "spanish": "mi / mis",                   "english": "my (sing. / plural)",       "audio": "/audio/unit-04/mi.mp3" },
-    { "spanish": "tu / tus",                   "english": "your informal (sing. / plural)", "audio": "/audio/unit-04/tu-pos.mp3" },
-    { "spanish": "su / sus",                   "english": "his / her / your formal (sing. / plural)", "audio": "/audio/unit-04/su.mp3" },
-    { "spanish": "nuestro / nuestra",          "english": "our (m / f)",               "audio": "/audio/unit-04/nuestro.mp3" },
-    { "spanish": "me gusta / me gustan",       "english": "I like (sing. / plural)",   "audio": "/audio/unit-04/me-gusta.mp3" },
-    { "spanish": "no me gusta",               "english": "I don't like",               "audio": "/audio/unit-04/no-me-gusta.mp3" }
+    {
+      "spanish": "la madre / la mamá",
+      "english": "mother / mom",
+      "audio": "/audio/unit-04/madre.mp3"
+    },
+    {
+      "spanish": "el padre / el papá",
+      "english": "father / dad",
+      "audio": "/audio/unit-04/padre.mp3"
+    },
+    {
+      "spanish": "el hermano",
+      "english": "brother",
+      "audio": "/audio/unit-04/hermano.mp3"
+    },
+    {
+      "spanish": "la hermana",
+      "english": "sister",
+      "audio": "/audio/unit-04/hermana.mp3"
+    },
+    {
+      "spanish": "la abuela",
+      "english": "grandmother",
+      "audio": "/audio/unit-04/abuela.mp3"
+    },
+    {
+      "spanish": "el abuelo",
+      "english": "grandfather",
+      "audio": "/audio/unit-04/abuelo.mp3"
+    },
+    {
+      "spanish": "el tío",
+      "english": "uncle",
+      "audio": "/audio/unit-04/tio.mp3"
+    },
+    {
+      "spanish": "la tía",
+      "english": "aunt",
+      "audio": "/audio/unit-04/tia.mp3"
+    },
+    {
+      "spanish": "el primo",
+      "english": "male cousin",
+      "audio": "/audio/unit-04/primo.mp3"
+    },
+    {
+      "spanish": "la prima",
+      "english": "female cousin",
+      "audio": "/audio/unit-04/prima.mp3"
+    },
+    {
+      "spanish": "el nieto",
+      "english": "grandson",
+      "audio": "/audio/unit-04/nieto.mp3"
+    },
+    {
+      "spanish": "el esposo / el marido",
+      "english": "husband",
+      "audio": "/audio/unit-04/esposo.mp3"
+    },
+    {
+      "spanish": "contento / contenta",
+      "english": "happy / pleased (m/f)",
+      "audio": "/audio/unit-04/contento.mp3"
+    },
+    {
+      "spanish": "triste",
+      "english": "sad",
+      "audio": "/audio/unit-04/triste.mp3"
+    },
+    {
+      "spanish": "nervioso / nerviosa",
+      "english": "nervous (m/f)",
+      "audio": "/audio/unit-04/nervioso.mp3"
+    },
+    {
+      "spanish": "enojado / enojada",
+      "english": "angry (m/f)",
+      "audio": "/audio/unit-04/enojado.mp3"
+    },
+    {
+      "spanish": "cansado / cansada",
+      "english": "tired (m/f)",
+      "audio": "/audio/unit-04/cansado.mp3"
+    },
+    {
+      "spanish": "preocupado / preocupada",
+      "english": "worried (m/f)",
+      "audio": "/audio/unit-04/preocupado.mp3"
+    },
+    {
+      "spanish": "emocionado / emocionada",
+      "english": "excited (m/f)",
+      "audio": "/audio/unit-04/emocionado.mp3"
+    },
+    {
+      "spanish": "aburrido / aburrida",
+      "english": "bored (m/f)",
+      "audio": "/audio/unit-04/aburrido.mp3"
+    },
+    {
+      "spanish": "asustado / asustada",
+      "english": "scared / frightened (m/f)",
+      "audio": "/audio/unit-04/asustado.mp3"
+    },
+    {
+      "spanish": "sorprendido / sorprendida",
+      "english": "surprised (m/f)",
+      "audio": "/audio/unit-04/sorprendido.mp3"
+    },
+    {
+      "spanish": "feliz",
+      "english": "happy / joyful",
+      "audio": "/audio/unit-04/feliz.mp3"
+    },
+    {
+      "spanish": "tranquilo / tranquila",
+      "english": "calm / relaxed (m/f)",
+      "audio": "/audio/unit-04/tranquilo.mp3"
+    },
+    {
+      "spanish": "vivir",
+      "english": "to live",
+      "audio": "/audio/unit-04/vivir.mp3"
+    },
+    {
+      "spanish": "escribir",
+      "english": "to write",
+      "audio": "/audio/unit-04/escribir.mp3"
+    },
+    {
+      "spanish": "abrir",
+      "english": "to open",
+      "audio": "/audio/unit-04/abrir.mp3"
+    },
+    {
+      "spanish": "recibir",
+      "english": "to receive",
+      "audio": "/audio/unit-04/recibir.mp3"
+    },
+    {
+      "spanish": "compartir",
+      "english": "to share",
+      "audio": "/audio/unit-04/compartir.mp3"
+    },
+    {
+      "spanish": "describir",
+      "english": "to describe",
+      "audio": "/audio/unit-04/describir.mp3"
+    },
+    {
+      "spanish": "mi / mis",
+      "english": "my (sing. / plural)",
+      "audio": "/audio/unit-04/mi.mp3"
+    },
+    {
+      "spanish": "tu / tus",
+      "english": "your informal (sing. / plural)",
+      "audio": "/audio/unit-04/tu-pos.mp3"
+    },
+    {
+      "spanish": "su / sus",
+      "english": "his / her / your formal (sing. / plural)",
+      "audio": "/audio/unit-04/su.mp3"
+    },
+    {
+      "spanish": "nuestro / nuestra",
+      "english": "our (m / f)",
+      "audio": "/audio/unit-04/nuestro.mp3"
+    },
+    {
+      "spanish": "me gusta / me gustan",
+      "english": "I like (sing. / plural)",
+      "audio": "/audio/unit-04/me-gusta.mp3"
+    },
+    {
+      "spanish": "no me gusta",
+      "english": "I don't like",
+      "audio": "/audio/unit-04/no-me-gusta.mp3"
+    }
   ],
-
   "stages": [
-
     {
       "type": "cutscene",
       "videoUrl": "/videos/unit-04-intro.mp4",
@@ -61,56 +202,131 @@
         "Hay cuatro sospechosos: todos son miembros de la familia. Alguien miente sobre dónde está y cómo se siente.",
         "Tu misión: interroga a cada familiar. Usa ser para describir quiénes son, y estar para descubrir dónde están y cómo se sienten.",
         "El culpable tiene una coartada inconsistente — sus declaraciones con estar no concuerdan. ¡Encuentra al ladrón, agente!"
-      ]
+      ],
+      "chiefImageUrl": "/images/characters/chief-ramirez.png"
     },
-
     {
       "type": "vocabMatch",
       "pairs": [
-        { "spanish": "la madre",            "english": "mother" },
-        { "spanish": "el abuelo",           "english": "grandfather" },
-        { "spanish": "la tía",              "english": "aunt" },
-        { "spanish": "el nieto",            "english": "grandson" },
-        { "spanish": "contento/a",          "english": "happy" },
-        { "spanish": "nervioso/a",          "english": "nervous" },
-        { "spanish": "triste",              "english": "sad" },
-        { "spanish": "cansado/a",           "english": "tired" },
-        { "spanish": "vivir",               "english": "to live" },
-        { "spanish": "escribir",            "english": "to write" },
-        { "spanish": "mi / mis",            "english": "my" },
-        { "spanish": "me gusta",            "english": "I like" }
+        {
+          "spanish": "la madre",
+          "english": "mother"
+        },
+        {
+          "spanish": "el abuelo",
+          "english": "grandfather"
+        },
+        {
+          "spanish": "la tía",
+          "english": "aunt"
+        },
+        {
+          "spanish": "el nieto",
+          "english": "grandson"
+        },
+        {
+          "spanish": "contento/a",
+          "english": "happy"
+        },
+        {
+          "spanish": "nervioso/a",
+          "english": "nervous"
+        },
+        {
+          "spanish": "triste",
+          "english": "sad"
+        },
+        {
+          "spanish": "cansado/a",
+          "english": "tired"
+        },
+        {
+          "spanish": "vivir",
+          "english": "to live"
+        },
+        {
+          "spanish": "escribir",
+          "english": "to write"
+        },
+        {
+          "spanish": "mi / mis",
+          "english": "my"
+        },
+        {
+          "spanish": "me gusta",
+          "english": "I like"
+        }
       ]
     },
-
     {
       "type": "readingComp",
       "clueReward": "El collar está en la caja azul de la habitación de la abuela. Marco está 'raro' — pasa tiempo solo cerca de esa parte de la casa.",
       "passage": "Querido diario,\n\nHoy es martes y estoy muy contenta aquí en mi finca cerca del Volcán Arenal. ¡Pura vida, diario!\n\nMi hijo Carlos es un hombre muy trabajador. A él le gusta mucho el café — trabaja en nuestra finca desde las seis de la mañana. ¡Es un buen hijo! Su esposa Elena es simpática y generosa. A Elena le gusta ir al mercado central de San José los sábados.\n\nMi nieto Marco es inteligente y normalmente es muy alegre. Pero últimamente está raro — no habla mucho y pasa mucho tiempo solo cerca de mi habitación. No sé por qué está así. ¿Está enfermo mi nieto querido?\n\nMi primo Diego visita hoy también. A Diego le gusta correr por las montañas y ver los quetzales del Bosque Nuboso. Siempre está cansado después de sus aventuras, pero está muy feliz.\n\nMi collar de esmeraldas está en mi habitación, en la caja pequeña azul de mi esposo querido. Es mi tesoro más especial. Nunca salgo sin mi collar.\n\n¡Pura vida, familia mía!\n— Abuela Carmen",
       "glossary": [
-        { "word": "finca",        "translation": "farm / country estate" },
-        { "word": "collar",       "translation": "necklace" },
-        { "word": "esmeraldas",   "translation": "emeralds" },
-        { "word": "querido/a",    "translation": "dear / beloved" },
-        { "word": "raro/a",       "translation": "strange / weird" },
-        { "word": "último/a",     "translation": "lately / recently" },
-        { "word": "tesoro",       "translation": "treasure" },
-        { "word": "quetzal",      "translation": "quetzal (tropical bird)" },
-        { "word": "Bosque Nuboso","translation": "Cloud Forest" },
-        { "word": "fallecido",    "translation": "deceased / late (husband)" }
+        {
+          "word": "finca",
+          "translation": "farm / country estate"
+        },
+        {
+          "word": "collar",
+          "translation": "necklace"
+        },
+        {
+          "word": "esmeraldas",
+          "translation": "emeralds"
+        },
+        {
+          "word": "querido/a",
+          "translation": "dear / beloved"
+        },
+        {
+          "word": "raro/a",
+          "translation": "strange / weird"
+        },
+        {
+          "word": "último/a",
+          "translation": "lately / recently"
+        },
+        {
+          "word": "tesoro",
+          "translation": "treasure"
+        },
+        {
+          "word": "quetzal",
+          "translation": "quetzal (tropical bird)"
+        },
+        {
+          "word": "Bosque Nuboso",
+          "translation": "Cloud Forest"
+        },
+        {
+          "word": "fallecido",
+          "translation": "deceased / late (husband)"
+        }
       ],
       "questions": [
         {
           "id": "r1",
           "text": "¿Cómo está la abuela Carmen en su finca?",
           "type": "multiple_choice",
-          "options": ["Muy contenta", "Muy triste", "Muy nerviosa", "Muy cansada"],
+          "options": [
+            "Muy contenta",
+            "Muy triste",
+            "Muy nerviosa",
+            "Muy cansada"
+          ],
           "correctIndex": 0
         },
         {
           "id": "r2",
           "text": "¿Qué le gusta a Carlos, el hijo de la abuela?",
           "type": "multiple_choice",
-          "options": ["El café", "El mercado", "Los quetzales", "El collar"],
+          "options": [
+            "El café",
+            "El mercado",
+            "Los quetzales",
+            "El collar"
+          ],
           "correctIndex": 0
         },
         {
@@ -140,7 +356,6 @@
         }
       ]
     },
-
     {
       "type": "listeningComp",
       "clueReward": "El nieto está nervioso y miente sobre su ubicación. Está mintiendo.",
@@ -153,42 +368,66 @@
       "questions": [
         {
           "question": "¿Cómo está la abuela?",
-          "options": ["Contenta", "Triste", "Enojada", "Cansada"],
+          "options": [
+            "Contenta",
+            "Triste",
+            "Enojada",
+            "Cansada"
+          ],
           "correctIndex": 1,
           "explanationEs": "La abuela dice 'Estoy muy triste'.",
           "explanationEn": "Grandmother says 'I am very sad.'"
         },
         {
           "question": "¿Dónde está el hijo?",
-          "options": ["En la cocina", "En la escuela", "En su trabajo", "En la casa"],
+          "options": [
+            "En la cocina",
+            "En la escuela",
+            "En su trabajo",
+            "En la casa"
+          ],
           "correctIndex": 2,
           "explanationEs": "La abuela dice 'Mi hijo está contento. Está en su trabajo.'",
           "explanationEn": "Grandmother says her son is happy and at his job."
         },
         {
           "question": "¿Cómo está la hija?",
-          "options": ["Triste", "Nerviosa", "Contenta", "Cansada"],
+          "options": [
+            "Triste",
+            "Nerviosa",
+            "Contenta",
+            "Cansada"
+          ],
           "correctIndex": 3,
           "explanationEs": "La abuela dice 'Mi hija está cansada'.",
           "explanationEn": "Grandmother says her daughter is tired."
         },
         {
           "question": "¿Quién está nervioso?",
-          "options": ["El hijo", "La hija", "El nieto", "La nieta"],
+          "options": [
+            "El hijo",
+            "La hija",
+            "El nieto",
+            "La nieta"
+          ],
           "correctIndex": 2,
           "explanationEs": "La abuela dice 'Mi nieto está nervioso'.",
           "explanationEn": "Grandmother says her grandson is nervous."
         },
         {
           "question": "¿Quién está mintiendo sobre su ubicación?",
-          "options": ["El hijo", "La hija", "El nieto", "La nieta"],
+          "options": [
+            "El hijo",
+            "La hija",
+            "El nieto",
+            "La nieta"
+          ],
           "correctIndex": 2,
           "explanationEs": "La abuela dice del nieto: 'Dice que está en la escuela, pero no es verdad'.",
           "explanationEn": "Grandmother says of the grandson: 'He says he's at school, but it's not true.'"
         }
       ]
     },
-
     {
       "type": "interrogation",
       "character": {
@@ -280,7 +519,6 @@
         }
       ]
     },
-
     {
       "type": "interrogation",
       "character": {
@@ -372,7 +610,6 @@
         }
       ]
     },
-
     {
       "type": "interrogation",
       "clueReward": "Marco dice que está en su habitación toda la mañana, pero está nervioso y sus respuestas son inconsistentes. Las criadas lo ven cerca de la habitación de la abuela.",
@@ -466,7 +703,6 @@
         }
       ]
     },
-
     {
       "type": "sentenceBuilder",
       "sentences": [
@@ -492,7 +728,6 @@
         }
       ]
     },
-
     {
       "type": "lineup",
       "correctSuspectId": "marco",
@@ -505,7 +740,7 @@
           "age": 19,
           "description": "Es el nieto de la abuela Carmen. Tiene diecinueve años. Durante la interrogación dice que está en su habitación toda la mañana, pero está nervioso y sus respuestas son inconsistentes. Conoce bien la habitación de la abuela y tiene acceso directo.",
           "imageSeed": 15,
-          "imageUrl": "https://randomuser.me/api/portraits/men/15.jpg"
+          "imageUrl": "/images/characters/unit-04-heredero.png"
         },
         {
           "id": "elena",
@@ -514,7 +749,7 @@
           "age": 45,
           "description": "Es la esposa de Carlos, el hijo de la abuela. Tiene cuarenta y cinco años. Está en el mercado central de San José toda la mañana — tiene los recibos como prueba. Está preocupada pero no es sospechosa.",
           "imageSeed": 35,
-          "imageUrl": "https://randomuser.me/api/portraits/women/20.jpg"
+          "imageUrl": "/images/characters/unit-04-tia-generosa.png"
         },
         {
           "id": "diego",
@@ -523,7 +758,7 @@
           "age": 22,
           "description": "Es el primo de Marco. Tiene veintidós años. Está en la finca de café con el tío Carlos toda la mañana — tiene coartada perfecta. Está cansado del trabajo pero está tranquilo y no es sospechoso.",
           "imageSeed": 25,
-          "imageUrl": "https://randomuser.me/api/portraits/men/25.jpg"
+          "imageUrl": "/images/characters/unit-04-primo-activo.png"
         },
         {
           "id": "ana_lucia",
@@ -532,10 +767,9 @@
           "age": 48,
           "description": "Es la hija de la abuela Carmen y la madre de Marco. Tiene cuarenta y ocho años. Está en San José en una reunión de negocios toda la mañana. Es muy seria y está muy preocupada por el collar de su madre.",
           "imageSeed": 40,
-          "imageUrl": "https://randomuser.me/api/portraits/women/35.jpg"
+          "imageUrl": "/images/characters/unit-04-hija-seria.png"
         }
       ]
     }
-
   ]
 }
