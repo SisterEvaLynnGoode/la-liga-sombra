@@ -18,7 +18,7 @@ export const CharacterSheet = z.object({
   pose: z.string().default("retrato de busto, mirando ligeramente hacia un lado"),
   spanishDescription: z.string(),              // EXACT Spanish text shown in-game — generated image MUST match this
   country: z.string(),                         // for cultural context
-  currentImageUrl: z.string().optional(),      // existing stock image (what we're replacing)
+  currentImageUrl: z.string().nullable().optional(), // existing stock image (what we're replacing)
   generatedImageUrl: z.string().optional(),    // Higgsfield output after generation
   notes: z.string().optional(),               // extra context for image generation
 });

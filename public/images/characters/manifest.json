@@ -1,0 +1,46 @@
+[
+  {
+    "characterId": "chief-ramirez",
+    "localPath": "images/characters/chief-ramirez.png",
+    "publicUrl": "/images/characters/chief-ramirez.png",
+    "higgsfieldJobId": "9c930276-c2c9-4ffd-aeb2-544f56c83b43",
+    "higgsfieldUrl": "https://d8j0ntlcm91z4.cloudfront.net/user_3DQG5ve4hcMymLqHAOYWqsoLTCo/hf_20260520_013338_9c930276-c2c9-4ffd-aeb2-544f56c83b43.png",
+    "timestamp": "2026-05-20T01:33:38Z",
+    "status": "generated",
+    "creditsUsed": 1.5,
+    "sourcePrompt": "Jefe Ramírez — recurring agency chief. Dark formal suit, white shirt, burgundy tie, silver agency badge on lapel. Short black hair with grey temples. Illustrated graphic novel / noir watercolor style."
+  },
+  {
+    "characterId": "el-coleccionista",
+    "localPath": "images/characters/el-coleccionista.png",
+    "publicUrl": "/images/characters/el-coleccionista.png",
+    "higgsfieldJobId": "6d6bf27c-cfdc-4a90-a674-f12cd6409a82",
+    "higgsfieldUrl": "https://d8j0ntlcm91z4.cloudfront.net/user_3DQG5ve4hcMymLqHAOYWqsoLTCo/hf_20260520_013403_6d6bf27c-cfdc-4a90-a674-f12cd6409a82.png",
+    "timestamp": "2026-05-20T01:34:03Z",
+    "status": "generated",
+    "creditsUsed": 1.5,
+    "sourcePrompt": "El Coleccionista — master villain. Gold monocle, white leather gloves, eagle-head cane, charcoal suit. White hair, pale skin. One side slightly shadowed. Illustrated graphic novel / noir watercolor style."
+  },
+  {
+    "characterId": "el-tejedor",
+    "localPath": "images/characters/el-tejedor.png",
+    "publicUrl": "/images/characters/el-tejedor.png",
+    "higgsfieldJobId": "fd5e8eef-0323-4f6b-99ae-b798801a2240",
+    "higgsfieldUrl": "https://d8j0ntlcm91z4.cloudfront.net/user_3DQG5ve4hcMymLqHAOYWqsoLTCo/hf_20260520_013417_fd5e8eef-0323-4f6b-99ae-b798801a2240.png",
+    "timestamp": "2026-05-20T01:34:17Z",
+    "status": "generated",
+    "creditsUsed": 1.5,
+    "sourcePrompt": "El Tejedor — Unit 5 boss lieutenant. Dark unkempt hair, dark circles, rumpled dark linen jacket. Tense exhausted expression, still intelligent. Illustrated graphic novel / noir watercolor style."
+  },
+  {
+    "characterId": "el-genio",
+    "localPath": "images/characters/el-genio.png",
+    "publicUrl": "/images/characters/el-genio.png",
+    "higgsfieldJobId": "004a6dde-7bda-42b5-8b9d-041272aa376b",
+    "higgsfieldUrl": "https://d8j0ntlcm91z4.cloudfront.net/user_3DQG5ve4hcMymLqHAOYWqsoLTCo/hf_20260520_013430_004a6dde-7bda-42b5-8b9d-041272aa376b.png",
+    "timestamp": "2026-05-20T01:34:30Z",
+    "status": "generated",
+    "creditsUsed": 1.5,
+    "sourcePrompt": "El Genio (Ricardo Montoya Díaz) — boss fight accomplice. Very voluminous dark curly hair, medium brown skin, dark t-shirt. Confident self-assured expression. Illustrated graphic novel / noir watercolor style."
+  }
+]

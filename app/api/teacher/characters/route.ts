@@ -1,8 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getTeacherSession } from "@/lib/auth/session";
-import { readFileSync, writeFileSync } from "fs";
+import { readFileSync, writeFileSync, existsSync } from "fs";
 import { join } from "path";
 import { CharacterSheet } from "@/lib/character-schema";
+import type { ManifestEntry } from "@/scripts/generate-images/generate";
 
 const CHAR_DIR = join(process.cwd(), "content", "characters");
 
@@ -13,18 +14,42 @@ function fileForCharacter(unitNumber: number | undefined, id: string): string {
   return join(CHAR_DIR, `unit-0${unitNumber}.json`);
 }
 
-/** GET /api/teacher/characters — return all characters grouped */
+const MANIFEST_PATH = join(process.cwd(), "public", "images", "characters", "manifest.json");
+
+function readManifest(): ManifestEntry[] {
+  if (!existsSync(MANIFEST_PATH)) return [];
+  return JSON.parse(readFileSync(MANIFEST_PATH, "utf8")) as ManifestEntry[];
+}
+
+function writeManifest(entries: ManifestEntry[]) {
+  writeFileSync(MANIFEST_PATH, JSON.stringify(entries, null, 2) + "\n", "utf8");
+}
+
+/** GET /api/teacher/characters — return all characters + manifest */
 export async function GET() {
   if (!(await getTeacherSession())) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
   try {
-    // Dynamic require so we always get fresh data after edits
     // eslint-disable-next-line @typescript-eslint/no-require-imports
     const allRaw = require("@/content/characters/index") as { characters: CharacterSheet[] };
-    return NextResponse.json({ characters: allRaw.characters });
+    const manifest = readManifest();
+    return NextResponse.json({ characters: allRaw.characters, manifest });
   } catch (e) {
     return NextResponse.json({ error: String(e) }, { status: 500 });
   }
+}
+
+/** PUT /api/teacher/characters/manifest — update a manifest entry status */
+export async function PUT(request: NextRequest) {
+  if (!(await getTeacherSession())) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+
+  const body = await request.json() as { characterId: string; status: ManifestEntry["status"] };
+  const entries = readManifest();
+  const idx = entries.findIndex((e) => e.characterId === body.characterId);
+  if (idx === -1) return NextResponse.json({ error: "Not found" }, { status: 404 });
+  entries[idx].status = body.status;
+  writeManifest(entries);
+  return NextResponse.json({ ok: true });
 }
 
 /** PATCH /api/teacher/characters — update a single character in its JSON file */

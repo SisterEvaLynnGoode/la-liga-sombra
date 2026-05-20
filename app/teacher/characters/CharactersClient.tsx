@@ -4,6 +4,152 @@ import { useState, useEffect, useCallback } from "react";
 import type { CharacterSheet } from "@/lib/character-schema";
 import { completenessScore } from "@/lib/character-schema";
 
+// ── Manifest type (mirrored from generate.ts) ──────────────────────────────────
+
+interface ManifestEntry {
+  characterId: string;
+  localPath: string;
+  publicUrl: string;
+  sourcePrompt: string;
+  higgsfieldJobId: string;
+  higgsfieldUrl: string;
+  timestamp: string;
+  status: "generated" | "approved" | "needs-regen";
+  creditsUsed: number;
+}
+
+// ── Image review panel ─────────────────────────────────────────────────────────
+
+function ImageReviewPanel({ char, entry, onStatusChange }: {
+  char: CharacterSheet;
+  entry: ManifestEntry;
+  onStatusChange: (id: string, status: ManifestEntry["status"]) => void;
+}) {
+  const [checklist, setChecklist] = useState<Record<string, boolean>>({});
+
+  // Build checklist items from accessories + distinctive features
+  const checkItems = [
+    ...char.accessories.map((a) => ({ key: `acc:${a}`, label: a, type: "accessory" })),
+    ...char.distinctiveFeatures.map((f) => ({ key: `feat:${f}`, label: f, type: "feature" })),
+    { key: "expression", label: char.expression, type: "expression" },
+    { key: "clothing", label: char.clothing, type: "clothing" },
+  ].filter((i) => i.label);
+
+  const allChecked   = checkItems.length > 0 && checkItems.every((i) => checklist[i.key]);
+  const anyMissing   = Object.values(checklist).some((v) => v === false);
+
+  async function setStatus(status: ManifestEntry["status"]) {
+    await fetch("/api/teacher/characters", {
+      method: "PUT",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ characterId: char.id, status }),
+    }).catch(() => {});
+    onStatusChange(char.id, status);
+  }
+
+  const statusColors: Record<ManifestEntry["status"], string> = {
+    generated:    "border-[#e8b455] text-[#e8b455]",
+    approved:     "border-[#4ade80] text-[#4ade80]",
+    "needs-regen": "border-[#c0392b] text-[#c0392b]",
+  };
+
+  return (
+    <div className="space-y-4">
+      <div className="flex items-center gap-3">
+        <span className={`font-typewriter text-[9px] tracking-widest uppercase border px-2 py-0.5 ${statusColors[entry.status]}`}>
+          {entry.status === "generated" ? "generada" : entry.status === "approved" ? "✓ aprobada" : "⚠ regenerar"}
+        </span>
+        <span className="font-typewriter text-[9px] text-[#4a3a2a]">{entry.creditsUsed} crédito(s)</span>
+        <span className="font-typewriter text-[9px] text-[#4a3a2a]">{new Date(entry.timestamp).toLocaleDateString()}</span>
+      </div>
+
+      {/* Side-by-side: image + description */}
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+        {/* Generated image */}
+        <div className="space-y-2">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img
+            src={entry.publicUrl}
+            alt={char.name}
+            className="w-full max-w-xs rounded-sm border border-[rgba(201,147,58,0.2)]"
+            onError={(e) => { (e.target as HTMLImageElement).src = entry.higgsfieldUrl; }}
+          />
+          <div className="flex gap-2">
+            <button
+              onClick={() => setStatus("approved")}
+              className="flex-1 py-1.5 font-typewriter text-[10px] tracking-widest uppercase border border-[rgba(74,222,128,0.4)] text-[#4ade80] hover:bg-[rgba(74,222,128,0.1)] transition-colors"
+            >
+              ✓ Aprobar
+            </button>
+            <button
+              onClick={() => setStatus("needs-regen")}
+              className="flex-1 py-1.5 font-typewriter text-[10px] tracking-widests uppercase border border-[rgba(192,57,43,0.4)] text-[#c0392b] hover:bg-[rgba(192,57,43,0.1)] transition-colors"
+            >
+              ↩ Regenerar
+            </button>
+          </div>
+        </div>
+
+        {/* Description + checklist */}
+        <div className="space-y-3">
+          <div className="border border-[rgba(192,57,43,0.2)] bg-[rgba(192,57,43,0.04)] p-3">
+            <p className="font-typewriter text-[9px] uppercase text-[#c0392b] mb-1">Descripción en juego</p>
+            <p className="font-typewriter text-xs text-[#f5e6c8] leading-relaxed">{char.spanishDescription}</p>
+          </div>
+
+          {checkItems.length > 0 && (
+            <div>
+              <p className="font-typewriter text-[9px] uppercase text-[#8b7355] mb-2">
+                Verificar en la imagen — marca lo que ves
+              </p>
+              <div className="space-y-1.5">
+                {checkItems.map((item) => (
+                  <label key={item.key} className="flex items-start gap-2 cursor-pointer group">
+                    <input
+                      type="checkbox"
+                      checked={!!checklist[item.key]}
+                      onChange={(e) => setChecklist((c) => ({ ...c, [item.key]: e.target.checked }))}
+                      className="mt-0.5 shrink-0"
+                    />
+                    <span className={`font-typewriter text-xs leading-snug transition-colors ${
+                      checklist[item.key] === true ? "text-[#4ade80]"
+                      : checklist[item.key] === false ? "text-[#c0392b]"
+                      : "text-[#c4a882] group-hover:text-[#f5e6c8]"
+                    }`}>
+                      <span className="text-[#4a3a2a] mr-1">[{item.type.slice(0,3)}]</span>
+                      {item.label}
+                    </span>
+                  </label>
+                ))}
+              </div>
+              {checkItems.length > 0 && (
+                <div className="mt-2">
+                  {allChecked && (
+                    <p className="font-typewriter text-[10px] text-[#4ade80]">✓ Todo verificado</p>
+                  )}
+                  {anyMissing && (
+                    <p className="font-typewriter text-[10px] text-[#c0392b]">⚠ Elementos faltantes → marca &ldquo;Regenerar&rdquo;</p>
+                  )}
+                </div>
+              )}
+            </div>
+          )}
+        </div>
+      </div>
+
+      {/* Prompt preview (collapsible) */}
+      <details className="border border-[rgba(201,147,58,0.1)]">
+        <summary className="font-typewriter text-[10px] uppercase text-[#4a3a2a] px-3 py-2 cursor-pointer hover:text-[#8b7355]">
+          Ver prompt completo enviado a Higgsfield
+        </summary>
+        <pre className="font-typewriter text-[10px] text-[#4a3a2a] leading-relaxed px-3 pb-3 whitespace-pre-wrap overflow-x-auto">
+          {entry.sourcePrompt}
+        </pre>
+      </details>
+    </div>
+  );
+}
+
 // ── Field config ───────────────────────────────────────────────────────────────
 
 const ROLE_COLORS: Record<string, string> = {
@@ -192,6 +338,7 @@ function CharacterForm({ char, onSaved }: { char: CharacterSheet; onSaved: (c: C
 
 export default function CharactersClient() {
   const [characters, setCharacters]     = useState<CharacterSheet[]>([]);
+  const [manifest, setManifest]         = useState<ManifestEntry[]>([]);
   const [loading, setLoading]           = useState(true);
   const [filter, setFilter]             = useState<string>("all");
   const [search, setSearch]             = useState("");
@@ -200,12 +347,19 @@ export default function CharactersClient() {
   useEffect(() => {
     fetch("/api/teacher/characters")
       .then((r) => r.json())
-      .then((d: { characters: CharacterSheet[] }) => {
+      .then((d: { characters: CharacterSheet[]; manifest: ManifestEntry[] }) => {
         setCharacters(d.characters ?? []);
+        setManifest(d.manifest ?? []);
         setLoading(false);
       })
       .catch(() => setLoading(false));
   }, []);
+
+  const handleStatusChange = useCallback((characterId: string, status: ManifestEntry["status"]) => {
+    setManifest((prev) => prev.map((e) => e.characterId === characterId ? { ...e, status } : e));
+  }, []);
+
+  const manifestMap = new Map(manifest.map((e) => [e.characterId, e]));
 
   const handleSaved = useCallback((updated: CharacterSheet) => {
     setCharacters((prev) => prev.map((c) => c.id === updated.id ? updated : c));
@@ -232,6 +386,9 @@ export default function CharactersClient() {
   });
 
   const totalIncomplete = characters.filter((c) => completenessScore(c) < 85).length;
+  const totalGenerated  = manifest.length;
+  const totalApproved   = manifest.filter((e) => e.status === "approved").length;
+  const totalNeedsRegen = manifest.filter((e) => e.status === "needs-regen").length;
 
   return (
     <div className="min-h-screen bg-[#0c0e14] flex flex-col">
@@ -242,9 +399,16 @@ export default function CharactersClient() {
           <h1 className="font-display font-bold text-lg text-[#e8b455]">Fichas de Personajes</h1>
         </div>
         <div className="flex items-center gap-4">
-          <span className="font-typewriter text-[10px] text-[#8b7355]">
-            {characters.length} personajes · {totalIncomplete} incompletos
-          </span>
+          <div className="flex items-center gap-4 font-typewriter text-[10px] text-[#8b7355]">
+            <span>{characters.length} personajes · {totalIncomplete} incompletos</span>
+            {totalGenerated > 0 && (
+              <span className="flex items-center gap-2">
+                <span className="text-[#4ade80]">✓ {totalApproved} aprobadas</span>
+                {totalNeedsRegen > 0 && <span className="text-[#c0392b]">⚠ {totalNeedsRegen} regenerar</span>}
+                <span className="text-[#4a3a2a]">{totalGenerated - totalApproved - totalNeedsRegen} pendientes</span>
+              </span>
+            )}
+          </div>
           <a href="/teacher/dashboard" className="font-typewriter text-[10px] text-[#8b7355] hover:text-[#c9933a] transition-colors">
             ← Dashboard
           </a>
@@ -289,9 +453,11 @@ export default function CharactersClient() {
               {filtered.map((c) => (
                 <CharacterRow
                   key={c.id} char={c}
+                  manifest={manifestMap.get(c.id)}
                   expanded={expandedId === c.id}
                   onToggle={() => setExpandedId(expandedId === c.id ? null : c.id)}
                   onSaved={handleSaved}
+                  onStatusChange={handleStatusChange}
                 />
               ))}
             </div>
@@ -310,9 +476,11 @@ export default function CharactersClient() {
                     {grouped[unit].map((c) => (
                       <CharacterRow
                         key={c.id} char={c}
+                        manifest={manifestMap.get(c.id)}
                         expanded={expandedId === c.id}
                         onToggle={() => setExpandedId(expandedId === c.id ? null : c.id)}
                         onSaved={handleSaved}
+                        onStatusChange={handleStatusChange}
                       />
                     ))}
                   </div>
@@ -328,9 +496,10 @@ export default function CharactersClient() {
 
 // ── Character row (collapsed + expandable) ────────────────────────────────────
 
-function CharacterRow({ char, expanded, onToggle, onSaved }: {
-  char: CharacterSheet; expanded: boolean;
+function CharacterRow({ char, manifest: entry, expanded, onToggle, onSaved, onStatusChange }: {
+  char: CharacterSheet; manifest?: ManifestEntry; expanded: boolean;
   onToggle: () => void; onSaved: (c: CharacterSheet) => void;
+  onStatusChange: (id: string, status: ManifestEntry["status"]) => void;
 }) {
   const score = completenessScore(char);
   const hasAccessoryGap = char.accessories.length === 0;
@@ -341,10 +510,14 @@ function CharacterRow({ char, expanded, onToggle, onSaved }: {
       {/* Collapsed row */}
       <button onClick={onToggle} className="w-full text-left px-5 py-3 flex items-center justify-between gap-3">
         <div className="flex items-center gap-3 min-w-0">
-          {char.currentImageUrl ? (
+          {(entry?.publicUrl || char.currentImageUrl) ? (
             // eslint-disable-next-line @next/next/no-img-element
-            <img src={char.currentImageUrl} alt="" width={36} height={36}
-              className="w-9 h-9 object-cover rounded-sm grayscale shrink-0" />
+            <img
+              src={entry?.publicUrl ?? char.currentImageUrl ?? ""}
+              alt="" width={36} height={36}
+              className={`w-9 h-9 object-cover rounded-sm shrink-0 ${entry ? "" : "grayscale opacity-50"}`}
+              onError={(e) => { if (entry?.higgsfieldUrl) (e.target as HTMLImageElement).src = entry.higgsfieldUrl; }}
+            />
           ) : (
             <div className="w-9 h-9 bg-[#2c2220] rounded-sm shrink-0 flex items-center justify-center text-lg">
               {char.role === "suspect" ? "🔍" : char.role === "witness" ? "👤" : char.role === "villain" ? "🎭" : "⭐"}
@@ -360,6 +533,15 @@ function CharacterRow({ char, expanded, onToggle, onSaved }: {
         </div>
 
         <div className="flex items-center gap-3 shrink-0">
+          {entry && (
+            <span className={`font-typewriter text-[9px] px-1.5 py-0.5 border ${
+              entry.status === "approved"    ? "border-[rgba(74,222,128,0.4)] text-[#4ade80]"
+              : entry.status === "needs-regen" ? "border-[rgba(192,57,43,0.4)] text-[#c0392b]"
+              : "border-[rgba(232,180,85,0.4)] text-[#e8b455]"
+            }`}>
+              {entry.status === "approved" ? "✓" : entry.status === "needs-regen" ? "↩" : "⊙"}
+            </span>
+          )}
           {hasAccessoryGap && (
             <span title="Sin accesorios — revisa la descripción española"
               className="font-typewriter text-[9px] px-1.5 py-0.5 border border-[rgba(192,57,43,0.4)] text-[#c0392b]">
@@ -377,10 +559,33 @@ function CharacterRow({ char, expanded, onToggle, onSaved }: {
         </div>
       </button>
 
-      {/* Expanded edit form */}
+      {/* Expanded content */}
       {expanded && (
-        <div className="border-t border-[rgba(201,147,58,0.1)] p-5">
-          <CharacterForm char={char} onSaved={onSaved} />
+        <div className="border-t border-[rgba(201,147,58,0.1)] p-5 space-y-6">
+          {/* Image review panel (when generated) */}
+          {entry && (
+            <div>
+              <p className="font-typewriter text-[9px] tracking-widest uppercase text-[#8b7355] mb-3">
+                🖼 Imagen generada — revisar y aprobar
+              </p>
+              <ImageReviewPanel char={char} entry={entry} onStatusChange={onStatusChange} />
+            </div>
+          )}
+          {!entry && (
+            <div className="border border-[rgba(201,147,58,0.08)] bg-[#111] p-3">
+              <p className="font-typewriter text-[10px] text-[#4a3a2a]">
+                Sin imagen generada aún.
+                Usa <code className="text-[#8b7355]">npm run images:generate</code> para generar.
+              </p>
+            </div>
+          )}
+          {/* Sheet edit form */}
+          <div>
+            <p className="font-typewriter text-[9px] tracking-widest uppercase text-[#8b7355] mb-3">
+              ✏ Ficha del personaje
+            </p>
+            <CharacterForm char={char} onSaved={onSaved} />
+          </div>
         </div>
       )}
     </div>
