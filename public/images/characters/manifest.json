@@ -152,5 +152,126 @@
     "status": "generated",
     "creditsUsed": 1.5,
     "sourcePrompt": "Sra. Torres — Unit 2 teacher witness. Professional woman, dark-rimmed glasses, dark blazer, authority figure."
+  },
+  {
+    "characterId": "unit-03-la-sombra",
+    "publicUrl": "/images/characters/unit-03-la-sombra.png",
+    "higgsfieldJobId": "f17320bc-acf6-4e07-9841-f262e3528e9e",
+    "higgsfieldUrl": "https://d8j0ntlcm91z4.cloudfront.net/user_3DQG5ve4hcMymLqHAOYWqsoLTCo/hf_20260520_015023_f17320bc-acf6-4e07-9841-f262e3528e9e.png",
+    "timestamp": "2026-05-20T01:50:23Z",
+    "status": "generated",
+    "creditsUsed": 1.5,
+    "sourcePrompt": "La Sombra — Unit 3 criminal. All-black clothing, black cap pulled low, pale skin. Elusive evasive. Spain.",
+    "localPath": "images/characters/unit-03-la-sombra.png"
+  },
+  {
+    "characterId": "unit-03-carlos-metroista",
+    "publicUrl": "/images/characters/unit-03-carlos-metroista.png",
+    "higgsfieldJobId": "db7e39ef-9e94-43b5-a25b-2bf14cade95b",
+    "higgsfieldUrl": "https://d8j0ntlcm91z4.cloudfront.net/user_3DQG5ve4hcMymLqHAOYWqsoLTCo/hf_20260520_015036_db7e39ef-9e94-43b5-a25b-2bf14cade95b.png",
+    "timestamp": "2026-05-20T01:50:36Z",
+    "status": "generated",
+    "creditsUsed": 1.5,
+    "sourcePrompt": "Carlos el Metroista — Unit 3 witness. Madrid metro worker uniform + reflective vest. Friendly tired face.",
+    "localPath": "images/characters/unit-03-carlos-metroista.png"
+  },
+  {
+    "characterId": "unit-04-heredero",
+    "publicUrl": "/images/characters/unit-04-heredero.png",
+    "higgsfieldJobId": "21ddf1cb-9dbd-4a2d-bc09-8b1963b2c262",
+    "higgsfieldUrl": "https://d8j0ntlcm91z4.cloudfront.net/user_3DQG5ve4hcMymLqHAOYWqsoLTCo/hf_20260520_015149_21ddf1cb-9dbd-4a2d-bc09-8b1963b2c262.png",
+    "timestamp": "2026-05-20T01:51:49Z",
+    "status": "generated",
+    "creditsUsed": 1.5,
+    "sourcePrompt": "El Heredero — Unit 4 criminal. Nervous guilty 19yo Costa Rican teen.",
+    "localPath": "images/characters/unit-04-heredero.png"
+  },
+  {
+    "characterId": "unit-04-tia-generosa",
+    "publicUrl": "/images/characters/unit-04-tia-generosa.png",
+    "higgsfieldJobId": "00fc2c98-731a-4a17-81bf-8ffaa939c92f",
+    "higgsfieldUrl": "https://d8j0ntlcm91z4.cloudfront.net/user_3DQG5ve4hcMymLqHAOYWqsoLTCo/hf_20260520_015259_00fc2c98-731a-4a17-81bf-8ffaa939c92f.png",
+    "timestamp": "2026-05-20T01:52:59Z",
+    "status": "generated",
+    "creditsUsed": 1.5,
+    "sourcePrompt": "Tia Elena — Unit 4 distractor. 45yo Costa Rican woman, market bags visible, worried maternal.",
+    "localPath": "images/characters/unit-04-tia-generosa.png"
+  },
+  {
+    "characterId": "unit-05-fantasma-digital",
+    "publicUrl": "/images/characters/unit-05-fantasma-digital.png",
+    "higgsfieldJobId": "f60ddbd9-5eb5-4020-a7e5-8a0371df49a7",
+    "higgsfieldUrl": "https://d8j0ntlcm91z4.cloudfront.net/user_3DQG5ve4hcMymLqHAOYWqsoLTCo/hf_20260520_015203_f60ddbd9-5eb5-4020-a7e5-8a0371df49a7.png",
+    "timestamp": "2026-05-20T01:52:03Z",
+    "status": "generated",
+    "creditsUsed": 1.5,
+    "sourcePrompt": "El Fantasma Digital — Unit 5 criminal. Dark hoodie, large black backpack, nighttime hacker aesthetic.",
+    "localPath": "images/characters/unit-05-fantasma-digital.png"
+  },
+  {
+    "characterId": "unit-06-cocinero-secreto",
+    "publicUrl": "/images/characters/unit-06-cocinero-secreto.png",
+    "higgsfieldJobId": "afc49969-0160-4c83-8c4d-57fed55a18e3",
+    "higgsfieldUrl": "https://d8j0ntlcm91z4.cloudfront.net/user_3DQG5ve4hcMymLqHAOYWqsoLTCo/hf_20260520_015358_afc49969-0160-4c83-8c4d-57fed55a18e3.png",
+    "timestamp": "2026-05-20T01:53:58Z",
+    "status": "generated",
+    "creditsUsed": 1.5,
+    "sourcePrompt": "El Cocinero Secreto — Unit 6 criminal. White chef jacket + apron, nervous guilty young 22yo Colombian.",
+    "localPath": "images/characters/unit-06-cocinero-secreto.png"
+  },
+  {
+    "characterId": "unit-07-tecnico-oscuro",
+    "publicUrl": "/images/characters/unit-07-tecnico-oscuro.png",
+    "higgsfieldJobId": "c20249c4-2214-4c13-88f4-02bd7a3cff04",
+    "higgsfieldUrl": "https://d8j0ntlcm91z4.cloudfront.net/user_3DQG5ve4hcMymLqHAOYWqsoLTCo/hf_20260520_015232_c20249c4-2214-4c13-88f4-02bd7a3cff04.png",
+    "timestamp": "2026-05-20T01:52:32Z",
+    "status": "generated",
+    "creditsUsed": 1.5,
+    "sourcePrompt": "El Técnico Oscuro — Unit 7 criminal. ALL-BLACK festival crew uniform (not blue), large black bag.",
+    "localPath": "images/characters/unit-07-tecnico-oscuro.png"
+  },
+  {
+    "characterId": "unit-08-coleccionista-local",
+    "publicUrl": "/images/characters/unit-08-coleccionista-local.png",
+    "higgsfieldJobId": "50d2ba94-5ac5-4335-95d2-e9b630830672",
+    "higgsfieldUrl": "https://d8j0ntlcm91z4.cloudfront.net/user_3DQG5ve4hcMymLqHAOYWqsoLTCo/hf_20260520_015247_50d2ba94-5ac5-4335-95d2-e9b630830672.png",
+    "timestamp": "2026-05-20T01:52:47Z",
+    "status": "generated",
+    "creditsUsed": 1.5,
+    "sourcePrompt": "El Coleccionista local — Unit 8 criminal. 55yo Peruvian man, formal dark business suit incongruously in Andean market.",
+    "localPath": "images/characters/unit-08-coleccionista-local.png"
+  },
+  {
+    "characterId": "unit-08-don-aurelio",
+    "publicUrl": "/images/characters/unit-08-don-aurelio.png",
+    "higgsfieldJobId": "38f344a7-fdd5-429e-afb1-337b4d8b3dc4",
+    "higgsfieldUrl": "https://d8j0ntlcm91z4.cloudfront.net/user_3DQG5ve4hcMymLqHAOYWqsoLTCo/hf_20260520_015310_38f344a7-fdd5-429e-afb1-337b4d8b3dc4.png",
+    "timestamp": "2026-05-20T01:53:10Z",
+    "status": "generated",
+    "creditsUsed": 1.5,
+    "sourcePrompt": "Don Aurelio — Unit 8 witness. 70yo elder Andean market vendor, traditional poncho.",
+    "localPath": "images/characters/unit-08-don-aurelio.png"
+  },
+  {
+    "characterId": "unit-08-vendedora",
+    "publicUrl": "/images/characters/unit-08-vendedora.png",
+    "higgsfieldJobId": "91083594-8b32-4ae5-a135-36129a657601",
+    "higgsfieldUrl": "https://d8j0ntlcm91z4.cloudfront.net/user_3DQG5ve4hcMymLqHAOYWqsoLTCo/hf_20260520_015322_91083594-8b32-4ae5-a135-36129a657601.png",
+    "timestamp": "2026-05-20T01:53:22Z",
+    "status": "generated",
+    "creditsUsed": 1.5,
+    "sourcePrompt": "Rosa Mamani — Unit 8 distractor. 48yo Andean woman, traditional braids + pollera dress + straw hat.",
+    "localPath": "images/characters/unit-08-vendedora.png"
+  },
+  {
+    "characterId": "unit-08-vendor-maria",
+    "publicUrl": "/images/characters/unit-08-vendor-maria.png",
+    "higgsfieldJobId": "c1c52b7e-402c-4633-8aef-1feb39b9811f",
+    "higgsfieldUrl": "https://d8j0ntlcm91z4.cloudfront.net/user_3DQG5ve4hcMymLqHAOYWqsoLTCo/hf_20260520_015331_c1c52b7e-402c-4633-8aef-1feb39b9811f.png",
+    "timestamp": "2026-05-20T01:53:31Z",
+    "status": "generated",
+    "creditsUsed": 1.5,
+    "sourcePrompt": "María (testigo) — Unit 8 audio witness. 42yo Andean market vendor, calm trustworthy.",
+    "localPath": "images/characters/unit-08-vendor-maria.png"
   }
 ]
