@@ -16,8 +16,7 @@ interface Props {
   fallbackImage?: string;
   chiefName?: string;
   briefingLines?: string[];
-  chiefImageSeed?: number;
-  chiefImageUrl?: string;   // generated portrait (overrides pravatar seed)
+  chiefImageUrl?: string;   // generated portrait
   postQuestion?: PostQuestion;
   onComplete: (result: GameResult) => void;
 }
@@ -25,7 +24,7 @@ interface Props {
 type Phase = "idle" | "playing" | "ended" | "question" | "error";
 
 export default function Cutscene({
-  videoUrl, subtitleUrl, fallbackImage, chiefName, chiefImageSeed = 60, chiefImageUrl,
+  videoUrl, subtitleUrl, fallbackImage, chiefName, chiefImageUrl,
   briefingLines = [], postQuestion, onComplete,
 }: Props) {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -80,7 +79,7 @@ export default function Cutscene({
 
   // Fallback: if video errors, show briefing-lines UI
   if (phase === "error" || (phase === "idle" && !videoUrl)) {
-    return <FallbackBriefing chiefName={chiefName} chiefImageSeed={chiefImageSeed} chiefImageUrl={chiefImageUrl} briefingLines={briefingLines} fallbackImage={fallbackImage} onComplete={() => finish(1, 0)} />;
+    return <FallbackBriefing chiefName={chiefName} chiefImageUrl={chiefImageUrl} briefingLines={briefingLines} fallbackImage={fallbackImage} onComplete={() => finish(1, 0)} />;
   }
 
   return (
@@ -166,8 +165,8 @@ export default function Cutscene({
   );
 }
 
-function FallbackBriefing({ chiefName, chiefImageSeed, chiefImageUrl, briefingLines, fallbackImage, onComplete }:
-  { chiefName?: string; chiefImageSeed?: number; chiefImageUrl?: string; briefingLines: string[]; fallbackImage?: string; onComplete: () => void }) {
+function FallbackBriefing({ chiefName, chiefImageUrl, briefingLines, fallbackImage, onComplete }:
+  { chiefName?: string; chiefImageUrl?: string; briefingLines: string[]; fallbackImage?: string; onComplete: () => void }) {
   const [lineIndex, setLineIndex] = useState(0);
   const [started, setStarted] = useState(false);
 
