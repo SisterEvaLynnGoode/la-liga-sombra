@@ -8,7 +8,7 @@
  * pulled from the same vocab set). No free-text input — much more accessible.
  */
 
-import { useState, useEffect, useCallback } from "react";
+import { useState, useEffect, useCallback, useRef } from "react";
 import GameShell from "./GameShell";
 import { useAttemptTracker } from "@/lib/hooks/useAttemptTracker";
 import { shuffle, formatTime } from "@/lib/games/utils";
@@ -65,18 +65,21 @@ export default function MultipleChoiceProduction({
   const [timeLeft, setTimeLeft]       = useState(timeLimit);
   const [elapsed, setElapsed]         = useState(0);
   const [status, setStatus]           = useState<"playing" | "complete">("playing");
-  const completedRef                  = { current: false };
+  // Snapshot of final result stored so the "Continuar" button can pass it to onComplete
+  const [finalResult, setFinalResult] = useState<{ score: number; attempts: number; elapsed: number } | null>(null);
+  const completedRef                  = useRef(false);
 
   const finish = useCallback(
     (finalScore: number, finalAttempts: number, finalElapsed: number) => {
       if (completedRef.current) return;
       completedRef.current = true;
-      setStatus("complete");
+      // Record mastery but do NOT call onComplete yet — wait for the user to click Continuar
       recordAttempt(finalScore, cards.length, finalElapsed);
-      onComplete({ score: finalScore, maxScore: cards.length, timeSpent: finalElapsed, attempts: finalAttempts });
+      setFinalResult({ score: finalScore, attempts: finalAttempts, elapsed: finalElapsed });
+      setStatus("complete");
     },
     // eslint-disable-next-line react-hooks/exhaustive-deps
-    [cards.length, recordAttempt, onComplete]
+    [cards.length, recordAttempt]
   );
 
   // Countdown
@@ -236,20 +239,27 @@ export default function MultipleChoiceProduction({
         )}
 
         {/* Complete */}
-        {status === "complete" && (
+        {status === "complete" && finalResult && (
           <div className="border border-[rgba(201,147,58,0.3)] bg-[rgba(201,147,58,0.06)] p-6 text-center space-y-4">
             <div>
-              <p className="font-display text-2xl font-bold text-[#e8b455] mb-2">¡Tiempo!</p>
+              <p className="font-display text-2xl font-bold text-[#e8b455] mb-2">
+                {finalResult.score >= cards.length ? "¡Completado!" : "¡Tiempo!"}
+              </p>
               <p className="font-typewriter text-sm text-[#c4a882]">
-                {score} / {cards.length} correctas
+                {finalResult.score} / {cards.length} correctas
               </p>
               <p className="font-typewriter text-xs text-[#8b7355] mt-1">
-                {attempts} respuestas · {formatTime(elapsed)} transcurridos
+                {finalResult.attempts} respuestas · {formatTime(finalResult.elapsed)} transcurridos
               </p>
             </div>
             <button
               onClick={() =>
-                onComplete({ score, maxScore: cards.length, timeSpent: elapsed, attempts })
+                onComplete({
+                  score: finalResult.score,
+                  maxScore: cards.length,
+                  timeSpent: finalResult.elapsed,
+                  attempts: finalResult.attempts,
+                })
               }
               className="w-full clip-skew py-3 font-typewriter text-sm tracking-[0.2em] uppercase bg-[#8b1a1a] text-[#f5e6c8] border border-[#c0392b] hover:bg-[#c0392b] transition-colors"
             >
