@@ -126,7 +126,9 @@ export default function ListeningComprehension({
 
     const onCanPlay = () => {
       clearTimeout(timer);
-      setPhase("ready");
+      // Only transition to "ready" if we're still in "loading" —
+      // don't override "answering" or later phases if the user already clicked play.
+      setPhase((current) => (current === "loading" ? "ready" : current));
     };
     const onError = () => {
       clearTimeout(timer);
@@ -182,8 +184,10 @@ export default function ListeningComprehension({
       audio.play().catch(() => setPhase("loadError"));
       setPlayCount((c) => c + 1);
       setIsPlaying(true);
-      // Unlock questions after first play
-      if (phase === "ready") setPhase("answering");
+      // Unlock questions after first play.
+      // Also handles the case where user clicked play before canplaythrough fired
+      // (phase is still "loading") — both "ready" and "loading" should advance to "answering".
+      if (phase === "ready" || phase === "loading") setPhase("answering");
     }
   }
 
@@ -337,8 +341,6 @@ export default function ListeningComprehension({
                   border-2 transition-all duration-150 focus:outline-none focus:ring-2 focus:ring-[#c9933a]
                   ${exhausted && !isPlaying
                     ? "border-[rgba(201,147,58,0.1)] text-[#4a3a2a] cursor-not-allowed opacity-50"
-                    : phase === "loading"
-                    ? "border-[rgba(201,147,58,0.2)] text-[#8b7355] cursor-wait"
                     : isPlaying
                     ? "border-[#c9933a] bg-[rgba(201,147,58,0.15)] text-[#e8b455] animate-pulse"
                     : "border-[#c9933a] bg-[rgba(201,147,58,0.1)] text-[#c9933a] hover:bg-[rgba(201,147,58,0.2)] shadow-[0_0_12px_rgba(201,147,58,0.2)]"
@@ -350,10 +352,10 @@ export default function ListeningComprehension({
 
               <div className="flex-1">
                 <p className="font-typewriter text-sm font-bold text-[#f5e6c8]">
-                  {phase === "loading"
-                    ? "Cargando audio…"
-                    : isPlaying
+                  {isPlaying
                     ? "Escuchando…"
+                    : phase === "loading"
+                    ? "▶ Presiona para escuchar el audio"
                     : playCount === 0
                     ? "▶ Presiona para escuchar el audio"
                     : exhausted
