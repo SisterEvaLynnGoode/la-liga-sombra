@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useRef } from "react";
 import { useClassData, relativeTime } from "@/lib/hooks/useClassData";
 import { TabHeader, Loading, Empty } from "./OverviewTab";
 
@@ -28,6 +28,7 @@ interface InboxData {
 const FLAG_UI: Record<string, { color: string; bg: string; icon: string }> = {
   help_requested:                 { color: "text-[#c0392b]",  bg: "bg-[rgba(192,57,43,0.12)]  border-[rgba(192,57,43,0.4)]",  icon: "🙋" },
   academia_skipped_after_failure: { color: "text-[#c9933a]",  bg: "bg-[rgba(201,147,58,0.08)] border-[rgba(201,147,58,0.35)]", icon: "⏭" },
+  academia_struggling:            { color: "text-[#c0392b]",  bg: "bg-[rgba(192,57,43,0.1)]   border-[rgba(192,57,43,0.4)]",  icon: "🔄" },
   needs_listening_support:        { color: "text-[#e8b455]",  bg: "bg-[rgba(232,180,85,0.06)] border-[rgba(232,180,85,0.25)]", icon: "🔊" },
   listening_skipped:              { color: "text-[#c9933a]",  bg: "bg-[rgba(201,147,58,0.06)] border-[rgba(201,147,58,0.25)]", icon: "↷" },
   transcript_revealed:            { color: "text-[#8b7355]",  bg: "bg-[rgba(139,115,85,0.06)] border-[rgba(139,115,85,0.2)]",  icon: "📄" },
@@ -35,6 +36,8 @@ const FLAG_UI: Record<string, { color: string; bg: string; icon: string }> = {
   stage_skipped:                  { color: "text-[#8b7355]",  bg: "bg-[rgba(139,115,85,0.04)] border-[rgba(139,115,85,0.15)]", icon: "⏭" },
   repeated_skipping:              { color: "text-[#c0392b]",  bg: "bg-[rgba(192,57,43,0.1)]  border-[rgba(192,57,43,0.35)]",  icon: "⚠⏭" },
 };
+
+const UNLOCK_ELIGIBLE = new Set(["academia_struggling", "academia_skipped_after_failure"]);
 
 const DEFAULT_UI = { color: "text-[#8b7355]", bg: "bg-[rgba(139,115,85,0.06)] border-[rgba(139,115,85,0.2)]", icon: "🚩" };
 
@@ -46,6 +49,8 @@ export default function BandejaTab({ classId }: { classId: string }) {
   const [editingNoteId, setEditingNoteId] = useState<string | null>(null);
   const [noteText, setNoteText]         = useState("");
   const [actioning, setActioning]       = useState<string | null>(null);
+  const [unlocking, setUnlocking]       = useState<string | null>(null);   // flagId being unlocked
+  const unlockedSet                     = useRef<Set<string>>(new Set());  // track already-unlocked flagIds
 
   const allFlags = data?.flags ?? [];
 
@@ -76,6 +81,25 @@ export default function BandejaTab({ classId }: { classId: string }) {
       setEditingNoteId(null);
     },
     [refetch]
+  );
+
+  const unlockAcademia = useCallback(
+    async (flagId: string, studentId: string, unitNumber: number | null) => {
+      if (!unitNumber || unlockedSet.current.has(flagId)) return;
+      setUnlocking(flagId);
+      const res = await fetch("/api/teacher/unlock-academia", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ studentId, unitNumber }),
+      }).catch(() => null);
+      if (res?.ok) {
+        unlockedSet.current.add(flagId);
+        // Also resolve the flag so it leaves the inbox
+        await action(flagId, "resolve");
+      }
+      setUnlocking(null);
+    },
+    [action]
   );
 
   if (!classId) return <Empty />;
@@ -221,6 +245,17 @@ export default function BandejaTab({ classId }: { classId: string }) {
               {/* Action buttons */}
               {!flag.resolved && (
                 <div className="flex flex-wrap gap-2 pt-1 border-t border-[rgba(201,147,58,0.08)]">
+                  {/* Unlock academia — only for struggling/skipped flags */}
+                  {UNLOCK_ELIGIBLE.has(flag.flagType) && flag.unitNumber != null && (
+                    <button
+                      onClick={() => unlockAcademia(flag.id, flag.studentId, flag.unitNumber)}
+                      disabled={unlocking === flag.id || unlockedSet.current.has(flag.id)}
+                      className="font-typewriter text-[10px] px-3 py-1.5 border border-[rgba(201,147,58,0.5)] text-[#e8b455] bg-[rgba(201,147,58,0.08)] hover:bg-[rgba(201,147,58,0.15)] transition-colors disabled:opacity-40"
+                    >
+                      {unlocking === flag.id ? "…" : unlockedSet.current.has(flag.id) ? "🔓 Desbloqueado" : "🔓 Desbloquear avance"}
+                    </button>
+                  )}
+
                   {!flag.acknowledged && (
                     <button
                       onClick={() => action(flag.id, "acknowledge")}

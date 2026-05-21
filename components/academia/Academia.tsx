@@ -33,6 +33,7 @@ interface Props {
   sentences?: SentenceItem[];
   unitId?: string;
   unitNumber: number;
+  isUnlocked?: boolean;   // teacher granted bypass — student may skip straight to the case
   onComplete: (opts: { passedFirstTry: boolean; retries: number; advancedWithoutPassing: boolean }) => void;
 }
 
@@ -102,6 +103,7 @@ export default function Academia({
   sentences,
   unitId,
   unitNumber,
+  isUnlocked = false,
   onComplete,
 }: Props) {
   const hasSentences = (sentences?.length ?? 0) > 0;
@@ -126,6 +128,20 @@ export default function Academia({
     (result: GameResult) => {
       if (stageCompletedRef.current) return;
       stageCompletedRef.current = true;
+
+      // Skipping a stage exits all of Academia immediately — no more cycling.
+      // Fire a flag so the teacher can see this student is struggling.
+      if (result.isSkipped) {
+        setPassedFirstTry(false);
+        fireFlag("academia_struggling", unitId, {
+          trigger: "skipped",
+          cycle,
+          stageType: stages[currentIndex]?.type ?? "unknown",
+        });
+        setStages((prev) => prev.map((s, i) => (i >= currentIndex ? { ...s, passed: false } : s)));
+        setTimeout(() => { stageCompletedRef.current = false; setPhase("summary"); }, 300);
+        return;
+      }
 
       const stagePassed = result.maxScore > 0
         ? result.score / result.maxScore >= PASSING_THRESHOLD
@@ -251,6 +267,31 @@ export default function Academia({
             </p>
           </div>
 
+          {/* Teacher unlock banner */}
+          {isUnlocked && (
+            <div className="border border-[rgba(201,147,58,0.4)] bg-[rgba(201,147,58,0.07)] px-4 py-3 mb-4 flex items-start gap-3">
+              <span className="text-xl shrink-0">🔓</span>
+              <div>
+                <p className="font-typewriter text-xs text-[#e8b455] font-bold">Tu profesor te ha autorizado avanzar</p>
+                <p className="font-typewriter text-[10px] text-[#8b7355] leading-relaxed mt-0.5">
+                  Puedes ir directo al caso o completar el entrenamiento primero.
+                </p>
+              </div>
+            </div>
+          )}
+
+          {isUnlocked && (
+            <button
+              onClick={() => {
+                fireFlag("academia_bypassed_by_teacher", unitId, { unitNumber });
+                onComplete({ passedFirstTry: false, retries: 0, advancedWithoutPassing: true });
+              }}
+              className="w-full py-3 mb-3 font-typewriter text-sm tracking-[0.15em] uppercase border border-[rgba(201,147,58,0.4)] text-[#c9933a] bg-[rgba(201,147,58,0.06)] hover:bg-[rgba(201,147,58,0.12)] transition-colors"
+            >
+              🔓 Ir al caso directamente →
+            </button>
+          )}
+
           <button
             onClick={() => setPhase("training")}
             className="w-full clip-skew py-3 font-typewriter text-sm tracking-[0.2em] uppercase bg-[#8b1a1a] text-[#f5e6c8] border border-[#c0392b] hover:bg-[#c0392b] transition-colors"
@@ -366,6 +407,14 @@ export default function Academia({
           {/* Help request flow */}
           {helpPhase === "idle" && (
             <div className="space-y-3">
+              {/* Teacher unlock banner in fail state */}
+              {isUnlocked && (
+                <div className="border border-[rgba(201,147,58,0.4)] bg-[rgba(201,147,58,0.07)] px-3 py-2 flex items-center gap-2">
+                  <span>🔓</span>
+                  <p className="font-typewriter text-[10px] text-[#e8b455]">Tu profesor te ha autorizado avanzar directamente.</p>
+                </div>
+              )}
+
               {/* Primary: retry */}
               <button
                 onClick={handleRetryAll}

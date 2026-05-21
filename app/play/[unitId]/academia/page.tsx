@@ -62,6 +62,16 @@ export default async function AcademiaPage({ params }: PageProps) {
   const vocabTerms = content.vocab.map((v) => v.spanish);
   const readiness = await getVocabReadinessScore(session.studentId, vocabTerms);
 
+  // Check if teacher has unlocked this student to bypass Academia for this unit
+  const { data: unlockRows } = await supabase
+    .from("student_flags")
+    .select("id")
+    .eq("student_id", session.studentId)
+    .eq("unit_id", unitId)
+    .eq("flag_type", "academia_unlocked")
+    .limit(1);
+  const isUnlocked = (unlockRows as Array<{ id: string }> | null)?.length === 1;
+
   return (
     <AcademiaWrapper
       unitNumber={unitNumber}
@@ -69,6 +79,7 @@ export default async function AcademiaPage({ params }: PageProps) {
       sentences={content.academiaConfig?.sentences}
       unitId={unitId}
       routingTier={readiness.tier}
+      isUnlocked={isUnlocked}
     />
   );
 }

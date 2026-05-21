@@ -12,6 +12,7 @@ interface Props {
   sentences?: SentenceItem[];
   unitId: string;
   routingTier: "ready" | "recommended" | "required";
+  isUnlocked?: boolean;
 }
 
 export default function AcademiaWrapper({
@@ -20,6 +21,7 @@ export default function AcademiaWrapper({
   sentences,
   unitId,
   routingTier,
+  isUnlocked = false,
 }: Props) {
   const router = useRouter();
 
@@ -50,6 +52,7 @@ export default function AcademiaWrapper({
       sentences={sentences}
       unitId={unitId}
       unitNumber={unitNumber}
+      isUnlocked={isUnlocked}
       onComplete={handleComplete}
     />
   );
