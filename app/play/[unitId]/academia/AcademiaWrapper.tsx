@@ -13,6 +13,8 @@ interface Props {
   unitId: string;
   routingTier: "ready" | "recommended" | "required";
   isUnlocked?: boolean;
+  retryChallenge?: boolean;
+  challengeMessage?: string | null;
 }
 
 export default function AcademiaWrapper({
@@ -22,6 +24,8 @@ export default function AcademiaWrapper({
   unitId,
   routingTier,
   isUnlocked = false,
+  retryChallenge = false,
+  challengeMessage = null,
 }: Props) {
   const router = useRouter();
 
@@ -53,6 +57,8 @@ export default function AcademiaWrapper({
       unitId={unitId}
       unitNumber={unitNumber}
       isUnlocked={isUnlocked}
+      retryChallenge={retryChallenge}
+      challengeMessage={challengeMessage}
       onComplete={handleComplete}
     />
   );

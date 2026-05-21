@@ -62,15 +62,21 @@ export default async function AcademiaPage({ params }: PageProps) {
   const vocabTerms = content.vocab.map((v) => v.spanish);
   const readiness = await getVocabReadinessScore(session.studentId, vocabTerms);
 
-  // Check if teacher has unlocked this student to bypass Academia for this unit
-  const { data: unlockRows } = await supabase
+  // Check for teacher flags — unlock (bypass) takes precedence over retry challenge
+  const { data: teacherFlags } = await supabase
     .from("student_flags")
-    .select("id")
+    .select("flag_type, context")
     .eq("student_id", session.studentId)
     .eq("unit_id", unitId)
-    .eq("flag_type", "academia_unlocked")
-    .limit(1);
-  const isUnlocked = (unlockRows as Array<{ id: string }> | null)?.length === 1;
+    .in("flag_type", ["academia_unlocked", "academia_retry_challenge"])
+    .is("resolved_at", null);
+
+  const flagTypes = (teacherFlags as Array<{ flag_type: string; context: Record<string, unknown> }> | null) ?? [];
+  const isUnlocked      = flagTypes.some((f) => f.flag_type === "academia_unlocked");
+  const retryChallenge  = !isUnlocked && flagTypes.find((f) => f.flag_type === "academia_retry_challenge");
+  const challengeMessage = retryChallenge
+    ? (retryChallenge.context?.teacherMessage as string | undefined) ?? null
+    : null;
 
   return (
     <AcademiaWrapper
@@ -80,6 +86,8 @@ export default async function AcademiaPage({ params }: PageProps) {
       unitId={unitId}
       routingTier={readiness.tier}
       isUnlocked={isUnlocked}
+      retryChallenge={!!retryChallenge}
+      challengeMessage={challengeMessage}
     />
   );
 }

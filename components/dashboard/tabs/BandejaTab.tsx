@@ -51,6 +51,10 @@ export default function BandejaTab({ classId }: { classId: string }) {
   const [actioning, setActioning]       = useState<string | null>(null);
   const [unlocking, setUnlocking]       = useState<string | null>(null);   // flagId being unlocked
   const unlockedSet                     = useRef<Set<string>>(new Set());  // track already-unlocked flagIds
+  const [challenging, setChallenging]   = useState<string | null>(null);   // flagId being challenged
+  const challengedSet                   = useRef<Set<string>>(new Set());  // track already-challenged
+  const [challengeMsg, setChallengeMsg] = useState<Record<string, string>>({});  // per-flag optional message
+  const [showMsgFor, setShowMsgFor]     = useState<string | null>(null);  // which flag is showing msg input
 
   const allFlags = data?.flags ?? [];
 
@@ -94,10 +98,28 @@ export default function BandejaTab({ classId }: { classId: string }) {
       }).catch(() => null);
       if (res?.ok) {
         unlockedSet.current.add(flagId);
-        // Also resolve the flag so it leaves the inbox
         await action(flagId, "resolve");
       }
       setUnlocking(null);
+    },
+    [action]
+  );
+
+  const sendRetryChallenge = useCallback(
+    async (flagId: string, studentId: string, unitNumber: number | null, message?: string) => {
+      if (!unitNumber || challengedSet.current.has(flagId)) return;
+      setChallenging(flagId);
+      const res = await fetch("/api/teacher/retry-challenge", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ studentId, unitNumber, message }),
+      }).catch(() => null);
+      if (res?.ok) {
+        challengedSet.current.add(flagId);
+        await action(flagId, "acknowledge");
+      }
+      setChallenging(null);
+      setShowMsgFor(null);
     },
     [action]
   );
@@ -245,16 +267,75 @@ export default function BandejaTab({ classId }: { classId: string }) {
               {/* Action buttons */}
               {!flag.resolved && (
                 <div className="flex flex-wrap gap-2 pt-1 border-t border-[rgba(201,147,58,0.08)]">
-                  {/* Unlock academia — only for struggling/skipped flags */}
-                  {UNLOCK_ELIGIBLE.has(flag.flagType) && flag.unitNumber != null && (
-                    <button
-                      onClick={() => unlockAcademia(flag.id, flag.studentId, flag.unitNumber)}
-                      disabled={unlocking === flag.id || unlockedSet.current.has(flag.id)}
-                      className="font-typewriter text-[10px] px-3 py-1.5 border border-[rgba(201,147,58,0.5)] text-[#e8b455] bg-[rgba(201,147,58,0.08)] hover:bg-[rgba(201,147,58,0.15)] transition-colors disabled:opacity-40"
-                    >
-                      {unlocking === flag.id ? "…" : unlockedSet.current.has(flag.id) ? "🔓 Desbloqueado" : "🔓 Desbloquear avance"}
-                    </button>
-                  )}
+
+                  {/* Teacher actions for struggling Academia students */}
+                  {UNLOCK_ELIGIBLE.has(flag.flagType) && flag.unitNumber != null && (() => {
+                    const alreadyChallenged = challengedSet.current.has(flag.id);
+                    const alreadyUnlocked   = unlockedSet.current.has(flag.id);
+                    const isShowingMsg      = showMsgFor === flag.id;
+                    return (
+                      <>
+                        {/* Option 1: Retry challenge */}
+                        {!alreadyChallenged && !alreadyUnlocked && !isShowingMsg && (
+                          <button
+                            onClick={() => setShowMsgFor(flag.id)}
+                            disabled={challenging === flag.id}
+                            className="font-typewriter text-[10px] px-3 py-1.5 border border-[rgba(232,180,85,0.4)] text-[#e8b455] hover:bg-[rgba(232,180,85,0.08)] transition-colors disabled:opacity-40"
+                          >
+                            🎯 Retar a intentar de nuevo
+                          </button>
+                        )}
+
+                        {/* Message composer for retry challenge */}
+                        {isShowingMsg && !alreadyChallenged && (
+                          <div className="w-full space-y-2">
+                            <input
+                              type="text"
+                              value={challengeMsg[flag.id] ?? ""}
+                              onChange={(e) => setChallengeMsg((prev) => ({ ...prev, [flag.id]: e.target.value }))}
+                              placeholder="Mensaje opcional para el estudiante… (en español o inglés)"
+                              maxLength={120}
+                              className="w-full bg-[#0d0b0a] border border-[rgba(201,147,58,0.2)] text-[#c4a882] font-typewriter text-xs px-3 py-2 focus:outline-none focus:border-[rgba(201,147,58,0.4)] placeholder:text-[#4a3a2a]"
+                            />
+                            <div className="flex gap-2">
+                              <button
+                                onClick={() => sendRetryChallenge(flag.id, flag.studentId, flag.unitNumber, challengeMsg[flag.id])}
+                                disabled={challenging === flag.id}
+                                className="font-typewriter text-[10px] px-3 py-1.5 border border-[rgba(232,180,85,0.5)] text-[#e8b455] bg-[rgba(232,180,85,0.08)] hover:bg-[rgba(232,180,85,0.15)] transition-colors disabled:opacity-40"
+                              >
+                                {challenging === flag.id ? "…" : "🎯 Enviar reto"}
+                              </button>
+                              <button
+                                onClick={() => setShowMsgFor(null)}
+                                className="font-typewriter text-[10px] px-3 py-1.5 text-[#8b7355] hover:text-[#c4a882] transition-colors"
+                              >
+                                Cancelar
+                              </button>
+                            </div>
+                          </div>
+                        )}
+
+                        {alreadyChallenged && (
+                          <span className="font-typewriter text-[10px] text-[#e8b455] px-2 py-1.5">🎯 Reto enviado</span>
+                        )}
+
+                        {/* Option 2: Unlock to advance */}
+                        {!alreadyUnlocked && !alreadyChallenged && !isShowingMsg && (
+                          <button
+                            onClick={() => unlockAcademia(flag.id, flag.studentId, flag.unitNumber)}
+                            disabled={unlocking === flag.id}
+                            className="font-typewriter text-[10px] px-3 py-1.5 border border-[rgba(201,147,58,0.5)] text-[#c9933a] hover:bg-[rgba(201,147,58,0.08)] transition-colors disabled:opacity-40"
+                          >
+                            {unlocking === flag.id ? "…" : "🔓 Desbloquear avance"}
+                          </button>
+                        )}
+
+                        {alreadyUnlocked && (
+                          <span className="font-typewriter text-[10px] text-[#c9933a] px-2 py-1.5">🔓 Desbloqueado</span>
+                        )}
+                      </>
+                    );
+                  })()}
 
                   {!flag.acknowledged && (
                     <button

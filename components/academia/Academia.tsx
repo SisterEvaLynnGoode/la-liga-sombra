@@ -33,7 +33,9 @@ interface Props {
   sentences?: SentenceItem[];
   unitId?: string;
   unitNumber: number;
-  isUnlocked?: boolean;   // teacher granted bypass — student may skip straight to the case
+  isUnlocked?: boolean;       // teacher granted bypass — student may skip straight to the case
+  retryChallenge?: boolean;   // teacher challenged student to push through — show encouragement
+  challengeMessage?: string | null;  // optional personal message from the teacher
   onComplete: (opts: { passedFirstTry: boolean; retries: number; advancedWithoutPassing: boolean }) => void;
 }
 
@@ -104,6 +106,8 @@ export default function Academia({
   unitId,
   unitNumber,
   isUnlocked = false,
+  retryChallenge = false,
+  challengeMessage = null,
   onComplete,
 }: Props) {
   const hasSentences = (sentences?.length ?? 0) > 0;
@@ -266,6 +270,25 @@ export default function Academia({
               <span className="text-[#e8b455]">Recluta Distinguido</span> y 50 puntos extra!
             </p>
           </div>
+
+          {/* Teacher retry challenge banner — shown when teacher wants student to push through */}
+          {retryChallenge && !isUnlocked && (
+            <div className="border border-[rgba(201,147,58,0.4)] bg-[rgba(201,147,58,0.07)] px-4 py-3 mb-4 flex items-start gap-3">
+              <span className="text-xl shrink-0">🎯</span>
+              <div>
+                <p className="font-typewriter text-xs text-[#e8b455] font-bold">Tu profesor cree que puedes lograrlo</p>
+                {challengeMessage ? (
+                  <p className="font-typewriter text-[10px] text-[#c4a882] leading-relaxed mt-0.5 italic">
+                    &ldquo;{challengeMessage}&rdquo;
+                  </p>
+                ) : (
+                  <p className="font-typewriter text-[10px] text-[#8b7355] leading-relaxed mt-0.5">
+                    ¡Inténtalo una vez más — sí puedes!
+                  </p>
+                )}
+              </div>
+            </div>
+          )}
 
           {/* Teacher unlock banner */}
           {isUnlocked && (
