@@ -3,12 +3,14 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import type { ChaseLocation } from "@/lib/types/unit-content";
 import type { OnComplete } from "@/lib/games/types";
+import SkipStageButton from "./SkipStageButton";
 
 interface Props {
   locations: ChaseLocation[];
   correctRoute: string[];   // location IDs in order the suspect visits
   clues: string[];          // one clue per step (in Spanish, using ir+a structure)
   wrongPenalty?: number;    // seconds deducted per wrong click (default 15)
+  unitId?: string;
   onComplete: OnComplete;
 }
 
@@ -186,6 +188,7 @@ export default function ChaseMap({
   correctRoute,
   clues,
   wrongPenalty = 15,
+  unitId,
   onComplete,
 }: Props) {
   const [timeLeft, setTimeLeft] = useState(MAX_TIME);
@@ -336,6 +339,17 @@ export default function ChaseMap({
             <Timer seconds={timeLeft} />
             <span className="font-typewriter text-[9px] text-[#4a3a2a] uppercase tracking-wider">restante</span>
           </div>
+
+          <SkipStageButton
+            stageName="Persecución — Mapa de la Ciudad"
+            unitId={unitId}
+            onSkip={() => {
+              if (calledComplete.current) return;
+              calledComplete.current = true;
+              const t = Math.round((Date.now() - startTime) / 1000);
+              onComplete({ score: 0, maxScore: correctRoute.length, timeSpent: t, attempts, isSkipped: true });
+            }}
+          />
         </div>
       </div>
     );
@@ -366,6 +380,20 @@ export default function ChaseMap({
             ))}
           </div>
         </div>
+      </div>
+
+      {/* Skip strip */}
+      <div className="shrink-0 border-b border-[rgba(201,147,58,0.08)] bg-[#0f0d0b] py-2 px-4">
+        <SkipStageButton
+          stageName="Persecución — Mapa de la Ciudad"
+          unitId={unitId}
+          onSkip={() => {
+            if (calledComplete.current) return;
+            calledComplete.current = true;
+            const t = Math.round((Date.now() - startTime) / 1000);
+            onComplete({ score: 0, maxScore: correctRoute.length, timeSpent: t, attempts, isSkipped: true });
+          }}
+        />
       </div>
 
       {/* Clue panel */}

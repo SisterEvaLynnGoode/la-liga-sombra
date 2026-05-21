@@ -9,6 +9,7 @@ import VocabTab from "@/components/dashboard/tabs/VocabTab";
 import LeaderboardTab from "@/components/dashboard/tabs/LeaderboardTab";
 import ExportTab from "@/components/dashboard/tabs/ExportTab";
 import BossTab from "@/components/dashboard/tabs/BossTab";
+import BandejaTab from "@/components/dashboard/tabs/BandejaTab";
 
 interface ClassRow { id: string; class_code: string; teacher_name: string; period_name: string; student_count: number }
 
@@ -20,9 +21,10 @@ const PRESET_MESSAGES = [
   "👀 Miren su pantalla",
 ];
 
-type TabId = "overview" | "students" | "units" | "vocab" | "leaderboard" | "export" | "boss";
+type TabId = "overview" | "students" | "units" | "vocab" | "leaderboard" | "export" | "boss" | "bandeja";
 
 const TABS: Array<{ id: TabId; label: string; emoji: string }> = [
+  { id: "bandeja",     label: "Bandeja",      emoji: "📥" },
   { id: "overview",    label: "Resumen",      emoji: "📊" },
   { id: "students",    label: "Estudiantes",  emoji: "👤" },
   { id: "units",       label: "Unidades",     emoji: "🗺️" },
@@ -42,6 +44,7 @@ export default function DashboardClient() {
   const [alertMsg, setAlertMsg] = useState("");
   const [alertSending, setAlertSending] = useState(false);
   const [alertSent, setAlertSent] = useState(false);
+  const [inboxCount, setInboxCount] = useState(0);
 
   useEffect(() => {
     fetch("/api/teacher/classes")
@@ -53,6 +56,15 @@ export default function DashboardClient() {
       })
       .catch(() => setLoadingClasses(false));
   }, []);
+
+  // Fetch unacknowledged inbox count whenever class changes
+  useEffect(() => {
+    if (!selectedClassId) return;
+    fetch(`/api/teacher/dashboard/inbox?classId=${selectedClassId}`)
+      .then((r) => r.json())
+      .then((d: { unacknowledgedCount?: number }) => setInboxCount(d.unacknowledgedCount ?? 0))
+      .catch(() => {});
+  }, [selectedClassId]);
 
   async function handleLogout() {
     await fetch("/api/teacher/auth", { method: "DELETE" });
@@ -169,7 +181,7 @@ export default function DashboardClient() {
             <button
               key={t.id}
               onClick={() => setActiveTab(t.id)}
-              className={`flex items-center gap-1.5 px-5 py-3 font-typewriter text-[10px] tracking-[0.2em] uppercase transition-all border-b-2 ${
+              className={`relative flex items-center gap-1.5 px-5 py-3 font-typewriter text-[10px] tracking-[0.2em] uppercase transition-all border-b-2 ${
                 activeTab === t.id
                   ? "border-[#c9933a] text-[#e8b455]"
                   : "border-transparent text-[#8b7355] hover:text-[#c4a882]"
@@ -177,6 +189,11 @@ export default function DashboardClient() {
             >
               <span className="text-sm">{t.emoji}</span>
               <span>{t.label}</span>
+              {t.id === "bandeja" && inboxCount > 0 && (
+                <span className="absolute -top-0.5 -right-0.5 min-w-[16px] h-4 px-1 rounded-full bg-[#c0392b] text-white font-typewriter text-[9px] flex items-center justify-center leading-none">
+                  {inboxCount > 99 ? "99+" : inboxCount}
+                </span>
+              )}
             </button>
           ))}
         </div>
@@ -184,6 +201,7 @@ export default function DashboardClient() {
 
       {/* ── Tab content ──────────────────────────────────────────────────── */}
       <main className="flex-1 overflow-auto p-6">
+        {activeTab === "bandeja"     && <BandejaTab     classId={selectedClassId} />}
         {activeTab === "overview"    && <OverviewTab    classId={selectedClassId} />}
         {activeTab === "students"    && <StudentsTab    classId={selectedClassId} />}
         {activeTab === "units"       && <UnitsTab       classId={selectedClassId} />}

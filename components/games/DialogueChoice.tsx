@@ -87,6 +87,7 @@ export default function DialogueChoice({
       title={title}
       elapsed={elapsed}
       status={status}
+      unitId={unitId}
       onSkip={() => {
         stop();
         setStatus("complete");

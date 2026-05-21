@@ -105,6 +105,7 @@ export default function TimedFlashcards({
       title={title}
       elapsed={elapsed}
       status={status}
+      unitId={unitId}
       onSkip={() => {
         setStatus("complete");
         const r = { score, maxScore: deck.length, timeSpent: elapsed, attempts, isSkipped: true };

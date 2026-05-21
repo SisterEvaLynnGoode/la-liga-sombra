@@ -426,6 +426,7 @@ export default function UnitPlayer({ content, unitId, unitNumber, classId, initi
             correctSuspectId={stage.correctSuspectId}
             hint={stage.hint}
             earnedClues={earnedClues}
+            unitId={unitId}
             onComplete={handleLineupComplete}
           />
         )}
@@ -437,6 +438,7 @@ export default function UnitPlayer({ content, unitId, unitNumber, classId, initi
             correctRoute={stage.correctRoute}
             clues={stage.clues}
             wrongPenalty={stage.wrongPenalty}
+            unitId={unitId}
             onComplete={handleStageComplete}
           />
         )}
@@ -456,6 +458,7 @@ export default function UnitPlayer({ content, unitId, unitNumber, classId, initi
             scenes={stage.scenes}
             targetActionDescription={stage.targetActionDescription}
             timeLimit={stage.timeLimit}
+            unitId={unitId}
             onComplete={handleStageComplete}
           />
         )}

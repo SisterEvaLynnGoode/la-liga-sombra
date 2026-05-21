@@ -27,6 +27,16 @@ interface StudentRow {
   briefingSkips?: number;
   briefingTotal?: number;
   coldCasesCompleted?: number;
+  listeningFlags?: {
+    needsSupport: boolean;
+    transcriptRevealed: boolean;
+    skipped: boolean;
+    academiaSkipped?: boolean;
+    helpRequested?: boolean;
+    stagesSkippedCount?: number;
+    repeatedSkipping?: boolean;
+    flagCount: number;
+  };
 }
 
 interface StudentsData { students: StudentRow[] }
@@ -85,6 +95,9 @@ export default function StudentsTab({ classId }: { classId: string }) {
               <SortTh k="trainingMinutesWeek" label="Training /sem" />
               <SortTh k="briefingStreak" label="Informe 📋" />
               <SortTh k="coldCasesCompleted" label="❄ Frío" />
+              <th className="text-left pb-2 pr-4 pt-3">
+                <span className="font-typewriter text-[10px] tracking-[0.2em] uppercase text-[#8b7355]">🔊 Audio</span>
+              </th>
             </tr>
           </thead>
           <tbody>
@@ -189,6 +202,49 @@ export default function StudentsTab({ classId }: { classId: string }) {
                     ? <span className="text-[#4a9eff]">❄ {s.coldCasesCompleted}</span>
                     : <span className="text-[#4a3a2a]">—</span>
                   }
+                </td>
+                <td className="py-2.5 pr-4 font-typewriter text-sm">
+                  {s.listeningFlags && s.listeningFlags.flagCount > 0 ? (
+                    <span className="flex items-center gap-1 flex-wrap">
+                      {s.listeningFlags.repeatedSkipping && (
+                        <span title="Saltó 3+ etapas en sesión reciente" className="font-typewriter text-[10px] px-1.5 py-0.5 bg-[rgba(192,57,43,0.2)] border border-[rgba(192,57,43,0.5)] text-[#c0392b] leading-none font-bold">
+                          ⚠ saltó×{s.listeningFlags.stagesSkippedCount ?? 3}
+                        </span>
+                      )}
+                      {!s.listeningFlags.repeatedSkipping && (s.listeningFlags.stagesSkippedCount ?? 0) > 0 && (
+                        <span title={`Saltó ${s.listeningFlags.stagesSkippedCount} etapa(s)`} className="font-typewriter text-[10px] px-1.5 py-0.5 bg-[rgba(201,147,58,0.08)] border border-[rgba(201,147,58,0.2)] text-[#8b7355] leading-none">
+                          ⏭ ×{s.listeningFlags.stagesSkippedCount}
+                        </span>
+                      )}
+                      {s.listeningFlags.helpRequested && (
+                        <span title="Pidió ayuda al profesor" className="font-typewriter text-[10px] px-1.5 py-0.5 bg-[rgba(192,57,43,0.15)] border border-[rgba(192,57,43,0.4)] text-[#c0392b] leading-none">
+                          🙋 ayuda
+                        </span>
+                      )}
+                      {s.listeningFlags.academiaSkipped && (
+                        <span title="Saltó Academia después de fallar" className="font-typewriter text-[10px] px-1.5 py-0.5 bg-[rgba(201,147,58,0.12)] border border-[rgba(201,147,58,0.3)] text-[#c9933a] leading-none">
+                          ⏭ academia
+                        </span>
+                      )}
+                      {s.listeningFlags.needsSupport && (
+                        <span title="Solicitó más reproducciones de audio" className="font-typewriter text-[10px] px-1.5 py-0.5 bg-[rgba(201,147,58,0.12)] border border-[rgba(201,147,58,0.3)] text-[#c9933a] leading-none">
+                          🔄 +audio
+                        </span>
+                      )}
+                      {s.listeningFlags.transcriptRevealed && (
+                        <span title="Reveló la transcripción anticipadamente" className="font-typewriter text-[10px] px-1.5 py-0.5 bg-[rgba(201,147,58,0.08)] border border-[rgba(201,147,58,0.2)] text-[#8b7355] leading-none">
+                          📄 transc.
+                        </span>
+                      )}
+                      {s.listeningFlags.skipped && (
+                        <span title="Saltó la escucha sin resolver" className="font-typewriter text-[10px] px-1.5 py-0.5 bg-[rgba(192,57,43,0.12)] border border-[rgba(192,57,43,0.3)] text-[#c0392b] leading-none">
+                          ↷ saltó
+                        </span>
+                      )}
+                    </span>
+                  ) : (
+                    <span className="text-[#4a3a2a]">—</span>
+                  )}
                 </td>
               </tr>
             ))}

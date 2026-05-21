@@ -3,16 +3,19 @@
 import { useState } from "react";
 import type { Suspect } from "@/lib/types/unit-content";
 import type { GameResult } from "@/lib/games/types";
+import SkipStageButton from "@/components/games/SkipStageButton";
+import CharacterPortrait from "@/components/CharacterPortrait";
 
 interface Props {
   suspects: Suspect[];
   correctSuspectId: string;
   hint: string;
   earnedClues: string[];
+  unitId?: string;
   onComplete: (result: GameResult, score: number) => void;
 }
 
-export default function LineupStage({ suspects, correctSuspectId, hint, earnedClues, onComplete }: Props) {
+export default function LineupStage({ suspects, correctSuspectId, hint, earnedClues, unitId, onComplete }: Props) {
   const [selected, setSelected] = useState<string | null>(null);
   const [confirmed, setConfirmed] = useState(false);
   const [attempts, setAttempts] = useState(0);
@@ -48,6 +51,20 @@ export default function LineupStage({ suspects, correctSuspectId, hint, earnedCl
 
   return (
     <div className="p-5 max-w-5xl mx-auto">
+      {/* Skip button */}
+      {!confirmed && (
+        <div className="mb-4">
+          <SkipStageButton
+            stageName="Reconocimiento — Rueda de Sospechosos"
+            unitId={unitId}
+            onSkip={() => {
+              const timeSpent = Math.round((Date.now() - startTime) / 1000);
+              onComplete({ score: 0, maxScore: 1, timeSpent, attempts, isSkipped: true }, 0);
+            }}
+          />
+        </div>
+      )}
+
       {/* Header */}
       <div className="text-center mb-5">
         <p className="font-typewriter text-[10px] tracking-[0.35em] uppercase text-[#8b7355]">
@@ -115,14 +132,14 @@ export default function LineupStage({ suspects, correctSuspectId, hint, earnedCl
             >
               {/* Photo */}
               <div className="relative">
-                {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img
-                  src={suspect.imageUrl ?? `https://i.pravatar.cc/300?img=${suspect.imageSeed}`}
-                  alt={`Suspect: ${suspect.name}`}
-                  width={300}
-                  height={200}
-                  className="w-full object-cover grayscale contrast-110"
-                  style={{ height: 140 }}
+                <CharacterPortrait
+                  imageUrl={suspect.imageUrl ?? undefined}
+                  altText={`Suspect: ${suspect.name}`}
+                  name={suspect.name}
+                  size="medium"
+                  grayscale
+                  unitId={unitId}
+                  className="w-full"
                 />
                 {/* Overlay on selection */}
                 {isSelected && !confirmed && (

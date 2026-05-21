@@ -3,11 +3,13 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import type { StakeoutScene } from "@/lib/types/unit-content";
 import type { OnComplete } from "@/lib/games/types";
+import SkipStageButton from "./SkipStageButton";
 
 interface Props {
   scenes: StakeoutScene[];
   targetActionDescription: string;
   timeLimit: number;
+  unitId?: string;
   onComplete: OnComplete;
 }
 
@@ -160,6 +162,7 @@ export default function LiveStakeout({
   scenes,
   targetActionDescription,
   timeLimit,
+  unitId,
   onComplete,
 }: Props) {
   // Build display queue at mount: non-targets first (shuffled), target at index 3
@@ -292,6 +295,24 @@ export default function LiveStakeout({
             <CountdownTimer seconds={timeLeft} max={timeLimit} />
           </div>
         </div>
+      </div>
+
+      {/* Skip strip */}
+      <div className="shrink-0 border-b border-[rgba(201,147,58,0.08)] bg-[#0f0d0b] py-2 px-4">
+        <SkipStageButton
+          stageName="Vigilancia en Vivo"
+          unitId={unitId}
+          onSkip={() => {
+            setPhase("timeout");
+            onComplete({
+              score: 0,
+              maxScore: timeLimit,
+              timeSpent: Math.round((Date.now() - startTime.current) / 1000),
+              attempts: attempts.current,
+              isSkipped: true,
+            });
+          }}
+        />
       </div>
 
       {/* ── Rotation hint ───────────────────────────────────────────────────── */}

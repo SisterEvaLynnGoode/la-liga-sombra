@@ -433,7 +433,7 @@
       "character": {
         "name": "Tía Elena",
         "role": "la tía (esposa de Carlos)",
-        "imageUrl": "https://randomuser.me/api/portraits/women/20.jpg",
+        "imageUrl": "/images/characters/unit-04-tia-elena-interrogation.png",
         "description": "Es la esposa de Carlos, el hijo de la abuela. Tiene cuarenta y cinco años. Es simpática y generosa. Hoy está muy preocupada por el collar."
       },
       "maxQuestions": 5,
@@ -524,7 +524,7 @@
       "character": {
         "name": "Primo Diego",
         "role": "el primo",
-        "imageUrl": "https://randomuser.me/api/portraits/men/25.jpg",
+        "imageUrl": "/images/characters/unit-04-primo-activo.png",
         "description": "Es el primo de Marco. Tiene veintidós años. Es activo y alegre — le gusta estar al aire libre en las montañas de Costa Rica."
       },
       "maxQuestions": 5,
@@ -616,7 +616,7 @@
       "character": {
         "name": "Nieto Marco",
         "role": "el nieto (sospechoso principal)",
-        "imageUrl": "https://randomuser.me/api/portraits/men/15.jpg",
+        "imageUrl": "/images/characters/unit-04-heredero.png",
         "description": "Es el nieto de la abuela Carmen. Tiene diecinueve años. Durante la interrogación está claramente nervioso aunque dice que está tranquilo."
       },
       "maxQuestions": 5,

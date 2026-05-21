@@ -12,7 +12,8 @@ export type ActivityType =
   | "academia_recognition" | "academia_memorization" | "academia_production" | "academia_application"
   | "stakeout"
   | "training_vocab" | "training_grammar" | "training_drill"
-  | "daily_briefing";
+  | "daily_briefing"
+  | "listening_support_requested" | "listening_transcript_revealed" | "listening_skipped";
 export type BadgeType =
   | "case_solved" | "perfect_score" | "speed_run" | "cultural_expert" | "first_case"
   | "unit_completed" | "speed_demon" | "vocab_master" | "streak_3" | "streak_7"
@@ -244,6 +245,42 @@ export interface Database {
             referencedColumns: ["id"];
           }
         ];
+      };
+      student_flags: {
+        Row: {
+          id: string;
+          student_id: string;
+          flag_type: string;
+          unit_id: string | null;
+          context: Record<string, unknown>;
+          created_at: string;
+          acknowledged_at: string | null;
+          resolved_at: string | null;
+          teacher_note: string | null;
+        };
+        Insert: {
+          id?: string;
+          student_id: string;
+          flag_type: string;
+          unit_id?: string | null;
+          context?: Record<string, unknown>;
+          created_at?: string;
+          acknowledged_at?: string | null;
+          resolved_at?: string | null;
+          teacher_note?: string | null;
+        };
+        Update: {
+          id?: string;
+          student_id?: string;
+          flag_type?: string;
+          unit_id?: string | null;
+          context?: Record<string, unknown>;
+          created_at?: string;
+          acknowledged_at?: string | null;
+          resolved_at?: string | null;
+          teacher_note?: string | null;
+        };
+        Relationships: [];
       };
       boss_progress: {
         Row: {

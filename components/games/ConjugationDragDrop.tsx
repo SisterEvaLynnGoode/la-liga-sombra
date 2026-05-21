@@ -209,6 +209,7 @@ export default function ConjugationDragDrop({
       title={title}
       elapsed={elapsed}
       status={status}
+      unitId={unitId}
       onSkip={() => {
         stop();
         setStatus("complete");

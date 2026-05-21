@@ -16,7 +16,9 @@ export async function GET(request: NextRequest) {
   if (!students.length) return NextResponse.json({ students: [] });
 
   const ids = students.map((s) => s.id);
-  const [progressRes, attemptsRes, masteryRes, badgesRes, academiaRes, stakeoutRes, briefingRes] = await Promise.all([
+  const LISTENING_FLAG_TYPES = ["needs_listening_support", "transcript_revealed", "listening_skipped", "academia_skipped_after_failure", "help_requested", "stage_skipped", "repeated_skipping"];
+
+  const [progressRes, attemptsRes, masteryRes, badgesRes, academiaRes, stakeoutRes, briefingRes, listeningFlagsRes] = await Promise.all([
     supabase.from("unit_progress").select("student_id, status, cold_case_completed_at").in("student_id", ids),
     supabase.from("attempts").select("student_id, activity_type, score, max_score, time_spent_seconds, completed_at").in("student_id", ids),
     supabase.from("mastery").select("student_id, attempts, correct").in("student_id", ids),
@@ -24,6 +26,7 @@ export async function GET(request: NextRequest) {
     supabase.from("academia_sessions").select("student_id, retry_count, advanced_without_passing").in("student_id", ids),
     supabase.from("attempts").select("student_id, score, max_score").in("student_id", ids).eq("activity_type", "stakeout").eq("max_score", 90),
     supabase.from("daily_briefings").select("student_id, briefing_date, completed, skipped").in("student_id", ids).order("briefing_date", { ascending: false }).limit(ids.length * 35),
+    supabase.from("student_flags").select("student_id, flag_type").in("student_id", ids).in("flag_type", LISTENING_FLAG_TYPES),
   ]);
 
   const progress         = (progressRes.data  ?? []) as Array<{ student_id: string; status: string; cold_case_completed_at?: string | null }>;
@@ -35,6 +38,7 @@ export async function GET(request: NextRequest) {
   }>;
   const stakeoutRows     = (stakeoutRes.data  ?? []) as Array<{ student_id: string; score: number; max_score: number }>;
   const briefingRows     = (briefingRes.data  ?? []) as Array<{ student_id: string; briefing_date: string; completed: boolean; skipped: boolean }>;
+  const listeningFlagRows = (listeningFlagsRes.data ?? []) as Array<{ student_id: string; flag_type: string }>;
 
   const result = students.map((s) => {
     const myProgress  = progress.filter((p) => p.student_id === s.id);
@@ -64,6 +68,17 @@ export async function GET(request: NextRequest) {
     const stakeoutAvgTime = myStakeouts.length
       ? Math.round(myStakeouts.reduce((sum, r) => sum + r.score, 0) / myStakeouts.length)
       : null;
+
+    // Listening support flags
+    const myListeningFlags = listeningFlagRows.filter((f) => f.student_id === s.id);
+    const listeningNeedsSupport   = myListeningFlags.some((f) => f.flag_type === "needs_listening_support");
+    const listeningTranscript     = myListeningFlags.some((f) => f.flag_type === "transcript_revealed");
+    const listeningSkipped        = myListeningFlags.some((f) => f.flag_type === "listening_skipped");
+    const academiaSkipped         = myListeningFlags.some((f) => f.flag_type === "academia_skipped_after_failure");
+    const helpRequested           = myListeningFlags.some((f) => f.flag_type === "help_requested");
+    const stagesSkippedCount      = myListeningFlags.filter((f) => f.flag_type === "stage_skipped").length;
+    const repeatedSkipping        = myListeningFlags.some((f) => f.flag_type === "repeated_skipping");
+    const listeningFlagCount      = new Set(myListeningFlags.map((f) => f.flag_type)).size;
 
     // Cold case engagement
     const coldCasesCompleted = myProgress.filter((p) => p.cold_case_completed_at).length;
@@ -137,6 +152,16 @@ export async function GET(request: NextRequest) {
       briefingSkips,
       briefingTotal,
       coldCasesCompleted,
+      listeningFlags: {
+        needsSupport:       listeningNeedsSupport,
+        transcriptRevealed: listeningTranscript,
+        skipped:            listeningSkipped,
+        academiaSkipped,
+        helpRequested,
+        stagesSkippedCount,
+        repeatedSkipping,
+        flagCount:          listeningFlagCount,
+      },
     };
   });
 

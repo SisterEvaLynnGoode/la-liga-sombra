@@ -105,6 +105,7 @@ export default function VocabMatch({ title = "Memoria de Vocabulario", pairs, un
       title={title}
       elapsed={elapsed}
       status={status}
+      unitId={unitId}
       onSkip={() => {
         stop();
         setStatus("complete");

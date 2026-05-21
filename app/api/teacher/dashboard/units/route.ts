@@ -13,13 +13,18 @@ export async function GET(request: NextRequest) {
   const studentIds = (studentsData as Array<{ id: string }> | null)?.map((s) => s.id) ?? [];
   const totalStudents = studentIds.length;
 
-  const [progressRes, attemptsRes, masteryRes, unitsRes, academiaRes] = await Promise.all([
+  const LISTENING_FLAG_TYPES = ["needs_listening_support", "transcript_revealed", "listening_skipped", "academia_skipped_after_failure", "help_requested", "stage_skipped", "repeated_skipping"];
+
+  const [progressRes, attemptsRes, masteryRes, unitsRes, academiaRes, listeningFlagsRes] = await Promise.all([
     studentIds.length ? supabase.from("unit_progress").select("student_id, unit_id, status, cold_case_completed_at").in("student_id", studentIds) : Promise.resolve({ data: [] }),
     studentIds.length ? supabase.from("attempts").select("unit_id, activity_type, score, max_score, time_spent_seconds").in("student_id", studentIds) : Promise.resolve({ data: [] }),
     studentIds.length ? supabase.from("mastery").select("student_id, vocab_term, attempts, correct").in("student_id", studentIds) : Promise.resolve({ data: [] }),
     supabase.from("units").select("id, number, country, title_es").order("number"),
     studentIds.length
       ? supabase.from("academia_sessions").select("student_id, unit_id, routing_tier").in("student_id", studentIds)
+      : Promise.resolve({ data: [] }),
+    studentIds.length
+      ? supabase.from("student_flags").select("student_id, unit_id, flag_type").in("student_id", studentIds).in("flag_type", LISTENING_FLAG_TYPES)
       : Promise.resolve({ data: [] }),
   ]);
 
@@ -28,6 +33,7 @@ export async function GET(request: NextRequest) {
   const mastery = (masteryRes.data ?? []) as Array<{ student_id: string; vocab_term: string; attempts: number; correct: number }>;
   const units = (unitsRes.data ?? []) as Array<{ id: string; number: number; country: string; title_es: string }>;
   const academiaSessions = (academiaRes.data ?? []) as Array<{ student_id: string; unit_id: string; routing_tier: string }>;
+  const listeningFlags = (listeningFlagsRes.data ?? []) as Array<{ student_id: string; unit_id: string; flag_type: string }>;
 
   const result = units.map((u) => {
     const unitProgress = progress.filter((p) => p.unit_id === u.id);
@@ -89,6 +95,32 @@ export async function GET(request: NextRequest) {
     const academiaRequired    = unitAcademia.filter((a) => a.routing_tier === "required").length;
     const academiaTotal = unitAcademia.length;
 
+    // Listening support stats for this unit
+    const unitListeningFlags = listeningFlags.filter((f) => f.unit_id === u.id);
+    const studentsWhoNeededListeningSupport = new Set(unitListeningFlags.map((f) => f.student_id)).size;
+    const listeningSkippedCount = unitListeningFlags.filter((f) => f.flag_type === "listening_skipped").length;
+    const listeningNeedsSupportCount = unitListeningFlags.filter((f) => f.flag_type === "needs_listening_support").length;
+    const listeningTranscriptCount = unitListeningFlags.filter((f) => f.flag_type === "transcript_revealed").length;
+    const academiaSkippedCount = unitListeningFlags.filter((f) => f.flag_type === "academia_skipped_after_failure").length;
+    const stagesSkippedCount = unitListeningFlags.filter((f) => f.flag_type === "stage_skipped").length;
+    const studentsWithRepeatedSkipping = new Set(
+      unitListeningFlags.filter((f) => f.flag_type === "repeated_skipping").map((f) => f.student_id)
+    ).size;
+    // Per-stage skip breakdown from context
+    const stageSkipBreakdown: Record<string, number> = {};
+    for (const f of unitListeningFlags) {
+      if (f.flag_type !== "stage_skipped") continue;
+      const stageName = (f as { flag_type: string; student_id: string; unit_id: string; context?: { stage?: string } }).context?.stage ?? "unknown";
+      stageSkipBreakdown[stageName] = (stageSkipBreakdown[stageName] ?? 0) + 1;
+    }
+    const stagesSkippedPct = totalStudents > 0
+      ? Math.round((studentsWhoNeededListeningSupport / totalStudents) * 100)
+      : null;
+    // Estimate % of class who needed support (using completionCount as denominator)
+    const listeningNeedsSupportPct = completionCount > 0
+      ? Math.round((studentsWhoNeededListeningSupport / completionCount) * 100)
+      : null;
+
     // Cold case completion %
     const coldCaseCompletions = (progressRes.data ?? []).filter(
       (p: { unit_id: string; cold_case_completed_at?: string | null }) =>
@@ -117,8 +149,21 @@ export async function GET(request: NextRequest) {
         recommendedPct: academiaTotal ? Math.round((academiaRecommended / academiaTotal) * 100) : null,
         requiredPct:    academiaTotal ? Math.round((academiaRequired    / academiaTotal) * 100) : null,
       },
+      listeningSupport: {
+        studentsWhoNeededSupport: studentsWhoNeededListeningSupport,
+        needsSupportPct:          listeningNeedsSupportPct,
+        supportRequestCount:      listeningNeedsSupportCount,
+        transcriptRevealedCount:  listeningTranscriptCount,
+        skippedCount:             listeningSkippedCount,
+        academiaSkippedCount,
+        stagesSkippedCount,
+        studentsWithRepeatedSkipping,
+        stageSkipBreakdown,
+        stagesSkippedPct,
+      },
     };
   });
+
 
   return NextResponse.json({ units: result });
 }

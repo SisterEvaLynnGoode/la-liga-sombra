@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import CharacterPortrait from "@/components/CharacterPortrait";
 import type { GameResult } from "@/lib/games/types";
 
 export interface PostQuestion {
@@ -192,15 +193,13 @@ function FallbackBriefing({ chiefName, chiefImageSeed, chiefImageUrl, briefingLi
         <div className="h-px bg-gradient-to-r from-transparent via-[#c9933a] to-transparent mb-6" />
         <div className="flex gap-5 mb-6">
           <div className="shrink-0">
-            {fallbackImage
-              // eslint-disable-next-line @next/next/no-img-element
-              ? <img src={fallbackImage} alt="Chief" width={80} height={80} className="rounded-sm border-2 border-[rgba(201,147,58,0.3)] grayscale" />
-              : (
-                // eslint-disable-next-line @next/next/no-img-element
-                <img src={chiefImageUrl ?? `https://i.pravatar.cc/80?img=${chiefImageSeed ?? 60}`} alt={chiefName ?? "Chief"} width={80} height={80} className="rounded-sm border-2 border-[rgba(201,147,58,0.3)]" />
-              )
-            }
-            <p className="font-typewriter text-[9px] tracking-widest uppercase text-[#8b7355] text-center mt-1">{chiefName}</p>
+            <CharacterPortrait
+              imageUrl={chiefImageUrl ?? (fallbackImage ?? undefined)}
+              altText={chiefName ?? "Chief"}
+              size="small"
+              grayscale={!!fallbackImage}
+              name={chiefName ?? undefined}
+            />
           </div>
           <div className="flex-1 border border-[rgba(201,147,58,0.2)] bg-[#1a1614] p-5 min-h-[120px] flex flex-col justify-between">
             {!started

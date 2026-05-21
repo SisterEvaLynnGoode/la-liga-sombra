@@ -391,7 +391,7 @@
       "character": {
         "name": "Andrés Morales",
         "role": "el jefe de cocina (head cook)",
-        "imageUrl": "https://randomuser.me/api/portraits/men/40.jpg",
+        "imageUrl": "/images/characters/unit-06-jefe-cocina.png",
         "description": "Es el jefe de cocina del restaurante. Tiene treinta y cinco años. Es serio y trabajador — conoce bien su trabajo y sus responsabilidades."
       },
       "maxQuestions": 5,
@@ -481,7 +481,7 @@
       "character": {
         "name": "Carmen Villegas",
         "role": "la sous chef",
-        "imageUrl": "https://randomuser.me/api/portraits/women/42.jpg",
+        "imageUrl": "/images/characters/unit-06-sous-chef.png",
         "description": "Es la sous chef del restaurante. Tiene veintiocho años. Es precisa y profesional — conoce todas las reglas de la cocina y las hace respetar."
       },
       "maxQuestions": 5,
@@ -571,7 +571,7 @@
       "character": {
         "name": "Lucía Paredes",
         "role": "la repostera (pastry chef)",
-        "imageUrl": "https://randomuser.me/api/portraits/women/38.jpg",
+        "imageUrl": "/images/characters/unit-06-repostera.png",
         "description": "Es la repostera del restaurante. Tiene treinta años. Es tranquila y observadora — nota todo lo que pasa en la cocina desde su sección de postres."
       },
       "maxQuestions": 5,
@@ -662,7 +662,7 @@
       "character": {
         "name": "Diego Reyes",
         "role": "el cocinero de preparación (prep cook)",
-        "imageUrl": "https://randomuser.me/api/portraits/men/27.jpg",
+        "imageUrl": "/images/characters/unit-06-cocinero-secreto.png",
         "description": "Es el cocinero de preparación. Tiene veintidós años. Normalmente es alegre, pero hoy está muy nervioso y sus respuestas son contradictorias."
       },
       "maxQuestions": 5,

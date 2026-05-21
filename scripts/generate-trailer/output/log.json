@@ -1,0 +1,110 @@
+[
+  {
+    "shotNumber": 1,
+    "slug": "shot-01-guitar-heist",
+    "jobId": "db1556e6-a49d-4931-b014-37e42053b268",
+    "outputUrl": "https://d8j0ntlcm91z4.cloudfront.net/user_3DQG5ve4hcMymLqHAOYWqsoLTCo/hf_20260520_031529_db1556e6-a49d-4931-b014-37e42053b268.mp4",
+    "creditsUsed": 22.5,
+    "generatedAt": "2026-05-20T03:15:29Z",
+    "status": "approved",
+    "notes": "First two attempts flagged ip_detected (artist names in prompt). Third attempt with stripped style prefix succeeded. Style prefix updated in shots.ts.",
+    "failedAttempts": [
+      { "jobId": "3a45dde4-f188-407a-963b-245e5202a9f9", "reason": "ip_detected" },
+      { "jobId": "e8735eb8-2b65-402a-9963-a0a9ecb73269", "reason": "ip_detected" }
+    ]
+  },
+  {
+    "shotNumber": 2,
+    "slug": "shot-02-war-room",
+    "jobId": "35570cd7-6bdf-4215-934a-f8a58caf75b0",
+    "outputUrl": "https://d8j0ntlcm91z4.cloudfront.net/user_3DQG5ve4hcMymLqHAOYWqsoLTCo/hf_20260520_032347_35570cd7-6bdf-4215-934a-f8a58caf75b0.mp4",
+    "creditsUsed": 22.5,
+    "generatedAt": "2026-05-20T03:23:47Z",
+    "status": "approved",
+    "notes": "First attempt ip_detected (Latin America / newspaper clippings). Simplified to 'world map' / 'operations room' — succeeded.",
+    "failedAttempts": [
+      { "jobId": "0aa06bcc-05e2-4cb9-967b-16abe9189e7b", "reason": "ip_detected" }
+    ]
+  },
+  {
+    "shotNumber": 3,
+    "slug": "shot-03-title-card",
+    "jobId": "e1de854a-cef8-4ecc-85b5-e7cb928ebb19",
+    "outputUrl": "https://d8j0ntlcm91z4.cloudfront.net/user_3DQG5ve4hcMymLqHAOYWqsoLTCo/hf_20260520_033345_e1de854a-cef8-4ecc-85b5-e7cb928ebb19.mp4",
+    "creditsUsed": 22.5,
+    "generatedAt": "2026-05-20T03:33:45Z",
+    "status": "approved",
+    "notes": "Second attempt with explicit 'LA LIGA SOMBRA' + 'Un misterio en espanol' text. User approved.",
+    "failedAttempts": [
+      { "jobId": "0a509d1d-561d-493a-aaed-770cb85ec218", "reason": "no readable text rendered" }
+    ]
+  },
+  {
+    "shotNumber": 4,
+    "slug": "shot-04-mexico-plaza",
+    "jobId": "e6fa240a-23ac-4656-9c57-764365b7a51a",
+    "outputUrl": "https://d8j0ntlcm91z4.cloudfront.net/user_3DQG5ve4hcMymLqHAOYWqsoLTCo/hf_20260520_033833_e6fa240a-23ac-4656-9c57-764365b7a51a.mp4",
+    "creditsUsed": 22.5,
+    "generatedAt": "2026-05-20T03:38:33Z",
+    "status": "approved",
+    "notes": "First attempt clean.",
+    "failedAttempts": []
+  },
+  {
+    "shotNumber": 5,
+    "slug": "shot-05-madrid-chase",
+    "jobId": "3c4916cd-52bc-4e46-bbb7-82ae066cd4d1",
+    "outputUrl": "https://d8j0ntlcm91z4.cloudfront.net/user_3DQG5ve4hcMymLqHAOYWqsoLTCo/hf_20260520_034313_3c4916cd-52bc-4e46-bbb7-82ae066cd4d1.mp4",
+    "creditsUsed": 22.5,
+    "generatedAt": "2026-05-20T03:43:13Z",
+    "status": "approved",
+    "notes": "First attempt clean.",
+    "failedAttempts": []
+  },
+  {
+    "shotNumber": 6,
+    "slug": "shot-06-costa-rica-interrogation",
+    "jobId": "fbba49c1-6434-4a04-a0ab-d42156435821",
+    "outputUrl": "https://d8j0ntlcm91z4.cloudfront.net/user_3DQG5ve4hcMymLqHAOYWqsoLTCo/hf_20260520_034726_fbba49c1-6434-4a04-a0ab-d42156435821.mp4",
+    "creditsUsed": 22.5,
+    "generatedAt": "2026-05-20T03:47:26Z",
+    "status": "approved",
+    "notes": "First attempt clean.",
+    "failedAttempts": []
+  },
+  {
+    "shotNumber": 7,
+    "slug": "shot-07-chile-festival",
+    "jobId": "747ecc8e-5bf3-49f0-a37f-52f01e6f054d",
+    "outputUrl": "https://d8j0ntlcm91z4.cloudfront.net/user_3DQG5ve4hcMymLqHAOYWqsoLTCo/hf_20260520_035255_747ecc8e-5bf3-49f0-a37f-52f01e6f054d.mp4",
+    "creditsUsed": 22.5,
+    "generatedAt": "2026-05-20T03:52:55Z",
+    "status": "approved",
+    "notes": "First attempt clean.",
+    "failedAttempts": []
+  },
+  {
+    "shotNumber": 8,
+    "slug": "shot-08-police-lineup",
+    "jobId": "bf9ff3d0-e91f-4551-a56b-3abb769cc50b",
+    "outputUrl": "https://d8j0ntlcm91z4.cloudfront.net/user_3DQG5ve4hcMymLqHAOYWqsoLTCo/hf_20260520_035735_bf9ff3d0-e91f-4551-a56b-3abb769cc50b.mp4",
+    "creditsUsed": 22.5,
+    "generatedAt": "2026-05-20T03:57:35Z",
+    "status": "approved",
+    "notes": "First attempt clean.",
+    "failedAttempts": []
+  },
+  {
+    "shotNumber": 9,
+    "slug": "shot-09-villain-reveal",
+    "jobId": "507cceaa-3e96-466c-ac6a-36ca258cd6f5",
+    "outputUrl": "https://d8j0ntlcm91z4.cloudfront.net/user_3DQG5ve4hcMymLqHAOYWqsoLTCo/hf_20260520_040317_507cceaa-3e96-466c-ac6a-36ca258cd6f5.mp4",
+    "creditsUsed": 22.5,
+    "generatedAt": "2026-05-20T04:03:17Z",
+    "status": "approved",
+    "notes": "Approved as background. 'JUSTICIA / ¿Puedes atraparlos?' added as CapCut text overlay per editing guide.",
+    "failedAttempts": [
+      { "jobId": "regen-attempt", "reason": "out_of_credits" }
+    ]
+  }
+]

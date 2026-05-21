@@ -1,0 +1,13 @@
+[0:v]trim=0:5,setpts=PTS-STARTPTS,scale=720:1280[v0];
+[1:v]trim=0:5,setpts=PTS-STARTPTS,scale=720:1280[v1];
+[2:v]trim=0:5,setpts=PTS-STARTPTS,scale=720:1280[v2];
+[3:v]trim=0:5,setpts=PTS-STARTPTS,scale=720:1280[v3];
+[4:v]trim=0:5,setpts=PTS-STARTPTS,scale=720:1280[v4];
+[5:v]trim=0:4,setpts=PTS-STARTPTS,scale=720:1280[v5];
+[6:v]trim=0:3,setpts=PTS-STARTPTS,scale=720:1280[v6];
+[7:v]trim=0:1.5,setpts=PTS-STARTPTS,scale=720:1280[v7];
+[8:v]trim=0:1.5,setpts=PTS-STARTPTS,scale=720:1280[v8];
+[v0][v1][v2][v3][v4][v5][v6][v7][v8]concat=n=9:v=1:a=0[vcat];
+[vcat]drawtext=fontfile='C\:/Windows/Fonts/arialbd.ttf':text='JUSTICIA':fontsize=110:fontcolor=0xC0392B:x=(w-text_w)/2:y=h*0.70:enable='between(t,32,34.5)':alpha='if(lt(t,32.5),2*(t-32),1)':shadowcolor=black:shadowx=4:shadowy=4[dt3];
+[dt3]drawtext=fontfile='C\:/Windows/Fonts/arial.ttf':text='Puedes atraparlos?':fontsize=36:fontcolor=white:x=(w-text_w)/2:y=h*0.82:enable='between(t,32.8,34.5)':alpha='if(lt(t,33.2),2*(t-32.8),1)':shadowcolor=black:shadowx=2:shadowy=2[dt4];
+[dt4]fade=t=out:st=34.0:d=0.5[vout]

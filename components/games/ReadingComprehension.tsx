@@ -197,6 +197,7 @@ export default function ReadingComprehension({
       title={title}
       elapsed={elapsed}
       status={status}
+      unitId={unitId}
       onSkip={() => {
         stop();
         setStatus("complete");

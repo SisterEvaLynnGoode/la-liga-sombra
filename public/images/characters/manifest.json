@@ -8,7 +8,8 @@
     "timestamp": "2026-05-20T01:33:38Z",
     "status": "approved",
     "creditsUsed": 1.5,
-    "sourcePrompt": "Jefe Ramírez — recurring agency chief. Dark formal suit, white shirt, burgundy tie, silver agency badge on lapel. Short black hair with grey temples. Illustrated graphic novel / noir watercolor style."
+    "sourcePrompt": "Jefe Ramírez — recurring agency chief. Dark formal suit, white shirt, burgundy tie, silver agency badge on lapel. Short black hair with grey temples. Illustrated graphic novel / noir watercolor style.",
+    "version": "5a267e1f"
   },
   {
     "characterId": "el-coleccionista",
@@ -19,7 +20,8 @@
     "timestamp": "2026-05-20T01:34:03Z",
     "status": "approved",
     "creditsUsed": 1.5,
-    "sourcePrompt": "El Coleccionista — master villain. Gold monocle, white leather gloves, eagle-head cane, charcoal suit. White hair, pale skin. One side slightly shadowed. Illustrated graphic novel / noir watercolor style."
+    "sourcePrompt": "El Coleccionista — master villain. Gold monocle, white leather gloves, eagle-head cane, charcoal suit. White hair, pale skin. One side slightly shadowed. Illustrated graphic novel / noir watercolor style.",
+    "version": "3b2f6890"
   },
   {
     "characterId": "el-tejedor",
@@ -30,7 +32,8 @@
     "timestamp": "2026-05-20T01:34:17Z",
     "status": "approved",
     "creditsUsed": 1.5,
-    "sourcePrompt": "El Tejedor — Unit 5 boss lieutenant. Dark unkempt hair, dark circles, rumpled dark linen jacket. Tense exhausted expression, still intelligent. Illustrated graphic novel / noir watercolor style."
+    "sourcePrompt": "El Tejedor — Unit 5 boss lieutenant. Dark unkempt hair, dark circles, rumpled dark linen jacket. Tense exhausted expression, still intelligent. Illustrated graphic novel / noir watercolor style.",
+    "version": "3c27241e"
   },
   {
     "characterId": "el-genio",
@@ -41,7 +44,8 @@
     "timestamp": "2026-05-20T01:34:30Z",
     "status": "approved",
     "creditsUsed": 1.5,
-    "sourcePrompt": "El Genio (Ricardo Montoya Díaz) — boss fight accomplice. Very voluminous dark curly hair, medium brown skin, dark t-shirt. Confident self-assured expression. Illustrated graphic novel / noir watercolor style."
+    "sourcePrompt": "El Genio (Ricardo Montoya Díaz) — boss fight accomplice. Very voluminous dark curly hair, medium brown skin, dark t-shirt. Confident self-assured expression. Illustrated graphic novel / noir watercolor style.",
+    "version": "49fe4793"
   },
   {
     "characterId": "unit-01-camaleon",
@@ -52,7 +56,8 @@
     "timestamp": "2026-05-20T01:40:15Z",
     "status": "approved",
     "creditsUsed": 1.5,
-    "sourcePrompt": "El Camaleón — Unit 1 criminal. Tall slender man, black charro hat (sombrero de charro negro) MUST be visible, thick black mustache MUST be visible, dark casual shirt. Guadalajara México. Noir watercolor style."
+    "sourcePrompt": "El Camaleón — Unit 1 criminal. Tall slender man, black charro hat (sombrero de charro negro) MUST be visible, thick black mustache MUST be visible, dark casual shirt. Guadalajara México. Noir watercolor style.",
+    "version": "19f2f944"
   },
   {
     "characterId": "unit-01-serpiente",
@@ -63,7 +68,8 @@
     "timestamp": "2026-05-20T01:40:29Z",
     "status": "approved",
     "creditsUsed": 1.5,
-    "sourcePrompt": "La Serpiente — Unit 1 suspect. Elegant young woman, long straight black hair, NO hat, Ciudad de México. Calm calculating expression. Noir watercolor style."
+    "sourcePrompt": "La Serpiente — Unit 1 suspect. Elegant young woman, long straight black hair, NO hat, Ciudad de México. Calm calculating expression. Noir watercolor style.",
+    "version": "9ba29c0b"
   },
   {
     "characterId": "unit-01-toro",
@@ -74,7 +80,8 @@
     "timestamp": "2026-05-20T01:40:40Z",
     "status": "approved",
     "creditsUsed": 1.5,
-    "sourcePrompt": "El Toro — Unit 1 suspect. Short stocky powerful man, NO mustache, NO hat, Monterrey México. Quiet calm expression. Noir watercolor style."
+    "sourcePrompt": "El Toro — Unit 1 suspect. Short stocky powerful man, NO mustache, NO hat, Monterrey México. Quiet calm expression. Noir watercolor style.",
+    "version": "b84ce397"
   },
   {
     "characterId": "unit-01-pajaro",
@@ -85,7 +92,8 @@
     "timestamp": "2026-05-20T01:40:55Z",
     "status": "approved",
     "creditsUsed": 1.5,
-    "sourcePrompt": "El Pájaro — Unit 1 suspect. Young 22yo man, tall slim, NO mustache, NO hat, Cancún. Friendly relaxed bilingual expression. Noir watercolor style."
+    "sourcePrompt": "El Pájaro — Unit 1 suspect. Young 22yo man, tall slim, NO mustache, NO hat, Cancún. Friendly relaxed bilingual expression. Noir watercolor style.",
+    "version": "3bb8e2e4"
   },
   {
     "characterId": "unit-01-don-rodrigo",
@@ -96,7 +104,8 @@
     "timestamp": "2026-05-20T01:41:06Z",
     "status": "approved",
     "creditsUsed": 1.5,
-    "sourcePrompt": "Don Rodrigo — Unit 1 witness. Elderly 65yo man, white hair, white mustache, plaid shirt, kind serious expression. Guadalajara market vendor. Noir watercolor style."
+    "sourcePrompt": "Don Rodrigo — Unit 1 witness. Elderly 65yo man, white hair, white mustache, plaid shirt, kind serious expression. Guadalajara market vendor. Noir watercolor style.",
+    "version": "e0f4e6b2"
   },
   {
     "characterId": "unit-02-tecladista",
@@ -107,7 +116,8 @@
     "timestamp": "2026-05-20T01:46:37Z",
     "status": "approved",
     "creditsUsed": 1.5,
-    "sourcePrompt": "El Tecladista — Unit 2 criminal. Tall 17yo teen boy, school uniform, very serious expression unusual for his age."
+    "sourcePrompt": "El Tecladista — Unit 2 criminal. Tall 17yo teen boy, school uniform, very serious expression unusual for his age.",
+    "version": "afd71e4c"
   },
   {
     "characterId": "unit-02-estudiosa",
@@ -118,7 +128,8 @@
     "timestamp": "2026-05-20T01:46:49Z",
     "status": "approved",
     "creditsUsed": 1.5,
-    "sourcePrompt": "La Estudiosa — Unit 2 distractor. Tall teenage girl, school uniform, warm friendly studious expression."
+    "sourcePrompt": "La Estudiosa — Unit 2 distractor. Tall teenage girl, school uniform, warm friendly studious expression.",
+    "version": "43ef9244"
   },
   {
     "characterId": "unit-02-gracioso",
@@ -129,7 +140,8 @@
     "timestamp": "2026-05-20T01:47:02Z",
     "status": "approved",
     "creditsUsed": 1.5,
-    "sourcePrompt": "El Gracioso — Unit 2 distractor. Short stocky teen, BLONDE hair (unique in lineup), big goofy grin, school uniform."
+    "sourcePrompt": "El Gracioso — Unit 2 distractor. Short stocky teen, BLONDE hair (unique in lineup), big goofy grin, school uniform.",
+    "version": "2cfab6ff"
   },
   {
     "characterId": "unit-02-tranquilo",
@@ -140,7 +152,8 @@
     "timestamp": "2026-05-20T01:47:24Z",
     "status": "approved",
     "creditsUsed": 1.5,
-    "sourcePrompt": "El Tranquilo — Unit 2 distractor. Tall shy teen boy, school uniform, headphones visible around neck, introverted posture."
+    "sourcePrompt": "El Tranquilo — Unit 2 distractor. Tall shy teen boy, school uniform, headphones visible around neck, introverted posture.",
+    "version": "756ef0f6"
   },
   {
     "characterId": "unit-02-sra-torres",
@@ -151,7 +164,8 @@
     "timestamp": "2026-05-20T01:47:40Z",
     "status": "approved",
     "creditsUsed": 1.5,
-    "sourcePrompt": "Sra. Torres — Unit 2 teacher witness. Professional woman, dark-rimmed glasses, dark blazer, authority figure."
+    "sourcePrompt": "Sra. Torres — Unit 2 teacher witness. Professional woman, dark-rimmed glasses, dark blazer, authority figure.",
+    "version": "7de0c7dc"
   },
   {
     "characterId": "unit-03-la-sombra",
@@ -162,7 +176,8 @@
     "status": "approved",
     "creditsUsed": 1.5,
     "sourcePrompt": "La Sombra — Unit 3 criminal. All-black clothing, black cap pulled low, pale skin. Elusive evasive. Spain.",
-    "localPath": "images/characters/unit-03-la-sombra.png"
+    "localPath": "images/characters/unit-03-la-sombra.png",
+    "version": "d05c4f5e"
   },
   {
     "characterId": "unit-03-carlos-metroista",
@@ -173,7 +188,8 @@
     "status": "approved",
     "creditsUsed": 1.5,
     "sourcePrompt": "Carlos el Metroista — Unit 3 witness. Madrid metro worker uniform + reflective vest. Friendly tired face.",
-    "localPath": "images/characters/unit-03-carlos-metroista.png"
+    "localPath": "images/characters/unit-03-carlos-metroista.png",
+    "version": "df7f17f7"
   },
   {
     "characterId": "unit-04-heredero",
@@ -184,7 +200,8 @@
     "status": "approved",
     "creditsUsed": 1.5,
     "sourcePrompt": "El Heredero — Unit 4 criminal. Nervous guilty 19yo Costa Rican teen.",
-    "localPath": "images/characters/unit-04-heredero.png"
+    "localPath": "images/characters/unit-04-heredero.png",
+    "version": "71086a63"
   },
   {
     "characterId": "unit-04-tia-generosa",
@@ -195,7 +212,8 @@
     "status": "approved",
     "creditsUsed": 1.5,
     "sourcePrompt": "Tia Elena — Unit 4 distractor. 45yo Costa Rican woman, market bags visible, worried maternal.",
-    "localPath": "images/characters/unit-04-tia-generosa.png"
+    "localPath": "images/characters/unit-04-tia-generosa.png",
+    "version": "16432050"
   },
   {
     "characterId": "unit-05-fantasma-digital",
@@ -206,7 +224,8 @@
     "status": "approved",
     "creditsUsed": 1.5,
     "sourcePrompt": "El Fantasma Digital — Unit 5 criminal. Dark hoodie, large black backpack, nighttime hacker aesthetic.",
-    "localPath": "images/characters/unit-05-fantasma-digital.png"
+    "localPath": "images/characters/unit-05-fantasma-digital.png",
+    "version": "24673197"
   },
   {
     "characterId": "unit-06-cocinero-secreto",
@@ -217,7 +236,8 @@
     "status": "approved",
     "creditsUsed": 1.5,
     "sourcePrompt": "El Cocinero Secreto — Unit 6 criminal. White chef jacket + apron, nervous guilty young 22yo Colombian.",
-    "localPath": "images/characters/unit-06-cocinero-secreto.png"
+    "localPath": "images/characters/unit-06-cocinero-secreto.png",
+    "version": "84b03e70"
   },
   {
     "characterId": "unit-07-tecnico-oscuro",
@@ -228,7 +248,8 @@
     "status": "approved",
     "creditsUsed": 1.5,
     "sourcePrompt": "El Técnico Oscuro — Unit 7 criminal. ALL-BLACK festival crew uniform (not blue), large black bag.",
-    "localPath": "images/characters/unit-07-tecnico-oscuro.png"
+    "localPath": "images/characters/unit-07-tecnico-oscuro.png",
+    "version": "cabeb608"
   },
   {
     "characterId": "unit-08-coleccionista-local",
@@ -239,7 +260,8 @@
     "status": "approved",
     "creditsUsed": 1.5,
     "sourcePrompt": "El Coleccionista local — Unit 8 criminal. 55yo Peruvian man, formal dark business suit incongruously in Andean market.",
-    "localPath": "images/characters/unit-08-coleccionista-local.png"
+    "localPath": "images/characters/unit-08-coleccionista-local.png",
+    "version": "5b25b542"
   },
   {
     "characterId": "unit-08-don-aurelio",
@@ -250,7 +272,8 @@
     "status": "approved",
     "creditsUsed": 1.5,
     "sourcePrompt": "Don Aurelio — Unit 8 witness. 70yo elder Andean market vendor, traditional poncho.",
-    "localPath": "images/characters/unit-08-don-aurelio.png"
+    "localPath": "images/characters/unit-08-don-aurelio.png",
+    "version": "b7a7daef"
   },
   {
     "characterId": "unit-08-vendedora",
@@ -261,7 +284,8 @@
     "status": "approved",
     "creditsUsed": 1.5,
     "sourcePrompt": "Rosa Mamani — Unit 8 distractor. 48yo Andean woman, traditional braids + pollera dress + straw hat.",
-    "localPath": "images/characters/unit-08-vendedora.png"
+    "localPath": "images/characters/unit-08-vendedora.png",
+    "version": "d82565b6"
   },
   {
     "characterId": "unit-08-vendor-maria",
@@ -272,7 +296,8 @@
     "status": "approved",
     "creditsUsed": 1.5,
     "sourcePrompt": "María (testigo) — Unit 8 audio witness. 42yo Andean market vendor, calm trustworthy.",
-    "localPath": "images/characters/unit-08-vendor-maria.png"
+    "localPath": "images/characters/unit-08-vendor-maria.png",
+    "version": "1f2732b9"
   },
   {
     "characterId": "unit-04-primo-activo",
@@ -283,7 +308,8 @@
     "timestamp": "2026-05-20T20:26:0520Z",
     "status": "approved",
     "creditsUsed": 1.5,
-    "sourcePrompt": "El Primo Activo — Unit 4 distractor. Coffee farm worker, tired physical labor expression."
+    "sourcePrompt": "El Primo Activo — Unit 4 distractor. Coffee farm worker, tired physical labor expression.",
+    "version": "72dfa5b0"
   },
   {
     "characterId": "unit-04-hija-seria",
@@ -294,7 +320,8 @@
     "timestamp": "2026-05-20T20:26:0520Z",
     "status": "approved",
     "creditsUsed": 1.5,
-    "sourcePrompt": "La Hija Seria — Unit 4 distractor. 48yo professional businesswoman, dark blazer."
+    "sourcePrompt": "La Hija Seria — Unit 4 distractor. 48yo professional businesswoman, dark blazer.",
+    "version": "e9374363"
   },
   {
     "characterId": "unit-04-tia-elena-interrogation",
@@ -305,7 +332,8 @@
     "timestamp": "2026-05-20T20:26:0520Z",
     "status": "approved",
     "creditsUsed": 1.5,
-    "sourcePrompt": "Tía Elena interrogation — Unit 4 witness. Worried protective maternal expression."
+    "sourcePrompt": "Tía Elena interrogation — Unit 4 witness. Worried protective maternal expression.",
+    "version": "de491f2d"
   },
   {
     "characterId": "unit-05-ingeniera",
@@ -316,7 +344,8 @@
     "timestamp": "2026-05-20T20:26:0520Z",
     "status": "approved",
     "creditsUsed": 1.5,
-    "sourcePrompt": "La Ingeniera — Unit 5 distractor. Blue folder + tablet visible."
+    "sourcePrompt": "La Ingeniera — Unit 5 distractor. Blue folder + tablet visible.",
+    "version": "2acfde38"
   },
   {
     "characterId": "unit-05-consultor",
@@ -327,7 +356,8 @@
     "timestamp": "2026-05-20T20:26:0520Z",
     "status": "approved",
     "creditsUsed": 1.5,
-    "sourcePrompt": "El Consultor — Unit 5 distractor. SILVER/GREY hair key difference."
+    "sourcePrompt": "El Consultor — Unit 5 distractor. SILVER/GREY hair key difference.",
+    "version": "ff15da03"
   },
   {
     "characterId": "unit-05-programadora",
@@ -338,7 +368,8 @@
     "timestamp": "2026-05-20T20:26:0520Z",
     "status": "approved",
     "creditsUsed": 1.5,
-    "sourcePrompt": "La Programadora — Unit 5 distractor. BLUE backpack + headphones around neck."
+    "sourcePrompt": "La Programadora — Unit 5 distractor. BLUE backpack + headphones around neck.",
+    "version": "ab8c0ed2"
   },
   {
     "characterId": "unit-05-tomas-garcia",
@@ -349,7 +380,8 @@
     "timestamp": "2026-05-20T20:26:0520Z",
     "status": "approved",
     "creditsUsed": 1.5,
-    "sourcePrompt": "Tomás García — Unit 5 witness. Building security guard uniform."
+    "sourcePrompt": "Tomás García — Unit 5 witness. Building security guard uniform.",
+    "version": "00496031"
   },
   {
     "characterId": "unit-06-jefe-cocina",
@@ -360,7 +392,8 @@
     "timestamp": "2026-05-20T20:26:0520Z",
     "status": "approved",
     "creditsUsed": 1.5,
-    "sourcePrompt": "El Jefe de Cocina — Unit 6 distractor. Tall white toque blanche, head chef."
+    "sourcePrompt": "El Jefe de Cocina — Unit 6 distractor. Tall white toque blanche, head chef.",
+    "version": "989cb0e7"
   },
   {
     "characterId": "unit-06-sous-chef",
@@ -371,7 +404,8 @@
     "timestamp": "2026-05-20T20:26:0520Z",
     "status": "approved",
     "creditsUsed": 1.5,
-    "sourcePrompt": "La Sous Chef — Unit 6 distractor. Chef uniform, wooden spoon, focused on stew."
+    "sourcePrompt": "La Sous Chef — Unit 6 distractor. Chef uniform, wooden spoon, focused on stew.",
+    "version": "53171103"
   },
   {
     "characterId": "unit-06-repostera",
@@ -382,7 +416,8 @@
     "timestamp": "2026-05-20T20:26:0520Z",
     "status": "approved",
     "creditsUsed": 1.5,
-    "sourcePrompt": "La Repostera — Unit 6 distractor/witness. Pastry chef, flour on apron, spotted the criminal."
+    "sourcePrompt": "La Repostera — Unit 6 distractor/witness. Pastry chef, flour on apron, spotted the criminal.",
+    "version": "ffe03d5e"
   },
   {
     "characterId": "unit-07-cantante",
@@ -393,7 +428,8 @@
     "timestamp": "2026-05-20T20:26:0520Z",
     "status": "approved",
     "creditsUsed": 1.5,
-    "sourcePrompt": "La Cantante Famosa — Unit 7 distractor. Stage performer, microphone visible."
+    "sourcePrompt": "La Cantante Famosa — Unit 7 distractor. Stage performer, microphone visible.",
+    "version": "fc81f6a6"
   },
   {
     "characterId": "unit-07-guitarrista",
@@ -404,7 +440,8 @@
     "timestamp": "2026-05-20T20:26:0520Z",
     "status": "approved",
     "creditsUsed": 1.5,
-    "sourcePrompt": "El Guitarrista — Unit 7 distractor. BLUE festival uniform (not black), guitar."
+    "sourcePrompt": "El Guitarrista — Unit 7 distractor. BLUE festival uniform (not black), guitar.",
+    "version": "4a7f8f90"
   },
   {
     "characterId": "unit-07-periodista",
@@ -415,7 +452,8 @@
     "timestamp": "2026-05-20T20:26:0520Z",
     "status": "approved",
     "creditsUsed": 1.5,
-    "sourcePrompt": "La Periodista — Unit 7 distractor. TV journalist, professional camera, press badge."
+    "sourcePrompt": "La Periodista — Unit 7 distractor. TV journalist, professional camera, press badge.",
+    "version": "4b6e6a17"
   },
   {
     "characterId": "unit-08-turista",
@@ -426,7 +464,8 @@
     "timestamp": "2026-05-20T20:26:0520Z",
     "status": "approved",
     "creditsUsed": 1.5,
-    "sourcePrompt": "El Turista — Unit 8 distractor. Foreign tourist, camera around neck, backpacker."
+    "sourcePrompt": "El Turista — Unit 8 distractor. Foreign tourist, camera around neck, backpacker.",
+    "version": "32585745"
   },
   {
     "characterId": "unit-08-estudiante-quispe",
@@ -437,7 +476,8 @@
     "timestamp": "2026-05-20T20:26:0520Z",
     "status": "approved",
     "creditsUsed": 1.5,
-    "sourcePrompt": "Carmen Quispe — Unit 8 distractor. 21yo university student, backpack + market bag."
+    "sourcePrompt": "Carmen Quispe — Unit 8 distractor. 21yo university student, backpack + market bag.",
+    "version": "b6b545ad"
   },
   {
     "characterId": "unit-01-cold-trompetista",
@@ -448,7 +488,8 @@
     "timestamp": "2026-05-20T20:26:0520Z",
     "status": "approved",
     "creditsUsed": 1.5,
-    "sourcePrompt": "La Trompetista — Cold Case 1 CRIMINAL. All-black, long black hair, large black music case."
+    "sourcePrompt": "La Trompetista — Cold Case 1 CRIMINAL. All-black, long black hair, large black music case.",
+    "version": "bb28c0b2"
   },
   {
     "characterId": "unit-01-cold-fotografo",
@@ -459,7 +500,8 @@
     "timestamp": "2026-05-20T20:26:0520Z",
     "status": "approved",
     "creditsUsed": 1.5,
-    "sourcePrompt": "El Fotógrafo — Cold Case 1 distractor. Short, dark beard, large camera."
+    "sourcePrompt": "El Fotógrafo — Cold Case 1 distractor. Short, dark beard, large camera.",
+    "version": "7f1fa699"
   },
   {
     "characterId": "unit-01-cold-estudiante",
@@ -470,7 +512,8 @@
     "timestamp": "2026-05-20T20:26:0520Z",
     "status": "approved",
     "creditsUsed": 1.5,
-    "sourcePrompt": "La Estudiante Cold — Cold Case 1 distractor. Short castaño hair, music books."
+    "sourcePrompt": "La Estudiante Cold — Cold Case 1 distractor. Short castaño hair, music books.",
+    "version": "b1882099"
   },
   {
     "characterId": "unit-01-cold-guia",
@@ -481,7 +524,8 @@
     "timestamp": "2026-05-20T20:26:0520Z",
     "status": "approved",
     "creditsUsed": 1.5,
-    "sourcePrompt": "El Guía — Cold Case 1 distractor. Round glasses, museum badge."
+    "sourcePrompt": "El Guía — Cold Case 1 distractor. Round glasses, museum badge.",
+    "version": "4008b99c"
   },
   {
     "characterId": "unit-01-cold-conservador",
@@ -492,7 +536,8 @@
     "timestamp": "2026-05-20T20:26:0520Z",
     "status": "approved",
     "creditsUsed": 1.5,
-    "sourcePrompt": "El Conservador — Cold Case 1 distractor. Museum conservator suit + badge."
+    "sourcePrompt": "El Conservador — Cold Case 1 distractor. Museum conservator suit + badge.",
+    "version": "b2a14386"
   },
   {
     "characterId": "unit-01-cold-don-mauricio",
@@ -503,6 +548,7 @@
     "timestamp": "2026-05-20T20:26:0520Z",
     "status": "approved",
     "creditsUsed": 1.5,
-    "sourcePrompt": "Don Mauricio García — Cold Case 1 witness. Museum security guard uniform + mustache."
+    "sourcePrompt": "Don Mauricio García — Cold Case 1 witness. Museum security guard uniform + mustache.",
+    "version": "43255fa8"
   }
 ]

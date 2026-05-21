@@ -3,6 +3,8 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import type { QuestionItem, InterrogationCharacter } from "@/lib/types/unit-content";
 import type { OnComplete } from "@/lib/games/types";
+import SkipStageButton from "./SkipStageButton";
+import CharacterPortrait from "@/components/CharacterPortrait";
 
 interface Props {
   character: InterrogationCharacter;
@@ -156,6 +158,7 @@ export default function Interrogation({
   questionBank,
   requiredInfo,
   maxQuestions,
+  unitId,
   onComplete,
 }: Props) {
   const [askedIds, setAskedIds] = useState<string[]>([]);
@@ -220,8 +223,7 @@ export default function Interrogation({
     }
   }
 
-  const portrait = character.imageUrl
-    ?? `https://i.pravatar.cc/300?img=${character.imageSeed ?? 1}`;
+  // portrait variable removed — using CharacterPortrait component below
 
   // ── Wrapping / complete feedback ──────────────────────────────────────────
   if (status === "wrapping" || status === "complete") {
@@ -280,21 +282,35 @@ export default function Interrogation({
         </div>
       </div>
 
+      {/* Skip strip */}
+      {status === "playing" && (
+        <div className="shrink-0 border-b border-[rgba(201,147,58,0.08)] bg-[#0f0d0b] py-2 px-4">
+          <SkipStageButton
+            stageName="Interrogatorio"
+            unitId={unitId}
+            onSkip={() => finishInterrogation("Interrogatorio saltado.")}
+          />
+        </div>
+      )}
+
       {/* ── Main area: character + notepad ─────────────────────────────────── */}
       <div className="flex flex-1 min-h-0 divide-x divide-[rgba(201,147,58,0.08)]">
         {/* Character panel */}
         <div className="w-2/5 flex flex-col p-4 gap-3 overflow-y-auto">
           {/* Portrait */}
           <div className="relative">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img
-              src={portrait}
-              alt={character.name}
-              className="w-full object-cover grayscale contrast-110"
-              style={{ height: 130, objectPosition: "top" }}
+            <CharacterPortrait
+              imageUrl={character.imageUrl ?? undefined}
+              altText={character.name}
+              name={character.name}
+              role={character.role}
+              size="medium"
+              grayscale
+              unitId={unitId}
+              className="w-full"
             />
             {/* Name badge */}
-            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[rgba(0,0,0,0.8)] to-transparent px-2 py-1.5">
+            <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-[rgba(0,0,0,0.8)] to-transparent px-2 py-1.5 pointer-events-none">
               <p className="font-display font-bold text-sm text-[#e8b455] leading-none">
                 {character.name}
               </p>
