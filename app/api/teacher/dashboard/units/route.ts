@@ -2,6 +2,36 @@ import { NextRequest, NextResponse } from "next/server";
 import { getTeacherSession } from "@/lib/auth/session";
 import { createClient } from "@/lib/supabase/server";
 
+// ── ACTFL mode mapping ────────────────────────────────────────────────────────
+// Maps internal activity_type values → ACTFL Communication Mode
+const ACTFL_MODE: Record<string, string> = {
+  listening:             "interpretive_listening",
+  stakeout:             "interpretive_listening",
+  reading:              "interpretive_reading",
+  dialogue:             "interpersonal",
+  vocab_match:          "linguistic",
+  academia_recognition: "linguistic",
+  academia_memorization:"linguistic",
+  academia_production:  "linguistic",
+  lineup:               "interpretive_synthesis",
+  cultural:             "cultures",
+  sentence_builder:     "presentational",
+};
+
+// Novice-level proficiency bands (by per-student avg ratio)
+function toBand(ratio: number): "exceeds" | "meets" | "approaching" | "novice_low" {
+  if (ratio >= 0.85) return "exceeds";
+  if (ratio >= 0.75) return "meets";
+  if (ratio >= 0.60) return "approaching";
+  return "novice_low";
+}
+
+function bandDistribution(studentAvgs: number[]) {
+  const bands = { exceeds: 0, meets: 0, approaching: 0, novice_low: 0 };
+  for (const s of studentAvgs) bands[toBand(s)]++;
+  return bands;
+}
+
 export async function GET(request: NextRequest) {
   if (!(await getTeacherSession())) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
@@ -13,157 +43,177 @@ export async function GET(request: NextRequest) {
   const studentIds = (studentsData as Array<{ id: string }> | null)?.map((s) => s.id) ?? [];
   const totalStudents = studentIds.length;
 
-  const LISTENING_FLAG_TYPES = ["needs_listening_support", "transcript_revealed", "listening_skipped", "academia_skipped_after_failure", "help_requested", "stage_skipped", "repeated_skipping"];
+  const FLAG_TYPES = [
+    "needs_listening_support", "transcript_revealed", "listening_skipped",
+    "academia_skipped_after_failure", "help_requested", "stage_skipped",
+    "repeated_skipping", "academia_struggling",
+  ];
 
-  const [progressRes, attemptsRes, masteryRes, unitsRes, academiaRes, listeningFlagsRes] = await Promise.all([
-    studentIds.length ? supabase.from("unit_progress").select("student_id, unit_id, status, cold_case_completed_at").in("student_id", studentIds) : Promise.resolve({ data: [] }),
-    studentIds.length ? supabase.from("attempts").select("unit_id, activity_type, score, max_score, time_spent_seconds").in("student_id", studentIds) : Promise.resolve({ data: [] }),
-    studentIds.length ? supabase.from("mastery").select("student_id, vocab_term, attempts, correct").in("student_id", studentIds) : Promise.resolve({ data: [] }),
-    supabase.from("units").select("id, number, country, title_es").order("number"),
+  const [progressRes, attemptsRes, masteryRes, unitsRes, academiaRes, flagsRes] = await Promise.all([
     studentIds.length
-      ? supabase.from("academia_sessions").select("student_id, unit_id, routing_tier").in("student_id", studentIds)
+      ? supabase.from("unit_progress")
+          .select("student_id, unit_id, status, cold_case_completed_at")
+          .in("student_id", studentIds)
+      : Promise.resolve({ data: [] }),
+    // ← now includes student_id so we can compute per-student band distributions
+    studentIds.length
+      ? supabase.from("attempts")
+          .select("student_id, unit_id, activity_type, score, max_score")
+          .in("student_id", studentIds)
       : Promise.resolve({ data: [] }),
     studentIds.length
-      ? supabase.from("student_flags").select("student_id, unit_id, flag_type").in("student_id", studentIds).in("flag_type", LISTENING_FLAG_TYPES)
+      ? supabase.from("mastery")
+          .select("student_id, vocab_term, attempts, correct")
+          .in("student_id", studentIds)
+      : Promise.resolve({ data: [] }),
+    supabase.from("units").select("id, number, country, title_es").order("number"),
+    studentIds.length
+      ? supabase.from("academia_sessions")
+          .select("student_id, unit_id, routing_tier, passed_first_try, retry_count, advanced_without_passing")
+          .in("student_id", studentIds)
+      : Promise.resolve({ data: [] }),
+    studentIds.length
+      ? supabase.from("student_flags")
+          .select("student_id, unit_id, flag_type")
+          .in("student_id", studentIds)
+          .in("flag_type", FLAG_TYPES)
+          .is("resolved_at", null)
       : Promise.resolve({ data: [] }),
   ]);
 
-  const progress = (progressRes.data ?? []) as Array<{ student_id: string; unit_id: string; status: string }>;
-  const attempts = (attemptsRes.data ?? []) as Array<{ unit_id: string; activity_type: string; score: number; max_score: number; time_spent_seconds: number }>;
-  const mastery = (masteryRes.data ?? []) as Array<{ student_id: string; vocab_term: string; attempts: number; correct: number }>;
+  const progress = (progressRes.data ?? []) as Array<{
+    student_id: string; unit_id: string; status: string; cold_case_completed_at?: string | null;
+  }>;
+  const attempts = (attemptsRes.data ?? []) as Array<{
+    student_id: string; unit_id: string; activity_type: string; score: number; max_score: number;
+  }>;
+  const mastery = (masteryRes.data ?? []) as Array<{
+    student_id: string; vocab_term: string; attempts: number; correct: number;
+  }>;
   const units = (unitsRes.data ?? []) as Array<{ id: string; number: number; country: string; title_es: string }>;
-  const academiaSessions = (academiaRes.data ?? []) as Array<{ student_id: string; unit_id: string; routing_tier: string }>;
-  const listeningFlags = (listeningFlagsRes.data ?? []) as Array<{ student_id: string; unit_id: string; flag_type: string }>;
+  const academiaSessions = (academiaRes.data ?? []) as Array<{
+    student_id: string; unit_id: string; routing_tier: string;
+    passed_first_try?: boolean; retry_count?: number; advanced_without_passing?: boolean;
+  }>;
+  const flags = (flagsRes.data ?? []) as Array<{ student_id: string; unit_id: string; flag_type: string }>;
 
   const result = units.map((u) => {
     const unitProgress = progress.filter((p) => p.unit_id === u.id);
-    const unitAttempts = attempts.filter((a) => a.unit_id === u.id);
+    const unitAttempts = attempts.filter((a) => a.unit_id === u.id && a.max_score > 0);
 
     const completionCount = unitProgress.filter((p) => p.status === "completed").length;
     const inProgressCount = unitProgress.filter((p) => p.status === "in_progress").length;
 
-    const scoredAttempts = unitAttempts.filter((a) => a.max_score > 0);
-    const avgScore = scoredAttempts.length
-      ? Math.round((scoredAttempts.reduce((s, a) => s + a.score / a.max_score, 0) / scoredAttempts.length) * 100)
-      : 0;
-    const avgTimeMinutes = unitAttempts.length
-      ? Math.round(unitAttempts.reduce((s, a) => s + a.time_spent_seconds, 0) / unitAttempts.length / 60)
-      : 0;
-
-    // Activity breakdown
-    const byType = new Map<string, { total: number; count: number }>();
+    // ── ACTFL mode band distributions ──────────────────────────────────────
+    // Accumulate per-student ratios per mode
+    const studentModeAccum = new Map<string, Map<string, number[]>>(); // studentId → mode → [ratios]
     for (const a of unitAttempts) {
-      if (a.max_score === 0) continue;
-      const cur = byType.get(a.activity_type) ?? { total: 0, count: 0 };
-      byType.set(a.activity_type, { total: cur.total + a.score / a.max_score, count: cur.count + 1 });
+      const mode = ACTFL_MODE[a.activity_type];
+      if (!mode) continue;
+      if (!studentModeAccum.has(a.student_id)) studentModeAccum.set(a.student_id, new Map());
+      const sm = studentModeAccum.get(a.student_id)!;
+      if (!sm.has(mode)) sm.set(mode, []);
+      sm.get(mode)!.push(a.score / a.max_score);
     }
-    const activityBreakdown = Array.from(byType.entries()).map(([type, { total, count }]) => ({
-      type, avgScore: Math.round((total / count) * 100), count,
-    })).sort((a, b) => a.avgScore - b.avgScore);
 
-    // Hardest vocab for this unit (class-wide mastery %)
-    const termMap = new Map<string, { totalAttempts: number; totalCorrect: number; seen: number }>();
+    // Collapse to per-mode student avg → band distribution
+    const modeData: Record<string, {
+      bands: { exceeds: number; meets: number; approaching: number; novice_low: number };
+      avgScore: number;
+      studentsAssessed: number;
+    }> = {};
+
+    const modesPresent = new Set<string>();
+    for (const a of unitAttempts) {
+      const mode = ACTFL_MODE[a.activity_type];
+      if (mode) modesPresent.add(mode);
+    }
+
+    for (const mode of Array.from(modesPresent)) {
+      const studentAvgs: number[] = [];
+      for (const [, modeMap] of Array.from(studentModeAccum)) {
+        const scores = modeMap.get(mode);
+        if (scores && scores.length > 0) {
+          studentAvgs.push(scores.reduce((a, b) => a + b, 0) / scores.length);
+        }
+      }
+      if (studentAvgs.length === 0) continue;
+      modeData[mode] = {
+        bands: bandDistribution(studentAvgs),
+        avgScore: Math.round((studentAvgs.reduce((a, b) => a + b, 0) / studentAvgs.length) * 100),
+        studentsAssessed: studentAvgs.length,
+      };
+    }
+
+    // ── Vocabulary mastery buckets ──────────────────────────────────────────
+    const termMap = new Map<string, { totalAttempts: number; totalCorrect: number }>();
     for (const m of mastery) {
       if (m.attempts === 0) continue;
-      const cur = termMap.get(m.vocab_term) ?? { totalAttempts: 0, totalCorrect: 0, seen: 0 };
-      termMap.set(m.vocab_term, { totalAttempts: cur.totalAttempts + m.attempts, totalCorrect: cur.totalCorrect + m.correct, seen: cur.seen + 1 });
+      const cur = termMap.get(m.vocab_term) ?? { totalAttempts: 0, totalCorrect: 0 };
+      termMap.set(m.vocab_term, {
+        totalAttempts: cur.totalAttempts + m.attempts,
+        totalCorrect:  cur.totalCorrect  + m.correct,
+      });
     }
-    const hardestVocab = Array.from(termMap.entries())
-      .map(([term, { totalAttempts, totalCorrect, seen }]) => ({
-        term, masteryPct: Math.round((totalCorrect / totalAttempts) * 100), studentsSeen: seen,
-      }))
-      .sort((a, b) => a.masteryPct - b.masteryPct)
-      .slice(0, 5);
+    const vocabTerms = Array.from(termMap.entries()).map(([term, { totalAttempts, totalCorrect }]) => ({
+      term,
+      masteryPct: Math.round((totalCorrect / totalAttempts) * 100),
+    }));
 
-    // Stakeout stats: % passed, avg time remaining
-    const unitStakeout = attempts.filter(
-      (a) => a.unit_id === u.id && a.activity_type === "stakeout" && a.max_score === 90
-    );
-    const stakeoutAttempted = unitStakeout.length;
-    const stakeoutPassed    = unitStakeout.filter((a) => a.score > 0).length;
-    const stakeoutPassPct   = stakeoutAttempted
-      ? Math.round((stakeoutPassed / stakeoutAttempted) * 100)
-      : null;
-    const stakeoutAvgTime   = stakeoutAttempted
-      ? Math.round(unitStakeout.reduce((s, a) => s + a.score, 0) / stakeoutAttempted)
-      : null;
+    const vocabMastered  = vocabTerms.filter((v) => v.masteryPct >= 80).length;
+    const vocabEmerging  = vocabTerms.filter((v) => v.masteryPct >= 60 && v.masteryPct < 80).length;
+    const vocabStruggling = vocabTerms.filter((v) => v.masteryPct < 60).length;
+    const hardestVocab   = vocabTerms.sort((a, b) => a.masteryPct - b.masteryPct).slice(0, 5);
 
-    // Academia routing tier breakdown for this unit
+    // ── Academia stats ──────────────────────────────────────────────────────
     const unitAcademia = academiaSessions.filter((a) => a.unit_id === u.id);
-    const academiaReady       = unitAcademia.filter((a) => a.routing_tier === "ready").length;
-    const academiaRecommended = unitAcademia.filter((a) => a.routing_tier === "recommended").length;
-    const academiaRequired    = unitAcademia.filter((a) => a.routing_tier === "required").length;
-    const academiaTotal = unitAcademia.length;
+    const academiaTotal          = unitAcademia.length;
+    const academiaFirstTryPass   = unitAcademia.filter((a) => a.passed_first_try).length;
+    const academiaAdvancedNoPass = unitAcademia.filter((a) => a.advanced_without_passing).length;
+    const academiaReady          = unitAcademia.filter((a) => a.routing_tier === "ready").length;
+    const academiaRecommended    = unitAcademia.filter((a) => a.routing_tier === "recommended").length;
+    const academiaRequired       = unitAcademia.filter((a) => a.routing_tier === "required").length;
 
-    // Listening support stats for this unit
-    const unitListeningFlags = listeningFlags.filter((f) => f.unit_id === u.id);
-    const studentsWhoNeededListeningSupport = new Set(unitListeningFlags.map((f) => f.student_id)).size;
-    const listeningSkippedCount = unitListeningFlags.filter((f) => f.flag_type === "listening_skipped").length;
-    const listeningNeedsSupportCount = unitListeningFlags.filter((f) => f.flag_type === "needs_listening_support").length;
-    const listeningTranscriptCount = unitListeningFlags.filter((f) => f.flag_type === "transcript_revealed").length;
-    const academiaSkippedCount = unitListeningFlags.filter((f) => f.flag_type === "academia_skipped_after_failure").length;
-    const stagesSkippedCount = unitListeningFlags.filter((f) => f.flag_type === "stage_skipped").length;
-    const studentsWithRepeatedSkipping = new Set(
-      unitListeningFlags.filter((f) => f.flag_type === "repeated_skipping").map((f) => f.student_id)
-    ).size;
-    // Per-stage skip breakdown from context
-    const stageSkipBreakdown: Record<string, number> = {};
-    for (const f of unitListeningFlags) {
-      if (f.flag_type !== "stage_skipped") continue;
-      const stageName = (f as { flag_type: string; student_id: string; unit_id: string; context?: { stage?: string } }).context?.stage ?? "unknown";
-      stageSkipBreakdown[stageName] = (stageSkipBreakdown[stageName] ?? 0) + 1;
-    }
-    const stagesSkippedPct = totalStudents > 0
-      ? Math.round((studentsWhoNeededListeningSupport / totalStudents) * 100)
-      : null;
-    // Estimate % of class who needed support (using completionCount as denominator)
-    const listeningNeedsSupportPct = completionCount > 0
-      ? Math.round((studentsWhoNeededListeningSupport / completionCount) * 100)
-      : null;
+    // ── Support flags ───────────────────────────────────────────────────────
+    const unitFlags = flags.filter((f) => f.unit_id === u.id);
+    const studentsNeedingSupport  = new Set(unitFlags.map((f) => f.student_id)).size;
+    const helpRequested           = new Set(unitFlags.filter((f) => f.flag_type === "help_requested").map((f) => f.student_id)).size;
+    const listeningSkipped        = new Set(unitFlags.filter((f) => f.flag_type === "listening_skipped").map((f) => f.student_id)).size;
+    const transcriptRevealed      = new Set(unitFlags.filter((f) => f.flag_type === "transcript_revealed").map((f) => f.student_id)).size;
+    const repeatedSkipping        = new Set(unitFlags.filter((f) => f.flag_type === "repeated_skipping").map((f) => f.student_id)).size;
+    const academiaStruggling      = new Set(unitFlags.filter((f) => f.flag_type === "academia_struggling").map((f) => f.student_id)).size;
 
-    // Cold case completion %
-    const coldCaseCompletions = (progressRes.data ?? []).filter(
-      (p: { unit_id: string; cold_case_completed_at?: string | null }) =>
-        p.unit_id === u.id && p.cold_case_completed_at
-    ).length;
-    const coldCasePct = completionCount > 0
-      ? Math.round((coldCaseCompletions / completionCount) * 100)
-      : null;
+    // Cold case
+    const coldCaseCompletions = unitProgress.filter((p) => p.cold_case_completed_at).length;
 
     return {
-      number: u.number, country: u.country, titleEs: u.title_es,
-      completionCount, inProgressCount, totalStudents,
-      avgScore, avgTimeMinutes, activityBreakdown, hardestVocab,
-      coldCase: {
-        completions: coldCaseCompletions,
-        pct: coldCasePct,
-      },
-      stakeout: {
-        attempted: stakeoutAttempted,
-        passedPct: stakeoutPassPct,
-        avgTimeRemaining: stakeoutAvgTime,
-      },
+      number: u.number,
+      country: u.country,
+      titleEs: u.title_es,
+      completionCount,
+      inProgressCount,
+      totalStudents,
+      coldCaseCompletions,
+      modeData,
+      vocab: { mastered: vocabMastered, emerging: vocabEmerging, struggling: vocabStruggling, hardest: hardestVocab, total: vocabTerms.length },
       academia: {
         total: academiaTotal,
-        readyPct:       academiaTotal ? Math.round((academiaReady       / academiaTotal) * 100) : null,
-        recommendedPct: academiaTotal ? Math.round((academiaRecommended / academiaTotal) * 100) : null,
-        requiredPct:    academiaTotal ? Math.round((academiaRequired    / academiaTotal) * 100) : null,
+        firstTryPassPct:    academiaTotal ? Math.round((academiaFirstTryPass   / academiaTotal) * 100) : null,
+        advancedNoPassPct:  academiaTotal ? Math.round((academiaAdvancedNoPass / academiaTotal) * 100) : null,
+        readyPct:           academiaTotal ? Math.round((academiaReady          / academiaTotal) * 100) : null,
+        recommendedPct:     academiaTotal ? Math.round((academiaRecommended    / academiaTotal) * 100) : null,
+        requiredPct:        academiaTotal ? Math.round((academiaRequired       / academiaTotal) * 100) : null,
       },
-      listeningSupport: {
-        studentsWhoNeededSupport: studentsWhoNeededListeningSupport,
-        needsSupportPct:          listeningNeedsSupportPct,
-        supportRequestCount:      listeningNeedsSupportCount,
-        transcriptRevealedCount:  listeningTranscriptCount,
-        skippedCount:             listeningSkippedCount,
-        academiaSkippedCount,
-        stagesSkippedCount,
-        studentsWithRepeatedSkipping,
-        stageSkipBreakdown,
-        stagesSkippedPct,
+      support: {
+        studentsNeedingSupport,
+        helpRequested,
+        listeningSkipped,
+        transcriptRevealed,
+        repeatedSkipping,
+        academiaStruggling,
       },
     };
   });
-
 
   return NextResponse.json({ units: result });
 }
