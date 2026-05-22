@@ -102,15 +102,24 @@ export default function ColdCaseCard({ unit, status, unlocksAt }: Props) {
           </div>
 
           {/* Status */}
+          {/* What is Expediente Frío? — shown when available or locked */}
+          {status !== "completed" && (
+            <div className={`mt-2 px-1 ${status === "locked" ? "opacity-40" : ""}`}>
+              <p className="font-typewriter text-[9px] text-[#4a7a9a] leading-snug text-center">
+                El mismo caso — reglas más difíciles, puntos dobles.
+              </p>
+            </div>
+          )}
+
           {status === "locked" && unlocksAt && (
-            <div className="mt-3 text-center">
+            <div className="mt-2 text-center">
               <p className="font-typewriter text-[9px] text-[#2a4a6a]">Disponible en</p>
               <p className="font-typewriter text-xs text-[#4a7a9a] font-bold">{fmtCountdown(remaining)}</p>
             </div>
           )}
 
           {status === "available" && (
-            <div className="mt-3 flex justify-center">
+            <div className="mt-2 flex justify-center">
               <span className="inline-flex items-center gap-1 px-2 py-0.5 bg-[#1a3a6a] border border-[#3b82f6] font-typewriter text-[9px] tracking-[0.2em] uppercase text-[#93c5fd]">
                 <span className="w-1.5 h-1.5 rounded-full bg-[#3b82f6] animate-pulse" />
                 ACTIVO

@@ -24,7 +24,7 @@ export default function LandingPage() {
         <div className="mb-6 inline-flex items-center gap-3 px-5 py-2 border border-[rgba(201,147,58,0.3)] bg-[rgba(201,147,58,0.05)]">
           <span className="w-2 h-2 rounded-full bg-[#c0392b] animate-pulse" />
           <span className="font-typewriter text-xs tracking-[0.25em] uppercase text-[#c9933a]">
-            Investigación Activa · 6 Países · 6 Casos
+            Investigación Activa · 10 Países · 10 Casos
           </span>
         </div>
 

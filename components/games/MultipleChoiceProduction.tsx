@@ -27,6 +27,7 @@ interface MCCard {
   prompt: string;
   correct: string;
   options: string[];         // 4 options (shuffled), includes correct
+  spanishTerm: string;       // canonical Spanish term — always used as the mastery key
 }
 
 function buildCards(vocab: VocabPair[], direction: "en-to-es" | "es-to-en"): MCCard[] {
@@ -39,7 +40,9 @@ function buildCards(vocab: VocabPair[], direction: "en-to-es" | "es-to-en"): MCC
     const correct  = direction === "en-to-es" ? v.spanish : v.english;
     const distractors = shuffle(allAnswers.filter((a) => a !== correct)).slice(0, 3);
     const options  = shuffle([correct, ...distractors]);
-    return { prompt, correct, options };
+    // spanishTerm is always v.spanish regardless of direction, so mastery is never
+    // accidentally stored under the English translation (which caused double-counting).
+    return { prompt, correct, options, spanishTerm: v.spanish };
   });
 }
 
@@ -111,7 +114,10 @@ export default function MultipleChoiceProduction({
 
     const newScore = correct ? score + 1 : score;
     if (correct) setScore(newScore);
-    updateMastery(card.prompt, correct);
+    // Always key mastery on the canonical Spanish term, not the displayed prompt.
+    // The prompt may be English (for en-to-es production), which caused each vocab
+    // concept to create two mastery rows and inflate "Vocab Dominado" counts by 2×.
+    updateMastery(card.spanishTerm, correct);
 
     // Penalise wrong answers
     if (!correct) setTimeLeft((t) => Math.max(0, t - 5));

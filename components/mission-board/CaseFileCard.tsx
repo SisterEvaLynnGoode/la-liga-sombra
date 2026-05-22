@@ -72,7 +72,7 @@ export default function CaseFileCard({ unit, status, caseSolved, readinessLevel 
           <div className="flex items-center justify-between mb-2">
             <span
               className={`font-typewriter text-[9px] tracking-[0.3em] uppercase ${
-                isLocked ? "text-[#4a3a2a]" : "text-[#8b5e10]"
+                isLocked ? "text-[#8b7355]" : "text-[#8b5e10]"
               }`}
             >
               CASO {romanNumeral}
@@ -87,7 +87,7 @@ export default function CaseFileCard({ unit, status, caseSolved, readinessLevel 
             <span className="text-4xl leading-none">{unit.flag}</span>
             <p
               className={`font-display font-bold text-sm mt-1 leading-tight ${
-                isLocked ? "text-[#4a3a2a]" : "text-[#2c1a08]"
+                isLocked ? "text-[#8b7355]" : "text-[#2c1a08]"
               }`}
             >
               {unit.country}
@@ -98,7 +98,7 @@ export default function CaseFileCard({ unit, status, caseSolved, readinessLevel 
           <div className={`text-center mt-2 ${isLocked ? "opacity-30" : ""}`}>
             <p
               className={`font-typewriter text-[10px] italic leading-snug ${
-                isLocked ? "text-[#4a3a2a]" : "text-[#6b4a1a]"
+                isLocked ? "text-[#6b5a45]" : "text-[#6b4a1a]"
               }`}
             >
               &ldquo;{unit.titleEs}&rdquo;
@@ -110,8 +110,8 @@ export default function CaseFileCard({ unit, status, caseSolved, readinessLevel 
           {/* LOCKED */}
           {isLocked && (
             <div className="mt-3 text-center">
-              <span className="font-typewriter text-[9px] tracking-[0.2em] uppercase text-[#4a3a2a]">
-                Bloqueado
+              <span className="font-typewriter text-[9px] tracking-[0.2em] uppercase text-[#8b7355]">
+                🔒 Bloqueado
               </span>
             </div>
           )}
@@ -134,16 +134,17 @@ export default function CaseFileCard({ unit, status, caseSolved, readinessLevel 
             </div>
           )}
 
-          {/* IN PROGRESS — caution tape */}
+          {/* IN PROGRESS — caution tape (decorative) + legible label below */}
           {isInProgress && (
-            <div className="mt-3 overflow-hidden">
+            <div className="mt-3">
               <div
-                className="h-4 w-full font-typewriter text-[8px] text-[#1a1a1a] flex items-center overflow-hidden"
+                className="h-2.5 w-full"
                 style={{
-                  background: "repeating-linear-gradient(-45deg, #f59e0b, #f59e0b 8px, #1a1a1a 8px, #1a1a1a 16px)",
+                  background: "repeating-linear-gradient(-45deg, #f59e0b, #f59e0b 6px, #1a1a1a 6px, #1a1a1a 12px)",
                 }}
-              >
-                <span className="px-2 font-bold tracking-widest uppercase text-[#1a1a1a] mix-blend-multiply">
+              />
+              <div className="flex justify-center mt-1">
+                <span className="inline-block font-typewriter text-[8px] tracking-[0.2em] font-bold uppercase text-[#f59e0b] bg-[#1a1a1a] px-2 py-0.5 border border-[rgba(245,158,11,0.4)]">
                   EN PROGRESO
                 </span>
               </div>
