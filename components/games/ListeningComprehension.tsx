@@ -238,14 +238,30 @@ export default function ListeningComprehension({
     }
   }
 
-  // Auto-complete after pass (1.5s pause so student can read result)
+  // Snapshot final score/time when we first enter resultPass so the auto-advance
+  // timer is not sensitive to elapsed ticking every second (which previously caused
+  // the 1.5 s timeout to reset each second and never fire — the "Continuando…" hang).
+  const resultSnapRef = useRef<{ correct: number; total: number; time: number; att: number } | null>(null);
+  useEffect(() => {
+    if (phase === "resultPass" && !resultSnapRef.current) {
+      resultSnapRef.current = { correct: correctCount, total: totalQ, time: elapsed, att: totalAttempts };
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [phase]); // intentionally only on phase change
+
+  // Auto-complete 2 s after pass. Only depends on phase — not on the ticking timer.
+  const finishRef = useRef(finish);
+  useEffect(() => { finishRef.current = finish; }, [finish]);
+
   useEffect(() => {
     if (phase !== "resultPass") return;
     const id = setTimeout(() => {
-      finish(correctCount, totalQ, elapsed, totalAttempts);
-    }, 1500);
+      const snap = resultSnapRef.current;
+      if (snap) finishRef.current(snap.correct, snap.total, snap.time, snap.att);
+    }, 2000);
     return () => clearTimeout(id);
-  }, [phase, correctCount, totalQ, elapsed, totalAttempts, finish]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [phase]); // stable — does not include elapsed/totalAttempts
 
   // ── Retry ─────────────────────────────────────────────────────────────────
   function handleRetry() {
@@ -691,9 +707,19 @@ export default function ListeningComprehension({
               </div>
             )}
 
-            <p className="font-typewriter text-[10px] text-[#8b7355] text-center animate-pulse">
+            <p className="font-typewriter text-[10px] text-[#8b7355] text-center animate-pulse mb-3">
               Continuando…
             </p>
+            {/* Explicit fallback button — fires immediately if auto-advance is slow */}
+            <button
+              onClick={() => {
+                const snap = resultSnapRef.current;
+                if (snap) finishRef.current(snap.correct, snap.total, snap.time, snap.att);
+              }}
+              className="w-full clip-skew py-3 font-typewriter text-sm tracking-[0.2em] uppercase bg-[#8b1a1a] text-[#f5e6c8] border border-[#c0392b] hover:bg-[#c0392b] transition-colors"
+            >
+              Continuar →
+            </button>
           </div>
         )}
 

@@ -1,5 +1,7 @@
 "use client";
 
+import { useState } from "react";
+
 interface Props {
   clue: string;
   clueNumber: number;
@@ -7,6 +9,14 @@ interface Props {
 }
 
 export default function ClueReveal({ clue, clueNumber, onDismiss }: Props) {
+  const [dismissed, setDismissed] = useState(false);
+
+  function handleDismiss() {
+    if (dismissed) return;
+    setDismissed(true);
+    onDismiss();
+  }
+
   return (
     <div
       className="fixed inset-0 z-50 flex items-center justify-center px-6"
@@ -56,10 +66,11 @@ export default function ClueReveal({ clue, clueNumber, onDismiss }: Props) {
         </p>
 
         <button
-          onClick={onDismiss}
-          className="clip-skew px-10 py-3 font-typewriter text-sm tracking-[0.25em] uppercase bg-[#8b1a1a] text-[#f5e6c8] border border-[#c0392b] hover:bg-[#c0392b] transition-colors"
+          onClick={handleDismiss}
+          disabled={dismissed}
+          className="clip-skew px-10 py-3 font-typewriter text-sm tracking-[0.25em] uppercase bg-[#8b1a1a] text-[#f5e6c8] border border-[#c0392b] hover:bg-[#c0392b] transition-colors disabled:opacity-60 disabled:cursor-default"
         >
-          Guardar pista →
+          {dismissed ? "Guardando…" : "Guardar pista →"}
         </button>
       </div>
     </div>

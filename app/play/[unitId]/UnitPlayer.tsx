@@ -90,6 +90,10 @@ export default function UnitPlayer({ content, unitId, unitNumber, classId, initi
   const [pendingStakeoutAfterClue, setPendingStakeoutAfterClue] = useState(false);
 
   const stageStartRef = useRef(Date.now());
+  // Guard: prevent handleClueDismissed from firing twice on rapid double-click.
+  // Without this, two rapid clicks advance currentStage twice, skipping the lineup
+  // entirely and rendering a phantom CASO RESUELTO without persisting the case.
+  const clueDismissGuardRef = useRef(false);
 
   // ── Shared unit-complete logic ────────────────────────────────────────────────
   const completeUnit = useCallback(
@@ -169,6 +173,7 @@ export default function UnitPlayer({ content, unitId, unitNumber, classId, initi
       const clue = "clueReward" in stage && !result.isSkipped ? (stage.clueReward ?? null) : null;
       if (clue) {
         setEarnedClues((prev) => [...prev, clue]);
+        clueDismissGuardRef.current = false; // reset guard for this new clue
         setPendingClue(clue);
         // If stakeout should fire after this clue, flag it
         if (interceptForStakeout) setPendingStakeoutAfterClue(true);
@@ -196,6 +201,11 @@ export default function UnitPlayer({ content, unitId, unitNumber, classId, initi
 
   // ── Clue dismissed → advance stage (or activate stakeout) ──────────────────
   function handleClueDismissed() {
+    // Guard: a rapid double-click would otherwise call setCurrentStage twice,
+    // advancing past the lineup and showing a phantom CASO RESUELTO.
+    if (clueDismissGuardRef.current) return;
+    clueDismissGuardRef.current = true;
+    // Reset the guard when a new pendingClue is set (next stage's clue)
     setPendingClue(null);
     if (pendingStakeoutAfterClue) {
       setPendingStakeoutAfterClue(false);
