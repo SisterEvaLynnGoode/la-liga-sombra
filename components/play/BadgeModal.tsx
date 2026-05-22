@@ -2,19 +2,28 @@
 
 import { useRouter } from "next/navigation";
 
+// Roman numerals for case numbers I–X
+const ROMAN = ["I","II","III","IV","V","VI","VII","VIII","IX","X"];
+
+// Canonical unit order — used to derive next-unit country name
+const UNIT_COUNTRIES = ["México","Puerto Rico","España","Costa Rica","Argentina","Colombia","Chile","Perú","Rep. Dominicana","Ecuador"];
+
 interface Props {
   caseTitle: string;
   country: string;
   criminalName: string;
+  unitNumber: number;
   score: number;
   maxScore: number;
   totalTimeSeconds: number;
 }
 
-export default function BadgeModal({ caseTitle, country, criminalName, score, maxScore, totalTimeSeconds }: Props) {
+export default function BadgeModal({ caseTitle, country, criminalName, unitNumber, score, maxScore, totalTimeSeconds }: Props) {
   const router = useRouter();
   const mins = Math.floor(totalTimeSeconds / 60);
   const secs = totalTimeSeconds % 60;
+  const roman = ROMAN[(unitNumber - 1) % ROMAN.length] ?? String(unitNumber);
+  const nextCountry = UNIT_COUNTRIES[unitNumber] ?? null; // unitNumber is 1-based, array is 0-based
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center px-6 bg-[#0d0b0a]">
@@ -49,7 +58,7 @@ export default function BadgeModal({ caseTitle, country, criminalName, score, ma
         {/* Case name */}
         <div style={{ animation: "fadeUp 0.5s ease 0.45s both" }}>
           <p className="font-typewriter text-[10px] tracking-[0.35em] uppercase text-[#8b7355] mb-1">
-            {country} · Caso 01
+            {country} · Caso {roman}
           </p>
           <h2 className="font-display text-xl font-bold text-[#f5e6c8] mb-4">
             {caseTitle}
@@ -96,9 +105,11 @@ export default function BadgeModal({ caseTitle, country, criminalName, score, ma
           >
             Volver al mapa →
           </button>
-          <p className="font-typewriter text-[10px] text-[#8b7355] mt-3">
-            Caso 02 — España — ahora disponible
-          </p>
+          {nextCountry && (
+            <p className="font-typewriter text-[10px] text-[#8b7355] mt-3">
+              Caso {ROMAN[unitNumber] ?? String(unitNumber + 1)} — {nextCountry} — ahora disponible
+            </p>
+          )}
         </div>
       </div>
     </div>

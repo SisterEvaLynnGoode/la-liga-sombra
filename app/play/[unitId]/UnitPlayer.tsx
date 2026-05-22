@@ -32,6 +32,7 @@ interface Props {
   unitId: string;       // Supabase DB unit UUID
   unitNumber: number;
   classId: string;
+  agentName?: string;   // student's display name — used to substitute [nombre] in dialogue
   initialStageIndex: number;
   isCompleted: boolean;
   stakeoutQuestions: StakeoutQuestion[];  // pre-generated server-side; empty = no stakeout
@@ -60,7 +61,7 @@ const STAGE_LABELS: Record<StageData["type"], string> = {
   liveStakeout: "Vigilancia",
 };
 
-export default function UnitPlayer({ content, unitId, unitNumber, classId, initialStageIndex, isCompleted, stakeoutQuestions, difficulty = "standard" }: Props) {
+export default function UnitPlayer({ content, unitId, unitNumber, classId, agentName = "", initialStageIndex, isCompleted, stakeoutQuestions, difficulty = "standard" }: Props) {
   const isCold = difficulty === "cold";
   useRouter(); // reserved for future navigation (chase mechanic)
 
@@ -298,6 +299,7 @@ export default function UnitPlayer({ content, unitId, unitNumber, classId, initi
         caseTitle={content.caseTitle}
         country={content.country}
         criminalName={content.criminalName}
+        unitNumber={unitNumber}
         score={lineupScore}
         maxScore={1}
         totalTimeSeconds={totalTime}
@@ -393,6 +395,7 @@ export default function UnitPlayer({ content, unitId, unitNumber, classId, initi
             npcAvatar={stage.npcAvatar}
             nodes={stage.nodes}
             startNodeId={stage.startNodeId}
+            agentName={agentName}
             unitId={unitId}
             onComplete={handleStageComplete}
           />
@@ -502,6 +505,7 @@ export default function UnitPlayer({ content, unitId, unitNumber, classId, initi
         <ClueReveal
           clue={pendingClue}
           clueNumber={earnedClues.length}
+          unitNumber={unitNumber}
           onDismiss={handleClueDismissed}
         />
       )}

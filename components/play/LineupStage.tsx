@@ -74,7 +74,7 @@ export default function LineupStage({ suspects, correctSuspectId, hint, earnedCl
           Rueda de Reconocimiento
         </h2>
         <p className="font-typewriter text-xs text-[#8b7355] mt-1">
-          Read each suspect&apos;s description carefully. Use your clues to identify the criminal.
+          Lee la descripción de cada sospechoso con cuidado. Usa tus pistas para identificar al culpable.
         </p>
       </div>
 
@@ -134,7 +134,7 @@ export default function LineupStage({ suspects, correctSuspectId, hint, earnedCl
               <div className="relative">
                 <CharacterPortrait
                   imageUrl={suspect.imageUrl ?? undefined}
-                  altText={`Suspect: ${suspect.name}`}
+                  altText={`Sospechoso: ${suspect.name}`}
                   name={suspect.name}
                   size="medium"
                   grayscale
@@ -187,7 +187,7 @@ export default function LineupStage({ suspects, correctSuspectId, hint, earnedCl
           disabled={!selected}
           className="w-full clip-skew py-3 font-typewriter text-sm tracking-[0.2em] uppercase bg-[#8b1a1a] text-[#f5e6c8] border border-[#c0392b] hover:bg-[#c0392b] transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
         >
-          {selected ? `Acusar a "${suspects.find(s => s.id === selected)?.name}" →` : "Select a suspect first"}
+          {selected ? `Acusar a "${suspects.find(s => s.id === selected)?.name}" →` : "Selecciona un sospechoso primero"}
         </button>
       )}
 
@@ -195,7 +195,7 @@ export default function LineupStage({ suspects, correctSuspectId, hint, earnedCl
       {confirmed && !isCorrect && (
         <div className="border border-[rgba(192,57,43,0.3)] bg-[rgba(192,57,43,0.06)] px-4 py-3 text-center">
           <p className="font-typewriter text-xs text-[#c0392b]">
-            Incorrect — that suspect doesn&apos;t match all the clues. Study them again and try once more.
+            Ese sospechoso no coincide con todas las pistas. Revísalas e intenta de nuevo.
           </p>
         </div>
       )}

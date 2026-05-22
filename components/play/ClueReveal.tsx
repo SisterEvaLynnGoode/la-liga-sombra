@@ -5,11 +5,15 @@ import { useState } from "react";
 interface Props {
   clue: string;
   clueNumber: number;
+  unitNumber?: number;
   onDismiss: () => void;
 }
 
-export default function ClueReveal({ clue, clueNumber, onDismiss }: Props) {
+const ROMAN = ["I","II","III","IV","V","VI","VII","VIII","IX","X"];
+
+export default function ClueReveal({ clue, clueNumber, unitNumber, onDismiss }: Props) {
   const [dismissed, setDismissed] = useState(false);
+  const roman = unitNumber ? (ROMAN[(unitNumber - 1)] ?? String(unitNumber)) : null;
 
   function handleDismiss() {
     if (dismissed) return;
@@ -43,7 +47,7 @@ export default function ClueReveal({ clue, clueNumber, onDismiss }: Props) {
           <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 w-12 h-3 bg-[rgba(201,147,58,0.4)] rotate-1" />
 
           <p className="font-typewriter text-[10px] tracking-[0.3em] uppercase text-[#8b5e10] mb-3">
-            Evidencia — Caso 01
+            Evidencia{roman ? ` — Caso ${roman}` : ""}
           </p>
 
           <div className="border-t border-[rgba(139,94,16,0.3)] pt-4 mb-4">
@@ -62,7 +66,7 @@ export default function ClueReveal({ clue, clueNumber, onDismiss }: Props) {
 
         {/* Subtext */}
         <p className="font-typewriter text-xs text-[#8b7355] mt-5 mb-6">
-          This clue has been added to your case file.
+          Esta pista se ha agregado a tu expediente.
         </p>
 
         <button

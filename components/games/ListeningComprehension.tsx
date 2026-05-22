@@ -342,7 +342,7 @@ export default function ListeningComprehension({
             <div className="flex items-center gap-2 text-[#8b7355]">
               <span className="text-base">🔊</span>
               <p className="font-typewriter text-[10px]">
-                ¿No oyes nada? Revisa el volumen de tu Chromebook.
+                ¿No oyes nada? Revisa el volumen de tu computadora.
               </p>
             </div>
 
@@ -388,7 +388,7 @@ export default function ListeningComprehension({
                       ? "Sin más reproducciones"
                       : replaysLeft === 1
                       ? "⚠ Última oportunidad — pero puedes pedir más abajo"
-                      : `Te quedan ${replaysLeft} reproducción${replaysLeft !== 1 ? "es" : ""}`}
+                      : replaysLeft === 1 ? "Te queda 1 reproducción" : `Te quedan ${replaysLeft} reproducciones`}
                   </p>
                 )}
               </div>

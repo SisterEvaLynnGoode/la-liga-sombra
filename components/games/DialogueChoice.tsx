@@ -12,6 +12,7 @@ interface Props {
   npcAvatar?: string;
   nodes: DialogueNode[];
   startNodeId: string;
+  agentName?: string;   // substituted for [nombre] in dialogue text
   unitId?: string;
   onComplete: OnComplete;
 }
@@ -28,11 +29,18 @@ export default function DialogueChoice({
   npcAvatar = "🕵️",
   nodes,
   startNodeId,
+  agentName = "",
   unitId,
   onComplete,
 }: Props) {
   const { elapsed, stop } = useGameTimer();
   const { recordAttempt } = useAttemptTracker("dialogue", unitId);
+
+  // Substitute [nombre] placeholder with the student's display name
+  function sub(text: string): string {
+    if (!agentName) return text;
+    return text.replace(/\[nombre\]/gi, agentName);
+  }
 
   const nodeMap = Object.fromEntries(nodes.map((n) => [n.id, n]));
   const [currentNodeId, setCurrentNodeId] = useState(startNodeId);
@@ -66,7 +74,7 @@ export default function DialogueChoice({
       setCorrectChoices(newCorrect);
       setFeedback(null);
       setWrongOptionId(null);
-      setHistory((h) => [...h, { npcLine: currentNode.npcLine, chosen: option.text, wasCorrect: true }]);
+      setHistory((h) => [...h, { npcLine: sub(currentNode.npcLine), chosen: sub(option.text), wasCorrect: true }]);
 
       if (option.nextNodeId && nodeMap[option.nextNodeId]) {
         setCurrentNodeId(option.nextNodeId);
@@ -141,7 +149,7 @@ export default function DialogueChoice({
               </div>
               <div className="flex-1 bg-[#1a1614] border border-[rgba(201,147,58,0.2)] rounded-sm p-3">
                 <p className="font-display text-base text-[#f5e6c8] leading-snug">
-                  &ldquo;{currentNode.npcLine}&rdquo;
+                  &ldquo;{sub(currentNode.npcLine)}&rdquo;
                 </p>
               </div>
             </div>
@@ -156,7 +164,7 @@ export default function DialogueChoice({
             {/* Response options */}
             <div className="space-y-2">
               <p className="font-typewriter text-[10px] tracking-widest uppercase text-[#8b7355]">
-                Choose your response:
+                Elige tu respuesta:
               </p>
               {currentNode.options?.map((opt, i) => (
                 <button
@@ -173,7 +181,7 @@ export default function DialogueChoice({
                   `}
                 >
                   <span className="text-[#8b7355] mr-2">{String.fromCharCode(65 + i)}.</span>
-                  {opt.text}
+                  {sub(opt.text)}
                 </button>
               ))}
             </div>

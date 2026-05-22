@@ -215,7 +215,7 @@ export default function ReadingComprehension({
             <p className="font-typewriter text-[10px] tracking-[0.25em] uppercase text-[#8b7355]">Lectura</p>
             {glossary.length > 0 && (
               <p className="font-typewriter text-[9px] text-[#8b7355]">
-                Tap <span className="text-[#e8b455] border-b border-dashed border-[#c9933a]">highlighted words</span> for definitions
+                Toca las <span className="text-[#e8b455] border-b border-dashed border-[#c9933a]">palabras resaltadas</span> para ver definiciones
               </p>
             )}
           </div>

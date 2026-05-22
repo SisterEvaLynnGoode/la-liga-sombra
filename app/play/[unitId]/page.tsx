@@ -97,6 +97,7 @@ export default async function PlayPage({ params }: PageProps) {
       unitId={unitId}
       unitNumber={unitNumber}
       classId={session.classId}
+      agentName={session.displayName}
       initialStageIndex={initialStageIndex}
       isCompleted={isCompleted}
       stakeoutQuestions={stakeoutQuestions}

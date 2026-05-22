@@ -73,7 +73,7 @@ export default function LandingPage() {
       {/* ── Country case badges ── */}
       <section className="relative z-10 px-8 pb-8">
         <p className="font-typewriter text-center text-xs tracking-[0.25em] uppercase text-[#8b7355] mb-5">
-          Destinos de la liga — 6 países · 6 casos
+          Destinos de la liga — 10 países · 10 casos
         </p>
         <div className="flex flex-wrap justify-center gap-3 max-w-3xl mx-auto">
           {COUNTRIES.map((c) => (
