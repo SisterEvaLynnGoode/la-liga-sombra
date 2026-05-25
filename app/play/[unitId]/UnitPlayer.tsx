@@ -285,6 +285,20 @@ export default function UnitPlayer({ content, unitId, unitNumber, classId, agent
     progressDots.splice(lineupIndex, 0, { label: "Vigilancia", isStakeout: true });
   }
 
+  // Number repeated labels (e.g. three INTERROGATORIO in a row) so they don't merge visually.
+  // Only numbers when a label appears more than once total.
+  {
+    const labelCount: Record<string, number> = {};
+    for (const d of progressDots) labelCount[d.label] = (labelCount[d.label] ?? 0) + 1;
+    const seen: Record<string, number> = {};
+    for (const d of progressDots) {
+      if (labelCount[d.label] > 1) {
+        seen[d.label] = (seen[d.label] ?? 0) + 1;
+        d.label = `${d.label} ${seen[d.label]}`;
+      }
+    }
+  }
+
   // Map currentStage → visual dot index
   const visualIndex = hasStakeout && stakeoutPhase !== "pending" && currentStage >= lineupIndex
     ? currentStage + 1  // stakeout dot consumed one slot

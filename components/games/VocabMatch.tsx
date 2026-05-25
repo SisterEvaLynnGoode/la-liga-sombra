@@ -124,7 +124,7 @@ export default function VocabMatch({ title = "Memoria de Vocabulario", pairs, un
 
         {/* Instructions */}
         <p className="font-typewriter text-xs text-[#8b7355] text-center">
-          Find matching Spanish / English pairs. Click two cards to reveal them.
+          Encuentra los pares de español e inglés. Haz clic en dos cartas para revelarlas.
         </p>
 
         {/* Card grid */}

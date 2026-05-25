@@ -550,14 +550,16 @@ export default function ListeningComprehension({
                 </div>
                 {(currentQ.explanationEn || currentQ.explanationEs) && (
                   <div className="border-l-2 border-[rgba(201,147,58,0.3)] pl-3 space-y-1">
-                    {currentQ.explanationEn && (
+                    {/* Spanish first — primary feedback in target language */}
+                    {currentQ.explanationEs && (
                       <p className="font-typewriter text-xs text-[#c4a882] leading-snug">
-                        {currentQ.explanationEn}
+                        {currentQ.explanationEs}
                       </p>
                     )}
-                    {currentQ.explanationEs && (
+                    {/* English second — small italic gloss for comprehension support */}
+                    {currentQ.explanationEn && (
                       <p className="font-typewriter text-[10px] text-[#8b7355] leading-snug italic">
-                        {currentQ.explanationEs}
+                        {currentQ.explanationEn}
                       </p>
                     )}
                   </div>
@@ -707,10 +709,7 @@ export default function ListeningComprehension({
               </div>
             )}
 
-            <p className="font-typewriter text-[10px] text-[#8b7355] text-center animate-pulse mb-3">
-              Continuando…
-            </p>
-            {/* Explicit fallback button — fires immediately if auto-advance is slow */}
+            {/* Explicit advance button — primary control; auto-advance is a bonus */}
             <button
               onClick={() => {
                 const snap = resultSnapRef.current;

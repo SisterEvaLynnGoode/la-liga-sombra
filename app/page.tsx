@@ -100,11 +100,16 @@ export default function LandingPage() {
   );
 }
 
+// Canonical case order — must match content/unit-0N.json and lib/game/units.ts
 const COUNTRIES = [
-  { code: "MX", flag: "🇲🇽", country: "México",     unit: 1, label: "Caso I" },
-  { code: "PR", flag: "🇵🇷", country: "Puerto Rico", unit: 2, label: "Caso II" },
-  { code: "CO", flag: "🇨🇴", country: "Colombia",   unit: 3, label: "Caso III" },
-  { code: "AR", flag: "🇦🇷", country: "Argentina",  unit: 4, label: "Caso IV" },
-  { code: "ES", flag: "🇪🇸", country: "España",     unit: 5, label: "Caso V" },
-  { code: "PE", flag: "🇵🇪", country: "Perú",       unit: 6, label: "Caso VI" },
+  { code: "MX", flag: "🇲🇽", country: "México",          unit: 1,  label: "Caso I"    },
+  { code: "PR", flag: "🇵🇷", country: "Puerto Rico",     unit: 2,  label: "Caso II"   },
+  { code: "ES", flag: "🇪🇸", country: "España",          unit: 3,  label: "Caso III"  },
+  { code: "CR", flag: "🇨🇷", country: "Costa Rica",      unit: 4,  label: "Caso IV"   },
+  { code: "AR", flag: "🇦🇷", country: "Argentina",       unit: 5,  label: "Caso V"    },
+  { code: "CO", flag: "🇨🇴", country: "Colombia",        unit: 6,  label: "Caso VI"   },
+  { code: "CL", flag: "🇨🇱", country: "Chile",           unit: 7,  label: "Caso VII"  },
+  { code: "PE", flag: "🇵🇪", country: "Perú",            unit: 8,  label: "Caso VIII" },
+  { code: "DO", flag: "🇩🇴", country: "Rep. Dominicana", unit: 9,  label: "Caso IX"   },
+  { code: "EC", flag: "🇪🇨", country: "Ecuador",         unit: 10, label: "Caso X"    },
 ];
