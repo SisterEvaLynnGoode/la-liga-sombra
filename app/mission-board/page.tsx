@@ -128,6 +128,17 @@ export default async function MissionBoardPage() {
     };
   });
 
+  // Boss progress map — MUST be declared before bossEntries (uses it).
+  // Previously declared after, causing a TDZ ReferenceError once a unit in
+  // BOSS_AFTER_UNIT was completed — which crashed the entire mission board
+  // for students who solved Caso V. Reported as the v5 P0 blocker.
+  const bossProgressMap = new Map(
+    ((bossRows?.data ?? []) as Array<{
+      boss_id: string; current_stage: number;
+      completed_at: string | null; skipped_at: string | null; final_ending: string | null;
+    }>).map((b) => [b.boss_id, b])
+  );
+
   // Boss entries for the CorkBoard
   type BossEntryType = import("@/components/mission-board/CorkBoard").BossEntry;
   const bossEntries: BossEntryType[] = Object.entries(BOSS_AFTER_UNIT).flatMap(([unitNumStr, meta]) => {
@@ -154,14 +165,6 @@ export default async function MissionBoardPage() {
       finalEnding: bp?.final_ending,
     } as BossEntryType];
   });
-
-  // Boss progress map
-  const bossProgressMap = new Map(
-    ((bossRows?.data ?? []) as Array<{
-      boss_id: string; current_stage: number;
-      completed_at: string | null; skipped_at: string | null; final_ending: string | null;
-    }>).map((b) => [b.boss_id, b])
-  );
 
   const casesSolved = progress.filter((p) => p.case_solved).length;
   const badgeCount = badgesRes.data?.length ?? 0;

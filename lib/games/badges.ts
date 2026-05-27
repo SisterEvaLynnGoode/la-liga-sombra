@@ -10,16 +10,16 @@ export interface BadgeMeta {
 }
 
 export const BADGE_META: Record<string, BadgeMeta> = {
-  unit_completed: { type: "unit_completed", label: "Caso Resuelto",   description: "Solved a unit case",                    emoji: "🔎", color: "#c9933a" },
-  case_solved:    { type: "case_solved",    label: "Caso Resuelto",   description: "Solved a case",                         emoji: "🔎", color: "#c9933a" },
-  perfect_score:  { type: "perfect_score",  label: "Puntaje Perfecto",description: "Every activity in a unit scored 100%",   emoji: "⭐", color: "#fbbf24" },
-  speed_demon:    { type: "speed_demon",    label: "Velocidad Rayo",  description: "Completed a unit in under 20 minutes",   emoji: "⚡", color: "#60a5fa" },
-  vocab_master:   { type: "vocab_master",   label: "Maestro de Vocab",description: "90%+ average mastery across all vocab",  emoji: "📚", color: "#4ade80" },
-  streak_3:       { type: "streak_3",       label: "Racha de 3 Días", description: "Played 3 days in a row",                emoji: "🔥", color: "#fb923c" },
-  streak_7:       { type: "streak_7",       label: "Racha de 7 Días", description: "Played 7 days in a row",                emoji: "🔥", color: "#ef4444" },
-  speed_run:      { type: "speed_run",      label: "Carrera Rápida",  description: "Fast completion",                       emoji: "⚡", color: "#60a5fa" },
-  cultural_expert:{ type: "cultural_expert",label: "Experto Cultural", description: "Cultural knowledge master",             emoji: "🌎", color: "#a78bfa" },
-  first_case:     { type: "first_case",     label: "Primer Caso",     description: "Solved your first case",                emoji: "🕵️", color: "#c9933a" },
+  unit_completed: { type: "unit_completed", label: "Caso Resuelto",   description: "Resolviste un caso",                     emoji: "🔎", color: "#c9933a" },
+  case_solved:    { type: "case_solved",    label: "Caso Resuelto",   description: "Caso cerrado con éxito",                  emoji: "🔎", color: "#c9933a" },
+  perfect_score:  { type: "perfect_score",  label: "Puntaje Perfecto",description: "100% en todas las actividades del caso",  emoji: "⭐", color: "#fbbf24" },
+  speed_demon:    { type: "speed_demon",    label: "Velocidad Rayo",  description: "Completaste un caso en menos de 20 min",  emoji: "⚡", color: "#60a5fa" },
+  vocab_master:   { type: "vocab_master",   label: "Maestro de Vocab",description: "90%+ de dominio en todo el vocabulario",  emoji: "📚", color: "#4ade80" },
+  streak_3:       { type: "streak_3",       label: "Racha de 3 Días", description: "Jugaste 3 días seguidos",                 emoji: "🔥", color: "#fb923c" },
+  streak_7:       { type: "streak_7",       label: "Racha de 7 Días", description: "Jugaste 7 días seguidos",                 emoji: "🔥", color: "#ef4444" },
+  speed_run:      { type: "speed_run",      label: "Carrera Rápida",  description: "Terminaste rápido",                       emoji: "⚡", color: "#60a5fa" },
+  cultural_expert:{ type: "cultural_expert",label: "Experto Cultural", description: "Dominas la cultura hispana",              emoji: "🌎", color: "#a78bfa" },
+  first_case:     { type: "first_case",     label: "Primer Caso",     description: "Resolviste tu primer caso",               emoji: "🕵️", color: "#c9933a" },
 };
 
 // ── Badge awarding ─────────────────────────────────────────────────────────────

@@ -194,10 +194,10 @@ export default function TimedFlashcards({
           <div className="border border-[rgba(201,147,58,0.3)] bg-[rgba(201,147,58,0.06)] p-6 text-center">
             <p className="font-display text-2xl font-bold text-[#e8b455] mb-2">¡Tiempo!</p>
             <p className="font-typewriter text-sm text-[#c4a882]">
-              {score} / {deck.length} cards correct
+              {score} / {deck.length} tarjetas correctas
             </p>
             <p className="font-typewriter text-xs text-[#8b7355] mt-1">
-              {attempts} attempts · {formatTime(elapsed)} elapsed
+              {attempts} {attempts === 1 ? "intento" : "intentos"} · {formatTime(elapsed)} transcurridos
             </p>
           </div>
         )}

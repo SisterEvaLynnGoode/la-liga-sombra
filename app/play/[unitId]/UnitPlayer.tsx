@@ -95,6 +95,11 @@ export default function UnitPlayer({ content, unitId, unitNumber, classId, agent
   // Without this, two rapid clicks advance currentStage twice, skipping the lineup
   // entirely and rendering a phantom CASO RESUELTO without persisting the case.
   const clueDismissGuardRef = useRef(false);
+  // Guard: prevent handleStakeoutComplete from running twice (Caso V v5 regression).
+  const stakeoutCompleteGuardRef = useRef(false);
+  // Guard: prevent handleStageComplete from running twice in immediate succession.
+  // Reset when a stage actually advances; protects against rapid-fire onComplete from any game component.
+  const stageCompleteGuardRef = useRef(false);
 
   // ── Shared unit-complete logic ────────────────────────────────────────────────
   const completeUnit = useCallback(
@@ -128,6 +133,12 @@ export default function UnitPlayer({ content, unitId, unitNumber, classId, agent
   // ── Save stage progress + advance ────────────────────────────────────────────
   const handleStageComplete = useCallback(
     async (result: GameResult) => {
+      // Guard: if a game component double-fires onComplete (e.g., rapid clicks on its
+      // own Continuar button), bail out. The guard is cleared below when the stage
+      // actually advances or shows a clue.
+      if (stageCompleteGuardRef.current) return;
+      stageCompleteGuardRef.current = true;
+
       const stage = content.stages[currentStage];
       if (!stage) return;
 
@@ -160,6 +171,7 @@ export default function UnitPlayer({ content, unitId, unitNumber, classId, agent
       // treat it as unit completion
       if (isLastStage && stage.type !== "lineup") {
         await completeUnit(result);
+        // Don't reset the guard — unit is over, no more advancements expected.
         return;
       }
 
@@ -182,17 +194,25 @@ export default function UnitPlayer({ content, unitId, unitNumber, classId, agent
       } else if (interceptForStakeout) {
         // No clue — go straight to stakeout
         setStakeoutPhase("active");
+        // Reset guard after a tick — by then the stakeout has mounted and this stage's
+        // onComplete can't fire again without user re-engagement.
+        setTimeout(() => { stageCompleteGuardRef.current = false; }, 100);
       } else {
         setCurrentStage((s) => s + 1);
         stageStartRef.current = Date.now();
+        setTimeout(() => { stageCompleteGuardRef.current = false; }, 100);
       }
     },
     [content.stages, currentStage, unitNumber, completeUnit, hasStakeout, stakeoutPhase, lineupIndex]
   );
 
   // ── Lineup (final stage) ─────────────────────────────────────────────────────
+  // Guard against rapid double-click on Acusar — must not double-fire completeUnit.
+  const lineupCompleteGuardRef = useRef(false);
   const handleLineupComplete = useCallback(
     async (result: GameResult, score: number) => {
+      if (lineupCompleteGuardRef.current) return;
+      lineupCompleteGuardRef.current = true;
       setLineupScore(score);
       setTotalTime((t) => t + result.timeSpent);
       await completeUnit(result);
@@ -215,11 +235,20 @@ export default function UnitPlayer({ content, unitId, unitNumber, classId, agent
       setCurrentStage((s) => s + 1);
       stageStartRef.current = Date.now();
     }
+    // Clear the stage-complete guard now that we've advanced past this stage.
+    setTimeout(() => { stageCompleteGuardRef.current = false; }, 100);
   }
 
   // ── Stakeout complete ────────────────────────────────────────────────────────
   const handleStakeoutComplete = useCallback(
     async (result: StakeoutResult) => {
+      // Guard: rapid double-clicks on Stakeout's "Continuar a identificación" button
+      // previously fired this twice — duplicating bonusClue, sending duplicate API
+      // calls, and (in v5) racing with the lineup render to produce a phantom CASO
+      // RESUELTO without the case persisting.
+      if (stakeoutCompleteGuardRef.current) return;
+      stakeoutCompleteGuardRef.current = true;
+
       setStakeoutPhase("done");
       setStakeoutPassed(result.passed);
 

@@ -51,7 +51,7 @@ export default function BadgeEarned({ badges, onDismiss, autoDismissMs = 4000 }:
 
         {rest.length > 0 && (
           <p className="font-typewriter text-xs text-[#c9933a]">
-            +{rest.length} more: {rest.map((b) => BADGE_META[b]?.emoji ?? "🏅").join(" ")}
+            +{rest.length} más: {rest.map((b) => BADGE_META[b]?.emoji ?? "🏅").join(" ")}
           </p>
         )}
 
@@ -59,7 +59,7 @@ export default function BadgeEarned({ badges, onDismiss, autoDismissMs = 4000 }:
           onClick={onDismiss}
           className="mt-4 font-typewriter text-[10px] tracking-[0.25em] uppercase text-[#8b7355] hover:text-[#c9933a] transition-colors"
         >
-          (tap to dismiss)
+          (toca para cerrar)
         </button>
       </div>
     </div>

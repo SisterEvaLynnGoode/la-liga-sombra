@@ -259,6 +259,10 @@ export default function Stakeout({ questions, unitNumber, startTime: startTimePr
 
   const completedRef = useRef(false);
   const feedbackRef  = useRef(false); // block timer completion during feedback pause
+  // Guard the "Continuar a identificación" button against rapid double-clicks.
+  // Without this, double-firing onComplete advanced past the lineup stage in Caso V (v5 regression).
+  const advanceRef = useRef(false);
+  const [advancing, setAdvancing] = useState(false);
 
   // ── Timer ───────────────────────────────────────────────────────────────────
 
@@ -439,10 +443,16 @@ export default function Stakeout({ questions, unitNumber, startTime: startTimePr
           </div>
 
           <button
-            onClick={() => onComplete({ passed, timeRemaining: timeLeft, correctCount: correct, totalCount: questions.length })}
-            className="w-full clip-skew py-3 font-typewriter text-sm tracking-[0.2em] uppercase bg-[#8b1a1a] text-[#f5e6c8] border border-[#c0392b] hover:bg-[#c0392b] transition-colors"
+            onClick={() => {
+              if (advanceRef.current) return;
+              advanceRef.current = true;
+              setAdvancing(true);
+              onComplete({ passed, timeRemaining: timeLeft, correctCount: correct, totalCount: questions.length });
+            }}
+            disabled={advancing}
+            className="w-full clip-skew py-3 font-typewriter text-sm tracking-[0.2em] uppercase bg-[#8b1a1a] text-[#f5e6c8] border border-[#c0392b] hover:bg-[#c0392b] transition-colors disabled:opacity-60 disabled:cursor-default"
           >
-            Continuar a identificación →
+            {advancing ? "Avanzando…" : "Continuar a identificación →"}
           </button>
         </div>
       </div>
