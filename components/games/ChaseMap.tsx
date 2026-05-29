@@ -308,7 +308,7 @@ export default function ChaseMap({
               {justVisited?.name ?? "Ubicación encontrada"}
             </p>
             <p className="font-typewriter text-xs text-[#8b7355]">
-              Paso {routeStep}/{correctRoute.length}
+              Paso {routeStep + 1}/{correctRoute.length}
             </p>
           </div>
 

@@ -31,9 +31,9 @@ export const UNITS: UnitMeta[] = [
   },
   {
     number: 3, country: "España",               countryCode: "ES", flag: "🇪🇸",
-    titleEs: "La escuela",        titleEn: "School Life",
-    description: "School subjects, schedules, and classroom language",
-    criminal: "La Silenciosa",    stolenItem: "El Abanico Real",       rotation: -1,    themeColor: "#9b2226",
+    titleEs: "Persecución por Madrid", titleEn: "Madrid Chase",
+    description: "Places, transportation, and the verb 'ir' across Madrid landmarks",
+    criminal: "La Sombra",        stolenItem: "Pintura de Velázquez",  rotation: -1,    themeColor: "#9b2226",
   },
   {
     number: 4, country: "Costa Rica",            countryCode: "CR", flag: "🇨🇷",

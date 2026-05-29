@@ -317,19 +317,42 @@ export default function ListeningComprehension({
     >
       <div className="p-5 max-w-xl mx-auto flex flex-col gap-5">
 
-        {/* ── Load error ────────────────────────────────────────────────── */}
+        {/* ── Load error — graceful fallback to transcript reading ─────── */}
         {phase === "loadError" && (
-          <div className="border border-[rgba(192,57,43,0.4)] bg-[rgba(192,57,43,0.06)] p-5 text-center space-y-3">
-            <p className="font-display font-bold text-[#c0392b]">El audio no se cargó</p>
-            <p className="font-typewriter text-xs text-[#c4a882]">
-              Recarga la página o avisa a tu profesor.
-            </p>
-            <button
-              onClick={handleRetryLoad}
-              className="font-typewriter text-xs px-4 py-2 border border-[rgba(192,57,43,0.4)] text-[#c0392b] hover:bg-[rgba(192,57,43,0.1)] transition-colors"
-            >
-              ↺ Reintentar
-            </button>
+          <div className="border border-[rgba(192,57,43,0.4)] bg-[rgba(192,57,43,0.06)] p-5 space-y-3">
+            <div className="text-center">
+              <p className="font-display font-bold text-[#c0392b]">El audio no se cargó</p>
+              {transcript ? (
+                <p className="font-typewriter text-xs text-[#c4a882] mt-1">
+                  Puedes leer la transcripción abajo y responder las preguntas.
+                </p>
+              ) : (
+                <p className="font-typewriter text-xs text-[#c4a882] mt-1">
+                  Recarga la página o avisa a tu profesor.
+                </p>
+              )}
+            </div>
+            <div className="flex justify-center gap-3">
+              <button
+                onClick={handleRetryLoad}
+                className="font-typewriter text-xs px-4 py-2 border border-[rgba(192,57,43,0.4)] text-[#c0392b] hover:bg-[rgba(192,57,43,0.1)] transition-colors"
+              >
+                ↺ Reintentar
+              </button>
+              {transcript && (
+                <button
+                  onClick={() => {
+                    // Reveal transcript + unlock questions so the student can proceed without audio.
+                    setShowTranscriptEarly(true);
+                    setPhase("answering");
+                    fireListeningFlag(unitId, "transcript_revealed");
+                  }}
+                  className="font-typewriter text-xs px-4 py-2 border border-[rgba(201,147,58,0.4)] text-[#c9933a] hover:bg-[rgba(201,147,58,0.08)] transition-colors"
+                >
+                  📄 Leer transcripción y continuar →
+                </button>
+              )}
+            </div>
           </div>
         )}
 
