@@ -232,6 +232,19 @@ export default function LiveStakeout({
     return () => clearInterval(id);
   }, [phase, queue.length]);
 
+  // Guard: prevent onComplete from firing twice (auto-advance + button click)
+  const completedRef = useRef(false);
+  const fireComplete = useCallback(() => {
+    if (completedRef.current) return;
+    completedRef.current = true;
+    onComplete({
+      score: timeLeft,
+      maxScore: timeLimit,
+      timeSpent: Math.round((Date.now() - startTime.current) / 1000),
+      attempts: attempts.current,
+    });
+  }, [onComplete, timeLeft, timeLimit]);
+
   // ── Handle scene click ───────────────────────────────────────────────────────
   const handleClick = useCallback(
     (scene: StakeoutScene, visibleIdx: number) => {
@@ -241,20 +254,16 @@ export default function LiveStakeout({
       if (scene.isTarget) {
         setCorrectIdx(visibleIdx);
         setPhase("found");
-        setTimeout(() => {
-          onComplete({
-            score: timeLeft,
-            maxScore: timeLimit,
-            timeSpent: Math.round((Date.now() - startTime.current) / 1000),
-            attempts: attempts.current,
-          });
-        }, 1400);
+        // Auto-advance after 1.4s as a courtesy. The "found" phase render also
+        // includes an explicit "Continuar →" button so students are never stuck
+        // if the auto-advance fails for any reason.
+        setTimeout(fireComplete, 1400);
       } else {
         setWrongFlashIdx(visibleIdx);
         setTimeout(() => setWrongFlashIdx(null), 900);
       }
     },
-    [phase, timeLeft, timeLimit, onComplete]
+    [phase, fireComplete]
   );
 
   // ── Timeout / found screens ──────────────────────────────────────────────────
@@ -266,6 +275,29 @@ export default function LiveStakeout({
         <p className="font-typewriter text-sm text-[#8b7355] text-center max-w-xs">
           El sospechoso escapa esta vez. Pero el caso sigue abierto.
         </p>
+      </div>
+    );
+  }
+
+  // Found phase: dedicated success screen so the student is never stuck waiting
+  // for the auto-advance. The "Continuar →" button is the primary control;
+  // the 1.4s setTimeout from handleClick is a courtesy auto-advance.
+  if (phase === "found") {
+    return (
+      <div className="min-h-[360px] flex flex-col items-center justify-center gap-5 p-8 bg-[#0d0b0a]">
+        <div className="w-20 h-20 rounded-full bg-gradient-to-br from-[#c9933a] to-[#8b5e10] shadow-[0_0_40px_rgba(201,147,58,0.4)] flex items-center justify-center">
+          <span className="text-4xl">✓</span>
+        </div>
+        <p className="font-display text-2xl font-bold text-[#e8b455]">¡Lo encontraste!</p>
+        <p className="font-typewriter text-sm text-[#c4a882] text-center max-w-xs">
+          Identificaste al sospechoso en la cámara correcta.
+        </p>
+        <button
+          onClick={fireComplete}
+          className="clip-skew px-10 py-3 font-typewriter text-sm tracking-[0.2em] uppercase bg-[#8b1a1a] text-[#f5e6c8] border border-[#c0392b] hover:bg-[#c0392b] transition-colors"
+        >
+          Continuar →
+        </button>
       </div>
     );
   }

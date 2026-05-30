@@ -43,6 +43,23 @@ export default function Cutscene({
     return () => clearTimeout(t);
   }, [phase]);
 
+  // Preflight: if the video URL 404s or returns 0×0 dimensions, fall back to
+  // the text/image briefing rather than showing a black frame. Some browsers
+  // don't fire `onerror` for missing files — they just play black.
+  useEffect(() => {
+    if (!videoUrl) return;
+    let cancelled = false;
+    fetch(videoUrl, { method: "HEAD" })
+      .then((res) => {
+        if (cancelled) return;
+        if (!res.ok) setPhase((p) => (p === "idle" ? "error" : p));
+      })
+      .catch(() => {
+        if (!cancelled) setPhase((p) => (p === "idle" ? "error" : p));
+      });
+    return () => { cancelled = true; };
+  }, [videoUrl]);
+
   function handlePlay() {
     const v = videoRef.current;
     if (!v) return;
@@ -58,6 +75,15 @@ export default function Cutscene({
   }
 
   function handleVideoError() { setPhase("error"); }
+
+  // Belt-and-suspenders: when metadata loads, verify the video has real dimensions.
+  // A 0×0 video (e.g. corrupted file) wouldn't fire onError but would render black.
+  function handleVideoMetadata() {
+    const v = videoRef.current;
+    if (v && (v.videoWidth === 0 || v.videoHeight === 0)) {
+      setPhase("error");
+    }
+  }
 
   function handleSkip() {
     videoRef.current?.pause();
@@ -90,6 +116,7 @@ export default function Cutscene({
         src={videoUrl}
         muted={muted}
         playsInline
+        onLoadedMetadata={handleVideoMetadata}
         onEnded={handleVideoEnd}
         onError={handleVideoError}
         className={`w-full max-h-[calc(100vh-200px)] object-contain ${phase === "idle" ? "opacity-0" : "opacity-100"} transition-opacity duration-500`}
