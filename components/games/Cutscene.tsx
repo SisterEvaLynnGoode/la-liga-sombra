@@ -108,7 +108,7 @@ export default function Cutscene({
           <button onClick={handlePlay} className="w-20 h-20 rounded-full border-4 border-[#c9933a] bg-[rgba(201,147,58,0.1)] hover:bg-[rgba(201,147,58,0.2)] flex items-center justify-center text-4xl transition-all hover:scale-105">
             ▶
           </button>
-          <p className="font-typewriter text-xs text-[#4a3a2a]">Press to receive your briefing</p>
+          <p className="font-typewriter text-xs text-[#8b7355]">Presiona para recibir tu briefing</p>
         </div>
       )}
 
@@ -116,7 +116,7 @@ export default function Cutscene({
       {(phase === "playing" || phase === "ended") && (
         <div className="absolute bottom-6 left-0 right-0 flex items-center justify-between px-6">
           <button onClick={() => setMuted((m) => !m)} className="font-typewriter text-xs text-[#8b7355] hover:text-[#c9933a] transition-colors px-3 py-1.5 border border-[rgba(201,147,58,0.2)]">
-            {muted ? "🔇 Unmute" : "🔊 Mute"}
+            {muted ? "🔇 Activar audio" : "🔊 Silenciar"}
           </button>
           <div className="flex gap-3">
             {phase === "playing" && (
@@ -124,7 +124,7 @@ export default function Cutscene({
                 onClick={() => { if (videoRef.current) { videoRef.current.currentTime = 0; videoRef.current.play(); } }}
                 className="font-typewriter text-xs text-[#8b7355] hover:text-[#c9933a] transition-colors px-3 py-1.5 border border-[rgba(201,147,58,0.2)]"
               >
-                ↺ Replay
+                ↺ Repetir
               </button>
             )}
             {skipVisible && phase === "playing" && (

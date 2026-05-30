@@ -80,6 +80,11 @@ export default function UnitPlayer({ content, unitId, unitNumber, classId, agent
   const [showBadge, setShowBadge]           = useState(isCompleted);
   const [newBadges, setNewBadges]           = useState<BadgeType[]>([]);
   const [showBadgeEarned, setShowBadgeEarned] = useState(false);
+  // When the badge toast comes from the end-of-unit completeUnit() call, dismissing
+  // it should advance to the CASO RESUELTO screen. When it comes from a mid-unit
+  // event (e.g. the stakeout-reward fetch), dismissing it must NOT trigger BadgeModal —
+  // that was the v5/v6/v7 recurring "phantom Identification resolve" root cause.
+  const [badgeIsEndOfUnit, setBadgeIsEndOfUnit] = useState(false);
   const [totalTime, setTotalTime]           = useState(0);
   const [lineupScore, setLineupScore]       = useState(1);
 
@@ -121,6 +126,7 @@ export default function UnitPlayer({ content, unitId, unitNumber, classId, agent
         const data = await res.json() as { ok: boolean; newBadges: BadgeType[] };
         if (data.newBadges?.length) {
           setNewBadges(data.newBadges);
+          setBadgeIsEndOfUnit(true);  // dismissing the toast → CASO RESUELTO
           setShowBadgeEarned(true);
           return;
         }
@@ -285,6 +291,8 @@ export default function UnitPlayer({ content, unitId, unitNumber, classId, agent
           .then((d: { newBadges?: BadgeType[] }) => {
             if (d.newBadges?.length) {
               setNewBadges(d.newBadges);
+              // IMPORTANT: this is a mid-unit badge — dismissing must NOT advance to BadgeModal.
+              setBadgeIsEndOfUnit(false);
               setShowBadgeEarned(true);
             }
           })
@@ -315,15 +323,21 @@ export default function UnitPlayer({ content, unitId, unitNumber, classId, agent
   }
 
   // Number repeated labels (e.g. three INTERROGATORIO in a row) so they don't merge visually.
-  // Only numbers when a label appears more than once total.
+  // Only numbers when a label appears more than once total. For long labels with
+  // many repeats (Caso VI has 4 INTERROGATORIO nodes), use a short form to prevent
+  // visual overlap on the rail.
   {
     const labelCount: Record<string, number> = {};
     for (const d of progressDots) labelCount[d.label] = (labelCount[d.label] ?? 0) + 1;
+    // Long-label abbreviations (used when there are >= 3 repeats on a crowded rail)
+    const SHORT: Record<string, string> = { "Interrogatorio": "Interrog." };
     const seen: Record<string, number> = {};
     for (const d of progressDots) {
-      if (labelCount[d.label] > 1) {
+      const count = labelCount[d.label];
+      if (count > 1) {
         seen[d.label] = (seen[d.label] ?? 0) + 1;
-        d.label = `${d.label} ${seen[d.label]}`;
+        const base = count >= 3 && SHORT[d.label] ? SHORT[d.label] : d.label;
+        d.label = `${base} ${seen[d.label]}`;
       }
     }
   }
@@ -557,7 +571,13 @@ export default function UnitPlayer({ content, unitId, unitNumber, classId, agent
       {showBadgeEarned && newBadges.length > 0 && (
         <BadgeEarned
           badges={newBadges}
-          onDismiss={() => { setShowBadgeEarned(false); setShowBadge(true); }}
+          onDismiss={() => {
+            setShowBadgeEarned(false);
+            // Only advance to the CASO RESUELTO screen if this badge marked the
+            // end of the unit. Mid-unit badges (e.g. Stakeout reward) just dismiss
+            // back to wherever the student was — usually the lineup stage.
+            if (badgeIsEndOfUnit) setShowBadge(true);
+          }}
         />
       )}
 
