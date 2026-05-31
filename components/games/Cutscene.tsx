@@ -220,8 +220,9 @@ function FallbackBriefing({ chiefName, chiefImageUrl, briefingLines, fallbackIma
         <div className="flex gap-5 mb-6">
           <div className="shrink-0">
             <CharacterPortrait
+              characterId="chief-ramirez"
               imageUrl={chiefImageUrl ?? (fallbackImage ?? undefined)}
-              altText={chiefName ?? "Chief"}
+              altText={chiefName ?? "Jefe"}
               size="small"
               grayscale={!!fallbackImage}
               name={chiefName ?? undefined}
@@ -229,7 +230,7 @@ function FallbackBriefing({ chiefName, chiefImageUrl, briefingLines, fallbackIma
           </div>
           <div className="flex-1 border border-[rgba(201,147,58,0.2)] bg-[#1a1614] p-5 min-h-[120px] flex flex-col justify-between">
             {!started
-              ? <div className="flex flex-col items-center justify-center h-full gap-3 text-center"><span className="text-4xl">📁</span><p className="font-typewriter text-sm text-[#8b7355]">Incoming classified briefing</p></div>
+              ? <div className="flex flex-col items-center justify-center h-full gap-3 text-center"><span className="text-4xl">📁</span><p className="font-typewriter text-sm text-[#8b7355]">Briefing clasificado entrante</p></div>
               : <><p className="font-typewriter text-sm text-[#c4a882] leading-relaxed">&ldquo;{briefingLines[lineIndex]}&rdquo;</p><p className="font-typewriter text-[10px] text-[#8b7355] mt-3 text-right">{lineIndex + 1} / {briefingLines.length}</p></>
             }
           </div>

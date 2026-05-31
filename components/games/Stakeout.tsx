@@ -100,34 +100,35 @@ function SentenceQuestion({
   const [remaining, setRemaining] = useState<string[]>(q.words);
   const submitted = useRef(false);
 
-  function tapWord(word: string, from: "remaining" | "placed") {
+  function submit(words: string[]) {
+    if (submitted.current) return;
+    submitted.current = true;
+    const attempt = words.join(" ");
+    const correct = normalizeAnswer(attempt) === normalizeAnswer(q.correctSentence.replace(/[.!?¿¡]/g, ""));
+    onAnswer(correct);
+  }
+
+  function tapWord(word: string, from: "remaining" | "placed", index: number) {
     if (feedback || submitted.current) return;
     if (from === "remaining") {
-      const idx = remaining.indexOf(word);
-      if (idx === -1) return;
-      const newRemaining = [...remaining];
-      newRemaining.splice(idx, 1);
+      // Use the explicit index — handles duplicate words correctly
+      if (index < 0 || index >= remaining.length) return;
+      const newRemaining = remaining.filter((_, i) => i !== index);
       const newPlaced = [...placed, word];
       setRemaining(newRemaining);
       setPlaced(newPlaced);
-      // Auto-submit when all words placed
-      if (newRemaining.length === 0) {
-        submitted.current = true;
-        const attempt = newPlaced.join(" ");
-        const correct = normalizeAnswer(attempt) === normalizeAnswer(q.correctSentence.replace(/[.!?¿¡]/g, ""));
-        onAnswer(correct);
-      }
+      // Auto-submit when all words placed (courtesy; explicit Comprobar button below is primary)
+      if (newRemaining.length === 0) submit(newPlaced);
     } else {
-      const idx = placed.indexOf(word);
-      if (idx === -1) return;
-      const newPlaced = [...placed];
-      newPlaced.splice(idx, 1);
+      if (index < 0 || index >= placed.length) return;
+      const newPlaced = placed.filter((_, i) => i !== index);
       setPlaced(newPlaced);
       setRemaining((r) => [...r, word]);
     }
   }
 
   const built = placed.join(" ");
+  const allPlaced = remaining.length === 0 && placed.length > 0;
 
   return (
     <div className="flex flex-col gap-4">
@@ -138,7 +139,7 @@ function SentenceQuestion({
         {placed.map((w, i) => (
           <button
             key={i}
-            onClick={() => tapWord(w, "placed")}
+            onClick={() => tapWord(w, "placed", i)}
             disabled={!!feedback}
             className={`px-3 py-1.5 font-typewriter text-sm border transition-colors disabled:cursor-default
               ${feedback === "correct" ? "border-[#c9933a] text-[#e8b455] bg-[rgba(201,147,58,0.1)]"
@@ -154,7 +155,7 @@ function SentenceQuestion({
         {remaining.map((w, i) => (
           <button
             key={i}
-            onClick={() => tapWord(w, "remaining")}
+            onClick={() => tapWord(w, "remaining", i)}
             disabled={!!feedback}
             className="px-3 py-1.5 font-typewriter text-sm border border-[rgba(201,147,58,0.2)] text-[#c4a882] hover:border-[rgba(201,147,58,0.5)] hover:text-[#f5e6c8] transition-colors disabled:opacity-40"
           >
@@ -162,6 +163,20 @@ function SentenceQuestion({
           </button>
         ))}
       </div>
+
+      {/* Explicit Comprobar button — primary submit control.
+          Auto-submit when remaining.length === 0 is a courtesy; if it ever fails
+          to fire (e.g., a render race), this button guarantees the student isn't
+          stranded on a "frozen" question (QA v8/v9 root cause). */}
+      {!feedback && (
+        <button
+          onClick={() => submit(placed)}
+          disabled={!allPlaced}
+          className="self-start clip-skew px-6 py-2 font-typewriter text-xs tracking-[0.2em] uppercase bg-[#8b1a1a] text-[#f5e6c8] border border-[#c0392b] hover:bg-[#c0392b] transition-colors disabled:opacity-30 disabled:cursor-not-allowed"
+        >
+          Comprobar →
+        </button>
+      )}
 
       {feedback === "wrong" && (
         <p className="font-typewriter text-xs text-[#8b7355]">
