@@ -38,7 +38,7 @@ export default async function AcademiaPage({ params }: PageProps) {
   if (isNaN(unitNumber) || unitNumber < 1) redirect("/mission-board");
 
   const content = getUnitContent(unitNumber);
-  if (!content) redirect("/mission-board");
+  if (!content) redirect(`/play/${unitNumber}/gate`); // shows Próximamente panel
 
   const supabase = createClient();
 

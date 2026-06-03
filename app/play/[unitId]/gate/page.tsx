@@ -1,9 +1,49 @@
 import { redirect } from "next/navigation";
+import Link from "next/link";
 import { getStudentSession } from "@/lib/auth/session";
 import { createClient } from "@/lib/supabase/server";
 import { getVocabReadinessScore } from "@/lib/mastery";
-import { UNITS } from "@/lib/game/units";
+import { UNITS, ROMAN } from "@/lib/game/units";
 import GateClient from "./GateClient";
+
+// Friendly "coming soon" panel rendered for any unit whose content hasn't shipped yet.
+// Replaces the previous silent redirect-to-mission-board, which made missing units
+// look like a routing bug (QA v10).
+function ComingSoonPanel({ unitNumber }: { unitNumber: number }) {
+  const unit = UNITS.find((u) => u.number === unitNumber);
+  const roman = ROMAN[(unitNumber - 1) % ROMAN.length] ?? String(unitNumber);
+  return (
+    <main className="min-h-screen bg-[#0d0b0a] flex flex-col items-center justify-center px-6 py-12">
+      <div className="max-w-md w-full text-center space-y-6">
+        <div className="text-6xl">🚧</div>
+        <div>
+          <p className="font-typewriter text-[10px] tracking-[0.4em] uppercase text-[#8b7355] mb-2">
+            Caso {roman}{unit?.country ? ` · ${unit.country}` : ""}
+          </p>
+          <h1 className="font-display font-black text-3xl text-[#e8b455]">
+            Próximamente
+          </h1>
+          {unit?.titleEs && (
+            <p className="font-typewriter text-sm text-[#c4a882] mt-2 italic">
+              &ldquo;{unit.titleEs}&rdquo;
+            </p>
+          )}
+        </div>
+        <div className="border border-[rgba(201,147,58,0.2)] bg-[#1a1614] px-5 py-4">
+          <p className="font-typewriter text-xs text-[#c4a882] leading-relaxed">
+            Este caso aún no está disponible. Tu progreso está seguro — vuelve pronto.
+          </p>
+        </div>
+        <Link
+          href="/mission-board"
+          className="inline-block clip-skew px-8 py-3 font-typewriter text-sm tracking-[0.2em] uppercase bg-[#8b1a1a] text-[#f5e6c8] border border-[#c0392b] hover:bg-[#c0392b] transition-colors"
+        >
+          ← Volver al mapa
+        </Link>
+      </div>
+    </main>
+  );
+}
 
 // Unit content registry — mirrors the one in /play/[unitId]/page.tsx
 function getUnitContent(unitNumber: number) {
@@ -38,7 +78,7 @@ export default async function GatePage({ params }: PageProps) {
   if (isNaN(unitNumber) || unitNumber < 1) redirect("/mission-board");
 
   const content = getUnitContent(unitNumber);
-  if (!content) redirect("/mission-board");
+  if (!content) return <ComingSoonPanel unitNumber={unitNumber} />;
 
   const supabase = createClient();
 

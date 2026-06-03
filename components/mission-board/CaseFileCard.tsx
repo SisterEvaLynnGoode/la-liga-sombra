@@ -21,9 +21,12 @@ interface Props {
 
 export default function CaseFileCard({ unit, status, caseSolved, readinessLevel }: Props) {
   const romanNumeral = ROMAN[unit.number - 1];
+  // Units whose content hasn't shipped yet display as "Próximamente" — they look
+  // like the available state but are visibly distinct and aren't clickable.
+  const isComingSoon = !!unit.comingSoon && status !== "completed" && !caseSolved;
   const isLocked = status === "locked";
-  const isAvailable = status === "available";
-  const isInProgress = status === "in_progress";
+  const isAvailable = status === "available" && !isComingSoon;
+  const isInProgress = status === "in_progress" && !isComingSoon;
   const isSolved = status === "completed" || caseSolved;
 
   const cardContent = (
@@ -116,6 +119,15 @@ export default function CaseFileCard({ unit, status, caseSolved, readinessLevel 
             </div>
           )}
 
+          {/* COMING SOON — content not shipped yet */}
+          {isComingSoon && (
+            <div className="mt-3 flex flex-col items-center gap-1.5">
+              <span className="inline-flex items-center gap-1 px-2 py-0.5 bg-[#2c2220] border border-[#8b7355] font-typewriter text-[9px] tracking-[0.2em] uppercase text-[#c4a882]">
+                🚧 Próximamente
+              </span>
+            </div>
+          )}
+
           {/* AVAILABLE — pulsing ACTIVO badge + readiness indicator */}
           {isAvailable && (
             <div className="mt-3 flex flex-col items-center gap-1.5">
@@ -172,7 +184,16 @@ export default function CaseFileCard({ unit, status, caseSolved, readinessLevel 
   // Locked cards are not clickable
   if (isLocked) {
     return (
-      <div className="pt-4 cursor-not-allowed select-none opacity-70" title="Complete the previous case to unlock">
+      <div className="pt-4 cursor-not-allowed select-none opacity-70" title="Completa el caso anterior para desbloquear">
+        {cardContent}
+      </div>
+    );
+  }
+
+  // Coming-soon cards are visible but not clickable
+  if (isComingSoon) {
+    return (
+      <div className="pt-4 cursor-not-allowed select-none opacity-80" title="Este caso aún no está disponible">
         {cardContent}
       </div>
     );

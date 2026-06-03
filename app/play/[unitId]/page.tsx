@@ -39,7 +39,9 @@ export default async function PlayPage({ params }: PageProps) {
   if (isNaN(unitNumber) || unitNumber < 1) redirect("/mission-board");
 
   const content = getUnitContent(unitNumber);
-  if (!content) redirect("/mission-board"); // unit not built yet
+  // If unit content hasn't shipped, send the student to the gate URL — the gate
+  // page renders a friendly Próximamente panel instead of silently redirecting.
+  if (!content) redirect(`/play/${unitNumber}/gate`);
 
   const supabase = createClient();
 

@@ -12,6 +12,8 @@ export interface UnitMeta {
   rotation: number;
   /** Accent color for the card stripe */
   themeColor: string;
+  /** If true, the unit content hasn't shipped yet — render as "Próximamente" */
+  comingSoon?: boolean;
 }
 
 export const ROMAN = ["I","II","III","IV","V","VI","VII","VIII","IX","X"] as const;
@@ -70,11 +72,13 @@ export const UNITS: UnitMeta[] = [
     titleEs: "El cuerpo",         titleEn: "Body & Health",
     description: "Body parts, health, and at the doctor",
     criminal: "La Mariposa Roja", stolenItem: "El Taíno de Madera",   rotation: -1.8,  themeColor: "#6b4c9b",
+    comingSoon: true,
   },
   {
     number: 10, country: "Ecuador",              countryCode: "EC", flag: "🇪🇨",
     titleEs: "El futuro",         titleEn: "The Future",
     description: "Future plans, technology, and careers",
     criminal: "El Maestro",       stolenItem: "El Sombrero de Paja",   rotation: 1.5,  themeColor: "#065f46",
+    comingSoon: true,
   },
 ];
