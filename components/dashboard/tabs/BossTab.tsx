@@ -23,8 +23,10 @@ interface BossData {
 
 interface BossResponse { bosses: BossData[] }
 
+// Boss mission names + ending names stay in Spanish because that's how students
+// experience them in-game. The dashboard wraps them with English descriptive UI.
 const BOSS_NAMES: Record<string, string> = {
-  "unit-5-eclipse": "Operación Eclipse (Unidad 5)",
+  "unit-5-eclipse": "Operación Eclipse (Unit 5)",
 };
 
 const ENDING_LABELS: Record<string, { label: string; emoji: string }> = {
@@ -34,9 +36,9 @@ const ENDING_LABELS: Record<string, { label: string; emoji: string }> = {
 };
 
 const CHOICE_LABELS: Record<string, string> = {
-  A: "🕊️ Permitir advertencia",
-  B: "⚖️ Continuar presión",
-  C: "🤝 Negociar en español",
+  A: "🕊️ Allow warning",
+  B: "⚖️ Press the interrogation",
+  C: "🤝 Negotiate in Spanish",
 };
 
 export default function BossTab({ classId }: { classId: string }) {
@@ -50,10 +52,10 @@ export default function BossTab({ classId }: { classId: string }) {
   if (bosses.length === 0) {
     return (
       <div className="space-y-4">
-        <TabHeader title="Jefes" lastUpdated={lastUpdated} onRefresh={refetch} />
+        <TabHeader title="Bosses" lastUpdated={lastUpdated} onRefresh={refetch} />
         <div className="border border-[rgba(201,147,58,0.2)] bg-[#1a1614] p-8 text-center">
           <p className="font-typewriter text-sm text-[#4a3a2a]">
-            No hay datos de jefes todavía. Los jefes se desbloquean cuando los estudiantes completan unidades específicas.
+            No boss data yet. Boss missions unlock when students complete specific units.
           </p>
         </div>
       </div>
@@ -62,7 +64,7 @@ export default function BossTab({ classId }: { classId: string }) {
 
   return (
     <div className="space-y-6">
-      <TabHeader title="Jefes" lastUpdated={lastUpdated} onRefresh={refetch} />
+      <TabHeader title="Bosses" lastUpdated={lastUpdated} onRefresh={refetch} />
 
       {bosses.map((b) => (
         <div key={b.bossId} className="space-y-4">
@@ -75,15 +77,15 @@ export default function BossTab({ classId }: { classId: string }) {
               </div>
               <div className="flex items-center gap-5">
                 <div className="text-center">
-                  <p className="font-typewriter text-[9px] uppercase text-[#8b4a4a]">Completado</p>
+                  <p className="font-typewriter text-[9px] uppercase text-[#8b4a4a]">Completed</p>
                   <p className="font-typewriter text-sm font-bold text-[#e8b455]">{b.completionPct}%</p>
                 </div>
                 <div className="text-center">
-                  <p className="font-typewriter text-[9px] uppercase text-[#8b4a4a]">Tiempo avg</p>
+                  <p className="font-typewriter text-[9px] uppercase text-[#8b4a4a]">Avg time</p>
                   <p className="font-typewriter text-sm text-[#c4a882]">{b.avgCompletionMinutes != null ? `${b.avgCompletionMinutes}m` : "—"}</p>
                 </div>
                 <div className="text-center">
-                  <p className="font-typewriter text-[9px] uppercase text-[#8b4a4a]">Colaboración</p>
+                  <p className="font-typewriter text-[9px] uppercase text-[#8b4a4a]">Co-op rate</p>
                   <p className="font-typewriter text-sm text-[#c4a882]">{b.collaborationRate}%</p>
                 </div>
               </div>
@@ -92,9 +94,9 @@ export default function BossTab({ classId }: { classId: string }) {
             {/* Stats grid */}
             <div className="grid grid-cols-2 sm:grid-cols-4 gap-0 divide-x divide-[rgba(192,57,43,0.1)]">
               {[
-                { label: "Iniciaron",   value: b.started,    sub: `de ${b.total}` },
-                { label: "Completaron", value: b.completed,  sub: "" },
-                { label: "Saltaron",    value: b.skipped,    sub: "" },
+                { label: "Started",    value: b.started,    sub: `of ${b.total}` },
+                { label: "Completed",  value: b.completed,  sub: "" },
+                { label: "Skipped",    value: b.skipped,    sub: "" },
               ].map((s) => (
                 <div key={s.label} className="p-4 text-center border-b border-[rgba(192,57,43,0.1)]">
                   <p className="font-typewriter text-[9px] uppercase text-[#8b4a4a]">{s.label}</p>
@@ -105,11 +107,12 @@ export default function BossTab({ classId }: { classId: string }) {
 
               {/* Difficulty distribution */}
               <div className="p-4 border-b border-[rgba(192,57,43,0.1)]">
-                <p className="font-typewriter text-[9px] uppercase text-[#8b4a4a] mb-2">Dificultad</p>
+                <p className="font-typewriter text-[9px] uppercase text-[#8b4a4a] mb-2">Difficulty</p>
                 {[
-                  { label: "Silenciosa", count: b.difficultyDist.easy,   emoji: "🔍" },
-                  { label: "Estándar",   count: b.difficultyDist.normal, emoji: "⚡" },
-                  { label: "Relámpago",  count: b.difficultyDist.hard,   emoji: "🔥" },
+                  // Difficulty names are in-game labels students see — kept in Spanish.
+                  { label: "Silenciosa (easy)",  count: b.difficultyDist.easy,   emoji: "🔍" },
+                  { label: "Estándar (normal)",  count: b.difficultyDist.normal, emoji: "⚡" },
+                  { label: "Relámpago (hard)",   count: b.difficultyDist.hard,   emoji: "🔥" },
                 ].map((d) => (
                   d.count > 0 && (
                     <div key={d.label} className="flex items-center gap-1.5 mb-0.5">
@@ -125,7 +128,7 @@ export default function BossTab({ classId }: { classId: string }) {
             {(b.choiceDist.A + b.choiceDist.B + b.choiceDist.C) > 0 && (
               <div className="px-5 py-3 border-t border-[rgba(192,57,43,0.1)]">
                 <p className="font-typewriter text-[9px] uppercase text-[#8b4a4a] mb-2">
-                  💡 Decisión ética (Costa Rica) — tema para debate en clase
+                  💡 Ethical decision (Costa Rica) — class-discussion fodder
                 </p>
                 <div className="flex flex-wrap gap-3">
                   {(["A","B","C"] as const).map((k) => (
@@ -145,7 +148,7 @@ export default function BossTab({ classId }: { classId: string }) {
             <table className="w-full">
               <thead className="border-b border-[rgba(201,147,58,0.15)]">
                 <tr>
-                  {["Agente","Estado","Dificultad","Decisión ética","Desenlace","Puntaje","Compañero"].map((h) => (
+                  {["Agent","Status","Difficulty","Ethical decision","Ending","Score","Partner"].map((h) => (
                     <th key={h} className="text-left py-2 pl-4 pr-3 font-typewriter text-[10px] tracking-[0.15em] uppercase text-[#8b7355]">
                       {h}
                     </th>
@@ -163,9 +166,9 @@ export default function BossTab({ classId }: { classId: string }) {
                         : s.status === "skipped" ? "text-[#c0392b]"
                         : "text-[#4a3a2a]"
                       }`}>
-                        {s.status === "completed" ? "✓ Completado"
-                          : s.status === "in_progress" ? "En progreso"
-                          : s.status === "skipped" ? "Saltado"
+                        {s.status === "completed" ? "✓ Completed"
+                          : s.status === "in_progress" ? "In progress"
+                          : s.status === "skipped" ? "Skipped"
                           : "—"}
                       </span>
                     </td>

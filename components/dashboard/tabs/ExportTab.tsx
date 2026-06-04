@@ -23,9 +23,9 @@ async function triggerExport(classId: string, type: string, label: string) {
 }
 
 const EXPORTS = [
-  { type: "students", label: "students", name: "Estudiantes", icon: "👤", desc: "Display name, units completed, time, badges, last active" },
-  { type: "vocab", label: "vocab-mastery", name: "Dominio de vocabulario", icon: "📚", desc: "Per-student mastery data for every vocab term" },
-  { type: "attempts", label: "attempts", name: "Historial de intentos", icon: "📊", desc: "Every activity attempt with score, time, and date" },
+  { type: "students", label: "students", name: "Students", icon: "👤", desc: "Display name, units completed, time, badges, last active" },
+  { type: "vocab", label: "vocab-mastery", name: "Vocabulary mastery", icon: "📚", desc: "Per-student mastery data for every vocab term" },
+  { type: "attempts", label: "attempts", name: "Attempt history", icon: "📊", desc: "Every activity attempt with score, time, and date" },
 ];
 
 export default function ExportTab({ classId }: Props) {
@@ -50,7 +50,7 @@ export default function ExportTab({ classId }: Props) {
 
   return (
     <div className="space-y-4">
-      <TabHeader title="Exportar Datos" lastUpdated={null} onRefresh={() => {}} />
+      <TabHeader title="Export Data" lastUpdated={null} onRefresh={() => {}} />
       <p className="font-typewriter text-xs text-[#8b7355]">
         All exports are CSV files for the currently selected class. Open in Excel, Google Sheets, or any spreadsheet app.
       </p>
@@ -70,7 +70,7 @@ export default function ExportTab({ classId }: Props) {
               disabled={loading === exp.type}
               className="shrink-0 clip-skew px-5 py-2 font-typewriter text-[10px] tracking-[0.2em] uppercase bg-[rgba(201,147,58,0.1)] text-[#e8b455] border border-[rgba(201,147,58,0.3)] hover:bg-[rgba(201,147,58,0.2)] transition-colors disabled:opacity-50"
             >
-              {loading === exp.type ? "Generando…" : "↓ CSV"}
+              {loading === exp.type ? "Generating…" : "↓ CSV"}
             </button>
           </div>
         ))}
@@ -78,7 +78,7 @@ export default function ExportTab({ classId }: Props) {
 
       <div className="border border-[rgba(201,147,58,0.3)] bg-[rgba(201,147,58,0.05)] p-5 flex items-center justify-between">
         <div>
-          <p className="font-typewriter text-sm text-[#e8b455]">Exportar todo</p>
+          <p className="font-typewriter text-sm text-[#e8b455]">Export everything</p>
           <p className="font-typewriter text-[10px] text-[#8b7355]">Downloads all three CSV files sequentially</p>
         </div>
         <button
@@ -86,7 +86,7 @@ export default function ExportTab({ classId }: Props) {
           disabled={!!loading}
           className="clip-skew px-6 py-2.5 font-typewriter text-xs tracking-[0.2em] uppercase bg-[#8b1a1a] text-[#f5e6c8] border border-[#c0392b] hover:bg-[#c0392b] transition-colors disabled:opacity-50"
         >
-          {loading ? "Descargando…" : "↓ Exportar todo"}
+          {loading ? "Downloading…" : "↓ Export all"}
         </button>
       </div>
     </div>

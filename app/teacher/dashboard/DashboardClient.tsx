@@ -13,6 +13,8 @@ import BandejaTab from "@/components/dashboard/tabs/BandejaTab";
 
 interface ClassRow { id: string; class_code: string; teacher_name: string; period_name: string; student_count: number }
 
+// Quick-send class messages shown in Spanish to STUDENTS — these stay in
+// Spanish on purpose because students see them in-app.
 const PRESET_MESSAGES = [
   "⏰ 5 minutos restantes",
   "⏰ 2 minutos restantes",
@@ -24,14 +26,14 @@ const PRESET_MESSAGES = [
 type TabId = "overview" | "students" | "units" | "vocab" | "leaderboard" | "export" | "boss" | "bandeja";
 
 const TABS: Array<{ id: TabId; label: string; emoji: string }> = [
-  { id: "bandeja",     label: "Bandeja",      emoji: "📥" },
-  { id: "overview",    label: "Resumen",      emoji: "📊" },
-  { id: "students",    label: "Estudiantes",  emoji: "👤" },
-  { id: "units",       label: "Unidades",     emoji: "🗺️" },
-  { id: "boss",        label: "Jefes",        emoji: "🎯" },
-  { id: "vocab",       label: "Vocabulario",  emoji: "📖" },
-  { id: "leaderboard", label: "Tablero",      emoji: "🏆" },
-  { id: "export",      label: "Exportar",     emoji: "↓" },
+  { id: "bandeja",     label: "Inbox",        emoji: "📥" },
+  { id: "overview",    label: "Overview",     emoji: "📊" },
+  { id: "students",    label: "Students",     emoji: "👤" },
+  { id: "units",       label: "Units",        emoji: "🗺️" },
+  { id: "boss",        label: "Bosses",       emoji: "🎯" },
+  { id: "vocab",       label: "Vocabulary",   emoji: "📖" },
+  { id: "leaderboard", label: "Leaderboard",  emoji: "🏆" },
+  { id: "export",      label: "Export",       emoji: "↓" },
 ];
 
 export default function DashboardClient() {
@@ -92,8 +94,8 @@ export default function DashboardClient() {
       <header className="shrink-0 border-b border-[rgba(201,147,58,0.15)] bg-[#111218] px-6 py-3 flex items-center justify-between gap-4 flex-wrap">
         <div className="flex items-center gap-4">
           <div>
-            <p className="font-typewriter text-[9px] tracking-[0.3em] uppercase text-[#8b7355]">Panel del Maestro</p>
-            <h1 className="font-display font-bold text-lg text-[#e8b455] leading-tight">Cuartel General</h1>
+            <p className="font-typewriter text-[9px] tracking-[0.3em] uppercase text-[#8b7355]">Teacher Panel</p>
+            <h1 className="font-display font-bold text-lg text-[#e8b455] leading-tight">Headquarters</h1>
           </div>
           <div className="w-px h-8 bg-[rgba(201,147,58,0.15)]" />
           {/* Class selector */}
@@ -109,7 +111,7 @@ export default function DashboardClient() {
             >
               {classes.map((c) => (
                 <option key={c.id} value={c.id}>
-                  {c.class_code} — {c.period_name} ({c.student_count} est.)
+                  {c.class_code} — {c.period_name} ({c.student_count} students)
                 </option>
               ))}
             </select>
@@ -129,11 +131,11 @@ export default function DashboardClient() {
               disabled={!selectedClassId}
               className="font-typewriter text-[10px] tracking-[0.2em] uppercase px-3 py-1.5 border border-[rgba(201,147,58,0.25)] text-[#8b7355] hover:text-[#e8b455] hover:border-[rgba(201,147,58,0.5)] transition-colors disabled:opacity-40"
             >
-              📢 Alerta
+              📢 Alert
             </button>
             {alertOpen && (
               <div className="absolute right-0 top-full mt-1 z-50 w-72 border border-[rgba(201,147,58,0.3)] bg-[#1a1614] shadow-xl p-4 space-y-3">
-                <p className="font-typewriter text-[9px] tracking-[0.3em] uppercase text-[#8b7355]">Enviar alerta a la clase</p>
+                <p className="font-typewriter text-[9px] tracking-[0.3em] uppercase text-[#8b7355]">Send class alert (shown in Spanish to students)</p>
                 <div className="flex flex-col gap-1.5">
                   {PRESET_MESSAGES.map((m) => (
                     <button key={m} onClick={() => setAlertMsg(m)}
@@ -154,22 +156,22 @@ export default function DashboardClient() {
                   disabled={!alertMsg.trim() || alertSending}
                   className="w-full clip-skew py-2 font-typewriter text-[10px] tracking-[0.2em] uppercase bg-[#8b1a1a] text-[#f5e6c8] border border-[#c0392b] hover:bg-[#c0392b] transition-colors disabled:opacity-40"
                 >
-                  {alertSent ? "✓ Enviado!" : alertSending ? "Enviando…" : "Enviar a todos →"}
+                  {alertSent ? "✓ Sent!" : alertSending ? "Sending…" : "Send to all →"}
                 </button>
               </div>
             )}
           </div>
           <a href="/teacher/characters" className="font-typewriter text-[10px] tracking-widest uppercase text-[#8b7355] hover:text-[#c9933a] transition-colors">
-            🎭 Personajes
+            🎭 Characters
           </a>
           <a href="/teacher/author" className="font-typewriter text-[10px] tracking-widests uppercase text-[#8b7355] hover:text-[#c9933a] transition-colors">
-            ✏ Crear unidad
+            ✏ Create unit
           </a>
           <a href="/teacher/setup" className="font-typewriter text-[10px] tracking-widest uppercase text-[#8b7355] hover:text-[#c9933a] transition-colors">
             ⚙ Setup
           </a>
           <button onClick={handleLogout} className="font-typewriter text-[10px] tracking-widest uppercase text-[#8b7355] hover:text-[#c0392b] transition-colors">
-            Salir →
+            Log out →
           </button>
         </div>
       </header>

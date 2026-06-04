@@ -11,13 +11,13 @@ interface ModeInfo {
   order: number;
 }
 const MODES: Record<string, ModeInfo> = {
-  interpretive_listening: { icon: "🎧", label: "Escucha Interpretiva",  standard: "Interpretive Listening",  order: 1 },
-  interpretive_reading:   { icon: "📖", label: "Lectura Interpretiva",  standard: "Interpretive Reading",    order: 2 },
-  interpersonal:          { icon: "💬", label: "Comunicación",          standard: "Interpersonal Communication", order: 3 },
-  linguistic:             { icon: "📚", label: "Vocabulario & Forma",   standard: "Linguistic Knowledge",    order: 4 },
-  interpretive_synthesis: { icon: "🔍", label: "Síntesis Interpretiva", standard: "Interpretive (Cultural)", order: 5 },
-  cultures:               { icon: "🌍", label: "Culturas",              standard: "Cultures & Connections",  order: 6 },
-  presentational:         { icon: "📢", label: "Presentacional",        standard: "Presentational Communication", order: 7 },
+  interpretive_listening: { icon: "🎧", label: "Interpretive Listening", standard: "Interpretive Listening",      order: 1 },
+  interpretive_reading:   { icon: "📖", label: "Interpretive Reading",   standard: "Interpretive Reading",        order: 2 },
+  interpersonal:          { icon: "💬", label: "Interpersonal",          standard: "Interpersonal Communication", order: 3 },
+  linguistic:             { icon: "📚", label: "Vocabulary & Form",      standard: "Linguistic Knowledge",        order: 4 },
+  interpretive_synthesis: { icon: "🔍", label: "Interpretive Synthesis", standard: "Interpretive (Cultural)",     order: 5 },
+  cultures:               { icon: "🌍", label: "Cultures",               standard: "Cultures & Connections",      order: 6 },
+  presentational:         { icon: "📢", label: "Presentational",         standard: "Presentational Communication", order: 7 },
 };
 
 // ── Per-unit Can-Do statements by ACTFL mode ──────────────────────────────────
@@ -85,10 +85,10 @@ const GENERIC_CAN_DO: Record<string, string> = {
 // ── Proficiency band thresholds ───────────────────────────────────────────────
 // Based on ACTFL Novice level descriptors mapped to percentage scores
 const BAND_META = [
-  { key: "exceeds",     label: "Sobresaliente",  sublabel: "Novice High+",      color: "#c9933a", bg: "bg-[#c9933a]",     min: 85 },
-  { key: "meets",       label: "Logrado",         sublabel: "Novice High",       color: "#5a9e6f", bg: "bg-[#5a9e6f]",    min: 75 },
-  { key: "approaching", label: "En desarrollo",   sublabel: "Novice Mid",        color: "#e8b455", bg: "bg-[#e8b455]",    min: 60 },
-  { key: "novice_low",  label: "Necesita apoyo",  sublabel: "Novice Low",        color: "#c0392b", bg: "bg-[#c0392b]",   min: 0  },
+  { key: "exceeds",     label: "Exceeds",         sublabel: "Novice High+",      color: "#c9933a", bg: "bg-[#c9933a]",     min: 85 },
+  { key: "meets",       label: "Meets",           sublabel: "Novice High",       color: "#5a9e6f", bg: "bg-[#5a9e6f]",     min: 75 },
+  { key: "approaching", label: "Approaching",     sublabel: "Novice Mid",        color: "#e8b455", bg: "bg-[#e8b455]",     min: 60 },
+  { key: "novice_low",  label: "Needs support",   sublabel: "Novice Low",        color: "#c0392b", bg: "bg-[#c0392b]",     min: 0  },
 ] as const;
 
 // ── Data types ────────────────────────────────────────────────────────────────
@@ -177,12 +177,12 @@ export default function UnitsTab({ classId }: { classId: string }) {
 
   return (
     <div className="space-y-6">
-      <TabHeader title="Estándares ACTFL — Por Unidad" lastUpdated={lastUpdated} onRefresh={refetch} />
+      <TabHeader title="ACTFL Standards — By Unit" lastUpdated={lastUpdated} onRefresh={refetch} />
 
       {/* ── Proficiency band legend ───────────────────────────────────────── */}
       <div className="border border-[rgba(201,147,58,0.15)] bg-[#111218] px-4 py-3">
         <p className="font-typewriter text-[9px] tracking-[0.3em] uppercase text-[#8b7355] mb-2">
-          Bandas de desempeño · ACTFL Novice Level
+          Proficiency bands · ACTFL Novice Level
         </p>
         <div className="flex flex-wrap gap-4">
           {BAND_META.map((b) => (
@@ -202,7 +202,7 @@ export default function UnitsTab({ classId }: { classId: string }) {
         <div className="border border-[rgba(201,147,58,0.2)] bg-[#1a1614] overflow-x-auto">
           <div className="px-4 py-3 border-b border-[rgba(201,147,58,0.1)]">
             <p className="font-typewriter text-[10px] tracking-[0.25em] uppercase text-[#8b7355]">
-              Vista global — Promedio de clase por modo ACTFL
+              Class-wide view — Class average per ACTFL mode
             </p>
           </div>
           <div className="p-4">
@@ -218,7 +218,7 @@ export default function UnitsTab({ classId }: { classId: string }) {
             {activeUnits.map((u) => (
               <div key={u.number} className="flex items-center gap-2 mb-1.5">
                 <span className="font-typewriter text-[10px] text-[#8b7355] w-20 shrink-0 truncate">
-                  C{u.number} {u.country}
+                  U{u.number} {u.country}
                 </span>
                 {allModes.map((mode) => {
                   const d = u.modeData[mode];
@@ -255,17 +255,17 @@ export default function UnitsTab({ classId }: { classId: string }) {
               {/* ── Unit header ────────────────────────────────────────── */}
               <div className="flex items-center justify-between px-5 py-3 border-b border-[rgba(201,147,58,0.1)]">
                 <div className="flex items-center gap-3">
-                  <span className="font-typewriter text-[9px] tracking-widest uppercase text-[#8b7355]">Caso {u.number}</span>
+                  <span className="font-typewriter text-[9px] tracking-widest uppercase text-[#8b7355]">Unit {u.number}</span>
                   <span className="font-display font-bold text-[#f5e6c8] text-lg">{u.country}</span>
                   <span className="font-typewriter text-xs text-[#8b7355] italic hidden sm:inline">&ldquo;{u.titleEs}&rdquo;</span>
                 </div>
                 <div className="flex items-center gap-4 text-right">
                   <div>
-                    <p className="font-typewriter text-[9px] uppercase text-[#8b7355]">Completado</p>
+                    <p className="font-typewriter text-[9px] uppercase text-[#8b7355]">Completed</p>
                     <p className="font-typewriter text-sm font-bold text-[#e8b455]">{completionPct}%</p>
                   </div>
                   <div>
-                    <p className="font-typewriter text-[9px] uppercase text-[#8b7355]">En progreso</p>
+                    <p className="font-typewriter text-[9px] uppercase text-[#8b7355]">In progress</p>
                     <p className="font-typewriter text-sm text-[#c4a882]">{u.inProgressCount}</p>
                   </div>
                 </div>
@@ -278,9 +278,9 @@ export default function UnitsTab({ classId }: { classId: string }) {
                     <div className="h-full bg-[#c9933a] rounded-full" style={{ width: `${completionPct}%` }} />
                   </div>
                   <span className="font-typewriter text-[10px] text-[#8b7355] shrink-0">
-                    {u.completionCount}/{u.totalStudents} estudiantes
+                    {u.completionCount}/{u.totalStudents} students
                     {u.coldCaseCompletions > 0 && (
-                      <span className="text-[rgba(74,158,255,0.8)] ml-2">· {u.coldCaseCompletions} ❄ Caso Frío</span>
+                      <span className="text-[rgba(74,158,255,0.8)] ml-2">· {u.coldCaseCompletions} ❄ Cold Case</span>
                     )}
                   </span>
                 </div>
@@ -288,7 +288,7 @@ export default function UnitsTab({ classId }: { classId: string }) {
 
               {!hasActivity ? (
                 <p className="font-typewriter text-xs text-[#4a3a2a] px-5 py-4 text-center">
-                  Sin actividad aún para esta unidad.
+                  No activity yet for this unit.
                 </p>
               ) : (
                 <div className="px-5 pb-5 space-y-5 mt-3">
@@ -298,7 +298,7 @@ export default function UnitsTab({ classId }: { classId: string }) {
                     <div>
                       <div className="flex items-baseline gap-2 mb-3">
                         <p className="font-typewriter text-[9px] tracking-[0.3em] uppercase text-[#8b7355]">
-                          Modos de Comunicación ACTFL
+                          ACTFL Communication Modes
                         </p>
                         <p className="font-typewriter text-[9px] text-[#4a3a2a]">World-Readiness Standards</p>
                       </div>
@@ -327,7 +327,7 @@ export default function UnitsTab({ classId }: { classId: string }) {
                                 </div>
                                 <div className="flex items-center gap-3 shrink-0">
                                   <div className="text-right">
-                                    <p className="font-typewriter text-[9px] text-[#8b7355]">En nivel</p>
+                                    <p className="font-typewriter text-[9px] text-[#8b7355]">At level</p>
                                     <p className="font-typewriter text-sm font-bold" style={{
                                       color: profPct >= 80 ? "#5a9e6f" : profPct >= 60 ? "#e8b455" : "#c0392b"
                                     }}>
@@ -335,7 +335,7 @@ export default function UnitsTab({ classId }: { classId: string }) {
                                     </p>
                                   </div>
                                   <div className="text-right">
-                                    <p className="font-typewriter text-[9px] text-[#8b7355]">Promedio</p>
+                                    <p className="font-typewriter text-[9px] text-[#8b7355]">Average</p>
                                     <p className="font-typewriter text-xs text-[#c4a882]">{d.avgScore}%</p>
                                   </div>
                                 </div>
@@ -345,7 +345,7 @@ export default function UnitsTab({ classId }: { classId: string }) {
                               <BandBar bands={d.bands} total={total} />
                               <div className="flex justify-between text-[8px] font-typewriter text-[#4a3a2a]">
                                 <span>{d.bands.novice_low > 0 ? `${d.bands.novice_low} Novice Low` : ""}</span>
-                                <span>{total} evaluados · {d.bands.meets + d.bands.exceeds} en nivel</span>
+                                <span>{total} assessed · {d.bands.meets + d.bands.exceeds} at level</span>
                               </div>
 
                               {/* Can-Do statement */}
@@ -369,7 +369,7 @@ export default function UnitsTab({ classId }: { classId: string }) {
                   {u.vocab.total > 0 && (
                     <div className="border-t border-[rgba(201,147,58,0.08)] pt-4">
                       <p className="font-typewriter text-[9px] tracking-[0.3em] uppercase text-[#8b7355] mb-2">
-                        Dominio de Vocabulario · {u.vocab.total} términos
+                        Vocabulary Mastery · {u.vocab.total} terms
                       </p>
                       {/* Three-bucket bar */}
                       <div className="flex h-4 rounded overflow-hidden mb-2 gap-px">
@@ -377,7 +377,7 @@ export default function UnitsTab({ classId }: { classId: string }) {
                           <div
                             className="bg-[#5a9e6f] flex items-center justify-center"
                             style={{ width: `${(u.vocab.mastered / u.vocab.total) * 100}%` }}
-                            title={`${u.vocab.mastered} dominados`}
+                            title={`${u.vocab.mastered} mastered`}
                           >
                             <span className="font-typewriter text-[8px] text-white">{u.vocab.mastered}</span>
                           </div>
@@ -386,7 +386,7 @@ export default function UnitsTab({ classId }: { classId: string }) {
                           <div
                             className="bg-[#e8b455] flex items-center justify-center"
                             style={{ width: `${(u.vocab.emerging / u.vocab.total) * 100}%` }}
-                            title={`${u.vocab.emerging} en desarrollo`}
+                            title={`${u.vocab.emerging} emerging`}
                           >
                             <span className="font-typewriter text-[8px] text-[#1a1614]">{u.vocab.emerging}</span>
                           </div>
@@ -395,20 +395,20 @@ export default function UnitsTab({ classId }: { classId: string }) {
                           <div
                             className="bg-[#c0392b] flex items-center justify-center"
                             style={{ width: `${(u.vocab.struggling / u.vocab.total) * 100}%` }}
-                            title={`${u.vocab.struggling} con dificultad`}
+                            title={`${u.vocab.struggling} struggling`}
                           >
                             <span className="font-typewriter text-[8px] text-white">{u.vocab.struggling}</span>
                           </div>
                         )}
                       </div>
                       <div className="flex gap-4 text-[9px] font-typewriter mb-2">
-                        <span className="text-[#5a9e6f]">● {u.vocab.mastered} dominados (≥80%)</span>
-                        <span className="text-[#e8b455]">● {u.vocab.emerging} en desarrollo</span>
-                        <span className="text-[#c0392b]">● {u.vocab.struggling} con dificultad</span>
+                        <span className="text-[#5a9e6f]">● {u.vocab.mastered} mastered (≥80%)</span>
+                        <span className="text-[#e8b455]">● {u.vocab.emerging} emerging</span>
+                        <span className="text-[#c0392b]">● {u.vocab.struggling} struggling</span>
                       </div>
                       {u.vocab.struggling > 0 && u.vocab.hardest.filter(v => v.masteryPct < 60).length > 0 && (
                         <div className="flex flex-wrap gap-2 mt-1">
-                          <span className="font-typewriter text-[9px] text-[#8b7355]">Reteach:</span>
+                          <span className="font-typewriter text-[9px] text-[#8b7355]">Re-teach:</span>
                           {u.vocab.hardest.filter(v => v.masteryPct < 60).slice(0, 4).map((v) => (
                             <span key={v.term} className="font-typewriter text-[9px] px-2 py-0.5 border border-[rgba(192,57,43,0.3)] text-[#c0392b] bg-[rgba(192,57,43,0.05)]">
                               {v.term} <span className="text-[#4a3a2a]">{v.masteryPct}%</span>
@@ -426,13 +426,13 @@ export default function UnitsTab({ classId }: { classId: string }) {
                     {u.academia.total > 0 && (
                       <div>
                         <p className="font-typewriter text-[9px] tracking-[0.3em] uppercase text-[#8b7355] mb-2">
-                          Preparación · La Academia ({u.academia.total})
+                          Readiness · The Academy ({u.academia.total})
                         </p>
                         <div className="space-y-1">
                           {[
-                            { label: "Pre-evaluados listos",      pct: u.academia.readyPct,          color: "#5a9e6f", desc: "Entered with ≥70% vocab mastery" },
-                            { label: "Recomendado",               pct: u.academia.recommendedPct,    color: "#e8b455", desc: "Some review needed" },
-                            { label: "Preparación requerida",     pct: u.academia.requiredPct,       color: "#c0392b", desc: "Below mastery threshold" },
+                            { label: "Pre-assessed: ready",      pct: u.academia.readyPct,          color: "#5a9e6f", desc: "Entered with ≥70% vocab mastery" },
+                            { label: "Review recommended",        pct: u.academia.recommendedPct,    color: "#e8b455", desc: "Some review needed" },
+                            { label: "Practice required",         pct: u.academia.requiredPct,       color: "#c0392b", desc: "Below mastery threshold" },
                           ].map((tier) => tier.pct != null && tier.pct > 0 ? (
                             <div key={tier.label} className="flex items-center gap-2" title={tier.desc}>
                               <div className="w-1.5 h-1.5 rounded-full shrink-0" style={{ background: tier.color }} />
@@ -443,14 +443,14 @@ export default function UnitsTab({ classId }: { classId: string }) {
                           {u.academia.firstTryPassPct != null && (
                             <div className="flex items-center gap-2 mt-1 pt-1 border-t border-[rgba(201,147,58,0.08)]">
                               <span className="text-xs">⭐</span>
-                              <span className="font-typewriter text-[10px] text-[#8b7355] flex-1">Aprobaron a la primera</span>
+                              <span className="font-typewriter text-[10px] text-[#8b7355] flex-1">Passed on first try</span>
                               <span className="font-typewriter text-[10px] text-[#c9933a] font-bold">{u.academia.firstTryPassPct}%</span>
                             </div>
                           )}
                           {u.academia.advancedNoPassPct != null && u.academia.advancedNoPassPct > 0 && (
                             <div className="flex items-center gap-2">
                               <span className="text-xs">↗</span>
-                              <span className="font-typewriter text-[10px] text-[#8b7355] flex-1">Avanzaron sin aprobar</span>
+                              <span className="font-typewriter text-[10px] text-[#8b7355] flex-1">Advanced without passing</span>
                               <span className="font-typewriter text-[10px] text-[#c0392b]">{u.academia.advancedNoPassPct}%</span>
                             </div>
                           )}
@@ -462,21 +462,21 @@ export default function UnitsTab({ classId }: { classId: string }) {
                     {u.support.studentsNeedingSupport > 0 && (
                       <div>
                         <p className="font-typewriter text-[9px] tracking-[0.3em] uppercase text-[#8b7355] mb-2">
-                          Señales de Apoyo
+                          Support Signals
                         </p>
                         <div className="space-y-1">
                           {[
-                            { label: "Pidieron ayuda",       count: u.support.helpRequested,      icon: "🙋", color: "#c0392b" },
-                            { label: "Saltaron el audio",    count: u.support.listeningSkipped,   icon: "🎧", color: "#c9933a" },
-                            { label: "Leyeron transcripción",count: u.support.transcriptRevealed, icon: "📄", color: "#8b7355" },
-                            { label: "Saltaron repetido",    count: u.support.repeatedSkipping,   icon: "⚠",  color: "#c0392b" },
-                            { label: "Dificultad Academia",  count: u.support.academiaStruggling, icon: "🔄", color: "#c9933a" },
+                            { label: "Asked for help",         count: u.support.helpRequested,      icon: "🙋", color: "#c0392b" },
+                            { label: "Skipped audio",          count: u.support.listeningSkipped,   icon: "🎧", color: "#c9933a" },
+                            { label: "Read the transcript",    count: u.support.transcriptRevealed, icon: "📄", color: "#8b7355" },
+                            { label: "Skipped repeatedly",     count: u.support.repeatedSkipping,   icon: "⚠",  color: "#c0392b" },
+                            { label: "Academy difficulty",     count: u.support.academiaStruggling, icon: "🔄", color: "#c9933a" },
                           ].filter((s) => s.count > 0).map((s) => (
                             <div key={s.label} className="flex items-center gap-2">
                               <span className="text-xs shrink-0">{s.icon}</span>
                               <span className="font-typewriter text-[10px] text-[#8b7355] flex-1">{s.label}</span>
                               <span className="font-typewriter text-[10px] font-bold" style={{ color: s.color }}>
-                                {s.count} est.
+                                {s.count} stu.
                               </span>
                             </div>
                           ))}

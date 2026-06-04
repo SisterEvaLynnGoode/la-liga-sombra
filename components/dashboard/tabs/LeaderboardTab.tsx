@@ -73,7 +73,7 @@ export default function LeaderboardTab({ classId }: { classId: string }) {
 
   return (
     <div className="space-y-4">
-      <TabHeader title="Tablero de Campeones" lastUpdated={lastUpdated} onRefresh={refetch} />
+      <TabHeader title="Leaderboard" lastUpdated={lastUpdated} onRefresh={refetch} />
 
       {/* Controls */}
       <div className="flex flex-wrap items-center gap-3">
@@ -81,25 +81,25 @@ export default function LeaderboardTab({ classId }: { classId: string }) {
           {(["all", "week"] as const).map((p) => (
             <button key={p} onClick={() => setPeriod(p)}
               className={`font-typewriter text-[10px] tracking-[0.2em] uppercase px-4 py-2 transition-colors ${period === p ? "bg-[rgba(201,147,58,0.15)] text-[#e8b455]" : "text-[#8b7355] hover:text-[#c9933a]"}`}>
-              {p === "all" ? "Todo el tiempo" : "Esta semana"}
+              {p === "all" ? "All time" : "This week"}
             </button>
           ))}
         </div>
         <button onClick={() => setAnon((v) => !v)}
           className={`font-typewriter text-[10px] tracking-[0.2em] uppercase px-4 py-2 border transition-colors ${anon ? "border-[rgba(201,147,58,0.4)] bg-[rgba(201,147,58,0.1)] text-[#e8b455]" : "border-[rgba(201,147,58,0.2)] text-[#8b7355] hover:text-[#c9933a]"}`}>
-          👁 {anon ? "Mostrando anónimo" : "Anonimizar"}
+          👁 {anon ? "Names hidden" : "Hide names"}
         </button>
         <button onClick={openProjector}
           className="ml-auto clip-skew px-5 py-2 font-typewriter text-[10px] tracking-[0.2em] uppercase bg-[#8b1a1a] text-[#f5e6c8] border border-[#c0392b] hover:bg-[#c0392b] transition-colors">
-          🖥 Proyector →
+          🖥 Projector →
         </button>
       </div>
 
       {/* Three leaderboard columns */}
       <div className="flex flex-col sm:flex-row gap-4">
-        <LeaderColumn title="Casos resueltos" emoji="🔎" entries={data?.byCasesSolved ?? []} valueKey="count" anon={anon} />
-        <LeaderColumn title="Insignias" emoji="🏅" entries={data?.byBadges ?? []} valueKey="count" anon={anon} />
-        <LeaderColumn title="Dominio de vocab" emoji="📚" entries={data?.byMastery ?? []} valueKey="masteryPct" valueSuffix="%" valueColor={masteryColor} anon={anon} />
+        <LeaderColumn title="Cases solved" emoji="🔎" entries={data?.byCasesSolved ?? []} valueKey="count" anon={anon} />
+        <LeaderColumn title="Badges" emoji="🏅" entries={data?.byBadges ?? []} valueKey="count" anon={anon} />
+        <LeaderColumn title="Vocab mastery" emoji="📚" entries={data?.byMastery ?? []} valueKey="masteryPct" valueSuffix="%" valueColor={masteryColor} anon={anon} />
       </div>
     </div>
   );

@@ -24,7 +24,7 @@ const TooltipContent = ({ active, payload, label }: Record<string, unknown>) => 
   return (
     <div className="bg-[#1a1614] border border-[rgba(201,147,58,0.3)] px-3 py-2 font-typewriter text-xs">
       <p className="text-[#e8b455] mb-0.5">{label as string}</p>
-      <p className="text-[#c4a882]">{p.value} estudiantes completados</p>
+      <p className="text-[#c4a882]">{p.value} students completed</p>
     </div>
   );
 };
@@ -56,19 +56,19 @@ export default function OverviewTab({ classId }: { classId: string }) {
 
   return (
     <div className="space-y-6">
-      <TabHeader title="Resumen" lastUpdated={lastUpdated} onRefresh={refetch} />
+      <TabHeader title="Overview" lastUpdated={lastUpdated} onRefresh={refetch} />
 
       {/* Stat cards */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-4">
-        <StatCard label="Estudiantes activos" value={data?.totalStudents ?? 0} />
-        <StatCard label="Completado promedio" value={`${data?.avgCompletionPct ?? 0}%`} sub="de las unidades" />
-        <StatCard label="Tiempo por actividad" value={`${data?.avgTimeMinutes ?? 0}m`} sub="promedio" />
+        <StatCard label="Active students" value={data?.totalStudents ?? 0} />
+        <StatCard label="Average completion" value={`${data?.avgCompletionPct ?? 0}%`} sub="of units" />
+        <StatCard label="Time per activity" value={`${data?.avgTimeMinutes ?? 0}m`} sub="average" />
       </div>
 
       {/* Unit completion chart */}
       <div className="border border-[rgba(201,147,58,0.2)] bg-[#1a1614] p-5">
         <p className="font-typewriter text-[10px] tracking-[0.25em] uppercase text-[#8b7355] mb-4">
-          Estudiantes por unidad completada
+          Students per completed unit
         </p>
         {mounted && chartData.length > 0 ? (
           <ResponsiveContainer width="100%" height={200}>
@@ -92,27 +92,27 @@ export default function OverviewTab({ classId }: { classId: string }) {
         <div className="flex items-center gap-2 mb-4">
           <div className="w-1.5 h-1.5 rounded-full bg-[#4a9eff] animate-pulse" />
           <p className="font-typewriter text-[10px] tracking-[0.25em] uppercase text-[rgba(74,158,255,0.6)]">
-            Informe Diario — Participación
+            Daily Briefing — Participation
           </p>
         </div>
         {!data?.briefing ? (
-          <p className="font-typewriter text-xs text-[#4a3a2a]">Sin datos de informe aún.</p>
+          <p className="font-typewriter text-xs text-[#4a3a2a]">No briefing data yet.</p>
         ) : (
           <div className="grid grid-cols-3 gap-4">
             <div className="text-center">
-              <p className="font-typewriter text-[9px] uppercase text-[rgba(74,158,255,0.5)] mb-1">Hoy</p>
+              <p className="font-typewriter text-[9px] uppercase text-[rgba(74,158,255,0.5)] mb-1">Today</p>
               <p className="font-display text-2xl font-bold text-[#4a9eff]">{data.briefing.participationPct}%</p>
-              <p className="font-typewriter text-[9px] text-[rgba(74,158,255,0.4)]">{data.briefing.participantsToday} estudiantes</p>
+              <p className="font-typewriter text-[9px] text-[rgba(74,158,255,0.4)]">{data.briefing.participantsToday} students</p>
             </div>
             <div className="text-center">
-              <p className="font-typewriter text-[9px] uppercase text-[rgba(74,158,255,0.5)] mb-1">Completado</p>
+              <p className="font-typewriter text-[9px] uppercase text-[rgba(74,158,255,0.5)] mb-1">Completed</p>
               <p className="font-display text-2xl font-bold text-[#4a9eff]">{data.briefing.completionPct}%</p>
-              <p className="font-typewriter text-[9px] text-[rgba(74,158,255,0.4)]">de los que lo iniciaron</p>
+              <p className="font-typewriter text-[9px] text-[rgba(74,158,255,0.4)]">of those who started</p>
             </div>
             <div className="text-center">
-              <p className="font-typewriter text-[9px] uppercase text-[rgba(74,158,255,0.5)] mb-1">Semana</p>
+              <p className="font-typewriter text-[9px] uppercase text-[rgba(74,158,255,0.5)] mb-1">This week</p>
               <p className="font-display text-2xl font-bold text-[#4a9eff]">{data.briefing.avgWeeklyCompleted}</p>
-              <p className="font-typewriter text-[9px] text-[rgba(74,158,255,0.4)]">prom completados</p>
+              <p className="font-typewriter text-[9px] text-[rgba(74,158,255,0.4)]">avg completed</p>
             </div>
           </div>
         )}
@@ -121,10 +121,10 @@ export default function OverviewTab({ classId }: { classId: string }) {
       {/* Inactive students */}
       <div className="border border-[rgba(201,147,58,0.2)] bg-[#1a1614] p-5">
         <p className="font-typewriter text-[10px] tracking-[0.25em] uppercase text-[#8b7355] mb-3">
-          Sin actividad en 7+ días ({data?.inactiveStudents.length ?? 0})
+          No activity in 7+ days ({data?.inactiveStudents.length ?? 0})
         </p>
         {!data?.inactiveStudents.length ? (
-          <p className="font-typewriter text-xs text-[#4a3a2a]">¡Todos activos esta semana!</p>
+          <p className="font-typewriter text-xs text-[#4a3a2a]">Everyone was active this week!</p>
         ) : (
           <div className="space-y-1.5 max-h-48 overflow-y-auto">
             {data.inactiveStudents.map((s) => (

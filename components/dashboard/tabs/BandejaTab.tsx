@@ -132,7 +132,7 @@ export default function BandejaTab({ classId }: { classId: string }) {
   return (
     <div className="space-y-4">
       <TabHeader
-        title={`Bandeja de entrada${unackedCount > 0 ? ` (${unackedCount} sin revisar)` : ""}`}
+        title={`Inbox${unackedCount > 0 ? ` (${unackedCount} unread)` : ""}`}
         lastUpdated={lastUpdated}
         onRefresh={refetch}
       />
@@ -140,7 +140,7 @@ export default function BandejaTab({ classId }: { classId: string }) {
       {/* Info banner */}
       <div className="border border-[rgba(201,147,58,0.15)] bg-[rgba(201,147,58,0.04)] px-4 py-3">
         <p className="font-typewriter text-[10px] text-[#8b7355] leading-relaxed">
-          Estos son los momentos en que los estudiantes necesitaron más apoyo. Úsalos para conversaciones 1:1 o ajustes de grupo.
+          These are the moments your students needed extra support. Use them for 1:1 conversations or whole-class adjustments.
         </p>
       </div>
 
@@ -156,19 +156,19 @@ export default function BandejaTab({ classId }: { classId: string }) {
                 : "border-[rgba(201,147,58,0.2)] text-[#8b7355] hover:text-[#c9933a]"
             }`}
           >
-            {f === "unresolved" ? `Sin revisar (${allFlags.filter((x) => !x.resolved).length})`
-              : f === "help"     ? "Piden ayuda"
-              : f === "academia" ? "Academia"
-              : f === "listening"? "Escucha"
-              : "Todos"}
+            {f === "unresolved" ? `Open (${allFlags.filter((x) => !x.resolved).length})`
+              : f === "help"     ? "Asked for help"
+              : f === "academia" ? "Academy"
+              : f === "listening"? "Listening"
+              : "All"}
           </button>
         ))}
       </div>
 
       {sorted.length === 0 && (
         <div className="border border-[rgba(201,147,58,0.15)] bg-[#1a1614] px-6 py-8 text-center">
-          <p className="font-typewriter text-sm text-[#c9933a]">✓ Bandeja vacía</p>
-          <p className="font-typewriter text-xs text-[#8b7355] mt-1">No hay alertas pendientes para este filtro.</p>
+          <p className="font-typewriter text-sm text-[#c9933a]">✓ Inbox empty</p>
+          <p className="font-typewriter text-xs text-[#8b7355] mt-1">No pending alerts for this filter.</p>
         </div>
       )}
 
@@ -193,7 +193,7 @@ export default function BandejaTab({ classId }: { classId: string }) {
                     </p>
                     <p className="font-typewriter text-[10px] text-[#8b7355] mt-0.5">
                       <span className="text-[#c4a882]">{flag.studentName}</span>
-                      {flag.unitNumber != null && ` · Unidad ${flag.unitNumber}`}
+                      {flag.unitNumber != null && ` · Unit ${flag.unitNumber}`}
                       {" · "}{relativeTime(flag.createdAt)}
                     </p>
                   </div>
@@ -202,12 +202,12 @@ export default function BandejaTab({ classId }: { classId: string }) {
                 <div className="flex items-center gap-1.5 shrink-0">
                   {!flag.acknowledged && (
                     <span className="font-typewriter text-[9px] px-2 py-0.5 bg-[rgba(192,57,43,0.2)] border border-[rgba(192,57,43,0.4)] text-[#c0392b] uppercase tracking-wider">
-                      Nuevo
+                      New
                     </span>
                   )}
                   {flag.resolved && (
                     <span className="font-typewriter text-[9px] text-[#4a3a2a] uppercase tracking-wider">
-                      Resuelto
+                      Resolved
                     </span>
                   )}
                 </div>
@@ -224,14 +224,14 @@ export default function BandejaTab({ classId }: { classId: string }) {
 
               {flag.flagType === "academia_skipped_after_failure" && flag.context.retries != null && (
                 <p className="font-typewriter text-[10px] text-[#8b7355]">
-                  {`Intentos antes de saltarse: ${flag.context.retries}`}
+                  {`Attempts before skipping: ${flag.context.retries}`}
                 </p>
               )}
 
               {/* Teacher note (display) */}
               {flag.teacherNote && editingNoteId !== flag.id && (
                 <div className="border border-[rgba(201,147,58,0.15)] bg-[#0d0b0a] px-3 py-2">
-                  <p className="font-typewriter text-[10px] text-[#8b7355] mb-0.5 uppercase tracking-wider">Nota privada</p>
+                  <p className="font-typewriter text-[10px] text-[#8b7355] mb-0.5 uppercase tracking-wider">Private note</p>
                   <p className="font-typewriter text-xs text-[#c4a882]">{flag.teacherNote}</p>
                 </div>
               )}
@@ -242,7 +242,7 @@ export default function BandejaTab({ classId }: { classId: string }) {
                   <textarea
                     value={noteText}
                     onChange={(e) => setNoteText(e.target.value)}
-                    placeholder="Nota privada (solo tú puedes verla)…"
+                    placeholder="Private note (only you can see it)…"
                     rows={2}
                     className="w-full bg-[#0d0b0a] border border-[rgba(201,147,58,0.2)] text-[#c4a882] font-typewriter text-xs px-3 py-2 resize-none focus:outline-none focus:border-[rgba(201,147,58,0.4)] placeholder:text-[#4a3a2a]"
                   />
@@ -252,13 +252,13 @@ export default function BandejaTab({ classId }: { classId: string }) {
                       disabled={isActioning}
                       className="font-typewriter text-[10px] px-3 py-1.5 border border-[rgba(201,147,58,0.3)] text-[#c9933a] hover:bg-[rgba(201,147,58,0.08)] transition-colors disabled:opacity-40"
                     >
-                      Guardar nota
+                      Save note
                     </button>
                     <button
                       onClick={() => setEditingNoteId(null)}
                       className="font-typewriter text-[10px] px-3 py-1.5 text-[#8b7355] hover:text-[#c4a882]"
                     >
-                      Cancelar
+                      Cancel
                     </button>
                   </div>
                 </div>
@@ -282,7 +282,7 @@ export default function BandejaTab({ classId }: { classId: string }) {
                             disabled={challenging === flag.id}
                             className="font-typewriter text-[10px] px-3 py-1.5 border border-[rgba(232,180,85,0.4)] text-[#e8b455] hover:bg-[rgba(232,180,85,0.08)] transition-colors disabled:opacity-40"
                           >
-                            🎯 Retar a intentar de nuevo
+                            🎯 Challenge to try again
                           </button>
                         )}
 
@@ -293,7 +293,7 @@ export default function BandejaTab({ classId }: { classId: string }) {
                               type="text"
                               value={challengeMsg[flag.id] ?? ""}
                               onChange={(e) => setChallengeMsg((prev) => ({ ...prev, [flag.id]: e.target.value }))}
-                              placeholder="Mensaje opcional para el estudiante… (en español o inglés)"
+                              placeholder="Optional message to the student… (English or Spanish — student sees it as-is)"
                               maxLength={120}
                               className="w-full bg-[#0d0b0a] border border-[rgba(201,147,58,0.2)] text-[#c4a882] font-typewriter text-xs px-3 py-2 focus:outline-none focus:border-[rgba(201,147,58,0.4)] placeholder:text-[#4a3a2a]"
                             />
@@ -303,20 +303,20 @@ export default function BandejaTab({ classId }: { classId: string }) {
                                 disabled={challenging === flag.id}
                                 className="font-typewriter text-[10px] px-3 py-1.5 border border-[rgba(232,180,85,0.5)] text-[#e8b455] bg-[rgba(232,180,85,0.08)] hover:bg-[rgba(232,180,85,0.15)] transition-colors disabled:opacity-40"
                               >
-                                {challenging === flag.id ? "…" : "🎯 Enviar reto"}
+                                {challenging === flag.id ? "…" : "🎯 Send challenge"}
                               </button>
                               <button
                                 onClick={() => setShowMsgFor(null)}
                                 className="font-typewriter text-[10px] px-3 py-1.5 text-[#8b7355] hover:text-[#c4a882] transition-colors"
                               >
-                                Cancelar
+                                Cancel
                               </button>
                             </div>
                           </div>
                         )}
 
                         {alreadyChallenged && (
-                          <span className="font-typewriter text-[10px] text-[#e8b455] px-2 py-1.5">🎯 Reto enviado</span>
+                          <span className="font-typewriter text-[10px] text-[#e8b455] px-2 py-1.5">🎯 Challenge sent</span>
                         )}
 
                         {/* Option 2: Unlock to advance */}
@@ -326,12 +326,12 @@ export default function BandejaTab({ classId }: { classId: string }) {
                             disabled={unlocking === flag.id}
                             className="font-typewriter text-[10px] px-3 py-1.5 border border-[rgba(201,147,58,0.5)] text-[#c9933a] hover:bg-[rgba(201,147,58,0.08)] transition-colors disabled:opacity-40"
                           >
-                            {unlocking === flag.id ? "…" : "🔓 Desbloquear avance"}
+                            {unlocking === flag.id ? "…" : "🔓 Unlock next stage"}
                           </button>
                         )}
 
                         {alreadyUnlocked && (
-                          <span className="font-typewriter text-[10px] text-[#c9933a] px-2 py-1.5">🔓 Desbloqueado</span>
+                          <span className="font-typewriter text-[10px] text-[#c9933a] px-2 py-1.5">🔓 Unlocked</span>
                         )}
                       </>
                     );
@@ -343,21 +343,21 @@ export default function BandejaTab({ classId }: { classId: string }) {
                       disabled={isActioning}
                       className="font-typewriter text-[10px] px-3 py-1.5 border border-[rgba(201,147,58,0.25)] text-[#c9933a] hover:bg-[rgba(201,147,58,0.08)] transition-colors disabled:opacity-40"
                     >
-                      {isActioning ? "…" : "✓ Revisar"}
+                      {isActioning ? "…" : "✓ Mark read"}
                     </button>
                   )}
                   <button
                     onClick={() => { setEditingNoteId(flag.id); setNoteText(flag.teacherNote ?? ""); }}
                     className="font-typewriter text-[10px] px-3 py-1.5 border border-[rgba(201,147,58,0.15)] text-[#8b7355] hover:text-[#c9933a] transition-colors"
                   >
-                    📝 Nota
+                    📝 Note
                   </button>
                   <button
                     onClick={() => action(flag.id, "resolve")}
                     disabled={isActioning}
                     className="font-typewriter text-[10px] px-3 py-1.5 border border-[rgba(201,147,58,0.15)] text-[#8b7355] hover:text-[#c4a882] transition-colors disabled:opacity-40"
                   >
-                    {isActioning ? "…" : "↗ Atendido"}
+                    {isActioning ? "…" : "↗ Resolve"}
                   </button>
                 </div>
               )}

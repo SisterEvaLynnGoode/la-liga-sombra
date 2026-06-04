@@ -34,17 +34,17 @@ export default function VocabTab({ classId }: { classId: string }) {
 
   return (
     <div className="space-y-4">
-      <TabHeader title="Vocabulario" lastUpdated={lastUpdated} onRefresh={refetch} />
+      <TabHeader title="Vocabulary" lastUpdated={lastUpdated} onRefresh={refetch} />
 
       {/* Summary + search */}
       <div className="flex flex-wrap items-center gap-4">
         <div className="flex gap-4">
           <div className="border border-[rgba(201,147,58,0.2)] bg-[#1a1614] px-4 py-2 text-center">
-            <p className="font-typewriter text-[9px] uppercase text-[#8b7355]">Términos</p>
+            <p className="font-typewriter text-[9px] uppercase text-[#8b7355]">Terms</p>
             <p className="font-typewriter text-lg font-bold text-[#e8b455]">{data?.terms.length ?? 0}</p>
           </div>
           <div className="border border-[rgba(201,147,58,0.2)] bg-[#1a1614] px-4 py-2 text-center">
-            <p className="font-typewriter text-[9px] uppercase text-[#8b7355]">Dominados</p>
+            <p className="font-typewriter text-[9px] uppercase text-[#8b7355]">Mastered</p>
             <p className="font-typewriter text-lg font-bold text-[#4ade80]">{masteredCount}</p>
           </div>
         </div>
@@ -54,7 +54,7 @@ export default function VocabTab({ classId }: { classId: string }) {
             type="text"
             value={search}
             onChange={(e) => setSearch(e.target.value)}
-            placeholder="Buscar término…"
+            placeholder="Search a term…"
             className="flex-1 max-w-xs bg-[#0d0b0a] border border-[rgba(201,147,58,0.25)] focus:border-[#c9933a] focus:outline-none px-3 py-1.5 font-typewriter text-xs text-[#f5e6c8] placeholder-[#3a3028] transition-colors"
           />
           <select
@@ -62,9 +62,9 @@ export default function VocabTab({ classId }: { classId: string }) {
             onChange={(e) => setSortBy(e.target.value as "mastery" | "seen" | "term")}
             className="bg-[#1a1614] border border-[rgba(201,147,58,0.2)] px-3 py-1.5 font-typewriter text-xs text-[#8b7355] focus:outline-none"
           >
-            <option value="mastery">Ordenar: Dominio ↑</option>
-            <option value="seen">Ordenar: Visto por ↓</option>
-            <option value="term">Ordenar: Alfabético</option>
+            <option value="mastery">Sort: Mastery ↑</option>
+            <option value="seen">Sort: Seen by ↓</option>
+            <option value="term">Sort: Alphabetical</option>
           </select>
         </div>
       </div>
@@ -74,7 +74,7 @@ export default function VocabTab({ classId }: { classId: string }) {
         <table className="w-full">
           <thead className="border-b border-[rgba(201,147,58,0.15)]">
             <tr>
-              {["Término", "Dominio clase", "Visto por", "Dominado por", "Intentos avg"].map((h) => (
+              {["Term", "Class mastery", "Seen by", "Mastered by", "Avg attempts"].map((h) => (
                 <th key={h} className="text-left py-2.5 px-4">
                   <span className="font-typewriter text-[10px] tracking-[0.2em] uppercase text-[#8b7355]">{h}</span>
                 </th>

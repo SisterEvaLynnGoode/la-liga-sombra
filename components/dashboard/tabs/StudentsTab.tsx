@@ -76,25 +76,25 @@ export default function StudentsTab({ classId }: { classId: string }) {
 
   return (
     <div className="space-y-4">
-      <TabHeader title={`Estudiantes (${data?.students.length ?? 0})`} lastUpdated={lastUpdated} onRefresh={refetch} />
+      <TabHeader title={`Students (${data?.students.length ?? 0})`} lastUpdated={lastUpdated} onRefresh={refetch} />
 
       <div className="border border-[rgba(201,147,58,0.2)] bg-[#1a1614] overflow-x-auto">
         <table className="w-full">
           <thead className="border-b border-[rgba(201,147,58,0.15)]">
             <tr className="px-4">
               <th className="text-left pb-2 pl-4 pt-3">
-                <span className="font-typewriter text-[10px] tracking-[0.2em] uppercase text-[#8b7355]">Agente</span>
+                <span className="font-typewriter text-[10px] tracking-[0.2em] uppercase text-[#8b7355]">Agent</span>
               </th>
-              <SortTh k="unitsCompleted" label="Unidades ✓" />
-              <SortTh k="totalTimeSeconds" label="Tiempo" />
-              <SortTh k="lastActive" label="Última sesión" />
-              <SortTh k="masteryPct" label="Dominio" />
-              <SortTh k="badgeCount" label="Insignias" />
-              <SortTh k="academiaRetries" label="Academia ↺" />
-              <SortTh k="stakeoutAvgTime" label="Vigilancia ⏱" />
-              <SortTh k="trainingMinutesWeek" label="Training /sem" />
-              <SortTh k="briefingStreak" label="Informe 📋" />
-              <SortTh k="coldCasesCompleted" label="❄ Frío" />
+              <SortTh k="unitsCompleted" label="Units ✓" />
+              <SortTh k="totalTimeSeconds" label="Time" />
+              <SortTh k="lastActive" label="Last seen" />
+              <SortTh k="masteryPct" label="Mastery" />
+              <SortTh k="badgeCount" label="Badges" />
+              <SortTh k="academiaRetries" label="Academy ↺" />
+              <SortTh k="stakeoutAvgTime" label="Stakeout ⏱" />
+              <SortTh k="trainingMinutesWeek" label="Training /wk" />
+              <SortTh k="briefingStreak" label="Briefing 📋" />
+              <SortTh k="coldCasesCompleted" label="❄ Cold" />
               <th className="text-left pb-2 pr-4 pt-3">
                 <span className="font-typewriter text-[10px] tracking-[0.2em] uppercase text-[#8b7355]">🔊 Audio</span>
               </th>
@@ -133,10 +133,10 @@ export default function StudentsTab({ classId }: { classId: string }) {
                         </span>
                         {(s.needsSupportCount ?? 0) > 0 && (
                           <span
-                            title={`Avanzó sin aprobar en ${s.needsSupportCount} unidad(es) — puede necesitar apoyo`}
+                            title={`Advanced without passing in ${s.needsSupportCount} unit(s) — may need support`}
                             className="font-typewriter text-[10px] px-1.5 py-0.5 bg-[rgba(192,57,43,0.15)] border border-[rgba(192,57,43,0.3)] text-[#c0392b] leading-none"
                           >
-                            ⚠ apoyo
+                            ⚠ support
                           </span>
                         )}
                       </span>
@@ -207,38 +207,38 @@ export default function StudentsTab({ classId }: { classId: string }) {
                   {s.listeningFlags && s.listeningFlags.flagCount > 0 ? (
                     <span className="flex items-center gap-1 flex-wrap">
                       {s.listeningFlags.repeatedSkipping && (
-                        <span title="Saltó 3+ etapas en sesión reciente" className="font-typewriter text-[10px] px-1.5 py-0.5 bg-[rgba(192,57,43,0.2)] border border-[rgba(192,57,43,0.5)] text-[#c0392b] leading-none font-bold">
-                          ⚠ saltó×{s.listeningFlags.stagesSkippedCount ?? 3}
+                        <span title="Skipped 3+ stages in a recent session" className="font-typewriter text-[10px] px-1.5 py-0.5 bg-[rgba(192,57,43,0.2)] border border-[rgba(192,57,43,0.5)] text-[#c0392b] leading-none font-bold">
+                          ⚠ skip×{s.listeningFlags.stagesSkippedCount ?? 3}
                         </span>
                       )}
                       {!s.listeningFlags.repeatedSkipping && (s.listeningFlags.stagesSkippedCount ?? 0) > 0 && (
-                        <span title={`Saltó ${s.listeningFlags.stagesSkippedCount} etapa(s)`} className="font-typewriter text-[10px] px-1.5 py-0.5 bg-[rgba(201,147,58,0.08)] border border-[rgba(201,147,58,0.2)] text-[#8b7355] leading-none">
+                        <span title={`Skipped ${s.listeningFlags.stagesSkippedCount} stage(s)`} className="font-typewriter text-[10px] px-1.5 py-0.5 bg-[rgba(201,147,58,0.08)] border border-[rgba(201,147,58,0.2)] text-[#8b7355] leading-none">
                           ⏭ ×{s.listeningFlags.stagesSkippedCount}
                         </span>
                       )}
                       {s.listeningFlags.helpRequested && (
-                        <span title="Pidió ayuda al profesor" className="font-typewriter text-[10px] px-1.5 py-0.5 bg-[rgba(192,57,43,0.15)] border border-[rgba(192,57,43,0.4)] text-[#c0392b] leading-none">
-                          🙋 ayuda
+                        <span title="Asked the teacher for help" className="font-typewriter text-[10px] px-1.5 py-0.5 bg-[rgba(192,57,43,0.15)] border border-[rgba(192,57,43,0.4)] text-[#c0392b] leading-none">
+                          🙋 help
                         </span>
                       )}
                       {s.listeningFlags.academiaSkipped && (
-                        <span title="Saltó Academia después de fallar" className="font-typewriter text-[10px] px-1.5 py-0.5 bg-[rgba(201,147,58,0.12)] border border-[rgba(201,147,58,0.3)] text-[#c9933a] leading-none">
-                          ⏭ academia
+                        <span title="Skipped the Academy after failing" className="font-typewriter text-[10px] px-1.5 py-0.5 bg-[rgba(201,147,58,0.12)] border border-[rgba(201,147,58,0.3)] text-[#c9933a] leading-none">
+                          ⏭ academy
                         </span>
                       )}
                       {s.listeningFlags.needsSupport && (
-                        <span title="Solicitó más reproducciones de audio" className="font-typewriter text-[10px] px-1.5 py-0.5 bg-[rgba(201,147,58,0.12)] border border-[rgba(201,147,58,0.3)] text-[#c9933a] leading-none">
+                        <span title="Requested more audio replays" className="font-typewriter text-[10px] px-1.5 py-0.5 bg-[rgba(201,147,58,0.12)] border border-[rgba(201,147,58,0.3)] text-[#c9933a] leading-none">
                           🔄 +audio
                         </span>
                       )}
                       {s.listeningFlags.transcriptRevealed && (
-                        <span title="Reveló la transcripción anticipadamente" className="font-typewriter text-[10px] px-1.5 py-0.5 bg-[rgba(201,147,58,0.08)] border border-[rgba(201,147,58,0.2)] text-[#8b7355] leading-none">
+                        <span title="Revealed the transcript early" className="font-typewriter text-[10px] px-1.5 py-0.5 bg-[rgba(201,147,58,0.08)] border border-[rgba(201,147,58,0.2)] text-[#8b7355] leading-none">
                           📄 transc.
                         </span>
                       )}
                       {s.listeningFlags.skipped && (
-                        <span title="Saltó la escucha sin resolver" className="font-typewriter text-[10px] px-1.5 py-0.5 bg-[rgba(192,57,43,0.12)] border border-[rgba(192,57,43,0.3)] text-[#c0392b] leading-none">
-                          ↷ saltó
+                        <span title="Skipped the listening stage unresolved" className="font-typewriter text-[10px] px-1.5 py-0.5 bg-[rgba(192,57,43,0.12)] border border-[rgba(192,57,43,0.3)] text-[#c0392b] leading-none">
+                          ↷ skipped
                         </span>
                       )}
                     </span>
