@@ -161,6 +161,9 @@ export default function DashboardClient() {
               </div>
             )}
           </div>
+          <a href="/teacher/worksheets" className="font-typewriter text-[10px] tracking-widest uppercase text-[#8b7355] hover:text-[#c9933a] transition-colors">
+            🖨 Worksheets
+          </a>
           <a href="/teacher/characters" className="font-typewriter text-[10px] tracking-widest uppercase text-[#8b7355] hover:text-[#c9933a] transition-colors">
             🎭 Characters
           </a>
