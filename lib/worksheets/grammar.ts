@@ -2,11 +2,12 @@
  * Per-unit grammar mini-lessons + drills for the printable worksheet packets.
  *
  * Each unit's grammar focus is authored as a detective-framed teaching block:
- *  - title:       the grammar point
- *  - briefing:    a short detective-voiced explanation (student-facing, English)
- *  - examples:    Spanish models with English glosses
- *  - drills:      fill-in items with answers (answer hidden on the student sheet,
- *                 shown on the teacher answer key)
+ *  - title:         the grammar point
+ *  - briefing:      a short detective-voiced explanation (student-facing, English)
+ *  - examples:      Spanish models with English glosses
+ *  - referenceTable:a conjugation / paradigm table students keep beside them
+ *  - drills:        fill-in items (recognition) with answers
+ *  - secondDrill:   a deeper production task (transform / translate / conjugate)
  *
  * Everything is plain text so it prints clean in black and white.
  */
@@ -25,11 +26,25 @@ export interface GrammarDrill {
   hint?: string;
 }
 
+export interface GrammarTable {
+  caption: string;
+  headers: string[];
+  rows: string[][];
+}
+
+export interface GrammarSecondDrill {
+  title: string;
+  instructions: string;
+  items: GrammarDrill[];
+}
+
 export interface GrammarLesson {
   title: string;
   briefing: string;
   examples: GrammarExample[];
+  referenceTable?: GrammarTable;
   drills: GrammarDrill[];
+  secondDrill?: GrammarSecondDrill;
 }
 
 export const GRAMMAR: Record<number, GrammarLesson> = {
@@ -42,6 +57,19 @@ export const GRAMMAR: Record<number, GrammarLesson> = {
       { es: "Soy de México. ¿De dónde eres tú?", en: "I'm from Mexico. Where are you from?" },
       { es: "Gracias. — De nada.", en: "Thank you. — You're welcome." },
     ],
+    referenceTable: {
+      caption: "Detective phrases — keep these beside you",
+      headers: ["Español", "English"],
+      rows: [
+        ["Buenos días", "Good morning"],
+        ["Buenas tardes", "Good afternoon"],
+        ["Buenas noches", "Good night"],
+        ["Me llamo…", "My name is…"],
+        ["¿Cómo te llamas?", "What's your name?"],
+        ["¿De dónde eres?", "Where are you from?"],
+        ["Soy de…", "I'm from…"],
+      ],
+    },
     drills: [
       { prompt: "____ días, detective. (morning greeting)", answer: "Buenos" },
       { prompt: "¿Cómo te ____? (you ask the suspect's name)", answer: "llamas" },
@@ -50,6 +78,17 @@ export const GRAMMAR: Record<number, GrammarLesson> = {
       { prompt: "Soy ____ Guadalajara. (say where you're from)", answer: "de" },
       { prompt: "— Gracias. — De ____.", answer: "nada" },
     ],
+    secondDrill: {
+      title: "Guided Translation — Say it in Spanish",
+      instructions: "Write each line in Spanish. Stay in character as the detective.",
+      items: [
+        { prompt: "'My name is Sofía.' →", answer: "Me llamo Sofía" },
+        { prompt: "'What's your name?' →", answer: "¿Cómo te llamas?" },
+        { prompt: "'Where are you from?' →", answer: "¿De dónde eres?" },
+        { prompt: "'I'm from Mexico.' →", answer: "Soy de México" },
+        { prompt: "'Good night, ma'am.' →", answer: "Buenas noches, señora" },
+      ],
+    },
   },
   2: {
     title: "Ser + Adjectives & Regular -AR Verbs",
@@ -60,6 +99,17 @@ export const GRAMMAR: Record<number, GrammarLesson> = {
       { es: "Yo estudio español. Tú hablas inglés.", en: "I study Spanish. You speak English." },
       { es: "El ladrón usa una computadora.", en: "The thief uses a computer." },
     ],
+    referenceTable: {
+      caption: "Regular -AR verbs (hablar) & the verb SER",
+      headers: ["Pronombre", "hablar", "ser"],
+      rows: [
+        ["yo", "hablo", "soy"],
+        ["tú", "hablas", "eres"],
+        ["él / ella", "habla", "es"],
+        ["nosotros", "hablamos", "somos"],
+        ["ellos / ellas", "hablan", "son"],
+      ],
+    },
     drills: [
       { prompt: "El sospechoso ____ alto y moreno. (ser)", answer: "es" },
       { prompt: "Yo ____ español todos los días. (estudiar)", answer: "estudio" },
@@ -68,6 +118,17 @@ export const GRAMMAR: Record<number, GrammarLesson> = {
       { prompt: "Tú ____ la computadora. (usar)", answer: "usas" },
       { prompt: "Ellos ____ en la escuela. (trabajar)", answer: "trabajan" },
     ],
+    secondDrill: {
+      title: "Transformation — Make the adjective agree",
+      instructions: "Rewrite the adjective so it agrees with the new subject.",
+      items: [
+        { prompt: "El detective es serio. → La detective es ____.", answer: "seria" },
+        { prompt: "Carlos es trabajador. → María es ____.", answer: "trabajadora" },
+        { prompt: "El chico es alto. → Los chicos son ____.", answer: "altos" },
+        { prompt: "La maestra es simpática. → Las maestras son ____.", answer: "simpáticas" },
+        { prompt: "El estudiante es tímido. → La estudiante es ____.", answer: "tímida" },
+      ],
+    },
   },
   3: {
     title: "The Verb IR + A, Question Words & -ER Verbs",
@@ -78,6 +139,17 @@ export const GRAMMAR: Record<number, GrammarLesson> = {
       { es: "Yo corro a la plaza. Tú ves el taxi.", en: "I run to the plaza. You see the taxi." },
       { es: "¿Por qué vamos a la comisaría?", en: "Why are we going to the police station?" },
     ],
+    referenceTable: {
+      caption: "IR (to go) & regular -ER verbs (comer)",
+      headers: ["Pronombre", "ir", "comer"],
+      rows: [
+        ["yo", "voy", "como"],
+        ["tú", "vas", "comes"],
+        ["él / ella", "va", "come"],
+        ["nosotros", "vamos", "comemos"],
+        ["ellos / ellas", "van", "comen"],
+      ],
+    },
     drills: [
       { prompt: "El sospechoso ____ a la estación de Atocha. (ir)", answer: "va" },
       { prompt: "Voy ____ el Museo del Prado. (ir + preposition)", answer: "a" },
@@ -86,6 +158,17 @@ export const GRAMMAR: Record<number, GrammarLesson> = {
       { prompt: "Yo ____ el taxi en la calle. (ver)", answer: "veo" },
       { prompt: "¿____ es el culpable? (which question word: who)", answer: "Quién" },
     ],
+    secondDrill: {
+      title: "Transformation & Translation — the verb IR",
+      instructions: "Change the subject of IR, or translate the line into Spanish.",
+      items: [
+        { prompt: "Yo voy al museo. → Nosotros ____ al museo.", answer: "vamos" },
+        { prompt: "Tú vas a la plaza. → Ella ____ a la plaza.", answer: "va" },
+        { prompt: "Él va al aeropuerto. → Ellos ____ al aeropuerto.", answer: "van" },
+        { prompt: "'I go to the market.' →", answer: "Voy al mercado" },
+        { prompt: "'Where are you going?' →", answer: "¿Adónde vas?" },
+      ],
+    },
   },
   4: {
     title: "Ser vs. Estar, -IR Verbs & Possessive Adjectives",
@@ -96,6 +179,17 @@ export const GRAMMAR: Record<number, GrammarLesson> = {
       { es: "Mi hermano vive en Costa Rica.", en: "My brother lives in Costa Rica." },
       { es: "Su collar no está en la habitación.", en: "Her necklace is not in the room." },
     ],
+    referenceTable: {
+      caption: "SER vs ESTAR & regular -IR verbs (vivir)",
+      headers: ["Pronombre", "ser", "estar", "vivir"],
+      rows: [
+        ["yo", "soy", "estoy", "vivo"],
+        ["tú", "eres", "estás", "vives"],
+        ["él / ella", "es", "está", "vive"],
+        ["nosotros", "somos", "estamos", "vivimos"],
+        ["ellos / ellas", "son", "están", "viven"],
+      ],
+    },
     drills: [
       { prompt: "El nieto ____ nervioso hoy. (ser/estar — feeling)", answer: "está" },
       { prompt: "La abuela ____ muy generosa. (ser/estar — trait)", answer: "es" },
@@ -104,6 +198,17 @@ export const GRAMMAR: Record<number, GrammarLesson> = {
       { prompt: "El sospechoso ____ la carta. (escribir)", answer: "escribe" },
       { prompt: "¿Dónde ____ tu hermana ahora? (ser/estar — location)", answer: "está" },
     ],
+    secondDrill: {
+      title: "Choose the verb — SER or ESTAR",
+      instructions: "Write the correct form of SER or ESTAR. The hint tells you why.",
+      items: [
+        { prompt: "La abuela ____ generosa.", answer: "es", hint: "trait" },
+        { prompt: "El nieto ____ nervioso hoy.", answer: "está", hint: "feeling" },
+        { prompt: "Nosotros ____ en la finca.", answer: "estamos", hint: "location" },
+        { prompt: "Yo ____ detective de la agencia.", answer: "soy", hint: "identity" },
+        { prompt: "Los primos ____ cansados.", answer: "están", hint: "feeling" },
+      ],
+    },
   },
   5: {
     title: "Tener Expressions, Numbers to a Million & Venir",
@@ -114,6 +219,17 @@ export const GRAMMAR: Record<number, GrammarLesson> = {
       { es: "Tengo prisa — el ladrón viene a las tres.", en: "I'm in a hurry — the thief is coming at three." },
       { es: "La contraseña es dos mil quinientos.", en: "The password is two thousand five hundred." },
     ],
+    referenceTable: {
+      caption: "TENER & VENIR (both irregular)",
+      headers: ["Pronombre", "tener", "venir"],
+      rows: [
+        ["yo", "tengo", "vengo"],
+        ["tú", "tienes", "vienes"],
+        ["él / ella", "tiene", "viene"],
+        ["nosotros", "tenemos", "venimos"],
+        ["ellos / ellas", "tienen", "vienen"],
+      ],
+    },
     drills: [
       { prompt: "El sospechoso ____ treinta años. (tener)", answer: "tiene" },
       { prompt: "Yo ____ miedo de la red oscura. (tener)", answer: "tengo" },
@@ -122,6 +238,17 @@ export const GRAMMAR: Record<number, GrammarLesson> = {
       { prompt: "Nosotros ____ prisa, ¡rápido! (tener)", answer: "tenemos" },
       { prompt: "¿Cuántos años ____ tú? (tener)", answer: "tienes" },
     ],
+    secondDrill: {
+      title: "Translation — tener & venir",
+      instructions: "Write each line in Spanish using tener or venir.",
+      items: [
+        { prompt: "'I am hungry.' →", answer: "Tengo hambre" },
+        { prompt: "'She is twenty years old.' →", answer: "Tiene veinte años" },
+        { prompt: "'We are in a hurry.' →", answer: "Tenemos prisa" },
+        { prompt: "'Are you afraid?' →", answer: "¿Tienes miedo?" },
+        { prompt: "'The thief is coming.' →", answer: "El ladrón viene" },
+      ],
+    },
   },
   6: {
     title: "Stem-Changing Verbs & Demonstratives (este/ese/aquel)",
@@ -132,6 +259,17 @@ export const GRAMMAR: Record<number, GrammarLesson> = {
       { es: "No puedo dormir — pienso en el caso.", en: "I can't sleep — I'm thinking about the case." },
       { es: "Aquel cocinero vuelve a la cocina.", en: "That cook over there returns to the kitchen." },
     ],
+    referenceTable: {
+      caption: "Stem-changers (querer e→ie, poder o→ue) — nosotros doesn't change",
+      headers: ["Pronombre", "querer (e→ie)", "poder (o→ue)"],
+      rows: [
+        ["yo", "quiero", "puedo"],
+        ["tú", "quieres", "puedes"],
+        ["él / ella", "quiere", "puede"],
+        ["nosotros", "queremos", "podemos"],
+        ["ellos / ellas", "quieren", "pueden"],
+      ],
+    },
     drills: [
       { prompt: "El cocinero ____ usar este cuchillo. (querer, e→ie)", answer: "quiere" },
       { prompt: "Yo no ____ encontrar la receta. (poder, o→ue)", answer: "puedo" },
@@ -140,6 +278,17 @@ export const GRAMMAR: Record<number, GrammarLesson> = {
       { prompt: "El sospechoso ____ a la cocina a las ocho. (volver, o→ue)", answer: "vuelve" },
       { prompt: "¿Quién prepara ____ plato de allá? (that over there, masc.)", answer: "aquel" },
     ],
+    secondDrill: {
+      title: "Conjugate — stem-changing verbs",
+      instructions: "Write the correct stem-changing form for each subject.",
+      items: [
+        { prompt: "Yo ____ la receta. (querer)", answer: "quiero" },
+        { prompt: "Ella ____ cocinar. (poder)", answer: "puede" },
+        { prompt: "Nosotros ____ el pollo. (preferir)", answer: "preferimos" },
+        { prompt: "El chef ____ a la cocina. (volver)", answer: "vuelve" },
+        { prompt: "¿Tú ____ que es culpable? (pensar)", answer: "piensas" },
+      ],
+    },
   },
   7: {
     title: "Stem-Changing Verbs (u→ue, o→ue) & Ordinal Numbers",
@@ -150,14 +299,37 @@ export const GRAMMAR: Record<number, GrammarLesson> = {
       { es: "Encuentro la primera pista cerca del escenario.", en: "I find the first clue near the stage." },
       { es: "El técnico almuerza a las dos.", en: "The technician eats lunch at two." },
     ],
+    referenceTable: {
+      caption: "Stem-changers (jugar u→ue, poder o→ue) & ordinals 1–5",
+      headers: ["Pronombre", "jugar (u→ue)", "poder (o→ue)"],
+      rows: [
+        ["yo", "juego", "puedo"],
+        ["tú", "juegas", "puedes"],
+        ["él / ella", "juega", "puede"],
+        ["nosotros", "jugamos", "podemos"],
+        ["ellos / ellas", "juegan", "pueden"],
+        ["Ordinales:", "1º primero · 2º segundo · 3º tercero", "4º cuarto · 5º quinto"],
+      ],
+    },
     drills: [
-      { prompt: "El bailarín ____ en el festival. (jugar, u→ue → 'performs/plays')", answer: "juega" },
+      { prompt: "El bailarín ____ en el festival. (jugar, u→ue)", answer: "juega" },
       { prompt: "Yo ____ la pista detrás del escenario. (encontrar, o→ue)", answer: "encuentro" },
       { prompt: "La ____ pista es la más importante. (1st, feminine)", answer: "primera" },
       { prompt: "El sospechoso ____ a las dos de la tarde. (almorzar, o→ue)", answer: "almuerza" },
       { prompt: "Nosotros ____ resolver el caso. (poder, o→ue)", answer: "podemos" },
       { prompt: "El ____ testigo no dice la verdad. (3rd, masculine short form)", answer: "tercer" },
     ],
+    secondDrill: {
+      title: "Conjugate & order — stem-changers and ordinals",
+      instructions: "Conjugate the verb or write the correct ordinal number.",
+      items: [
+        { prompt: "Yo ____ en el estadio. (jugar)", answer: "juego" },
+        { prompt: "Ella ____ la pista. (encontrar)", answer: "encuentra" },
+        { prompt: "La ____ pista. (1st, fem.)", answer: "primera" },
+        { prompt: "El ____ sospechoso. (3rd, masc. short form)", answer: "tercer" },
+        { prompt: "Nosotros ____ a las dos. (almorzar)", answer: "almorzamos" },
+      ],
+    },
   },
   8: {
     title: "The Preterite (Past Tense), Comparatives & Object Pronouns",
@@ -168,6 +340,18 @@ export const GRAMMAR: Record<number, GrammarLesson> = {
       { es: "El ladrón es más alto que el testigo.", en: "The thief is taller than the witness." },
       { es: "Don Aurelio no le vendió las figurillas.", en: "Don Aurelio didn't sell him the figurines." },
     ],
+    referenceTable: {
+      caption: "Preterite -AR endings (hablar) & comparatives",
+      headers: ["Pronombre", "Preterite -AR (hablar)"],
+      rows: [
+        ["yo", "hablé"],
+        ["tú", "hablaste"],
+        ["él / ella", "habló"],
+        ["nosotros", "hablamos"],
+        ["ellos / ellas", "hablaron"],
+        ["Comparativos:", "más…que · menos…que · tan…como · mejor · peor"],
+      ],
+    },
     drills: [
       { prompt: "Ayer Doña Rosa ____ el mercado. (limpiar, preterite yo→ella)", answer: "limpió" },
       { prompt: "El ladrón ____ temprano. (llegar, preterite él)", answer: "llegó" },
@@ -176,6 +360,17 @@ export const GRAMMAR: Record<number, GrammarLesson> = {
       { prompt: "Don Aurelio no ____ vendió el collar. (to him — pronoun)", answer: "le" },
       { prompt: "Esta pista es ____ que la otra. (better — irregular)", answer: "mejor" },
     ],
+    secondDrill: {
+      title: "Transform — present to preterite & comparatives",
+      instructions: "Change the verb from present to preterite, or complete the comparison.",
+      items: [
+        { prompt: "Yo limpio. → Ayer yo ____.", answer: "limpié" },
+        { prompt: "Ella llega. → Ayer ella ____.", answer: "llegó" },
+        { prompt: "Ellos compran. → Ayer ellos ____.", answer: "compraron" },
+        { prompt: "El ladrón es ____ alto ____ el testigo. (more…than)", answer: "más…que" },
+        { prompt: "Esta pista es ____ que la otra. (better)", answer: "mejor" },
+      ],
+    },
   },
 };
 

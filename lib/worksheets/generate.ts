@@ -9,6 +9,7 @@
  */
 
 import { getGrammarLesson, type GrammarLesson } from "./grammar";
+import { getCultureLesson, type CultureLesson } from "./culture";
 
 export interface VocabPair {
   spanish: string;
@@ -48,6 +49,7 @@ export interface WorksheetPacket {
   criminalName: string;
   vocabCount: number;
   grammar: GrammarLesson;
+  culture: CultureLesson | null;
   match: MatchActivity;
   translate: TranslateItem[];
   unscramble: UnscrambleItem[];
@@ -183,6 +185,7 @@ export function buildWorksheetPacket(unit: {
     criminalName: unit.criminalName,
     vocabCount: cleanVocab.length,
     grammar,
+    culture: getCultureLesson(unit.unitNumber),
     match,
     translate,
     unscramble,
