@@ -167,6 +167,9 @@ export default function DashboardClient() {
           <a href="/teacher/pasaporte" className="font-typewriter text-[10px] tracking-widest uppercase text-[#8b7355] hover:text-[#c9933a] transition-colors">
             📕 Pasaporte
           </a>
+          <a href="/teacher/presentations" className="font-typewriter text-[10px] tracking-widest uppercase text-[#8b7355] hover:text-[#c9933a] transition-colors">
+            🎤 Presentations
+          </a>
           <a href="/teacher/characters" className="font-typewriter text-[10px] tracking-widest uppercase text-[#8b7355] hover:text-[#c9933a] transition-colors">
             🎭 Characters
           </a>
