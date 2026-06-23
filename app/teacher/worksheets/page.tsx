@@ -10,7 +10,7 @@ export const metadata = { title: "Lesson Plans & Worksheets — La Liga Sombra" 
 function getUnitContent(n: number): { vocab: Array<{ spanish: string; english: string }>; city?: string } | null {
   try {
     // eslint-disable-next-line @typescript-eslint/no-require-imports
-    return require(`@/content/unit-0${n}.json`);
+    return require(`@/content/unit-${String(n).padStart(2, "0")}.json`);
   } catch {
     return null;
   }

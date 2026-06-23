@@ -35,7 +35,7 @@ export default async function ExpedientePage() {
   for (let n = 1; n <= 10; n++) {
     try {
       // eslint-disable-next-line @typescript-eslint/no-require-imports
-      const unit = require(`@/content/unit-0${n}.json`) as { vocab?: Array<{ spanish: string }> };
+      const unit = require(`@/content/unit-${String(n).padStart(2, "0")}.json`) as { vocab?: Array<{ spanish: string }> };
       for (const v of unit.vocab ?? []) spanishVocabTerms.add(v.spanish);
     } catch { break; }
   }

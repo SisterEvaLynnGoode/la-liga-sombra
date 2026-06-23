@@ -79,7 +79,7 @@ export default async function MissionBoardPage() {
       availableUnits.map(async (unit) => {
         try {
           // eslint-disable-next-line @typescript-eslint/no-require-imports
-          const content = require(`@/content/unit-0${unit.number}.json`) as { vocab: Array<{ spanish: string }> };
+          const content = require(`@/content/unit-${String(unit.number).padStart(2, "0")}.json`) as { vocab: Array<{ spanish: string }> };
           const terms = content.vocab.map((v) => v.spanish);
           const r = await getVocabReadinessScore(session.studentId, terms);
           readinessMap.set(unit.number, r.tier);

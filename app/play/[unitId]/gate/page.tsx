@@ -63,6 +63,10 @@ function getUnitContent(unitNumber: number) {
   if (unitNumber === 7) return require("@/content/unit-07.json");
   // eslint-disable-next-line @typescript-eslint/no-require-imports
   if (unitNumber === 8) return require("@/content/unit-08.json");
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
+  if (unitNumber === 9) return require("@/content/unit-09.json");
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
+  if (unitNumber === 10) return require("@/content/unit-10.json");
   return null;
 }
 

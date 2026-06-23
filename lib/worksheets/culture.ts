@@ -307,6 +307,72 @@ export const CULTURE: Record<number, CultureLesson> = {
     teacherNote:
       "Caps Unit 8 (market vocab + preterite). ~40–45 min. The role-play doubles as light interpersonal speaking practice and a bridge to the Unit's presentation milestone. Have pairs perform 2–3 in front of the class.",
   },
+  9: {
+    theme: "Taíno Heritage & Dominican Music (Dominican Republic)",
+    reading: {
+      products:
+        "Before Europeans arrived, the Taíno people lived on the island of La Española (today the Dominican Republic and Haiti). They carved wooden and stone figures called cemíes, used in healing and ceremonies. Today the Dominican Republic is also famous for its music: el merengue and la bachata, both born on this island.",
+      practices:
+        "Taíno healers used cemíes and natural medicine (la medicina natural) to care for the body. Many Taíno words survive in everyday Spanish — hamaca (hammock), huracán (hurricane), and barbacoa (barbecue). Dominicans love to gather for music and dancing, especially merengue, which has a fast, happy rhythm.",
+      perspectives:
+        "Honoring Taíno heritage keeps the island's first peoples present, even centuries later. Caring for the body and community — through healing traditions and through joyful music and dance — reflects a value of resilience and togetherness that runs deep in Dominican culture.",
+    },
+    comprehension: [
+      { question: "What were the Taíno carved figures called?", answer: "cemíes" },
+      { question: "Name one type of music born in the Dominican Republic.", answer: "merengue or bachata" },
+      { question: "Name one everyday Spanish word that comes from Taíno.", answer: "hamaca, huracán, or barbacoa" },
+      { question: "What island do the Dominican Republic and Haiti share?", answer: "La Española (Hispaniola)" },
+    ],
+    compara:
+      "What traditions in your culture help people stay healthy or bring the community together? Write 2–3 sentences comparing them to Dominican healing and music. Use at least two Spanish words.",
+    project: {
+      title: "Cartel de Salud / Health Poster — El Cuerpo",
+      brief:
+        "Make a labeled diagram of the human body (el cuerpo) for a clinic. Label at least 8 body parts in Spanish, and write 3 sentences using doler (Me duele…, Me duelen…). Add one Taíno-inspired healing tip.",
+      materials: "This sheet, pencil; you may sketch a simple body outline.",
+      checklist: [
+        "At least 8 body parts labeled in Spanish",
+        "3 sentences using doler (me duele / me duelen)",
+        "One healing or wellness tip",
+        "Neat, clinic-style labels",
+      ],
+    },
+    teacherNote:
+      "Pairs with the Unit 9 body/health vocab and doler. ~40 min. Play a short merengue clip as students label their body diagram. Students practice 'me duele/duelen' by miming an ailment for a partner to describe.",
+  },
+  10: {
+    theme: "The Panama Hat & the Galápagos (Ecuador)",
+    reading: {
+      products:
+        "The famous 'Panama hat' is actually made in Ecuador, woven by hand from toquilla straw (paja toquilla), especially in the town of Montecristi. The finest ones take months to weave. Ecuador is also home to las Islas Galápagos, the islands where Charles Darwin studied evolution — full of giant tortoises and unique wildlife.",
+      practices:
+        "Master weavers (los tejedores) pass the toquilla craft from generation to generation. Ecuador is a leader in protecting nature: the Galápagos are a national park, and the country was one of the first to give rights to nature in its constitution. Ecuadorians blend ancient Andean traditions with a forward-looking focus on technology and the environment.",
+      perspectives:
+        "Ecuador shows that the future (el futuro) and tradition can grow together — a hand-woven hat and a tech expo in the same city. Protecting the Galápagos and honoring craftspeople reflect a value of caring for both heritage and the planet for the generations to come.",
+    },
+    comprehension: [
+      { question: "Where is the 'Panama hat' really made?", answer: "Ecuador (especially Montecristi)" },
+      { question: "What straw is used to weave the hats?", answer: "paja toquilla (toquilla straw)" },
+      { question: "What famous islands belong to Ecuador?", answer: "las Islas Galápagos" },
+      { question: "Which scientist studied evolution in the Galápagos?", answer: "Charles Darwin" },
+    ],
+    compara:
+      "What is a traditional craft from your culture, and how might it survive into the future? Write 2–3 sentences. Use the future in Spanish at least once (voy a… or seré…).",
+    project: {
+      title: "Mi Futuro / My Future — Career & Goal Card",
+      brief:
+        "Create a 'future' card about yourself. Draw your future career and write 4 sentences about your plans using the future tense (Voy a…, Seré…, Tendré…, El año que viene…). Include one goal (mi meta) and one dream (mi sueño).",
+      materials: "This sheet, pencil.",
+      checklist: [
+        "Your future career drawn or named in Spanish",
+        "4 sentences using the future (ir a + inf. or simple future)",
+        "One goal (mi meta) and one dream (mi sueño)",
+        "Neat and clearly written",
+      ],
+    },
+    teacherNote:
+      "Caps Unit 10 (careers + future) and the whole semester. ~45 min. A natural bridge to the Capstone — these 'My Future' cards make a great gallery and rehearse the future tense students will use to present. Show a 2-minute Galápagos clip first.",
+  },
 };
 
 export function getCultureLesson(unitNumber: number): CultureLesson | null {

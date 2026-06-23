@@ -1,0 +1,356 @@
+{
+  "unitNumber": 10,
+  "country": "Ecuador",
+  "city": "Quito",
+  "caseTitle": "La Expo del Futuro",
+  "caseDescription": "En la Expo del Futuro, en una universidad de Quito, se exhibía el Sombrero de Paja Toquilla de Montecristi — un tesoro tejido a mano y patrimonio de la humanidad. Mientras los inventores hablaban de sus planes, el sombrero desapareció. Usa el vocabulario de las profesiones, la tecnología y el futuro, además de 'ir a + infinitivo' y el futuro simple (seré, tendré, estudiaré) para descubrir qué iba a hacer cada sospechoso, quién mintió sobre su proyecto, y quién planeaba robar el sombrero.",
+  "criminalName": "El Maestro",
+  "bonusClue": "El Maestro lleva un abrigo oscuro con un bolsillo interior muy grande — del tamaño exacto de una caja de sombrero. Es el único sospechoso que no registró ningún proyecto en la Expo, pero dijo que 'pronto' iba a hacerse rico.",
+  "vocab": [
+    { "spanish": "el ingeniero / la ingeniera", "english": "engineer (m/f)", "audio": "/audio/unit-10/ingeniero.mp3" },
+    { "spanish": "el médico / la médica", "english": "doctor (m/f)", "audio": "/audio/unit-10/medico.mp3" },
+    { "spanish": "el profesor / la profesora", "english": "teacher / professor (m/f)", "audio": "/audio/unit-10/profesor.mp3" },
+    { "spanish": "el abogado / la abogada", "english": "lawyer (m/f)", "audio": "/audio/unit-10/abogado.mp3" },
+    { "spanish": "el programador / la programadora", "english": "programmer (m/f)", "audio": "/audio/unit-10/programador.mp3" },
+    { "spanish": "el científico / la científica", "english": "scientist (m/f)", "audio": "/audio/unit-10/cientifico.mp3" },
+    { "spanish": "el empresario / la empresaria", "english": "entrepreneur (m/f)", "audio": "/audio/unit-10/empresario.mp3" },
+    { "spanish": "el / la periodista", "english": "journalist (m & f)", "audio": "/audio/unit-10/periodista.mp3" },
+    { "spanish": "la carrera", "english": "career / major", "audio": "/audio/unit-10/carrera.mp3" },
+    { "spanish": "el trabajo", "english": "job / work", "audio": "/audio/unit-10/trabajo.mp3" },
+    { "spanish": "la universidad", "english": "university", "audio": "/audio/unit-10/universidad.mp3" },
+    { "spanish": "el futuro", "english": "the future", "audio": "/audio/unit-10/futuro.mp3" },
+    { "spanish": "el invento", "english": "invention", "audio": "/audio/unit-10/invento.mp3" },
+    { "spanish": "la tecnología", "english": "technology", "audio": "/audio/unit-10/tecnologia.mp3" },
+    { "spanish": "el robot", "english": "robot", "audio": "/audio/unit-10/robot.mp3" },
+    { "spanish": "la inteligencia artificial", "english": "artificial intelligence", "audio": "/audio/unit-10/ia.mp3" },
+    { "spanish": "la aplicación", "english": "app / application", "audio": "/audio/unit-10/aplicacion.mp3" },
+    { "spanish": "la pantalla", "english": "screen", "audio": "/audio/unit-10/pantalla.mp3" },
+    { "spanish": "el proyecto", "english": "project", "audio": "/audio/unit-10/proyecto.mp3" },
+    { "spanish": "la idea", "english": "idea", "audio": "/audio/unit-10/idea.mp3" },
+    { "spanish": "el plan", "english": "plan", "audio": "/audio/unit-10/plan.mp3" },
+    { "spanish": "la meta", "english": "goal", "audio": "/audio/unit-10/meta.mp3" },
+    { "spanish": "el sueño", "english": "dream", "audio": "/audio/unit-10/sueno.mp3" },
+    { "spanish": "ir a + infinitivo", "english": "going to (do) — voy a estudiar = I'm going to study", "audio": "/audio/unit-10/ir-a.mp3" },
+    { "spanish": "voy a...", "english": "I am going to...", "audio": "/audio/unit-10/voy-a.mp3" },
+    { "spanish": "el año que viene", "english": "next year", "audio": "/audio/unit-10/ano-que-viene.mp3" },
+    { "spanish": "mañana", "english": "tomorrow", "audio": "/audio/unit-10/manana.mp3" },
+    { "spanish": "pronto", "english": "soon", "audio": "/audio/unit-10/pronto.mp3" },
+    { "spanish": "seré", "english": "I will be (future of ser)", "audio": "/audio/unit-10/sere.mp3" },
+    { "spanish": "tendré", "english": "I will have (future of tener)", "audio": "/audio/unit-10/tendre.mp3" },
+    { "spanish": "estudiaré", "english": "I will study (future -é ending)", "audio": "/audio/unit-10/estudiare.mp3" },
+    { "spanish": "trabajaré", "english": "I will work (future -é ending)", "audio": "/audio/unit-10/trabajare.mp3" }
+  ],
+  "stages": [
+    {
+      "type": "cutscene",
+      "videoUrl": "/videos/unit-10-intro.mp4",
+      "subtitleUrl": "/videos/unit-10-intro.vtt",
+      "chiefName": "Jefa Ramírez",
+      "chiefImageSeed": 60,
+      "chiefImageUrl": "/images/characters/chief-ramirez.png",
+      "briefingLines": [
+        "Tu última misión, agente — y la más importante. Estás en Quito, la capital de Ecuador, en lo alto de los Andes. Hoy es la Expo del Futuro.",
+        "En la Expo se exhibía el Sombrero de Paja Toquilla de Montecristi — tejido a mano, patrimonio de la humanidad. Sí: el verdadero 'sombrero de Panamá' es ecuatoriano.",
+        "Hace una hora, el sombrero desapareció de su vitrina mientras los inventores presentaban sus proyectos del futuro.",
+        "Para esta misión necesitas hablar del FUTURO. La forma más fácil es 'ir a + infinitivo': 'Voy a estudiar', 'Ella va a presentar un robot'.",
+        "También hay un futuro más formal: seré (I will be), tendré (I will have), estudiaré (I will study). Las terminaciones son: -é, -ás, -á, -emos, -án.",
+        "Cada sospechoso habló de sus planes — qué carrera va a estudiar, qué invento va a presentar. Uno de ellos mintió sobre su proyecto.",
+        "El que no registró ningún proyecto, pero dijo que 'pronto' iba a hacerse rico... ese es nuestro ladrón. ¡Cierra tu último caso, agente!"
+      ]
+    },
+    {
+      "type": "vocabMatch",
+      "pairs": [
+        { "spanish": "el ingeniero", "english": "engineer" },
+        { "spanish": "la programadora", "english": "programmer (f)" },
+        { "spanish": "el futuro", "english": "the future" },
+        { "spanish": "el invento", "english": "invention" },
+        { "spanish": "el proyecto", "english": "project" },
+        { "spanish": "la meta", "english": "goal" },
+        { "spanish": "voy a...", "english": "I am going to..." },
+        { "spanish": "el año que viene", "english": "next year" },
+        { "spanish": "seré", "english": "I will be" },
+        { "spanish": "tendré", "english": "I will have" },
+        { "spanish": "la universidad", "english": "university" },
+        { "spanish": "la tecnología", "english": "technology" }
+      ]
+    },
+    {
+      "type": "readingComp",
+      "clueReward": "El sombrero desapareció durante las presentaciones. Cada inventor registró un proyecto en el programa — excepto un hombre de abrigo oscuro, que dijo que 'pronto' iba a hacerse rico pero no presentó nada.",
+      "passage": "PROGRAMA DE LA EXPO DEL FUTURO\nUniversidad de Quito — Ecuador\n\nBienvenidos a la Expo del Futuro. Hoy, nuestros jóvenes inventores van a presentar sus proyectos. Estos son los participantes registrados:\n\n1. Sofía Vega (programadora). 'Voy a presentar una aplicación de inteligencia artificial para los hospitales. El año que viene voy a estudiar más programación en la universidad. Mi meta es ayudar a los médicos.'\n\n2. Daniel Mora (estudiante). 'Voy a mostrar un robot pequeño que limpia los ríos de los Andes. Cuando termine la universidad, seré ingeniero ambiental. Tendré mi propia empresa algún día.'\n\n3. Lucía Andrade (empresaria). 'Mi compañía va a lanzar una pantalla solar. Trabajaré con científicos de Quito. Es mi sueño desde niña.'\n\nNota del organizador: Un cuarto hombre, alto y de abrigo oscuro, entró a la Expo pero NO registró ningún proyecto. Caminó cerca de la vitrina del Sombrero de Paja Toquilla varias veces. Le pregunté sobre su invento y solo dijo: 'Pronto voy a hacerme rico. Muy pronto.' No habló de ninguna carrera ni meta.\n\nA las once, durante las presentaciones, el sombrero desapareció de su vitrina. El hombre del abrigo oscuro ya no estaba.\n\nNota cultural: El famoso 'sombrero de Panamá' en realidad se teje a mano en Ecuador, sobre todo en el pueblo de Montecristi, con paja toquilla. La UNESCO lo declaró Patrimonio Cultural Inmaterial de la Humanidad. Ecuador también es hogar de las Islas Galápagos, donde Charles Darwin estudió la evolución.",
+      "glossary": [
+        { "word": "voy a presentar", "translation": "I'm going to present (ir a + infinitive = near future)" },
+        { "word": "voy a estudiar", "translation": "I'm going to study (ir a + infinitive)" },
+        { "word": "seré", "translation": "I will be (simple future of ser)" },
+        { "word": "tendré", "translation": "I will have (simple future of tener)" },
+        { "word": "trabajaré", "translation": "I will work (simple future, -é ending)" },
+        { "word": "la vitrina", "translation": "display case / glass case" },
+        { "word": "paja toquilla", "translation": "toquilla straw, used to weave the hats" }
+      ],
+      "questions": [
+        {
+          "id": "r1",
+          "text": "¿Qué va a presentar Sofía Vega?",
+          "type": "multiple_choice",
+          "options": [
+            "Una aplicación de inteligencia artificial para los hospitales",
+            "Un robot que limpia los ríos",
+            "Una pantalla solar",
+            "Un sombrero de paja toquilla"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "id": "r2",
+          "text": "¿Qué quiere ser Daniel Mora en el futuro?",
+          "type": "multiple_choice",
+          "options": [
+            "Ingeniero ambiental, con su propia empresa",
+            "Médico en un hospital de Quito",
+            "Abogado en la universidad",
+            "Periodista de tecnología"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "id": "r3",
+          "text": "¿Qué tienen en común los tres inventores registrados?",
+          "type": "multiple_choice",
+          "options": [
+            "Todos registraron un proyecto y hablaron de su carrera y su meta",
+            "Todos son programadores",
+            "Ninguno habló del futuro",
+            "Todos llevaban un abrigo oscuro"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "id": "r4",
+          "text": "¿Qué dijo el hombre del abrigo oscuro cuando le preguntaron por su invento?",
+          "type": "multiple_choice",
+          "options": [
+            "'Pronto voy a hacerme rico. Muy pronto.' — sin hablar de carrera ni meta",
+            "'Voy a presentar un robot ambiental.'",
+            "'Seré médico el año que viene.'",
+            "'Mi sueño es estudiar en la universidad.'"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "id": "r5",
+          "text": "¿Por qué es sospechoso el hombre del abrigo oscuro? (Escribe en español.)",
+          "type": "short_answer",
+          "acceptableAnswers": [
+            "no registró ningún proyecto",
+            "no presentó nada",
+            "caminó cerca de la vitrina del sombrero",
+            "dijo que pronto iba a hacerse rico",
+            "no habló de ninguna carrera ni meta",
+            "no tenía proyecto pero quería hacerse rico",
+            "desapareció cuando desapareció el sombrero"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "listeningComp",
+      "clueReward": "El sospechoso es un hombre alto con un abrigo oscuro y un bolsillo interior muy grande. Dijo que iba a hacerse rico pronto pero no tenía proyecto. Se quedó junto a la vitrina y salió justo cuando el sombrero desapareció.",
+      "audioUrl": "/audio/unit-10/guardia-testimonio.mp3",
+      "transcript": "Buenas tardes. Soy el guardia de la Expo. Vi al ladrón. Es un hombre alto con un abrigo oscuro. Su abrigo tiene un bolsillo interior muy grande. No presentó ningún proyecto. Le pregunté sobre su invento. Me dijo: 'Pronto voy a hacerme rico.' No habló de su carrera. Se quedó mucho tiempo junto a la vitrina del sombrero. Cuando empezaron las presentaciones, él salió rápido. Después vi la vitrina vacía. El año que viene voy a poner más cámaras en la Expo.",
+      "translation": "Good afternoon. I'm the Expo guard. I saw the thief. He is a tall man with a dark coat. His coat has a very large inner pocket. He didn't present any project. I asked him about his invention. He told me: 'Soon I'm going to get rich.' He didn't talk about his career. He stayed a long time next to the hat's display case. When the presentations started, he left quickly. Afterward I saw the empty case. Next year I'm going to put more cameras in the Expo.",
+      "maxReplays": 3,
+      "passingScore": 0.75,
+      "retryHint": "Pista: Escucha lo que el hombre dijo que iba a hacer ('voy a...'), si tenía proyecto, y dónde se quedó. El futuro y el bolsillo del abrigo son la clave.",
+      "questions": [
+        {
+          "question": "¿Cómo es el ladrón físicamente?",
+          "options": [
+            "Bajo, con una camiseta blanca",
+            "Alto, con un abrigo oscuro y un bolsillo interior grande",
+            "Mayor, con un sombrero",
+            "Joven, con una mochila"
+          ],
+          "correctIndex": 1,
+          "explanationEs": "El guardia dice: 'un hombre alto con un abrigo oscuro... un bolsillo interior muy grande.'",
+          "explanationEn": "A tall man with a dark coat and a very large inner pocket — big enough to hide a hat box."
+        },
+        {
+          "question": "¿Qué dijo el hombre que iba a hacer?",
+          "options": [
+            "Iba a estudiar en la universidad",
+            "Iba a presentar un robot",
+            "Pronto iba a hacerse rico",
+            "Iba a ser médico"
+          ],
+          "correctIndex": 2,
+          "explanationEs": "Dijo: 'Pronto voy a hacerme rico.' Usa 'voy a + infinitivo' para el futuro.",
+          "explanationEn": "He said 'Soon I'm going to get rich' — ir a + infinitive (near future)."
+        },
+        {
+          "question": "¿Presentó el hombre algún proyecto?",
+          "options": [
+            "Sí, una aplicación",
+            "Sí, un robot",
+            "No, no presentó ningún proyecto",
+            "Sí, una pantalla solar"
+          ],
+          "correctIndex": 2,
+          "explanationEs": "Dice: 'No presentó ningún proyecto.' Es el único sin proyecto registrado.",
+          "explanationEn": "He presented no project — the only suspect with nothing registered."
+        },
+        {
+          "question": "¿Dónde se quedó mucho tiempo el hombre?",
+          "options": [
+            "En la puerta",
+            "Junto a la vitrina del sombrero",
+            "En el escenario",
+            "Fuera de la Expo"
+          ],
+          "correctIndex": 1,
+          "explanationEs": "Dice: 'Se quedó mucho tiempo junto a la vitrina del sombrero' — justo donde estaba.",
+          "explanationEn": "He stayed a long time next to the hat's case — right where it was displayed."
+        },
+        {
+          "question": "¿Cuándo salió el hombre de la Expo?",
+          "options": [
+            "Antes de abrir la Expo",
+            "Cuando empezaron las presentaciones — y luego la vitrina estaba vacía",
+            "Al final del día, con todos",
+            "No salió de la Expo"
+          ],
+          "correctIndex": 1,
+          "explanationEs": "Dice que salió rápido al empezar las presentaciones, y después la vitrina estaba vacía.",
+          "explanationEn": "He left quickly as the presentations began, and then the case was empty."
+        }
+      ]
+    },
+    {
+      "type": "dialogueChoice",
+      "clueReward": "La directora confirma: el hombre del abrigo oscuro no estaba en la lista de inventores. Es más alto que todos los participantes. Dijo que iba a hacerse rico 'pronto' pero no tenía ni carrera ni proyecto. Su abrigo tenía un bolsillo del tamaño de una caja de sombrero.",
+      "npcName": "Directora Paredes",
+      "npcAvatar": "👩‍💼",
+      "startNodeId": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "npcLine": "Agente, soy la directora de la Expo del Futuro. El Sombrero de Paja Toquilla representa lo mejor de Ecuador — tradición y futuro juntos. ¿Cómo le puedo ayudar?",
+          "options": [
+            {
+              "text": "Directora, ¿quién entró sin registrar un proyecto? ¿Qué dijo que iba a hacer?",
+              "isCorrect": true,
+              "nextNodeId": "suspect"
+            },
+            {
+              "text": "¿Cuánto vale el sombrero exactamente?",
+              "isCorrect": false,
+              "feedback": "The value isn't the priority — catching the thief is. Ask who entered without a project and what their plans were."
+            },
+            {
+              "text": "¿Va usted a cancelar la Expo del próximo año?",
+              "isCorrect": false,
+              "feedback": "Stay focused on the theft! Ask about the suspicious visitor and what he said about his future."
+            }
+          ]
+        },
+        {
+          "id": "suspect",
+          "npcLine": "Hubo un hombre que no estaba en mi lista de inventores. Le pregunté: '¿Qué proyecto va a presentar?' Y me respondió solo: 'Voy a hacerme rico pronto.' No mencionó ninguna carrera, ninguna meta, ningún invento. Muy extraño para una Expo del Futuro.",
+          "options": [
+            {
+              "text": "¿Puede describirlo? ¿Era más alto o más bajo que los otros participantes?",
+              "isCorrect": true,
+              "nextNodeId": "description"
+            },
+            {
+              "text": "¿Le pidió usted dinero por la entrada?",
+              "isCorrect": false,
+              "feedback": "That won't help catch the thief. Ask the director to describe what the man looked like."
+            },
+            {
+              "text": "¿Va a contratar más guardias el año que viene?",
+              "isCorrect": false,
+              "feedback": "Focus on the suspect, not future security plans. Ask for his physical description."
+            }
+          ]
+        },
+        {
+          "id": "description",
+          "npcLine": "Era el más alto de todos. Llevaba un abrigo oscuro, y noté que tenía un bolsillo interior enorme — del tamaño exacto de una caja de sombrero. Se quedó junto a la vitrina toda la mañana. Cuando empezaron las presentaciones, desapareció... y el sombrero también. Los verdaderos inventores hablaban de robots y aplicaciones; él solo hablaba de dinero.",
+          "options": [
+            {
+              "text": "Gracias, directora. El abrigo, el bolsillo y la falta de proyecto lo delatan. ¡Voy a cerrar este caso!",
+              "isCorrect": true,
+              "nextNodeId": "end"
+            },
+            {
+              "text": "¿Por qué dejó usted entrar a alguien sin proyecto?",
+              "isCorrect": false,
+              "feedback": "Don't blame the director — the Expo is open to visitors. You have what you need; thank her and move on."
+            }
+          ]
+        },
+        {
+          "id": "end",
+          "npcLine": "",
+          "isEnd": true,
+          "endMessage": "Atrápelo, agente. Ese sombrero representa el futuro de Ecuador y las manos de los artesanos de Montecristi. No pertenece a un ladrón. La directora Paredes mira la vitrina vacía, respira hondo, y le ofrece un firme apretón de manos para su última misión."
+        }
+      ]
+    },
+    {
+      "type": "sentenceBuilder",
+      "sentences": [
+        { "sentence": "Voy a estudiar ingeniería en la universidad", "translation": "I'm going to study engineering at the university. (ir a + infinitive)" },
+        { "sentence": "Sofía va a presentar una aplicación", "translation": "Sofía is going to present an app. (ir a + infinitive)" },
+        { "sentence": "El año que viene seré ingeniero", "translation": "Next year I will be an engineer. (simple future: seré)" },
+        { "sentence": "Daniel tendrá su propia empresa algún día", "translation": "Daniel will have his own company someday. (future: tendrá)" },
+        { "sentence": "El ladrón dijo que pronto iba a hacerse rico", "translation": "The thief said he was going to get rich soon." },
+        { "sentence": "Nosotros vamos a encontrar el sombrero robado", "translation": "We are going to find the stolen hat. (ir a + infinitive)" }
+      ]
+    },
+    {
+      "type": "lineup",
+      "correctSuspectId": "el_maestro",
+      "hint": "Recuerda las pistas: (1) NO registró ningún proyecto en la Expo, (2) cuando le preguntaron por su invento, solo dijo 'pronto voy a hacerme rico' — sin carrera ni meta, (3) es el más alto de todos, (4) lleva un abrigo oscuro con un bolsillo interior del tamaño de una caja de sombrero, (5) se quedó junto a la vitrina y salió justo cuando desapareció el sombrero. ¿Cuál de los cuatro no era un inventor de verdad?",
+      "suspects": [
+        {
+          "id": "el_maestro",
+          "name": "El Maestro",
+          "realName": "Ricardo Salazar Ponce",
+          "age": 47,
+          "description": "Tiene cuarenta y siete años y es el más alto de todos. Lleva un abrigo oscuro con un bolsillo interior enorme — del tamaño de una caja de sombrero. No registró ningún proyecto en la Expo. Cuando le preguntaron por su invento, solo dijo: 'Pronto voy a hacerme rico.' No habló de ninguna carrera ni meta. Se quedó junto a la vitrina toda la mañana y desapareció cuando desapareció el sombrero.",
+          "imageSeed": 47,
+          "imageUrl": "/images/characters/unit-07-tecnico-oscuro.png"
+        },
+        {
+          "id": "sofia_programadora",
+          "name": "La Programadora",
+          "realName": "Sofía Vega Ríos",
+          "age": 24,
+          "description": "Tiene veinticuatro años. Es programadora. Registró su proyecto: una aplicación de inteligencia artificial para los hospitales. Dijo: 'El año que viene voy a estudiar más programación.' Estuvo en su mesa de presentación toda la mañana, frente a muchos testigos, mostrando su pantalla.",
+          "imageSeed": 24,
+          "imageUrl": "/images/characters/unit-05-programadora.png"
+        },
+        {
+          "id": "daniel_estudiante",
+          "name": "El Estudiante",
+          "realName": "Daniel Mora Castro",
+          "age": 19,
+          "description": "Tiene diecinueve años. Es estudiante de ingeniería. Presentó un robot pequeño que limpia los ríos de los Andes. Dijo: 'Cuando termine la universidad, seré ingeniero ambiental.' Su robot estaba encendido y necesitaba su atención constante — nunca dejó su mesa.",
+          "imageSeed": 19,
+          "imageUrl": "/images/characters/unit-03-carlos-metroista.png"
+        },
+        {
+          "id": "lucia_empresaria",
+          "name": "La Empresaria",
+          "realName": "Lucía Andrade Vera",
+          "age": 38,
+          "description": "Tiene treinta y ocho años. Es empresaria. Su compañía presentó una pantalla solar. Dijo: 'Trabajaré con científicos de Quito; es mi sueño desde niña.' Dio una entrevista a un periodista durante toda la hora del robo, así que no pudo acercarse a la vitrina.",
+          "imageSeed": 38,
+          "imageUrl": "/images/characters/unit-04-hija-seria.png"
+        }
+      ]
+    }
+  ]
+}

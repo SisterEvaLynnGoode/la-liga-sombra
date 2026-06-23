@@ -1,0 +1,350 @@
+{
+  "unitNumber": 9,
+  "country": "República Dominicana",
+  "city": "Santo Domingo",
+  "caseTitle": "El Taíno Robado",
+  "caseDescription": "En la Clínica Santa Bárbara de la Zona Colonial de Santo Domingo se exhibía 'El Taíno de Madera', una figura de un sanador taíno y un tesoro nacional. Ayer desapareció de su vitrina. Usa el vocabulario del cuerpo y de la salud, el verbo DOLER (me duele / me duelen) y las expresiones 'tener dolor de' para reconstruir quién estaba enfermo de verdad, quién mentía sobre su dolor, y quién se llevó la figura taína.",
+  "criminalName": "La Mariposa Roja",
+  "bonusClue": "La Mariposa Roja lleva un pañuelo de seda roja con una mariposa bordada. Es la única sospechosa que dijo tener dolor de estómago pero comió un sándwich grande en la sala de espera sin ningún problema.",
+  "vocab": [
+    { "spanish": "la cabeza", "english": "head", "audio": "/audio/unit-09/cabeza.mp3" },
+    { "spanish": "la cara", "english": "face", "audio": "/audio/unit-09/cara.mp3" },
+    { "spanish": "el ojo", "english": "eye", "audio": "/audio/unit-09/ojo.mp3" },
+    { "spanish": "la nariz", "english": "nose", "audio": "/audio/unit-09/nariz.mp3" },
+    { "spanish": "la boca", "english": "mouth", "audio": "/audio/unit-09/boca.mp3" },
+    { "spanish": "el diente", "english": "tooth", "audio": "/audio/unit-09/diente.mp3" },
+    { "spanish": "la oreja", "english": "ear", "audio": "/audio/unit-09/oreja.mp3" },
+    { "spanish": "el cuello", "english": "neck", "audio": "/audio/unit-09/cuello.mp3" },
+    { "spanish": "el hombro", "english": "shoulder", "audio": "/audio/unit-09/hombro.mp3" },
+    { "spanish": "el brazo", "english": "arm", "audio": "/audio/unit-09/brazo.mp3" },
+    { "spanish": "la mano", "english": "hand", "audio": "/audio/unit-09/mano.mp3" },
+    { "spanish": "el dedo", "english": "finger", "audio": "/audio/unit-09/dedo.mp3" },
+    { "spanish": "el estómago", "english": "stomach", "audio": "/audio/unit-09/estomago.mp3" },
+    { "spanish": "la espalda", "english": "back", "audio": "/audio/unit-09/espalda.mp3" },
+    { "spanish": "la pierna", "english": "leg", "audio": "/audio/unit-09/pierna.mp3" },
+    { "spanish": "el pie", "english": "foot", "audio": "/audio/unit-09/pie.mp3" },
+    { "spanish": "el corazón", "english": "heart", "audio": "/audio/unit-09/corazon.mp3" },
+    { "spanish": "el pelo", "english": "hair", "audio": "/audio/unit-09/pelo.mp3" },
+    { "spanish": "el doctor / la doctora", "english": "doctor (m/f)", "audio": "/audio/unit-09/doctor.mp3" },
+    { "spanish": "el enfermero / la enfermera", "english": "nurse (m/f)", "audio": "/audio/unit-09/enfermera.mp3" },
+    { "spanish": "la clínica", "english": "clinic", "audio": "/audio/unit-09/clinica.mp3" },
+    { "spanish": "el hospital", "english": "hospital", "audio": "/audio/unit-09/hospital.mp3" },
+    { "spanish": "la medicina", "english": "medicine", "audio": "/audio/unit-09/medicina.mp3" },
+    { "spanish": "la pastilla", "english": "pill", "audio": "/audio/unit-09/pastilla.mp3" },
+    { "spanish": "la receta", "english": "prescription", "audio": "/audio/unit-09/receta.mp3" },
+    { "spanish": "la cita", "english": "appointment", "audio": "/audio/unit-09/cita.mp3" },
+    { "spanish": "estar enfermo / enferma", "english": "to be sick (m/f)", "audio": "/audio/unit-09/enfermo.mp3" },
+    { "spanish": "estar sano / sana", "english": "to be healthy (m/f)", "audio": "/audio/unit-09/sano.mp3" },
+    { "spanish": "el dolor", "english": "pain / ache", "audio": "/audio/unit-09/dolor.mp3" },
+    { "spanish": "la fiebre", "english": "fever", "audio": "/audio/unit-09/fiebre.mp3" },
+    { "spanish": "la tos", "english": "cough", "audio": "/audio/unit-09/tos.mp3" },
+    { "spanish": "sentirse bien", "english": "to feel well", "audio": "/audio/unit-09/sentirse-bien.mp3" },
+    { "spanish": "sentirse mal", "english": "to feel bad", "audio": "/audio/unit-09/sentirse-mal.mp3" },
+    { "spanish": "me duele", "english": "it hurts me (one thing: me duele la cabeza)", "audio": "/audio/unit-09/me-duele.mp3" },
+    { "spanish": "me duelen", "english": "they hurt me (plural: me duelen los pies)", "audio": "/audio/unit-09/me-duelen.mp3" },
+    { "spanish": "tener dolor de", "english": "to have an ache in (tener dolor de cabeza)", "audio": "/audio/unit-09/tener-dolor.mp3" },
+    { "spanish": "¿qué te pasa?", "english": "what's wrong with you?", "audio": "/audio/unit-09/que-te-pasa.mp3" }
+  ],
+  "stages": [
+    {
+      "type": "cutscene",
+      "videoUrl": "/videos/unit-09-intro.mp4",
+      "subtitleUrl": "/videos/unit-09-intro.vtt",
+      "chiefName": "Jefa Ramírez",
+      "chiefImageSeed": 60,
+      "chiefImageUrl": "/images/characters/chief-ramirez.png",
+      "briefingLines": [
+        "Bienvenido a Santo Domingo, agente — la primera ciudad europea de las Américas, en la República Dominicana. Estamos en la Zona Colonial.",
+        "Ayer, alguien robó 'El Taíno de Madera' de la Clínica Santa Bárbara. Es una figura de un sanador taíno, un tesoro del pueblo indígena de la isla.",
+        "El ladrón estaba en la clínica como paciente — o fingió estarlo. Por eso necesitas el vocabulario del cuerpo y de la salud.",
+        "Atención al verbo DOLER. No se conjuga como los otros: decimos 'me duele la cabeza' (una cosa) y 'me duelen los pies' (varias cosas). También: 'tener dolor de cabeza'.",
+        "Los testigos recuerdan qué le dolía a cada sospechoso. Pero cuidado — alguien mintió sobre su dolor para tener una excusa para estar en la clínica.",
+        "Pregunta clave: '¿Qué te pasa?' Escucha bien las respuestas. La persona que mintió sobre su salud es nuestra ladrona. ¡Encuentra el Taíno, agente!"
+      ]
+    },
+    {
+      "type": "vocabMatch",
+      "pairs": [
+        { "spanish": "la cabeza", "english": "head" },
+        { "spanish": "la mano", "english": "hand" },
+        { "spanish": "el estómago", "english": "stomach" },
+        { "spanish": "la espalda", "english": "back" },
+        { "spanish": "el pie", "english": "foot" },
+        { "spanish": "la enfermera", "english": "nurse" },
+        { "spanish": "el dolor", "english": "pain / ache" },
+        { "spanish": "la fiebre", "english": "fever" },
+        { "spanish": "la pastilla", "english": "pill" },
+        { "spanish": "me duele", "english": "it hurts me (one)" },
+        { "spanish": "me duelen", "english": "they hurt me (plural)" },
+        { "spanish": "sentirse mal", "english": "to feel bad" }
+      ]
+    },
+    {
+      "type": "readingComp",
+      "clueReward": "El Taíno desapareció entre las nueve y las diez de la mañana. Una mujer con un pañuelo rojo dijo que tenía dolor de estómago, pero la enfermera la vio comer un sándwich grande sin problema.",
+      "passage": "REGISTRO DE LA CLÍNICA SANTA BÁRBARA\nZona Colonial, Santo Domingo — República Dominicana\nTurno de la mañana — Enfermera Yolanda\n\nA las ocho de la mañana abrí la clínica. El Taíno de Madera estaba en su vitrina, como siempre. La doctora Méndez llegó a las ocho y media.\n\nA las nueve llegaron los pacientes. El señor Reyes dijo: 'Me duele mucho la espalda. No puedo trabajar.' Le di una cita con la doctora. Es un hombre mayor y caminaba despacio — de verdad le dolía la espalda.\n\nDespués llegó un joven, Pablo. Dijo: 'Me duelen los dientes. Tengo mucho dolor.' Tenía la cara hinchada — claramente estaba enfermo. La doctora le escribió una receta.\n\nA las nueve y media llegó una mujer con un pañuelo rojo de seda. Dijo: 'Me duele el estómago. Me siento muy mal.' Pero pocos minutos después, la vi comer un sándwich grande en la sala de espera, sin ningún problema. ¡Una persona con dolor de estómago no come así! Me pareció muy extraño.\n\nLa mujer caminó cerca de la vitrina del Taíno dos veces. A las diez, cuando llamé su nombre para la cita, ya no estaba. Y entonces lo vi: ¡la vitrina estaba vacía! El Taíno de Madera había desaparecido.\n\nNota cultural: Los taínos fueron el pueblo indígena de La Española (hoy República Dominicana y Haití). Usaban figuras de madera llamadas 'cemíes' en sus ceremonias de sanación. El merengue y la bachata, la música nacional dominicana, nacieron mucho después en esta misma isla.",
+      "glossary": [
+        { "word": "me duele la espalda", "translation": "my back hurts (doler: me duele + one body part)" },
+        { "word": "me duelen los dientes", "translation": "my teeth hurt (doler: me duelen + plural body part)" },
+        { "word": "la vitrina", "translation": "display case / glass case" },
+        { "word": "hinchada", "translation": "swollen" },
+        { "word": "la sala de espera", "translation": "the waiting room" },
+        { "word": "el pañuelo", "translation": "scarf / handkerchief" },
+        { "word": "cemíes", "translation": "carved Taíno figures used in healing ceremonies" }
+      ],
+      "questions": [
+        {
+          "id": "r1",
+          "text": "¿Qué le dolía al señor Reyes?",
+          "type": "multiple_choice",
+          "options": [
+            "La espalda — y de verdad caminaba despacio",
+            "Los dientes — tenía la cara hinchada",
+            "El estómago, pero comió un sándwich",
+            "La cabeza y el cuello"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "id": "r2",
+          "text": "¿Por qué la enfermera supo que Pablo estaba enfermo de verdad?",
+          "type": "multiple_choice",
+          "options": [
+            "Tenía la cara hinchada por el dolor de dientes",
+            "No podía caminar",
+            "Tenía mucha fiebre",
+            "Llevaba un pañuelo rojo"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "id": "r3",
+          "text": "¿Qué hizo la mujer del pañuelo rojo que fue muy extraño?",
+          "type": "multiple_choice",
+          "options": [
+            "Dijo que le dolía el estómago, pero comió un sándwich grande sin problema",
+            "Lloró en la sala de espera",
+            "Pidió tres recetas a la doctora",
+            "Llegó antes de abrir la clínica"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "id": "r4",
+          "text": "¿Cuándo descubrió la enfermera que el Taíno había desaparecido?",
+          "type": "multiple_choice",
+          "options": [
+            "A las diez, cuando la mujer del pañuelo rojo ya no estaba",
+            "A las ocho, al abrir la clínica",
+            "A las nueve, cuando llegó el señor Reyes",
+            "Al día siguiente por la mañana"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "id": "r5",
+          "text": "¿Por qué la mujer del pañuelo rojo es sospechosa? (Escribe en español.)",
+          "type": "short_answer",
+          "acceptableAnswers": [
+            "mintió sobre su dolor de estómago",
+            "dijo que le dolía el estómago pero comió un sándwich",
+            "comió un sándwich sin problema",
+            "fingió estar enferma",
+            "caminó cerca de la vitrina del taino",
+            "mintió sobre su salud",
+            "no estaba enferma de verdad"
+          ]
+        }
+      ]
+    },
+    {
+      "type": "listeningComp",
+      "clueReward": "La sospechosa es una mujer de pelo oscuro y un pañuelo rojo. Dijo que le dolía el estómago. Se sentó cerca de la vitrina. Es más alta que la enfermera. Cuando salió, caminaba rápido y sin ningún dolor.",
+      "audioUrl": "/audio/unit-09/enfermera-testimonio.mp3",
+      "transcript": "Buenos días. Soy la enfermera Yolanda. Ayer trabajé toda la mañana. Vi a la ladrona. Es una mujer con el pelo oscuro y un pañuelo rojo. Me dijo que le dolía el estómago. Se sentó cerca de la vitrina del Taíno. Comió un sándwich grande. Una persona con dolor de estómago no come así. Es más alta que yo. Cuando salió de la clínica, caminó muy rápido. No le dolía nada. Yo me sentí muy mal cuando vi la vitrina vacía.",
+      "translation": "Good morning. I'm nurse Yolanda. Yesterday I worked all morning. I saw the thief. She is a woman with dark hair and a red scarf. She told me her stomach hurt. She sat near the Taíno's display case. She ate a big sandwich. A person with a stomachache doesn't eat like that. She is taller than me. When she left the clinic, she walked very fast. Nothing hurt her. I felt very bad when I saw the empty case.",
+      "maxReplays": 3,
+      "passingScore": 0.75,
+      "retryHint": "Pista: Escucha qué dijo que le dolía, qué comió, y cómo caminó cuando salió. El verbo DOLER y la comida son la clave.",
+      "questions": [
+        {
+          "question": "¿Qué dijo la mujer que le dolía?",
+          "options": ["La cabeza", "El estómago", "La espalda", "Los dientes"],
+          "correctIndex": 1,
+          "explanationEs": "La enfermera dice: 'Me dijo que le dolía el estómago.' Doler: le dolía el estómago.",
+          "explanationEn": "The nurse says the woman told her 'her stomach hurt.' Doler: le dolía el estómago."
+        },
+        {
+          "question": "¿Qué comió la mujer en la sala de espera?",
+          "options": ["Una pastilla", "Una sopa", "Un sándwich grande", "Nada"],
+          "correctIndex": 2,
+          "explanationEs": "Dice: 'Comió un sándwich grande.' Una persona con dolor de estómago no come así.",
+          "explanationEn": "She ate a big sandwich — strange for someone with a stomachache."
+        },
+        {
+          "question": "¿Cómo es la mujer físicamente?",
+          "options": [
+            "Pelo rubio, baja",
+            "Pelo oscuro, un pañuelo rojo, más alta que la enfermera",
+            "Pelo corto, sin pañuelo",
+            "Mayor, con lentes"
+          ],
+          "correctIndex": 1,
+          "explanationEs": "Dice: 'pelo oscuro y un pañuelo rojo... Es más alta que yo.' Comparación: más alta que.",
+          "explanationEn": "Dark hair, red scarf, taller than the nurse. Comparison: más alta que (taller than)."
+        },
+        {
+          "question": "¿Dónde se sentó la mujer?",
+          "options": [
+            "Cerca de la puerta",
+            "Cerca de la vitrina del Taíno",
+            "Al lado de la doctora",
+            "En la calle"
+          ],
+          "correctIndex": 1,
+          "explanationEs": "Dice: 'Se sentó cerca de la vitrina del Taíno' — justo donde estaba la figura.",
+          "explanationEn": "She sat near the Taíno's display case — right where the figure was."
+        },
+        {
+          "question": "¿Cómo caminó la mujer cuando salió?",
+          "options": [
+            "Despacio, porque le dolía todo",
+            "Muy rápido, sin ningún dolor",
+            "No salió de la clínica",
+            "Con la ayuda de la enfermera"
+          ],
+          "correctIndex": 1,
+          "explanationEs": "Dice: 'caminó muy rápido. No le dolía nada.' Su dolor era falso.",
+          "explanationEn": "She walked very fast with no pain — her ache was fake."
+        }
+      ]
+    },
+    {
+      "type": "dialogueChoice",
+      "clueReward": "La doctora confirma: la mujer del pañuelo rojo no tenía fiebre ni síntomas reales. Le tomó la temperatura y estaba sana. Mintió sobre su dolor de estómago. Es más alta que la enfermera y llevaba el pelo oscuro suelto.",
+      "npcName": "Doctora Méndez",
+      "npcAvatar": "👩‍⚕️",
+      "startNodeId": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "npcLine": "Agente, gracias por venir. El Taíno de Madera es un símbolo de nuestra herencia taína. Atendí a muchos pacientes ayer. ¿En qué puedo ayudarle?",
+          "options": [
+            {
+              "text": "Doctora, ¿recuerda a una mujer con un pañuelo rojo? ¿Qué le dolía?",
+              "isCorrect": true,
+              "nextNodeId": "patient"
+            },
+            {
+              "text": "¿Cuánto cuesta el Taíno de Madera?",
+              "isCorrect": false,
+              "feedback": "The value isn't the priority — finding the thief is. Ask the doctor about the patients she saw, especially the woman with the red scarf."
+            },
+            {
+              "text": "¿Tiene usted dolor de cabeza, doctora?",
+              "isCorrect": false,
+              "feedback": "Stay focused on the case! Ask the doctor about the suspicious patient, not her own health."
+            }
+          ]
+        },
+        {
+          "id": "patient",
+          "npcLine": "Sí, la recuerdo. Dijo que le dolía mucho el estómago. Pero cuando le tomé la temperatura, no tenía fiebre. Le pregunté '¿qué te pasa exactamente?' y sus respuestas no tenían sentido. Una persona con dolor de estómago de verdad no come un sándwich grande.",
+          "options": [
+            {
+              "text": "¿Puede describir su cuerpo y su cara? ¿Era alta o baja?",
+              "isCorrect": true,
+              "nextNodeId": "description"
+            },
+            {
+              "text": "¿Le dio usted una pastilla para el estómago?",
+              "isCorrect": false,
+              "feedback": "That detail won't catch the thief. Ask the doctor for a physical description of the suspect."
+            },
+            {
+              "text": "¿La mujer pagó la cita?",
+              "isCorrect": false,
+              "feedback": "Money isn't the clue here. Ask what the woman looked like — her height, her hair, her face."
+            }
+          ]
+        },
+        {
+          "id": "description",
+          "npcLine": "Era más alta que la enfermera Yolanda. Tenía el pelo oscuro y suelto, y llevaba ese pañuelo rojo de seda con una mariposa bordada. Sus manos estaban perfectamente sanas — no le dolía nada. Cuando llamamos su nombre, ya había desaparecido... y el Taíno también.",
+          "options": [
+            {
+              "text": "Muchas gracias, doctora. El pañuelo de la mariposa y el dolor falso son las claves. ¡Voy a encontrarla!",
+              "isCorrect": true,
+              "nextNodeId": "end"
+            },
+            {
+              "text": "¿Por qué no la detuvo usted misma?",
+              "isCorrect": false,
+              "feedback": "The doctor was treating patients — she couldn't know yet. You have what you need; thank her and move on."
+            }
+          ]
+        },
+        {
+          "id": "end",
+          "npcLine": "",
+          "isEnd": true,
+          "endMessage": "Encuéntrela, agente. El Taíno de Madera sanó a mi pueblo durante siglos — pertenece a la República Dominicana, no a una ladrona. La doctora Méndez mira la vitrina vacía con tristeza y luego le da un firme apretón de manos."
+        }
+      ]
+    },
+    {
+      "type": "sentenceBuilder",
+      "sentences": [
+        { "sentence": "Me duele la cabeza", "translation": "My head hurts. (doler + one body part: me duele la cabeza)" },
+        { "sentence": "Me duelen los pies", "translation": "My feet hurt. (doler + plural: me duelen los pies)" },
+        { "sentence": "El señor Reyes tiene dolor de espalda", "translation": "Mr. Reyes has a backache. (tener dolor de + body part)" },
+        { "sentence": "La mujer mintió sobre su dolor de estómago", "translation": "The woman lied about her stomachache." },
+        { "sentence": "Pablo está enfermo y le duelen los dientes", "translation": "Pablo is sick and his teeth hurt him." },
+        { "sentence": "La ladrona caminó rápido y no le dolía nada", "translation": "The thief walked fast and nothing hurt her." }
+      ]
+    },
+    {
+      "type": "lineup",
+      "correctSuspectId": "mariposa_roja",
+      "hint": "Recuerda las pistas: (1) dijo que le dolía el estómago pero comió un sándwich grande, (2) no tenía fiebre — la doctora la examinó y estaba sana, (3) es más alta que la enfermera, (4) tiene el pelo oscuro suelto y un pañuelo rojo con una mariposa, (5) caminó cerca de la vitrina y salió rápido sin dolor. ¿Cuál de las cuatro fingió su enfermedad?",
+      "suspects": [
+        {
+          "id": "mariposa_roja",
+          "name": "La Mariposa Roja",
+          "realName": "Beatriz Sánchez del Rosario",
+          "age": 34,
+          "description": "Tiene treinta y cuatro años y el pelo oscuro y suelto. Lleva un pañuelo rojo de seda con una mariposa bordada. Dijo que le dolía el estómago, pero comió un sándwich grande en la sala de espera. La doctora la examinó: no tenía fiebre ni ningún síntoma real. Se sentó cerca de la vitrina del Taíno y salió caminando rápido, sin ningún dolor. Es más alta que la enfermera.",
+          "imageSeed": 41,
+          "imageUrl": "/images/characters/unit-05-ingeniera.png"
+        },
+        {
+          "id": "senor_reyes",
+          "name": "El Paciente Mayor",
+          "realName": "Tomás Reyes Familia",
+          "age": 68,
+          "description": "Tiene sesenta y ocho años. Es un hombre mayor con dolor de espalda real — caminaba muy despacio y no podía moverse rápido. Llegó a las nueve para su cita. La doctora confirma que de verdad le dolía la espalda. No pudo acercarse a la vitrina porque apenas podía caminar.",
+          "imageSeed": 60,
+          "imageUrl": "/images/characters/unit-05-consultor.png"
+        },
+        {
+          "id": "enfermera_clara",
+          "name": "La Enfermera Nueva",
+          "realName": "Clara Jiménez Bonilla",
+          "age": 29,
+          "description": "Tiene veintinueve años. Es la enfermera nueva de la clínica. Estuvo en la recepción toda la mañana y atendió a cada paciente. Muchos testigos la vieron en su puesto. Ella ayudó a la doctora con las recetas y nunca se acercó sola a la vitrina del Taíno.",
+          "imageSeed": 29,
+          "imageUrl": "/images/characters/unit-04-tia-generosa.png"
+        },
+        {
+          "id": "joven_pablo",
+          "name": "El Joven Enfermo",
+          "realName": "Pablo Núñez Castillo",
+          "age": 22,
+          "description": "Tiene veintidós años. Llegó con un dolor de dientes real — tenía la cara hinchada y no podía comer nada. La doctora le escribió una receta y un dentista lo confirma. Estaba demasiado enfermo para robar nada y salió directo al dentista.",
+          "imageSeed": 22,
+          "imageUrl": "/images/characters/unit-08-turista.png"
+        }
+      ]
+    }
+  ]
+}

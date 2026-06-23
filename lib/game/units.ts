@@ -69,16 +69,14 @@ export const UNITS: UnitMeta[] = [
   },
   {
     number: 9, country: "República Dominicana",  countryCode: "DO", flag: "🇩🇴",
-    titleEs: "El cuerpo",         titleEn: "Body & Health",
-    description: "Body parts, health, and at the doctor",
+    titleEs: "El Taíno Robado",   titleEn: "The Stolen Taíno",
+    description: "Body parts, health vocabulary, and the verb doler (me duele/duelen)",
     criminal: "La Mariposa Roja", stolenItem: "El Taíno de Madera",   rotation: -1.8,  themeColor: "#6b4c9b",
-    comingSoon: true,
   },
   {
     number: 10, country: "Ecuador",              countryCode: "EC", flag: "🇪🇨",
-    titleEs: "El futuro",         titleEn: "The Future",
-    description: "Future plans, technology, and careers",
+    titleEs: "La Expo del Futuro", titleEn: "The Future Expo",
+    description: "Careers, technology, and the future (ir a + infinitivo, simple future)",
     criminal: "El Maestro",       stolenItem: "El Sombrero de Paja",   rotation: 1.5,  themeColor: "#065f46",
-    comingSoon: true,
   },
 ];

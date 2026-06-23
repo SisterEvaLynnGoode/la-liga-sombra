@@ -372,6 +372,88 @@ export const GRAMMAR: Record<number, GrammarLesson> = {
       ],
     },
   },
+  9: {
+    title: "Doler (me duele / me duelen) & Body Vocabulary",
+    briefing:
+      "To say something hurts, Spanish uses DOLER like the verb gustar — the body part is the subject. Use 'me duele' for ONE thing (me duele la cabeza = my head hurts) and 'me duelen' for MORE than one (me duelen los pies = my feet hurt). You can also say 'tener dolor de' + body part (tengo dolor de estómago). Watch suspects who lie about their pain!",
+    examples: [
+      { es: "Me duele la cabeza y me duelen los ojos.", en: "My head hurts and my eyes hurt." },
+      { es: "El paciente tiene dolor de espalda.", en: "The patient has a backache." },
+      { es: "La ladrona dijo que le dolía el estómago, pero mintió.", en: "The thief said her stomach hurt, but she lied." },
+    ],
+    referenceTable: {
+      caption: "DOLER — the body part is the subject (like gustar)",
+      headers: ["A quién", "Una cosa", "Varias cosas"],
+      rows: [
+        ["a mí", "me duele…", "me duelen…"],
+        ["a ti", "te duele…", "te duelen…"],
+        ["a él / ella", "le duele…", "le duelen…"],
+        ["a nosotros", "nos duele…", "nos duelen…"],
+        ["a ellos / ellas", "les duele…", "les duelen…"],
+        ["Otra forma:", "tener dolor de + parte del cuerpo", "(tengo dolor de cabeza)"],
+      ],
+    },
+    drills: [
+      { prompt: "Me ____ la cabeza. (one thing: head)", answer: "duele" },
+      { prompt: "Me ____ los pies. (plural: feet)", answer: "duelen" },
+      { prompt: "El señor Reyes tiene ____ de espalda. (ache)", answer: "dolor" },
+      { prompt: "A Pablo le ____ los dientes. (plural: teeth)", answer: "duelen" },
+      { prompt: "¿Qué te ____? (what's wrong / what hurts you — one thing)", answer: "duele" },
+      { prompt: "La ladrona no estaba enferma: no le ____ nada. (one/none)", answer: "dolía" },
+    ],
+    secondDrill: {
+      title: "Choose duele or duelen",
+      instructions: "Write 'duele' (one body part) or 'duelen' (more than one).",
+      items: [
+        { prompt: "Me ____ la mano.", answer: "duele", hint: "one" },
+        { prompt: "Me ____ las piernas.", answer: "duelen", hint: "plural" },
+        { prompt: "Le ____ el estómago.", answer: "duele", hint: "one" },
+        { prompt: "Me ____ los dientes.", answer: "duelen", hint: "plural" },
+        { prompt: "Nos ____ la espalda.", answer: "duele", hint: "one" },
+      ],
+    },
+  },
+  10: {
+    title: "The Future: ir a + infinitive & the Simple Future",
+    briefing:
+      "Two ways to talk about the future. The easy one is 'ir a + infinitive': voy a estudiar (I'm going to study), ella va a presentar (she's going to present). The simple future adds endings to the whole verb: -é, -ás, -á, -emos, -án — seré (I will be), tendré (I will have), estudiaré (I will study). Each suspect describes their future plans — one of them is hiding their real plan.",
+    examples: [
+      { es: "Voy a estudiar ingeniería el año que viene.", en: "I'm going to study engineering next year." },
+      { es: "Sofía va a presentar una aplicación.", en: "Sofía is going to present an app." },
+      { es: "Seré ingeniero y tendré mi propia empresa.", en: "I will be an engineer and I will have my own company." },
+    ],
+    referenceTable: {
+      caption: "Two futures — ir a + infinitive, and the simple future (hablar)",
+      headers: ["Pronombre", "ir a + inf.", "futuro simple (hablar)"],
+      rows: [
+        ["yo", "voy a hablar", "hablaré"],
+        ["tú", "vas a hablar", "hablarás"],
+        ["él / ella", "va a hablar", "hablará"],
+        ["nosotros", "vamos a hablar", "hablaremos"],
+        ["ellos / ellas", "van a hablar", "hablarán"],
+        ["Irregulares:", "seré (ser)", "tendré (tener)"],
+      ],
+    },
+    drills: [
+      { prompt: "Voy ____ estudiar en la universidad. (ir a + infinitive)", answer: "a" },
+      { prompt: "Sofía ____ a presentar una aplicación. (ir)", answer: "va" },
+      { prompt: "El año que viene ____ ingeniero. (I will be — ser)", answer: "seré" },
+      { prompt: "Daniel ____ su propia empresa algún día. (he will have — tener)", answer: "tendrá" },
+      { prompt: "Nosotros ____ a encontrar el sombrero. (ir)", answer: "vamos" },
+      { prompt: "El ladrón dijo que pronto ____ a hacerse rico. (ir)", answer: "iba" },
+    ],
+    secondDrill: {
+      title: "Translate the future",
+      instructions: "Write each line in Spanish using ir a + infinitive or the simple future.",
+      items: [
+        { prompt: "'I'm going to study.' →", answer: "Voy a estudiar" },
+        { prompt: "'She is going to present a robot.' →", answer: "Ella va a presentar un robot" },
+        { prompt: "'Next year I will be a programmer.' →", answer: "El año que viene seré programador" },
+        { prompt: "'We are going to find the hat.' →", answer: "Vamos a encontrar el sombrero" },
+        { prompt: "'He will have his own company.' →", answer: "Tendrá su propia empresa" },
+      ],
+    },
+  },
 };
 
 /** Fallback for units without an authored grammar lesson yet. */
