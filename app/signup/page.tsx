@@ -22,7 +22,7 @@ export default function SignupPage() {
             <h1 className="font-display text-3xl font-bold text-[#f5e6c8]">Nuevo Agente</h1>
             <div className="mt-3 h-px bg-gradient-to-r from-transparent via-[#c9933a] to-transparent" />
             <p className="mt-3 font-typewriter text-xs text-[#8b7355] leading-relaxed">
-              Join La Liga Sombra and start tracking down cultural treasure thieves.
+              Únete a La Liga Sombra y empieza a atrapar a los ladrones de tesoros culturales.
             </p>
           </div>
 

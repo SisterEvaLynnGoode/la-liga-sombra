@@ -22,7 +22,7 @@ export default function SignupForm() {
   function handleCodeNext() {
     const code = classCode.trim().toUpperCase();
     if (!/^[A-Za-z]{3}[0-9]{3}$/.test(code)) {
-      setErrors({ classCode: "Code must be 3 letters + 3 numbers (e.g., OAK101)." });
+      setErrors({ classCode: "El código debe tener 3 letras + 3 números (ej., OAK101)." });
       return;
     }
     setErrors({});
@@ -35,9 +35,9 @@ export default function SignupForm() {
     e.preventDefault();
     const errs: FieldError = {};
 
-    if (!displayName.trim()) errs.displayName = "Enter your agent name.";
-    if (!/^\d{4}$/.test(pin)) errs.pin = "PIN must be exactly 4 digits.";
-    else if (pin !== pinConfirm) errs.pin = "PINs don't match.";
+    if (!displayName.trim()) errs.displayName = "Escribe tu nombre de agente.";
+    if (!/^\d{4}$/.test(pin)) errs.pin = "El PIN debe tener exactamente 4 dígitos.";
+    else if (pin !== pinConfirm) errs.pin = "Los PIN no coinciden.";
 
     if (Object.keys(errs).length) { setErrors(errs); return; }
 
@@ -53,14 +53,14 @@ export default function SignupForm() {
 
       const data = await res.json().catch(() => ({}));
       if (!res.ok) {
-        setErrors({ global: (data as { error?: string }).error ?? "Something went wrong. Try again." });
+        setErrors({ global: (data as { error?: string }).error ?? "Algo salió mal. Inténtalo de nuevo." });
         setLoading(false);
         return;
       }
 
       router.push("/mission-board");
     } catch {
-      setErrors({ global: "Server error — please try again." });
+      setErrors({ global: "Error del servidor — inténtalo de nuevo." });
       setLoading(false);
     }
   }
@@ -83,7 +83,7 @@ export default function SignupForm() {
             </p>
             <h2 className="font-display text-2xl font-bold text-[#f5e6c8]">Código de clase</h2>
             <p className="font-typewriter text-xs text-[#8b7355] mt-1">
-              Your teacher will give you this 6-character code.
+              Tu profe te dará este código de 6 caracteres.
             </p>
           </div>
           <div>
@@ -107,7 +107,7 @@ export default function SignupForm() {
             Continuar →
           </button>
           <p className="font-typewriter text-xs text-center text-[#8b7355]">
-            Already have an account?{" "}
+            ¿Ya tienes una cuenta?{" "}
             <Link href="/login" className="text-[#c9933a] hover:underline">
               Continuar misión
             </Link>
@@ -124,7 +124,7 @@ export default function SignupForm() {
             </p>
             <h2 className="font-display text-2xl font-bold text-[#f5e6c8]">Elige tu identidad</h2>
             <p className="font-typewriter text-xs text-[#8b7355] mt-1">
-              First name or nickname only — no last names.
+              Solo tu nombre o apodo — sin apellidos.
             </p>
           </div>
 
@@ -137,7 +137,7 @@ export default function SignupForm() {
                 type="text"
                 value={displayName}
                 onChange={(e) => setDisplayName(e.target.value)}
-                placeholder="e.g., Sofia, El Lobo, Marco"
+                placeholder="ej., Sofía, El Lobo, Marco"
                 maxLength={20}
                 autoFocus
                 className="w-full bg-[#0d0b0a] border border-[rgba(201,147,58,0.3)] focus:border-[#c9933a] focus:outline-none px-4 py-3 font-typewriter text-base text-[#f5e6c8] placeholder-[#3a3028] transition-colors"
