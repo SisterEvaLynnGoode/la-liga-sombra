@@ -105,6 +105,7 @@ interface UnitData {
   coldCaseCompletions: number;
   modeData: Record<string, ModeEntry>;
   vocab: { mastered: number; emerging: number; struggling: number; total: number; hardest: Array<{ term: string; masteryPct: number }> };
+  grammar?: Array<{ id: string; labelEs: string; labelEn: string; pct: number | null; studentsPracticed: number }>;
   academia: {
     total: number;
     firstTryPassPct: number | null;
@@ -414,6 +415,35 @@ export default function UnitsTab({ classId }: { classId: string }) {
                               {v.term} <span className="text-[#4a3a2a]">{v.masteryPct}%</span>
                             </span>
                           ))}
+                        </div>
+                      )}
+
+                      {/* Grammar concept mastery — class Dojo accuracy per concept */}
+                      {(u.grammar?.length ?? 0) > 0 && (
+                        <div className="mt-3">
+                          <p className="font-typewriter text-[9px] tracking-[0.3em] uppercase text-[#8b7355] mb-1.5">
+                            Grammar concepts (Dojo accuracy)
+                          </p>
+                          <div className="flex flex-wrap gap-2">
+                            {u.grammar!.map((g) => (
+                              <span
+                                key={g.id}
+                                title={`${g.labelEn} — ${g.studentsPracticed} student(s) practiced`}
+                                className={`font-typewriter text-[9px] px-2 py-0.5 border ${
+                                  g.pct === null
+                                    ? "border-[rgba(139,115,85,0.25)] text-[#8b7355]"
+                                    : g.pct >= 80
+                                    ? "border-[rgba(90,158,111,0.4)] text-[#5a9e6f] bg-[rgba(90,158,111,0.06)]"
+                                    : g.pct >= 60
+                                    ? "border-[rgba(232,180,85,0.35)] text-[#e8b455] bg-[rgba(232,180,85,0.05)]"
+                                    : "border-[rgba(192,57,43,0.35)] text-[#c0392b] bg-[rgba(192,57,43,0.05)]"
+                                }`}
+                              >
+                                {g.labelEs}{" "}
+                                <span className="text-[#4a3a2a]">{g.pct === null ? "no data" : `${g.pct}%`}</span>
+                              </span>
+                            ))}
+                          </div>
                         </div>
                       )}
                     </div>

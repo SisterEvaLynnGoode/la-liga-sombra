@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getTeacherSession } from "@/lib/auth/session";
 import { createClient } from "@/lib/supabase/server";
+import { GRAMMAR_CONCEPTS } from "@/lib/personalized-drills";
 
 // ── ACTFL mode mapping ────────────────────────────────────────────────────────
 // Maps internal activity_type values → ACTFL Communication Mode
@@ -49,7 +50,7 @@ export async function GET(request: NextRequest) {
     "repeated_skipping", "academia_struggling",
   ];
 
-  const [progressRes, attemptsRes, masteryRes, unitsRes, academiaRes, flagsRes] = await Promise.all([
+  const [progressRes, attemptsRes, masteryRes, unitsRes, academiaRes, flagsRes, conceptsRes] = await Promise.all([
     studentIds.length
       ? supabase.from("unit_progress")
           .select("student_id, unit_id, status, cold_case_completed_at")
@@ -79,6 +80,12 @@ export async function GET(request: NextRequest) {
           .in("flag_type", FLAG_TYPES)
           .is("resolved_at", null)
       : Promise.resolve({ data: [] }),
+    // Grammar concept ledger (Workstream A3) — per-concept counters from the Dojo
+    studentIds.length
+      ? supabase.from("concept_mastery")
+          .select("student_id, concept_id, attempts, correct")
+          .in("student_id", studentIds)
+      : Promise.resolve({ data: [] }),
   ]);
 
   const progress = (progressRes.data ?? []) as Array<{
@@ -96,6 +103,20 @@ export async function GET(request: NextRequest) {
     passed_first_try?: boolean; retry_count?: number; advanced_without_passing?: boolean;
   }>;
   const flags = (flagsRes.data ?? []) as Array<{ student_id: string; unit_id: string; flag_type: string }>;
+  const conceptRows = (conceptsRes.data ?? []) as Array<{
+    student_id: string; concept_id: string; attempts: number; correct: number;
+  }>;
+
+  // Class-wide accuracy per grammar concept
+  const conceptAgg = new Map<string, { attempts: number; correct: number; students: Set<string> }>();
+  for (const c of conceptRows) {
+    if (c.attempts === 0) continue;
+    const agg = conceptAgg.get(c.concept_id) ?? { attempts: 0, correct: 0, students: new Set<string>() };
+    agg.attempts += c.attempts;
+    agg.correct  += c.correct;
+    agg.students.add(c.student_id);
+    conceptAgg.set(c.concept_id, agg);
+  }
 
   const result = units.map((u) => {
     const unitProgress = progress.filter((p) => p.unit_id === u.id);
@@ -186,6 +207,21 @@ export async function GET(request: NextRequest) {
     // Cold case
     const coldCaseCompletions = unitProgress.filter((p) => p.cold_case_completed_at).length;
 
+    // ── Grammar concept mastery (Workstream A3) ─────────────────────────────
+    // Concepts taught in this unit, with class-wide Dojo accuracy.
+    const grammarConcepts = GRAMMAR_CONCEPTS
+      .filter((c) => c.unitNumbers.includes(u.number))
+      .map((c) => {
+        const agg = conceptAgg.get(c.id);
+        return {
+          id: c.id,
+          labelEs: c.labelEs,
+          labelEn: c.labelEn,
+          pct: agg ? Math.round((agg.correct / agg.attempts) * 100) : null,
+          studentsPracticed: agg ? agg.students.size : 0,
+        };
+      });
+
     return {
       number: u.number,
       country: u.country,
@@ -196,6 +232,7 @@ export async function GET(request: NextRequest) {
       coldCaseCompletions,
       modeData,
       vocab: { mastered: vocabMastered, emerging: vocabEmerging, struggling: vocabStruggling, hardest: hardestVocab, total: vocabTerms.length },
+      grammar: grammarConcepts,
       academia: {
         total: academiaTotal,
         firstTryPassPct:    academiaTotal ? Math.round((academiaFirstTryPass   / academiaTotal) * 100) : null,
