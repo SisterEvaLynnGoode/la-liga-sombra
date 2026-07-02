@@ -22,6 +22,13 @@ interface FlagRow {
 interface InboxData {
   flags: FlagRow[];
   unacknowledgedCount: number;
+  errorPatterns?: Array<{
+    errorKind: string;
+    label: string;
+    unitNumber: number | null;
+    studentCount: number;
+    eventCount: number;
+  }>;
 }
 
 // Flag type display config
@@ -143,6 +150,23 @@ export default function BandejaTab({ classId }: { classId: string }) {
           These are the moments your students needed extra support. Use them for 1:1 conversations or whole-class adjustments.
         </p>
       </div>
+
+      {/* Class error patterns — from classified item-level mistakes, last 14 days */}
+      {(data?.errorPatterns?.length ?? 0) > 0 && (
+        <div className="border border-[rgba(192,57,43,0.25)] bg-[rgba(192,57,43,0.05)] px-4 py-3 space-y-1.5">
+          <p className="font-typewriter text-[9px] tracking-[0.3em] uppercase text-[#c0392b]">
+            🔍 Class error patterns · last 14 days
+          </p>
+          {data!.errorPatterns!.map((p) => (
+            <p key={`${p.errorKind}-${p.unitNumber}`} className="font-typewriter text-[11px] text-[#c4a882]">
+              <span className="text-[#e8b455] font-bold">{p.studentCount} student{p.studentCount === 1 ? "" : "s"}</span>
+              {" "}making <span className="text-[#e8b455]">{p.label}</span> errors
+              {p.unitNumber ? ` in Unit ${p.unitNumber}` : ""} ({p.eventCount} occurrences) —
+              consider a warm-up re-teach.
+            </p>
+          ))}
+        </div>
+      )}
 
       {/* Filters */}
       <div className="flex flex-wrap gap-2">

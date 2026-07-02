@@ -27,7 +27,7 @@ export async function GET(request: NextRequest) {
   const { data: studentsData } = await supabase
     .from("students").select("id, display_name").eq("class_id", classId);
   const students = (studentsData ?? []) as Array<{ id: string; display_name: string }>;
-  if (!students.length) return NextResponse.json({ flags: [], unacknowledgedCount: 0 });
+  if (!students.length) return NextResponse.json({ flags: [], unacknowledgedCount: 0, errorPatterns: [] });
 
   const studentIds = students.map((s) => s.id);
   const studentMap = Object.fromEntries(students.map((s) => [s.id, s.display_name]));
@@ -52,8 +52,24 @@ export async function GET(request: NextRequest) {
     teacher_note: string | null;
   }>;
 
-  // Resolve unit numbers if we have unit_ids
-  const unitIds = Array.from(new Set(rawFlags.map((f) => f.unit_id).filter(Boolean))) as string[];
+  // Error-pattern digest (Workstream A4): classified mistakes from the last
+  // 14 days of item_events, grouped by error kind + unit. Surfaces things like
+  // "5 students are making agreement errors in Unit 4" without opening a report.
+  const since = new Date(Date.now() - 14 * 86_400_000).toISOString();
+  const { data: errData } = await supabase
+    .from("item_events")
+    .select("student_id, unit_id, error_kind")
+    .in("student_id", studentIds)
+    .not("error_kind", "is", null)
+    .gte("created_at", since)
+    .limit(2000);
+  const errEvents = (errData ?? []) as Array<{ student_id: string; unit_id: string | null; error_kind: string }>;
+
+  // Resolve unit numbers if we have unit_ids (flags + error events)
+  const unitIds = Array.from(new Set([
+    ...rawFlags.map((f) => f.unit_id),
+    ...errEvents.map((e) => e.unit_id),
+  ].filter(Boolean))) as string[];
   let unitMap: Record<string, number> = {};
   if (unitIds.length) {
     const { data: unitsData } = await supabase
@@ -62,6 +78,37 @@ export async function GET(request: NextRequest) {
       (unitsData as Array<{ id: string; number: number }> ?? []).map((u) => [u.id, u.number])
     );
   }
+
+  const ERROR_LABELS: Record<string, string> = {
+    word_order:  "word order",
+    conjugation: "verb conjugation",
+    agreement:   "gender/number agreement",
+    vocab:       "vocabulary choice",
+    spelling:    "spelling",
+  };
+  const errGroups = new Map<string, { students: Set<string>; count: number }>();
+  for (const e of errEvents) {
+    const key = `${e.error_kind}|${e.unit_id ?? ""}`;
+    const g = errGroups.get(key) ?? { students: new Set<string>(), count: 0 };
+    g.students.add(e.student_id);
+    g.count += 1;
+    errGroups.set(key, g);
+  }
+  const errorPatterns = Array.from(errGroups.entries())
+    .map(([key, g]) => {
+      const [errorKind, unitId] = key.split("|");
+      return {
+        errorKind,
+        label: ERROR_LABELS[errorKind] ?? errorKind,
+        unitNumber: unitId ? (unitMap[unitId] ?? null) : null,
+        studentCount: g.students.size,
+        eventCount: g.count,
+      };
+    })
+    // Only patterns affecting 2+ students are actionable class-wide
+    .filter((p) => p.studentCount >= 2)
+    .sort((a, b) => b.studentCount - a.studentCount || b.eventCount - a.eventCount)
+    .slice(0, 5);
 
   const flags = rawFlags.map((f) => ({
     id:             f.id,
@@ -80,7 +127,7 @@ export async function GET(request: NextRequest) {
 
   const unacknowledgedCount = flags.filter((f) => !f.acknowledged).length;
 
-  return NextResponse.json({ flags, unacknowledgedCount });
+  return NextResponse.json({ flags, unacknowledgedCount, errorPatterns });
 }
 
 // PATCH: acknowledge, add note, or resolve a flag

@@ -2,6 +2,7 @@ import { NextResponse } from "next/server";
 import { getStudentSession } from "@/lib/auth/session";
 import { createClient } from "@/lib/supabase/server";
 import { GRAMMAR_CONCEPTS, type VocabDrillItem } from "@/lib/personalized-drills";
+import { computeTermAccuracies, isMastered } from "@/lib/stats";
 
 // ── Unit content loader ────────────────────────────────────────────────────────
 function loadUnit(n: number): { vocab: Array<{ spanish: string; english: string; audio?: string }> } | null {
@@ -71,34 +72,27 @@ export async function GET() {
     }
   }
 
-  // 3. Mastery data
-  const { data: masteryRows } = await supabase
-    .from("mastery")
-    .select("vocab_term, attempts, correct")
-    .eq("student_id", session.studentId);
-
-  const masteryMap = new Map<string, { attempts: number; correct: number }>(
-    (masteryRows ?? []).map((r: { vocab_term: string; attempts: number; correct: number }) => [
-      r.vocab_term,
-      { attempts: r.attempts, correct: r.correct },
-    ])
-  );
+  // 3. Mastery data — recency-weighted per-term accuracies (lib/stats.ts), so
+  // Gimnasio/Casillero use the same authoritative numbers as the Expediente.
+  const termAccuracies = await computeTermAccuracies(session.studentId, supabase);
 
   // 4. Build VocabDrillItem list
   const drillItems: VocabDrillItem[] = allVocab.map((v) => {
-    const m = masteryMap.get(v.spanish);
+    const m = termAccuracies.get(v.spanish);
     return {
       spanish: v.spanish,
       english: v.english,
       audio: v.audio,
       unitNumber: v.unitNumber,
       attempts: m?.attempts ?? 0,
-      accuracy: m && m.attempts > 0 ? m.correct / m.attempts : -1,
+      accuracy: m && m.attempts > 0 ? m.accuracy : -1,
     };
   });
 
-  // 5. Categorise terms
-  const masteredTerms  = drillItems.filter((d) => d.accuracy >= 0.85 && d.attempts >= 5);
+  // 5. Categorise terms — unified mastery rule (≥80% recency-weighted, ≥3 attempts)
+  const masteredTerms  = drillItems.filter((d) =>
+    d.accuracy !== -1 && isMastered({ accuracy: d.accuracy, attempts: d.attempts, fromEvents: true })
+  );
   const strugglingTerms = drillItems.filter((d) => d.accuracy !== -1 && d.accuracy < 0.6 && d.attempts >= 3);
 
   // 6. Attempts data (grammar accuracy + stakeout + today's training time)

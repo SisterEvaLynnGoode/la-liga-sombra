@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { getStudentSession } from "@/lib/auth/session";
 import { createClient } from "@/lib/supabase/server";
 import type { ActivityType, BadgeType } from "@/lib/types/database";
+import { getStudentStats } from "@/lib/stats";
 
 /**
  * POST /api/training/activity
@@ -111,17 +112,10 @@ export async function POST(request: NextRequest) {
     if (streak >= 5) await awardBadge("entrenamiento_diario");
   }
 
-  // 2. Maestro de Vocabulario — 50 terms mastered (≥85% accuracy, ≥5 attempts)
+  // 2. Maestro de Vocabulario — 50 terms mastered (unified rule, lib/stats.ts)
   if (!hasBadge("maestro_vocabulario")) {
-    const { data: masteryRows } = await supabase
-      .from("mastery")
-      .select("attempts, correct")
-      .eq("student_id", session.studentId);
-    const mastered = (masteryRows ?? []).filter(
-      (r: { attempts: number; correct: number }) =>
-        r.attempts >= 5 && r.correct / r.attempts >= 0.85
-    ).length;
-    if (mastered >= 50) await awardBadge("maestro_vocabulario");
+    const { termsMastered } = await getStudentStats(session.studentId, supabase);
+    if (termsMastered >= 50) await awardBadge("maestro_vocabulario");
   }
 
   // 3. Políglota — practiced terms from 5+ different units in one session

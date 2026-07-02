@@ -1,6 +1,7 @@
 // Server-side mastery helpers — only import from Server Components / Route Handlers.
 // Client components must call API routes instead.
 import { createClient } from "@/lib/supabase/server";
+import { computeTermAccuracies } from "@/lib/stats";
 
 export type ReadinessTier = "ready" | "recommended" | "required";
 
@@ -12,8 +13,14 @@ export interface ReadinessResult {
 /**
  * Compute a student's readiness score for a set of vocab terms.
  *
- * score = avg(correct / attempts) per known term.
- * Unknown terms (no mastery row yet) count as 0.
+ * score = avg(per-term accuracy), where each term's accuracy is the
+ * RECENCY-WEIGHTED value from lib/stats.ts (last 10 item_events, 14-day
+ * half-life) with a fallback to lifetime correct/attempts for terms that
+ * predate event instrumentation. Unknown terms count as 0.
+ *
+ * This fixes the lifetime-average bias: a student who struggled with a set
+ * in August but has since mastered it no longer gets a permanently
+ * depressed readiness score at the Academia gate.
  *
  * Tier thresholds:
  *   ≥ 0.80 → ready      (skip Academia)
@@ -27,20 +34,12 @@ export async function getVocabReadinessScore(
   if (!vocabTerms.length) return { tier: "ready", score: 1 };
 
   const supabase = createClient();
-  const { data } = await supabase
-    .from("mastery")
-    .select("vocab_term, attempts, correct")
-    .eq("student_id", studentId)
-    .in("vocab_term", vocabTerms);
-
-  const rows = (data ?? []) as Array<{ vocab_term: string; attempts: number; correct: number }>;
+  const accuracies = await computeTermAccuracies(studentId, supabase, vocabTerms);
 
   let total = 0;
   for (const term of vocabTerms) {
-    const row = rows.find((r) => r.vocab_term === term);
-    if (row && row.attempts > 0) {
-      total += row.correct / row.attempts;
-    }
+    const acc = accuracies.get(term);
+    if (acc && acc.attempts > 0) total += acc.accuracy;
     // unseen term → 0 contribution
   }
 
