@@ -576,7 +576,9 @@
             "En la Puerta del Sol",
             "En el aeropuerto"
           ],
-          "correctIndex": 0
+          "correctIndex": 0,
+          "explanationEs": "La policía captura a La Sombra en la Estación de Atocha, la gran estación de tren de Madrid.",
+          "explanationEn": "Atocha is Madrid's main train station."
         },
         {
           "id": "r2",
@@ -588,7 +590,9 @@
             "un cuadro",
             "'El Infante'",
             "El Infante de Velázquez"
-          ]
+          ],
+          "explanationEs": "El texto dice que robó «El Infante», una pintura del Museo del Prado.",
+          "explanationEn": "The stolen work is a Prado painting."
         },
         {
           "id": "r3",
@@ -600,7 +604,9 @@
             "Alta y rubia",
             "Baja y morena"
           ],
-          "correctIndex": 0
+          "correctIndex": 0,
+          "explanationEs": "«Alta y morena» — los adjetivos terminan en -a porque La Sombra es mujer.",
+          "explanationEn": "Adjectives end in -a to agree with a female person."
         },
         {
           "id": "r4",
@@ -612,7 +618,9 @@
             "A Londres, Inglaterra",
             "A Roma, Italia"
           ],
-          "correctIndex": 0
+          "correctIndex": 0,
+          "explanationEs": "El texto dice que el tren iba a París — 'ir a' + lugar indica el destino.",
+          "explanationEn": "'Ir a' + place shows destination."
         }
       ]
     }

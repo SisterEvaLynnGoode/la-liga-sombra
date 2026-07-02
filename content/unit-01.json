@@ -229,7 +229,9 @@
             "El Mariachi",
             "El Detective"
           ],
-          "correctIndex": 0
+          "correctIndex": 0,
+          "explanationEs": "La carta dice: «Me llamo El Camaleón» — 'me llamo' presenta el nombre.",
+          "explanationEn": "'Me llamo' is how you introduce a name."
         },
         {
           "id": "r2",
@@ -240,7 +242,9 @@
             "treinta y cuatro",
             "treinta y cuatro años",
             "34 años"
-          ]
+          ],
+          "explanationEs": "La carta dice: «Tengo 34 años» — usamos TENER para la edad.",
+          "explanationEn": "Spanish uses tener (to have) for age, not ser."
         },
         {
           "id": "r3",
@@ -252,7 +256,9 @@
             "Monterrey",
             "Guadalajara"
           ],
-          "correctIndex": 3
+          "correctIndex": 3,
+          "explanationEs": "La carta dice: «Soy de Guadalajara» — 'ser de' indica el origen.",
+          "explanationEn": "'Ser de' tells where someone is from."
         }
       ]
     },

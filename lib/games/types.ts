@@ -83,12 +83,17 @@ export type ReadingQuestion =
       type: "multiple_choice";
       options: string[];
       correctIndex: number;
+      /** Elaborated feedback (B2): WHY the answer is right — Spanish first. */
+      explanationEs?: string;
+      explanationEn?: string;
     }
   | {
       id: string;
       text: string;
       type: "short_answer";
       acceptableAnswers: string[];
+      explanationEs?: string;
+      explanationEn?: string;
     };
 
 // ── ConjugationDragDrop ──────────────────────────────────────────────────────

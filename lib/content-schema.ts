@@ -38,6 +38,8 @@ export const MCQuestionSchema = z.object({
   type: z.literal("multiple_choice"),
   options: z.array(z.string().min(1)).length(4, "Multiple-choice questions must have exactly 4 options"),
   correctIndex: z.number().int().min(0).max(3),
+  explanationEs: z.string().optional(),
+  explanationEn: z.string().optional(),
 });
 
 export const SAQuestionSchema = z.object({
@@ -45,6 +47,8 @@ export const SAQuestionSchema = z.object({
   text: z.string().min(1),
   type: z.literal("short_answer"),
   acceptableAnswers: z.array(z.string().min(1)).min(1, "Provide at least one acceptable answer"),
+  explanationEs: z.string().optional(),
+  explanationEn: z.string().optional(),
 });
 
 export const ReadingQuestionSchema = z.discriminatedUnion("type", [

@@ -384,7 +384,9 @@
             "Baja y rubia",
             "Baja y morena"
           ],
-          "correctIndex": 0
+          "correctIndex": 0,
+          "explanationEs": "El texto dice que Valentina es alta y rubia — SER + adjetivos describe cómo es una persona.",
+          "explanationEn": "Ser + adjectives describes what someone is like."
         },
         {
           "id": "r2",
@@ -396,7 +398,9 @@
             "De la República Dominicana",
             "De España"
           ],
-          "correctIndex": 2
+          "correctIndex": 2,
+          "explanationEs": "El texto dice: «Rodrigo es de la República Dominicana».",
+          "explanationEn": "'Es de' = he is from."
         },
         {
           "id": "r3",
@@ -408,7 +412,9 @@
             "Escucha música con auriculares",
             "Trabaja en la cafetería"
           ],
-          "correctIndex": 1
+          "correctIndex": 1,
+          "explanationEs": "El texto dice que usa la computadora todos los días — verbo -AR: usar → usa.",
+          "explanationEn": "-AR verb conjugation: usar → usa (he uses)."
         },
         {
           "id": "r4",
@@ -421,7 +427,9 @@
             "moreno alto",
             "es alto y moreno",
             "es moreno y alto"
-          ]
+          ],
+          "explanationEs": "«Alto y moreno» — los adjetivos terminan en -o porque Rodrigo es hombre.",
+          "explanationEn": "Adjectives end in -o to agree with a male person."
         }
       ]
     },

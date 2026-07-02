@@ -126,7 +126,7 @@ function QuestionItem({
             value={shortInput}
             onChange={(e) => setShortInput(e.target.value)}
             disabled={result !== null}
-            placeholder="Write your answer…"
+            placeholder="Escribe tu respuesta…"
             className="flex-1 bg-[#0d0b0a] border border-[rgba(201,147,58,0.3)] focus:border-[#c9933a] focus:outline-none px-3 py-2 font-typewriter text-sm text-[#f5e6c8] placeholder-[#3a3028] transition-colors disabled:opacity-50"
           />
           <button
@@ -142,11 +142,23 @@ function QuestionItem({
       {result !== null && (
         <p className={`font-typewriter text-xs mt-2 ${result ? "text-[#c9933a]" : "text-[#c0392b]"}`}>
           {result
-            ? "✓ Correct!"
+            ? "✓ ¡Correcto!"
             : question.type === "short_answer"
-            ? `✗ Acceptable: ${question.acceptableAnswers[0]}`
-            : "✗ Incorrect"}
+            ? `✗ Respuesta aceptable: ${question.acceptableAnswers[0]}`
+            : "✗ Incorrecto"}
         </p>
+      )}
+
+      {/* Elaborated feedback (B2): WHY — shown after answering, Spanish first */}
+      {result !== null && (question.explanationEs || question.explanationEn) && (
+        <div className="mt-2 border-l-2 border-[rgba(201,147,58,0.4)] pl-3 space-y-0.5">
+          {question.explanationEs && (
+            <p className="font-typewriter text-xs text-[#c4a882]">💡 {question.explanationEs}</p>
+          )}
+          {question.explanationEn && (
+            <p className="font-typewriter text-[10px] text-[#8b7355] italic">{question.explanationEn}</p>
+          )}
+        </div>
       )}
     </div>
   );

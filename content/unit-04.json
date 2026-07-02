@@ -315,7 +315,9 @@
             "Muy nerviosa",
             "Muy cansada"
           ],
-          "correctIndex": 0
+          "correctIndex": 0,
+          "explanationEs": "La abuela ESTÁ muy contenta — usamos ESTAR para emociones y condiciones.",
+          "explanationEn": "Use estar for emotions and conditions."
         },
         {
           "id": "r2",
@@ -327,7 +329,9 @@
             "Los quetzales",
             "El collar"
           ],
-          "correctIndex": 0
+          "correctIndex": 0,
+          "explanationEs": "El texto dice: «A Carlos le gusta el café» — 'le gusta' = a él le gusta.",
+          "explanationEn": "'Le gusta' = he likes."
         },
         {
           "id": "r3",
@@ -339,7 +343,9 @@
             "Cansado del trabajo en la finca",
             "Enojado con su primo Diego"
           ],
-          "correctIndex": 0
+          "correctIndex": 0,
+          "explanationEs": "La abuela dice que Marco ESTÁ raro últimamente — ESTAR para condiciones temporales.",
+          "explanationEn": "Estar marks a temporary state — a clue something changed!"
         },
         {
           "id": "r4",
@@ -352,7 +358,9 @@
             "en la caja pequeña azul",
             "en su habitación en la caja azul",
             "en la habitación de la abuela"
-          ]
+          ],
+          "explanationEs": "El collar ESTÁ en la habitación — usamos ESTAR para la ubicación.",
+          "explanationEn": "Use estar for location."
         }
       ]
     },
