@@ -10,13 +10,14 @@ export async function GET(request: NextRequest) {
 
   const supabase = createClient();
 
-  const [studentRes, progressRes, attemptsRes, masteryRes, unitsRes, canDoRes] = await Promise.all([
+  const [studentRes, progressRes, attemptsRes, masteryRes, unitsRes, canDoRes, reportsRes] = await Promise.all([
     supabase.from("students").select("id, display_name, created_at").eq("id", studentId).limit(1),
     supabase.from("unit_progress").select("unit_id, status, stage_index, case_solved, completed_at").eq("student_id", studentId),
     supabase.from("attempts").select("unit_id, activity_type, score, max_score, time_spent_seconds, completed_at").eq("student_id", studentId).order("completed_at", { ascending: false }).limit(50),
     supabase.from("mastery").select("vocab_term, attempts, correct, last_seen").eq("student_id", studentId).order("attempts", { ascending: false }),
     supabase.from("units").select("id, number, country, title_es").order("number"),
     supabase.from("can_do_ratings").select("unit_id, statement, rating").eq("student_id", studentId),
+    supabase.from("field_reports").select("unit_id, report_text, created_at").eq("student_id", studentId).order("created_at", { ascending: false }).limit(20),
   ]);
 
   const student = (studentRes.data as Array<{ id: string; display_name: string; created_at: string }> | null)?.[0];
@@ -68,5 +69,13 @@ export async function GET(request: NextRequest) {
     rating: c.rating,
   })).sort((a, b) => a.unitNumber - b.unitNumber);
 
-  return NextResponse.json({ student: { id: student.id, displayName: student.display_name, createdAt: student.created_at }, unitProgress, mastery, recentAttempts, canDo });
+  // Detective field reports (B3) — free writing for the teacher to review.
+  const reportsRaw = (reportsRes.data ?? []) as Array<{ unit_id: string; report_text: string; created_at: string }>;
+  const fieldReports = reportsRaw.map((r) => ({
+    unitNumber: units.find((u) => u.id === r.unit_id)?.number ?? 0,
+    text: r.report_text,
+    createdAt: r.created_at,
+  }));
+
+  return NextResponse.json({ student: { id: student.id, displayName: student.display_name, createdAt: student.created_at }, unitProgress, mastery, recentAttempts, canDo, fieldReports });
 }

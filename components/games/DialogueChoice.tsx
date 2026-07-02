@@ -4,6 +4,8 @@ import { useState, useCallback } from "react";
 import GameShell from "./GameShell";
 import { useGameTimer } from "@/lib/hooks/useGameTimer";
 import { useAttemptTracker } from "@/lib/hooks/useAttemptTracker";
+import { flexibleMatch } from "@/lib/games/utils";
+import { logItemEvent, flushItemEvents } from "@/lib/events";
 import type { DialogueNode, OnComplete } from "@/lib/games/types";
 
 interface Props {
@@ -14,6 +16,13 @@ interface Props {
   startNodeId: string;
   agentName?: string;   // substituted for [nombre] in dialogue text
   unitId?: string;
+  /**
+   * Production ramp (Workstream B3): when true, the FINAL question of the
+   * dialogue must be TYPED instead of chosen — the student produces the
+   * Spanish rather than recognizing it. After 2 misses it gracefully falls
+   * back to multiple choice (forgiving design).
+   */
+  productionMode?: boolean;
   onComplete: OnComplete;
 }
 
@@ -31,6 +40,7 @@ export default function DialogueChoice({
   startNodeId,
   agentName = "",
   unitId,
+  productionMode = false,
   onComplete,
 }: Props) {
   const { elapsed, stop } = useGameTimer();
@@ -53,15 +63,64 @@ export default function DialogueChoice({
 
   const currentNode = nodeMap[currentNodeId];
 
+  // ── Typed production turn (B3) ──────────────────────────────────────────────
+  // The final question node (its correct option ends the dialogue) is typed
+  // when productionMode is on. Falls back to MC after 2 misses.
+  const [typedInput, setTypedInput] = useState("");
+  const [typedMisses, setTypedMisses] = useState(0);
+  const correctOption = currentNode?.options?.find((o) => o.isCorrect);
+  const isFinalQuestion = !!correctOption &&
+    (!correctOption.nextNodeId || !!nodeMap[correctOption.nextNodeId]?.isEnd);
+  const useTypedTurn = productionMode && isFinalQuestion && typedMisses < 2 &&
+    !!currentNode?.options?.length && status === "playing";
+
   const finish = useCallback(
     (correct: number, total: number, t: number) => {
       stop();
       setStatus("complete");
       recordAttempt(correct, total, t);
+      flushItemEvents();
       onComplete({ score: correct, maxScore: total, timeSpent: t, attempts: total });
     },
     [stop, recordAttempt, onComplete]
   );
+
+  function handleTypedSubmit(e?: React.FormEvent) {
+    e?.preventDefault();
+    if (!useTypedTurn || !correctOption || !typedInput.trim()) return;
+    const target = sub(correctOption.text);
+    const isCorrect = flexibleMatch(typedInput, target);
+    logItemEvent({
+      unitId,
+      stageType: "dialogueChoice-typed",
+      skill: "grammar",
+      itemKey: target,
+      correct: isCorrect,
+      chosen: typedInput.trim(),
+      expected: target,
+    });
+    const newTotal = totalChoices + 1;
+    setTotalChoices(newTotal);
+    if (isCorrect) {
+      const newCorrect = correctChoices + 1;
+      setCorrectChoices(newCorrect);
+      setFeedback(null);
+      setHistory((h) => [...h, { npcLine: sub(currentNode.npcLine), chosen: typedInput.trim(), wasCorrect: true }]);
+      if (correctOption.nextNodeId && nodeMap[correctOption.nextNodeId]) {
+        setCurrentNodeId(correctOption.nextNodeId);
+      } else {
+        finish(newCorrect, newTotal, elapsed);
+      }
+    } else {
+      setTypedMisses((m) => m + 1);
+      setTypedInput("");
+      setFeedback(
+        typedMisses === 0
+          ? "No exactamente — intenta escribirlo de nuevo."
+          : "Está bien, recluta — elige la respuesta correcta."
+      );
+    }
+  }
 
   function handleChoice(optionIndex: number) {
     if (status !== "playing" || !currentNode.options) return;
@@ -83,7 +142,7 @@ export default function DialogueChoice({
       }
     } else {
       setWrongOptionId(optionIndex);
-      setFeedback(option.feedback ?? "Not quite — try again.");
+      setFeedback(option.feedback ?? "No exactamente — intenta de nuevo.");
     }
   }
 
@@ -161,7 +220,34 @@ export default function DialogueChoice({
               </div>
             )}
 
-            {/* Response options */}
+            {/* Typed production turn (B3) — final question in production mode */}
+            {useTypedTurn ? (
+              <form onSubmit={handleTypedSubmit} className="space-y-2">
+                <p className="font-typewriter text-[10px] tracking-widest uppercase text-[#c9933a]">
+                  ✍ Escribe tu respuesta en español:
+                </p>
+                <input
+                  type="text"
+                  value={typedInput}
+                  onChange={(e) => setTypedInput(e.target.value)}
+                  placeholder="Escribe aquí…"
+                  autoFocus
+                  className="w-full bg-[#0d0b0a] border border-[rgba(201,147,58,0.3)] focus:border-[#c9933a] focus:outline-none px-4 py-3 font-typewriter text-sm text-[#f5e6c8] placeholder-[#3a3028] transition-colors"
+                />
+                <div className="flex items-center justify-between">
+                  <p className="font-typewriter text-[9px] text-[#4a3a2a]">
+                    Pista: {correctOption ? `${sub(correctOption.text).trim().split(/\s+/).length} palabra(s), empieza con "${sub(correctOption.text).trim().charAt(0)}"` : ""}
+                  </p>
+                  <button
+                    type="submit"
+                    disabled={!typedInput.trim()}
+                    className="clip-skew px-6 py-2 font-typewriter text-xs tracking-[0.2em] uppercase bg-[#8b1a1a] text-[#f5e6c8] border border-[#c0392b] hover:bg-[#c0392b] transition-colors disabled:opacity-30"
+                  >
+                    Comprobar →
+                  </button>
+                </div>
+              </form>
+            ) : (
             <div className="space-y-2">
               <p className="font-typewriter text-[10px] tracking-widest uppercase text-[#8b7355]">
                 Elige tu respuesta:
@@ -185,6 +271,7 @@ export default function DialogueChoice({
                 </button>
               ))}
             </div>
+            )}
           </div>
         )}
 

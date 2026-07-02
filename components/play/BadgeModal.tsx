@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import { CAN_DO, CAN_DO_SCALE } from "@/lib/can-do";
+import SpeakPractice from "./SpeakPractice";
 
 // Roman numerals for case numbers I–X
 const ROMAN = ["I","II","III","IV","V","VI","VII","VIII","IX","X"];
@@ -18,9 +19,11 @@ interface Props {
   score: number;
   maxScore: number;
   totalTimeSeconds: number;
+  /** 2-3 unit vocab terms for optional pronunciation practice (B3). */
+  speakingTerms?: Array<{ spanish: string; english: string }>;
 }
 
-export default function BadgeModal({ caseTitle, country, criminalName, unitNumber, score, maxScore, totalTimeSeconds }: Props) {
+export default function BadgeModal({ caseTitle, country, criminalName, unitNumber, score, maxScore, totalTimeSeconds, speakingTerms = [] }: Props) {
   const router = useRouter();
   const mins = Math.floor(totalTimeSeconds / 60);
   const secs = totalTimeSeconds % 60;
@@ -47,6 +50,26 @@ export default function BadgeModal({ caseTitle, country, criminalName, unitNumbe
           ratings: Object.entries(next).map(([i, r]) => ({ index: Number(i), rating: r })),
         }),
       }).catch(() => {});
+    }
+  }
+
+  // ── Informe del detective (Workstream B3, Unit 6+) ─────────────────────────
+  const showReport = unitNumber >= 6;
+  const [reportText, setReportText] = useState("");
+  const [reportState, setReportState] = useState<"idle" | "saving" | "saved">("idle");
+
+  async function submitReport() {
+    if (!reportText.trim() || reportState !== "idle") return;
+    setReportState("saving");
+    try {
+      await fetch("/api/game/field-report", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ unitNumber, text: reportText.trim() }),
+      });
+      setReportState("saved");
+    } catch {
+      setReportState("idle");
     }
   }
 
@@ -158,6 +181,45 @@ export default function BadgeModal({ caseTitle, country, criminalName, unitNumbe
             <p className="font-typewriter text-[9px] text-[#4a3a2a] mt-2">
               {canDoSaved ? "✓ Guardado en tu expediente" : "😕 Todavía no · 🙂 Con ayuda · 😎 ¡Sí, puedo!"}
             </p>
+          </div>
+        )}
+
+        {/* Pronunciation practice (B3, optional, auto-hides if unsupported) */}
+        {speakingTerms.length > 0 && (
+          <SpeakPractice terms={speakingTerms} unitNumber={unitNumber} />
+        )}
+
+        {/* Informe del detective — free writing, Unit 6+ (B3) */}
+        {showReport && (
+          <div className="border border-[rgba(201,147,58,0.2)] bg-[rgba(201,147,58,0.04)] px-5 py-4 mb-6 text-left">
+            <p className="font-typewriter text-[9px] tracking-[0.3em] uppercase text-[#8b7355] mb-1">
+              📝 Informe del detective <span className="normal-case tracking-normal">(opcional)</span>
+            </p>
+            <p className="font-typewriter text-[9px] text-[#4a3a2a] mb-2">
+              Escribe 2–3 frases en español: ¿qué pasó en este caso? Tu profe lo leerá.
+            </p>
+            {reportState === "saved" ? (
+              <p className="font-typewriter text-xs text-[#c9933a]">✓ Informe enviado al cuartel general.</p>
+            ) : (
+              <>
+                <textarea
+                  value={reportText}
+                  onChange={(e) => setReportText(e.target.value.slice(0, 600))}
+                  rows={3}
+                  placeholder="El ladrón robó… Yo investigué… Al final…"
+                  className="w-full bg-[#0d0b0a] border border-[rgba(201,147,58,0.25)] focus:border-[#c9933a] focus:outline-none px-3 py-2 font-typewriter text-xs text-[#f5e6c8] placeholder-[#3a3028] resize-none"
+                />
+                <div className="flex justify-end mt-1.5">
+                  <button
+                    onClick={submitReport}
+                    disabled={!reportText.trim() || reportState === "saving"}
+                    className="font-typewriter text-[10px] tracking-[0.2em] uppercase px-4 py-1.5 border border-[rgba(201,147,58,0.35)] text-[#c9933a] hover:border-[#c9933a] hover:text-[#e8b455] transition-colors disabled:opacity-30"
+                  >
+                    {reportState === "saving" ? "Enviando…" : "Enviar informe →"}
+                  </button>
+                </div>
+              </>
+            )}
           </div>
         )}
 

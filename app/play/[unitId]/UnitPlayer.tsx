@@ -360,6 +360,7 @@ export default function UnitPlayer({ content, unitId, unitNumber, classId, agent
         score={lineupScore}
         maxScore={1}
         totalTimeSeconds={totalTime}
+        speakingTerms={content.vocab.slice(0, 3).map((v) => ({ spanish: v.spanish, english: v.english }))}
       />
     );
   }
@@ -454,6 +455,7 @@ export default function UnitPlayer({ content, unitId, unitNumber, classId, agent
             startNodeId={stage.startNodeId}
             agentName={agentName}
             unitId={unitId}
+            productionMode={unitNumber >= 4}
             onComplete={handleStageComplete}
           />
         )}

@@ -23,6 +23,7 @@ interface StudentData {
   mastery: MasteryEntry[];
   recentAttempts: Attempt[];
   canDo?: Array<{ unitNumber: number; statement: string; rating: number }>;
+  fieldReports?: Array<{ unitNumber: number; text: string; createdAt: string }>;
 }
 
 const CAN_DO_EMOJI: Record<number, string> = { 1: "😕", 2: "🙂", 3: "😎" };
@@ -160,6 +161,22 @@ export default function StudentDetail({ studentId, onClose }: { studentId: strin
           {/* History tab */}
           {!loading && tab === "history" && data && (
             <div className="space-y-1.5">
+              {/* Detective field reports (B3) — the student's own writing */}
+              {(data.fieldReports?.length ?? 0) > 0 && (
+                <div className="mb-4 space-y-2">
+                  <p className="font-typewriter text-[9px] tracking-[0.3em] uppercase text-[#8b7355]">
+                    📝 Field reports (student writing)
+                  </p>
+                  {data.fieldReports!.map((r, i) => (
+                    <div key={i} className="border border-[rgba(201,147,58,0.15)] bg-[#1a1614] p-3">
+                      <p className="font-typewriter text-[9px] text-[#8b7355] mb-1">
+                        Caso {r.unitNumber} · {relativeTime(r.createdAt)}
+                      </p>
+                      <p className="font-typewriter text-xs text-[#c4a882] leading-relaxed whitespace-pre-wrap">{r.text}</p>
+                    </div>
+                  ))}
+                </div>
+              )}
               {data.recentAttempts.length === 0 && <p className="font-typewriter text-xs text-[#4a3a2a]">No attempts yet.</p>}
               {data.recentAttempts.map((a, i) => (
                 <div key={i} className="flex items-center gap-3 py-1.5 border-b border-[rgba(201,147,58,0.06)]">
