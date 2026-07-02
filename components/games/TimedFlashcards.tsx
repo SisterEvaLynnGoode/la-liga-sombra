@@ -5,6 +5,7 @@ import GameShell from "./GameShell";
 import { useAttemptTracker } from "@/lib/hooks/useAttemptTracker";
 import { shuffle, flexibleMatch, formatTime } from "@/lib/games/utils";
 import type { FlashcardItem, OnComplete } from "@/lib/games/types";
+import { logItemEvent, flushItemEvents } from "@/lib/events";
 
 interface Props {
   title?: string;
@@ -36,6 +37,8 @@ export default function TimedFlashcards({
   const [elapsed, setElapsed] = useState(0);
   const inputRef = useRef<HTMLInputElement>(null);
   const completedRef = useRef(false);
+  const shownAtRef = useRef(Date.now());
+  useEffect(() => { shownAtRef.current = Date.now(); }, [index]);
 
   const finish = useCallback(
     (finalScore: number, finalAttempts: number, finalElapsed: number) => {
@@ -43,6 +46,7 @@ export default function TimedFlashcards({
       completedRef.current = true;
       setStatus("complete");
       recordAttempt(finalScore, deck.length, finalElapsed);
+      flushItemEvents();
       onComplete({ score: finalScore, maxScore: deck.length, timeSpent: finalElapsed, attempts: finalAttempts });
     },
     [deck.length, recordAttempt, onComplete]
@@ -78,6 +82,16 @@ export default function TimedFlashcards({
     const newScore = correct ? score + 1 : score;
     if (correct) setScore(newScore);
     updateMastery(card.prompt, correct);
+    logItemEvent({
+      unitId,
+      stageType: "timedFlashcards",
+      skill: "vocab",
+      itemKey: card.prompt,
+      correct,
+      chosen: input.trim() || null,
+      expected: card.answer,
+      latencyMs: Date.now() - shownAtRef.current,
+    });
 
     if (!correct) {
       setTimeLeft((t) => Math.max(0, t - 5));

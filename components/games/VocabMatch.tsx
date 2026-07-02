@@ -6,6 +6,7 @@ import { useGameTimer } from "@/lib/hooks/useGameTimer";
 import { useAttemptTracker } from "@/lib/hooks/useAttemptTracker";
 import { shuffle } from "@/lib/games/utils";
 import type { VocabPair, OnComplete } from "@/lib/games/types";
+import { logItemEvent, flushItemEvents } from "@/lib/events";
 
 interface Card {
   id: string;
@@ -50,6 +51,7 @@ export default function VocabMatch({ title = "Memoria de Vocabulario", pairs, un
       stop();
       setStatus("complete");
       recordAttempt(finalMatched, pairs.length, elapsed);
+      flushItemEvents();
       onComplete({ score: finalMatched, maxScore: pairs.length, timeSpent: elapsed, attempts: finalAttempts });
     },
     [stop, recordAttempt, pairs.length, onComplete]
@@ -79,8 +81,26 @@ export default function VocabMatch({ title = "Memoria de Vocabulario", pairs, un
         );
         setMatched(newMatched);
         updateMastery(pairs[card.pairId].spanish, true);
+        logItemEvent({
+          unitId,
+          stageType: "academia-reconocimiento",
+          skill: "vocab",
+          itemKey: pairs[card.pairId].spanish,
+          correct: true,
+          chosen: card.content,
+          expected: pairs[card.pairId].english,
+        });
         if (newMatched === pairs.length) finish(newMatched, newAttempts, elapsed);
       } else {
+        logItemEvent({
+          unitId,
+          stageType: "academia-reconocimiento",
+          skill: "vocab",
+          itemKey: pairs[firstCard.pairId].spanish,
+          correct: false,
+          chosen: card.content,
+          expected: firstCard.type === "spanish" ? pairs[firstCard.pairId].english : pairs[firstCard.pairId].spanish,
+        });
         checkingRef.current = true;
         setIsChecking(true);
         setLastFlipped([selected[0], cardId]);

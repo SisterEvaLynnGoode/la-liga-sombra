@@ -28,6 +28,7 @@ import { useGameTimer } from "@/lib/hooks/useGameTimer";
 import { useAttemptTracker } from "@/lib/hooks/useAttemptTracker";
 import { shuffle, normalizeAnswer } from "@/lib/games/utils";
 import type { OnComplete } from "@/lib/games/types";
+import { logItemEvent, flushItemEvents, classifyError } from "@/lib/events";
 
 interface Props {
   title?: string;
@@ -228,7 +229,18 @@ export default function SentenceBuilder({
     const newAttempts = attempts + 1;
     setAttempts(newAttempts);
     setFeedback(isCorrect ? "correct" : "wrong");
-    if (isCorrect) setTimeout(() => finish(1, elapsed, newAttempts), 700);
+    logItemEvent({
+      unitId,
+      stageType: "sentenceBuilder",
+      skill: "grammar",
+      itemKey: sentence,
+      correct: isCorrect,
+      chosen: built || null,
+      expected: sentence,
+      errorKind: !isCorrect && built ? classifyError(sentence, built) : null,
+      latencyMs: elapsed * 1000,
+    });
+    if (isCorrect) setTimeout(() => { flushItemEvents(); finish(1, elapsed, newAttempts); }, 700);
   }
 
   function handleReset() {

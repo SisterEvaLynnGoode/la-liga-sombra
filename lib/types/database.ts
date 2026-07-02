@@ -207,6 +207,94 @@ export interface Database {
           }
         ];
       };
+      item_events: {
+        Row: {
+          id: string;
+          student_id: string;
+          unit_id: string | null;
+          stage_type: string;
+          item_key: string;
+          skill: string;
+          correct: boolean;
+          chosen: string | null;
+          expected: string | null;
+          error_kind: string | null;
+          latency_ms: number | null;
+          created_at: string;
+        };
+        Insert: {
+          id?: string;
+          student_id: string;
+          unit_id?: string | null;
+          stage_type: string;
+          item_key: string;
+          skill: string;
+          correct: boolean;
+          chosen?: string | null;
+          expected?: string | null;
+          error_kind?: string | null;
+          latency_ms?: number | null;
+          created_at?: string;
+        };
+        Update: {
+          id?: string;
+          student_id?: string;
+          unit_id?: string | null;
+          stage_type?: string;
+          item_key?: string;
+          skill?: string;
+          correct?: boolean;
+          chosen?: string | null;
+          expected?: string | null;
+          error_kind?: string | null;
+          latency_ms?: number | null;
+          created_at?: string;
+        };
+        Relationships: [
+          {
+            foreignKeyName: "item_events_student_id_fkey";
+            columns: ["student_id"];
+            isOneToOne: false;
+            referencedRelation: "students";
+            referencedColumns: ["id"];
+          }
+        ];
+      };
+      concept_mastery: {
+        Row: {
+          id: string;
+          student_id: string;
+          concept_id: string;
+          attempts: number;
+          correct: number;
+          last_seen: string;
+        };
+        Insert: {
+          id?: string;
+          student_id: string;
+          concept_id: string;
+          attempts?: number;
+          correct?: number;
+          last_seen?: string;
+        };
+        Update: {
+          id?: string;
+          student_id?: string;
+          concept_id?: string;
+          attempts?: number;
+          correct?: number;
+          last_seen?: string;
+        };
+        Relationships: [
+          {
+            foreignKeyName: "concept_mastery_student_id_fkey";
+            columns: ["student_id"];
+            isOneToOne: false;
+            referencedRelation: "students";
+            referencedColumns: ["id"];
+          }
+        ];
+      };
       badges: {
         Row: {
           id: string;

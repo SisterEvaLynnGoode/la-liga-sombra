@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import type { StakeoutQuestion } from "@/lib/question-generator";
 import { normalizeAnswer } from "@/lib/games/utils";
+import { logItemEvent, flushItemEvents, classifyError } from "@/lib/events";
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
@@ -52,7 +53,7 @@ function VocabQuestion({
   feedback,
 }: {
   q: Extract<StakeoutQuestion, { type: "vocab" }>;
-  onAnswer: (correct: boolean) => void;
+  onAnswer: (correct: boolean, chosen?: string) => void;
   feedback: Feedback;
 }) {
   return (
@@ -74,7 +75,7 @@ function VocabQuestion({
             <button
               key={i}
               disabled={!!feedback}
-              onClick={() => onAnswer(i === q.correctIndex)}
+              onClick={() => onAnswer(i === q.correctIndex, opt)}
               className={`border px-4 py-3 font-typewriter text-sm text-left transition-colors ${style} disabled:cursor-default`}
             >
               <span className="text-[#8b7355] mr-2">{String.fromCharCode(65 + i)})</span>
@@ -93,7 +94,7 @@ function SentenceQuestion({
   feedback,
 }: {
   q: Extract<StakeoutQuestion, { type: "sentence" }>;
-  onAnswer: (correct: boolean) => void;
+  onAnswer: (correct: boolean, chosen?: string) => void;
   feedback: Feedback;
 }) {
   const [placed, setPlaced] = useState<string[]>([]);
@@ -105,7 +106,7 @@ function SentenceQuestion({
     submitted.current = true;
     const attempt = words.join(" ");
     const correct = normalizeAnswer(attempt) === normalizeAnswer(q.correctSentence.replace(/[.!?¿¡]/g, ""));
-    onAnswer(correct);
+    onAnswer(correct, attempt);
   }
 
   function tapWord(word: string, from: "remaining" | "placed", index: number) {
@@ -196,7 +197,7 @@ function ListeningQuestion({
   feedback,
 }: {
   q: Extract<StakeoutQuestion, { type: "listening" }>;
-  onAnswer: (correct: boolean) => void;
+  onAnswer: (correct: boolean, chosen?: string) => void;
   feedback: Feedback;
 }) {
   const audioRef = useRef<HTMLAudioElement | null>(null);
@@ -246,7 +247,7 @@ function ListeningQuestion({
             <button
               key={i}
               disabled={!!feedback}
-              onClick={() => onAnswer(i === q.correctIndex)}
+              onClick={() => onAnswer(i === q.correctIndex, opt)}
               className={`border px-4 py-3 font-typewriter text-sm text-left transition-colors ${style} disabled:cursor-default`}
             >
               <span className="text-[#8b7355] mr-2">{String.fromCharCode(65 + i)})</span>
@@ -274,6 +275,7 @@ export default function Stakeout({ questions, unitNumber, startTime: startTimePr
 
   const completedRef = useRef(false);
   const feedbackRef  = useRef(false); // block timer completion during feedback pause
+  const qShownAtRef  = useRef(Date.now()); // per-question latency for item events
   // Guard the "Continuar a identificación" button against rapid double-clicks.
   // Without this, double-firing onComplete advanced past the lineup stage in Caso V (v5 regression).
   const advanceRef = useRef(false);
@@ -304,10 +306,36 @@ export default function Stakeout({ questions, unitNumber, startTime: startTimePr
   // ── Answer handler ──────────────────────────────────────────────────────────
 
   const handleAnswer = useCallback(
-    (isCorrect: boolean) => {
+    (isCorrect: boolean, chosen?: string) => {
       if (feedbackRef.current || completedRef.current) return;
       feedbackRef.current = true;
       setFeedback(isCorrect ? "correct" : "wrong");
+
+      // ── Item-level event (Workstream A1/A4) ─────────────────────────────────
+      const cq = questions[qIndex];
+      const latencyMs = Date.now() - qShownAtRef.current;
+      if (cq.type === "vocab") {
+        logItemEvent({
+          unitNumber, stageType: "liveStakeout", skill: "vocab",
+          itemKey: cq.promptLang === "es" ? cq.prompt : cq.answer,
+          correct: isCorrect, chosen: chosen ?? null, expected: cq.answer, latencyMs,
+        });
+      } else if (cq.type === "sentence") {
+        logItemEvent({
+          unitNumber, stageType: "sentenceBuilder", skill: "grammar",
+          itemKey: cq.correctSentence,
+          correct: isCorrect, chosen: chosen ?? null, expected: cq.correctSentence,
+          errorKind: !isCorrect && chosen ? classifyError(cq.correctSentence, chosen) : null,
+          latencyMs,
+        });
+      } else {
+        logItemEvent({
+          unitNumber, stageType: "liveStakeout", skill: "listening",
+          itemKey: cq.promptWord,
+          correct: isCorrect, chosen: chosen ?? null,
+          expected: cq.options[cq.correctIndex], latencyMs,
+        });
+      }
 
       if (isCorrect) {
         setCorrect((c) => c + 1);
@@ -331,8 +359,12 @@ export default function Stakeout({ questions, unitNumber, startTime: startTimePr
         }
       }, delay);
     },
-    [qIndex, questions.length]
+    [qIndex, questions, unitNumber]
   );
+
+  // Reset the latency clock whenever a new question appears; flush events at the end.
+  useEffect(() => { qShownAtRef.current = Date.now(); }, [qIndex]);
+  useEffect(() => { if (phase === "result") flushItemEvents(); }, [phase]);
 
   // ── Render: Briefing ─────────────────────────────────────────────────────────
 

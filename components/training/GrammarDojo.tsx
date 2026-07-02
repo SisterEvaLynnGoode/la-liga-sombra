@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import { getGrammarDrillQuestions, type GrammarQuestion } from "@/lib/personalized-drills";
+import { logItemEvent, flushItemEvents } from "@/lib/events";
 
 interface ConceptSummary {
   id: string; labelEs: string; labelEn: string;
@@ -58,12 +59,23 @@ function GrammarDrill({
     if (feedback || done) return;
     const correct = i === q.correctIndex;
     setFeedback(correct ? "correct" : "wrong");
+    // Grammar event — item_key is the Dojo concept id, which also feeds the
+    // concept_mastery ledger server-side (Workstream A3).
+    logItemEvent({
+      stageType: "dojo",
+      skill: "grammar",
+      itemKey: conceptId,
+      correct,
+      chosen: q.options[i] ?? null,
+      expected: q.options[q.correctIndex] ?? null,
+    });
     setTimeout(() => {
       const ns = correct ? score + 1 : score;
       setFeedback(null);
       const next = index + 1;
       if (next >= questions.length) {
         setDone(true);
+        flushItemEvents();
         onDone(ns, questions.length, Math.round((Date.now() - startMs) / 1000));
       } else {
         if (correct) setScore(ns);

@@ -5,6 +5,7 @@ import GameShell from "./GameShell";
 import { useGameTimer } from "@/lib/hooks/useGameTimer";
 import { useAttemptTracker } from "@/lib/hooks/useAttemptTracker";
 import type { OnComplete } from "@/lib/games/types";
+import { logItemEvent, flushItemEvents } from "@/lib/events";
 
 // ── Local question type ───────────────────────────────────────────────────────
 interface LQ {
@@ -160,6 +161,7 @@ export default function ListeningComprehension({
       stop();
       setStatus("complete");
       recordAttempt(correct, total, t);
+      flushItemEvents();
       onComplete({ score: correct, maxScore: total || 1, timeSpent: t, attempts: att });
     },
     [stop, recordAttempt, onComplete]
@@ -214,6 +216,15 @@ export default function ListeningComprehension({
   function handleSubmit() {
     if (selected === null || !currentQ) return;
     const isCorrect = selected === currentQ.correctIndex;
+    logItemEvent({
+      unitId,
+      stageType: "listeningComp",
+      skill: "listening",
+      itemKey: currentQ.question,
+      correct: isCorrect,
+      chosen: currentQ.options[selected] ?? null,
+      expected: currentQ.options[currentQ.correctIndex] ?? null,
+    });
     setTotalAttempts((a) => a + 1);
     setSubmitted(true);
     setCorrectness((prev) => {

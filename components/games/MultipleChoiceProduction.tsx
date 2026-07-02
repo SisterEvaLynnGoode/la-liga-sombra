@@ -13,6 +13,7 @@ import GameShell from "./GameShell";
 import { useAttemptTracker } from "@/lib/hooks/useAttemptTracker";
 import { shuffle, formatTime } from "@/lib/games/utils";
 import type { VocabPair, OnComplete } from "@/lib/games/types";
+import { logItemEvent, flushItemEvents } from "@/lib/events";
 
 interface Props {
   title?: string;
@@ -71,6 +72,8 @@ export default function MultipleChoiceProduction({
   // Snapshot of final result stored so the "Continuar" button can pass it to onComplete
   const [finalResult, setFinalResult] = useState<{ score: number; attempts: number; elapsed: number } | null>(null);
   const completedRef                  = useRef(false);
+  const shownAtRef                    = useRef(Date.now());
+  useEffect(() => { shownAtRef.current = Date.now(); }, [index]);
 
   const finish = useCallback(
     (finalScore: number, finalAttempts: number, finalElapsed: number) => {
@@ -78,6 +81,7 @@ export default function MultipleChoiceProduction({
       completedRef.current = true;
       // Record mastery but do NOT call onComplete yet — wait for the user to click Continuar
       recordAttempt(finalScore, cards.length, finalElapsed);
+      flushItemEvents();
       setFinalResult({ score: finalScore, attempts: finalAttempts, elapsed: finalElapsed });
       setStatus("complete");
     },
@@ -118,6 +122,16 @@ export default function MultipleChoiceProduction({
     // The prompt may be English (for en-to-es production), which caused each vocab
     // concept to create two mastery rows and inflate "Vocab Dominado" counts by 2×.
     updateMastery(card.spanishTerm, correct);
+    logItemEvent({
+      unitId,
+      stageType: direction === "en-to-es" ? "academia-produccion" : "academia-memorizacion",
+      skill: "vocab",
+      itemKey: card.spanishTerm,
+      correct,
+      chosen: option,
+      expected: card.correct,
+      latencyMs: Date.now() - shownAtRef.current,
+    });
 
     // Penalise wrong answers
     if (!correct) setTimeLeft((t) => Math.max(0, t - 5));
