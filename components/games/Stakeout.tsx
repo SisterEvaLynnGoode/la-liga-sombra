@@ -545,6 +545,11 @@ export default function Stakeout({ questions, unitNumber, startTime: startTimePr
             <span className="font-typewriter text-[10px] tracking-[0.25em] uppercase text-[#8b7355]">
               {TYPE_LABEL[q.type]}
             </span>
+            {q.type === "vocab" && q.isReview && (
+              <span className="font-typewriter text-[9px] tracking-[0.15em] uppercase px-2 py-0.5 border border-[rgba(201,147,58,0.35)] bg-[rgba(201,147,58,0.08)] text-[#c9933a]">
+                🗂 Expediente antiguo{q.reviewUnitNumber ? ` · Caso ${q.reviewUnitNumber}` : ""}
+              </span>
+            )}
             {feedback === "correct" && (
               <span className="font-typewriter text-xs text-[#c9933a] font-bold">+{CORRECT_GAIN}s ✓</span>
             )}

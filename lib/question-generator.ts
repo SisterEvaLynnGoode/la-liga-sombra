@@ -24,6 +24,17 @@ export interface VocabStakeoutQ {
   answer: string;
   options: string[];      // 4 choices, correct one included
   correctIndex: number;
+  /** True when this is a spaced-repetition item recycled from a PRIOR unit. */
+  isReview?: boolean;
+  /** The prior unit the term came from (display only). */
+  reviewUnitNumber?: number;
+}
+
+/** A prior-unit term due for review (from lib/spaced-repetition.ts). */
+export interface ReviewTerm {
+  spanish: string;
+  english: string;
+  unitNumber: number;
 }
 
 export interface SentenceStakeoutQ {
@@ -150,6 +161,42 @@ function buildListeningQuestions(content: UnitContent, count: number): Listening
   return questions;
 }
 
+/**
+ * Interleaved review questions (Workstream B1): MC vocab items built from
+ * PRIOR units' overdue terms so old vocabulary keeps resurfacing inside new
+ * cases. Distractors mix current-unit and review-pool words.
+ */
+function buildReviewQuestions(
+  reviewTerms: ReviewTerm[],
+  content: UnitContent,
+  count: number
+): VocabStakeoutQ[] {
+  const englishPool = [...content.vocab.map((v) => v.english), ...reviewTerms.map((t) => t.english)];
+  const spanishPool = [...content.vocab.map((v) => v.spanish), ...reviewTerms.map((t) => t.spanish)];
+
+  const questions: VocabStakeoutQ[] = [];
+  for (const t of shuffle(reviewTerms)) {
+    if (questions.length >= count) break;
+    const esFirst = questions.length % 2 === 0;
+    const prompt = esFirst ? t.spanish : t.english;
+    const answer = esFirst ? t.english : t.spanish;
+    const distract = buildDistractors(answer, esFirst ? englishPool : spanishPool);
+    if (distract.length < 3) continue;
+    const opts = shuffle([answer, ...distract]);
+    questions.push({
+      type: "vocab",
+      promptLang: esFirst ? "es" : "en",
+      prompt,
+      answer,
+      options: opts,
+      correctIndex: opts.indexOf(answer),
+      isReview: true,
+      reviewUnitNumber: t.unitNumber,
+    });
+  }
+  return questions;
+}
+
 // ── Sentence source ────────────────────────────────────────────────────────────
 
 /** Collect sentences from sentenceBuilder stages in the unit JSON. */
@@ -167,16 +214,23 @@ function extractSentences(content: UnitContent): SentenceItem[] {
 
 const TOTAL_QUESTIONS = 13;
 
+/** Share of the deck reserved for prior-unit review when review terms exist. */
+const REVIEW_SHARE = 0.25;
+
 /**
  * Generate a weighted mix of 13 stakeout questions.
  *
  * `weights` controls how many of each type to include.
  * If a type can't fill its quota (e.g., no sentences in this unit),
  * the deficit is distributed to the other types.
+ *
+ * `reviewTerms` (optional) injects ~25% spaced-repetition items from prior
+ * units, labeled "Expediente antiguo" in the UI (Workstream B1).
  */
 export function generateStakeoutQuestions(
   content: UnitContent,
-  weights: SkillWeights
+  weights: SkillWeights,
+  reviewTerms: ReviewTerm[] = []
 ): StakeoutQuestion[] {
   const sentences = extractSentences(content);
   const hasAudio  = content.vocab.some((v) => v.audio);
@@ -203,15 +257,22 @@ export function generateStakeoutQuestions(
   nSent   = Math.min(nSent, sentences.length);
   nVocab  = TOTAL_QUESTIONS - nListen - nSent;
 
+  // Reserve ~25% of the vocab quota for prior-unit review terms (B1).
+  const nReview = reviewTerms.length
+    ? Math.min(Math.round(TOTAL_QUESTIONS * REVIEW_SHARE), reviewTerms.length, Math.max(0, nVocab - 1))
+    : 0;
+  nVocab -= nReview;
+
   const vocabQs  = buildVocabQuestions(content, nVocab);
+  const reviewQs = buildReviewQuestions(reviewTerms, content, nReview);
   const sentQs   = buildSentenceQuestions(sentences, nSent);
   const listenQs = buildListeningQuestions(content, nListen);
 
   // Pad with extra vocab if other types came up short
-  const total = vocabQs.length + sentQs.length + listenQs.length;
+  const total = vocabQs.length + reviewQs.length + sentQs.length + listenQs.length;
   const extra = total < TOTAL_QUESTIONS
     ? buildVocabQuestions(content, TOTAL_QUESTIONS - total)
     : [];
 
-  return shuffle([...vocabQs, ...sentQs, ...listenQs, ...extra]);
+  return shuffle([...vocabQs, ...reviewQs, ...sentQs, ...listenQs, ...extra]);
 }

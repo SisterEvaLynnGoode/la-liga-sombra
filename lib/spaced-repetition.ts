@@ -181,3 +181,59 @@ export function briefingStreak(completedDates: string[]): number {
   }
   return streak;
 }
+
+// ── Interleaved case review (Workstream B1) ───────────────────────────────────
+
+export interface ReviewTermResult {
+  spanish: string;
+  english: string;
+  unitNumber: number;
+  overdueScore: number;
+}
+
+/**
+ * Prior-unit terms most due for review, for interleaving into a NEW unit's
+ * Vigilancia deck ("Expediente antiguo" items). Unlike the daily briefing this
+ * has no once-per-day gate and no 3-term cap — the stakeout generator decides
+ * how many to use. Only terms the student has actually practiced are eligible.
+ */
+export async function getOverdueReviewTerms(
+  studentId: string,
+  supabase: ReturnType<typeof createClient>,
+  beforeUnitNumber: number,
+  limit = 6
+): Promise<ReviewTermResult[]> {
+  if (beforeUnitNumber <= 1) return [];
+
+  const { data: masteryRows } = await supabase
+    .from("mastery")
+    .select("vocab_term, attempts, correct, last_seen")
+    .eq("student_id", studentId);
+
+  const mastery = (masteryRows ?? []) as Array<{
+    vocab_term: string; attempts: number; correct: number; last_seen: string;
+  }>;
+  if (!mastery.length) return [];
+
+  // Vocab from all PRIOR units only
+  const vocabMap = new Map<string, { english: string; unitNumber: number }>();
+  for (let n = 1; n < beforeUnitNumber; n++) {
+    for (const v of loadUnitVocab(n)) {
+      if (!vocabMap.has(v.spanish)) vocabMap.set(v.spanish, { english: v.english, unitNumber: n });
+    }
+  }
+  if (!vocabMap.size) return [];
+
+  const due: ReviewTermResult[] = [];
+  for (const row of mastery) {
+    if (!row.attempts || !row.last_seen) continue;
+    const meta = vocabMap.get(row.vocab_term);
+    if (!meta) continue;
+    const acc = row.correct / row.attempts;
+    const score = overdueScore(acc, row.last_seen);
+    if (score < 0.5) continue; // fresh enough — don't recycle yet
+    due.push({ spanish: row.vocab_term, english: meta.english, unitNumber: meta.unitNumber, overdueScore: score });
+  }
+
+  return due.sort((a, b) => b.overdueScore - a.overdueScore).slice(0, limit);
+}

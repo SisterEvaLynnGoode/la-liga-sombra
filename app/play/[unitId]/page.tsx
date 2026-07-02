@@ -4,6 +4,7 @@ import { createClient } from "@/lib/supabase/server";
 import type { UnitContent } from "@/lib/types/unit-content";
 import { getSkillWeights } from "@/lib/mastery";
 import { generateStakeoutQuestions } from "@/lib/question-generator";
+import { getOverdueReviewTerms } from "@/lib/spaced-repetition";
 import UnitPlayer from "./UnitPlayer";
 
 // Unit content registry — add new units here as they're built
@@ -85,6 +86,7 @@ export default async function PlayPage({ params }: PageProps) {
 
   // Pre-generate stakeout questions using student's skill weights.
   // Only needed for units whose last stage is a lineup (the stakeout precedes it).
+  // ~25% of the deck is interleaved review from prior units' overdue terms (B1).
   const hasLineup = content.stages[content.stages.length - 1]?.type === "lineup";
   const stakeoutQuestions = hasLineup
     ? generateStakeoutQuestions(
@@ -93,7 +95,8 @@ export default async function PlayPage({ params }: PageProps) {
           session.studentId,
           unitId,
           content.vocab.map((v) => v.spanish)
-        )
+        ),
+        await getOverdueReviewTerms(session.studentId, supabase, unitNumber)
       )
     : [];
 
