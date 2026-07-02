@@ -260,6 +260,60 @@ export interface Database {
           }
         ];
       };
+      can_do_ratings: {
+        Row: {
+          id: string;
+          student_id: string;
+          unit_id: string;
+          statement_index: number;
+          statement: string;
+          rating: number;
+          created_at: string;
+        };
+        Insert: {
+          id?: string;
+          student_id: string;
+          unit_id: string;
+          statement_index: number;
+          statement: string;
+          rating: number;
+          created_at?: string;
+        };
+        Update: {
+          id?: string;
+          student_id?: string;
+          unit_id?: string;
+          statement_index?: number;
+          statement?: string;
+          rating?: number;
+          created_at?: string;
+        };
+        Relationships: [];
+      };
+      field_reports: {
+        Row: {
+          id: string;
+          student_id: string;
+          unit_id: string;
+          report_text: string;
+          created_at: string;
+        };
+        Insert: {
+          id?: string;
+          student_id: string;
+          unit_id: string;
+          report_text: string;
+          created_at?: string;
+        };
+        Update: {
+          id?: string;
+          student_id?: string;
+          unit_id?: string;
+          report_text?: string;
+          created_at?: string;
+        };
+        Relationships: [];
+      };
       concept_mastery: {
         Row: {
           id: string;

@@ -22,7 +22,10 @@ interface StudentData {
   unitProgress: UnitProgress[];
   mastery: MasteryEntry[];
   recentAttempts: Attempt[];
+  canDo?: Array<{ unitNumber: number; statement: string; rating: number }>;
 }
+
+const CAN_DO_EMOJI: Record<number, string> = { 1: "😕", 2: "🙂", 3: "😎" };
 
 const STATUS_STYLES: Record<string, { label: string; color: string }> = {
   completed:  { label: "✓ Completado",  color: "#4ade80" },
@@ -113,6 +116,17 @@ export default function StudentDetail({ studentId, onClose }: { studentId: strin
                         </div>
                         <span className="font-typewriter text-[10px] text-[#8b7355]">{fmtMinutes(u.totalTimeSeconds)}</span>
                         <span className="font-typewriter text-[10px] text-[#8b7355]">{u.attemptCount} activities</span>
+                      </div>
+                    )}
+                    {/* Can-do self-ratings for this unit (B4) — compare with avgScore above */}
+                    {(data.canDo?.some((c) => c.unitNumber === u.number)) && (
+                      <div className="mt-2 pt-2 border-t border-[rgba(201,147,58,0.08)] space-y-0.5">
+                        <p className="font-typewriter text-[8px] tracking-[0.25em] uppercase text-[#8b7355]">Self-assessment</p>
+                        {data.canDo!.filter((c) => c.unitNumber === u.number).map((c, i) => (
+                          <p key={i} className="font-typewriter text-[10px] text-[#c4a882]">
+                            {CAN_DO_EMOJI[c.rating] ?? "·"} {c.statement}
+                          </p>
+                        ))}
                       </div>
                     )}
                   </div>

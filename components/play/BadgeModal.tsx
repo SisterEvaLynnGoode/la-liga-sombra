@@ -1,6 +1,8 @@
 "use client";
 
+import { useState } from "react";
 import { useRouter } from "next/navigation";
+import { CAN_DO, CAN_DO_SCALE } from "@/lib/can-do";
 
 // Roman numerals for case numbers I–X
 const ROMAN = ["I","II","III","IV","V","VI","VII","VIII","IX","X"];
@@ -24,6 +26,29 @@ export default function BadgeModal({ caseTitle, country, criminalName, unitNumbe
   const secs = totalTimeSeconds % 60;
   const roman = ROMAN[(unitNumber - 1) % ROMAN.length] ?? String(unitNumber);
   const nextCountry = UNIT_COUNTRIES[unitNumber] ?? null; // unitNumber is 1-based, array is 0-based
+
+  // ── Can-do self-assessment (Workstream B4) ─────────────────────────────────
+  const statements = CAN_DO[unitNumber] ?? [];
+  const [ratings, setRatings] = useState<Record<number, number>>({});
+  const [canDoSaved, setCanDoSaved] = useState(false);
+
+  function rate(index: number, rating: number) {
+    if (canDoSaved) return;
+    const next = { ...ratings, [index]: rating };
+    setRatings(next);
+    // Auto-submit once every statement has a rating (fire-and-forget)
+    if (statements.length && Object.keys(next).length === statements.length) {
+      setCanDoSaved(true);
+      fetch("/api/game/can-do", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          unitNumber,
+          ratings: Object.entries(next).map(([i, r]) => ({ index: Number(i), rating: r })),
+        }),
+      }).catch(() => {});
+    }
+  }
 
   return (
     <div className="fixed inset-0 z-50 flex items-center justify-center px-6 bg-[#0d0b0a]">
@@ -96,6 +121,45 @@ export default function BadgeModal({ caseTitle, country, criminalName, unitNumbe
             <p className="font-typewriter text-[10px] uppercase tracking-widest text-[#8b7355]">Insignia</p>
           </div>
         </div>
+
+        {/* Can-do self-assessment */}
+        {statements.length > 0 && (
+          <div
+            className="border border-[rgba(201,147,58,0.2)] bg-[rgba(201,147,58,0.04)] px-5 py-4 mb-6 text-left"
+            style={{ animation: "fadeUp 0.5s ease 0.7s both" }}
+          >
+            <p className="font-typewriter text-[9px] tracking-[0.3em] uppercase text-[#8b7355] mb-2">
+              Autoevaluación · ¿Qué puedes hacer ahora?
+            </p>
+            <div className="space-y-2.5">
+              {statements.map((s, i) => (
+                <div key={i} className="flex items-center justify-between gap-3">
+                  <p className="font-typewriter text-[11px] text-[#c4a882] leading-snug flex-1">{s}</p>
+                  <div className="flex gap-1 shrink-0">
+                    {CAN_DO_SCALE.map((opt) => (
+                      <button
+                        key={opt.value}
+                        onClick={() => rate(i, opt.value)}
+                        disabled={canDoSaved}
+                        title={opt.labelEs}
+                        className={`w-8 h-8 text-base leading-none border transition-colors disabled:cursor-default ${
+                          ratings[i] === opt.value
+                            ? "border-[#c9933a] bg-[rgba(201,147,58,0.15)]"
+                            : "border-[rgba(201,147,58,0.15)] hover:border-[rgba(201,147,58,0.45)] opacity-70 hover:opacity-100"
+                        }`}
+                      >
+                        {opt.emoji}
+                      </button>
+                    ))}
+                  </div>
+                </div>
+              ))}
+            </div>
+            <p className="font-typewriter text-[9px] text-[#4a3a2a] mt-2">
+              {canDoSaved ? "✓ Guardado en tu expediente" : "😕 Todavía no · 🙂 Con ayuda · 😎 ¡Sí, puedo!"}
+            </p>
+          </div>
+        )}
 
         {/* CTA */}
         <div style={{ animation: "fadeUp 0.5s ease 0.75s both" }}>

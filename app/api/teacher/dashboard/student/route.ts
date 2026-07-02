@@ -10,12 +10,13 @@ export async function GET(request: NextRequest) {
 
   const supabase = createClient();
 
-  const [studentRes, progressRes, attemptsRes, masteryRes, unitsRes] = await Promise.all([
+  const [studentRes, progressRes, attemptsRes, masteryRes, unitsRes, canDoRes] = await Promise.all([
     supabase.from("students").select("id, display_name, created_at").eq("id", studentId).limit(1),
     supabase.from("unit_progress").select("unit_id, status, stage_index, case_solved, completed_at").eq("student_id", studentId),
     supabase.from("attempts").select("unit_id, activity_type, score, max_score, time_spent_seconds, completed_at").eq("student_id", studentId).order("completed_at", { ascending: false }).limit(50),
     supabase.from("mastery").select("vocab_term, attempts, correct, last_seen").eq("student_id", studentId).order("attempts", { ascending: false }),
     supabase.from("units").select("id, number, country, title_es").order("number"),
+    supabase.from("can_do_ratings").select("unit_id, statement, rating").eq("student_id", studentId),
   ]);
 
   const student = (studentRes.data as Array<{ id: string; display_name: string; created_at: string }> | null)?.[0];
@@ -57,5 +58,15 @@ export async function GET(request: NextRequest) {
     return { ...a, unitNumber: u?.number ?? 0, unitCountry: u?.country ?? "?" };
   });
 
-  return NextResponse.json({ student: { id: student.id, displayName: student.display_name, createdAt: student.created_at }, unitProgress, mastery, recentAttempts });
+  // Can-do self-ratings (B4) — the student's own read on each unit's goals.
+  // Compare against avgScore/mastery: over-confident or under-confident students
+  // are exactly who to talk to first.
+  const canDoRaw = (canDoRes.data ?? []) as Array<{ unit_id: string; statement: string; rating: number }>;
+  const canDo = canDoRaw.map((c) => ({
+    unitNumber: units.find((u) => u.id === c.unit_id)?.number ?? 0,
+    statement: c.statement,
+    rating: c.rating,
+  })).sort((a, b) => a.unitNumber - b.unitNumber);
+
+  return NextResponse.json({ student: { id: student.id, displayName: student.display_name, createdAt: student.created_at }, unitProgress, mastery, recentAttempts, canDo });
 }
