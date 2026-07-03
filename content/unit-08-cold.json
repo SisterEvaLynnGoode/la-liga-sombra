@@ -1,0 +1,467 @@
+{
+  "unitNumber": 8,
+  "country": "Perú",
+  "city": "Cusco",
+  "caseTitle": "El Telar de la Abuela",
+  "caseDescription": "Un telar ceremonial de 300 años desapareció de la cooperativa de tejedoras de Cusco, una semana después del caso del mercado. Un 'anticuario' extranjero visitó la cooperativa tres veces y regateó un precio imposible. Caso frío en pretérito: puntos dobles.",
+  "criminalName": "El Anticuario",
+  "bonusClue": "El sospechoso pagó todo en el mercado con billetes nuevos de cien soles — y ayer alguien cambió mil dólares en la casa de cambio de la esquina.",
+  "isColdCase": true,
+  "vocab": [
+    {
+      "spanish": "barrer",
+      "english": "to sweep",
+      "audio": "/audio/unit-08/barrer.mp3"
+    },
+    {
+      "spanish": "limpiar",
+      "english": "to clean",
+      "audio": "/audio/unit-08/limpiar.mp3"
+    },
+    {
+      "spanish": "cocinar",
+      "english": "to cook",
+      "audio": "/audio/unit-08/cocinar.mp3"
+    },
+    {
+      "spanish": "lavar",
+      "english": "to wash",
+      "audio": "/audio/unit-08/lavar.mp3"
+    },
+    {
+      "spanish": "planchar",
+      "english": "to iron",
+      "audio": "/audio/unit-08/planchar.mp3"
+    },
+    {
+      "spanish": "comprar",
+      "english": "to buy / to shop",
+      "audio": "/audio/unit-08/comprar.mp3"
+    },
+    {
+      "spanish": "llevar",
+      "english": "to carry / to take",
+      "audio": "/audio/unit-08/llevar.mp3"
+    },
+    {
+      "spanish": "dejar",
+      "english": "to leave behind / to let",
+      "audio": "/audio/unit-08/dejar.mp3"
+    },
+    {
+      "spanish": "olvidar",
+      "english": "to forget",
+      "audio": "/audio/unit-08/olvidar.mp3"
+    },
+    {
+      "spanish": "guardar",
+      "english": "to put away / to keep",
+      "audio": "/audio/unit-08/guardar.mp3"
+    },
+    {
+      "spanish": "buscar",
+      "english": "to look for / to search",
+      "audio": "/audio/unit-08/buscar.mp3"
+    },
+    {
+      "spanish": "arreglar",
+      "english": "to arrange / to tidy up",
+      "audio": "/audio/unit-08/arreglar.mp3"
+    },
+    {
+      "spanish": "el mercado",
+      "english": "market",
+      "audio": "/audio/unit-08/mercado.mp3"
+    },
+    {
+      "spanish": "el puesto",
+      "english": "market stall / booth",
+      "audio": "/audio/unit-08/puesto.mp3"
+    },
+    {
+      "spanish": "la quinoa",
+      "english": "quinoa",
+      "audio": "/audio/unit-08/quinoa.mp3"
+    },
+    {
+      "spanish": "el arroz",
+      "english": "rice",
+      "audio": "/audio/unit-08/arroz.mp3"
+    },
+    {
+      "spanish": "los mariscos",
+      "english": "seafood",
+      "audio": "/audio/unit-08/mariscos.mp3"
+    },
+    {
+      "spanish": "el ajo",
+      "english": "garlic",
+      "audio": "/audio/unit-08/ajo.mp3"
+    },
+    {
+      "spanish": "el limón",
+      "english": "lemon / lime",
+      "audio": "/audio/unit-08/limon.mp3"
+    },
+    {
+      "spanish": "el azúcar",
+      "english": "sugar",
+      "audio": "/audio/unit-08/azucar.mp3"
+    },
+    {
+      "spanish": "el aceite",
+      "english": "cooking oil",
+      "audio": "/audio/unit-08/aceite.mp3"
+    },
+    {
+      "spanish": "las especias",
+      "english": "spices",
+      "audio": "/audio/unit-08/especias.mp3"
+    },
+    {
+      "spanish": "los frijoles",
+      "english": "beans",
+      "audio": "/audio/unit-08/frijoles.mp3"
+    },
+    {
+      "spanish": "el maíz",
+      "english": "corn / maize",
+      "audio": "/audio/unit-08/maiz.mp3"
+    },
+    {
+      "spanish": "más...que",
+      "english": "more...than",
+      "audio": "/audio/unit-08/mas-que.mp3"
+    },
+    {
+      "spanish": "menos...que",
+      "english": "less/fewer...than",
+      "audio": "/audio/unit-08/menos-que.mp3"
+    },
+    {
+      "spanish": "tan...como",
+      "english": "as...as",
+      "audio": "/audio/unit-08/tan-como.mp3"
+    },
+    {
+      "spanish": "mejor",
+      "english": "better (irregular comparison)",
+      "audio": "/audio/unit-08/mejor.mp3"
+    },
+    {
+      "spanish": "peor",
+      "english": "worse (irregular comparison)",
+      "audio": "/audio/unit-08/peor.mp3"
+    },
+    {
+      "spanish": "el/la mayor",
+      "english": "the oldest / the greatest",
+      "audio": "/audio/unit-08/mayor.mp3"
+    },
+    {
+      "spanish": "me",
+      "english": "(to) me — indirect object pronoun",
+      "audio": "/audio/unit-08/me.mp3"
+    },
+    {
+      "spanish": "te",
+      "english": "(to) you — indirect object pronoun",
+      "audio": "/audio/unit-08/te.mp3"
+    },
+    {
+      "spanish": "le",
+      "english": "(to) him/her/you formal — indirect object pronoun",
+      "audio": "/audio/unit-08/le.mp3"
+    },
+    {
+      "spanish": "les",
+      "english": "(to) them/you all — indirect object pronoun",
+      "audio": "/audio/unit-08/les.mp3"
+    },
+    {
+      "spanish": "acabar de + infinitivo",
+      "english": "to have just (done something) — e.g., acabo de llegar = I just arrived",
+      "audio": "/audio/unit-08/acabar-de.mp3"
+    },
+    {
+      "spanish": "oír",
+      "english": "to hear",
+      "audio": "/audio/unit-08/oir.mp3"
+    },
+    {
+      "spanish": "traer",
+      "english": "to bring",
+      "audio": "/audio/unit-08/traer.mp3"
+    },
+    {
+      "spanish": "-é  (hablé)",
+      "english": "★ Mini-Glosario Pretérito: yo spoke / arrived / cleaned",
+      "audio": "/audio/unit-08/preterite-e.mp3"
+    },
+    {
+      "spanish": "-aste  (hablaste)",
+      "english": "★ Mini-Glosario Pretérito: tú spoke / arrived / cleaned",
+      "audio": "/audio/unit-08/preterite-aste.mp3"
+    },
+    {
+      "spanish": "-ó  (habló)",
+      "english": "★ Mini-Glosario Pretérito: él/ella spoke / arrived / cleaned",
+      "audio": "/audio/unit-08/preterite-o.mp3"
+    },
+    {
+      "spanish": "-amos  (hablamos)",
+      "english": "★ Mini-Glosario Pretérito: nosotros spoke / arrived / cleaned",
+      "audio": "/audio/unit-08/preterite-amos.mp3"
+    },
+    {
+      "spanish": "-aron  (hablaron)",
+      "english": "★ Mini-Glosario Pretérito: ellos/ellas spoke / arrived / cleaned",
+      "audio": "/audio/unit-08/preterite-aron.mp3"
+    }
+  ],
+  "stages": [
+    {
+      "type": "cutscene",
+      "videoUrl": "/videos/unit-08-cold-intro.mp4",
+      "subtitleUrl": "/videos/unit-08-intro.vtt",
+      "chiefName": "Jefa Ramírez",
+      "chiefImageSeed": 60,
+      "briefingLines": [
+        "Agente, Cusco te necesita otra vez.",
+        "Un telar ceremonial de trescientos años desapareció de la cooperativa de tejedoras.",
+        "Un 'anticuario' visitó tres veces, regateó, y la abuela Julia dijo que no. Anoche, el telar desapareció.",
+        "Caso frío en pretérito: ¿qué pasó, quién llegó, quién salió? Puntos dobles. ¡Vamos!"
+      ],
+      "chiefImageUrl": "/images/characters/chief-ramirez.png"
+    },
+    {
+      "type": "vocabMatch",
+      "pairs": [
+        {
+          "spanish": "barrer",
+          "english": "to sweep"
+        },
+        {
+          "spanish": "limpiar",
+          "english": "to clean"
+        },
+        {
+          "spanish": "cocinar",
+          "english": "to cook"
+        },
+        {
+          "spanish": "lavar",
+          "english": "to wash"
+        },
+        {
+          "spanish": "planchar",
+          "english": "to iron"
+        },
+        {
+          "spanish": "comprar",
+          "english": "to buy / to shop"
+        },
+        {
+          "spanish": "llevar",
+          "english": "to carry / to take"
+        },
+        {
+          "spanish": "dejar",
+          "english": "to leave behind / to let"
+        }
+      ]
+    },
+    {
+      "type": "dialogueChoice",
+      "clueReward": "El 'anticuario' ofreció mil soles, la abuela dijo que no, y él respondió: 'Entonces lo conseguiré de otra manera.'",
+      "npcName": "Abuela Julia, la tejedora mayor",
+      "npcAvatar": "🧶",
+      "startNodeId": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "npcLine": "Bienvenido, joven. ¿Usted es el detective? Ese telar perteneció a mi bisabuela. Ayúdenos, por favor.",
+          "options": [
+            {
+              "text": "Buenos días, abuela Julia. Soy detective. ¿Qué pasó con el anticuario?",
+              "isCorrect": true,
+              "nextNodeId": "info"
+            },
+            {
+              "text": "¿Cuánto cuesta esta manta?",
+              "isCorrect": false,
+              "feedback": "No viniste de compras. Saluda con respeto y pregunta por el anticuario."
+            },
+            {
+              "text": "¿Dónde está el mercado de San Pedro?",
+              "isCorrect": false,
+              "feedback": "Ya conoces el mercado. Pregunta qué pasó con el telar."
+            }
+          ]
+        },
+        {
+          "id": "info",
+          "npcLine": "El hombre vino tres veces. La primera vez miró todo. La segunda vez preguntó precios. La tercera vez ofreció mil soles por el telar ceremonial. Le dije que no — no está a la venta.",
+          "options": [
+            {
+              "text": "¿Qué dijo él cuando usted dijo que no?",
+              "isCorrect": true,
+              "nextNodeId": "detail"
+            },
+            {
+              "text": "¿Usted vendió otras mantas?",
+              "isCorrect": false,
+              "feedback": "Las otras ventas no importan. Pregunta qué RESPONDIÓ el anticuario."
+            },
+            {
+              "text": "¿El telar es bonito?",
+              "isCorrect": false,
+              "feedback": "Es hermoso, claro. Pregunta por la reacción del hombre."
+            }
+          ]
+        },
+        {
+          "id": "detail",
+          "npcLine": "Me miró muy serio y dijo: 'Entonces lo conseguiré de otra manera.' Salió sin despedirse. Esa noche alguien entró por la ventana del taller y el telar desapareció.",
+          "isEnd": true,
+          "endMessage": "La abuela Julia te muestra la ventana. Hay una huella de bota europea, talla 44."
+        }
+      ]
+    },
+    {
+      "type": "readingComp",
+      "clueReward": "El ladrón entró por la ventana entre la medianoche y las 2:00, conocía el taller, y dejó una huella de bota talla 44.",
+      "passage": "DECLARACIÓN POLICIAL — COOPERATIVA DE TEJEDORAS, CUSCO\nDeclarante: vecino Mateo Quispe\n\nAnoche escuché ruidos en el taller de la cooperativa. Miré por mi ventana a la medianoche y vi una luz pequeña adentro. Pensé: 'las tejedoras trabajaron tarde'. Pero las tejedoras salieron a las ocho — yo las vi salir.\nA la una de la mañana, un hombre alto salió por la ventana del taller. Cargó un bulto largo envuelto en plástico. Caminó rápido hacia la Plaza de Armas. Llevó el bulto con mucho cuidado, como algo muy delicado.\nEsta mañana encontré una huella de bota junto a la ventana. Una bota europea, grande, talla 44. Los policías fotografiaron la huella.\nEn la casa de cambio me contaron: ayer un extranjero cambió mil dólares en billetes nuevos de cien soles.",
+      "glossary": [
+        {
+          "word": "declaración",
+          "translation": "statement"
+        },
+        {
+          "word": "bulto",
+          "translation": "bundle / package"
+        },
+        {
+          "word": "envuelto",
+          "translation": "wrapped"
+        },
+        {
+          "word": "huella",
+          "translation": "footprint"
+        },
+        {
+          "word": "talla",
+          "translation": "size"
+        },
+        {
+          "word": "casa de cambio",
+          "translation": "currency exchange"
+        }
+      ],
+      "questions": [
+        {
+          "id": "cr1",
+          "text": "¿A qué hora salieron las tejedoras del taller?",
+          "type": "multiple_choice",
+          "options": [
+            "A la medianoche",
+            "A las ocho",
+            "A la una",
+            "A las diez"
+          ],
+          "correctIndex": 1,
+          "explanationEs": "Mateo dice: «las tejedoras salieron a las ocho — yo las vi salir». Pretérito: salieron.",
+          "explanationEn": "Preterite 'salieron' — they left at eight."
+        },
+        {
+          "id": "cr2",
+          "text": "¿Qué vio Mateo a la una de la mañana?",
+          "type": "multiple_choice",
+          "options": [
+            "Una fiesta",
+            "Un hombre alto con un bulto largo",
+            "Un carro rojo",
+            "A las tejedoras"
+          ],
+          "correctIndex": 1,
+          "explanationEs": "«Un hombre alto salió por la ventana… Cargó un bulto largo.» Pretérito: salió, cargó.",
+          "explanationEn": "He saw a tall man climb out carrying a long bundle."
+        },
+        {
+          "id": "cr3",
+          "text": "¿Qué encontró Mateo esta mañana?",
+          "type": "multiple_choice",
+          "options": [
+            "Una carta",
+            "Dinero",
+            "Una huella de bota talla 44",
+            "El telar"
+          ],
+          "correctIndex": 2,
+          "explanationEs": "«Encontré una huella de bota… talla 44.» Pretérito: encontré.",
+          "explanationEn": "Preterite 'encontré' — he found the size-44 boot print."
+        },
+        {
+          "id": "cr4",
+          "text": "¿Cuánto dinero cambió el extranjero? (Escribe en español o números.)",
+          "type": "short_answer",
+          "acceptableAnswers": [
+            "mil dólares",
+            "mil",
+            "1000",
+            "1000 dólares"
+          ],
+          "explanationEs": "«Un extranjero cambió mil dólares en billetes nuevos.» Pretérito: cambió.",
+          "explanationEn": "He exchanged a thousand dollars — 'cambió' (preterite)."
+        }
+      ]
+    },
+    {
+      "type": "lineup",
+      "correctSuspectId": "el-anticuario",
+      "hint": "Busca a un hombre alto y extranjero con botas europeas talla 44, que ofreció mil soles, pagó con billetes nuevos y dijo: 'Lo conseguiré de otra manera.'",
+      "suspects": [
+        {
+          "id": "el-anticuario",
+          "name": "El Anticuario",
+          "realName": "Klaus Weber Montt",
+          "age": 55,
+          "description": "Es un hombre alto y extranjero de cincuenta y cinco años. Colecciona textiles antiguos. Visitó la cooperativa tres veces, ofreció mil soles y pagó todo con billetes nuevos. Usa botas europeas talla 44.",
+          "imageSeed": 18
+        },
+        {
+          "id": "el-mochilero",
+          "name": "El Mochilero",
+          "realName": "Jonas Berg Olsen",
+          "age": 24,
+          "description": "Es un turista alto de veinticuatro años con botas europeas talla 45. Llegó a Cusco ayer por la tarde y durmió en el hostal — el recepcionista lo confirmó.",
+          "imageSeed": 21
+        },
+        {
+          "id": "el-comerciante",
+          "name": "El Comerciante",
+          "realName": "Faustino Huamán Ríos",
+          "age": 47,
+          "description": "Es un comerciante del mercado de San Pedro, de cuarenta y siete años. Vende mantas modernas y conoce a la abuela Julia hace años. Calza talla 40.",
+          "imageSeed": 16
+        },
+        {
+          "id": "la-coleccionista",
+          "name": "La Coleccionista",
+          "realName": "Ingrid Solberg Paz",
+          "age": 60,
+          "description": "Es una coleccionista extranjera de sesenta años. Compró tres mantas la semana pasada — pagó bien y con recibo. Anoche cenó con el alcalde, frente a veinte personas.",
+          "imageSeed": 53
+        },
+        {
+          "id": "el-guia-cusco",
+          "name": "El Guía",
+          "realName": "Percy Condori Mamani",
+          "age": 31,
+          "description": "Es un guía turístico de treinta y un años. Lleva grupos a la cooperativa cada semana. Anoche guió el tour nocturno de la ciudad hasta las dos.",
+          "imageSeed": 2
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,431 @@
+{
+  "unitNumber": 2,
+  "country": "Puerto Rico",
+  "city": "San Juan",
+  "caseTitle": "El Robo del Trofeo",
+  "caseDescription": "Un mes después del hackeo, el trofeo de campeones de la Escuela Central de San Juan desapareció durante la semana de exámenes. Una 'directora visitante' firmó el registro… pero ninguna escuela la envió. Las pistas son más difíciles y los testigos solo hablan español.",
+  "criminalName": "La Directora Falsa",
+  "bonusClue": "La sospechosa llevaba gafas de sol DENTRO de la escuela y firmó el registro con la mano izquierda.",
+  "isColdCase": true,
+  "vocab": [
+    {
+      "spanish": "el libro",
+      "english": "book",
+      "audio": "/audio/unit-02/libro.mp3"
+    },
+    {
+      "spanish": "la silla",
+      "english": "chair",
+      "audio": "/audio/unit-02/silla.mp3"
+    },
+    {
+      "spanish": "la pizarra",
+      "english": "whiteboard",
+      "audio": "/audio/unit-02/pizarra.mp3"
+    },
+    {
+      "spanish": "la mochila",
+      "english": "backpack",
+      "audio": "/audio/unit-02/mochila.mp3"
+    },
+    {
+      "spanish": "el lápiz",
+      "english": "pencil",
+      "audio": "/audio/unit-02/lapiz.mp3"
+    },
+    {
+      "spanish": "el cuaderno",
+      "english": "notebook",
+      "audio": "/audio/unit-02/cuaderno.mp3"
+    },
+    {
+      "spanish": "el bolígrafo",
+      "english": "pen",
+      "audio": "/audio/unit-02/boligrafo.mp3"
+    },
+    {
+      "spanish": "el escritorio",
+      "english": "desk",
+      "audio": "/audio/unit-02/escritorio.mp3"
+    },
+    {
+      "spanish": "las tijeras",
+      "english": "scissors",
+      "audio": "/audio/unit-02/tijeras.mp3"
+    },
+    {
+      "spanish": "la regla",
+      "english": "ruler",
+      "audio": "/audio/unit-02/regla.mp3"
+    },
+    {
+      "spanish": "el borrador",
+      "english": "eraser",
+      "audio": "/audio/unit-02/borrador.mp3"
+    },
+    {
+      "spanish": "el papel",
+      "english": "paper",
+      "audio": "/audio/unit-02/papel.mp3"
+    },
+    {
+      "spanish": "la computadora",
+      "english": "computer",
+      "audio": "/audio/unit-02/computadora.mp3"
+    },
+    {
+      "spanish": "el ratón",
+      "english": "mouse (computer)",
+      "audio": "/audio/unit-02/raton.mp3"
+    },
+    {
+      "spanish": "el teclado",
+      "english": "keyboard",
+      "audio": "/audio/unit-02/teclado.mp3"
+    },
+    {
+      "spanish": "la pantalla",
+      "english": "screen / monitor",
+      "audio": "/audio/unit-02/pantalla.mp3"
+    },
+    {
+      "spanish": "la impresora",
+      "english": "printer",
+      "audio": "/audio/unit-02/impresora.mp3"
+    },
+    {
+      "spanish": "los auriculares",
+      "english": "headphones",
+      "audio": "/audio/unit-02/auriculares.mp3"
+    },
+    {
+      "spanish": "la tableta",
+      "english": "tablet",
+      "audio": "/audio/unit-02/tableta.mp3"
+    },
+    {
+      "spanish": "el proyector",
+      "english": "projector",
+      "audio": "/audio/unit-02/proyector.mp3"
+    },
+    {
+      "spanish": "alto / alta",
+      "english": "tall (m/f)",
+      "audio": "/audio/unit-02/alto.mp3"
+    },
+    {
+      "spanish": "bajo / baja",
+      "english": "short (m/f)",
+      "audio": "/audio/unit-02/bajo.mp3"
+    },
+    {
+      "spanish": "simpático / simpática",
+      "english": "nice, friendly (m/f)",
+      "audio": "/audio/unit-02/simpatico.mp3"
+    },
+    {
+      "spanish": "inteligente",
+      "english": "intelligent (m & f)",
+      "audio": "/audio/unit-02/inteligente.mp3"
+    },
+    {
+      "spanish": "rubio / rubia",
+      "english": "blond (m/f)",
+      "audio": "/audio/unit-02/rubio.mp3"
+    },
+    {
+      "spanish": "moreno / morena",
+      "english": "dark-haired / dark-skinned (m/f)",
+      "audio": "/audio/unit-02/moreno.mp3"
+    },
+    {
+      "spanish": "serio / seria",
+      "english": "serious (m/f)",
+      "audio": "/audio/unit-02/serio.mp3"
+    },
+    {
+      "spanish": "trabajador / trabajadora",
+      "english": "hardworking (m/f)",
+      "audio": "/audio/unit-02/trabajador.mp3"
+    },
+    {
+      "spanish": "tímido / tímida",
+      "english": "shy (m/f)",
+      "audio": "/audio/unit-02/timido.mp3"
+    },
+    {
+      "spanish": "gracioso / graciosa",
+      "english": "funny (m/f)",
+      "audio": "/audio/unit-02/gracioso.mp3"
+    },
+    {
+      "spanish": "estudiar",
+      "english": "to study",
+      "audio": "/audio/unit-02/estudiar.mp3"
+    },
+    {
+      "spanish": "usar",
+      "english": "to use",
+      "audio": "/audio/unit-02/usar.mp3"
+    },
+    {
+      "spanish": "hablar",
+      "english": "to speak / to talk",
+      "audio": "/audio/unit-02/hablar.mp3"
+    },
+    {
+      "spanish": "escuchar",
+      "english": "to listen",
+      "audio": "/audio/unit-02/escuchar.mp3"
+    },
+    {
+      "spanish": "trabajar",
+      "english": "to work",
+      "audio": "/audio/unit-02/trabajar.mp3"
+    }
+  ],
+  "stages": [
+    {
+      "type": "cutscene",
+      "videoUrl": "/videos/unit-02-cold-intro.mp4",
+      "subtitleUrl": "/videos/unit-02-intro.vtt",
+      "chiefName": "Jefe Ramírez",
+      "chiefImageSeed": 60,
+      "briefingLines": [
+        "Agente, bienvenido de nuevo a San Juan. La escuela nos necesita otra vez.",
+        "El trofeo de campeones desapareció de la vitrina de la biblioteca durante los exámenes.",
+        "Una mujer entró como 'directora visitante', pero ninguna escuela la envió. Es una profesional.",
+        "Los testigos solo hablan español y tienes menos tiempo. Este caso es frío, difícil y vale doble. ¡A trabajar!"
+      ],
+      "chiefImageUrl": "/images/characters/chief-ramirez.png"
+    },
+    {
+      "type": "vocabMatch",
+      "pairs": [
+        {
+          "spanish": "el libro",
+          "english": "book"
+        },
+        {
+          "spanish": "la silla",
+          "english": "chair"
+        },
+        {
+          "spanish": "la pizarra",
+          "english": "whiteboard"
+        },
+        {
+          "spanish": "la mochila",
+          "english": "backpack"
+        },
+        {
+          "spanish": "el lápiz",
+          "english": "pencil"
+        },
+        {
+          "spanish": "el cuaderno",
+          "english": "notebook"
+        },
+        {
+          "spanish": "el bolígrafo",
+          "english": "pen"
+        },
+        {
+          "spanish": "el escritorio",
+          "english": "desk"
+        }
+      ]
+    },
+    {
+      "type": "dialogueChoice",
+      "clueReward": "La sospechosa es alta, con chaqueta azul, y preguntó dónde está la vitrina de los trofeos.",
+      "npcName": "Sra. Ortiz, la bibliotecaria",
+      "npcAvatar": "📚",
+      "startNodeId": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "npcLine": "¡Buenos días! ¿Tú eres el agente de la agencia? Yo soy la bibliotecaria de la escuela.",
+          "options": [
+            {
+              "text": "Buenos días, señora Ortiz. Soy detective. ¿Qué vio usted ayer?",
+              "isCorrect": true,
+              "nextNodeId": "info"
+            },
+            {
+              "text": "Hola. ¿Dónde están los libros de historia?",
+              "isCorrect": false,
+              "feedback": "Los libros no importan ahora — preséntate y pregunta sobre el robo."
+            },
+            {
+              "text": "Adiós, gracias.",
+              "isCorrect": false,
+              "feedback": "¡Espera! La bibliotecaria vio a la sospechosa. Saluda y pregunta."
+            }
+          ]
+        },
+        {
+          "id": "info",
+          "npcLine": "Vi a una mujer alta con una chaqueta azul. Es seria y muy organizada. Preguntó dónde está la vitrina de los trofeos. ¡Una directora real ya sabe eso!",
+          "options": [
+            {
+              "text": "¿Cómo es ella físicamente? ¿Algo más?",
+              "isCorrect": true,
+              "nextNodeId": "detail"
+            },
+            {
+              "text": "¿Qué clases enseña usted?",
+              "isCorrect": false,
+              "feedback": "Ella no es profesora — es bibliotecaria. Pregunta más sobre la sospechosa."
+            },
+            {
+              "text": "¿El trofeo es grande?",
+              "isCorrect": false,
+              "feedback": "Ya sabes cómo es el trofeo. Pregunta por la DESCRIPCIÓN de la mujer."
+            }
+          ]
+        },
+        {
+          "id": "detail",
+          "npcLine": "Es alta y morena, de unos treinta y cinco años. Lleva gafas de sol dentro de la escuela — ¡qué raro! Y firmó el registro con la mano izquierda.",
+          "isEnd": true,
+          "endMessage": "La Sra. Ortiz vuelve a su escritorio. Tienes una descripción completa."
+        }
+      ]
+    },
+    {
+      "type": "readingComp",
+      "clueReward": "La 'directora' entró a las 10:15, no fue a la oficina, y salió a las 10:40 con una bolsa deportiva grande.",
+      "passage": "REGISTRO DE VISITANTES — ESCUELA CENTRAL DE SAN JUAN\nFecha: jueves, 12 de mayo\n\n09:50 — Los estudiantes entran a los exámenes. Los pasillos están vacíos.\n10:15 — Una mujer firma el registro como 'Directora visitante — Escuela del Este'. Letra con la mano izquierda. Lleva chaqueta azul y una bolsa deportiva vacía.\n10:20 — La visitante NO va a la oficina de la directora. Va directamente a la biblioteca.\n10:35 — La alarma de la vitrina de trofeos suena por 30 segundos y para.\n10:40 — La visitante sale por la puerta principal. La bolsa deportiva ahora se ve llena y pesada.\n11:05 — El conserje descubre la vitrina abierta y el trofeo no está.\nNota: La Escuela del Este confirma: no tienen directora visitante hoy.",
+      "glossary": [
+        {
+          "word": "registro",
+          "translation": "log / sign-in sheet"
+        },
+        {
+          "word": "pasillos",
+          "translation": "hallways"
+        },
+        {
+          "word": "letra",
+          "translation": "handwriting"
+        },
+        {
+          "word": "bolsa deportiva",
+          "translation": "gym bag"
+        },
+        {
+          "word": "conserje",
+          "translation": "janitor"
+        },
+        {
+          "word": "vitrina",
+          "translation": "display case"
+        }
+      ],
+      "questions": [
+        {
+          "id": "cr1",
+          "text": "¿A qué hora firmó el registro la 'directora visitante'?",
+          "type": "multiple_choice",
+          "options": [
+            "09:50",
+            "10:15",
+            "10:35",
+            "11:05"
+          ],
+          "correctIndex": 1,
+          "explanationEs": "El registro dice: «10:15 — Una mujer firma el registro».",
+          "explanationEn": "The log shows she signed in at 10:15."
+        },
+        {
+          "id": "cr2",
+          "text": "¿Adónde fue la visitante primero?",
+          "type": "multiple_choice",
+          "options": [
+            "A la oficina",
+            "A la cafetería",
+            "A la biblioteca",
+            "Al gimnasio"
+          ],
+          "correctIndex": 2,
+          "explanationEs": "El registro dice que NO fue a la oficina — fue directamente a la biblioteca.",
+          "explanationEn": "She skipped the office and went straight to the library."
+        },
+        {
+          "id": "cr3",
+          "text": "¿Cómo se veía la bolsa deportiva cuando salió?",
+          "type": "multiple_choice",
+          "options": [
+            "Vacía",
+            "Llena y pesada",
+            "Pequeña",
+            "Rota"
+          ],
+          "correctIndex": 1,
+          "explanationEs": "Al entrar la bolsa estaba vacía; al salir «se ve llena y pesada».",
+          "explanationEn": "Empty going in, full and heavy going out."
+        },
+        {
+          "id": "cr4",
+          "text": "¿Con qué mano firmó el registro? (Escribe en español.)",
+          "type": "short_answer",
+          "acceptableAnswers": [
+            "la mano izquierda",
+            "izquierda",
+            "con la izquierda"
+          ],
+          "explanationEs": "El registro dice: «Letra con la mano izquierda».",
+          "explanationEn": "The log notes left-handed handwriting."
+        }
+      ]
+    },
+    {
+      "type": "lineup",
+      "correctSuspectId": "la-directora-falsa",
+      "hint": "Busca a una mujer alta y morena de unos 35 años, con chaqueta azul, gafas de sol y que escribe con la mano izquierda.",
+      "suspects": [
+        {
+          "id": "la-directora-falsa",
+          "name": "La Directora Falsa",
+          "realName": "Carmen Delgado Ruiz",
+          "age": 35,
+          "description": "Es una mujer alta y morena de treinta y cinco años. Es seria y muy organizada. Lleva una chaqueta azul y gafas de sol. Escribe con la mano izquierda.",
+          "imageSeed": 22
+        },
+        {
+          "id": "la-profesora",
+          "name": "La Profesora",
+          "realName": "Ana Beltrán Soto",
+          "age": 35,
+          "description": "Es una mujer alta y morena de treinta y cinco años. Es simpática y habla mucho. Lleva una chaqueta azul, pero escribe con la mano derecha y no usa gafas.",
+          "imageSeed": 25
+        },
+        {
+          "id": "el-entrenador",
+          "name": "El Entrenador",
+          "realName": "Luis Vega Marín",
+          "age": 42,
+          "description": "Es un hombre alto y fuerte de cuarenta y dos años. Lleva una bolsa deportiva todos los días porque es el entrenador de baloncesto de la escuela.",
+          "imageSeed": 13
+        },
+        {
+          "id": "la-secretaria",
+          "name": "La Secretaria",
+          "realName": "Rosa Jiménez Cruz",
+          "age": 28,
+          "description": "Es una mujer baja y rubia de veintiocho años. Es tímida y trabajadora. Escribe con la mano izquierda, pero estaba en la oficina toda la mañana.",
+          "imageSeed": 30
+        },
+        {
+          "id": "el-inspector",
+          "name": "El Inspector",
+          "realName": "Pedro Casals Rivera",
+          "age": 50,
+          "description": "Es un hombre delgado de cincuenta años con gafas de sol. Visita escuelas para el gobierno, pero ayer visitó otra escuela en Ponce.",
+          "imageSeed": 8
+        }
+      ]
+    }
+  ]
+}

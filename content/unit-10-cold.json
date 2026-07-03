@@ -1,0 +1,417 @@
+{
+  "unitNumber": 10,
+  "country": "Ecuador",
+  "city": "Quito",
+  "caseTitle": "El Plano del Futuro",
+  "caseDescription": "El plano del invento ganador de la Expo del Futuro — un panel solar plegable diseñado por estudiantes de Quito — desapareció la noche de la premiación. Una 'inversora' prometió millones… y pidió ver los planos a solas. Caso frío: el futuro del equipo depende de ti. Puntos dobles.",
+  "criminalName": "La Inversora",
+  "bonusClue": "La 'inversora' dijo: 'Mañana firmaremos el contrato.' Pero su vuelo salió anoche — nunca va a firmar nada.",
+  "isColdCase": true,
+  "vocab": [
+    {
+      "spanish": "el ingeniero / la ingeniera",
+      "english": "engineer (m/f)",
+      "audio": "/audio/unit-10/ingeniero.mp3"
+    },
+    {
+      "spanish": "el médico / la médica",
+      "english": "doctor (m/f)",
+      "audio": "/audio/unit-10/medico.mp3"
+    },
+    {
+      "spanish": "el profesor / la profesora",
+      "english": "teacher / professor (m/f)",
+      "audio": "/audio/unit-10/profesor.mp3"
+    },
+    {
+      "spanish": "el abogado / la abogada",
+      "english": "lawyer (m/f)",
+      "audio": "/audio/unit-10/abogado.mp3"
+    },
+    {
+      "spanish": "el programador / la programadora",
+      "english": "programmer (m/f)",
+      "audio": "/audio/unit-10/programador.mp3"
+    },
+    {
+      "spanish": "el científico / la científica",
+      "english": "scientist (m/f)",
+      "audio": "/audio/unit-10/cientifico.mp3"
+    },
+    {
+      "spanish": "el empresario / la empresaria",
+      "english": "entrepreneur (m/f)",
+      "audio": "/audio/unit-10/empresario.mp3"
+    },
+    {
+      "spanish": "el / la periodista",
+      "english": "journalist (m & f)",
+      "audio": "/audio/unit-10/periodista.mp3"
+    },
+    {
+      "spanish": "la carrera",
+      "english": "career / major",
+      "audio": "/audio/unit-10/carrera.mp3"
+    },
+    {
+      "spanish": "el trabajo",
+      "english": "job / work",
+      "audio": "/audio/unit-10/trabajo.mp3"
+    },
+    {
+      "spanish": "la universidad",
+      "english": "university",
+      "audio": "/audio/unit-10/universidad.mp3"
+    },
+    {
+      "spanish": "el futuro",
+      "english": "the future",
+      "audio": "/audio/unit-10/futuro.mp3"
+    },
+    {
+      "spanish": "el invento",
+      "english": "invention",
+      "audio": "/audio/unit-10/invento.mp3"
+    },
+    {
+      "spanish": "la tecnología",
+      "english": "technology",
+      "audio": "/audio/unit-10/tecnologia.mp3"
+    },
+    {
+      "spanish": "el robot",
+      "english": "robot",
+      "audio": "/audio/unit-10/robot.mp3"
+    },
+    {
+      "spanish": "la inteligencia artificial",
+      "english": "artificial intelligence",
+      "audio": "/audio/unit-10/ia.mp3"
+    },
+    {
+      "spanish": "la aplicación",
+      "english": "app / application",
+      "audio": "/audio/unit-10/aplicacion.mp3"
+    },
+    {
+      "spanish": "la pantalla",
+      "english": "screen",
+      "audio": "/audio/unit-10/pantalla.mp3"
+    },
+    {
+      "spanish": "el proyecto",
+      "english": "project",
+      "audio": "/audio/unit-10/proyecto.mp3"
+    },
+    {
+      "spanish": "la idea",
+      "english": "idea",
+      "audio": "/audio/unit-10/idea.mp3"
+    },
+    {
+      "spanish": "el plan",
+      "english": "plan",
+      "audio": "/audio/unit-10/plan.mp3"
+    },
+    {
+      "spanish": "la meta",
+      "english": "goal",
+      "audio": "/audio/unit-10/meta.mp3"
+    },
+    {
+      "spanish": "el sueño",
+      "english": "dream",
+      "audio": "/audio/unit-10/sueno.mp3"
+    },
+    {
+      "spanish": "ir a + infinitivo",
+      "english": "going to (do) — voy a estudiar = I'm going to study",
+      "audio": "/audio/unit-10/ir-a.mp3"
+    },
+    {
+      "spanish": "voy a...",
+      "english": "I am going to...",
+      "audio": "/audio/unit-10/voy-a.mp3"
+    },
+    {
+      "spanish": "el año que viene",
+      "english": "next year",
+      "audio": "/audio/unit-10/ano-que-viene.mp3"
+    },
+    {
+      "spanish": "mañana",
+      "english": "tomorrow",
+      "audio": "/audio/unit-10/manana.mp3"
+    },
+    {
+      "spanish": "pronto",
+      "english": "soon",
+      "audio": "/audio/unit-10/pronto.mp3"
+    },
+    {
+      "spanish": "seré",
+      "english": "I will be (future of ser)",
+      "audio": "/audio/unit-10/sere.mp3"
+    },
+    {
+      "spanish": "tendré",
+      "english": "I will have (future of tener)",
+      "audio": "/audio/unit-10/tendre.mp3"
+    },
+    {
+      "spanish": "estudiaré",
+      "english": "I will study (future -é ending)",
+      "audio": "/audio/unit-10/estudiare.mp3"
+    },
+    {
+      "spanish": "trabajaré",
+      "english": "I will work (future -é ending)",
+      "audio": "/audio/unit-10/trabajare.mp3"
+    }
+  ],
+  "stages": [
+    {
+      "type": "cutscene",
+      "videoUrl": "/videos/unit-10-cold-intro.mp4",
+      "subtitleUrl": "/videos/unit-10-intro.vtt",
+      "chiefName": "Jefa Ramírez",
+      "chiefImageSeed": 60,
+      "chiefImageUrl": "/images/characters/chief-ramirez.png",
+      "briefingLines": [
+        "Agente, Quito — la Expo del Futuro tiene un problema del presente.",
+        "El plano del panel solar ganador desapareció la noche de la premiación.",
+        "Una 'inversora' prometió millones al equipo estudiantil. Pidió ver los planos a solas… y desaparecieron.",
+        "Caso frío: ¿qué va a hacer, adónde irá? El futuro es la clave. ¡Puntos dobles, agente!"
+      ]
+    },
+    {
+      "type": "vocabMatch",
+      "pairs": [
+        {
+          "spanish": "el ingeniero / la ingeniera",
+          "english": "engineer (m/f)"
+        },
+        {
+          "spanish": "el médico / la médica",
+          "english": "doctor (m/f)"
+        },
+        {
+          "spanish": "el profesor / la profesora",
+          "english": "teacher / professor (m/f)"
+        },
+        {
+          "spanish": "el abogado / la abogada",
+          "english": "lawyer (m/f)"
+        },
+        {
+          "spanish": "el programador / la programadora",
+          "english": "programmer (m/f)"
+        },
+        {
+          "spanish": "el científico / la científica",
+          "english": "scientist (m/f)"
+        },
+        {
+          "spanish": "el empresario / la empresaria",
+          "english": "entrepreneur (m/f)"
+        },
+        {
+          "spanish": "el / la periodista",
+          "english": "journalist (m & f)"
+        }
+      ]
+    },
+    {
+      "type": "dialogueChoice",
+      "clueReward": "La 'inversora' fotografió los planos 'para sus socios' y preguntó dónde guardarán el original.",
+      "npcName": "Paola, capitana del equipo estudiantil",
+      "npcAvatar": "👷‍♀️",
+      "startNodeId": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "npcLine": "¿Tú eres el detective? Por favor, ayúdanos. Ese plano es nuestro futuro — vamos a cambiar el mundo con ese panel.",
+          "options": [
+            {
+              "text": "Buenas noches, Paola. Soy detective. Cuéntame de la inversora.",
+              "isCorrect": true,
+              "nextNodeId": "info"
+            },
+            {
+              "text": "¿El panel solar funciona de noche?",
+              "isCorrect": false,
+              "feedback": "Buena pregunta científica, mal momento. Pregunta por la inversora."
+            },
+            {
+              "text": "¿Van a ganar el premio otra vez?",
+              "isCorrect": false,
+              "feedback": "El premio no importa sin el plano. Pregunta por la mujer que lo vio."
+            }
+          ]
+        },
+        {
+          "id": "info",
+          "npcLine": "Se llama 'Sra. Ventura'. Dijo: 'Voy a invertir dos millones. Mañana firmaremos el contrato.' Pidió ver los planos a solas, 'sin presión'. Después de su visita, el tubo con los planos estaba vacío.",
+          "options": [
+            {
+              "text": "¿Qué preguntó ella exactamente sobre los planos?",
+              "isCorrect": true,
+              "nextNodeId": "detail"
+            },
+            {
+              "text": "¿Dos millones de dólares o de pesos?",
+              "isCorrect": false,
+              "feedback": "La moneda no importa — la promesa era falsa. Pregunta qué dijo de los planos."
+            },
+            {
+              "text": "¿Dónde está el baño?",
+              "isCorrect": false,
+              "feedback": "¡Agente, concentración! Pregunta por las palabras exactas de la inversora."
+            }
+          ]
+        },
+        {
+          "id": "detail",
+          "npcLine": "Preguntó: '¿Dónde guardarán el original esta noche? ¿Quién lo cuidará?' Y fotografió todo 'para sus socios'. Esta mañana llamé a su oficina — el número no existe. Y su vuelo salió ANOCHE.",
+          "isEnd": true,
+          "endMessage": "Paola te muestra la tarjeta de la 'inversora'. El logo es de una empresa que cerró hace años."
+        }
+      ]
+    },
+    {
+      "type": "readingComp",
+      "clueReward": "La 'inversora' visitó el stand a las 20:00, preguntó dónde guardarán el plano, y su vuelo a Panamá salió a las 23:55 — antes de la firma 'de mañana'.",
+      "passage": "CORREO AL COMITÉ — EXPO DEL FUTURO, QUITO\nDe: seguridad de la Expo\nAsunto: cronología de la noche de premiación\n\n19:30 — Termina la premiación. El equipo de Paola gana con el panel solar plegable.\n20:00 — La 'inversora Sra. Ventura' visita el stand. Promete: 'Invertiré dos millones. Mañana firmaremos el contrato en mi oficina.'\n20:20 — La inversora pide ver los planos a solas. El equipo celebra afuera — confía en ella.\n20:35 — La inversora sale con su maletín. Dice: 'Los veré mañana a las diez. Traeré a mis abogados.'\n21:00 — El equipo descubre el tubo de planos vacío.\n23:55 — Según el aeropuerto, la Sra. Ventura tomó el vuelo a Panamá. No habrá reunión mañana.\nNota: la oficina de su tarjeta no existe. La empresa cerró hace seis años.",
+      "glossary": [
+        {
+          "word": "premiación",
+          "translation": "award ceremony"
+        },
+        {
+          "word": "plano",
+          "translation": "blueprint"
+        },
+        {
+          "word": "plegable",
+          "translation": "foldable"
+        },
+        {
+          "word": "maletín",
+          "translation": "briefcase"
+        },
+        {
+          "word": "socios",
+          "translation": "business partners"
+        },
+        {
+          "word": "abogados",
+          "translation": "lawyers"
+        }
+      ],
+      "questions": [
+        {
+          "id": "cr1",
+          "text": "¿Qué prometió la 'inversora'?",
+          "type": "multiple_choice",
+          "options": [
+            "Un carro nuevo",
+            "Invertir dos millones",
+            "Un viaje a Panamá",
+            "Un laboratorio"
+          ],
+          "correctIndex": 1,
+          "explanationEs": "Dijo: «Invertiré dos millones» — futuro simple del verbo invertir.",
+          "explanationEn": "'Invertiré' — simple future: I will invest."
+        },
+        {
+          "id": "cr2",
+          "text": "¿Qué pidió a las 20:20?",
+          "type": "multiple_choice",
+          "options": [
+            "Un café",
+            "Ver los planos a solas",
+            "Fotos con el equipo",
+            "El premio"
+          ],
+          "correctIndex": 1,
+          "explanationEs": "«Pide ver los planos a solas» — el momento clave del robo.",
+          "explanationEn": "She asked to see the blueprints ALONE — the key moment."
+        },
+        {
+          "id": "cr3",
+          "text": "¿Qué pasó a las 23:55?",
+          "type": "multiple_choice",
+          "options": [
+            "Firmó el contrato",
+            "Tomó el vuelo a Panamá",
+            "Llamó a Paola",
+            "Regresó a la Expo"
+          ],
+          "correctIndex": 1,
+          "explanationEs": "«Tomó el vuelo a Panamá» — nunca iba a firmar mañana.",
+          "explanationEn": "She flew to Panama — the 'tomorrow' meeting was a lie."
+        },
+        {
+          "id": "cr4",
+          "text": "¿A qué hora dijo que los verá mañana? (Escribe la hora.)",
+          "type": "short_answer",
+          "acceptableAnswers": [
+            "a las diez",
+            "las diez",
+            "10",
+            "10:00"
+          ],
+          "explanationEs": "Dijo: «Los veré mañana a las diez» — futuro: veré. Pero su vuelo ya salió.",
+          "explanationEn": "'Los veré mañana a las diez' — future tense veré… but she was already gone."
+        }
+      ]
+    },
+    {
+      "type": "lineup",
+      "correctSuspectId": "la-inversora",
+      "hint": "Busca a la mujer que prometió millones en futuro ('invertiré', 'firmaremos', 'traeré')… y tomó un vuelo la misma noche.",
+      "suspects": [
+        {
+          "id": "la-inversora",
+          "name": "La Inversora",
+          "realName": "'Sra. Ventura' — identidad falsa",
+          "age": 46,
+          "description": "Es una mujer elegante de cuarenta y seis años con maletín de cuero. Promete millones en futuro: 'invertiré, firmaremos, traeré abogados'. Su tarjeta es de una empresa que no existe.",
+          "imageSeed": 38
+        },
+        {
+          "id": "el-juez",
+          "name": "El Juez",
+          "realName": "Ing. Aurelio Paz Montúfar",
+          "age": 58,
+          "description": "Es el juez principal de la Expo, de cincuenta y ocho años. Evaluó veinte proyectos y entregó el premio en el escenario, frente a todos, hasta las 21:30.",
+          "imageSeed": 20
+        },
+        {
+          "id": "la-rival",
+          "name": "La Rival",
+          "realName": "Daniela Chávez Toro",
+          "age": 19,
+          "description": "Es la capitana del equipo rival, de diecinueve años. Su equipo quedó segundo. Estaba triste, pero celebró con su equipo en la cafetería toda la noche.",
+          "imageSeed": 40
+        },
+        {
+          "id": "el-periodista-expo",
+          "name": "El Periodista",
+          "realName": "Galo Sandoval Ruiz",
+          "age": 36,
+          "description": "Es un periodista de ciencia de treinta y seis años. Fotografió TODOS los stands para su artículo — con permiso y credencial real de prensa.",
+          "imageSeed": 1
+        },
+        {
+          "id": "el-profesor",
+          "name": "El Profesor",
+          "realName": "Dr. Wilson Cárdenas Vela",
+          "age": 49,
+          "description": "Es el profesor mentor del equipo, de cuarenta y nueve años. Guardó una copia digital del plano en su computadora — por eso el equipo todavía tiene esperanza.",
+          "imageSeed": 45
+        }
+      ]
+    }
+  ]
+}

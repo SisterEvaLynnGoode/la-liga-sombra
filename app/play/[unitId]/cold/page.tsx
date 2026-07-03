@@ -7,14 +7,14 @@ import { generateStakeoutQuestions } from "@/lib/question-generator";
 import UnitPlayer from "../UnitPlayer";
 
 // ── Which unit numbers have Cold Case content built ───────────────────────────
-const COLD_CASE_UNITS = new Set([1]);
+const COLD_CASE_UNITS = new Set([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
 
 // Cold case content loader
 function getColdCaseContent(unitNumber: number): UnitContent | null {
   if (!COLD_CASE_UNITS.has(unitNumber)) return null;
   try {
     // eslint-disable-next-line @typescript-eslint/no-require-imports
-    return require(`@/content/unit-0${unitNumber}-cold.json`) as UnitContent;
+    return require(`@/content/unit-${String(unitNumber).padStart(2, "0")}-cold.json`) as UnitContent;
   } catch {
     return null;
   }

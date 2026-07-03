@@ -1,0 +1,466 @@
+{
+  "unitNumber": 6,
+  "country": "Colombia",
+  "city": "Cartagena",
+  "caseTitle": "El Libro de Especias",
+  "caseDescription": "El libro secreto de especias de la Escuela de Cocina de Cartagena — cien años de recetas familiares — desapareció la noche de la gran cena de graduación. Una crítica gastronómica misteriosa reservó mesa… con nombre falso. Caso frío con sabor a puntos dobles.",
+  "criminalName": "La Crítica",
+  "bonusClue": "La sospechosa pidió ESTE plato, no ESE plato — sabía exactamente qué receta venía del libro secreto.",
+  "isColdCase": true,
+  "vocab": [
+    {
+      "spanish": "el mango",
+      "english": "mango",
+      "audio": "/audio/unit-06/mango.mp3"
+    },
+    {
+      "spanish": "la guanábana",
+      "english": "soursop",
+      "audio": "/audio/unit-06/guanabana.mp3"
+    },
+    {
+      "spanish": "la papaya",
+      "english": "papaya",
+      "audio": "/audio/unit-06/papaya.mp3"
+    },
+    {
+      "spanish": "el banano",
+      "english": "banana",
+      "audio": "/audio/unit-06/banano.mp3"
+    },
+    {
+      "spanish": "la piña",
+      "english": "pineapple",
+      "audio": "/audio/unit-06/pina.mp3"
+    },
+    {
+      "spanish": "la papa",
+      "english": "potato",
+      "audio": "/audio/unit-06/papa.mp3"
+    },
+    {
+      "spanish": "la zanahoria",
+      "english": "carrot",
+      "audio": "/audio/unit-06/zanahoria.mp3"
+    },
+    {
+      "spanish": "el maíz",
+      "english": "corn",
+      "audio": "/audio/unit-06/maiz.mp3"
+    },
+    {
+      "spanish": "el aguacate",
+      "english": "avocado",
+      "audio": "/audio/unit-06/aguacate.mp3"
+    },
+    {
+      "spanish": "la cebolla",
+      "english": "onion",
+      "audio": "/audio/unit-06/cebolla.mp3"
+    },
+    {
+      "spanish": "el pollo",
+      "english": "chicken",
+      "audio": "/audio/unit-06/pollo.mp3"
+    },
+    {
+      "spanish": "la res",
+      "english": "beef",
+      "audio": "/audio/unit-06/res.mp3"
+    },
+    {
+      "spanish": "el cerdo",
+      "english": "pork",
+      "audio": "/audio/unit-06/cerdo.mp3"
+    },
+    {
+      "spanish": "el pescado",
+      "english": "fish",
+      "audio": "/audio/unit-06/pescado.mp3"
+    },
+    {
+      "spanish": "el camarón",
+      "english": "shrimp",
+      "audio": "/audio/unit-06/camaron.mp3"
+    },
+    {
+      "spanish": "el café",
+      "english": "coffee",
+      "audio": "/audio/unit-06/cafe.mp3"
+    },
+    {
+      "spanish": "el jugo",
+      "english": "juice",
+      "audio": "/audio/unit-06/jugo.mp3"
+    },
+    {
+      "spanish": "el agua",
+      "english": "water",
+      "audio": "/audio/unit-06/agua.mp3"
+    },
+    {
+      "spanish": "la leche",
+      "english": "milk",
+      "audio": "/audio/unit-06/leche.mp3"
+    },
+    {
+      "spanish": "la limonada",
+      "english": "lemonade",
+      "audio": "/audio/unit-06/limonada.mp3"
+    },
+    {
+      "spanish": "el ajiaco",
+      "english": "traditional Colombian potato and chicken soup",
+      "audio": "/audio/unit-06/ajiaco.mp3"
+    },
+    {
+      "spanish": "la bandeja paisa",
+      "english": "traditional Colombian mixed platter",
+      "audio": "/audio/unit-06/bandeja-paisa.mp3"
+    },
+    {
+      "spanish": "las arepas",
+      "english": "corn cakes",
+      "audio": "/audio/unit-06/arepas.mp3"
+    },
+    {
+      "spanish": "el sancocho",
+      "english": "hearty Colombian stew",
+      "audio": "/audio/unit-06/sancocho.mp3"
+    },
+    {
+      "spanish": "las empanadas",
+      "english": "stuffed pastries",
+      "audio": "/audio/unit-06/empanadas.mp3"
+    },
+    {
+      "spanish": "querer (e→ie)",
+      "english": "to want (stem-changing)",
+      "audio": "/audio/unit-06/querer.mp3"
+    },
+    {
+      "spanish": "poder (o→ue)",
+      "english": "to be able to / can (stem-changing)",
+      "audio": "/audio/unit-06/poder.mp3"
+    },
+    {
+      "spanish": "preferir (e→ie)",
+      "english": "to prefer (stem-changing)",
+      "audio": "/audio/unit-06/preferir.mp3"
+    },
+    {
+      "spanish": "pensar (e→ie)",
+      "english": "to think / to plan (stem-changing)",
+      "audio": "/audio/unit-06/pensar.mp3"
+    },
+    {
+      "spanish": "dormir (o→ue)",
+      "english": "to sleep (stem-changing)",
+      "audio": "/audio/unit-06/dormir.mp3"
+    },
+    {
+      "spanish": "volver (o→ue)",
+      "english": "to return / to come back (stem-changing)",
+      "audio": "/audio/unit-06/volver.mp3"
+    },
+    {
+      "spanish": "este / esta",
+      "english": "this (near speaker, m/f)",
+      "audio": "/audio/unit-06/este.mp3"
+    },
+    {
+      "spanish": "ese / esa",
+      "english": "that (near listener, m/f)",
+      "audio": "/audio/unit-06/ese.mp3"
+    },
+    {
+      "spanish": "aquel / aquella",
+      "english": "that over there (far away, m/f)",
+      "audio": "/audio/unit-06/aquel.mp3"
+    },
+    {
+      "spanish": "estos / estas",
+      "english": "these (plural, m/f)",
+      "audio": "/audio/unit-06/estos.mp3"
+    },
+    {
+      "spanish": "la cuenta",
+      "english": "the bill / check",
+      "audio": "/audio/unit-06/cuenta.mp3"
+    },
+    {
+      "spanish": "la propina",
+      "english": "the tip",
+      "audio": "/audio/unit-06/propina.mp3"
+    },
+    {
+      "spanish": "el menú",
+      "english": "the menu",
+      "audio": "/audio/unit-06/menu.mp3"
+    },
+    {
+      "spanish": "el plato",
+      "english": "the dish / plate",
+      "audio": "/audio/unit-06/plato.mp3"
+    },
+    {
+      "spanish": "tener que + infinitivo",
+      "english": "to have to + verb",
+      "audio": "/audio/unit-06/tener-que.mp3"
+    },
+    {
+      "spanish": "decir",
+      "english": "to say / to tell",
+      "audio": "/audio/unit-06/decir.mp3"
+    },
+    {
+      "spanish": "la receta",
+      "english": "the recipe",
+      "audio": "/audio/unit-06/receta.mp3"
+    }
+  ],
+  "stages": [
+    {
+      "type": "cutscene",
+      "videoUrl": "/videos/unit-06-cold-intro.mp4",
+      "subtitleUrl": "/videos/unit-06-intro.vtt",
+      "chiefName": "Jefa Ramírez",
+      "chiefImageSeed": 60,
+      "briefingLines": [
+        "Agente, bienvenido a Cartagena. Huele a arepas… y a problemas.",
+        "El libro secreto de especias de la Escuela de Cocina desapareció durante la cena de graduación.",
+        "Una crítica gastronómica reservó mesa con nombre falso. Conoce las recetas demasiado bien.",
+        "Caso frío: este plato, ese plato, aquel ladrón. Puntos dobles. ¡Buen provecho, agente!"
+      ],
+      "chiefImageUrl": "/images/characters/chief-ramirez.png"
+    },
+    {
+      "type": "vocabMatch",
+      "pairs": [
+        {
+          "spanish": "el mango",
+          "english": "mango"
+        },
+        {
+          "spanish": "la guanábana",
+          "english": "soursop"
+        },
+        {
+          "spanish": "la papaya",
+          "english": "papaya"
+        },
+        {
+          "spanish": "el banano",
+          "english": "banana"
+        },
+        {
+          "spanish": "la piña",
+          "english": "pineapple"
+        },
+        {
+          "spanish": "la papa",
+          "english": "potato"
+        },
+        {
+          "spanish": "la zanahoria",
+          "english": "carrot"
+        },
+        {
+          "spanish": "el maíz",
+          "english": "corn"
+        }
+      ]
+    },
+    {
+      "type": "dialogueChoice",
+      "clueReward": "La 'crítica' entró a la cocina diciendo que buscaba el baño — dos veces.",
+      "npcName": "Chef Emilia, la directora",
+      "npcAvatar": "👩‍🍳",
+      "startNodeId": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "npcLine": "¡Bienvenido! ¿Tú eres el detective? Esta cocina está de luto — perdimos cien años de recetas.",
+          "options": [
+            {
+              "text": "Buenas noches, chef Emilia. Soy detective. Cuénteme sobre la cena de anoche.",
+              "isCorrect": true,
+              "nextNodeId": "info"
+            },
+            {
+              "text": "¿Me prepara unas arepas primero?",
+              "isCorrect": false,
+              "feedback": "¡Las arepas después! Saluda a la chef y pregunta por la cena."
+            },
+            {
+              "text": "¿Dónde compran las especias?",
+              "isCorrect": false,
+              "feedback": "Las especias no son la pista. Pregunta qué pasó anoche."
+            }
+          ]
+        },
+        {
+          "id": "info",
+          "npcLine": "Anoche vino una crítica gastronómica que nadie conoce. Probó este plato, ese plato, todos los platos… y entró a la cocina dos veces 'buscando el baño'. ¡El baño está al otro lado!",
+          "options": [
+            {
+              "text": "¿Qué preguntó ella sobre las recetas?",
+              "isCorrect": true,
+              "nextNodeId": "detail"
+            },
+            {
+              "text": "¿Quién lavó los platos?",
+              "isCorrect": false,
+              "feedback": "Los platos limpios no importan. Pregunta qué dijo la 'crítica'."
+            },
+            {
+              "text": "¿A qué hora cierran?",
+              "isCorrect": false,
+              "feedback": "El horario no es la pista — pregunta por la mujer misteriosa."
+            }
+          ]
+        },
+        {
+          "id": "detail",
+          "npcLine": "Preguntó por el ají secreto de la abuela Rosa — ¡una receta que SOLO está en el libro! Nadie fuera de la escuela conoce ese nombre. Y pidió la mesa junto a la puerta de la cocina.",
+          "isEnd": true,
+          "endMessage": "La chef Emilia te da la reserva de la mesa: 'Sra. Paladar'. Nombre falso, pista real."
+        }
+      ]
+    },
+    {
+      "type": "readingComp",
+      "clueReward": "La 'crítica' reservó con nombre falso, se sentó junto a la cocina, y salió durante el brindis con un bolso más gordo.",
+      "passage": "LIBRO DE RESERVAS — ESCUELA DE COCINA DE CARTAGENA\nNoche de graduación, viernes\n\n19:00 — Reserva a nombre de 'Sra. Paladar', mesa 12, junto a la puerta de la cocina. Pidió esa mesa específicamente.\n19:45 — La señora prueba el menú de degustación. Pregunta por el ají secreto de la abuela Rosa. El mesero no conoce ese nombre.\n20:30 — La señora va 'al baño' por la puerta de la cocina. El baño está al lado opuesto del restaurante.\n21:00 — Durante el brindis de graduación, todos miran al escenario. La señora no está en la mesa 12.\n21:10 — La señora regresa, paga en efectivo y sale. Su bolso se ve más gordo que antes.\n22:00 — La chef descubre que el libro de especias no está en su estante de la cocina.",
+      "glossary": [
+        {
+          "word": "reserva",
+          "translation": "reservation"
+        },
+        {
+          "word": "degustación",
+          "translation": "tasting (menu)"
+        },
+        {
+          "word": "ají",
+          "translation": "chili pepper (sauce)"
+        },
+        {
+          "word": "brindis",
+          "translation": "toast"
+        },
+        {
+          "word": "efectivo",
+          "translation": "cash"
+        },
+        {
+          "word": "estante",
+          "translation": "shelf"
+        }
+      ],
+      "questions": [
+        {
+          "id": "cr1",
+          "text": "¿Qué mesa pidió la 'Sra. Paladar'?",
+          "type": "multiple_choice",
+          "options": [
+            "La mesa del jardín",
+            "La mesa 12, junto a la cocina",
+            "La mesa del centro",
+            "La barra"
+          ],
+          "correctIndex": 1,
+          "explanationEs": "La reserva dice: «mesa 12, junto a la puerta de la cocina. Pidió esa mesa específicamente».",
+          "explanationEn": "She specifically requested table 12 by the kitchen door."
+        },
+        {
+          "id": "cr2",
+          "text": "¿Por qué es sospechosa su pregunta sobre el ají?",
+          "type": "multiple_choice",
+          "options": [
+            "Porque no le gusta el ají",
+            "Porque esa receta solo está en el libro secreto",
+            "Porque el ají es caro",
+            "Porque el mesero es nuevo"
+          ],
+          "correctIndex": 1,
+          "explanationEs": "El ají secreto de la abuela Rosa SOLO está en el libro — nadie de afuera conoce ese nombre.",
+          "explanationEn": "Only the secret book contains that recipe name."
+        },
+        {
+          "id": "cr3",
+          "text": "¿Cuándo desapareció la señora de su mesa?",
+          "type": "multiple_choice",
+          "options": [
+            "Durante la cena",
+            "Durante el brindis",
+            "Al pagar",
+            "Al llegar"
+          ],
+          "correctIndex": 1,
+          "explanationEs": "«Durante el brindis de graduación, todos miran al escenario. La señora no está en la mesa 12.»",
+          "explanationEn": "She vanished exactly when everyone watched the toast."
+        },
+        {
+          "id": "cr4",
+          "text": "¿Cómo pagó la señora? (Escribe en español.)",
+          "type": "short_answer",
+          "acceptableAnswers": [
+            "en efectivo",
+            "efectivo",
+            "con efectivo"
+          ],
+          "explanationEs": "El registro dice: «paga en efectivo» — sin tarjeta, sin nombre real.",
+          "explanationEn": "Cash — no card, no real name."
+        }
+      ]
+    },
+    {
+      "type": "lineup",
+      "correctSuspectId": "la-critica",
+      "hint": "Busca a una mujer que conoce las recetas secretas, pidió la mesa junto a la cocina, y prefiere ESTE plato picante — no ese ni aquel.",
+      "suspects": [
+        {
+          "id": "la-critica",
+          "name": "La Crítica",
+          "realName": "'Sra. Paladar' — nombre falso",
+          "age": 48,
+          "description": "Es una mujer elegante de cuarenta y ocho años. Conoce cada especia y cada receta. Prefiere este ají picante, no ese dulce. Su bolso siempre es grande.",
+          "imageSeed": 37
+        },
+        {
+          "id": "el-mesero",
+          "name": "El Mesero",
+          "realName": "Andrés Cabrera Luna",
+          "age": 26,
+          "description": "Es un mesero de veintiséis años, rápido y amable. Sirvió las mesas 10, 11 y 12 toda la noche. No conoce el ají de la abuela Rosa.",
+          "imageSeed": 6
+        },
+        {
+          "id": "la-graduada",
+          "name": "La Graduada",
+          "realName": "Luisa Mendoza Prieto",
+          "age": 23,
+          "description": "Es una estudiante de veintitrés años que se graduó anoche. Estuvo en el escenario durante todo el brindis, delante de doscientas personas.",
+          "imageSeed": 31
+        },
+        {
+          "id": "el-proveedor",
+          "name": "El Proveedor",
+          "realName": "Ramón Castillo Duarte",
+          "age": 52,
+          "description": "Es el proveedor de especias de la escuela, de cincuenta y dos años. Conoce muchas recetas, pero anoche entregaba especias en Barranquilla.",
+          "imageSeed": 12
+        },
+        {
+          "id": "la-abuela-rosa",
+          "name": "La Abuela Rosa",
+          "realName": "Rosa Herrera de Díaz",
+          "age": 79,
+          "description": "Es la abuela de setenta y nueve años, autora de las recetas. El libro es SU tesoro — estuvo en la mesa de honor toda la noche, feliz y orgullosa.",
+          "imageSeed": 49
+        }
+      ]
+    }
+  ]
+}

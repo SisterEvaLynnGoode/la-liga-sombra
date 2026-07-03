@@ -1,0 +1,446 @@
+{
+  "unitNumber": 3,
+  "country": "España",
+  "city": "Madrid",
+  "caseTitle": "El Boceto Perdido",
+  "caseDescription": "Meses después de capturar a La Sombra, un boceto original de Goya desapareció de una exposición temporal en el Parque del Retiro. El sospechoso escapó en metro. La red de El Tejedor sigue activa en Madrid — y este caso frío vale doble.",
+  "criminalName": "El Turista Eterno",
+  "bonusClue": "El sospechoso siempre lleva un mapa turístico viejo… con la estación de Atocha marcada en rojo.",
+  "isColdCase": true,
+  "vocab": [
+    {
+      "spanish": "la Puerta del Sol",
+      "english": "Puerta del Sol (main square)",
+      "audio": "/audio/unit-03/puerta-del-sol.mp3"
+    },
+    {
+      "spanish": "el Museo del Prado",
+      "english": "Prado Museum",
+      "audio": "/audio/unit-03/museo-del-prado.mp3"
+    },
+    {
+      "spanish": "el Parque del Retiro",
+      "english": "Retiro Park",
+      "audio": "/audio/unit-03/parque-del-retiro.mp3"
+    },
+    {
+      "spanish": "la Gran Vía",
+      "english": "Gran Vía (main street)",
+      "audio": "/audio/unit-03/gran-via.mp3"
+    },
+    {
+      "spanish": "la Estación de Atocha",
+      "english": "Atocha Train Station",
+      "audio": "/audio/unit-03/atocha.mp3"
+    },
+    {
+      "spanish": "el aeropuerto",
+      "english": "airport",
+      "audio": "/audio/unit-03/aeropuerto.mp3"
+    },
+    {
+      "spanish": "el hotel",
+      "english": "hotel",
+      "audio": "/audio/unit-03/hotel.mp3"
+    },
+    {
+      "spanish": "la farmacia",
+      "english": "pharmacy",
+      "audio": "/audio/unit-03/farmacia.mp3"
+    },
+    {
+      "spanish": "el restaurante",
+      "english": "restaurant",
+      "audio": "/audio/unit-03/restaurante.mp3"
+    },
+    {
+      "spanish": "el mercado",
+      "english": "market",
+      "audio": "/audio/unit-03/mercado.mp3"
+    },
+    {
+      "spanish": "la plaza",
+      "english": "plaza / town square",
+      "audio": "/audio/unit-03/plaza.mp3"
+    },
+    {
+      "spanish": "la calle",
+      "english": "street",
+      "audio": "/audio/unit-03/calle.mp3"
+    },
+    {
+      "spanish": "el banco",
+      "english": "bank",
+      "audio": "/audio/unit-03/banco.mp3"
+    },
+    {
+      "spanish": "la comisaría",
+      "english": "police station",
+      "audio": "/audio/unit-03/comisaria.mp3"
+    },
+    {
+      "spanish": "el metro",
+      "english": "subway / metro",
+      "audio": "/audio/unit-03/metro.mp3"
+    },
+    {
+      "spanish": "el autobús",
+      "english": "bus",
+      "audio": "/audio/unit-03/autobus.mp3"
+    },
+    {
+      "spanish": "el taxi",
+      "english": "taxi",
+      "audio": "/audio/unit-03/taxi.mp3"
+    },
+    {
+      "spanish": "el tren",
+      "english": "train",
+      "audio": "/audio/unit-03/tren.mp3"
+    },
+    {
+      "spanish": "a pie",
+      "english": "on foot",
+      "audio": "/audio/unit-03/a-pie.mp3"
+    },
+    {
+      "spanish": "la bicicleta",
+      "english": "bicycle",
+      "audio": "/audio/unit-03/bicicleta.mp3"
+    },
+    {
+      "spanish": "el coche",
+      "english": "car",
+      "audio": "/audio/unit-03/coche.mp3"
+    },
+    {
+      "spanish": "el avión",
+      "english": "airplane",
+      "audio": "/audio/unit-03/avion.mp3"
+    },
+    {
+      "spanish": "comer",
+      "english": "to eat",
+      "audio": "/audio/unit-03/comer.mp3"
+    },
+    {
+      "spanish": "beber",
+      "english": "to drink",
+      "audio": "/audio/unit-03/beber.mp3"
+    },
+    {
+      "spanish": "correr",
+      "english": "to run",
+      "audio": "/audio/unit-03/correr.mp3"
+    },
+    {
+      "spanish": "leer",
+      "english": "to read",
+      "audio": "/audio/unit-03/leer.mp3"
+    },
+    {
+      "spanish": "vender",
+      "english": "to sell",
+      "audio": "/audio/unit-03/vender.mp3"
+    },
+    {
+      "spanish": "aprender",
+      "english": "to learn",
+      "audio": "/audio/unit-03/aprender.mp3"
+    },
+    {
+      "spanish": "comprender",
+      "english": "to understand",
+      "audio": "/audio/unit-03/comprender.mp3"
+    },
+    {
+      "spanish": "ver",
+      "english": "to see",
+      "audio": "/audio/unit-03/ver.mp3"
+    },
+    {
+      "spanish": "¿adónde?",
+      "english": "where to?",
+      "audio": "/audio/unit-03/adonde.mp3"
+    },
+    {
+      "spanish": "¿cuándo?",
+      "english": "when?",
+      "audio": "/audio/unit-03/cuando.mp3"
+    },
+    {
+      "spanish": "¿cómo?",
+      "english": "how?",
+      "audio": "/audio/unit-03/como.mp3"
+    },
+    {
+      "spanish": "¿por qué?",
+      "english": "why?",
+      "audio": "/audio/unit-03/por-que.mp3"
+    },
+    {
+      "spanish": "¿quién?",
+      "english": "who?",
+      "audio": "/audio/unit-03/quien.mp3"
+    },
+    {
+      "spanish": "¿cuánto?",
+      "english": "how much / how many?",
+      "audio": "/audio/unit-03/cuanto.mp3"
+    },
+    {
+      "spanish": "ir + a",
+      "english": "to go to (verb + preposition)",
+      "audio": "/audio/unit-03/ir-a.mp3"
+    },
+    {
+      "spanish": "voy a",
+      "english": "I go to / I am going to",
+      "audio": "/audio/unit-03/voy-a.mp3"
+    }
+  ],
+  "stages": [
+    {
+      "type": "cutscene",
+      "videoUrl": "/videos/unit-03-cold-intro.mp4",
+      "subtitleUrl": "/videos/unit-03-intro.vtt",
+      "chiefName": "Jefa Ramírez",
+      "chiefImageSeed": 60,
+      "briefingLines": [
+        "Agente, Madrid otra vez. La red de El Tejedor no descansa.",
+        "Un boceto original de Goya desapareció de la exposición del Parque del Retiro.",
+        "El sospechoso escapó en metro. Conoce la ciudad perfectamente, pero finge ser turista.",
+        "Caso frío: menos tiempo, testigos solo en español, puntos dobles. ¡Al metro, agente!"
+      ],
+      "chiefImageUrl": "/images/characters/chief-ramirez.png"
+    },
+    {
+      "type": "vocabMatch",
+      "pairs": [
+        {
+          "spanish": "la Puerta del Sol",
+          "english": "Puerta del Sol (main square)"
+        },
+        {
+          "spanish": "el Museo del Prado",
+          "english": "Prado Museum"
+        },
+        {
+          "spanish": "el Parque del Retiro",
+          "english": "Retiro Park"
+        },
+        {
+          "spanish": "la Gran Vía",
+          "english": "Gran Vía (main street)"
+        },
+        {
+          "spanish": "la Estación de Atocha",
+          "english": "Atocha Train Station"
+        },
+        {
+          "spanish": "el aeropuerto",
+          "english": "airport"
+        },
+        {
+          "spanish": "el hotel",
+          "english": "hotel"
+        },
+        {
+          "spanish": "la farmacia",
+          "english": "pharmacy"
+        }
+      ]
+    },
+    {
+      "type": "dialogueChoice",
+      "clueReward": "El sospechoso compró un boleto a Atocha y preguntó cómo llegar al Retiro… aunque venía DEL Retiro.",
+      "npcName": "Marta, la vendedora de boletos",
+      "npcAvatar": "🎫",
+      "startNodeId": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "npcLine": "¡Hola! ¿Un boleto de metro? Ah no, ¿tú eres el detective? ¡Qué emoción!",
+          "options": [
+            {
+              "text": "Buenas tardes, Marta. Sí, soy detective. ¿Vio a un hombre con un tubo de cartel ayer?",
+              "isCorrect": true,
+              "nextNodeId": "info"
+            },
+            {
+              "text": "Quiero ir al museo del Prado, por favor.",
+              "isCorrect": false,
+              "feedback": "No estás de turismo — preséntate y pregunta por el sospechoso."
+            },
+            {
+              "text": "¿Cuánto cuesta un boleto?",
+              "isCorrect": false,
+              "feedback": "El precio no importa. Pregunta sobre el hombre del tubo de cartel."
+            }
+          ]
+        },
+        {
+          "id": "info",
+          "npcLine": "¡Sí! Un hombre con un tubo de carteles. Compró un boleto a Atocha. Me preguntó cómo llegar al Retiro… ¡pero él venía del Retiro! Muy raro.",
+          "options": [
+            {
+              "text": "¿Cómo es él? ¿Adónde va normalmente?",
+              "isCorrect": true,
+              "nextNodeId": "detail"
+            },
+            {
+              "text": "¿A qué hora cierra el metro?",
+              "isCorrect": false,
+              "feedback": "Concéntrate en el sospechoso, no en el horario del metro."
+            },
+            {
+              "text": "¿El Retiro está lejos?",
+              "isCorrect": false,
+              "feedback": "Tú ya tienes un mapa. Pregunta por la DESCRIPCIÓN del hombre."
+            }
+          ]
+        },
+        {
+          "id": "detail",
+          "npcLine": "Es bajo, con sombrero de turista y una cámara vieja que nunca usa. Siempre lleva un mapa turístico viejo con la estación de Atocha marcada en rojo. Lo veo aquí cada semana.",
+          "isEnd": true,
+          "endMessage": "Marta te da el horario del tren a Atocha. La trampa está lista."
+        }
+      ]
+    },
+    {
+      "type": "readingComp",
+      "clueReward": "El sospechoso salió de la exposición a las 17:20 con un tubo de carteles y tomó la línea 2 hacia Atocha.",
+      "passage": "INFORME DE SEGURIDAD — EXPOSICIÓN 'GOYA EN EL RETIRO'\nFecha: domingo, 8 de junio\n\n16:45 — Un visitante con sombrero de turista entra a la carpa de la exposición. Lleva un tubo de carteles vacío, como los estudiantes de arte.\n17:00 — El visitante pregunta al vigilante dónde está el boceto original de Goya. Va directamente a esa sala.\n17:15 — Las luces de la sala fallan por dos minutos. Nadie ve nada.\n17:20 — El visitante sale caminando rápido hacia la estación de metro. El tubo de carteles ahora está cerrado con cinta.\n17:25 — Toma la línea 2 del metro en dirección a Atocha.\n17:30 — El vigilante descubre el marco vacío. El boceto no está.\nNota: El mismo hombre visitó la exposición tres veces esta semana.",
+      "glossary": [
+        {
+          "word": "boceto",
+          "translation": "sketch"
+        },
+        {
+          "word": "carpa",
+          "translation": "tent / pavilion"
+        },
+        {
+          "word": "tubo de carteles",
+          "translation": "poster tube"
+        },
+        {
+          "word": "cinta",
+          "translation": "tape"
+        },
+        {
+          "word": "marco",
+          "translation": "frame"
+        },
+        {
+          "word": "vigilante",
+          "translation": "guard"
+        }
+      ],
+      "questions": [
+        {
+          "id": "cr1",
+          "text": "¿Qué llevaba el visitante al entrar?",
+          "type": "multiple_choice",
+          "options": [
+            "Una mochila",
+            "Un tubo de carteles vacío",
+            "Una maleta",
+            "Un estuche de música"
+          ],
+          "correctIndex": 1,
+          "explanationEs": "El informe dice que llevaba «un tubo de carteles vacío», como los estudiantes de arte.",
+          "explanationEn": "He carried an empty poster tube — perfect for hiding a sketch."
+        },
+        {
+          "id": "cr2",
+          "text": "¿Qué pasó a las 17:15?",
+          "type": "multiple_choice",
+          "options": [
+            "Cerró la exposición",
+            "Las luces fallaron dos minutos",
+            "Llegó la policía",
+            "Empezó a llover"
+          ],
+          "correctIndex": 1,
+          "explanationEs": "A las 17:15 «las luces de la sala fallan por dos minutos» — el momento del robo.",
+          "explanationEn": "The lights failed for two minutes — the moment of the theft."
+        },
+        {
+          "id": "cr3",
+          "text": "¿Qué línea de metro tomó y en qué dirección?",
+          "type": "multiple_choice",
+          "options": [
+            "Línea 1 a Sol",
+            "Línea 2 a Atocha",
+            "Línea 5 a Callao",
+            "Línea 3 a Moncloa"
+          ],
+          "correctIndex": 1,
+          "explanationEs": "El informe dice: «Toma la línea 2 del metro en dirección a Atocha».",
+          "explanationEn": "Line 2 toward Atocha — the same station marked on his map."
+        },
+        {
+          "id": "cr4",
+          "text": "¿Cuántas veces visitó el hombre la exposición esta semana?",
+          "type": "short_answer",
+          "acceptableAnswers": [
+            "tres",
+            "tres veces",
+            "3"
+          ],
+          "explanationEs": "La nota dice: «El mismo hombre visitó la exposición tres veces esta semana».",
+          "explanationEn": "He cased the exhibition three times."
+        }
+      ]
+    },
+    {
+      "type": "lineup",
+      "correctSuspectId": "el-turista-eterno",
+      "hint": "Busca a un hombre bajo con sombrero de turista, una cámara que nunca usa, un tubo de carteles y un mapa con Atocha marcada en rojo.",
+      "suspects": [
+        {
+          "id": "el-turista-eterno",
+          "name": "El Turista Eterno",
+          "realName": "Julián Herrero Blanco",
+          "age": 38,
+          "description": "Es un hombre bajo de treinta y ocho años con sombrero de turista. Lleva una cámara vieja que nunca usa y un tubo de carteles. Su mapa tiene la estación de Atocha marcada en rojo.",
+          "imageSeed": 11
+        },
+        {
+          "id": "el-estudiante-arte",
+          "name": "El Estudiante de Arte",
+          "realName": "Nico Ferrer Gil",
+          "age": 22,
+          "description": "Es un chico alto de veintidós años. Lleva un tubo de carteles porque estudia en la academia de arte. Va al Retiro a dibujar cada domingo con sus amigos.",
+          "imageSeed": 15
+        },
+        {
+          "id": "la-fotografa",
+          "name": "La Fotógrafa",
+          "realName": "Elena Ríos Campos",
+          "age": 31,
+          "description": "Es una mujer de treinta y un años con una cámara profesional que usa constantemente. Fotografía los parques de Madrid para una revista de viajes.",
+          "imageSeed": 29
+        },
+        {
+          "id": "el-guia-turistico",
+          "name": "El Guía Turístico",
+          "realName": "Óscar Peña Molina",
+          "age": 45,
+          "description": "Es un hombre bajo de cuarenta y cinco años con sombrero y mapa. Trabaja con grupos grandes de turistas — ayer guió a treinta personas por el Prado.",
+          "imageSeed": 7
+        },
+        {
+          "id": "la-jubilada",
+          "name": "La Jubilada",
+          "realName": "Pilar Vega Ortiz",
+          "age": 67,
+          "description": "Es una señora de sesenta y siete años que camina por el Retiro todas las tardes. Conoce al vigilante y siempre saluda a todos.",
+          "imageSeed": 44
+        }
+      ]
+    }
+  ]
+}

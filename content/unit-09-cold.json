@@ -1,0 +1,441 @@
+{
+  "unitNumber": 9,
+  "country": "República Dominicana",
+  "city": "Santo Domingo",
+  "caseTitle": "El Ámbar de la Clínica",
+  "caseDescription": "El collar de ámbar dominicano — pieza central de la subasta benéfica de la Clínica Central — desapareció el día de la feria de salud. Un 'farmacéutico voluntario' al que nadie contrató atendió el puesto junto a la vitrina… y a él no le dolía nada. Caso frío: puntos dobles.",
+  "criminalName": "El Farmacéutico",
+  "bonusClue": "El 'farmacéutico' dijo que le dolía la cabeza para entrar al área de descanso — pero el área de descanso está al lado de la vitrina del ámbar.",
+  "isColdCase": true,
+  "vocab": [
+    {
+      "spanish": "la cabeza",
+      "english": "head",
+      "audio": "/audio/unit-09/cabeza.mp3"
+    },
+    {
+      "spanish": "la cara",
+      "english": "face",
+      "audio": "/audio/unit-09/cara.mp3"
+    },
+    {
+      "spanish": "el ojo",
+      "english": "eye",
+      "audio": "/audio/unit-09/ojo.mp3"
+    },
+    {
+      "spanish": "la nariz",
+      "english": "nose",
+      "audio": "/audio/unit-09/nariz.mp3"
+    },
+    {
+      "spanish": "la boca",
+      "english": "mouth",
+      "audio": "/audio/unit-09/boca.mp3"
+    },
+    {
+      "spanish": "el diente",
+      "english": "tooth",
+      "audio": "/audio/unit-09/diente.mp3"
+    },
+    {
+      "spanish": "la oreja",
+      "english": "ear",
+      "audio": "/audio/unit-09/oreja.mp3"
+    },
+    {
+      "spanish": "el cuello",
+      "english": "neck",
+      "audio": "/audio/unit-09/cuello.mp3"
+    },
+    {
+      "spanish": "el hombro",
+      "english": "shoulder",
+      "audio": "/audio/unit-09/hombro.mp3"
+    },
+    {
+      "spanish": "el brazo",
+      "english": "arm",
+      "audio": "/audio/unit-09/brazo.mp3"
+    },
+    {
+      "spanish": "la mano",
+      "english": "hand",
+      "audio": "/audio/unit-09/mano.mp3"
+    },
+    {
+      "spanish": "el dedo",
+      "english": "finger",
+      "audio": "/audio/unit-09/dedo.mp3"
+    },
+    {
+      "spanish": "el estómago",
+      "english": "stomach",
+      "audio": "/audio/unit-09/estomago.mp3"
+    },
+    {
+      "spanish": "la espalda",
+      "english": "back",
+      "audio": "/audio/unit-09/espalda.mp3"
+    },
+    {
+      "spanish": "la pierna",
+      "english": "leg",
+      "audio": "/audio/unit-09/pierna.mp3"
+    },
+    {
+      "spanish": "el pie",
+      "english": "foot",
+      "audio": "/audio/unit-09/pie.mp3"
+    },
+    {
+      "spanish": "el corazón",
+      "english": "heart",
+      "audio": "/audio/unit-09/corazon.mp3"
+    },
+    {
+      "spanish": "el pelo",
+      "english": "hair",
+      "audio": "/audio/unit-09/pelo.mp3"
+    },
+    {
+      "spanish": "el doctor / la doctora",
+      "english": "doctor (m/f)",
+      "audio": "/audio/unit-09/doctor.mp3"
+    },
+    {
+      "spanish": "el enfermero / la enfermera",
+      "english": "nurse (m/f)",
+      "audio": "/audio/unit-09/enfermera.mp3"
+    },
+    {
+      "spanish": "la clínica",
+      "english": "clinic",
+      "audio": "/audio/unit-09/clinica.mp3"
+    },
+    {
+      "spanish": "el hospital",
+      "english": "hospital",
+      "audio": "/audio/unit-09/hospital.mp3"
+    },
+    {
+      "spanish": "la medicina",
+      "english": "medicine",
+      "audio": "/audio/unit-09/medicina.mp3"
+    },
+    {
+      "spanish": "la pastilla",
+      "english": "pill",
+      "audio": "/audio/unit-09/pastilla.mp3"
+    },
+    {
+      "spanish": "la receta",
+      "english": "prescription",
+      "audio": "/audio/unit-09/receta.mp3"
+    },
+    {
+      "spanish": "la cita",
+      "english": "appointment",
+      "audio": "/audio/unit-09/cita.mp3"
+    },
+    {
+      "spanish": "estar enfermo / enferma",
+      "english": "to be sick (m/f)",
+      "audio": "/audio/unit-09/enfermo.mp3"
+    },
+    {
+      "spanish": "estar sano / sana",
+      "english": "to be healthy (m/f)",
+      "audio": "/audio/unit-09/sano.mp3"
+    },
+    {
+      "spanish": "el dolor",
+      "english": "pain / ache",
+      "audio": "/audio/unit-09/dolor.mp3"
+    },
+    {
+      "spanish": "la fiebre",
+      "english": "fever",
+      "audio": "/audio/unit-09/fiebre.mp3"
+    },
+    {
+      "spanish": "la tos",
+      "english": "cough",
+      "audio": "/audio/unit-09/tos.mp3"
+    },
+    {
+      "spanish": "sentirse bien",
+      "english": "to feel well",
+      "audio": "/audio/unit-09/sentirse-bien.mp3"
+    },
+    {
+      "spanish": "sentirse mal",
+      "english": "to feel bad",
+      "audio": "/audio/unit-09/sentirse-mal.mp3"
+    },
+    {
+      "spanish": "me duele",
+      "english": "it hurts me (one thing: me duele la cabeza)",
+      "audio": "/audio/unit-09/me-duele.mp3"
+    },
+    {
+      "spanish": "me duelen",
+      "english": "they hurt me (plural: me duelen los pies)",
+      "audio": "/audio/unit-09/me-duelen.mp3"
+    },
+    {
+      "spanish": "tener dolor de",
+      "english": "to have an ache in (tener dolor de cabeza)",
+      "audio": "/audio/unit-09/tener-dolor.mp3"
+    },
+    {
+      "spanish": "¿qué te pasa?",
+      "english": "what's wrong with you?",
+      "audio": "/audio/unit-09/que-te-pasa.mp3"
+    }
+  ],
+  "stages": [
+    {
+      "type": "cutscene",
+      "videoUrl": "/videos/unit-09-cold-intro.mp4",
+      "subtitleUrl": "/videos/unit-09-intro.vtt",
+      "chiefName": "Jefa Ramírez",
+      "chiefImageSeed": 60,
+      "chiefImageUrl": "/images/characters/chief-ramirez.png",
+      "briefingLines": [
+        "Agente, Santo Domingo otra vez — y esta vez la víctima es una clínica.",
+        "El collar de ámbar de la subasta benéfica desapareció durante la feria de salud.",
+        "Un 'farmacéutico voluntario' que nadie contrató trabajó junto a la vitrina toda la mañana.",
+        "Caso frío: ¿a quién le duele qué? El verbo doler es tu mejor testigo. ¡Puntos dobles!"
+      ]
+    },
+    {
+      "type": "vocabMatch",
+      "pairs": [
+        {
+          "spanish": "la cabeza",
+          "english": "head"
+        },
+        {
+          "spanish": "la cara",
+          "english": "face"
+        },
+        {
+          "spanish": "el ojo",
+          "english": "eye"
+        },
+        {
+          "spanish": "la nariz",
+          "english": "nose"
+        },
+        {
+          "spanish": "la boca",
+          "english": "mouth"
+        },
+        {
+          "spanish": "el diente",
+          "english": "tooth"
+        },
+        {
+          "spanish": "la oreja",
+          "english": "ear"
+        },
+        {
+          "spanish": "el cuello",
+          "english": "neck"
+        }
+      ]
+    },
+    {
+      "type": "dialogueChoice",
+      "clueReward": "El 'farmacéutico' no sabía tomar la presión — y dijo tres veces que le dolía la cabeza para ir al área de descanso.",
+      "npcName": "Enfermera Yolanda",
+      "npcAvatar": "👩‍⚕️",
+      "startNodeId": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "npcLine": "¡Hola de nuevo, detective! Sí, otra vez yo. Esta clínica me va a matar de estrés. ¿Empezamos?",
+          "options": [
+            {
+              "text": "Buenos días, enfermera Yolanda. Un gusto verla. ¿Qué notó en la feria de salud?",
+              "isCorrect": true,
+              "nextNodeId": "info"
+            },
+            {
+              "text": "Me duele el estómago, ¿me atiende?",
+              "isCorrect": false,
+              "feedback": "¡Ja! A ti no te duele nada. Saluda y pregunta por la feria de salud."
+            },
+            {
+              "text": "¿Dónde está la farmacia?",
+              "isCorrect": false,
+              "feedback": "La farmacia no es la pista — el 'farmacéutico' falso, sí."
+            }
+          ]
+        },
+        {
+          "id": "info",
+          "npcLine": "El 'farmacéutico voluntario' fue rarísimo. Le pedí ayuda para tomar la presión a un paciente… ¡y no sabía usar el aparato! ¿Un farmacéutico que no sabe tomar la presión?",
+          "options": [
+            {
+              "text": "¿Qué más hizo él durante la mañana?",
+              "isCorrect": true,
+              "nextNodeId": "detail"
+            },
+            {
+              "text": "¿A usted le duele algo?",
+              "isCorrect": false,
+              "feedback": "A Yolanda le duele el estrés — pero pregunta por el farmacéutico falso."
+            },
+            {
+              "text": "¿Cuántos pacientes vinieron?",
+              "isCorrect": false,
+              "feedback": "El número de pacientes no importa. Los movimientos del 'farmacéutico', sí."
+            }
+          ]
+        },
+        {
+          "id": "detail",
+          "npcLine": "Tres veces dijo: 'Me duele la cabeza, necesito descansar.' Y fue al área de descanso — que está JUSTO al lado de la vitrina del collar. A la tercera vez, no regresó. Y el collar tampoco.",
+          "isEnd": true,
+          "endMessage": "Yolanda cruza los brazos: 'Una persona con dolor de cabeza no camina tan rápido, mijo.'"
+        }
+      ]
+    },
+    {
+      "type": "readingComp",
+      "clueReward": "El 'farmacéutico' llegó sin cita a las 8:30, fue tres veces al área de descanso, y desapareció a las 11:40 — cinco minutos antes del descubrimiento.",
+      "passage": "CUADERNO DE LA FERIA DE SALUD — CLÍNICA CENTRAL\nSábado, feria benéfica\n\n08:30 — Llega un 'farmacéutico voluntario' con bata blanca. No está en la lista de voluntarios, pero dice: 'Me mandó la fundación.' Nadie verifica.\n09:15 — El farmacéutico atiende el puesto de medicinas, junto a la vitrina del collar de ámbar.\n10:00 — Primera visita al área de descanso: 'Me duele la cabeza.'\n10:45 — Segunda visita: 'Todavía me duele la cabeza.' El doctor le ofrece una pastilla. El farmacéutico dice que no.\n11:30 — Tercera visita al área de descanso. Esta vez lleva su mochila.\n11:40 — El farmacéutico no regresa a su puesto.\n11:45 — La directora descubre la vitrina abierta. El collar de ámbar no está.\nNota: Un farmacéutico real acepta una pastilla cuando le duele la cabeza.",
+      "glossary": [
+        {
+          "word": "bata",
+          "translation": "lab coat"
+        },
+        {
+          "word": "fundación",
+          "translation": "foundation"
+        },
+        {
+          "word": "puesto",
+          "translation": "booth / station"
+        },
+        {
+          "word": "pastilla",
+          "translation": "pill"
+        },
+        {
+          "word": "subasta",
+          "translation": "auction"
+        },
+        {
+          "word": "vitrina",
+          "translation": "display case"
+        }
+      ],
+      "questions": [
+        {
+          "id": "cr1",
+          "text": "¿Cuántas veces fue el 'farmacéutico' al área de descanso?",
+          "type": "multiple_choice",
+          "options": [
+            "Una vez",
+            "Dos veces",
+            "Tres veces",
+            "Cinco veces"
+          ],
+          "correctIndex": 2,
+          "explanationEs": "El cuaderno registra tres visitas: 10:00, 10:45 y 11:30 — siempre 'me duele la cabeza'.",
+          "explanationEn": "Three visits, always with the same headache excuse."
+        },
+        {
+          "id": "cr2",
+          "text": "¿Por qué es sospechoso que rechazó la pastilla?",
+          "type": "multiple_choice",
+          "options": [
+            "Porque las pastillas son caras",
+            "Porque si te duele la cabeza de verdad, aceptas ayuda",
+            "Porque era alérgico",
+            "Porque no tenía agua"
+          ],
+          "correctIndex": 1,
+          "explanationEs": "Si de verdad te duele la cabeza, aceptas la pastilla. Él dijo que no — su dolor era mentira.",
+          "explanationEn": "A real headache accepts a pill — his pain was fake."
+        },
+        {
+          "id": "cr3",
+          "text": "¿Qué llevó a la tercera visita?",
+          "type": "multiple_choice",
+          "options": [
+            "Una pastilla",
+            "Su mochila",
+            "Un vaso de agua",
+            "El collar"
+          ],
+          "correctIndex": 1,
+          "explanationEs": "«Tercera visita… Esta vez lleva su mochila.» — para esconder el collar.",
+          "explanationEn": "He brought his backpack the third time — to carry the necklace."
+        },
+        {
+          "id": "cr4",
+          "text": "¿Qué le dolía al farmacéutico (según él)? (Escribe en español.)",
+          "type": "short_answer",
+          "acceptableAnswers": [
+            "la cabeza",
+            "le dolía la cabeza",
+            "me duele la cabeza"
+          ],
+          "explanationEs": "Dijo tres veces: «Me duele la cabeza» — doler + la cabeza.",
+          "explanationEn": "'Me duele la cabeza' — the verb doler with body parts."
+        }
+      ]
+    },
+    {
+      "type": "lineup",
+      "correctSuspectId": "el-farmaceutico",
+      "hint": "Busca al hombre de bata blanca que no sabe tomar la presión, dijo tres veces que le dolía la cabeza, rechazó la pastilla y llevó su mochila al descanso.",
+      "suspects": [
+        {
+          "id": "el-farmaceutico",
+          "name": "El Farmacéutico",
+          "realName": "'Dr. Peralta' — identidad falsa",
+          "age": 39,
+          "description": "Es un hombre de treinta y nueve años con bata blanca nueva. No sabe usar el aparato de presión. Le 'dolía' la cabeza tres veces, pero rechazó la pastilla y caminaba rapidísimo.",
+          "imageSeed": 23
+        },
+        {
+          "id": "el-doctor",
+          "name": "El Doctor",
+          "realName": "Dr. Samuel Batista Cruz",
+          "age": 51,
+          "description": "Es el doctor de la clínica, de cincuenta y un años. Atendió cuarenta pacientes en la feria y ofreció la pastilla al 'farmacéutico'. Todos lo conocen hace años.",
+          "imageSeed": 4
+        },
+        {
+          "id": "la-voluntaria",
+          "name": "La Voluntaria",
+          "realName": "Karina Rosario Peña",
+          "age": 20,
+          "description": "Es una estudiante de enfermería de veinte años, voluntaria oficial (está en la lista). Le dolían los pies de estar parada, pero no salió del puesto de vacunas.",
+          "imageSeed": 27
+        },
+        {
+          "id": "el-paciente",
+          "name": "El Paciente",
+          "realName": "Don Aurelio Guzmán",
+          "age": 73,
+          "description": "Es un paciente de setenta y tres años. Le duele la espalda y las rodillas — de verdad. Esperó su turno sentado toda la mañana, al lado de la enfermera.",
+          "imageSeed": 46
+        },
+        {
+          "id": "la-organizadora",
+          "name": "La Organizadora",
+          "realName": "Miriam Tavares Luna",
+          "age": 44,
+          "description": "Es la organizadora de la subasta, de cuarenta y cuatro años. Puso el collar en la vitrina a las 8:00 y estuvo recibiendo donaciones en la entrada, lejos de la vitrina.",
+          "imageSeed": 32
+        }
+      ]
+    }
+  ]
+}

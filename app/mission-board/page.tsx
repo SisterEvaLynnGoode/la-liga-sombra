@@ -12,7 +12,7 @@ import DailyBriefingTrigger from "@/components/briefing/DailyBriefingTrigger";
 import type { ColdCaseStatus } from "@/components/mission-board/ColdCaseCard";
 
 // Units that have cold case content built — update as new cold cases are authored
-const COLD_CASE_UNITS = new Set([1]);
+const COLD_CASE_UNITS = new Set([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
 
 // Boss definitions: { afterUnit → boss metadata }
 const BOSS_AFTER_UNIT: Record<number, { id: string; title: string; subtitle: string }> = {

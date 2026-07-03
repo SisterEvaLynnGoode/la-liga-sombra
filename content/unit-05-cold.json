@@ -1,0 +1,446 @@
+{
+  "unitNumber": 5,
+  "country": "Argentina",
+  "city": "Buenos Aires",
+  "caseTitle": "El Prototipo Robado",
+  "caseDescription": "En la Expo Tech de Buenos Aires, el prototipo de un teléfono revolucionario desapareció del stand de OMEGA — un año después del gran hackeo. Una 'ingeniera invitada' con credencial falsa es la principal sospechosa. Caso frío: números, fechas y puntos dobles.",
+  "criminalName": "La Ingeniera Fantasma",
+  "bonusClue": "La credencial falsa tiene un error: dice '31 de febrero' como fecha de emisión. ¡Esa fecha no existe!",
+  "isColdCase": true,
+  "vocab": [
+    {
+      "spanish": "la computadora portátil",
+      "english": "laptop computer",
+      "audio": "/audio/unit-05/computadora-portatil.mp3"
+    },
+    {
+      "spanish": "el celular",
+      "english": "cell phone",
+      "audio": "/audio/unit-05/celular.mp3"
+    },
+    {
+      "spanish": "la tableta",
+      "english": "tablet",
+      "audio": "/audio/unit-05/tableta.mp3"
+    },
+    {
+      "spanish": "la cámara",
+      "english": "camera",
+      "audio": "/audio/unit-05/camara.mp3"
+    },
+    {
+      "spanish": "los audífonos",
+      "english": "headphones",
+      "audio": "/audio/unit-05/audifonos.mp3"
+    },
+    {
+      "spanish": "el cargador",
+      "english": "charger",
+      "audio": "/audio/unit-05/cargador.mp3"
+    },
+    {
+      "spanish": "el teclado",
+      "english": "keyboard",
+      "audio": "/audio/unit-05/teclado.mp3"
+    },
+    {
+      "spanish": "el ratón",
+      "english": "mouse (computer)",
+      "audio": "/audio/unit-05/raton.mp3"
+    },
+    {
+      "spanish": "el servidor",
+      "english": "server",
+      "audio": "/audio/unit-05/servidor.mp3"
+    },
+    {
+      "spanish": "la red",
+      "english": "network",
+      "audio": "/audio/unit-05/red.mp3"
+    },
+    {
+      "spanish": "la contraseña",
+      "english": "password",
+      "audio": "/audio/unit-05/contrasena.mp3"
+    },
+    {
+      "spanish": "el disco duro",
+      "english": "hard drive",
+      "audio": "/audio/unit-05/disco-duro.mp3"
+    },
+    {
+      "spanish": "enero",
+      "english": "January",
+      "audio": "/audio/unit-05/enero.mp3"
+    },
+    {
+      "spanish": "febrero",
+      "english": "February",
+      "audio": "/audio/unit-05/febrero.mp3"
+    },
+    {
+      "spanish": "marzo",
+      "english": "March",
+      "audio": "/audio/unit-05/marzo.mp3"
+    },
+    {
+      "spanish": "abril",
+      "english": "April",
+      "audio": "/audio/unit-05/abril.mp3"
+    },
+    {
+      "spanish": "mayo",
+      "english": "May",
+      "audio": "/audio/unit-05/mayo.mp3"
+    },
+    {
+      "spanish": "junio",
+      "english": "June",
+      "audio": "/audio/unit-05/junio.mp3"
+    },
+    {
+      "spanish": "julio",
+      "english": "July",
+      "audio": "/audio/unit-05/julio.mp3"
+    },
+    {
+      "spanish": "agosto",
+      "english": "August",
+      "audio": "/audio/unit-05/agosto.mp3"
+    },
+    {
+      "spanish": "septiembre",
+      "english": "September",
+      "audio": "/audio/unit-05/septiembre.mp3"
+    },
+    {
+      "spanish": "octubre",
+      "english": "October",
+      "audio": "/audio/unit-05/octubre.mp3"
+    },
+    {
+      "spanish": "noviembre",
+      "english": "November",
+      "audio": "/audio/unit-05/noviembre.mp3"
+    },
+    {
+      "spanish": "diciembre",
+      "english": "December",
+      "audio": "/audio/unit-05/diciembre.mp3"
+    },
+    {
+      "spanish": "cien (100)",
+      "english": "one hundred",
+      "audio": "/audio/unit-05/cien.mp3"
+    },
+    {
+      "spanish": "doscientos (200)",
+      "english": "two hundred",
+      "audio": "/audio/unit-05/doscientos.mp3"
+    },
+    {
+      "spanish": "quinientos (500)",
+      "english": "five hundred",
+      "audio": "/audio/unit-05/quinientos.mp3"
+    },
+    {
+      "spanish": "mil (1.000)",
+      "english": "one thousand",
+      "audio": "/audio/unit-05/mil.mp3"
+    },
+    {
+      "spanish": "dos mil (2.000)",
+      "english": "two thousand",
+      "audio": "/audio/unit-05/dos-mil.mp3"
+    },
+    {
+      "spanish": "un millón (1.000.000)",
+      "english": "one million",
+      "audio": "/audio/unit-05/millon.mp3"
+    },
+    {
+      "spanish": "tener X años",
+      "english": "to be X years old",
+      "audio": "/audio/unit-05/tener-anos.mp3"
+    },
+    {
+      "spanish": "tener hambre",
+      "english": "to be hungry",
+      "audio": "/audio/unit-05/tener-hambre.mp3"
+    },
+    {
+      "spanish": "tener sed",
+      "english": "to be thirsty",
+      "audio": "/audio/unit-05/tener-sed.mp3"
+    },
+    {
+      "spanish": "tener miedo",
+      "english": "to be afraid / scared",
+      "audio": "/audio/unit-05/tener-miedo.mp3"
+    },
+    {
+      "spanish": "tener prisa",
+      "english": "to be in a hurry",
+      "audio": "/audio/unit-05/tener-prisa.mp3"
+    },
+    {
+      "spanish": "yo vengo",
+      "english": "I come / I arrive",
+      "audio": "/audio/unit-05/vengo.mp3"
+    },
+    {
+      "spanish": "tú vienes",
+      "english": "you come (informal)",
+      "audio": "/audio/unit-05/vienes.mp3"
+    },
+    {
+      "spanish": "él/ella viene",
+      "english": "he/she comes",
+      "audio": "/audio/unit-05/viene.mp3"
+    }
+  ],
+  "stages": [
+    {
+      "type": "cutscene",
+      "videoUrl": "/videos/unit-05-cold-intro.mp4",
+      "subtitleUrl": "/videos/unit-05-intro.vtt",
+      "chiefName": "Jefa Ramírez",
+      "chiefImageSeed": 60,
+      "briefingLines": [
+        "Agente, Buenos Aires otra vez. El Edificio OMEGA nos llama.",
+        "El prototipo del teléfono OMEGA X desapareció de la Expo Tech — vale dos millones de dólares.",
+        "Una 'ingeniera invitada' entró con una credencial falsa. Es profesional y conoce la tecnología.",
+        "Caso frío: los números y las fechas son la clave. Puntos dobles. ¡Vamos!"
+      ],
+      "chiefImageUrl": "/images/characters/chief-ramirez.png"
+    },
+    {
+      "type": "vocabMatch",
+      "pairs": [
+        {
+          "spanish": "la computadora portátil",
+          "english": "laptop computer"
+        },
+        {
+          "spanish": "el celular",
+          "english": "cell phone"
+        },
+        {
+          "spanish": "la tableta",
+          "english": "tablet"
+        },
+        {
+          "spanish": "la cámara",
+          "english": "camera"
+        },
+        {
+          "spanish": "los audífonos",
+          "english": "headphones"
+        },
+        {
+          "spanish": "el cargador",
+          "english": "charger"
+        },
+        {
+          "spanish": "el teclado",
+          "english": "keyboard"
+        },
+        {
+          "spanish": "el ratón",
+          "english": "mouse (computer)"
+        }
+      ]
+    },
+    {
+      "type": "dialogueChoice",
+      "clueReward": "La sospechosa preguntó el código del depósito y dijo tener treinta años… pero su credencial dice cuarenta.",
+      "npcName": "Facundo, el guardia de la Expo",
+      "npcAvatar": "💂",
+      "startNodeId": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "npcLine": "¡Che, buenas! ¿Vos sos el detective? Acá pasó algo grande, te cuento.",
+          "options": [
+            {
+              "text": "Buenas tardes, Facundo. Soy detective. ¿Qué vio usted en el stand de OMEGA?",
+              "isCorrect": true,
+              "nextNodeId": "info"
+            },
+            {
+              "text": "¿Dónde puedo comprar un teléfono nuevo?",
+              "isCorrect": false,
+              "feedback": "¡No estás de compras! Preséntate y pregunta por el robo del prototipo."
+            },
+            {
+              "text": "¿Qué es una Expo Tech?",
+              "isCorrect": false,
+              "feedback": "Ya sabes qué es — pregunta por lo que vio el guardia."
+            }
+          ]
+        },
+        {
+          "id": "info",
+          "npcLine": "Una mujer con credencial de 'ingeniera invitada' preguntó el código del depósito. Dijo: 'Tengo treinta años de experiencia'… pero su credencial dice que tiene cuarenta años. ¡Los números no funcionan, che!",
+          "options": [
+            {
+              "text": "¿Qué más recuerda de la credencial?",
+              "isCorrect": true,
+              "nextNodeId": "detail"
+            },
+            {
+              "text": "¿Usted tiene hambre?",
+              "isCorrect": false,
+              "feedback": "¡Concentración, agente! Pregunta por los detalles de la credencial."
+            },
+            {
+              "text": "¿Cuántos stands hay en la Expo?",
+              "isCorrect": false,
+              "feedback": "El número de stands no importa. La credencial falsa es la pista."
+            }
+          ]
+        },
+        {
+          "id": "detail",
+          "npcLine": "La credencial tenía la fecha de emisión: ¡31 de febrero! Esa fecha no existe. Y el número de empleada era 0000. Nadie revisó porque ella hablaba con mucha seguridad.",
+          "isEnd": true,
+          "endMessage": "Facundo te muestra la foto de la cámara de seguridad. La cara está clara."
+        }
+      ]
+    },
+    {
+      "type": "readingComp",
+      "clueReward": "La sospechosa entró a las 14:00 del 15 de marzo, fue al depósito a las 15:30, y el prototipo desapareció entre las 15:30 y las 15:45.",
+      "passage": "REGISTRO DIGITAL — EXPO TECH BUENOS AIRES, STAND OMEGA\nFecha: sábado, 15 de marzo\n\n14:00 — Entra 'Ing. Valeria Núñez', credencial número 0000, fecha de emisión 31 de febrero. El sistema no verifica la fecha.\n14:30 — La visitante hace muchas preguntas sobre el prototipo OMEGA X: cuánto pesa, cuánto cuesta, dónde duerme de noche.\n15:30 — La cámara del depósito registra una entrada con el código de mantenimiento. El prototipo está en su caja.\n15:45 — La cámara registra la salida. La caja del prototipo está vacía.\n16:00 — 'Valeria Núñez' no está en la Expo. Su credencial queda en un basurero.\nNota: OMEGA no tiene ninguna empleada ni invitada con ese nombre.",
+      "glossary": [
+        {
+          "word": "credencial",
+          "translation": "badge / credential"
+        },
+        {
+          "word": "emisión",
+          "translation": "issue (date)"
+        },
+        {
+          "word": "depósito",
+          "translation": "storage room"
+        },
+        {
+          "word": "mantenimiento",
+          "translation": "maintenance"
+        },
+        {
+          "word": "basurero",
+          "translation": "trash can"
+        },
+        {
+          "word": "pesa",
+          "translation": "weighs"
+        }
+      ],
+      "questions": [
+        {
+          "id": "cr1",
+          "text": "¿Qué fecha de emisión tiene la credencial falsa?",
+          "type": "multiple_choice",
+          "options": [
+            "28 de febrero",
+            "30 de enero",
+            "31 de febrero",
+            "15 de marzo"
+          ],
+          "correctIndex": 2,
+          "explanationEs": "La credencial dice «31 de febrero» — ¡febrero nunca tiene 31 días!",
+          "explanationEn": "February 31st doesn't exist — the fake badge's giveaway."
+        },
+        {
+          "id": "cr2",
+          "text": "¿Qué número de empleada tenía la credencial?",
+          "type": "multiple_choice",
+          "options": [
+            "0000",
+            "1234",
+            "4040",
+            "9999"
+          ],
+          "correctIndex": 0,
+          "explanationEs": "El registro dice «credencial número 0000» — un número imposible.",
+          "explanationEn": "Badge number 0000 — an impossible employee number."
+        },
+        {
+          "id": "cr3",
+          "text": "¿Entre qué horas desapareció el prototipo?",
+          "type": "multiple_choice",
+          "options": [
+            "14:00 y 14:30",
+            "14:30 y 15:30",
+            "15:30 y 15:45",
+            "16:00 y 17:00"
+          ],
+          "correctIndex": 2,
+          "explanationEs": "La cámara registra entrada a las 15:30 con el prototipo en su caja y salida a las 15:45 con la caja vacía.",
+          "explanationEn": "Between the 15:30 entry and 15:45 exit, the box was emptied."
+        },
+        {
+          "id": "cr4",
+          "text": "¿Dónde queda la credencial al final? (Escribe en español.)",
+          "type": "short_answer",
+          "acceptableAnswers": [
+            "en un basurero",
+            "en el basurero",
+            "basurero"
+          ],
+          "explanationEs": "El registro dice: «Su credencial queda en un basurero».",
+          "explanationEn": "She dumped the badge in a trash can."
+        }
+      ]
+    },
+    {
+      "type": "lineup",
+      "correctSuspectId": "la-ingeniera-fantasma",
+      "hint": "Busca a una mujer de unos 40 años que habla con mucha seguridad sobre tecnología, dice tener 30 años de experiencia y usa el código de mantenimiento.",
+      "suspects": [
+        {
+          "id": "la-ingeniera-fantasma",
+          "name": "La Ingeniera Fantasma",
+          "realName": "'Valeria Núñez' — identidad falsa",
+          "age": 40,
+          "description": "Es una mujer de cuarenta años, segura y muy inteligente. Sabe todo sobre teléfonos y códigos. Dice tener treinta años de experiencia — los números no funcionan.",
+          "imageSeed": 34
+        },
+        {
+          "id": "la-disenadora",
+          "name": "La Diseñadora",
+          "realName": "Camila Ferreyra Paz",
+          "age": 29,
+          "description": "Es una diseñadora de veintinueve años del stand vecino. Tiene credencial real número 2847. Estuvo presentando su aplicación toda la tarde.",
+          "imageSeed": 24
+        },
+        {
+          "id": "el-tecnico-expo",
+          "name": "El Técnico",
+          "realName": "Martín Ocampo Silva",
+          "age": 35,
+          "description": "Es el técnico de mantenimiento de treinta y cinco años. Tiene el código del depósito, pero las cámaras lo muestran arreglando luces en el otro pabellón.",
+          "imageSeed": 5
+        },
+        {
+          "id": "el-periodista",
+          "name": "El Periodista",
+          "realName": "Bruno Aguirre Costa",
+          "age": 44,
+          "description": "Es un periodista de tecnología de cuarenta y cuatro años. Hace muchas preguntas sobre precios y fechas, pero su credencial de prensa es real y verificada.",
+          "imageSeed": 17
+        },
+        {
+          "id": "la-estudiante-ing",
+          "name": "La Estudiante",
+          "realName": "Sofía Bianchi Vera",
+          "age": 21,
+          "description": "Es una estudiante de ingeniería de veintiún años. Visitó el stand tres veces porque quiere trabajar en OMEGA. Su mochila es demasiado pequeña para el prototipo.",
+          "imageSeed": 39
+        }
+      ]
+    }
+  ]
+}

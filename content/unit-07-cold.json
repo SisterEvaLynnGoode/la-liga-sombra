@@ -1,0 +1,457 @@
+{
+  "unitNumber": 7,
+  "country": "Chile",
+  "city": "Viña del Mar",
+  "caseTitle": "La Gaviota de Oro",
+  "caseDescription": "El trofeo Gaviota de Oro del Festival de Viña del Mar desapareció la noche antes de la gran final. Una cantante enmascarada del concurso de talentos es la principal sospechosa — pero hay cinco artistas y todos llevan máscara en el ensayo. Caso frío, primer premio: puntos dobles.",
+  "criminalName": "La Cantante Enmascarada",
+  "bonusClue": "La sospechosa canta en segundo lugar en el programa — y su camerino es el tercero, el más cercano a la sala de trofeos.",
+  "isColdCase": true,
+  "vocab": [
+    {
+      "spanish": "el cine",
+      "english": "movie theater / the cinema",
+      "audio": "/audio/unit-07/cine.mp3"
+    },
+    {
+      "spanish": "el concierto",
+      "english": "concert",
+      "audio": "/audio/unit-07/concierto.mp3"
+    },
+    {
+      "spanish": "la fiesta",
+      "english": "party / celebration",
+      "audio": "/audio/unit-07/fiesta.mp3"
+    },
+    {
+      "spanish": "el parque",
+      "english": "park",
+      "audio": "/audio/unit-07/parque.mp3"
+    },
+    {
+      "spanish": "el deporte",
+      "english": "sport",
+      "audio": "/audio/unit-07/deporte.mp3"
+    },
+    {
+      "spanish": "el estadio",
+      "english": "stadium",
+      "audio": "/audio/unit-07/estadio.mp3"
+    },
+    {
+      "spanish": "el festival",
+      "english": "festival",
+      "audio": "/audio/unit-07/festival.mp3"
+    },
+    {
+      "spanish": "el teatro",
+      "english": "theater",
+      "audio": "/audio/unit-07/teatro.mp3"
+    },
+    {
+      "spanish": "la playa",
+      "english": "beach",
+      "audio": "/audio/unit-07/playa.mp3"
+    },
+    {
+      "spanish": "la discoteca",
+      "english": "nightclub / dance club",
+      "audio": "/audio/unit-07/discoteca.mp3"
+    },
+    {
+      "spanish": "el verano",
+      "english": "summer",
+      "audio": "/audio/unit-07/verano.mp3"
+    },
+    {
+      "spanish": "el otoño",
+      "english": "autumn / fall",
+      "audio": "/audio/unit-07/otono.mp3"
+    },
+    {
+      "spanish": "el invierno",
+      "english": "winter",
+      "audio": "/audio/unit-07/invierno.mp3"
+    },
+    {
+      "spanish": "la primavera",
+      "english": "spring",
+      "audio": "/audio/unit-07/primavera.mp3"
+    },
+    {
+      "spanish": "hace calor",
+      "english": "it's hot",
+      "audio": "/audio/unit-07/hace-calor.mp3"
+    },
+    {
+      "spanish": "hace frío",
+      "english": "it's cold",
+      "audio": "/audio/unit-07/hace-frio.mp3"
+    },
+    {
+      "spanish": "hace viento",
+      "english": "it's windy",
+      "audio": "/audio/unit-07/hace-viento.mp3"
+    },
+    {
+      "spanish": "hace sol",
+      "english": "it's sunny",
+      "audio": "/audio/unit-07/hace-sol.mp3"
+    },
+    {
+      "spanish": "está nublado",
+      "english": "it's cloudy",
+      "audio": "/audio/unit-07/esta-nublado.mp3"
+    },
+    {
+      "spanish": "el/la cantante",
+      "english": "singer",
+      "audio": "/audio/unit-07/cantante.mp3"
+    },
+    {
+      "spanish": "el bailarín / la bailarina",
+      "english": "dancer (m/f)",
+      "audio": "/audio/unit-07/bailarin.mp3"
+    },
+    {
+      "spanish": "el jugador / la jugadora",
+      "english": "player / athlete (m/f)",
+      "audio": "/audio/unit-07/jugador.mp3"
+    },
+    {
+      "spanish": "el/la artista",
+      "english": "artist",
+      "audio": "/audio/unit-07/artista.mp3"
+    },
+    {
+      "spanish": "el/la periodista",
+      "english": "journalist / reporter",
+      "audio": "/audio/unit-07/periodista.mp3"
+    },
+    {
+      "spanish": "el/la guitarrista",
+      "english": "guitarist",
+      "audio": "/audio/unit-07/guitarrista.mp3"
+    },
+    {
+      "spanish": "el pintor / la pintora",
+      "english": "painter (m/f)",
+      "audio": "/audio/unit-07/pintor.mp3"
+    },
+    {
+      "spanish": "el/la tenista",
+      "english": "tennis player",
+      "audio": "/audio/unit-07/tenista.mp3"
+    },
+    {
+      "spanish": "el actor / la actriz",
+      "english": "actor / actress",
+      "audio": "/audio/unit-07/actor.mp3"
+    },
+    {
+      "spanish": "el/la turista",
+      "english": "tourist",
+      "audio": "/audio/unit-07/turista.mp3"
+    },
+    {
+      "spanish": "jugar (u→ue)",
+      "english": "to play — sports/games (stem-changing)",
+      "audio": "/audio/unit-07/jugar.mp3"
+    },
+    {
+      "spanish": "encontrar (o→ue)",
+      "english": "to find / to encounter (stem-changing)",
+      "audio": "/audio/unit-07/encontrar.mp3"
+    },
+    {
+      "spanish": "poder (o→ue)",
+      "english": "to be able to / can (stem-changing)",
+      "audio": "/audio/unit-07/poder.mp3"
+    },
+    {
+      "spanish": "dormir (o→ue)",
+      "english": "to sleep (stem-changing)",
+      "audio": "/audio/unit-07/dormir.mp3"
+    },
+    {
+      "spanish": "volver (o→ue)",
+      "english": "to return / come back (stem-changing)",
+      "audio": "/audio/unit-07/volver.mp3"
+    },
+    {
+      "spanish": "almorzar (o→ue)",
+      "english": "to have lunch (stem-changing)",
+      "audio": "/audio/unit-07/almorzar.mp3"
+    },
+    {
+      "spanish": "primero / primera",
+      "english": "first (m/f)",
+      "audio": "/audio/unit-07/primero.mp3"
+    },
+    {
+      "spanish": "segundo / segunda",
+      "english": "second (m/f)",
+      "audio": "/audio/unit-07/segundo.mp3"
+    },
+    {
+      "spanish": "tercero / tercera",
+      "english": "third (m/f)",
+      "audio": "/audio/unit-07/tercero.mp3"
+    },
+    {
+      "spanish": "cuarto / cuarta",
+      "english": "fourth (m/f)",
+      "audio": "/audio/unit-07/cuarto.mp3"
+    },
+    {
+      "spanish": "quinto / quinta",
+      "english": "fifth (m/f)",
+      "audio": "/audio/unit-07/quinto.mp3"
+    }
+  ],
+  "stages": [
+    {
+      "type": "cutscene",
+      "videoUrl": "/videos/unit-07-cold-intro.mp4",
+      "subtitleUrl": "/videos/unit-07-intro.vtt",
+      "chiefName": "Jefa Ramírez",
+      "chiefImageSeed": 60,
+      "briefingLines": [
+        "Agente, ¡el Festival de Viña está en crisis!",
+        "La Gaviota de Oro desapareció la noche antes de la final. Sin trofeo, no hay festival.",
+        "Sospechamos de una cantante enmascarada del concurso. Pero en el ensayo… todos llevan máscara.",
+        "Caso frío: primero, segundo, tercero — los ordinales son la clave. ¡Puntos dobles, agente!"
+      ],
+      "chiefImageUrl": "/images/characters/chief-ramirez.png"
+    },
+    {
+      "type": "vocabMatch",
+      "pairs": [
+        {
+          "spanish": "el cine",
+          "english": "movie theater / the cinema"
+        },
+        {
+          "spanish": "el concierto",
+          "english": "concert"
+        },
+        {
+          "spanish": "la fiesta",
+          "english": "party / celebration"
+        },
+        {
+          "spanish": "el parque",
+          "english": "park"
+        },
+        {
+          "spanish": "el deporte",
+          "english": "sport"
+        },
+        {
+          "spanish": "el estadio",
+          "english": "stadium"
+        },
+        {
+          "spanish": "el festival",
+          "english": "festival"
+        },
+        {
+          "spanish": "el teatro",
+          "english": "theater"
+        }
+      ]
+    },
+    {
+      "type": "dialogueChoice",
+      "clueReward": "La sospechosa ensayó fuera de su turno y preguntó cuándo apagan las luces del pasillo de trofeos.",
+      "npcName": "Nico, el técnico de sonido",
+      "npcAvatar": "🎧",
+      "startNodeId": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "npcLine": "¡Hola! ¿El detective? Qué bueno, porque aquí está pasando algo muy raro con los ensayos.",
+          "options": [
+            {
+              "text": "Buenas tardes, Nico. Soy detective. ¿Qué notó usted en el ensayo de anoche?",
+              "isCorrect": true,
+              "nextNodeId": "info"
+            },
+            {
+              "text": "¿Me consigues entradas para la final?",
+              "isCorrect": false,
+              "feedback": "¡Las entradas después! Pregunta por el ensayo de anoche."
+            },
+            {
+              "text": "¿Qué tiempo hace en Viña?",
+              "isCorrect": false,
+              "feedback": "El tiempo no importa dentro del teatro. Pregunta por los ensayos."
+            }
+          ]
+        },
+        {
+          "id": "info",
+          "npcLine": "Anoche una cantante ensayó FUERA de su turno. Su turno es el segundo, pero ensayó en el quinto, la última. Y me preguntó a qué hora apagamos las luces del pasillo de trofeos. ¡Qué pregunta más rara!",
+          "options": [
+            {
+              "text": "¿Recuerda algo de su voz o su ropa?",
+              "isCorrect": true,
+              "nextNodeId": "detail"
+            },
+            {
+              "text": "¿Cuál es tu canción favorita?",
+              "isCorrect": false,
+              "feedback": "La música después — pregunta por la descripción de la cantante."
+            },
+            {
+              "text": "¿Las luces son nuevas?",
+              "isCorrect": false,
+              "feedback": "Las luces no son la pista. La cantante que preguntó por ellas, sí."
+            }
+          ]
+        },
+        {
+          "id": "detail",
+          "npcLine": "Voz grave, máscara plateada, y llevaba impermeable — ¡pero anoche no llovió! Estaba nublado, sí, pero no cayó ni una gota. ¿Para qué un impermeable seco?",
+          "isEnd": true,
+          "endMessage": "Nico te pasa el programa del festival con los turnos marcados. Segunda en cantar, tercera en camerino."
+        }
+      ]
+    },
+    {
+      "type": "readingComp",
+      "clueReward": "El trofeo desapareció entre las 22:00 y las 22:20, cuando las luces del pasillo estaban apagadas y la cantante del segundo turno no estaba en su camerino.",
+      "passage": "INFORME NOCTURNO — TEATRO DEL FESTIVAL, VIÑA DEL MAR\nNoche del ensayo general (nublado, sin lluvia)\n\n21:00 — Termina el ensayo general. Los cinco artistas van a sus camerinos: primero, segundo, tercero, cuarto y quinto.\n21:45 — La artista del segundo turno pide ensayar otra vez, en el quinto lugar, la última.\n22:00 — Las luces del pasillo de trofeos se apagan por mantenimiento programado, veinte minutos exactos.\n22:05 — El guardia pasa por los camerinos. El camerino tercero está vacío — es el camerino de la artista del segundo turno.\n22:20 — Las luces vuelven. La vitrina de la Gaviota de Oro está abierta y vacía.\n22:30 — La artista del segundo turno regresa a su camerino con un bolso de ropa 'para la lavandería'. La lavandería cierra a las 21:00.",
+      "glossary": [
+        {
+          "word": "ensayo",
+          "translation": "rehearsal"
+        },
+        {
+          "word": "camerino",
+          "translation": "dressing room"
+        },
+        {
+          "word": "turno",
+          "translation": "turn / slot"
+        },
+        {
+          "word": "impermeable",
+          "translation": "raincoat"
+        },
+        {
+          "word": "nublado",
+          "translation": "cloudy"
+        },
+        {
+          "word": "lavandería",
+          "translation": "laundry"
+        }
+      ],
+      "questions": [
+        {
+          "id": "cr1",
+          "text": "¿Cuánto tiempo estuvieron apagadas las luces del pasillo?",
+          "type": "multiple_choice",
+          "options": [
+            "Diez minutos",
+            "Veinte minutos",
+            "Treinta minutos",
+            "Toda la noche"
+          ],
+          "correctIndex": 1,
+          "explanationEs": "El informe dice: «veinte minutos exactos» — de 22:00 a 22:20.",
+          "explanationEn": "Exactly twenty minutes of darkness — the theft window."
+        },
+        {
+          "id": "cr2",
+          "text": "¿Qué camerino estaba vacío a las 22:05?",
+          "type": "multiple_choice",
+          "options": [
+            "El primero",
+            "El segundo",
+            "El tercero",
+            "El quinto"
+          ],
+          "correctIndex": 2,
+          "explanationEs": "«El camerino tercero está vacío» — el de la artista del segundo turno. ¡Ordinales!",
+          "explanationEn": "The THIRD dressing room (of the SECOND performer) was empty."
+        },
+        {
+          "id": "cr3",
+          "text": "¿Qué tiempo hacía esa noche?",
+          "type": "multiple_choice",
+          "options": [
+            "Llovía mucho",
+            "Estaba nublado, sin lluvia",
+            "Hacía sol",
+            "Nevaba"
+          ],
+          "correctIndex": 1,
+          "explanationEs": "El informe dice: «nublado, sin lluvia» — por eso el impermeable seco es sospechoso.",
+          "explanationEn": "Cloudy but dry — so why the raincoat?"
+        },
+        {
+          "id": "cr4",
+          "text": "¿A qué hora cierra la lavandería? (Escribe la hora en números.)",
+          "type": "short_answer",
+          "acceptableAnswers": [
+            "21:00",
+            "9:00",
+            "a las 21:00",
+            "las 21:00"
+          ],
+          "explanationEs": "La lavandería cierra a las 21:00 — su excusa del bolso es falsa.",
+          "explanationEn": "The laundry closed at 21:00 — her laundry-bag excuse is fake."
+        }
+      ]
+    },
+    {
+      "type": "lineup",
+      "correctSuspectId": "la-cantante-enmascarada",
+      "hint": "Busca a la artista del SEGUNDO turno con el camerino TERCERO: voz grave, máscara plateada y un impermeable en una noche sin lluvia.",
+      "suspects": [
+        {
+          "id": "la-cantante-enmascarada",
+          "name": "La Cantante Enmascarada",
+          "realName": "Renata Fuentes Alba",
+          "age": 36,
+          "description": "Es una cantante de treinta y seis años con voz grave y máscara plateada. Canta en el segundo turno y su camerino es el tercero. Anoche llevaba impermeable… sin lluvia.",
+          "imageSeed": 42
+        },
+        {
+          "id": "el-bajista",
+          "name": "El Bajista",
+          "realName": "Cristóbal Rojas Pinto",
+          "age": 33,
+          "description": "Es un músico de treinta y tres años con voz grave. Toca en el quinto turno y su camerino es el primero, al otro lado del teatro. Estuvo afinando su bajo con Nico.",
+          "imageSeed": 9
+        },
+        {
+          "id": "la-bailarina",
+          "name": "La Bailarina",
+          "realName": "Josefa Aravena Cruz",
+          "age": 27,
+          "description": "Es una bailarina de veintisiete años con máscara dorada, no plateada. Baila en el cuarto turno y ensayó su coreografía en el escenario hasta las 22:30 — todos la vieron.",
+          "imageSeed": 35
+        },
+        {
+          "id": "el-presentador",
+          "name": "El Presentador",
+          "realName": "Rodrigo Salas Bravo",
+          "age": 50,
+          "description": "Es el presentador del festival, de cincuenta años. No lleva máscara y estuvo grabando promociones frente a las cámaras de 21:30 a 22:30.",
+          "imageSeed": 14
+        },
+        {
+          "id": "la-vestuarista",
+          "name": "La Vestuarista",
+          "realName": "Amanda Leiva Soto",
+          "age": 45,
+          "description": "Es la vestuarista de cuarenta y cinco años. Lleva ropa de todos los artistas a la lavandería… pero siempre antes de las 21:00, cuando cierra.",
+          "imageSeed": 50
+        }
+      ]
+    }
+  ]
+}

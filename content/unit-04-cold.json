@@ -1,0 +1,437 @@
+{
+  "unitNumber": 4,
+  "country": "Costa Rica",
+  "city": "San José",
+  "caseTitle": "La Reunión Familiar",
+  "caseDescription": "En la gran reunión anual de la familia Solano, cerca del Volcán Arenal, el reloj de oro del abuelo desapareció durante la cena. Todos son familia… pero una 'prima' que nadie recuerda bien llegó sin invitación. Caso frío: pistas difíciles y puntos dobles.",
+  "criminalName": "La Prima Perdida",
+  "bonusClue": "La sospechosa dijo ser 'la prima de Puntarenas', pero la familia de Puntarenas no la conoce.",
+  "isColdCase": true,
+  "vocab": [
+    {
+      "spanish": "la madre / la mamá",
+      "english": "mother / mom",
+      "audio": "/audio/unit-04/madre.mp3"
+    },
+    {
+      "spanish": "el padre / el papá",
+      "english": "father / dad",
+      "audio": "/audio/unit-04/padre.mp3"
+    },
+    {
+      "spanish": "el hermano",
+      "english": "brother",
+      "audio": "/audio/unit-04/hermano.mp3"
+    },
+    {
+      "spanish": "la hermana",
+      "english": "sister",
+      "audio": "/audio/unit-04/hermana.mp3"
+    },
+    {
+      "spanish": "la abuela",
+      "english": "grandmother",
+      "audio": "/audio/unit-04/abuela.mp3"
+    },
+    {
+      "spanish": "el abuelo",
+      "english": "grandfather",
+      "audio": "/audio/unit-04/abuelo.mp3"
+    },
+    {
+      "spanish": "el tío",
+      "english": "uncle",
+      "audio": "/audio/unit-04/tio.mp3"
+    },
+    {
+      "spanish": "la tía",
+      "english": "aunt",
+      "audio": "/audio/unit-04/tia.mp3"
+    },
+    {
+      "spanish": "el primo",
+      "english": "male cousin",
+      "audio": "/audio/unit-04/primo.mp3"
+    },
+    {
+      "spanish": "la prima",
+      "english": "female cousin",
+      "audio": "/audio/unit-04/prima.mp3"
+    },
+    {
+      "spanish": "el nieto",
+      "english": "grandson",
+      "audio": "/audio/unit-04/nieto.mp3"
+    },
+    {
+      "spanish": "el esposo / el marido",
+      "english": "husband",
+      "audio": "/audio/unit-04/esposo.mp3"
+    },
+    {
+      "spanish": "contento / contenta",
+      "english": "happy / pleased (m/f)",
+      "audio": "/audio/unit-04/contento.mp3"
+    },
+    {
+      "spanish": "triste",
+      "english": "sad",
+      "audio": "/audio/unit-04/triste.mp3"
+    },
+    {
+      "spanish": "nervioso / nerviosa",
+      "english": "nervous (m/f)",
+      "audio": "/audio/unit-04/nervioso.mp3"
+    },
+    {
+      "spanish": "enojado / enojada",
+      "english": "angry (m/f)",
+      "audio": "/audio/unit-04/enojado.mp3"
+    },
+    {
+      "spanish": "cansado / cansada",
+      "english": "tired (m/f)",
+      "audio": "/audio/unit-04/cansado.mp3"
+    },
+    {
+      "spanish": "preocupado / preocupada",
+      "english": "worried (m/f)",
+      "audio": "/audio/unit-04/preocupado.mp3"
+    },
+    {
+      "spanish": "emocionado / emocionada",
+      "english": "excited (m/f)",
+      "audio": "/audio/unit-04/emocionado.mp3"
+    },
+    {
+      "spanish": "aburrido / aburrida",
+      "english": "bored (m/f)",
+      "audio": "/audio/unit-04/aburrido.mp3"
+    },
+    {
+      "spanish": "asustado / asustada",
+      "english": "scared / frightened (m/f)",
+      "audio": "/audio/unit-04/asustado.mp3"
+    },
+    {
+      "spanish": "sorprendido / sorprendida",
+      "english": "surprised (m/f)",
+      "audio": "/audio/unit-04/sorprendido.mp3"
+    },
+    {
+      "spanish": "feliz",
+      "english": "happy / joyful",
+      "audio": "/audio/unit-04/feliz.mp3"
+    },
+    {
+      "spanish": "tranquilo / tranquila",
+      "english": "calm / relaxed (m/f)",
+      "audio": "/audio/unit-04/tranquilo.mp3"
+    },
+    {
+      "spanish": "vivir",
+      "english": "to live",
+      "audio": "/audio/unit-04/vivir.mp3"
+    },
+    {
+      "spanish": "escribir",
+      "english": "to write",
+      "audio": "/audio/unit-04/escribir.mp3"
+    },
+    {
+      "spanish": "abrir",
+      "english": "to open",
+      "audio": "/audio/unit-04/abrir.mp3"
+    },
+    {
+      "spanish": "recibir",
+      "english": "to receive",
+      "audio": "/audio/unit-04/recibir.mp3"
+    },
+    {
+      "spanish": "compartir",
+      "english": "to share",
+      "audio": "/audio/unit-04/compartir.mp3"
+    },
+    {
+      "spanish": "describir",
+      "english": "to describe",
+      "audio": "/audio/unit-04/describir.mp3"
+    },
+    {
+      "spanish": "mi / mis",
+      "english": "my (sing. / plural)",
+      "audio": "/audio/unit-04/mi.mp3"
+    },
+    {
+      "spanish": "tu / tus",
+      "english": "your informal (sing. / plural)",
+      "audio": "/audio/unit-04/tu-pos.mp3"
+    },
+    {
+      "spanish": "su / sus",
+      "english": "his / her / your formal (sing. / plural)",
+      "audio": "/audio/unit-04/su.mp3"
+    },
+    {
+      "spanish": "nuestro / nuestra",
+      "english": "our (m / f)",
+      "audio": "/audio/unit-04/nuestro.mp3"
+    },
+    {
+      "spanish": "me gusta / me gustan",
+      "english": "I like (sing. / plural)",
+      "audio": "/audio/unit-04/me-gusta.mp3"
+    },
+    {
+      "spanish": "no me gusta",
+      "english": "I don't like",
+      "audio": "/audio/unit-04/no-me-gusta.mp3"
+    }
+  ],
+  "stages": [
+    {
+      "type": "cutscene",
+      "videoUrl": "/videos/unit-04-cold-intro.mp4",
+      "subtitleUrl": "/videos/unit-04-intro.vtt",
+      "chiefName": "Jefa Ramírez",
+      "chiefImageSeed": 60,
+      "briefingLines": [
+        "Agente, pura vida — pero no para la familia Solano.",
+        "El reloj de oro del abuelo desapareció durante la reunión familiar cerca del Arenal.",
+        "Todos los invitados son familia… menos una 'prima' que nadie recuerda bien.",
+        "Es un caso frío: entrevistas solo en español y puntos dobles. Cuidado con ser y estar, agente."
+      ],
+      "chiefImageUrl": "/images/characters/chief-ramirez.png"
+    },
+    {
+      "type": "vocabMatch",
+      "pairs": [
+        {
+          "spanish": "la madre / la mamá",
+          "english": "mother / mom"
+        },
+        {
+          "spanish": "el padre / el papá",
+          "english": "father / dad"
+        },
+        {
+          "spanish": "el hermano",
+          "english": "brother"
+        },
+        {
+          "spanish": "la hermana",
+          "english": "sister"
+        },
+        {
+          "spanish": "la abuela",
+          "english": "grandmother"
+        },
+        {
+          "spanish": "el abuelo",
+          "english": "grandfather"
+        },
+        {
+          "spanish": "el tío",
+          "english": "uncle"
+        },
+        {
+          "spanish": "la tía",
+          "english": "aunt"
+        }
+      ]
+    },
+    {
+      "type": "dialogueChoice",
+      "clueReward": "La 'prima' está nerviosa toda la noche y no conoce el nombre del perro de la familia.",
+      "npcName": "Tía Elena Solano",
+      "npcAvatar": "👩‍🦳",
+      "startNodeId": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "npcLine": "¡Bienvenido, mijo! ¿Tú eres el detective? Estamos muy preocupados por el reloj del abuelo.",
+          "options": [
+            {
+              "text": "Buenas noches, doña Elena. Soy detective. ¿Cómo está la familia?",
+              "isCorrect": true,
+              "nextNodeId": "info"
+            },
+            {
+              "text": "¿Dónde está la comida? Tengo hambre.",
+              "isCorrect": false,
+              "feedback": "¡La cena puede esperar! Saluda con respeto y pregunta por la familia."
+            },
+            {
+              "text": "Usted es la ladrona, ¿verdad?",
+              "isCorrect": false,
+              "feedback": "¡Sin evidencia no acusamos a nadie! Primero saluda y escucha."
+            }
+          ]
+        },
+        {
+          "id": "info",
+          "npcLine": "Estamos tristes y preocupados. Pero mira: mi sobrina Gabriela ESTÁ rara esta noche. Normalmente ES tranquila, pero hoy está nerviosa y mira la puerta todo el tiempo.",
+          "options": [
+            {
+              "text": "¿Quién es la invitada nueva? ¿De dónde es?",
+              "isCorrect": true,
+              "nextNodeId": "detail"
+            },
+            {
+              "text": "¿El abuelo está enojado?",
+              "isCorrect": false,
+              "feedback": "El abuelo está triste, claro. Pregunta por la invitada que nadie conoce."
+            },
+            {
+              "text": "¿Cuántos años tiene el reloj?",
+              "isCorrect": false,
+              "feedback": "La historia del reloj no importa ahora. Pregunta por la 'prima' misteriosa."
+            }
+          ]
+        },
+        {
+          "id": "detail",
+          "npcLine": "Dice que es 'la prima de Puntarenas', pero llamé a mi hermana de Puntarenas… ¡y no la conoce! Y cuando el perro Firulais llegó, ella preguntó su nombre. ¡Toda la familia conoce a Firulais!",
+          "isEnd": true,
+          "endMessage": "La tía Elena te aprieta el brazo. La 'prima' está cerca de la mesa de postres."
+        }
+      ]
+    },
+    {
+      "type": "readingComp",
+      "clueReward": "La 'prima' llegó sin invitación a las 19:30, estuvo sola cerca del cuarto del abuelo, y su carro tiene placas de San José, no de Puntarenas.",
+      "passage": "NOTAS DEL ORGANIZADOR — REUNIÓN FAMILIAR SOLANO\nLugar: finca cerca del Volcán Arenal\n\n18:00 — Llegan las familias de San José y de Limón. Todos están alegres.\n19:30 — Llega una mujer sola. Dice: 'Soy Marcela, la prima de Puntarenas.' No tiene invitación, pero es la reunión familiar — nadie pregunta más.\n20:15 — Durante la cena, 'Marcela' no está en la mesa. El primo Diego la ve en el pasillo, cerca del cuarto del abuelo.\n20:45 — El abuelo busca su reloj de oro para la foto familiar. El reloj no está en su caja.\n21:00 — 'Marcela' dice que está cansada y que su hotel está lejos. Sale rápido.\nNota: Su carro tiene placas de San José — no de Puntarenas.",
+      "glossary": [
+        {
+          "word": "finca",
+          "translation": "farm / country estate"
+        },
+        {
+          "word": "invitación",
+          "translation": "invitation"
+        },
+        {
+          "word": "pasillo",
+          "translation": "hallway"
+        },
+        {
+          "word": "caja",
+          "translation": "box"
+        },
+        {
+          "word": "placas",
+          "translation": "license plates"
+        },
+        {
+          "word": "postres",
+          "translation": "desserts"
+        }
+      ],
+      "questions": [
+        {
+          "id": "cr1",
+          "text": "¿A qué hora llegó la 'prima de Puntarenas'?",
+          "type": "multiple_choice",
+          "options": [
+            "18:00",
+            "19:30",
+            "20:15",
+            "21:00"
+          ],
+          "correctIndex": 1,
+          "explanationEs": "Las notas dicen: «19:30 — Llega una mujer sola».",
+          "explanationEn": "She arrived alone at 19:30, without an invitation."
+        },
+        {
+          "id": "cr2",
+          "text": "¿Dónde estaba 'Marcela' durante la cena?",
+          "type": "multiple_choice",
+          "options": [
+            "En la mesa",
+            "En la cocina",
+            "En el pasillo, cerca del cuarto del abuelo",
+            "En el jardín"
+          ],
+          "correctIndex": 2,
+          "explanationEs": "Diego la ve «en el pasillo, cerca del cuarto del abuelo» — usamos ESTAR para la ubicación.",
+          "explanationEn": "Estar for location: she WAS in the hallway near grandpa's room."
+        },
+        {
+          "id": "cr3",
+          "text": "¿Por qué es sospechoso su carro?",
+          "type": "multiple_choice",
+          "options": [
+            "Es muy viejo",
+            "Tiene placas de San José",
+            "Es rojo",
+            "No tiene placas"
+          ],
+          "correctIndex": 1,
+          "explanationEs": "Dice ser de Puntarenas, pero su carro «tiene placas de San José».",
+          "explanationEn": "She claims Puntarenas but her plates say San José."
+        },
+        {
+          "id": "cr4",
+          "text": "¿Qué busca el abuelo para la foto? (Escribe en español.)",
+          "type": "short_answer",
+          "acceptableAnswers": [
+            "su reloj de oro",
+            "el reloj de oro",
+            "el reloj",
+            "su reloj"
+          ],
+          "explanationEs": "El abuelo busca «su reloj de oro para la foto familiar».",
+          "explanationEn": "He wanted his gold watch for the family photo."
+        }
+      ]
+    },
+    {
+      "type": "lineup",
+      "correctSuspectId": "la-prima-perdida",
+      "hint": "Busca a la invitada que ESTÁ nerviosa (aunque parece tranquila), llegó sola a las 19:30, no conoce al perro y tiene carro con placas de San José.",
+      "suspects": [
+        {
+          "id": "la-prima-perdida",
+          "name": "La Prima Perdida",
+          "realName": "'Marcela' — nombre real desconocido",
+          "age": 33,
+          "description": "Es una mujer de treinta y tres años, delgada y elegante. Dice ser de Puntarenas. Está nerviosa toda la noche, no conoce al perro de la familia y su carro es de San José.",
+          "imageSeed": 26
+        },
+        {
+          "id": "la-sobrina",
+          "name": "La Sobrina",
+          "realName": "Gabriela Solano Mora",
+          "age": 24,
+          "description": "Es una chica de veinticuatro años, normalmente tranquila pero hoy está nerviosa — ¡porque su novio viene a conocer a la familia! Conoce a Firulais desde niña.",
+          "imageSeed": 19
+        },
+        {
+          "id": "el-primo",
+          "name": "El Primo",
+          "realName": "Diego Solano Vargas",
+          "age": 29,
+          "description": "Es un hombre alegre de veintinueve años. Estuvo en la mesa toda la cena contando chistes. Él vio a 'Marcela' en el pasillo.",
+          "imageSeed": 3
+        },
+        {
+          "id": "la-vecina",
+          "name": "La Vecina",
+          "realName": "Doña Rosario Quesada",
+          "age": 58,
+          "description": "Es la vecina de la finca, de cincuenta y ocho años. Trajo un pastel de café. Conoce a la familia hace veinte años y conoce muy bien a Firulais.",
+          "imageSeed": 47
+        },
+        {
+          "id": "el-fotografo-familia",
+          "name": "El Fotógrafo",
+          "realName": "Tomás Brenes Rojas",
+          "age": 41,
+          "description": "Es el fotógrafo contratado, de cuarenta y un años. Estuvo preparando las luces para la foto familiar en el jardín toda la noche.",
+          "imageSeed": 10
+        }
+      ]
+    }
+  ]
+}
