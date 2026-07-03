@@ -124,5 +124,18 @@ export async function POST(request: NextRequest) {
     }
   }
 
+  // primera_produccion (C3): first CORRECT produced answer — typed or spoken.
+  const produced = rows.some(
+    (r) => r.correct && (r.skill === "speaking" || r.stage_type === "dialogueChoice-typed")
+  );
+  if (produced) {
+    const { data: prodBadge } = await supabase
+      .from("badges").select("id")
+      .eq("student_id", session.studentId).eq("badge_type", "primera_produccion").limit(1);
+    if (!prodBadge?.length) {
+      await supabase.from("badges").insert({ student_id: session.studentId, badge_type: "primera_produccion" });
+    }
+  }
+
   return NextResponse.json({ ok: true, inserted: rows.length });
 }

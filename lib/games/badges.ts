@@ -10,6 +10,9 @@ export interface BadgeMeta {
 }
 
 export const BADGE_META: Record<string, BadgeMeta> = {
+  racha_30:           { type: "racha_30",           label: "Racha de 30 días",    description: "Practicaste 30 días seguidos",              emoji: "🔥", color: "#c0392b" },
+  primera_produccion: { type: "primera_produccion", label: "Primera Producción",  description: "Tu primera respuesta escrita o hablada",    emoji: "✍️", color: "#4ade80" },
+  cold_case_master:   { type: "cold_case_master",   label: "Maestro de Casos Fríos", description: "Resolviste los 10 casos fríos",          emoji: "🧊", color: "#60a5fa" },
   unit_completed: { type: "unit_completed", label: "Caso Resuelto",   description: "Resolviste un caso",                     emoji: "🔎", color: "#c9933a" },
   case_solved:    { type: "case_solved",    label: "Caso Resuelto",   description: "Caso cerrado con éxito",                  emoji: "🔎", color: "#c9933a" },
   perfect_score:  { type: "perfect_score",  label: "Puntaje Perfecto",description: "100% en todas las actividades del caso",  emoji: "⭐", color: "#fbbf24" },

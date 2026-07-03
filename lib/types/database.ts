@@ -21,6 +21,7 @@ export type BadgeType =
   | "entrenamiento_diario" | "maestro_vocabulario" | "poliglota"
   | "informe_completo" | "estudiante_disciplinado" | "agente_elite"
   | "detective_frio"
+  | "racha_30" | "primera_produccion" | "cold_case_master"
   | "operacion_eclipse_completada"
   | "diplomatico" | "cazador_implacable" | "maestro_negociador_boss"
   | "agente_elite_boss" | "agente_estandar" | "agente_cuidadoso";

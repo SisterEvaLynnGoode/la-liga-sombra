@@ -67,6 +67,22 @@ export async function POST(request: NextRequest) {
     newBadges.push("detective_frio");
   }
 
+  // cold_case_master (C3): all 10 cold cases completed
+  const { data: coldRows } = await supabase
+    .from("unit_progress")
+    .select("unit_id, cold_case_completed_at")
+    .eq("student_id", session.studentId)
+    .not("cold_case_completed_at", "is", null);
+  if ((coldRows?.length ?? 0) >= 10) {
+    const { data: masterBadge } = await supabase
+      .from("badges").select("id")
+      .eq("student_id", session.studentId).eq("badge_type", "cold_case_master").limit(1);
+    if (!masterBadge?.length) {
+      await supabase.from("badges").insert({ student_id: session.studentId, badge_type: "cold_case_master" });
+      newBadges.push("cold_case_master");
+    }
+  }
+
   // Also check standard performance badges (perfect score, speed demon, etc.)
   const additionalBadges = await checkAndAwardUnitBadges(supabase, session.studentId, unitId);
 

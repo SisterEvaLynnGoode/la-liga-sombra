@@ -39,6 +39,9 @@ const BADGE_META: Record<string, { emoji: string; labelEs: string }> = {
   entrenamiento_diario:{ emoji: "🏋️", labelEs: "Entrenamiento Diario"   },
   maestro_vocabulario: { emoji: "🎓", labelEs: "Maestro de Vocabulario"  },
   poliglota:           { emoji: "🌍", labelEs: "Políglota"               },
+  racha_30:            { emoji: "🔥", labelEs: "Racha de 30 días"        },
+  primera_produccion:  { emoji: "✍️", labelEs: "Primera Producción"      },
+  cold_case_master:    { emoji: "🧊", labelEs: "Maestro de Casos Fríos"  },
 };
 
 type DrillState = "idle" | "drilling" | "done";

@@ -31,6 +31,12 @@ export async function GET() {
   const masteryTerms = stats.termsMastered;
   const streak = computeCurrentStreak(attempts.map((a) => a.completed_at));
 
+  // racha_30 (C3): award the 30-day streak badge the moment it's reached.
+  if (streak >= 30 && !badges.some((b) => b.badge_type === "racha_30")) {
+    await supabase.from("badges").insert({ student_id: studentId, badge_type: "racha_30" });
+    badges.push({ badge_type: "racha_30", unit_id: null, earned_at: new Date().toISOString() });
+  }
+
   return NextResponse.json({
     displayName: session.displayName,
     classCode: cls?.class_code ?? "",

@@ -7,6 +7,7 @@ import { getVocabReadinessScore } from "@/lib/mastery";
 import { getOverdueTermsForBriefing } from "@/lib/spaced-repetition";
 import MissionHeader from "@/components/mission-board/MissionHeader";
 import CorkBoard from "@/components/mission-board/CorkBoard";
+import WeeklyCaseBanner from "@/components/mission-board/WeeklyCaseBanner";
 import AlertToast from "@/components/ui/AlertToast";
 import DailyBriefingTrigger from "@/components/briefing/DailyBriefingTrigger";
 import type { ColdCaseStatus } from "@/components/mission-board/ColdCaseCard";
@@ -169,6 +170,12 @@ export default async function MissionBoardPage() {
   const casesSolved = progress.filter((p) => p.case_solved).length;
   const badgeCount = badgesRes.data?.length ?? 0;
 
+  // "Caso de la Semana" (C5): the student's current case — in-progress first,
+  // otherwise the first available one.
+  const weeklyCase =
+    caseFiles.find((c) => c.status === "in_progress") ??
+    caseFiles.find((c) => c.status === "available");
+
   return (
     <div className="flex flex-col min-h-screen bg-[#0d0b0a]">
       <MissionHeader
@@ -177,6 +184,9 @@ export default async function MissionBoardPage() {
         totalCases={UNITS.length}
         badgeCount={badgeCount}
       />
+      {weeklyCase && (
+        <WeeklyCaseBanner unit={weeklyCase.unit} inProgress={weeklyCase.status === "in_progress"} />
+      )}
       <CorkBoard caseFiles={caseFiles} bossEntries={bossEntries} />
       <AlertToast classId={session.classId} />
       {briefingTerms.length > 0 && (
