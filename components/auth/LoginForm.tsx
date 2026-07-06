@@ -15,7 +15,7 @@ export default function LoginForm() {
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     if (!classCode.trim() || !displayName.trim() || !pin) {
-      setError("All fields are required.");
+      setError("Completa todos los campos.");
       return;
     }
     setLoading(true);
@@ -34,14 +34,14 @@ export default function LoginForm() {
 
       const data = await res.json().catch(() => ({}));
       if (!res.ok) {
-        setError((data as { error?: string }).error ?? "Login failed. Try again.");
+        setError((data as { error?: string }).error ?? "No se pudo iniciar sesión. Inténtalo de nuevo.");
         setLoading(false);
         return;
       }
 
       router.push("/mission-board");
     } catch {
-      setError("Server error — please try again.");
+      setError("Error del servidor — inténtalo de nuevo.");
       setLoading(false);
     }
   }
@@ -70,7 +70,7 @@ export default function LoginForm() {
           type="text"
           value={displayName}
           onChange={(e) => setDisplayName(e.target.value)}
-          placeholder="Your agent name"
+          placeholder="Tu nombre de agente"
           maxLength={20}
           className="w-full bg-[#0d0b0a] border border-[rgba(201,147,58,0.3)] focus:border-[#c9933a] focus:outline-none px-4 py-3 font-typewriter text-base text-[#f5e6c8] placeholder-[#3a3028] transition-colors"
         />

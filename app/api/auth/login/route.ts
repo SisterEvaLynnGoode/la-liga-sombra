@@ -9,7 +9,7 @@ export async function POST(request: NextRequest) {
   const { classCode, displayName, pin } = body as Record<string, string>;
 
   if (!classCode || !displayName || !pin) {
-    return NextResponse.json({ error: "All fields are required." }, { status: 400 });
+    return NextResponse.json({ error: "Completa todos los campos." }, { status: 400 });
   }
 
   const codeResult = validateClassCode(classCode);
@@ -32,29 +32,46 @@ export async function POST(request: NextRequest) {
 
   const classId = clsRows?.[0]?.id;
   if (!classId) {
-    return NextResponse.json({ error: "Class code not found." }, { status: 404 });
+    return NextResponse.json({ error: "Código de clase no encontrado. Pregúntale a tu profe." }, { status: 404 });
   }
 
-  // Find student by name + class
+  type StudentRow = { id: string; display_name: string; class_id: string | null; pin_hash: string | null; pin_salt: string | null };
+
+  // Find student by name + class (case-insensitive)
   const { data: stuData } = await supabase
     .from("students")
     .select("id, display_name, class_id, pin_hash, pin_salt")
     .eq("class_id", classId)
     .ilike("display_name", normalName)
     .limit(1);
-  const studentRows = stuData as Array<{ id: string; display_name: string; class_id: string | null; pin_hash: string | null; pin_salt: string | null }> | null;
+  const studentRows = stuData as StudentRow[] | null;
 
-  const student = studentRows?.[0];
+  let student = studentRows?.[0];
+
+  // Accent-insensitive fallback: a student who signed up as "Sofía" must be
+  // able to log in typing "Sofia" (accents are hard on Chromebook keyboards).
   if (!student) {
-    return NextResponse.json({ error: "Agent not found. Check your class code and name." }, { status: 404 });
+    const norm = (s: string) =>
+      s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().trim();
+    const { data: allData } = await supabase
+      .from("students")
+      .select("id, display_name, class_id, pin_hash, pin_salt")
+      .eq("class_id", classId);
+    student = ((allData ?? []) as StudentRow[]).find(
+      (s) => norm(s.display_name) === norm(normalName)
+    );
+  }
+
+  if (!student) {
+    return NextResponse.json({ error: "Agente no encontrado. Revisa tu código de clase y tu nombre." }, { status: 404 });
   }
 
   if (!student.pin_hash || !student.pin_salt) {
-    return NextResponse.json({ error: "Account setup incomplete. Ask your teacher for help." }, { status: 400 });
+    return NextResponse.json({ error: "Cuenta incompleta. Pídele ayuda a tu profe." }, { status: 400 });
   }
 
   if (!verifyPin(pin, student.pin_salt, student.pin_hash)) {
-    return NextResponse.json({ error: "Incorrect PIN. Try again." }, { status: 401 });
+    return NextResponse.json({ error: "PIN incorrecto. Inténtalo de nuevo." }, { status: 401 });
   }
 
   const token = await signToken({

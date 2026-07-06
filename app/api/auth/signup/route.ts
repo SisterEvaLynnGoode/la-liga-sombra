@@ -32,7 +32,7 @@ export async function POST(request: NextRequest) {
 
   const classId = clsRows?.[0]?.id;
   if (!classId) {
-    return NextResponse.json({ error: "Class code not found. Ask your teacher for the correct code." }, { status: 404 });
+    return NextResponse.json({ error: "Código de clase no encontrado. Pregúntale a tu profe el código correcto." }, { status: 404 });
   }
 
   // ── Check name uniqueness within class ───────────────────────────────────
@@ -46,7 +46,7 @@ export async function POST(request: NextRequest) {
   const existingRows = existingData as Array<{ id: string }> | null;
 
   if (existingRows && existingRows.length > 0) {
-    return NextResponse.json({ error: "That name is already taken in your class. Choose a different one." }, { status: 409 });
+    return NextResponse.json({ error: "Ese nombre ya existe en tu clase. Elige otro diferente." }, { status: 409 });
   }
 
   // ── Create student ───────────────────────────────────────────────────────
@@ -67,7 +67,7 @@ export async function POST(request: NextRequest) {
 
   if (insertErr || !student) {
     console.error("Student insert error:", insertErr);
-    return NextResponse.json({ error: "Could not create account. Try again." }, { status: 500 });
+    return NextResponse.json({ error: "No se pudo crear la cuenta. Inténtalo de nuevo." }, { status: 500 });
   }
 
   // ── Initialize unit_progress (unit 1 available, rest locked) ─────────────
