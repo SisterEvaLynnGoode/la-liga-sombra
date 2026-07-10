@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useRef, useCallback } from "react";
 import type { BriefingTerm } from "@/lib/spaced-repetition";
+import { playSpanishAudio } from "@/lib/games/speak";
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
@@ -111,18 +112,17 @@ export default function DailyBriefing({ terms, onComplete }: Props) {
   }
 
   function playAudio(url?: string) {
-    if (!url) return;
     if (audioRef.current) {
       audioRef.current.pause();
     }
-    const audio = new Audio(url);
-    audioRef.current = audio;
-    audio.play().catch(() => {});
+    // Falls back to browser TTS when the mp3 is missing (lib/games/speak)
+    void playSpanishAudio(url, terms[qIndex]?.spanish ?? "");
   }
 
-  // Auto-play audio when a new question appears
+  // Auto-play audio when a new question appears (TTS fallback makes this
+  // work even for terms whose mp3 was never generated)
   useEffect(() => {
-    if (phase === "questions" && terms[qIndex]?.audio) {
+    if (phase === "questions" && terms[qIndex]) {
       const t = setTimeout(() => playAudio(terms[qIndex].audio), 200);
       return () => clearTimeout(t);
     }

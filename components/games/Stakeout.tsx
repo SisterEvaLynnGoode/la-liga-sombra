@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import type { StakeoutQuestion } from "@/lib/question-generator";
 import { normalizeAnswer } from "@/lib/games/utils";
+import { playSpanishAudio } from "@/lib/games/speak";
 import { logItemEvent, flushItemEvents, classifyError } from "@/lib/events";
 
 // ── Types ─────────────────────────────────────────────────────────────────────
@@ -200,15 +201,16 @@ function ListeningQuestion({
   onAnswer: (correct: boolean, chosen?: string) => void;
   feedback: Feedback;
 }) {
-  const audioRef = useRef<HTMLAudioElement | null>(null);
   const [played, setPlayed] = useState(false);
+  // "none" = neither the mp3 nor browser TTS produced sound — show the word
+  // instead of leaving the student guessing at a silent question.
+  const [soundMode, setSoundMode] = useState<"pending" | "ok" | "none">("pending");
 
   function playClip() {
-    if (audioRef.current) {
-      audioRef.current.currentTime = 0;
-      audioRef.current.play().catch(() => {});
-      setPlayed(true);
-    }
+    void playSpanishAudio(q.audioUrl, q.promptWord).then((result) => {
+      setSoundMode(result === "none" ? "none" : "ok");
+      if (result !== "none") setPlayed(true);
+    });
   }
 
   useEffect(() => {
@@ -220,20 +222,21 @@ function ListeningQuestion({
 
   return (
     <div className="flex flex-col gap-4">
-      {/* eslint-disable-next-line jsx-a11y/media-has-caption */}
-      <audio ref={audioRef} src={q.audioUrl} preload="auto" />
-
       <div className="border border-[rgba(201,147,58,0.2)] bg-[#1a1614] px-6 py-6 text-center">
         <p className="font-typewriter text-[10px] tracking-[0.3em] uppercase text-[#8b7355] mb-3">
-          Escucha · ¿Qué significa?
+          {soundMode === "none" ? "Lee · ¿Qué significa?" : "Escucha · ¿Qué significa?"}
         </p>
-        <button
-          onClick={playClip}
-          className="inline-flex items-center gap-2 px-5 py-2.5 border border-[rgba(201,147,58,0.3)] text-[#c9933a] hover:border-[#c9933a] transition-colors font-typewriter text-sm"
-        >
-          <span className="text-lg">▶</span>
-          {played ? "Repetir" : "Escuchar"}
-        </button>
+        {soundMode === "none" ? (
+          <p className="font-display font-bold text-3xl text-[#f5e6c8]">{q.promptWord}</p>
+        ) : (
+          <button
+            onClick={playClip}
+            className="inline-flex items-center gap-2 px-5 py-2.5 border border-[rgba(201,147,58,0.3)] text-[#c9933a] hover:border-[#c9933a] transition-colors font-typewriter text-sm"
+          >
+            <span className="text-lg">▶</span>
+            {played ? "Repetir" : "Escuchar"}
+          </button>
+        )}
       </div>
 
       <div className="grid grid-cols-2 gap-2">
