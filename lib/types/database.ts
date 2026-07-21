@@ -58,9 +58,9 @@ export interface Database {
         Relationships: [];
       };
       teachers: {
-        Row: { id: string; email: string; name: string | null; password_hash: string | null; password_salt: string | null; is_admin: boolean; plan: string; status: string; created_at: string };
-        Insert: { id?: string; email: string; name?: string | null; password_hash?: string | null; password_salt?: string | null; is_admin?: boolean; plan?: string; status?: string; created_at?: string };
-        Update: { id?: string; email?: string; name?: string | null; password_hash?: string | null; password_salt?: string | null; is_admin?: boolean; plan?: string; status?: string; created_at?: string };
+        Row: { id: string; email: string; name: string | null; password_hash: string | null; password_salt: string | null; is_admin: boolean; plan: string; status: string; trial_ends_at: string | null; created_at: string };
+        Insert: { id?: string; email: string; name?: string | null; password_hash?: string | null; password_salt?: string | null; is_admin?: boolean; plan?: string; status?: string; trial_ends_at?: string | null; created_at?: string };
+        Update: { id?: string; email?: string; name?: string | null; password_hash?: string | null; password_salt?: string | null; is_admin?: boolean; plan?: string; status?: string; trial_ends_at?: string | null; created_at?: string };
         Relationships: [];
       };
       redemption_codes: {

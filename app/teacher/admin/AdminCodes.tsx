@@ -2,6 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
+import AdminTeachers from "./AdminTeachers";
 
 interface CodeRow { code: string; plan: string; note: string | null; redeemed: boolean; redeemedBy: string | null; createdAt: string }
 
@@ -42,10 +43,14 @@ export default function AdminCodes() {
         <div className="flex items-center justify-between mb-6">
           <div>
             <p className="font-typewriter text-[9px] tracking-[0.3em] uppercase text-[#8b7355]">Owner · Admin</p>
-            <h1 className="font-display font-bold text-2xl text-[#e8b455]">Access Codes</h1>
+            <h1 className="font-display font-bold text-2xl text-[#e8b455]">Accounts</h1>
           </div>
           <Link href="/teacher/dashboard" className="font-typewriter text-[10px] tracking-widest uppercase text-[#8b7355] hover:text-[#c9933a]">← Dashboard</Link>
         </div>
+
+        <AdminTeachers />
+
+        <h2 className="font-display font-bold text-xl text-[#e8b455] mb-3">Access Codes</h2>
 
         <p className="font-typewriter text-xs text-[#8b7355] mb-5 leading-relaxed">
           Mint codes to sell on Teachers Pay Teachers. After a sale, send one unused code to the buyer — they redeem it at

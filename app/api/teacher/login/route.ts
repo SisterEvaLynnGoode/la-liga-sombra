@@ -12,14 +12,22 @@ export async function POST(request: NextRequest) {
 
   const supabase = createClient();
   const { data: rows } = await supabase
-    .from("teachers").select("id, password_hash, password_salt, is_admin, status").eq("email", cleanEmail).limit(1);
-  const t = (rows as Array<{ id: string; password_hash: string | null; password_salt: string | null; is_admin: boolean; status: string }> | null)?.[0];
+    .from("teachers").select("id, password_hash, password_salt, is_admin, status, plan, trial_ends_at").eq("email", cleanEmail).limit(1);
+  const t = (rows as Array<{ id: string; password_hash: string | null; password_salt: string | null; is_admin: boolean; status: string; plan: string; trial_ends_at: string | null }> | null)?.[0];
 
   // Uniform error to avoid leaking which emails exist
   const bad = () => NextResponse.json({ error: "Incorrect email or password." }, { status: 401 });
   if (!t || !t.password_hash || !t.password_salt) return bad();
   if (!verifyPassword(password, t.password_salt, t.password_hash)) return bad();
-  if (t.status !== "active") return NextResponse.json({ error: "This account is inactive. Contact support." }, { status: 403 });
+  if (t.status !== "active") return NextResponse.json({ error: "This account is inactive. Contact your administrator." }, { status: 403 });
+
+  // Expired free trial → block with an upgrade path
+  if (t.trial_ends_at && new Date(t.trial_ends_at).getTime() < Date.now()) {
+    return NextResponse.json(
+      { error: "Your free trial has ended. Enter an access code at /teacher/signup to continue." },
+      { status: 403 }
+    );
+  }
 
   const token = await signToken({ role: "teacher", teacherId: t.id, isAdmin: t.is_admin });
   const response = NextResponse.json({ ok: true });

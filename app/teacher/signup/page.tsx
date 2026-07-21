@@ -48,15 +48,19 @@ export default function TeacherSignupPage() {
         </Link>
         <div className="border border-[rgba(201,147,58,0.2)] bg-[#1a1614] p-8">
           <div className="mb-6 text-center">
-            <span className="text-3xl block mb-2">🎫</span>
-            <h1 className="font-display text-2xl font-bold text-[#f5e6c8]">Activate Your Account</h1>
-            <p className="font-typewriter text-[11px] text-[#8b7355] mt-2">Enter the access code from your purchase to set up your teacher dashboard.</p>
+            <span className="text-3xl block mb-2">🕵️</span>
+            <h1 className="font-display text-2xl font-bold text-[#f5e6c8]">Start Your Free Trial</h1>
+            <p className="font-typewriter text-[11px] text-[#8b7355] mt-2">
+              30 days free — the full Spanish 1 unit, all 10 cases, and your teacher dashboard. No card required.
+            </p>
             <div className="mt-3 h-px bg-gradient-to-r from-transparent via-[#c9933a] to-transparent" />
           </div>
 
           <form onSubmit={submit} className="space-y-4">
             <div>
-              <label className={labelCls}>Access code</label>
+              <label className={labelCls}>
+                Access code <span className="normal-case tracking-normal text-[#4a3a2a]">(optional — leave blank for the free trial)</span>
+              </label>
               <input value={form.code} onChange={set("code")} placeholder="LLS-XXXX-XXXX" className={`${inputCls} tracking-[0.15em] uppercase`} />
             </div>
             <div>
@@ -76,7 +80,7 @@ export default function TeacherSignupPage() {
 
             <button type="submit" disabled={loading}
               className="w-full clip-skew py-3 font-typewriter text-sm tracking-[0.2em] uppercase bg-[#8b1a1a] text-[#f5e6c8] border border-[#c0392b] hover:bg-[#c0392b] transition-colors disabled:opacity-50">
-              {loading ? "Creating account…" : "Create account →"}
+              {loading ? "Creating account…" : form.code.trim() ? "Activate account →" : "Start free trial →"}
             </button>
           </form>
 
