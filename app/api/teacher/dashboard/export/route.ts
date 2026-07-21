@@ -1,6 +1,12 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getTeacherSession } from "@/lib/auth/session";
 import { createClient } from "@/lib/supabase/server";
+import { computeClassGrades } from "@/lib/grading";
+
+// ACTFL band → Aeries-style 1–4 standards proficiency mark
+const BAND_TO_MARK: Record<string, number> = {
+  "Novice Low": 1, "Novice Mid": 2, "Novice High": 3, "Intermediate Low": 4,
+};
 
 function toCSV(rows: Record<string, unknown>[]): string {
   if (!rows.length) return "";
@@ -19,8 +25,8 @@ export async function GET(request: NextRequest) {
   if (!classId) return NextResponse.json({ error: "Missing classId" }, { status: 400 });
 
   const supabase = createClient();
-  const { data: studentsData } = await supabase.from("students").select("id, display_name, created_at").eq("class_id", classId);
-  const students = (studentsData ?? []) as Array<{ id: string; display_name: string; created_at: string }>;
+  const { data: studentsData } = await supabase.from("students").select("id, display_name, created_at, sis_id").eq("class_id", classId);
+  const students = (studentsData ?? []) as Array<{ id: string; display_name: string; created_at: string; sis_id: string | null }>;
   const ids = students.map((s) => s.id);
 
   let csv = "";
@@ -60,6 +66,41 @@ export async function GET(request: NextRequest) {
         mastery_pct: m.attempts > 0 ? Math.round((m.correct / m.attempts) * 100) : 0,
         last_seen: m.last_seen.slice(0, 10),
       }));
+      csv = toCSV(rows);
+    }
+  } else if (type === "grades" || type === "grades-aeries") {
+    const grades = await computeClassGrades(ids, supabase);
+    if (type === "grades-aeries") {
+      // Aeries standards-based import shape: SIS id + 1–4 proficiency marks.
+      // Column names are a sensible default — remap in Aeries' import wizard.
+      const rows = students.map((s) => {
+        const g = grades.get(s.id);
+        return {
+          "Student ID": s.sis_id ?? "",
+          "Student Name": s.display_name,
+          "ACTFL Level": g?.band ?? "Novice Low",
+          "Overall Mark": BAND_TO_MARK[g?.band ?? "Novice Low"] ?? 1,
+          "Percent": g ? Math.round(g.score * 100) : 0,
+          "Vocabulary": g ? g.skills.vocab.bandIndex + 1 : 1,
+          "Grammar": g ? g.skills.grammar.bandIndex + 1 : 1,
+          "Communication": g ? g.skills.communication.bandIndex + 1 : 1,
+        };
+      });
+      csv = toCSV(rows);
+    } else {
+      const rows = students.map((s) => {
+        const g = grades.get(s.id);
+        return {
+          student: s.display_name,
+          sis_id: s.sis_id ?? "",
+          actfl_band: g?.band ?? "Novice Low",
+          percent: g ? Math.round(g.score * 100) : 0,
+          vocab_band: g?.skills.vocab.band ?? "Novice Low",
+          grammar_band: g?.skills.grammar.band ?? "Novice Low",
+          communication_band: g?.skills.communication.band ?? "Novice Low",
+          cases_solved: g?.casesSolved ?? 0,
+        };
+      });
       csv = toCSV(rows);
     }
   } else if (type === "attempts") {

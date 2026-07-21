@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { getStudentSession } from "@/lib/auth/session";
 import { createClient } from "@/lib/supabase/server";
 import { checkAndAwardUnitBadges } from "@/lib/games/badges";
+import { recomputeAndNotify } from "@/lib/grading";
 
 export async function POST(request: NextRequest) {
   const session = await getStudentSession();
@@ -66,6 +67,9 @@ export async function POST(request: NextRequest) {
 
   // Check and award all applicable badges (unit_completed, perfect_score, speed_demon, vocab_master, streaks)
   const newBadges = await checkAndAwardUnitBadges(supabase, session.studentId, unitId);
+
+  // Recompute ACTFL band; notifies the teacher inbox on a level-up (Phase 1 grading)
+  await recomputeAndNotify(session.studentId, supabase);
 
   return NextResponse.json({ ok: true, newBadges });
 }

@@ -13,6 +13,7 @@ const FLAG_LABELS: Record<string, { en: string; urgency: number }> = {
   transcript_revealed:            { en: "Revealed transcript early",        urgency: 4 },
   repeated_failure:               { en: "Repeated failure",                 urgency: 2 },
   image_mismatch_reported:        { en: "Reported image mismatch",          urgency: 4 },
+  mastery_up:                     { en: "Leveled up in mastery 🎉",         urgency: 4 },
 };
 
 export async function GET(request: NextRequest) {

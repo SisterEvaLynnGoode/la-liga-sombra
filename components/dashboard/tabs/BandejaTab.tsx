@@ -42,6 +42,7 @@ const FLAG_UI: Record<string, { color: string; bg: string; icon: string }> = {
   repeated_failure:               { color: "text-[#c0392b]",  bg: "bg-[rgba(192,57,43,0.08)] border-[rgba(192,57,43,0.3)]",   icon: "⚠" },
   stage_skipped:                  { color: "text-[#8b7355]",  bg: "bg-[rgba(139,115,85,0.04)] border-[rgba(139,115,85,0.15)]", icon: "⏭" },
   repeated_skipping:              { color: "text-[#c0392b]",  bg: "bg-[rgba(192,57,43,0.1)]  border-[rgba(192,57,43,0.35)]",  icon: "⚠⏭" },
+  mastery_up:                     { color: "text-[#5a9e6f]",  bg: "bg-[rgba(90,158,111,0.08)] border-[rgba(90,158,111,0.4)]", icon: "🎉" },
 };
 
 const UNLOCK_ELIGIBLE = new Set(["academia_struggling", "academia_skipped_after_failure"]);
@@ -250,6 +251,15 @@ export default function BandejaTab({ classId }: { classId: string }) {
                 <p className="font-typewriter text-[10px] text-[#8b7355]">
                   {`Attempts before skipping: ${flag.context.retries}`}
                 </p>
+              )}
+
+              {flag.flagType === "mastery_up" && !!flag.context.to && (
+                <div className="border-l-2 border-[rgba(90,158,111,0.5)] pl-3">
+                  <p className="font-typewriter text-xs text-[#c4a882]">
+                    {flag.context.from ? `${flag.context.from as string} → ` : ""}
+                    <span className="text-[#5a9e6f] font-bold">{flag.context.to as string}</span>
+                  </p>
+                </div>
               )}
 
               {/* Teacher note (display) */}

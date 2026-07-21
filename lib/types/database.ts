@@ -68,6 +68,7 @@ export interface Database {
           class_code: string;
           pin_hash: string | null;
           pin_salt: string | null;
+          sis_id: string | null;
           created_at: string;
         };
         Insert: {
@@ -77,6 +78,7 @@ export interface Database {
           class_code: string;
           pin_hash?: string | null;
           pin_salt?: string | null;
+          sis_id?: string | null;
           created_at?: string;
         };
         Update: {
@@ -86,6 +88,7 @@ export interface Database {
           class_code?: string;
           pin_hash?: string | null;
           pin_salt?: string | null;
+          sis_id?: string | null;
           created_at?: string;
         };
         Relationships: [
@@ -313,6 +316,12 @@ export interface Database {
           report_text?: string;
           created_at?: string;
         };
+        Relationships: [];
+      };
+      student_mastery: {
+        Row: { student_id: string; band_index: number; band: string; score: number; updated_at: string };
+        Insert: { student_id: string; band_index?: number; band?: string; score?: number; updated_at?: string };
+        Update: { student_id?: string; band_index?: number; band?: string; score?: number; updated_at?: string };
         Relationships: [];
       };
       concept_mastery: {

@@ -11,6 +11,7 @@ import ExportTab from "@/components/dashboard/tabs/ExportTab";
 import BossTab from "@/components/dashboard/tabs/BossTab";
 import BandejaTab from "@/components/dashboard/tabs/BandejaTab";
 import PacingTab from "@/components/dashboard/tabs/PacingTab";
+import GradesTab from "@/components/dashboard/tabs/GradesTab";
 
 interface ClassRow { id: string; class_code: string; teacher_name: string; period_name: string; student_count: number }
 
@@ -24,11 +25,12 @@ const PRESET_MESSAGES = [
   "👀 Miren su pantalla",
 ];
 
-type TabId = "overview" | "students" | "units" | "vocab" | "leaderboard" | "export" | "boss" | "bandeja" | "pacing";
+type TabId = "overview" | "students" | "units" | "vocab" | "leaderboard" | "export" | "boss" | "bandeja" | "pacing" | "grades";
 
 const TABS: Array<{ id: TabId; label: string; emoji: string }> = [
   { id: "bandeja",     label: "Inbox",        emoji: "📥" },
   { id: "overview",    label: "Overview",     emoji: "📊" },
+  { id: "grades",      label: "Grades",       emoji: "🎓" },
   { id: "pacing",      label: "Pacing",       emoji: "📅" },
   { id: "students",    label: "Students",     emoji: "👤" },
   { id: "units",       label: "Units",        emoji: "🗺️" },
@@ -217,6 +219,7 @@ export default function DashboardClient() {
         {activeTab === "bandeja"     && <BandejaTab     classId={selectedClassId} />}
         {activeTab === "overview"    && <OverviewTab    classId={selectedClassId} />}
         {activeTab === "pacing"      && <PacingTab      classId={selectedClassId} />}
+        {activeTab === "grades"      && <GradesTab      classId={selectedClassId} />}
         {activeTab === "students"    && <StudentsTab    classId={selectedClassId} />}
         {activeTab === "units"       && <UnitsTab       classId={selectedClassId} />}
         {activeTab === "vocab"       && <VocabTab       classId={selectedClassId} />}
