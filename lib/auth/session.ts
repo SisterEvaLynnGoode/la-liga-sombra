@@ -8,6 +8,8 @@ export interface StudentSession {
 
 export interface TeacherSession {
   role: "teacher";
+  teacherId: string;
+  isAdmin: boolean;
 }
 
 export type SessionPayload = StudentSession | TeacherSession;
@@ -51,12 +53,21 @@ export async function getStudentSession(): Promise<StudentSession | null> {
   return payload as StudentSession;
 }
 
-export async function getTeacherSession(): Promise<boolean> {
+/**
+ * Returns the teacher session (with teacherId + isAdmin) or null.
+ * Truthiness still works as the old boolean gate, but callers can now read
+ * teacherId to scope data to the owning teacher (Phase 2).
+ */
+export async function getTeacherSession(): Promise<TeacherSession | null> {
   const { cookies } = await import("next/headers");
   const token = cookies().get(TEACHER_COOKIE)?.value;
-  if (!token) return false;
+  if (!token) return null;
   const payload = await verifyToken(token);
-  return !!payload && "role" in payload && payload.role === "teacher";
+  if (!payload || !("role" in payload) || payload.role !== "teacher") return null;
+  // Require a teacherId — legacy tokens without one are treated as logged out
+  // so a fresh, owner-scoped session is minted on the next login.
+  if (!("teacherId" in payload) || !payload.teacherId) return null;
+  return payload as TeacherSession;
 }
 
 export { AGENT_COOKIE, TEACHER_COOKIE, THIRTY_DAYS };

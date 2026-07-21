@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getTeacherSession } from "@/lib/auth/session";
+import { guardClass, isResponse } from "@/lib/auth/teacher";
 import { createClient } from "@/lib/supabase/server";
 import { GRAMMAR_CONCEPTS } from "@/lib/personalized-drills";
 
@@ -34,10 +34,10 @@ function bandDistribution(studentAvgs: number[]) {
 }
 
 export async function GET(request: NextRequest) {
-  if (!(await getTeacherSession())) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
-  const classId = request.nextUrl.searchParams.get("classId");
-  if (!classId) return NextResponse.json({ error: "Missing classId" }, { status: 400 });
+  const classId = request.nextUrl.searchParams.get("classId") ?? "";
+  const guard = await guardClass(classId);
+  if (isResponse(guard)) return guard;
 
   const supabase = createClient();
   const { data: studentsData } = await supabase.from("students").select("id").eq("class_id", classId);

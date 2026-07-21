@@ -1,11 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getTeacherSession } from "@/lib/auth/session";
+import { guardClass, isResponse } from "@/lib/auth/teacher";
 import { createClient } from "@/lib/supabase/server";
 
 export async function POST(request: NextRequest) {
-  if (!(await getTeacherSession())) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-
   const { classId, message } = await request.json() as { classId: string; message: string };
+  const guard = await guardClass(classId);
+  if (isResponse(guard)) return guard;
   if (!classId || !message?.trim()) {
     return NextResponse.json({ error: "classId and message required" }, { status: 400 });
   }

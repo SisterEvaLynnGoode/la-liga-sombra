@@ -1,8 +1,13 @@
 import { NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
 import { generateClassCode } from "@/lib/auth/validation";
+import { guardTeacher, isResponse } from "@/lib/auth/teacher";
 
 export async function POST(request: Request) {
+  const guard = await guardTeacher();
+  if (isResponse(guard)) return guard;
+  const session = guard;
+
   const { teacherName, periodName } = await request.json();
 
   if (!teacherName?.trim() || !periodName?.trim()) {
@@ -29,7 +34,7 @@ export async function POST(request: Request) {
 
   const { data, error } = await supabase
     .from("classes")
-    .insert({ class_code: classCode, teacher_name: teacherName.trim(), period_name: periodName.trim() })
+    .insert({ class_code: classCode, teacher_name: teacherName.trim(), period_name: periodName.trim(), teacher_id: session.teacherId })
     .select()
     .single();
 
@@ -46,11 +51,18 @@ export async function POST(request: Request) {
 }
 
 export async function GET() {
+  const guard = await guardTeacher();
+  if (isResponse(guard)) return guard;
+  const session = guard;
+
   const supabase = createClient();
-  const { data, error } = await supabase
+  let query = supabase
     .from("classes")
     .select("id, class_code, teacher_name, period_name, created_at, students(id)")
     .order("created_at", { ascending: false });
+  // Admin sees all classes; a regular teacher sees only their own.
+  if (!session.isAdmin) query = query.eq("teacher_id", session.teacherId);
+  const { data, error } = await query;
 
   if (error) return NextResponse.json({ error: "Could not fetch classes." }, { status: 500 });
 

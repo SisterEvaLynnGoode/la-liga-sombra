@@ -1,6 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
-import { getTeacherSession } from "@/lib/auth/session";
+import { guardStudent, isResponse } from "@/lib/auth/teacher";
 
 /**
  * POST /api/teacher/retry-challenge
@@ -13,9 +13,6 @@ import { getTeacherSession } from "@/lib/auth/session";
  * Body: { studentId: string, unitNumber: number, message?: string }
  */
 export async function POST(request: NextRequest) {
-  const isTeacher = await getTeacherSession();
-  if (!isTeacher) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-
   let body: { studentId?: string; unitNumber?: number; message?: string };
   try {
     body = await request.json();
@@ -27,6 +24,9 @@ export async function POST(request: NextRequest) {
   if (!studentId || !unitNumber) {
     return NextResponse.json({ error: "Missing studentId or unitNumber" }, { status: 400 });
   }
+
+  const guard = await guardStudent(studentId);
+  if (isResponse(guard)) return guard;
 
   const supabase = createClient();
 

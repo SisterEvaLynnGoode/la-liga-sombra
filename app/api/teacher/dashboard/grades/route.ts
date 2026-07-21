@@ -1,5 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getTeacherSession } from "@/lib/auth/session";
+import { guardClass, guardStudent, isResponse } from "@/lib/auth/teacher";
 import { createClient } from "@/lib/supabase/server";
 import { computeClassGrades } from "@/lib/grading";
 
@@ -7,9 +7,9 @@ import { computeClassGrades } from "@/lib/grading";
 // PATCH sets a student's district SIS/Aeries ID for export mapping.
 
 export async function GET(request: NextRequest) {
-  if (!(await getTeacherSession())) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-  const classId = request.nextUrl.searchParams.get("classId");
-  if (!classId) return NextResponse.json({ error: "Missing classId" }, { status: 400 });
+  const classId = request.nextUrl.searchParams.get("classId") ?? "";
+  const guard = await guardClass(classId);
+  if (isResponse(guard)) return guard;
 
   const supabase = createClient();
   const { data: studentsData } = await supabase
@@ -38,13 +38,13 @@ export async function GET(request: NextRequest) {
 }
 
 export async function PATCH(request: NextRequest) {
-  if (!(await getTeacherSession())) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
   const { studentId, sisId } = await request.json() as { studentId?: string; sisId?: string };
-  if (!studentId) return NextResponse.json({ error: "Missing studentId" }, { status: 400 });
+  const guard = await guardStudent(studentId ?? null);
+  if (isResponse(guard)) return guard;
 
   const supabase = createClient();
   const clean = typeof sisId === "string" ? sisId.trim().slice(0, 40) : "";
-  const { error } = await supabase.from("students").update({ sis_id: clean || null }).eq("id", studentId);
+  const { error } = await supabase.from("students").update({ sis_id: clean || null }).eq("id", studentId!);
   if (error) return NextResponse.json({ error: "DB error" }, { status: 500 });
   return NextResponse.json({ ok: true });
 }

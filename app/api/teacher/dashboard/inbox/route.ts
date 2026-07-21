@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getTeacherSession } from "@/lib/auth/session";
+import { guardClass, ownsStudent, isResponse } from "@/lib/auth/teacher";
 import { createClient } from "@/lib/supabase/server";
 
 // Human-readable labels for flag types
@@ -17,10 +18,9 @@ const FLAG_LABELS: Record<string, { en: string; urgency: number }> = {
 };
 
 export async function GET(request: NextRequest) {
-  if (!(await getTeacherSession())) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-
-  const classId = request.nextUrl.searchParams.get("classId");
-  if (!classId) return NextResponse.json({ error: "Missing classId" }, { status: 400 });
+  const classId = request.nextUrl.searchParams.get("classId") ?? "";
+  const guard = await guardClass(classId);
+  if (isResponse(guard)) return guard;
 
   const supabase = createClient();
 
@@ -133,7 +133,8 @@ export async function GET(request: NextRequest) {
 
 // PATCH: acknowledge, add note, or resolve a flag
 export async function PATCH(request: NextRequest) {
-  if (!(await getTeacherSession())) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+  const session = await getTeacherSession();
+  if (!session) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
   const body = await request.json() as {
     id: string;
@@ -142,6 +143,14 @@ export async function PATCH(request: NextRequest) {
   };
 
   if (!body.id || !body.action) return NextResponse.json({ error: "Missing fields" }, { status: 400 });
+
+  // Verify the flag belongs to a student in one of the teacher's own classes.
+  const check = createClient();
+  const { data: flagRows } = await check.from("student_flags").select("student_id").eq("id", body.id).limit(1);
+  const flagStudentId = (flagRows as Array<{ student_id: string }> | null)?.[0]?.student_id;
+  if (!flagStudentId || !(await ownsStudent(session, flagStudentId))) {
+    return NextResponse.json({ error: "Not your student" }, { status: 403 });
+  }
 
   const supabase = createClient();
   const update: { acknowledged_at?: string; resolved_at?: string; teacher_note?: string } = {};

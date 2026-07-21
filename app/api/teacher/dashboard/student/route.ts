@@ -1,12 +1,11 @@
 import { NextRequest, NextResponse } from "next/server";
-import { getTeacherSession } from "@/lib/auth/session";
+import { guardStudent, isResponse } from "@/lib/auth/teacher";
 import { createClient } from "@/lib/supabase/server";
 
 export async function GET(request: NextRequest) {
-  if (!(await getTeacherSession())) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
-
-  const studentId = request.nextUrl.searchParams.get("studentId");
-  if (!studentId) return NextResponse.json({ error: "Missing studentId" }, { status: 400 });
+  const studentId = request.nextUrl.searchParams.get("studentId") ?? "";
+  const guard = await guardStudent(studentId);
+  if (isResponse(guard)) return guard;
 
   const supabase = createClient();
 

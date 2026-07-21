@@ -36,6 +36,7 @@ export interface Database {
           class_code: string;
           teacher_name: string;
           period_name: string;
+          teacher_id: string | null;
           created_at: string;
         };
         Insert: {
@@ -43,6 +44,7 @@ export interface Database {
           class_code: string;
           teacher_name: string;
           period_name: string;
+          teacher_id?: string | null;
           created_at?: string;
         };
         Update: {
@@ -50,8 +52,21 @@ export interface Database {
           class_code?: string;
           teacher_name?: string;
           period_name?: string;
+          teacher_id?: string | null;
           created_at?: string;
         };
+        Relationships: [];
+      };
+      teachers: {
+        Row: { id: string; email: string; name: string | null; password_hash: string | null; password_salt: string | null; is_admin: boolean; plan: string; status: string; created_at: string };
+        Insert: { id?: string; email: string; name?: string | null; password_hash?: string | null; password_salt?: string | null; is_admin?: boolean; plan?: string; status?: string; created_at?: string };
+        Update: { id?: string; email?: string; name?: string | null; password_hash?: string | null; password_salt?: string | null; is_admin?: boolean; plan?: string; status?: string; created_at?: string };
+        Relationships: [];
+      };
+      redemption_codes: {
+        Row: { id: string; code: string; plan: string; note: string | null; redeemed_by_teacher_id: string | null; redeemed_at: string | null; created_at: string };
+        Insert: { id?: string; code: string; plan?: string; note?: string | null; redeemed_by_teacher_id?: string | null; redeemed_at?: string | null; created_at?: string };
+        Update: { id?: string; code?: string; plan?: string; note?: string | null; redeemed_by_teacher_id?: string | null; redeemed_at?: string | null; created_at?: string };
         Relationships: [];
       };
       class_alerts: {

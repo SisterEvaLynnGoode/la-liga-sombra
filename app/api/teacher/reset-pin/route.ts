@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@/lib/supabase/server";
 import { generateSalt, hashPin } from "@/lib/auth/pin";
 import { validatePin, validateClassCode } from "@/lib/auth/validation";
+import { guardClass, isResponse } from "@/lib/auth/teacher";
 
 export async function POST(request: NextRequest) {
   const { classCode, displayName, newPin } = await request.json();
@@ -28,6 +29,10 @@ export async function POST(request: NextRequest) {
 
   const classId = clsRows?.[0]?.id;
   if (!classId) return NextResponse.json({ error: "Class code not found." }, { status: 404 });
+
+  // Only a teacher who owns this class may reset a student's PIN.
+  const guard = await guardClass(classId);
+  if (isResponse(guard)) return guard;
 
   const { data: stuData } = await supabase
     .from("students")
