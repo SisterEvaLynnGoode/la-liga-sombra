@@ -28,9 +28,9 @@ export async function GET(request: NextRequest) {
       bandIndex: grd?.bandIndex ?? 0,
       scorePct: grd ? Math.round(grd.score * 100) : 0,
       casesSolved: grd?.casesSolved ?? 0,
-      vocab: grd ? Math.round(grd.skills.vocab.score * 100) : 0,
-      grammar: grd ? Math.round(grd.skills.grammar.score * 100) : 0,
-      communication: grd ? Math.round(grd.skills.communication.score * 100) : 0,
+      vocab: grd?.skills.vocab.hasData ? Math.round(grd.skills.vocab.score * 100) : null,
+      grammar: grd?.skills.grammar.hasData ? Math.round(grd.skills.grammar.score * 100) : null,
+      communication: grd?.skills.communication.hasData ? Math.round(grd.skills.communication.score * 100) : null,
     };
   }).sort((a, b) => b.bandIndex - a.bandIndex || b.scorePct - a.scorePct);
 

@@ -12,9 +12,9 @@ interface GradeRow {
   bandIndex: number;
   scorePct: number;
   casesSolved: number;
-  vocab: number;
-  grammar: number;
-  communication: number;
+  vocab: number | null;
+  grammar: number | null;
+  communication: number | null;
 }
 interface GradesData { rows: GradeRow[] }
 
@@ -118,12 +118,16 @@ export default function GradesTab({ classId }: { classId: string }) {
                   <td className="px-3 py-2.5 font-typewriter text-sm tabular-nums" style={{ color: skillColor(r.scorePct) }}>{r.scorePct}%</td>
                   {[r.vocab, r.grammar, r.communication].map((pct, i) => (
                     <td key={i} className="px-3 py-2.5">
-                      <div className="flex items-center gap-1.5">
-                        <div className="w-12 h-1 bg-[#2c2220] rounded-full overflow-hidden">
-                          <div className="h-full rounded-full" style={{ width: `${pct}%`, background: skillColor(pct) }} />
+                      {pct === null ? (
+                        <span className="font-typewriter text-[10px] text-[#4a3a2a]">—</span>
+                      ) : (
+                        <div className="flex items-center gap-1.5">
+                          <div className="w-12 h-1 bg-[#2c2220] rounded-full overflow-hidden">
+                            <div className="h-full rounded-full" style={{ width: `${pct}%`, background: skillColor(pct) }} />
+                          </div>
+                          <span className="font-typewriter text-[9px] tabular-nums text-[#8b7355]">{pct}</span>
                         </div>
-                        <span className="font-typewriter text-[9px] tabular-nums text-[#8b7355]">{pct}</span>
-                      </div>
+                      )}
                     </td>
                   ))}
                   <td className="px-3 py-2.5 font-typewriter text-xs text-[#c4a882] tabular-nums">{r.casesSolved}/10</td>

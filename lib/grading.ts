@@ -33,6 +33,7 @@ export interface SkillGrade {
   score: number;   // 0–1
   band: Band;
   bandIndex: number;
+  hasData: boolean; // false = no evidence yet; excluded from the composite
 }
 
 export interface StudentGrade {
@@ -48,27 +49,43 @@ export interface StudentGrade {
   };
 }
 
-function skill(score: number): SkillGrade {
-  const bandIndex = scoreToBandIndex(score);
-  return { score, band: BANDS[bandIndex], bandIndex };
+function skill(score: number | null): SkillGrade {
+  const hasData = score !== null;
+  const s = score ?? 0;
+  const bandIndex = scoreToBandIndex(s);
+  return { score: s, band: BANDS[bandIndex], bandIndex, hasData };
 }
 
-// Composite weights — vocab and grammar carry the most signal.
-const W = { vocab: 0.35, grammar: 0.25, communication: 0.25, breadth: 0.15 };
+// Base skill weights (sum 0.85) + breadth (0.15). Skills with NO data are
+// dropped and the remaining skill weights renormalized, so a student is never
+// penalized for a skill we have no evidence on.
+const BASE = { vocab: 0.35, grammar: 0.25, communication: 0.25 } as const;
+const SKILL_TOTAL = 0.85;
+const BREADTH = 0.15;
 
 /**
- * Pure grade from the four 0–1 sub-scores + solved-case count.
- * Breadth-gates the band: Intermediate Low needs ≥6 cases, Novice High ≥3.
+ * Pure grade from the three 0–1 sub-scores (null = no data yet) + solved-case
+ * count. Breadth-gates the band: Intermediate Low needs ≥6 cases, Novice High ≥3.
  */
 export function gradeFromScores(
   studentId: string,
-  vocab: number,
-  grammar: number,
-  communication: number,
+  vocab: number | null,
+  grammar: number | null,
+  communication: number | null,
   casesSolved: number
 ): StudentGrade {
+  const present: Array<[keyof typeof BASE, number]> = [];
+  if (vocab !== null) present.push(["vocab", vocab]);
+  if (grammar !== null) present.push(["grammar", grammar]);
+  if (communication !== null) present.push(["communication", communication]);
+
+  const wSum = present.reduce((s, [k]) => s + BASE[k], 0) || 1;
+  let skillPart = 0;
+  for (const [k, v] of present) skillPart += (BASE[k] / wSum) * SKILL_TOTAL * v;
+
   const breadthFrac = Math.min(1, casesSolved / 10);
-  const score = W.vocab * vocab + W.grammar * grammar + W.communication * communication + W.breadth * breadthFrac;
+  const score = skillPart + BREADTH * breadthFrac;
+
   const cap = casesSolved >= 6 ? 3 : casesSolved >= 3 ? 2 : 1;
   const bandIndex = Math.min(scoreToBandIndex(score), cap);
   return {
@@ -89,23 +106,23 @@ export async function computeStudentGrade(studentId: string, supabase: Supa): Pr
     supabase.from("unit_progress").select("case_solved").eq("student_id", studentId),
   ]);
 
-  // Vocab — mean recency-weighted accuracy across seen terms
+  // Vocab — mean recency-weighted accuracy across seen terms (null = no data)
   let vSum = 0, vN = 0;
   termAcc.forEach((a) => { if (a.attempts > 0) { vSum += a.accuracy; vN++; } });
-  const vocab = vN ? vSum / vN : 0;
+  const vocab = vN ? vSum / vN : null;
 
-  // Grammar — mean accuracy across practiced concepts
+  // Grammar — mean accuracy across practiced concepts (null = no data)
   const concepts = (conceptRes.data ?? []) as Array<{ attempts: number; correct: number }>;
   let gSum = 0, gN = 0;
   for (const c of concepts) if (c.attempts > 0) { gSum += c.correct / c.attempts; gN++; }
-  const grammar = gN ? gSum / gN : 0;
+  const grammar = gN ? gSum / gN : null;
 
   // Communication — mean accuracy across all graded activities (interpretive,
-  // interpersonal, presentational all land in `attempts`)
+  // interpersonal, presentational all land in `attempts`; null = no data)
   const attempts = (attemptsRes.data ?? []) as Array<{ score: number; max_score: number }>;
   let cSum = 0, cN = 0;
   for (const a of attempts) if (a.max_score > 0) { cSum += a.score / a.max_score; cN++; }
-  const communication = cN ? cSum / cN : 0;
+  const communication = cN ? cSum / cN : null;
 
   const casesSolved = ((progressRes.data ?? []) as Array<{ case_solved: boolean }>)
     .filter((p) => p.case_solved).length;
@@ -158,7 +175,7 @@ export async function computeClassGrades(studentIds: string[], supabase: Supa): 
 
   for (const id of studentIds) {
     const a = acc.get(id);
-    if (!a) { out.set(id, gradeFromScores(id, 0, 0, 0, 0)); continue; }
+    if (!a) { out.set(id, gradeFromScores(id, null, null, null, 0)); continue; }
     // Vocab: recency-weighted per term (event samples), lifetime fallback
     const terms = new Set([...Array.from(a.termLifetime.keys()), ...Array.from(a.termSamples.keys())]);
     let vSum = 0, vN = 0;
@@ -169,9 +186,9 @@ export async function computeClassGrades(studentIds: string[], supabase: Supa): 
       const val = rec ?? (life && life.attempts > 0 ? life.correct / life.attempts : null);
       if (val !== null) { vSum += val; vN++; }
     });
-    const vocab = vN ? vSum / vN : 0;
-    const grammar = a.gAtt ? a.gCor / a.gAtt : 0;
-    const communication = a.cN ? a.cAcc / a.cN : 0;
+    const vocab = vN ? vSum / vN : null;
+    const grammar = a.gAtt ? a.gCor / a.gAtt : null;
+    const communication = a.cN ? a.cAcc / a.cN : null;
     out.set(id, gradeFromScores(id, vocab, grammar, communication, a.cases));
   }
   return out;
