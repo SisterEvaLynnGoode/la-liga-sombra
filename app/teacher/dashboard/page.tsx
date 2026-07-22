@@ -5,7 +5,7 @@ import DashboardClient from "./DashboardClient";
 export const metadata = { title: "Cuartel General — La Liga Sombra" };
 
 export default async function DashboardPage() {
-  const isTeacher = await getTeacherSession();
-  if (!isTeacher) redirect("/teacher/login");
-  return <DashboardClient />;
+  const session = await getTeacherSession();
+  if (!session) redirect("/teacher/login");
+  return <DashboardClient isAdmin={session.isAdmin} />;
 }

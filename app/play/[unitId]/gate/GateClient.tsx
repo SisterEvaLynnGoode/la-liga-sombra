@@ -8,6 +8,7 @@ interface Props {
   country: string;
   tier: ReadinessTier;
   scorePercent: number; // 0-100
+  hasWorld?: boolean;   // a scroll-through teaching world exists for this unit
 }
 
 const TIER_CONFIG = {
@@ -43,7 +44,7 @@ const TIER_CONFIG = {
   },
 };
 
-export default function GateClient({ unitNumber, country, tier, scorePercent }: Props) {
+export default function GateClient({ unitNumber, country, tier, scorePercent, hasWorld = false }: Props) {
   const router = useRouter();
   const cfg = TIER_CONFIG[tier];
 
@@ -99,6 +100,15 @@ export default function GateClient({ unitNumber, country, tier, scorePercent }: 
 
         {/* Actions */}
         <div className="space-y-3">
+          {hasWorld && (
+            <button
+              onClick={() => router.push(`/play/${unitNumber}/mundo`)}
+              className="w-full clip-skew py-3 font-typewriter text-sm tracking-[0.2em] uppercase bg-[rgba(201,147,58,0.12)] text-[#e8b455] border border-[rgba(201,147,58,0.4)] hover:bg-[rgba(201,147,58,0.22)] transition-colors"
+            >
+              🌎 Explora el mundo primero
+            </button>
+          )}
+
           {tier === "ready" && (
             <button
               onClick={() => router.push(`/play/${unitNumber}`)}

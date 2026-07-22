@@ -12,6 +12,7 @@ import BossTab from "@/components/dashboard/tabs/BossTab";
 import BandejaTab from "@/components/dashboard/tabs/BandejaTab";
 import PacingTab from "@/components/dashboard/tabs/PacingTab";
 import GradesTab from "@/components/dashboard/tabs/GradesTab";
+import MundosTab from "@/components/dashboard/tabs/MundosTab";
 
 interface ClassRow { id: string; class_code: string; teacher_name: string; period_name: string; student_count: number }
 
@@ -25,11 +26,12 @@ const PRESET_MESSAGES = [
   "👀 Miren su pantalla",
 ];
 
-type TabId = "overview" | "students" | "units" | "vocab" | "leaderboard" | "export" | "boss" | "bandeja" | "pacing" | "grades";
+type TabId = "overview" | "students" | "units" | "vocab" | "leaderboard" | "export" | "boss" | "bandeja" | "pacing" | "grades" | "mundos";
 
 const TABS: Array<{ id: TabId; label: string; emoji: string }> = [
   { id: "bandeja",     label: "Inbox",        emoji: "📥" },
   { id: "overview",    label: "Overview",     emoji: "📊" },
+  { id: "mundos",      label: "Worlds",       emoji: "🌎" },
   { id: "grades",      label: "Grades",       emoji: "🎓" },
   { id: "pacing",      label: "Pacing",       emoji: "📅" },
   { id: "students",    label: "Students",     emoji: "👤" },
@@ -40,7 +42,7 @@ const TABS: Array<{ id: TabId; label: string; emoji: string }> = [
   { id: "export",      label: "Export",       emoji: "↓" },
 ];
 
-export default function DashboardClient() {
+export default function DashboardClient({ isAdmin = false }: { isAdmin?: boolean }) {
   const router = useRouter();
   const [classes, setClasses] = useState<ClassRow[]>([]);
   const [selectedClassId, setSelectedClassId] = useState("");
@@ -183,9 +185,11 @@ export default function DashboardClient() {
           <a href="/teacher/setup" className="font-typewriter text-[10px] tracking-widest uppercase text-[#8b7355] hover:text-[#c9933a] transition-colors">
             ⚙ Setup
           </a>
-          <a href="/teacher/admin" className="font-typewriter text-[10px] tracking-widest uppercase text-[#8b7355] hover:text-[#c9933a] transition-colors" title="Owner only">
-            🎫 Codes
-          </a>
+          {isAdmin && (
+            <a href="/teacher/admin" className="font-typewriter text-[10px] tracking-widest uppercase text-[#8b7355] hover:text-[#c9933a] transition-colors" title="Owner only">
+              🎫 Codes
+            </a>
+          )}
           <button onClick={handleLogout} className="font-typewriter text-[10px] tracking-widest uppercase text-[#8b7355] hover:text-[#c0392b] transition-colors">
             Log out →
           </button>
@@ -221,6 +225,7 @@ export default function DashboardClient() {
       <main className="flex-1 overflow-auto p-6">
         {activeTab === "bandeja"     && <BandejaTab     classId={selectedClassId} />}
         {activeTab === "overview"    && <OverviewTab    classId={selectedClassId} />}
+        {activeTab === "mundos"      && <MundosTab />}
         {activeTab === "pacing"      && <PacingTab      classId={selectedClassId} />}
         {activeTab === "grades"      && <GradesTab      classId={selectedClassId} />}
         {activeTab === "students"    && <StudentsTab    classId={selectedClassId} />}

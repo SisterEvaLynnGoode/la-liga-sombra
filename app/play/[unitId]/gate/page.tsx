@@ -4,6 +4,7 @@ import { getStudentSession } from "@/lib/auth/session";
 import { createClient } from "@/lib/supabase/server";
 import { getVocabReadinessScore } from "@/lib/mastery";
 import { UNITS, ROMAN } from "@/lib/game/units";
+import { WORLDS } from "@/lib/scroll-world/worlds";
 import GateClient from "./GateClient";
 
 // Friendly "coming soon" panel rendered for any unit whose content hasn't shipped yet.
@@ -118,6 +119,7 @@ export default async function GatePage({ params }: PageProps) {
       country={unit?.country ?? content.country}
       tier={readiness.tier}
       scorePercent={Math.round(readiness.score * 100)}
+      hasWorld={unitNumber in WORLDS}
     />
   );
 }
