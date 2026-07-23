@@ -129,7 +129,6 @@ export const WORLDS: Record<number, WorldConfig> = {
     country: "España",
     city: "Madrid",
     focus: "Places, transport & the verb ir",
-    published: false, // assets rendering — flip to true when unit-03 clips ship
     sections: [
       {
         id: "granvia", label: "Gran Vía", accent: GOLD,
