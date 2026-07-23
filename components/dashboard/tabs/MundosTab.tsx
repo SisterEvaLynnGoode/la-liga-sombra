@@ -1,6 +1,6 @@
 "use client";
 
-import { WORLDS } from "@/lib/scroll-world/worlds";
+import { WORLDS, hasWorld } from "@/lib/scroll-world/worlds";
 
 // Country label per unit for the "coming soon" cards (worlds not yet generated).
 const UNIT_COUNTRIES: Record<number, string> = {
@@ -26,7 +26,7 @@ export default function MundosTab() {
         {units.map((n) => {
           const world = WORLDS[n];
           const country = world?.country ?? UNIT_COUNTRIES[n] ?? "";
-          const ready = !!world;
+          const ready = hasWorld(n);
           return (
             <div
               key={n}

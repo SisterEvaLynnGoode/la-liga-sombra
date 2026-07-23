@@ -1,6 +1,6 @@
 import { redirect } from "next/navigation";
 import { getStudentSession } from "@/lib/auth/session";
-import { WORLDS } from "@/lib/scroll-world/worlds";
+import { hasWorld } from "@/lib/scroll-world/worlds";
 import ScrollWorld from "@/components/scroll-world/ScrollWorld";
 
 export const metadata = { title: "El Mundo — La Liga Sombra" };
@@ -12,8 +12,7 @@ export default async function StudentMundoPage({ params }: { params: { unitId: s
   if (!session) redirect("/login");
 
   const unitNumber = parseInt(params.unitId, 10);
-  const world = WORLDS[unitNumber];
-  if (!world) redirect(`/play/${unitNumber}/gate`);
+  if (!hasWorld(unitNumber)) redirect(`/play/${unitNumber}/gate`);
 
   return (
     <main style={{ background: "#0d0b0a", minHeight: "100vh" }}>
