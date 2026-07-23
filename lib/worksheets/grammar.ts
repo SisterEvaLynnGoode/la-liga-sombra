@@ -454,6 +454,47 @@ export const GRAMMAR: Record<number, GrammarLesson> = {
       ],
     },
   },
+  11: {
+    title: "Present Tense: -AR, -ER & -IR Verbs (+ the Historical Present)",
+    briefing:
+      "Spanish verbs come in three families, named for their last two letters: -AR (observar), -ER (leer), -IR (escribir). Drop those two letters and add the ending that matches who is doing the action. The -ER and -IR endings are almost identical — they only differ in the nosotros form (leemos vs. escribimos). One more thing, agente: this case happens in the year 750, but you will narrate it in the PRESENT tense. Spanish does this on purpose to make past events feel alive — 'El ladrón entra, toma el glifo y sale corriendo.' That is called the historical present, and you'll use it all semester.",
+    examples: [
+      { es: "El escriba escribe en una estela nueva.", en: "The scribe writes on a new stela." },
+      { es: "Yo observo la ciudad y tú lees los glifos.", en: "I observe the city and you read the glyphs." },
+      { es: "Nosotros descubrimos un tesoro en el templo.", en: "We discover a treasure in the temple." },
+    ],
+    referenceTable: {
+      caption: "Present tense — the three verb families",
+      headers: ["Pronombre", "observar (-AR)", "leer (-ER)", "escribir (-IR)"],
+      rows: [
+        ["yo", "observo", "leo", "escribo"],
+        ["tú", "observas", "lees", "escribes"],
+        ["él / ella", "observa", "lee", "escribe"],
+        ["nosotros", "observamos", "leemos", "escribimos"],
+        ["ellos / ellas", "observan", "leen", "escriben"],
+      ],
+    },
+    drills: [
+      { prompt: "El escriba ____ en la estela. (escribir — he writes)", answer: "escribe" },
+      { prompt: "Yo ____ la ciudad de Copán. (observar — I observe)", answer: "observo" },
+      { prompt: "Tú ____ los glifos antiguos. (leer — you read)", answer: "lees" },
+      { prompt: "Nosotros ____ un tesoro. (descubrir — we discover)", answer: "descubrimos" },
+      { prompt: "El sacerdote ____ al templo. (subir — he goes up)", answer: "sube" },
+      { prompt: "Los mayas ____ la piedra con cuidado. (tallar — they carve)", answer: "tallan" },
+    ],
+    secondDrill: {
+      title: "Guided Translation — Report it in the Present",
+      instructions:
+        "Write each line in Spanish, in the present tense. You are standing in Copán in the year 750 — narrate what you see happening right now.",
+      items: [
+        { prompt: "'The scribe writes on the stela.' →", answer: "El escriba escribe en la estela" },
+        { prompt: "'I observe the city.' →", answer: "Yo observo la ciudad" },
+        { prompt: "'You read the ancient glyphs.' →", answer: "Tú lees los glifos antiguos" },
+        { prompt: "'We discover a treasure.' →", answer: "Nosotros descubrimos un tesoro" },
+        { prompt: "'The priest goes up to the temple.' →", answer: "El sacerdote sube al templo" },
+      ],
+    },
+  },
 };
 
 /** Fallback for units without an authored grammar lesson yet. */

@@ -373,6 +373,39 @@ export const CULTURE: Record<number, CultureLesson> = {
     teacherNote:
       "Caps Unit 10 (careers + future) and the whole semester. ~45 min. A natural bridge to the Capstone — these 'My Future' cards make a great gallery and rehearse the future tense students will use to present. Show a 2-minute Galápagos clip first.",
   },
+  11: {
+    theme: "Copán y la Escritura Maya (Honduras)",
+    reading: {
+      products:
+        "In western Honduras stand the ruins of Copán, a Maya city that flourished for centuries. Its most famous monument is the Escalinata de los Jeroglíficos (the Hieroglyphic Stairway) — about 63 steps carved with more than 2,000 glyph blocks. It is the longest Maya inscription ever found. Copán is also known for its estelas: tall carved stones showing portraits of its rulers, and for its altars, jade ornaments, and the brilliant green feathers of the quetzal bird.",
+      practices:
+        "The Maya had a complete writing system — glyphs could stand for whole words or for sounds, the way our letters do. Escribas (scribes) trained for years to carve and paint them. They recorded the names of rulers, the dates of important events, and the history of the dynasty. The Maya also used a base-20 number system, understood the concept of zero, and kept a remarkably precise calendar. Today Copán is a UNESCO World Heritage Site, and the Ch'orti' Maya still live in the region.",
+      perspectives:
+        "For the Maya, writing was memory. Carving a ruler's story into stone kept that person present long after they died, and it proved the dynasty's right to rule. That is why a single stolen glyph matters so much: it isn't just decoration, it is a piece of a people's record of themselves. Honduras treats Copán as national patrimony — a shared inheritance that belongs to everyone, not to any collector.",
+    },
+    comprehension: [
+      { question: "What is the Escalinata de los Jeroglíficos famous for?", answer: "It is the longest Maya inscription ever found (about 63 steps, 2,000+ glyphs)" },
+      { question: "What is an estela?", answer: "A tall carved stone showing a portrait of a ruler" },
+      { question: "What was the job of an escriba?", answer: "To carve and paint glyphs recording rulers, dates, and history" },
+      { question: "True or false: the Maya had no symbol for zero.", answer: "False — they understood and used zero" },
+    ],
+    compara:
+      "The Maya carved their history into stone so it would last. How does your family, school, or community record what matters to it — photos, yearbooks, murals, social media? Write 2–3 sentences comparing it to a Maya estela. Use at least two Spanish words from this unit.",
+    project: {
+      title: "Diseña tu Estela / Design Your Own Stela",
+      brief:
+        "Design a stela that records something important about YOU or your community. Draw your own glyph-style symbols (they don't have to be real Maya glyphs), then label at least 6 of them in Spanish. At the bottom, write one sentence in the present tense explaining what your stela records — for example, 'Mi estela cuenta la historia de mi familia.'",
+      materials: "This sheet, pencil, optional colored pencils (labels must stay readable in pencil).",
+      checklist: [
+        "At least 6 symbols labeled in Spanish",
+        "One sentence in the present tense (Mi estela cuenta…)",
+        "At least one -AR, one -ER, and one -IR verb used somewhere on the sheet",
+        "Neat, clearly labeled, and readable",
+      ],
+    },
+    teacherNote:
+      "Run after Caso 11's game + vocab days. ~35–45 min. Read the three P's aloud or in pairs, do the comprehension, then the estela. This is the semester's first culture day, so connect it to the new time-travel frame: El Cronista steals treasures BEFORE they become patrimony — the 'perspectives' paragraph explains exactly why that's the harm. Ties back to grammar: the estela sentence must be in the present tense (the historical present students used all unit). Makes a strong hallway display next to the Unit 1 ofrendas.",
+  },
 };
 
 export function getCultureLesson(unitNumber: number): CultureLesson | null {
