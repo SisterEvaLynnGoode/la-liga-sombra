@@ -16,7 +16,10 @@ export interface UnitMeta {
   comingSoon?: boolean;
 }
 
-export const ROMAN = ["I","II","III","IV","V","VI","VII","VIII","IX","X"] as const;
+export const ROMAN = [
+  "I","II","III","IV","V","VI","VII","VIII","IX","X",
+  "XI","XII","XIII","XIV","XV","XVI","XVII","XVIII","XIX","XX",
+] as const;
 
 export const UNITS: UnitMeta[] = [
   {
@@ -78,5 +81,14 @@ export const UNITS: UnitMeta[] = [
     titleEs: "La Expo del Futuro", titleEn: "The Future Expo",
     description: "Careers, technology, and the future (ir a + infinitivo, simple future)",
     criminal: "El Maestro",       stolenItem: "El Sombrero de Paja",   rotation: 1.5,  themeColor: "#065f46",
+  },
+  // ── Semester 2: "La Liga Sombra a través del Tiempo" ──
+  // Time-travel arc. New antagonist El Cronista steals each culture's treasure
+  // from its own era. See docs/SEMESTER_2_CURRICULUM_MAP.md.
+  {
+    number: 11, country: "Honduras",             countryCode: "HN", flag: "🇭🇳",
+    titleEs: "El Misterio de la Estela", titleEn: "The Mystery of the Stela",
+    description: "Copán and the Maya Classic era — present-tense -AR/-ER/-IR review and the historical present",
+    criminal: "El Cronista",      stolenItem: "El Glifo de Copán",     rotation: -2.2, themeColor: "#2f6f4f",
   },
 ];

@@ -119,7 +119,10 @@ export const SuspectSchema = z.object({
 
 export const CutsceneStageSchema = z.object({
   type: z.literal("cutscene"),
-  videoUrl: z.string().min(1),
+  // Empty string is allowed and meaningful: Cutscene falls back to the text-only
+  // FallbackBriefing when there's no video yet (see components/games/Cutscene.tsx).
+  // Units ship playable before their Higgsfield videos are generated.
+  videoUrl: z.string(),
   subtitleUrl: z.string().optional(),
   fallbackImage: z.string().optional(),
   chiefName: z.string().min(1),
@@ -279,7 +282,9 @@ export const AcademiaConfigSchema = z.object({
 // ─── Unit root ────────────────────────────────────────────────────────────────
 
 export const UnitContentSchema = z.object({
-  unitNumber: z.number().int().min(1).max(10),
+  // 1–10 = Semester 1; 11–20 = Semester 2 time-travel arc
+  // (see docs/SEMESTER_2_CURRICULUM_MAP.md)
+  unitNumber: z.number().int().min(1).max(20),
   country: z.string().min(1),
   city: z.string().min(1),
   caseTitle: z.string().min(1),

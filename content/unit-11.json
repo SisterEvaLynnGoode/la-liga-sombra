@@ -1,0 +1,344 @@
+{
+  "unitNumber": 11,
+  "country": "Honduras",
+  "city": "Copán",
+  "caseTitle": "El Misterio de la Estela",
+  "caseDescription": "El Cronista, un ladrón del tiempo, viaja al año 750 para robar un glifo sagrado de la estela del rey en Copán, Honduras. Usa el presente de los verbos -AR, -ER e -IR para observar la ciudad maya, interrogar a los testigos y descubrir quién es el forastero antes de la medianoche. Recuerda: aunque el caso ocurre en el pasado, tú narras todo en presente — así hablan los mayas ahora mismo.",
+  "criminalName": "El Cronista",
+  "bonusClue": "El Cronista lleva sandalias extrañas que nadie en Copán reconoce, y tiene las manos pálidas porque nunca trabaja bajo el sol. Solo un sospechoso es un forastero así.",
+  "vocab": [
+    { "spanish": "la estela", "english": "carved stone monument (stela)", "audio": "/audio/unit-11/estela.mp3" },
+    { "spanish": "el glifo", "english": "glyph", "audio": "/audio/unit-11/glifo.mp3" },
+    { "spanish": "el templo", "english": "temple", "audio": "/audio/unit-11/templo.mp3" },
+    { "spanish": "la pirámide", "english": "pyramid", "audio": "/audio/unit-11/piramide.mp3" },
+    { "spanish": "la escalera", "english": "staircase", "audio": "/audio/unit-11/escalera.mp3" },
+    { "spanish": "la piedra", "english": "stone", "audio": "/audio/unit-11/piedra.mp3" },
+    { "spanish": "el altar", "english": "altar", "audio": "/audio/unit-11/altar.mp3" },
+    { "spanish": "la selva", "english": "jungle", "audio": "/audio/unit-11/selva.mp3" },
+    { "spanish": "la ciudad", "english": "city", "audio": "/audio/unit-11/ciudad.mp3" },
+    { "spanish": "el rey", "english": "king", "audio": "/audio/unit-11/rey.mp3" },
+    { "spanish": "el sacerdote", "english": "priest", "audio": "/audio/unit-11/sacerdote.mp3" },
+    { "spanish": "el escriba", "english": "scribe", "audio": "/audio/unit-11/escriba.mp3" },
+    { "spanish": "el jade", "english": "jade", "audio": "/audio/unit-11/jade.mp3" },
+    { "spanish": "el tesoro", "english": "treasure", "audio": "/audio/unit-11/tesoro.mp3" },
+    { "spanish": "excavar", "english": "to excavate / dig", "audio": "/audio/unit-11/excavar.mp3" },
+    { "spanish": "estudiar", "english": "to study", "audio": "/audio/unit-11/estudiar.mp3" },
+    { "spanish": "trabajar", "english": "to work", "audio": "/audio/unit-11/trabajar.mp3" },
+    { "spanish": "observar", "english": "to observe / watch", "audio": "/audio/unit-11/observar.mp3" },
+    { "spanish": "dibujar", "english": "to draw", "audio": "/audio/unit-11/dibujar.mp3" },
+    { "spanish": "tallar", "english": "to carve", "audio": "/audio/unit-11/tallar.mp3" },
+    { "spanish": "llevar", "english": "to carry / wear", "audio": "/audio/unit-11/llevar.mp3" },
+    { "spanish": "leer", "english": "to read", "audio": "/audio/unit-11/leer.mp3" },
+    { "spanish": "aprender", "english": "to learn", "audio": "/audio/unit-11/aprender.mp3" },
+    { "spanish": "correr", "english": "to run", "audio": "/audio/unit-11/correr.mp3" },
+    { "spanish": "comer", "english": "to eat", "audio": "/audio/unit-11/comer.mp3" },
+    { "spanish": "vender", "english": "to sell", "audio": "/audio/unit-11/vender.mp3" },
+    { "spanish": "ver", "english": "to see", "audio": "/audio/unit-11/ver.mp3" },
+    { "spanish": "escribir", "english": "to write", "audio": "/audio/unit-11/escribir.mp3" },
+    { "spanish": "descubrir", "english": "to discover", "audio": "/audio/unit-11/descubrir.mp3" },
+    { "spanish": "abrir", "english": "to open", "audio": "/audio/unit-11/abrir.mp3" },
+    { "spanish": "subir", "english": "to go up / climb", "audio": "/audio/unit-11/subir.mp3" },
+    { "spanish": "vivir", "english": "to live", "audio": "/audio/unit-11/vivir.mp3" },
+    { "spanish": "recibir", "english": "to receive", "audio": "/audio/unit-11/recibir.mp3" },
+    { "spanish": "hoy", "english": "today", "audio": "/audio/unit-11/hoy.mp3" },
+    { "spanish": "ahora", "english": "now", "audio": "/audio/unit-11/ahora.mp3" },
+    { "spanish": "siempre", "english": "always", "audio": "/audio/unit-11/siempre.mp3" }
+  ],
+  "stages": [
+    {
+      "type": "cutscene",
+      "videoUrl": "",
+      "subtitleUrl": "",
+      "chiefName": "Jefa Ramírez",
+      "chiefImageSeed": 60,
+      "briefingLines": [
+        "Agente, siéntate. Hoy empieza una misión diferente — la más importante de tu carrera.",
+        "Tenemos un problema nuevo. Los tesoros del pasado desaparecen antes de llegar a los museos.",
+        "El culpable se llama El Cronista. Es un ladrón del tiempo.",
+        "El Cronista viaja al pasado y roba cada tesoro antes de que sea patrimonio de su país. Si él gana, esos objetos nunca existen en nuestra historia.",
+        "Por eso La Liga Sombra construye la máquina del tiempo. Hoy la usamos por primera vez.",
+        "¿Cómo funciona? Tú entras en la cápsula, eliges la fecha y el lugar, y la máquina te lleva allí en segundos.",
+        "Tres reglas, agente. Primera: no cambias la historia. Solo recuperas el tesoro y vuelves.",
+        "Segunda regla: en el pasado, todo pasa AHORA. La gente trabaja, habla y construye en este momento. Por eso tú observas y hablas en PRESENTE.",
+        "Tercera regla: El Cronista es un forastero en cada época. No sabe trabajar como la gente del lugar. Ese es su error — y tu mejor pista.",
+        "Tu primer destino: Copán, Honduras, año 750. ¡Buena suerte, agente del tiempo!"
+      ],
+      "chiefImageUrl": "/images/characters/chief-ramirez.png"
+    },
+    {
+      "type": "cutscene",
+      "videoUrl": "",
+      "subtitleUrl": "",
+      "chiefName": "Jefa Ramírez",
+      "chiefImageSeed": 60,
+      "briefingLines": [
+        "Agente, esto no es una misión normal. Hoy usamos la máquina del tiempo por primera vez.",
+        "Tu destino es Copán, en Honduras — una gran ciudad maya, en el año 750. Allí hay templos, pirámides y una escalera enorme cubierta de glifos.",
+        "Un nuevo enemigo, El Cronista, roba tesoros del pasado antes de que sean patrimonio de cada país. Ahora quiere un glifo sagrado de la estela del rey.",
+        "Escucha con atención: en Copán todo pasa AHORA. Los mayas trabajan, tallan y escriben en este momento. Por eso tú narras todo en PRESENTE.",
+        "Repasa el presente de los verbos: los verbos -AR (observar, trabajar), los verbos -ER (leer, ver) y los verbos -IR (escribir, subir).",
+        "El Cronista se esconde entre la gente de Copán. Es un forastero: sus manos son pálidas y sus sandalias son extrañas.",
+        "Observa, escucha y descubre quién es antes de la medianoche. ¡Buena suerte, agente!"
+      ],
+      "chiefImageUrl": "/images/characters/chief-ramirez.png"
+    },
+    {
+      "type": "vocabMatch",
+      "pairs": [
+        { "spanish": "la estela", "english": "stela" },
+        { "spanish": "el glifo", "english": "glyph" },
+        { "spanish": "el templo", "english": "temple" },
+        { "spanish": "la selva", "english": "jungle" },
+        { "spanish": "el escriba", "english": "scribe" },
+        { "spanish": "el rey", "english": "king" },
+        { "spanish": "excavar", "english": "to dig" },
+        { "spanish": "tallar", "english": "to carve" },
+        { "spanish": "escribir", "english": "to write" },
+        { "spanish": "descubrir", "english": "to discover" },
+        { "spanish": "leer", "english": "to read" },
+        { "spanish": "subir", "english": "to climb" }
+      ]
+    },
+    {
+      "type": "sentenceBuilder",
+      "clueReward": "El agente aprende a leer los glifos. La estela del rey tiene un glifo especial que El Cronista quiere robar esta noche.",
+      "sentences": [
+        { "sentence": "El escriba escribe en la estela", "translation": "The scribe writes on the stela." },
+        { "sentence": "Los mayas suben al templo", "translation": "The Maya climb up to the temple." },
+        { "sentence": "Yo observo la ciudad de Copán", "translation": "I observe the city of Copán." },
+        { "sentence": "Tú lees los glifos antiguos", "translation": "You read the ancient glyphs." },
+        { "sentence": "Nosotros descubrimos un tesoro", "translation": "We discover a treasure." }
+      ]
+    },
+    {
+      "type": "readingComp",
+      "clueReward": "El glifo desaparece de la estela del rey durante la noche. El ladrón conoce bien la plaza y trabaja cuando no hay sol.",
+      "passage": "BITÁCORA TEMPORAL — AGENTE DE LA LIGA SOMBRA\nDestino: Copán, Honduras. Año 750 (aproximado).\n\nLa máquina del tiempo funciona. Ahora estoy en Copán, una gran ciudad maya en la selva. Es una ciudad increíble: hay templos altos, pirámides de piedra y una escalera enorme con muchos glifos. Los mayas la llaman la Escalinata de los Jeroglíficos.\n\nEn la plaza, un escriba escribe en una estela nueva. Un escultor talla la piedra con cuidado. El sacerdote sube al templo para la ceremonia. Muchas personas trabajan, estudian y aprenden aquí. El rey observa todo desde su trono.\n\nPero hay un problema grave. El Cronista, el ladrón del tiempo, quiere robar un glifo de la estela del rey. Este glifo es un tesoro: cuenta la historia de Copán. Si El Cronista lo roba ahora, el mundo pierde esta historia para siempre.\n\nMi misión es clara: observo, escucho y descubro quién es El Cronista antes de la medianoche.",
+      "glossary": [
+        { "word": "bitácora", "translation": "log / journal" },
+        { "word": "escalinata", "translation": "grand staircase" },
+        { "word": "talla", "translation": "carves (from tallar)" },
+        { "word": "trono", "translation": "throne" },
+        { "word": "cuidado", "translation": "care" },
+        { "word": "grave", "translation": "serious" },
+        { "word": "pierde", "translation": "loses (from perder)" },
+        { "word": "medianoche", "translation": "midnight" }
+      ],
+      "questions": [
+        {
+          "id": "r1",
+          "text": "¿Dónde está el agente?",
+          "type": "multiple_choice",
+          "options": ["En Copán, Honduras", "En Madrid, España", "En Buenos Aires, Argentina", "En Cusco, Perú"],
+          "correctIndex": 0,
+          "explanationEs": "La bitácora dice: 'Ahora estoy en Copán, una gran ciudad maya en la selva.'",
+          "explanationEn": "The log says the agent is in Copán, a Maya city in the jungle."
+        },
+        {
+          "id": "r2",
+          "text": "¿Qué hace el escriba?",
+          "type": "multiple_choice",
+          "options": ["Escribe en una estela", "Vende jade en el mercado", "Sube al templo", "Talla la piedra"],
+          "correctIndex": 0,
+          "explanationEs": "'Un escriba escribe en una estela nueva.' El verbo escribir es un verbo -IR.",
+          "explanationEn": "The scribe writes on a new stela — 'escribir' is an -IR verb."
+        },
+        {
+          "id": "r3",
+          "text": "¿Qué quiere robar El Cronista?",
+          "type": "multiple_choice",
+          "options": ["Un glifo de la estela del rey", "Una pirámide entera", "El trono del rey", "Un collar de jade"],
+          "correctIndex": 0,
+          "explanationEs": "'El Cronista... quiere robar un glifo de la estela del rey.'",
+          "explanationEn": "El Cronista wants to steal a glyph from the king's stela."
+        },
+        {
+          "id": "r4",
+          "text": "¿Por qué es importante el glifo?",
+          "type": "multiple_choice",
+          "options": ["Cuenta la historia de Copán", "Es de oro puro", "Abre la puerta del templo", "Es el mapa de la ciudad"],
+          "correctIndex": 0,
+          "explanationEs": "'Este glifo es un tesoro: cuenta la historia de Copán.'",
+          "explanationEn": "The glyph is a treasure because it tells the history of Copán."
+        },
+        {
+          "id": "r5",
+          "text": "Escribe una frase en presente: ¿qué hace el escultor?",
+          "type": "short_answer",
+          "acceptableAnswers": [
+            "El escultor talla la piedra",
+            "talla la piedra",
+            "el escultor talla la piedra con cuidado",
+            "talla la piedra con cuidado"
+          ],
+          "explanationEs": "'Un escultor talla la piedra con cuidado.' Tallar es un verbo -AR: él talla.",
+          "explanationEn": "The sculptor carves the stone — 'tallar' is an -AR verb (él talla)."
+        }
+      ]
+    },
+    {
+      "type": "listeningComp",
+      "clueReward": "El ladrón tiene las manos limpias (no talla ni escribe), no vende en el mercado, y camina sin ruido con sandalias diferentes. Actúa de noche.",
+      "audioUrl": "/audio/unit-11/conversacion-nocturna.mp3",
+      "transcript": "—¿Ves la estela del rey? El glifo más importante está ahí. —Sí, lo veo bien. Esta noche subo a la plaza y lo tomo. —¿No trabajas mañana en el mercado? —No. Yo no vendo jade como los otros. Yo solo observo y espero. Mis sandalias son diferentes; camino sin ruido. —¿Y tus manos? —Mis manos están limpias. Nunca tallo piedra, nunca escribo glifos. Adiós.",
+      "translation": "—Do you see the king's stela? The most important glyph is there. —Yes, I see it well. Tonight I go up to the plaza and I take it. —Don't you work tomorrow in the market? —No. I don't sell jade like the others. I only watch and wait. My sandals are different; I walk without noise. —And your hands? —My hands are clean. I never carve stone, I never write glyphs. Goodbye.",
+      "maxReplays": 3,
+      "passingScore": 0.75,
+      "retryHint": "Pista: Escucha los verbos en presente (subo, tomo, vendo, observo, tallo, escribo) y qué es diferente en el ladrón.",
+      "questions": [
+        {
+          "question": "¿Qué quiere tomar esta persona?",
+          "options": ["El glifo del rey", "Un collar de jade", "El trono", "Una máscara"],
+          "correctIndex": 0,
+          "explanationEs": "Dice: 'El glifo más importante está ahí... esta noche lo tomo.'",
+          "explanationEn": "He wants the king's most important glyph."
+        },
+        {
+          "question": "¿Cuándo va a la plaza?",
+          "options": ["Esta noche", "Mañana por la mañana", "En una semana", "Nunca"],
+          "correctIndex": 0,
+          "explanationEs": "'Esta noche subo a la plaza y lo tomo.' El ladrón actúa de noche.",
+          "explanationEn": "He says 'tonight I go up to the plaza' — he acts at night."
+        },
+        {
+          "question": "¿Vende jade en el mercado?",
+          "options": ["No, nunca vende jade", "Sí, todos los días", "Solo los domingos", "Sí, vende jade y plumas"],
+          "correctIndex": 0,
+          "explanationEs": "'Yo no vendo jade como los otros.' El verbo vender es un verbo -ER.",
+          "explanationEn": "He says he does NOT sell jade like the others — 'vender' is an -ER verb."
+        },
+        {
+          "question": "¿Cómo son sus manos?",
+          "options": ["Limpias — no talla ni escribe", "Llenas de polvo de piedra", "Con pintura roja", "Con jade y oro"],
+          "correctIndex": 0,
+          "explanationEs": "'Mis manos están limpias. Nunca tallo piedra, nunca escribo glifos.'",
+          "explanationEn": "His hands are clean — he never carves stone or writes glyphs."
+        },
+        {
+          "question": "¿Qué es diferente en él?",
+          "options": ["Sus sandalias", "Su sombrero", "Su lengua", "Su jade"],
+          "correctIndex": 0,
+          "explanationEs": "'Mis sandalias son diferentes; camino sin ruido.' Es un forastero.",
+          "explanationEn": "His sandals are different and he walks silently — he is an outsider."
+        }
+      ]
+    },
+    {
+      "type": "dialogueChoice",
+      "clueReward": "El testigo Balam confirma: el forastero llega de noche, tiene las manos pálidas, no talla ni escribe, y lleva sandalias extrañas. Observa la estela del rey cada noche.",
+      "npcName": "Balam, el joven escriba",
+      "npcAvatar": "🧑‍🎨",
+      "startNodeId": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "npcLine": "Buenas noches. Me llamo Balam. Soy escriba joven y aprendo a escribir glifos aquí, en la plaza. Estoy muy nervioso: alguien observa la estela del rey todas las noches. ¿Usted quién es?",
+          "options": [
+            {
+              "text": "Soy agente de La Liga Sombra. Busco a un forastero. Por favor, ¿ve usted a alguien extraño cerca de la estela?",
+              "isCorrect": true,
+              "nextNodeId": "describe"
+            },
+            {
+              "text": "¡No hay tiempo! ¿Dónde está el glifo del rey ahora mismo?",
+              "isCorrect": false,
+              "feedback": "Demasiado directo, y no te presentas. Preséntate como agente y pregunta con cortesía por la persona extraña."
+            },
+            {
+              "text": "¿Cuántos años tienes, Balam? ¿Te gusta tu trabajo?",
+              "isCorrect": false,
+              "feedback": "No es el momento para eso. Preséntate y pregunta por el forastero que observa la estela."
+            }
+          ]
+        },
+        {
+          "id": "describe",
+          "npcLine": "¡Ah, un agente! Sí, veo a un hombre extraño. Llega siempre de noche, nunca de día. No talla piedra y no escribe glifos como nosotros. Sus manos son muy pálidas. ¿Quiere usted saber más?",
+          "options": [
+            {
+              "text": "Sí, por favor. ¿Cómo son su ropa y sus sandalias? Todo detalle es importante.",
+              "isCorrect": true,
+              "nextNodeId": "detail"
+            },
+            {
+              "text": "¿Vende él jade en el mercado con los otros?",
+              "isCorrect": false,
+              "feedback": "Ya sabemos que el ladrón no vende en el mercado. Pregunta por su ropa y sus sandalias para identificarlo."
+            },
+            {
+              "text": "¿Comes tú con el rey en el templo?",
+              "isCorrect": false,
+              "feedback": "Muy fuera de tema. Concéntrate: pregunta cómo son su ropa y sus sandalias."
+            }
+          ]
+        },
+        {
+          "id": "detail",
+          "npcLine": "Sus sandalias son muy extrañas — nadie en Copán las reconoce. Camina sin ruido. Y observa la estela del rey cada noche, pero nunca trabaja con nosotros. Es un forastero, estoy seguro.",
+          "options": [
+            {
+              "text": "Muchas gracias, Balam. Esta información es muy valiosa. Ahora descubro quién es.",
+              "isCorrect": true,
+              "nextNodeId": "end"
+            },
+            {
+              "text": "¿Tienes miedo del forastero, Balam?",
+              "isCorrect": false,
+              "feedback": "Ya tienes la descripción que necesitas. Dale las gracias y termina la conversación."
+            },
+            {
+              "text": "¿Me vendes tú una estela nueva?",
+              "isCorrect": false,
+              "feedback": "Fuera de tema. Agradece a Balam su ayuda y cierra la entrevista."
+            }
+          ]
+        },
+        {
+          "id": "end",
+          "npcLine": "",
+          "isEnd": true,
+          "endMessage": "¡Buena suerte, agente! Si veo al forastero otra vez, corro a avisarle. Balam toma su pincel, señala hacia la estela del rey y vuelve a su trabajo con cuidado."
+        }
+      ]
+    },
+    {
+      "type": "lineup",
+      "correctSuspectId": "cronista",
+      "hint": "Recuerda las tres pistas: (1) el ladrón trabaja de NOCHE, nunca de día; (2) tiene las manos pálidas y limpias — no talla piedra ni escribe glifos; (3) lleva sandalias extrañas que nadie en Copán reconoce. ¿Cuál de los cuatro es el forastero consistente con TODAS las pistas?",
+      "suspects": [
+        {
+          "id": "cronista",
+          "name": "El Forastero Pálido",
+          "realName": "El Cronista",
+          "age": 35,
+          "description": "Llega a Copán de noche, nunca de día. Tiene las manos pálidas y limpias: no talla piedra ni escribe glifos. Lleva sandalias extrañas que nadie reconoce y camina sin ruido. Observa la estela del rey todas las noches y no trabaja con nadie.",
+          "imageSeed": 35
+        },
+        {
+          "id": "yax",
+          "name": "El Escultor",
+          "realName": "Yax Balam",
+          "age": 40,
+          "description": "Talla la piedra todos los días bajo el sol. Tiene las manos oscuras y llenas de polvo de piedra. Lleva un cincel y sandalias de cuero como todos en Copán. Trabaja de día, no de noche.",
+          "imageSeed": 40
+        },
+        {
+          "id": "kanchan",
+          "name": "El Escriba Mayor",
+          "realName": "K'an Chan",
+          "age": 50,
+          "description": "Escribe glifos en las estelas cada mañana. Tiene pintura roja en las manos. Vive cerca del templo y trabaja siempre con la luz del sol. Todos en Copán lo conocen y lo respetan.",
+          "imageSeed": 50
+        },
+        {
+          "id": "ixmut",
+          "name": "La Comerciante de Jade",
+          "realName": "Ix Mut",
+          "age": 30,
+          "description": "Vende jade y plumas de quetzal en el mercado. Viaja mucho y tiene la piel morena del sol. Trabaja de día y habla con todos. Lleva sandalias de cuero típicas de Copán.",
+          "imageSeed": 25
+        }
+      ]
+    }
+  ]
+}
