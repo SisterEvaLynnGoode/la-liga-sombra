@@ -9,6 +9,7 @@ import { unit07Scripts } from "./scripts/unit-07.js";
 import { unit08Scripts } from "./scripts/unit-08.js";
 import { unit09Scripts } from "./scripts/unit-09.js";
 import { unit10Scripts } from "./scripts/unit-10.js";
+import { unit11Scripts } from "./scripts/unit-11.js";
 import { unit01ColdScripts } from "./scripts/unit-01-cold.js";
 import { bossEclipseScripts } from "./scripts/boss-eclipse.js";
 
@@ -28,6 +29,8 @@ export const scripts: AudioScript[] = [
   ...unit08Scripts,
   ...unit09Scripts,
   ...unit10Scripts,
+  // ── Semester 2 (time-travel arc) ────────────────────────────────────────────
+  ...unit11Scripts,
   // ── Cold Cases ──────────────────────────────────────────────────────────────
   ...unit01ColdScripts,
   // ── Boss Fights ─────────────────────────────────────────────────────────────
