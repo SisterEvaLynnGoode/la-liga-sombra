@@ -3,7 +3,15 @@
 
 import type { VocabPair, DialogueNode, GlossaryEntry, ReadingQuestion } from "@/lib/games/types";
 
-export interface VocabItem extends VocabPair {
+/** Optional deck fields — see VocabPairSchema in lib/content-schema.ts. */
+export interface VocabDeckFields {
+  /** Example sentence sourced verbatim from this unit's own stages. */
+  example?: string;
+  /** Deck grouping label, e.g. "La Selva de Tikal". */
+  section?: string;
+}
+
+export interface VocabItem extends VocabPair, VocabDeckFields {
   audio?: string;
 }
 

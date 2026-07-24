@@ -6,6 +6,13 @@ export const VocabPairSchema = z.object({
   spanish: z.string().min(1, "Spanish word required"),
   english: z.string().min(1, "English translation required"),
   audio: z.string().optional(),
+  /** Example sentence, sourced verbatim from this unit's own stages. Powers the
+   *  printable vocab deck (lib/decks) so the deck and the game teach identical
+   *  sentences. Optional: units without it render word + translation only. */
+  example: z.string().optional(),
+  /** Deck grouping label, e.g. "La Selva de Tikal". Consecutive words sharing a
+   *  section render under one divider slide, in first-appearance order. */
+  section: z.string().optional(),
 });
 
 export const GlossaryEntrySchema = z.object({
