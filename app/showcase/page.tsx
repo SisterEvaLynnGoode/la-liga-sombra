@@ -11,9 +11,10 @@ import TimedFlashcards from "@/components/games/TimedFlashcards";
 import ChaseMap from "@/components/games/ChaseMap";
 import Interrogation from "@/components/games/Interrogation";
 import LiveStakeout from "@/components/games/LiveStakeout";
+import SwipeSort from "@/components/games/SwipeSort";
 import type { GameResult } from "@/lib/games/types";
 import type { DialogueNode, VocabPair, ReadingQuestion, GlossaryEntry, FlashcardItem } from "@/lib/games/types";
-import type { ChaseLocation, QuestionItem, InterrogationCharacter, StakeoutScene } from "@/lib/types/unit-content";
+import type { ChaseLocation, QuestionItem, InterrogationCharacter, StakeoutScene, SwipeSortItem } from "@/lib/types/unit-content";
 
 // ── Sample data (Unit 1 — México — Greetings & Intros) ──────────────────────
 
@@ -225,8 +226,21 @@ const STAKEOUT_SCENES: StakeoutScene[] = [
   { imageUrl: "https://picsum.photos/400/300?random=88", description: "Camerinos",           currentAction: "Los artistas están preparándose para el concierto", isTarget: false },
 ];
 
+// Caso 12 (Tikal) — SER vs. ESTAR binary sort
+const SWIPE_SORT_ITEMS: SwipeSortItem[] = [
+  { text: "El sospechoso ___ alto y moreno.",            category: "left",  explanation: "una característica física" },
+  { text: "La máscara de jade ___ en el altar.",         category: "right", explanation: "lugar" },
+  { text: "El ladrón ___ nervioso esta noche.",          category: "right", explanation: "un estado que cambia" },
+  { text: "Tikal ___ una ciudad maya muy antigua.",      category: "left",  explanation: "identidad" },
+  { text: "El astrónomo ___ en lo alto del templo.",     category: "right", explanation: "lugar" },
+  { text: "Yo ___ agente de La Liga Sombra.",            category: "left",  explanation: "identidad" },
+  { text: "Las pirámides ___ altas y de piedra.",        category: "left",  explanation: "características" },
+  { text: "El forastero ___ confundido con las estrellas.", category: "right", explanation: "un estado temporal" },
+];
+
 const GAMES = [
   { id: "vocab",          label: "Memoria",        emoji: "🃏" },
+  { id: "swipesort",      label: "Clasificar",     emoji: "↔️" },
   { id: "sentence",       label: "Oraciones",      emoji: "🧩" },
   { id: "dialogue",       label: "Diálogo",        emoji: "💬" },
   { id: "listening",      label: "Auditiva",       emoji: "🎧" },
@@ -399,6 +413,19 @@ export default function ShowcasePage() {
               "💡 Marco está en la zona de la habitación de la abuela esta mañana",
             ]}
             maxQuestions={5}
+            onComplete={handleComplete}
+          />
+        )}
+
+        {active === "swipesort" && (
+          <SwipeSort
+            key={gameKey}
+            prompt="¿SER o ESTAR?"
+            leftLabel="SER"
+            leftHint="identidad y características"
+            rightLabel="ESTAR"
+            rightHint="lugar y estado"
+            items={SWIPE_SORT_ITEMS}
             onComplete={handleComplete}
           />
         )}

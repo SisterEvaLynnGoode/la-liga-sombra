@@ -19,6 +19,7 @@ import ChaseMap from "@/components/games/ChaseMap";
 import TimedFlashcards from "@/components/games/TimedFlashcards";
 import LiveStakeout from "@/components/games/LiveStakeout";
 import SentenceBuilderStage from "@/components/games/SentenceBuilderStage";
+import SwipeSort from "@/components/games/SwipeSort";
 import Interrogation from "@/components/games/Interrogation";
 import Stakeout from "@/components/games/Stakeout";
 import type { StakeoutQuestion } from "@/lib/question-generator";
@@ -59,6 +60,7 @@ const STAGE_LABELS: Record<StageData["type"], string> = {
   interrogation: "Interrogatorio",
   timedFlashcards: "Flashcards",
   liveStakeout: "Vigilancia",
+  swipeSort: "Clasificar",
 };
 
 export default function UnitPlayer({ content, unitId, unitNumber, classId, agentName = "", initialStageIndex, isCompleted, stakeoutQuestions, difficulty = "standard" }: Props) {
@@ -530,6 +532,20 @@ export default function UnitPlayer({ content, unitId, unitNumber, classId, agent
             scenes={stage.scenes}
             targetActionDescription={stage.targetActionDescription}
             timeLimit={stage.timeLimit}
+            unitId={unitId}
+            onComplete={handleStageComplete}
+          />
+        )}
+
+        {stage?.type === "swipeSort" && (
+          <SwipeSort
+            key={`stage-${currentStage}`}
+            prompt={stage.prompt}
+            leftLabel={stage.leftLabel}
+            leftHint={stage.leftHint}
+            rightLabel={stage.rightLabel}
+            rightHint={stage.rightHint}
+            items={stage.items}
             unitId={unitId}
             onComplete={handleStageComplete}
           />

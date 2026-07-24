@@ -81,6 +81,29 @@
       ]
     },
     {
+      "type": "swipeSort",
+      "clueReward": "El agente domina la diferencia: SER dice QUIÉN o CÓMO ES algo; ESTAR dice DÓNDE ESTÁ y CÓMO ESTÁ en este momento. Con esta regla puede separar al astrónomo verdadero del impostor.",
+      "prompt": "¿SER o ESTAR?",
+      "leftLabel": "SER",
+      "leftHint": "identidad y características",
+      "rightLabel": "ESTAR",
+      "rightHint": "lugar y estado",
+      "items": [
+        { "text": "El sospechoso ___ alto y moreno.", "category": "left", "explanation": "una característica física" },
+        { "text": "La máscara de jade ___ en el altar.", "category": "right", "explanation": "lugar" },
+        { "text": "El ladrón ___ nervioso esta noche.", "category": "right", "explanation": "un estado que cambia" },
+        { "text": "Tikal ___ una ciudad maya muy antigua.", "category": "left", "explanation": "identidad" },
+        { "text": "El astrónomo ___ en lo alto del templo.", "category": "right", "explanation": "lugar" },
+        { "text": "Yo ___ agente de La Liga Sombra.", "category": "left", "explanation": "identidad" },
+        { "text": "Las pirámides ___ altas y de piedra.", "category": "left", "explanation": "características" },
+        { "text": "Nosotros ___ cerca de la Gran Plaza.", "category": "right", "explanation": "lugar" },
+        { "text": "El forastero ___ confundido con las estrellas.", "category": "right", "explanation": "un estado temporal" },
+        { "text": "El quetzal ___ un pájaro verde de Guatemala.", "category": "left", "explanation": "identidad" },
+        { "text": "La selva ___ muy grande y verde.", "category": "left", "explanation": "características" },
+        { "text": "Hoy el cielo ___ claro y hay muchas estrellas.", "category": "right", "explanation": "una condición de ahora" }
+      ]
+    },
+    {
       "type": "sentenceBuilder",
       "clueReward": "El agente practica SER y ESTAR. La máscara de jade ESTÁ cerca del altar, y el astrónomo verdadero ES tranquilo e inteligente.",
       "sentences": [

@@ -160,6 +160,30 @@ export interface TimedFlashcardsStageData {
   timeLimit: number;
 }
 
+// ── SwipeSort (binary classifier — mobile/Chromebook-first) ───────────────────
+export interface SwipeSortItem {
+  /** The card text — usually a sentence with a "___" blank. */
+  text: string;
+  /** Which side this card belongs to. */
+  category: "left" | "right";
+  /** Optional one-line explanation shown after the student answers. */
+  explanation?: string;
+}
+
+export interface SwipeSortStageData {
+  type: "swipeSort";
+  clueReward?: string;
+  /** Short instruction, e.g. "¿SER o ESTAR?" */
+  prompt?: string;
+  /** Label + hint for the left choice (swipe left / tap left / ArrowLeft). */
+  leftLabel: string;
+  leftHint?: string;
+  /** Label + hint for the right choice (swipe right / tap right / ArrowRight). */
+  rightLabel: string;
+  rightHint?: string;
+  items: SwipeSortItem[];
+}
+
 export type StageData =
   | CutsceneStageData
   | VocabMatchStageData
@@ -171,7 +195,8 @@ export type StageData =
   | SentenceBuilderStageData
   | InterrogationStageData
   | TimedFlashcardsStageData
-  | LiveStakeoutStageData;
+  | LiveStakeoutStageData
+  | SwipeSortStageData;
 
 // ── Academia config ──────────────────────────────────────────────────────────
 

@@ -257,6 +257,26 @@ export const TimedFlashcardsStageSchema = z.object({
   timeLimit: z.number().int().min(15).max(300),
 });
 
+export const SwipeSortItemSchema = z.object({
+  text: z.string().min(1),
+  category: z.enum(["left", "right"]),
+  explanation: z.string().optional(),
+});
+
+export const SwipeSortStageSchema = z.object({
+  type: z.literal("swipeSort"),
+  clueReward: z.string().optional(),
+  prompt: z.string().optional(),
+  leftLabel: z.string().min(1, "Left category label required"),
+  leftHint: z.string().optional(),
+  rightLabel: z.string().min(1, "Right category label required"),
+  rightHint: z.string().optional(),
+  items: z.array(SwipeSortItemSchema).min(4, "Include at least 4 cards").max(20, "Maximum 20 cards"),
+}).refine(
+  (d) => d.items.some((i) => i.category === "left") && d.items.some((i) => i.category === "right"),
+  { message: "swipeSort needs at least one card on each side", path: ["items"] }
+);
+
 export const StageSchema = z.discriminatedUnion("type", [
   CutsceneStageSchema,
   VocabMatchStageSchema,
@@ -269,6 +289,7 @@ export const StageSchema = z.discriminatedUnion("type", [
   InterrogationStageSchema,
   TimedFlashcardsStageSchema,
   LiveStakeoutStageSchema,
+  SwipeSortStageSchema,
 ]);
 
 // ─── Academia config ──────────────────────────────────────────────────────────
