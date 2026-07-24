@@ -91,4 +91,10 @@ export const UNITS: UnitMeta[] = [
     description: "Copán and the Maya Classic era — present-tense -AR/-ER/-IR review and the historical present",
     criminal: "El Cronista",      stolenItem: "El Glifo de Copán",     rotation: -2.2, themeColor: "#2f6f4f",
   },
+  {
+    number: 12, country: "Guatemala",            countryCode: "GT", flag: "🇬🇹",
+    titleEs: "La Máscara de Jade", titleEn: "The Jade Mask",
+    description: "Tikal and the Maya astronomers — SER vs. ESTAR (description & identity vs. location & state)",
+    criminal: "El Cronista",      stolenItem: "La Máscara de Jade",    rotation: 1.8,  themeColor: "#1e6f5c",
+  },
 ];

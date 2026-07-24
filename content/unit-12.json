@@ -1,0 +1,320 @@
+{
+  "unitNumber": 12,
+  "country": "Guatemala",
+  "city": "Tikal",
+  "caseTitle": "La Máscara de Jade",
+  "caseDescription": "El Cronista viaja al año 700 para robar la máscara de jade de un astrónomo maya en Tikal, Guatemala. Usa SER (identidad y características: es alto) y ESTAR (lugar y estado: está cerca del templo, está nervioso) para describir la ciudad, interrogar a los testigos y descubrir quién es el forastero antes del amanecer. Recuerda: aunque el caso ocurre en el pasado, tú narras todo en presente — así hablan los mayas ahora mismo.",
+  "criminalName": "El Cronista",
+  "bonusClue": "El Cronista finge ser astrónomo, pero no conoce las estrellas: cuando mira el cielo, está confundido y nervioso. Un astrónomo verdadero está tranquilo y sabe todos los nombres del cielo. Solo un sospechoso no conoce las estrellas.",
+  "vocab": [
+    { "spanish": "el árbol", "english": "tree", "audio": "/audio/unit-12/arbol.mp3" },
+    { "spanish": "la ceiba", "english": "ceiba (sacred Maya tree)", "audio": "/audio/unit-12/ceiba.mp3" },
+    { "spanish": "el jaguar", "english": "jaguar", "audio": "/audio/unit-12/jaguar.mp3" },
+    { "spanish": "el mono", "english": "monkey", "audio": "/audio/unit-12/mono.mp3" },
+    { "spanish": "el pájaro", "english": "bird", "audio": "/audio/unit-12/pajaro.mp3" },
+    { "spanish": "el quetzal", "english": "quetzal (bird)", "audio": "/audio/unit-12/quetzal.mp3" },
+    { "spanish": "la pirámide", "english": "pyramid", "audio": "/audio/unit-12/piramide.mp3" },
+    { "spanish": "el templo", "english": "temple", "audio": "/audio/unit-12/templo.mp3" },
+    { "spanish": "la plaza", "english": "plaza", "audio": "/audio/unit-12/plaza.mp3" },
+    { "spanish": "la luna", "english": "moon", "audio": "/audio/unit-12/luna.mp3" },
+    { "spanish": "la estrella", "english": "star", "audio": "/audio/unit-12/estrella.mp3" },
+    { "spanish": "el cielo", "english": "sky", "audio": "/audio/unit-12/cielo.mp3" },
+    { "spanish": "la máscara", "english": "mask", "audio": "/audio/unit-12/mascara.mp3" },
+    { "spanish": "el jade", "english": "jade", "audio": "/audio/unit-12/jade.mp3" },
+    { "spanish": "ser", "english": "to be (identity, traits)", "audio": "/audio/unit-12/ser.mp3" },
+    { "spanish": "alto", "english": "tall", "audio": "/audio/unit-12/alto.mp3" },
+    { "spanish": "bajo", "english": "short", "audio": "/audio/unit-12/bajo.mp3" },
+    { "spanish": "moreno", "english": "dark-haired", "audio": "/audio/unit-12/moreno.mp3" },
+    { "spanish": "fuerte", "english": "strong", "audio": "/audio/unit-12/fuerte.mp3" },
+    { "spanish": "inteligente", "english": "intelligent", "audio": "/audio/unit-12/inteligente.mp3" },
+    { "spanish": "antiguo", "english": "ancient / old", "audio": "/audio/unit-12/antiguo.mp3" },
+    { "spanish": "estar", "english": "to be (location, state)", "audio": "/audio/unit-12/estar.mp3" },
+    { "spanish": "cansado", "english": "tired", "audio": "/audio/unit-12/cansado.mp3" },
+    { "spanish": "nervioso", "english": "nervous", "audio": "/audio/unit-12/nervioso.mp3" },
+    { "spanish": "contento", "english": "happy / content", "audio": "/audio/unit-12/contento.mp3" },
+    { "spanish": "tranquilo", "english": "calm", "audio": "/audio/unit-12/tranquilo.mp3" },
+    { "spanish": "confundido", "english": "confused", "audio": "/audio/unit-12/confundido.mp3" },
+    { "spanish": "aquí", "english": "here", "audio": "/audio/unit-12/aqui.mp3" },
+    { "spanish": "allí", "english": "there", "audio": "/audio/unit-12/alli.mp3" },
+    { "spanish": "cerca", "english": "near / close", "audio": "/audio/unit-12/cerca.mp3" },
+    { "spanish": "lejos", "english": "far", "audio": "/audio/unit-12/lejos.mp3" },
+    { "spanish": "dentro", "english": "inside", "audio": "/audio/unit-12/dentro.mp3" },
+    { "spanish": "la noche", "english": "night", "audio": "/audio/unit-12/noche.mp3" },
+    { "spanish": "el astrónomo", "english": "astronomer", "audio": "/audio/unit-12/astronomo.mp3" },
+    { "spanish": "el forastero", "english": "outsider / stranger", "audio": "/audio/unit-12/forastero.mp3" },
+    { "spanish": "el amanecer", "english": "dawn", "audio": "/audio/unit-12/amanecer.mp3" }
+  ],
+  "stages": [
+    {
+      "type": "cutscene",
+      "videoUrl": "",
+      "subtitleUrl": "",
+      "chiefName": "Jefa Ramírez",
+      "chiefImageSeed": 60,
+      "briefingLines": [
+        "Bienvenido de nuevo, agente del tiempo. Tu segundo salto te lleva a Tikal, en Guatemala — una gran ciudad maya en la selva, en el año 700.",
+        "Tikal es enorme y muy antigua. Sus pirámides son altas y el Templo IV es el más alto de todos. Los monos y los quetzales viven entre los árboles.",
+        "El Cronista quiere robar la máscara de jade de un astrónomo maya. La máscara es un tesoro sagrado que está cerca del altar, en lo alto del templo.",
+        "Para este caso necesitas dos verbos: SER y ESTAR. Los dos significan 'to be', pero no son iguales.",
+        "Usa SER para la identidad y las características: 'El sospechoso ES alto y moreno.' 'La pirámide ES antigua.'",
+        "Usa ESTAR para el lugar y el estado: 'El astrónomo ESTÁ en el templo.' 'El ladrón ESTÁ nervioso.'",
+        "Aquí está tu mejor pista: El Cronista finge ser astrónomo, pero es un forastero. No conoce las estrellas. Cuando mira el cielo, está confundido.",
+        "Recuerda la regla del tiempo: en Tikal todo pasa AHORA. Narra todo en PRESENTE. Observa, escucha y atrápalo antes del amanecer. ¡Suerte, agente!"
+      ],
+      "chiefImageUrl": "/images/characters/chief-ramirez.png"
+    },
+    {
+      "type": "vocabMatch",
+      "pairs": [
+        { "spanish": "la pirámide", "english": "pyramid" },
+        { "spanish": "el templo", "english": "temple" },
+        { "spanish": "la máscara", "english": "mask" },
+        { "spanish": "el jaguar", "english": "jaguar" },
+        { "spanish": "la estrella", "english": "star" },
+        { "spanish": "el cielo", "english": "sky" },
+        { "spanish": "alto", "english": "tall" },
+        { "spanish": "nervioso", "english": "nervous" },
+        { "spanish": "cerca", "english": "near" },
+        { "spanish": "tranquilo", "english": "calm" },
+        { "spanish": "el astrónomo", "english": "astronomer" },
+        { "spanish": "el forastero", "english": "outsider" }
+      ]
+    },
+    {
+      "type": "sentenceBuilder",
+      "clueReward": "El agente practica SER y ESTAR. La máscara de jade ESTÁ cerca del altar, y el astrónomo verdadero ES tranquilo e inteligente.",
+      "sentences": [
+        { "sentence": "El sospechoso es alto y moreno", "translation": "The suspect is tall and dark-haired. (SER — description)" },
+        { "sentence": "El sospechoso está nervioso ahora", "translation": "The suspect is nervous now. (ESTAR — state)" },
+        { "sentence": "La máscara de jade está en el altar", "translation": "The jade mask is on the altar. (ESTAR — location)" },
+        { "sentence": "El astrónomo es muy inteligente", "translation": "The astronomer is very intelligent. (SER — trait)" },
+        { "sentence": "Nosotros estamos cerca del templo", "translation": "We are near the temple. (ESTAR — location)" }
+      ]
+    },
+    {
+      "type": "readingComp",
+      "clueReward": "La máscara de jade está cerca del altar, en lo alto del Templo IV. El ladrón finge ser astrónomo, pero está nervioso y no conoce las estrellas.",
+      "passage": "BITÁCORA TEMPORAL — AGENTE DE LA LIGA SOMBRA\nDestino: Tikal, Guatemala. Año 700 (aproximado).\n\nLa máquina del tiempo funciona otra vez. Ahora estoy en Tikal, una gran ciudad maya en la selva de Petén. La ciudad es enorme y muy antigua. Las pirámides son altas, y el Templo IV es el más alto de todos. Estoy cerca de la Gran Plaza.\n\nEs de noche. El cielo está claro y hay muchas estrellas. Un astrónomo maya está en lo alto del templo. Él observa la luna y las estrellas. El astrónomo es inteligente y tranquilo; conoce todos los nombres del cielo. Su máscara de jade está cerca del altar. La máscara es un tesoro sagrado.\n\nPero hay un problema. El Cronista, el ladrón del tiempo, quiere robar la máscara de jade. Él finge ser astrónomo, pero no conoce las estrellas. Cuando mira el cielo, está confundido y nervioso.\n\nMi misión es clara: observo, escucho y descubro quién es el forastero antes del amanecer.",
+      "glossary": [
+        { "word": "Petén", "translation": "the northern rainforest region of Guatemala" },
+        { "word": "enorme", "translation": "enormous / huge" },
+        { "word": "claro", "translation": "clear" },
+        { "word": "en lo alto de", "translation": "at the top of" },
+        { "word": "sagrado", "translation": "sacred" },
+        { "word": "finge", "translation": "pretends (from fingir)" },
+        { "word": "confundido", "translation": "confused" },
+        { "word": "amanecer", "translation": "dawn" }
+      ],
+      "questions": [
+        {
+          "id": "r1",
+          "text": "¿Dónde está el agente ahora?",
+          "type": "multiple_choice",
+          "options": ["En Tikal, Guatemala", "En Copán, Honduras", "En Madrid, España", "En Cusco, Perú"],
+          "correctIndex": 0,
+          "explanationEs": "'Ahora estoy en Tikal.' Usamos ESTAR para el lugar: estoy en Tikal.",
+          "explanationEn": "Location uses ESTAR — 'estoy en Tikal.'"
+        },
+        {
+          "id": "r2",
+          "text": "¿Cómo es el Templo IV?",
+          "type": "multiple_choice",
+          "options": ["Es el más alto de todos", "Es pequeño y nuevo", "Está cerrado", "Está lejos de la ciudad"],
+          "correctIndex": 0,
+          "explanationEs": "'El Templo IV es el más alto de todos.' Una característica permanente usa SER: es alto.",
+          "explanationEn": "A permanent trait uses SER — 'es el más alto.'"
+        },
+        {
+          "id": "r3",
+          "text": "¿Dónde está la máscara de jade?",
+          "type": "multiple_choice",
+          "options": ["Cerca del altar", "En la Gran Plaza", "Dentro de la selva", "Lejos del templo"],
+          "correctIndex": 0,
+          "explanationEs": "'Su máscara de jade está cerca del altar.' Posición → ESTAR.",
+          "explanationEn": "Position uses ESTAR — 'está cerca del altar.'"
+        },
+        {
+          "id": "r4",
+          "text": "¿Cómo está El Cronista cuando mira el cielo?",
+          "type": "multiple_choice",
+          "options": ["Confundido y nervioso", "Tranquilo y contento", "Cansado y enfermo", "Fuerte y alto"],
+          "correctIndex": 0,
+          "explanationEs": "'Cuando mira el cielo, está confundido y nervioso.' Un estado usa ESTAR.",
+          "explanationEn": "A temporary state uses ESTAR — 'está confundido y nervioso.'"
+        },
+        {
+          "id": "r5",
+          "text": "Para la POSICIÓN usamos ESTAR. Completa: 'El astrónomo ____ en lo alto del templo.'",
+          "type": "short_answer",
+          "acceptableAnswers": ["está", "esta", "el astrónomo está en lo alto del templo", "está en lo alto del templo"],
+          "explanationEs": "Posición o lugar → ESTAR. 'El astrónomo está en lo alto del templo.'",
+          "explanationEn": "Location → ESTAR: 'está en lo alto del templo.'"
+        }
+      ]
+    },
+    {
+      "type": "listeningComp",
+      "clueReward": "El ladrón es alto y moreno (SER). Está cerca del Templo IV y está nervioso (ESTAR). Es un forastero: no conoce las estrellas.",
+      "audioUrl": "/audio/unit-12/conversacion-nocturna.mp3",
+      "transcript": "—¿Dónde estás? —Estoy cerca del Templo IV. La máscara de jade está en el altar. —¿Eres astrónomo? ¿Conoces las estrellas? —No. Yo soy forastero. No conozco los nombres de las estrellas. Estoy muy nervioso cuando miro el cielo. —¿Cómo eres? Para reconocerte. —Soy alto y moreno. Ahora estoy cansado, pero esta noche tomo la máscara. Adiós.",
+      "translation": "—Where are you? —I'm near Temple IV. The jade mask is on the altar. —Are you an astronomer? Do you know the stars? —No. I'm an outsider. I don't know the names of the stars. I'm very nervous when I look at the sky. —What do you look like? So I recognize you. —I'm tall and dark-haired. Right now I'm tired, but tonight I take the mask. Goodbye.",
+      "maxReplays": 3,
+      "passingScore": 0.75,
+      "retryHint": "Pista: SER dice CÓMO ES (alto, moreno, forastero). ESTAR dice DÓNDE ESTÁ (cerca del Templo IV) y CÓMO ESTÁ (nervioso, cansado).",
+      "questions": [
+        {
+          "question": "¿Dónde está el ladrón?",
+          "options": ["Cerca del Templo IV", "En la Gran Plaza", "Dentro de la selva", "Lejos de la ciudad"],
+          "correctIndex": 0,
+          "explanationEs": "'Estoy cerca del Templo IV.' Lugar → ESTAR.",
+          "explanationEn": "Location uses ESTAR — 'estoy cerca del Templo IV.'"
+        },
+        {
+          "question": "¿Es astrónomo de verdad?",
+          "options": ["No, es forastero y no conoce las estrellas", "Sí, es un astrónomo famoso", "Sí, conoce todo el cielo", "No, es un sacerdote"],
+          "correctIndex": 0,
+          "explanationEs": "'Yo soy forastero. No conozco los nombres de las estrellas.' Identidad → SER.",
+          "explanationEn": "Identity uses SER — 'soy forastero.'"
+        },
+        {
+          "question": "¿Cómo está cuando mira el cielo?",
+          "options": ["Nervioso", "Contento", "Tranquilo", "Fuerte"],
+          "correctIndex": 0,
+          "explanationEs": "'Estoy muy nervioso cuando miro el cielo.' Un estado → ESTAR.",
+          "explanationEn": "A state uses ESTAR — 'estoy nervioso.'"
+        },
+        {
+          "question": "¿Cómo es físicamente?",
+          "options": ["Alto y moreno", "Bajo y rubio", "Bajo y moreno", "Alto y rubio"],
+          "correctIndex": 0,
+          "explanationEs": "'Soy alto y moreno.' Una característica → SER.",
+          "explanationEn": "A physical trait uses SER — 'soy alto y moreno.'"
+        },
+        {
+          "question": "¿Dónde está la máscara?",
+          "options": ["En el altar", "En la plaza", "En el árbol", "En la luna"],
+          "correctIndex": 0,
+          "explanationEs": "'La máscara de jade está en el altar.' Lugar → ESTAR.",
+          "explanationEn": "Location uses ESTAR — 'está en el altar.'"
+        }
+      ]
+    },
+    {
+      "type": "dialogueChoice",
+      "clueReward": "La testigo Itzel confirma: el forastero es alto y moreno, y de noche está cerca del Templo IV. Está nervioso y no conoce las estrellas — no es un astrónomo verdadero.",
+      "npcName": "Itzel, la joven astrónoma",
+      "npcAvatar": "🔭",
+      "startNodeId": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "npcLine": "Buenas noches. Me llamo Itzel. Soy astrónoma joven y observo las estrellas desde el templo. Estoy preocupada: un hombre extraño está cerca del Templo IV cada noche, pero no mira bien el cielo. ¿Usted quién es?",
+          "options": [
+            {
+              "text": "Soy agente de La Liga Sombra. Busco a un forastero. Por favor, ¿cómo es ese hombre extraño?",
+              "isCorrect": true,
+              "nextNodeId": "describe"
+            },
+            {
+              "text": "¡No hay tiempo! ¿Dónde está la máscara de jade ahora mismo?",
+              "isCorrect": false,
+              "feedback": "Demasiado directo, y no te presentas. Preséntate como agente y pregunta con cortesía cómo ES el hombre extraño."
+            },
+            {
+              "text": "¿Estás cansada, Itzel? Es muy tarde.",
+              "isCorrect": false,
+              "feedback": "No es el momento. Preséntate y pregunta por el forastero que está cerca del templo."
+            }
+          ]
+        },
+        {
+          "id": "describe",
+          "npcLine": "¡Ah, un agente! El hombre es alto y moreno. Está cerca del Templo IV todas las noches. Mira el cielo, pero está confundido — no conoce las estrellas. ¿Quiere usted saber más?",
+          "options": [
+            {
+              "text": "Sí, por favor. ¿Cómo está él cuando lo ve? ¿Está tranquilo o nervioso?",
+              "isCorrect": true,
+              "nextNodeId": "detail"
+            },
+            {
+              "text": "¿Es bajo y rubio, entonces?",
+              "isCorrect": false,
+              "feedback": "Itzel ya dice que es alto y moreno. Escucha bien y pregunta por su estado: ¿está tranquilo o nervioso?"
+            },
+            {
+              "text": "¿La máscara es de oro o de jade?",
+              "isCorrect": false,
+              "feedback": "Fuera de tema. Concéntrate en el sospechoso: pregunta cómo ESTÁ (su estado)."
+            }
+          ]
+        },
+        {
+          "id": "detail",
+          "npcLine": "Está muy nervioso. Un astrónomo verdadero está tranquilo y conoce todos los nombres del cielo. Este hombre es diferente: es un forastero. No es de aquí, estoy segura.",
+          "options": [
+            {
+              "text": "Muchas gracias, Itzel. Esta información es muy valiosa. Ahora sé qué buscar: alto y moreno, cerca del Templo IV, y nervioso con el cielo.",
+              "isCorrect": true,
+              "nextNodeId": "end"
+            },
+            {
+              "text": "¿Tienes miedo del forastero, Itzel?",
+              "isCorrect": false,
+              "feedback": "Ya tienes la descripción que necesitas. Dale las gracias y termina la conversación."
+            },
+            {
+              "text": "¿Está lejos el Templo IV de aquí?",
+              "isCorrect": false,
+              "feedback": "No es necesario ahora. Agradece a Itzel su ayuda y cierra la entrevista."
+            }
+          ]
+        },
+        {
+          "id": "end",
+          "npcLine": "",
+          "isEnd": true,
+          "endMessage": "¡Buena suerte, agente! Si el forastero está cerca otra vez, corro a avisarle. Itzel vuelve a su telescopio de piedra y observa las estrellas, tranquila y atenta."
+        }
+      ]
+    },
+    {
+      "type": "lineup",
+      "correctSuspectId": "cronista",
+      "hint": "Recuerda las tres pistas: (1) el ladrón ES alto y moreno (SER — característica); (2) de noche ESTÁ cerca del Templo IV (ESTAR — lugar); (3) ES un forastero: ESTÁ nervioso y NO conoce las estrellas — un astrónomo verdadero está tranquilo y sabe los nombres del cielo. ¿Quién es consistente con TODAS las pistas?",
+      "suspects": [
+        {
+          "id": "cronista",
+          "name": "El Falso Astrónomo",
+          "realName": "El Cronista",
+          "age": 30,
+          "description": "Es alto y moreno, y es un forastero. De noche está cerca del Templo IV. Finge ser astrónomo, pero está nervioso y confundido cuando mira el cielo — no conoce los nombres de las estrellas. Lleva la máscara de jade escondida en una bolsa.",
+          "imageSeed": 32
+        },
+        {
+          "id": "yaxkin",
+          "name": "El Astrónomo Verdadero",
+          "realName": "Yax K'in",
+          "age": 55,
+          "description": "Es alto y moreno, como el ladrón, pero es un astrónomo verdadero de Tikal. Cada noche está en lo alto del templo, tranquilo y atento. Conoce todos los nombres de las estrellas y de la luna. Nunca está nervioso con el cielo.",
+          "imageSeed": 45
+        },
+        {
+          "id": "balam",
+          "name": "El Guardián Bajo",
+          "realName": "Balam Xoc",
+          "age": 26,
+          "description": "Es bajo y moreno — no alto. Es guardián de la Gran Plaza y es muy fuerte. De noche está cerca de la plaza, no del Templo IV. Está tranquilo y contento con su trabajo.",
+          "imageSeed": 20
+        },
+        {
+          "id": "kaban",
+          "name": "El Sacerdote Lejano",
+          "realName": "K'aban Chan",
+          "age": 38,
+          "description": "Es alto y moreno, pero de noche está lejos, en el Templo I, no cerca del Templo IV. Es sacerdote y está tranquilo. Conoce el cielo y las estrellas muy bien.",
+          "imageSeed": 52
+        }
+      ]
+    }
+  ]
+}

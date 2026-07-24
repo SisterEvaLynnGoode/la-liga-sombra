@@ -495,6 +495,47 @@ export const GRAMMAR: Record<number, GrammarLesson> = {
       ],
     },
   },
+  12: {
+    title: "SER vs. ESTAR — Two Ways to Say 'To Be'",
+    briefing:
+      "Spanish has TWO verbs that both mean 'to be', and choosing the right one is the #1 thing detectives get wrong. SER is for identity and permanent traits — who or what something is: 'El sospechoso ES alto y moreno.' 'La pirámide ES antigua.' 'Yo SOY detective.' ESTAR is for location and temporary state — where something is and how it feels right now: 'La máscara ESTÁ en el altar.' 'El ladrón ESTÁ nervioso.' A quick test, agente: if you can point to WHERE it is, or it's a feeling that can change, use ESTAR. If it describes WHAT or WHO something basically is, use SER.",
+    examples: [
+      { es: "El astrónomo es inteligente y tranquilo. (trait)", en: "The astronomer is intelligent and calm." },
+      { es: "El astrónomo está en lo alto del templo. (location)", en: "The astronomer is at the top of the temple." },
+      { es: "El ladrón es alto, pero ahora está nervioso. (trait + state)", en: "The thief is tall, but right now he is nervous." },
+    ],
+    referenceTable: {
+      caption: "SER vs. ESTAR — conjugations and when to use each",
+      headers: ["Pronombre", "ser (identity/traits)", "estar (location/state)"],
+      rows: [
+        ["yo", "soy", "estoy"],
+        ["tú", "eres", "estás"],
+        ["él / ella", "es", "está"],
+        ["nosotros", "somos", "estamos"],
+        ["ellos / ellas", "son", "están"],
+      ],
+    },
+    drills: [
+      { prompt: "El Templo IV ____ el más alto de todos. (trait → SER)", answer: "es" },
+      { prompt: "La máscara de jade ____ en el altar. (location → ESTAR)", answer: "está" },
+      { prompt: "El ladrón ____ alto y moreno. (description → SER)", answer: "es" },
+      { prompt: "El sospechoso ____ nervioso ahora. (feeling → ESTAR)", answer: "está" },
+      { prompt: "Yo ____ detective de La Liga Sombra. (identity → SER)", answer: "soy" },
+      { prompt: "Nosotros ____ cerca del templo. (location → ESTAR)", answer: "estamos" },
+    ],
+    secondDrill: {
+      title: "SER or ESTAR? — Make the Call",
+      instructions:
+        "Write SER or ESTAR for each clue, then the correct form. Ask yourself: is it WHAT/WHO something is (SER), or WHERE it is / HOW it feels (ESTAR)?",
+      items: [
+        { prompt: "El astrónomo ____ tranquilo por su personalidad. (SER/ESTAR + form)", answer: "es" },
+        { prompt: "La ciudad de Tikal ____ en la selva de Petén.", answer: "está" },
+        { prompt: "El jaguar ____ fuerte y rápido.", answer: "es" },
+        { prompt: "El forastero ____ confundido cuando mira el cielo.", answer: "está" },
+        { prompt: "Las pirámides ____ muy antiguas.", answer: "son" },
+      ],
+    },
+  },
 };
 
 /** Fallback for units without an authored grammar lesson yet. */

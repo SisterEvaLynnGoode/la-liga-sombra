@@ -31,6 +31,8 @@ function getUnitContent(unitNumber: number): UnitContent | null {
   if (unitNumber === 10) return require("@/content/unit-10.json") as UnitContent;
   // eslint-disable-next-line @typescript-eslint/no-require-imports
   if (unitNumber === 11) return require("@/content/unit-11.json") as UnitContent;
+  // eslint-disable-next-line @typescript-eslint/no-require-imports
+  if (unitNumber === 12) return require("@/content/unit-12.json") as UnitContent;
   return null;
 }
 

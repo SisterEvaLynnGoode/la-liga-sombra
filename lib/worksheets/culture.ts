@@ -406,6 +406,39 @@ export const CULTURE: Record<number, CultureLesson> = {
     teacherNote:
       "Run after Caso 11's game + vocab days. ~35–45 min. Read the three P's aloud or in pairs, do the comprehension, then the estela. This is the semester's first culture day, so connect it to the new time-travel frame: El Cronista steals treasures BEFORE they become patrimony — the 'perspectives' paragraph explains exactly why that's the harm. Ties back to grammar: the estela sentence must be in the present tense (the historical present students used all unit). Makes a strong hallway display next to the Unit 1 ofrendas.",
   },
+  12: {
+    theme: "Tikal y los Astrónomos Mayas (Guatemala)",
+    reading: {
+      products:
+        "Deep in the Petén rainforest of northern Guatemala stand the ruins of Tikal, one of the greatest Maya cities. Its temple-pyramids rise above the jungle canopy — Templo IV is about 70 meters tall, one of the tallest structures in the ancient Americas. Around the Gran Plaza you can still see carved estelas and altars. The rainforest around Tikal is alive with howler monkeys (monos), toucans, and the resplendent quetzal — a bird with brilliant green tail feathers that is Guatemala's national symbol and the name of its money (el quetzal). The sacred ceiba tree towers over it all.",
+      practices:
+        "The Maya were extraordinary astronomers. From the tops of their temples they tracked the Sun, the Moon, and especially the planet Venus, night after night, for generations. They recorded what they saw and built calendars so accurate they could predict eclipses. Astronomer-priests wore jade masks and ornaments during ceremonies, because jade — green like new maize and like the quetzal — was more precious to them than gold. Knowing the sky was not a hobby; it told farmers when to plant and told rulers when to hold ceremonies.",
+      perspectives:
+        "For the Maya, the sky and the calendar were sacred knowledge. A person who knew the names and motions of the stars held real authority — that knowledge took a lifetime to learn and could not be faked. That is exactly why our impostor gives himself away: a real Maya astronomer is tranquilo and knows the sky, while a forastero only pretends. Tikal is a UNESCO World Heritage Site, and Guatemala protects it as patrimony — knowledge and monuments that belong to everyone.",
+    },
+    comprehension: [
+      { question: "About how tall is Templo IV?", answer: "About 70 meters — one of the tallest ancient structures in the Americas" },
+      { question: "Which planet did the Maya especially track?", answer: "Venus" },
+      { question: "Why was jade so valued?", answer: "It was green like maize and the quetzal, and prized more than gold" },
+      { question: "True or false: knowing the stars was just a hobby for the Maya.", answer: "False — it guided planting, ceremonies, and gave real authority" },
+    ],
+    compara:
+      "The Maya spent lifetimes learning to read the night sky. What is a kind of knowledge in your community that takes years to master and earns real respect (a sport, an instrument, a craft, a language)? Write 2–3 sentences comparing it to a Maya astronomer's skill. Use SER and ESTAR at least once each.",
+    project: {
+      title: "Mapa del Cielo / Design a Sky Map",
+      brief:
+        "Draw a night-sky map the way a young Maya astronomer might. Include and label in Spanish at least 6 things — for example: la luna, las estrellas, el cielo, una constelación, un templo, el amanecer. Then, at the bottom, write two sentences: one with SER describing what something IS (Las estrellas son…), and one with ESTAR saying where something IS (La luna está…).",
+      materials: "This sheet, pencil, optional dark/colored pencils (labels must stay readable).",
+      checklist: [
+        "At least 6 sky/temple items labeled in Spanish",
+        "One sentence using SER (a description or identity)",
+        "One sentence using ESTAR (a location or state)",
+        "Neat, clearly labeled, and readable",
+      ],
+    },
+    teacherNote:
+      "Run after Caso 12's game + vocab days. ~35–45 min. This is your SER-vs-ESTAR culture day, so lean on the contrast: the reading models both (Tikal ES antigua; el astrónomo ESTÁ en el templo), and the project sentences require one of each. Tie it to the mystery — the case's whole solution turns on ESTAR (nervioso, confundido) revealing that the 'astronomer' is a fake. Connect to Caso 11: both are Maya sites, so students can compare Copán's writing with Tikal's astronomy. Makes a striking dark-background hallway display.",
+  },
 };
 
 export function getCultureLesson(unitNumber: number): CultureLesson | null {
