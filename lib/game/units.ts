@@ -26,7 +26,7 @@ export const UNITS: UnitMeta[] = [
     number: 1, country: "México",               countryCode: "MX", flag: "🇲🇽",
     titleEs: "¿Quién soy yo?",    titleEn: "Who Am I?",
     description: "Greetings, introductions, and numbers",
-    criminal: "El Camaleón",      stolenItem: "El Códice Azteca",      rotation: -2,    themeColor: "#c0392b",
+    criminal: "El Camaleón",      stolenItem: "La Guitarra del Sol",   rotation: -2,    themeColor: "#c0392b",
   },
   {
     number: 2, country: "Puerto Rico",           countryCode: "PR", flag: "🇵🇷",

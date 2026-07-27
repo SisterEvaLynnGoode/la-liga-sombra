@@ -15,7 +15,7 @@ import Image from "next/image";
 
 // ── Real criminals from the game files ────────────────────────────────────────
 const CRIMINALS = [
-  { img: "/images/characters/unit-01-camaleon.png",          name: "El Camaleón",         crime: "Robo del Códice Azteca",        país: "México",          flag: "🇲🇽", caso: "I" },
+  { img: "/images/characters/unit-01-camaleon.png",          name: "El Camaleón",         crime: "Robo de la Guitarra del Sol",   país: "México",          flag: "🇲🇽", caso: "I" },
   { img: "/images/characters/unit-02-tecladista.png",        name: "El Tecladista",       crime: "Hackeo de la Escuela Central",  país: "Puerto Rico",     flag: "🇵🇷", caso: "II" },
   { img: "/images/characters/unit-03-la-sombra.png",         name: "La Sombra",           crime: "Robo en el Museo del Prado",    país: "España",          flag: "🇪🇸", caso: "III" },
   { img: "/images/characters/unit-04-heredero.png",          name: "El Heredero",         crime: "El Collar de Esmeraldas",       país: "Costa Rica",      flag: "🇨🇷", caso: "IV" },

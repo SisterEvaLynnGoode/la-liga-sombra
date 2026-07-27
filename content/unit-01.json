@@ -74,7 +74,7 @@
       "videoUrl": "/videos/unit-01-intro.mp4",
       "subtitleUrl": "/videos/unit-01-intro.vtt",
       "fallbackImage": "/images/unit-01-briefing.jpg",
-      "chiefName": "Jefe Ramírez",
+      "chiefName": "Jefa Ramírez",
       "chiefImageSeed": 60,
       "briefingLines": [
         "Bienvenido a La Liga Sombra, agente. Tenemos una situación urgente.",
@@ -120,6 +120,22 @@
         {
           "spanish": "soy de...",
           "english": "I'm from..."
+        },
+        {
+          "spanish": "buenas tardes",
+          "english": "good afternoon"
+        },
+        {
+          "spanish": "buenas noches",
+          "english": "good night"
+        },
+        {
+          "spanish": "¿cómo te llamas?",
+          "english": "what's your name?"
+        },
+        {
+          "spanish": "¿de dónde eres?",
+          "english": "where are you from?"
         }
       ]
     },
@@ -344,7 +360,7 @@
           "name": "El Camaleón",
           "realName": "Carlos Mendoza Ruiz",
           "age": 34,
-          "description": "Es un hombre alto y delgado. Tiene bigote negro. Siempre lleva un sombrero de charro negro y elegante. Es de Guadalajara y habla muy, muy rápido.",
+          "description": "Es un hombre alto y delgado. Tiene bigote negro. Siempre lleva un sombrero de charro negro y elegante. Es de Guadalajara y habla muy, muy rápido. Escribe y toca la guitarra con la mano izquierda.",
           "imageSeed": 48,
           "imageUrl": "/images/characters/unit-01-camaleon.png"
         },
@@ -353,7 +369,7 @@
           "name": "La Serpiente",
           "realName": "Ana López García",
           "age": 28,
-          "description": "Es una mujer joven y muy elegante. Tiene pelo largo y negro. Es de Ciudad de México. Habla despacio y con mucha calma. No lleva sombrero.",
+          "description": "Es una mujer joven y muy elegante. Tiene pelo largo y negro. Es de Ciudad de México. Habla despacio y con mucha calma. No lleva sombrero. Escribe con la mano derecha.",
           "imageSeed": 25,
           "imageUrl": "/images/characters/unit-01-serpiente.png"
         },
@@ -362,7 +378,7 @@
           "name": "El Toro",
           "realName": "Miguel Reyes Vásquez",
           "age": 50,
-          "description": "Es un hombre bajo y muy fuerte. Tiene cincuenta años y no tiene bigote. Es de Monterrey. Es tranquilo y habla poco.",
+          "description": "Es un hombre bajo y muy fuerte. Tiene cincuenta años y no tiene bigote. Es de Monterrey. Es tranquilo y habla poco. Escribe con la mano derecha.",
           "imageSeed": 57,
           "imageUrl": "/images/characters/unit-01-toro.png"
         },
@@ -371,7 +387,7 @@
           "name": "El Pájaro",
           "realName": "Juan Torres Silva",
           "age": 22,
-          "description": "Es un hombre joven y alto pero sin bigote. Tiene veintidós años. Es de Cancún. Habla inglés y español perfectamente. No lleva sombrero.",
+          "description": "Es un hombre joven y alto pero sin bigote. Tiene veintidós años. Es de Cancún. Habla inglés y español perfectamente. No lleva sombrero. Escribe con la mano derecha.",
           "imageSeed": 44,
           "imageUrl": "/images/characters/unit-01-pajaro.png"
         }

@@ -74,7 +74,7 @@
       "type": "cutscene",
       "videoUrl": "/videos/unit-01-cold-intro.mp4",
       "fallbackImage": "/images/unit-01-briefing.jpg",
-      "chiefName": "Jefe Ramírez",
+      "chiefName": "Jefa Ramírez",
       "chiefImageSeed": 60,
       "briefingLines": [
         "Agente, bienvenido de nuevo. No hay tiempo para descansar.",
