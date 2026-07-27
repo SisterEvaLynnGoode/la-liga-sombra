@@ -141,7 +141,7 @@
     },
     {
       "type": "dialogueChoice",
-      "clueReward": "El sospechoso lleva un sombrero de charro negro.",
+      "clueReward": "El sospechoso lleva un sombrero negro muy elegante.",
       "npcName": "Don Rodrigo",
       "npcAvatar": "👴",
       "startNodeId": "start",
@@ -169,7 +169,7 @@
         },
         {
           "id": "info",
-          "npcLine": "¡Sí! Esta mañana vi a un hombre muy alto y sospechoso cerca del museo. ¡Llevaba un sombrero de charro negro muy elegante!",
+          "npcLine": "¡Sí! Esta mañana vi a un hombre muy alto y sospechoso cerca del museo. ¡Llevaba un sombrero negro muy elegante!",
           "options": [
             {
               "text": "Muchas gracias, señor. Usted es muy amable y muy útil.",
@@ -360,7 +360,7 @@
           "name": "El Camaleón",
           "realName": "Carlos Mendoza Ruiz",
           "age": 34,
-          "description": "Es un hombre alto y delgado. Tiene bigote negro. Siempre lleva un sombrero de charro negro y elegante. Es de Guadalajara y habla muy, muy rápido. Escribe y toca la guitarra con la mano izquierda.",
+          "description": "Es un hombre alto y delgado. Tiene bigote negro. Siempre lleva un sombrero negro y elegante. Es de Guadalajara y habla muy, muy rápido. Escribe y toca la guitarra con la mano izquierda.",
           "imageSeed": 48,
           "imageUrl": "/images/characters/unit-01-camaleon.png"
         },

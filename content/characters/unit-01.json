@@ -12,13 +12,13 @@
     "hair": "cabello oscuro, bigote negro espeso",
     "distinctiveFeatures": ["bigote negro espeso", "habla muy rápido"],
     "clothing": "ropa casual de Guadalajara, camisa oscura",
-    "accessories": ["sombrero de charro negro y elegante"],
+    "accessories": ["sombrero negro de ala ancha, elegante (NO charro)"],
     "expression": "mirada rápida y esquiva, habla muy rápido",
     "pose": "retrato de busto, mirando ligeramente hacia un lado",
-    "spanishDescription": "Es un hombre alto y delgado. Tiene bigote negro. Siempre lleva un sombrero de charro negro y elegante. Es de Guadalajara y habla muy, muy rápido.",
+    "spanishDescription": "Es un hombre alto y delgado. Tiene bigote negro. Siempre lleva un sombrero negro y elegante. Es de Guadalajara y habla muy, muy rápido.",
     "country": "México",
     "currentImageUrl": "https://randomuser.me/api/portraits/men/46.jpg",
-    "notes": "CRIMINAL — Unit 1. The sombrero de charro negro is the critical distinguishing feature and MUST appear in the image. Students use it to identify him."
+    "notes": "CRIMINAL — Unit 1. A plain elegant black wide-brimmed hat is the critical distinguishing feature and MUST appear in the image. Students use it to identify him. IT MUST NOT BE A SOMBRERO DE CHARRO: the deck teaches charrería as living Mexican heritage on an ESTO ES REAL slide, and making that tradition the thief's identifying mark is the thing we are deliberately not doing. The clue works identically with any black hat — the other three suspects either wear no hat or have none described. NOTE: the CURRENT portrait (public/images/characters/unit-01-camaleon.png) was generated from the old charro prompt and still shows a charro hat. Regenerate when Higgsfield credits allow; the text is already fixed."
   },
   {
     "id": "unit-01-serpiente",
