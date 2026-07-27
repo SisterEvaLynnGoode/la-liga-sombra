@@ -536,6 +536,47 @@ export const GRAMMAR: Record<number, GrammarLesson> = {
       ],
     },
   },
+  13: {
+    title: "Stem-Changing Verbs (e→ie, o→ue, e→i)",
+    briefing:
+      "Some verbs change their stem — the part before the -ar/-er/-ir ending — when you conjugate them. Querer becomes quiero, poder becomes puedo, servir becomes sirvo. There are three patterns: e→ie (querer, preferir, empezar, pensar), o→ue (poder, dormir, volver, almorzar), and e→i (servir, pedir, repetir). Here is the trap that catches most agents: the stem does NOT change in the nosotros form. It's nosotros queremos, not 'quieremos'; nosotros dormimos, not 'duermimos'. Teachers call this the 'boot' or 'shoe' verb — draw a boot around the four forms that DO change (yo, tú, él, ellos) and nosotros sits outside it, untouched.",
+    examples: [
+      { es: "Quiero la vasija pintada, pero nosotros queremos la verdad. (e→ie)", en: "I want the painted vessel, but we want the truth." },
+      { es: "El forastero duerme de día; nosotros dormimos de noche. (o→ue)", en: "The stranger sleeps by day; we sleep at night." },
+      { es: "Mi familia sirve comida a los vecinos. (e→i)", en: "My family serves food to the neighbors." },
+    ],
+    referenceTable: {
+      caption: "The 'boot': the stem changes everywhere EXCEPT nosotros",
+      headers: ["Pronombre", "querer (e→ie)", "poder (o→ue)", "servir (e→i)"],
+      rows: [
+        ["yo", "quiero", "puedo", "sirvo"],
+        ["tú", "quieres", "puedes", "sirves"],
+        ["él / ella", "quiere", "puede", "sirve"],
+        ["nosotros", "queremos ✗", "podemos ✗", "servimos ✗"],
+        ["ellos / ellas", "quieren", "pueden", "sirven"],
+      ],
+    },
+    drills: [
+      { prompt: "Yo ____ la vasija pintada. (querer)", answer: "quiero" },
+      { prompt: "El forastero ____ de día, no de noche. (dormir)", answer: "duerme" },
+      { prompt: "Él no ____ moler el maíz. (poder)", answer: "puede" },
+      { prompt: "Mi familia ____ comida a los vecinos. (servir)", answer: "sirve" },
+      { prompt: "Yo ____ comer solo. (preferir)", answer: "prefiero" },
+      { prompt: "Los agricultores ____ de la milpa por la tarde. (volver)", answer: "vuelven" },
+    ],
+    secondDrill: {
+      title: "Watch the Boot — ¿Cambia o no cambia?",
+      instructions:
+        "Every item below uses NOSOTROS or a boot form. Write the correct conjugation. Remember: with nosotros the stem does NOT change — no accents on the stem, no ie/ue/i.",
+      items: [
+        { prompt: "Nosotros ____ juntos en el jardín. (almorzar)", answer: "almorzamos" },
+        { prompt: "Nosotros ____ de noche como todo el pueblo. (dormir)", answer: "dormimos" },
+        { prompt: "Ellos ____ agua fresca por la mañana. (pedir)", answer: "piden" },
+        { prompt: "Nosotros ____ ayudar a los vecinos. (querer)", answer: "queremos" },
+        { prompt: "Tú ____ que el forastero no es de aquí. (pensar)", answer: "piensas" },
+      ],
+    },
+  },
 };
 
 /** Fallback for units without an authored grammar lesson yet. */

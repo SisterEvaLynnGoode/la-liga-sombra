@@ -1,0 +1,365 @@
+{
+  "unitNumber": 13,
+  "country": "El Salvador",
+  "city": "Joya de Cerén",
+  "caseTitle": "La Vasija Pintada",
+  "caseDescription": "El Cronista viaja al año 600 para robar una vasija pintada de un pueblo maya en Joya de Cerén, El Salvador. Usa los verbos con cambio de raíz — querer (quiero), poder (puedo), dormir (duermo), servir (sirvo) — para observar la vida diaria del pueblo, hablar con los vecinos y descubrir al forastero. Recuerda: el caso ocurre en el pasado, pero tú narras todo en presente.",
+  "criminalName": "El Cronista",
+  "bonusClue": "El Cronista no sabe vivir en el pueblo: duerme de día en vez de dormir de noche, no puede moler el maíz porque sus manos no conocen el metate, y nunca sirve comida a los vecinos. Solo un sospechoso falla en las tres cosas.",
+  "vocab": [
+    { "spanish": "la casa", "english": "house", "audio": "/audio/unit-13/casa.mp3", "section": "La Casa y el Pueblo", "example": "Las casas son de barro y tienen techos de paja." },
+    { "spanish": "la cocina", "english": "kitchen", "audio": "/audio/unit-13/cocina.mp3", "section": "La Casa y el Pueblo", "example": "Cada casa tiene una cocina y un cuarto para dormir." },
+    { "spanish": "el cuarto", "english": "room", "audio": "/audio/unit-13/cuarto.mp3", "section": "La Casa y el Pueblo", "example": "Cada casa tiene una cocina y un cuarto para dormir." },
+    { "spanish": "la puerta", "english": "door", "audio": "/audio/unit-13/puerta.mp3", "section": "La Casa y el Pueblo", "example": "El forastero entra por la puerta cuando el pueblo duerme." },
+    { "spanish": "el techo", "english": "roof", "audio": "/audio/unit-13/techo.mp3", "section": "La Casa y el Pueblo", "example": "Las casas son de barro y tienen techos de paja." },
+    { "spanish": "el jardín", "english": "garden", "audio": "/audio/unit-13/jardin.mp3", "section": "La Casa y el Pueblo", "example": "Cada casa tiene una cocina, un cuarto y un jardín." },
+    { "spanish": "la milpa", "english": "cornfield", "audio": "/audio/unit-13/milpa.mp3", "section": "La Casa y el Pueblo", "example": "Los agricultores vuelven de la milpa por la tarde." },
+    { "spanish": "el pueblo", "english": "village", "audio": "/audio/unit-13/pueblo.mp3", "section": "La Casa y el Pueblo", "example": "Joya de Cerén es un pueblo maya pequeño en El Salvador." },
+    { "spanish": "el maíz", "english": "corn / maize", "audio": "/audio/unit-13/maiz.mp3", "section": "La Comida", "example": "Una mujer muele maíz en el metate para hacer tortillas." },
+    { "spanish": "el frijol", "english": "bean", "audio": "/audio/unit-13/frijol.mp3", "section": "La Comida", "example": "Su vecina sirve frijoles y calabaza en vasijas de barro." },
+    { "spanish": "la tortilla", "english": "tortilla", "audio": "/audio/unit-13/tortilla.mp3", "section": "La Comida", "example": "¿Quieres tortillas? Mi familia sirve comida a todos los vecinos." },
+    { "spanish": "el chile", "english": "chili pepper", "audio": "/audio/unit-13/chile.mp3", "section": "La Comida", "example": "En el jardín hay chiles, frijoles y calabazas." },
+    { "spanish": "la calabaza", "english": "squash", "audio": "/audio/unit-13/calabaza.mp3", "section": "La Comida", "example": "Su vecina sirve frijoles y calabaza en vasijas de barro." },
+    { "spanish": "el cacao", "english": "cacao", "audio": "/audio/unit-13/cacao.mp3", "section": "La Comida", "example": "Los niños quieren cacao, pero la familia lo prefiere para las fiestas." },
+    { "spanish": "la comida", "english": "food", "audio": "/audio/unit-13/comida.mp3", "section": "La Comida", "example": "Nunca sirve comida a los vecinos." },
+    { "spanish": "el agua", "english": "water", "audio": "/audio/unit-13/agua.mp3", "section": "La Comida", "example": "La familia pide agua fresca por la mañana." },
+    { "spanish": "la vasija", "english": "vessel / pot (clay)", "audio": "/audio/unit-13/vasija.mp3", "section": "Objetos de Barro", "example": "En esta casa hay una vasija pintada muy hermosa. Es el tesoro del pueblo." },
+    { "spanish": "la olla", "english": "cooking pot", "audio": "/audio/unit-13/olla.mp3", "section": "Objetos de Barro", "example": "La olla está en el fuego de la cocina." },
+    { "spanish": "el metate", "english": "grinding stone", "audio": "/audio/unit-13/metate.mp3", "section": "Objetos de Barro", "example": "No puede moler el maíz: sus manos no conocen el metate." },
+    { "spanish": "el barro", "english": "clay", "audio": "/audio/unit-13/barro.mp3", "section": "Objetos de Barro", "example": "Las casas son de barro y tienen techos de paja." },
+    { "spanish": "querer", "english": "to want (e→ie)", "audio": "/audio/unit-13/querer.mp3", "section": "Verbos e→ie", "example": "Quiero la vasija pintada. Los niños quieren cacao." },
+    { "spanish": "preferir", "english": "to prefer (e→ie)", "audio": "/audio/unit-13/preferir.mp3", "section": "Verbos e→ie", "example": "Yo prefiero comer solo." },
+    { "spanish": "empezar", "english": "to begin (e→ie)", "audio": "/audio/unit-13/empezar.mp3", "section": "Verbos e→ie", "example": "Descubro quién es antes de que empiece la noche." },
+    { "spanish": "pensar", "english": "to think (e→ie)", "audio": "/audio/unit-13/pensar.mp3", "section": "Verbos e→ie", "example": "Pienso que el forastero no es de aquí." },
+    { "spanish": "poder", "english": "to be able / can (o→ue)", "audio": "/audio/unit-13/poder.mp3", "section": "Verbos o→ue", "example": "No puedo. Mis manos no conocen ese trabajo." },
+    { "spanish": "dormir", "english": "to sleep (o→ue)", "audio": "/audio/unit-13/dormir.mp3", "section": "Verbos o→ue", "example": "Duermo de día. Trabajo de noche." },
+    { "spanish": "volver", "english": "to return (o→ue)", "audio": "/audio/unit-13/volver.mp3", "section": "Verbos o→ue", "example": "Los agricultores vuelven de la milpa por la tarde." },
+    { "spanish": "almorzar", "english": "to eat lunch (o→ue)", "audio": "/audio/unit-13/almorzar.mp3", "section": "Verbos o→ue", "example": "Nosotros almorzamos juntos en el jardín." },
+    { "spanish": "servir", "english": "to serve (e→i)", "audio": "/audio/unit-13/servir.mp3", "section": "Verbos e→i", "example": "Mi familia sirve comida a todos los vecinos." },
+    { "spanish": "pedir", "english": "to ask for (e→i)", "audio": "/audio/unit-13/pedir.mp3", "section": "Verbos e→i", "example": "La familia pide agua fresca por la mañana." },
+    { "spanish": "repetir", "english": "to repeat (e→i)", "audio": "/audio/unit-13/repetir.mp3", "section": "Verbos e→i", "example": "El vecino repite la pregunta, pero el forastero no contesta." },
+    { "spanish": "la familia", "english": "family", "audio": "/audio/unit-13/familia.mp3", "section": "La Vida Diaria", "example": "Aquí las familias viven, trabajan y comen juntas." },
+    { "spanish": "el vecino", "english": "neighbor", "audio": "/audio/unit-13/vecino.mp3", "section": "La Vida Diaria", "example": "Nunca sirve comida a los vecinos." },
+    { "spanish": "la mañana", "english": "morning", "audio": "/audio/unit-13/manana.mp3", "section": "La Vida Diaria", "example": "Es la mañana. Una mujer muele maíz en el metate." },
+    { "spanish": "la noche", "english": "night", "audio": "/audio/unit-13/noche.mp3", "section": "La Vida Diaria", "example": "Duermo de día. Trabajo de noche." },
+    { "spanish": "el fuego", "english": "fire / hearth", "audio": "/audio/unit-13/fuego.mp3", "section": "La Vida Diaria", "example": "La olla está en el fuego de la cocina." }
+  ],
+  "stages": [
+    {
+      "type": "cutscene",
+      "videoUrl": "",
+      "subtitleUrl": "",
+      "chiefName": "Jefa Ramírez",
+      "chiefImageSeed": 60,
+      "briefingLines": [
+        "Buen trabajo en Tikal, agente. Tu tercer salto te lleva a Joya de Cerén, en El Salvador, en el año 600.",
+        "Joya de Cerén no es una ciudad de reyes ni de pirámides. Es algo más raro: un pueblo de familias normales — casas de barro, cocinas, jardines y milpas.",
+        "Por eso los arqueólogos lo llaman 'la Pompeya de América'. Un día el volcán cubre el pueblo de ceniza, pero la gente sale a tiempo. Nadie muere allí.",
+        "La ceniza guarda todo: las ollas en el fuego, el maíz en el metate, las vasijas pintadas. Por eso hoy sabemos cómo vivía una familia maya cada día.",
+        "El Cronista quiere robar una vasija pintada, el tesoro del pueblo, antes de que sea patrimonio de El Salvador.",
+        "Para este caso necesitas los verbos con cambio de raíz. La raíz cambia: querer → quiero, poder → puedo, dormir → duermo, servir → sirvo.",
+        "¡Atención a la trampa! Con nosotros la raíz NO cambia: nosotros queremos, nosotros podemos, nosotros dormimos, nosotros servimos.",
+        "Tu mejor pista: El Cronista no sabe vivir en el pueblo. Duerme de día, no puede moler el maíz, y nunca sirve comida a los vecinos.",
+        "Observa la vida diaria y descúbrelo antes de que empiece la noche. ¡Suerte, agente!"
+      ],
+      "chiefImageUrl": "/images/characters/chief-ramirez.png"
+    },
+    {
+      "type": "vocabMatch",
+      "pairs": [
+        { "spanish": "la casa", "english": "house" },
+        { "spanish": "la cocina", "english": "kitchen" },
+        { "spanish": "la milpa", "english": "cornfield" },
+        { "spanish": "el maíz", "english": "corn" },
+        { "spanish": "la tortilla", "english": "tortilla" },
+        { "spanish": "la vasija", "english": "clay vessel" },
+        { "spanish": "el metate", "english": "grinding stone" },
+        { "spanish": "querer", "english": "to want" },
+        { "spanish": "poder", "english": "to be able / can" },
+        { "spanish": "dormir", "english": "to sleep" },
+        { "spanish": "servir", "english": "to serve" },
+        { "spanish": "el vecino", "english": "neighbor" }
+      ]
+    },
+    {
+      "type": "swipeSort",
+      "clueReward": "El agente domina la trampa: la raíz cambia en yo, tú, él y ellos — pero NO cambia con nosotros. Ahora puede escuchar bien lo que dicen los vecinos.",
+      "prompt": "¿CAMBIA la raíz o NO CAMBIA?",
+      "leftLabel": "CAMBIA",
+      "leftHint": "yo, tú, él, ellos",
+      "rightLabel": "NO CAMBIA",
+      "rightHint": "nosotros",
+      "items": [
+        { "text": "yo + dormir", "category": "left", "explanation": "duermo — la o cambia a ue" },
+        { "text": "nosotros + dormir", "category": "right", "explanation": "dormimos — la raíz no cambia" },
+        { "text": "ella + poder", "category": "left", "explanation": "puede — la o cambia a ue" },
+        { "text": "nosotros + poder", "category": "right", "explanation": "podemos — la raíz no cambia" },
+        { "text": "tú + querer", "category": "left", "explanation": "quieres — la e cambia a ie" },
+        { "text": "nosotros + querer", "category": "right", "explanation": "queremos — la raíz no cambia" },
+        { "text": "ellos + servir", "category": "left", "explanation": "sirven — la e cambia a i" },
+        { "text": "nosotros + servir", "category": "right", "explanation": "servimos — la raíz no cambia" },
+        { "text": "yo + pedir", "category": "left", "explanation": "pido — la e cambia a i" },
+        { "text": "nosotros + almorzar", "category": "right", "explanation": "almorzamos — la raíz no cambia" },
+        { "text": "él + volver", "category": "left", "explanation": "vuelve — la o cambia a ue" },
+        { "text": "nosotros + preferir", "category": "right", "explanation": "preferimos — la raíz no cambia" }
+      ]
+    },
+    {
+      "type": "sentenceBuilder",
+      "clueReward": "El agente practica los verbos del pueblo. En Joya de Cerén todos sirven comida a los vecinos y vuelven de la milpa por la tarde.",
+      "sentences": [
+        { "sentence": "Yo quiero la vasija pintada", "translation": "I want the painted vessel. (querer: e→ie)" },
+        { "sentence": "Ella no puede moler el maíz", "translation": "She can't grind the corn. (poder: o→ue)" },
+        { "sentence": "El forastero duerme de día", "translation": "The stranger sleeps during the day. (dormir: o→ue)" },
+        { "sentence": "Mi familia sirve comida a los vecinos", "translation": "My family serves food to the neighbors. (servir: e→i)" },
+        { "sentence": "Nosotros dormimos de noche", "translation": "We sleep at night. (nosotros: the stem does NOT change)" }
+      ]
+    },
+    {
+      "type": "readingComp",
+      "clueReward": "El ladrón duerme de día, no puede moler el maíz y nunca sirve comida a los vecinos. Quiere la vasija pintada esta noche.",
+      "passage": "BITÁCORA TEMPORAL — AGENTE DE LA LIGA SOMBRA\nDestino: Joya de Cerén, El Salvador. Año 600 (aproximado).\n\nEstoy en Joya de Cerén, un pueblo maya pequeño. Aquí las familias viven, trabajan y comen juntas. Las casas son de barro y tienen techos de paja. Cada casa tiene una cocina, un cuarto para dormir y un jardín.\n\nEs la mañana. Una mujer muele maíz en el metate para hacer tortillas. Su vecina sirve frijoles y calabaza en vasijas de barro. Los niños quieren cacao, pero la familia lo prefiere para las fiestas. Los agricultores vuelven de la milpa por la tarde y nosotros almorzamos juntos en el jardín.\n\nEn esta casa hay una vasija pintada muy hermosa. Es el tesoro del pueblo. El Cronista quiere robar la vasija esta noche.\n\nPero el ladrón no sabe vivir aquí. Duerme de día, no de noche. No puede moler el maíz: sus manos no conocen el metate. Y nunca sirve comida a los vecinos — aquí eso es muy extraño.\n\nMi misión: descubro quién es antes de que empiece la noche.",
+      "glossary": [
+        { "word": "barro", "translation": "clay" },
+        { "word": "paja", "translation": "thatch / straw" },
+        { "word": "muele", "translation": "grinds (from moler)" },
+        { "word": "hermosa", "translation": "beautiful" },
+        { "word": "fiestas", "translation": "celebrations" },
+        { "word": "manos", "translation": "hands" },
+        { "word": "conocen", "translation": "know / are familiar with" },
+        { "word": "extraño", "translation": "strange" }
+      ],
+      "questions": [
+        {
+          "id": "r1",
+          "text": "¿Cómo son las casas de Joya de Cerén?",
+          "type": "multiple_choice",
+          "options": ["De barro, con techos de paja", "De piedra, con techos de oro", "De madera, sin techo", "De jade y plata"],
+          "correctIndex": 0,
+          "explanationEs": "'Las casas son de barro y tienen techos de paja.'",
+          "explanationEn": "The houses are made of clay with thatched roofs."
+        },
+        {
+          "id": "r2",
+          "text": "¿Qué hace la mujer en el metate?",
+          "type": "multiple_choice",
+          "options": ["Muele maíz para hacer tortillas", "Pinta una vasija nueva", "Duerme por la mañana", "Vende cacao en el jardín"],
+          "correctIndex": 0,
+          "explanationEs": "'Una mujer muele maíz en el metate para hacer tortillas.'",
+          "explanationEn": "She grinds corn on the metate to make tortillas."
+        },
+        {
+          "id": "r3",
+          "text": "¿Cuándo duerme el ladrón?",
+          "type": "multiple_choice",
+          "options": ["De día", "De noche", "Por la tarde", "Nunca duerme"],
+          "correctIndex": 0,
+          "explanationEs": "'Duerme de día, no de noche.' Dormir es o→ue: él duerme.",
+          "explanationEn": "He sleeps by day — 'dormir' is an o→ue verb: él duerme."
+        },
+        {
+          "id": "r4",
+          "text": "¿Por qué no puede moler el maíz?",
+          "type": "multiple_choice",
+          "options": ["Sus manos no conocen el metate", "El metate está roto", "No hay maíz en el pueblo", "Prefiere comer tortillas"],
+          "correctIndex": 0,
+          "explanationEs": "'No puede moler el maíz: sus manos no conocen el metate.' Poder es o→ue: no puede.",
+          "explanationEn": "His hands don't know the metate — 'poder' is o→ue: no puede."
+        },
+        {
+          "id": "r5",
+          "text": "Completa con NOSOTROS (¡la raíz no cambia!): 'Nosotros ____ juntos en el jardín.' (almorzar)",
+          "type": "short_answer",
+          "acceptableAnswers": ["almorzamos", "nosotros almorzamos", "almorzamos juntos en el jardín"],
+          "explanationEs": "Con nosotros la raíz NO cambia: almorzamos (no 'almuerzamos').",
+          "explanationEn": "With nosotros the stem does NOT change: almorzamos."
+        }
+      ]
+    },
+    {
+      "type": "listeningComp",
+      "clueReward": "El forastero prefiere comer solo, no puede moler el maíz, duerme de día y quiere la vasija pintada.",
+      "audioUrl": "/audio/unit-13/conversacion-pueblo.mp3",
+      "transcript": "—Buenos días. ¿Quieres tortillas? Mi familia sirve comida a todos los vecinos. —No, gracias. Yo prefiero comer solo. —¿Puedes moler el maíz? Necesitamos ayuda en el metate. —No puedo. Mis manos no conocen ese trabajo. —¿Duermes bien? Te veo cansado por la mañana. —Duermo de día. Trabajo de noche. Ahora quiero descansar. —¿Qué buscas aquí? —Quiero la vasija pintada. Adiós.",
+      "translation": "—Good morning. Do you want tortillas? My family serves food to all the neighbors. —No, thank you. I prefer to eat alone. —Can you grind the corn? We need help at the metate. —I can't. My hands don't know that work. —Do you sleep well? I see you tired in the morning. —I sleep during the day. I work at night. Now I want to rest. —What are you looking for here? —I want the painted vessel. Goodbye.",
+      "maxReplays": 3,
+      "passingScore": 0.75,
+      "retryHint": "Pista: Escucha los verbos con cambio de raíz — quieres, prefiero, puedes, puedo, duermes, duermo, sirve, quiero.",
+      "questions": [
+        {
+          "question": "¿Qué prefiere hacer el forastero?",
+          "options": ["Comer solo", "Comer con los vecinos", "Moler el maíz", "Dormir de noche"],
+          "correctIndex": 0,
+          "explanationEs": "'Yo prefiero comer solo.' Preferir es e→ie: prefiero.",
+          "explanationEn": "He prefers to eat alone — 'preferir' is e→ie: prefiero."
+        },
+        {
+          "question": "¿Puede moler el maíz?",
+          "options": ["No, sus manos no conocen ese trabajo", "Sí, muy rápido", "Sí, pero está cansado", "Solo por la mañana"],
+          "correctIndex": 0,
+          "explanationEs": "'No puedo. Mis manos no conocen ese trabajo.' Poder es o→ue: no puedo.",
+          "explanationEn": "He can't — 'poder' is o→ue: no puedo."
+        },
+        {
+          "question": "¿Cuándo duerme y cuándo trabaja?",
+          "options": ["Duerme de día y trabaja de noche", "Duerme de noche y trabaja de día", "No duerme nunca", "Duerme por la tarde"],
+          "correctIndex": 0,
+          "explanationEs": "'Duermo de día. Trabajo de noche.' Dormir es o→ue: duermo.",
+          "explanationEn": "He sleeps by day and works at night."
+        },
+        {
+          "question": "¿Qué hace la familia de la vecina?",
+          "options": ["Sirve comida a todos los vecinos", "Vende vasijas en el mercado", "Duerme durante el día", "Prefiere comer sola"],
+          "correctIndex": 0,
+          "explanationEs": "'Mi familia sirve comida a todos los vecinos.' Servir es e→i: sirve.",
+          "explanationEn": "Her family serves food to all the neighbors — 'servir' is e→i: sirve."
+        },
+        {
+          "question": "¿Qué quiere el forastero?",
+          "options": ["La vasija pintada", "Tortillas y frijoles", "Una casa nueva", "Ayuda con el metate"],
+          "correctIndex": 0,
+          "explanationEs": "'Quiero la vasija pintada.' Querer es e→ie: quiero.",
+          "explanationEn": "He wants the painted vessel — 'querer' is e→ie: quiero."
+        }
+      ]
+    },
+    {
+      "type": "dialogueChoice",
+      "clueReward": "La testigo Sak Nik confirma las tres pistas: el forastero duerme de día, no puede moler el maíz y nunca sirve comida a nadie.",
+      "npcName": "Sak Nik, la vecina",
+      "npcAvatar": "🌽",
+      "startNodeId": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "npcLine": "Buenos días. Me llamo Sak Nik. Vivo en la casa del jardín grande y sirvo comida a todos los vecinos. Estoy preocupada: hay un hombre en el pueblo que no vive como nosotros. ¿Usted quién es?",
+          "options": [
+            {
+              "text": "Soy agente de La Liga Sombra. Busco a un forastero. ¿Por qué dice que no vive como ustedes?",
+              "isCorrect": true,
+              "nextNodeId": "sleep"
+            },
+            {
+              "text": "¡No hay tiempo! ¿Dónde está la vasija pintada ahora mismo?",
+              "isCorrect": false,
+              "feedback": "Demasiado directo, y no te presentas. Preséntate como agente y pregunta por qué el hombre es diferente."
+            },
+            {
+              "text": "¿Quieres tortillas? Tengo hambre.",
+              "isCorrect": false,
+              "feedback": "No es el momento. Preséntate y pregunta por el forastero del pueblo."
+            }
+          ]
+        },
+        {
+          "id": "sleep",
+          "npcLine": "Porque duerme de día. Nosotros dormimos de noche y trabajamos de día — pero él no. Por la mañana está cansado y quiere descansar. ¿Quiere saber más?",
+          "options": [
+            {
+              "text": "Sí, por favor. ¿Puede él moler el maíz como ustedes?",
+              "isCorrect": true,
+              "nextNodeId": "grind"
+            },
+            {
+              "text": "¿Y usted duerme bien, Sak Nik?",
+              "isCorrect": false,
+              "feedback": "La pregunta es sobre el forastero, no sobre ella. Pregunta si él puede hacer el trabajo del pueblo."
+            },
+            {
+              "text": "¿Prefiere usted el cacao o las tortillas?",
+              "isCorrect": false,
+              "feedback": "Fuera de tema. Concéntrate: pregunta si el forastero puede moler el maíz."
+            }
+          ]
+        },
+        {
+          "id": "grind",
+          "npcLine": "¡No puede! Todos aquí molemos maíz desde niños, pero sus manos no conocen el metate. Y hay algo más extraño todavía.",
+          "options": [
+            {
+              "text": "¿Qué más? Dígame, por favor.",
+              "isCorrect": true,
+              "nextNodeId": "serve"
+            },
+            {
+              "text": "Entonces él es agricultor, seguro.",
+              "isCorrect": false,
+              "feedback": "Al contrario: un agricultor del pueblo sí puede moler maíz. Pregunta qué más ha notado."
+            },
+            {
+              "text": "¿Cuántas casas hay en el pueblo?",
+              "isCorrect": false,
+              "feedback": "Fuera de tema. Pregúntale qué otra cosa extraña ha visto."
+            }
+          ]
+        },
+        {
+          "id": "serve",
+          "npcLine": "Nunca sirve comida a nadie. Aquí todos servimos a los vecinos — es lo normal. Él prefiere comer solo, siempre solo. No es de aquí, estoy segura.",
+          "options": [
+            {
+              "text": "Muchas gracias, Sak Nik. Ya tengo las tres pistas: duerme de día, no puede moler el maíz y nunca sirve comida.",
+              "isCorrect": true,
+              "nextNodeId": "end"
+            },
+            {
+              "text": "¿Tiene usted miedo de él?",
+              "isCorrect": false,
+              "feedback": "Ya tienes las tres pistas que necesitas. Dale las gracias y termina la entrevista."
+            },
+            {
+              "text": "¿Me vende usted una vasija?",
+              "isCorrect": false,
+              "feedback": "Fuera de tema. Agradece a Sak Nik su ayuda y cierra la conversación."
+            }
+          ]
+        },
+        {
+          "id": "end",
+          "npcLine": "",
+          "isEnd": true,
+          "endMessage": "¡Buena suerte, agente! Si vuelve por aquí, se lo digo enseguida. Sak Nik vuelve a su metate y sigue moliendo maíz para las tortillas de la tarde."
+        }
+      ]
+    },
+    {
+      "type": "lineup",
+      "correctSuspectId": "cronista",
+      "hint": "Recuerda las TRES pistas — el culpable falla en las tres: (1) DUERME de día, no de noche; (2) NO PUEDE moler el maíz, sus manos no conocen el metate; (3) NUNCA SIRVE comida a los vecinos. Cada uno de los otros tres falla solo en una. ¿Quién falla en todas?",
+      "suspects": [
+        {
+          "id": "cronista",
+          "name": "El Forastero Solitario",
+          "realName": "El Cronista",
+          "age": 33,
+          "description": "Duerme de día y trabaja de noche. No puede moler el maíz porque sus manos no conocen el metate. Nunca sirve comida a los vecinos: prefiere comer solo, siempre solo. Quiere la vasija pintada.",
+          "imageSeed": 34
+        },
+        {
+          "id": "kanek",
+          "name": "El Agricultor",
+          "realName": "Kan Ek'",
+          "age": 41,
+          "description": "Duerme de noche y vuelve de la milpa por la tarde, como todos. Puede moler el maíz muy rápido: sus manos conocen bien el metate. Sirve comida a los vecinos cada día y almuerza con su familia en el jardín.",
+          "imageSeed": 44
+        },
+        {
+          "id": "sakol",
+          "name": "El Vigilante Nocturno",
+          "realName": "Sak Ol",
+          "age": 29,
+          "description": "Duerme de día porque cuida el pueblo de noche — igual que el ladrón. Pero puede moler el maíz sin problema, y sirve comida a los vecinos por la tarde cuando despierta. Todos en el pueblo lo conocen.",
+          "imageSeed": 22
+        },
+        {
+          "id": "nail",
+          "name": "La Alfarera",
+          "realName": "Na'il",
+          "age": 37,
+          "description": "No puede moler el maíz porque sus manos trabajan el barro, no el metate — igual que el ladrón. Pero duerme de noche como todos, y sirve comida a los vecinos con sus propias vasijas.",
+          "imageSeed": 27
+        }
+      ]
+    }
+  ]
+}

@@ -97,4 +97,10 @@ export const UNITS: UnitMeta[] = [
     description: "Tikal and the Maya astronomers — SER vs. ESTAR (description & identity vs. location & state)",
     criminal: "El Cronista",      stolenItem: "La Máscara de Jade",    rotation: 1.8,  themeColor: "#1e6f5c",
   },
+  {
+    number: 13, country: "El Salvador",          countryCode: "SV", flag: "🇸🇻",
+    titleEs: "La Vasija Pintada", titleEn: "The Painted Vessel",
+    description: "Joya de Cerén and Maya village daily life — stem-changing verbs (e→ie, o→ue, e→i)",
+    criminal: "El Cronista",      stolenItem: "La Vasija Pintada",     rotation: -1.4, themeColor: "#3f6f7f",
+  },
 ];

@@ -439,6 +439,41 @@ export const CULTURE: Record<number, CultureLesson> = {
     teacherNote:
       "Run after Caso 12's game + vocab days. ~35–45 min. This is your SER-vs-ESTAR culture day, so lean on the contrast: the reading models both (Tikal ES antigua; el astrónomo ESTÁ en el templo), and the project sentences require one of each. Tie it to the mystery — the case's whole solution turns on ESTAR (nervioso, confundido) revealing that the 'astronomer' is a fake. Connect to Caso 11: both are Maya sites, so students can compare Copán's writing with Tikal's astronomy. Makes a striking dark-background hallway display.",
   },
+  13: {
+    theme: "Joya de Cerén — La Vida Diaria Maya (El Salvador)",
+    reading: {
+      products:
+        "Around the year 600, a small Maya farming village in what is now El Salvador was buried under volcanic ash from the Loma Caldera vent. The ash sealed everything exactly as it was — and preserved it for fourteen centuries. Archaeologists call Joya de Cerén 'the Pompeii of the Americas', but with one crucial difference: no human remains have ever been found there. The villagers saw the warning signs and got out in time. What the ash preserved is not a disaster, but an ordinary evening: casas of clay with techos of thatch, ollas still sitting by the fuego, maíz on the metate, beans and chiles in the jardín, and beautifully painted vasijas on the shelves.",
+      practices:
+        "Joya de Cerén is famous precisely because it is ordinary. Most archaeology gives us kings, temples, and tombs; this site gives us how a normal family actually lived. We know each household had a separate cocina, a sleeping cuarto, a storehouse, and a garden of maíz, frijoles, calabaza, and chile. We know they kept a communal building for village gatherings. We know they ate together and shared food with los vecinos — the ash even preserved the meal that was being served. Every day people volvían from the milpa, molían maíz on the metate, and servían comida to one another.",
+      perspectives:
+        "The Salvadoran people are proud of Joya de Cerén for a reason that has nothing to do with gold: it proves that everyday life is worth preserving. A painted vasija from a farmer's kitchen tells us as much about the Maya as any royal tomb. It is a UNESCO World Heritage Site — El Salvador's first — and it belongs to all Salvadorans. That is why El Cronista's theft matters. When he takes a vessel out of the village, he doesn't just steal an object; he erases the record of a family's ordinary day, which is the only thing this site was ever able to give us.",
+    },
+    comprehension: [
+      { question: "Why is Joya de Cerén called 'the Pompeii of the Americas'?", answer: "Volcanic ash buried and preserved the whole village around 600 AD" },
+      { question: "What important difference separates it from Pompeii?", answer: "No human remains were found — the villagers escaped in time" },
+      { question: "Name three things the ash preserved.", answer: "Any three: clay houses, thatch roofs, ollas by the fire, corn on the metate, garden crops, painted vasijas" },
+      { question: "Why do archaeologists value an ordinary village so highly?", answer: "It shows how normal families actually lived, not just kings and temples" },
+      { question: "True or false: Joya de Cerén is a UNESCO World Heritage Site.", answer: "True — it was El Salvador's first" },
+    ],
+    compara:
+      "Imagine ash preserved your home exactly as it is tonight. What five objects would archaeologists find, and what would each one tell them about how you live? List the five in Spanish if you can (la cocina, la comida, la puerta…), then write 2–3 sentences in English or Spanish about what a stranger would learn about your daily life. Use at least two stem-changing verbs (quiero, duermo, puedo, sirvo, prefiero).",
+    project: {
+      title: "Un Día en el Pueblo / A Day in the Village",
+      brief:
+        "Draw the floor plan of a Joya de Cerén household — la casa, la cocina, el cuarto, el jardín, la milpa — and label at least 8 things in Spanish. Then write a short 'day in the life' caption of 4 sentences in the present tense, each using a different stem-changing verb: one with querer, one with poder, one with dormir, and one with servir. Bonus point: add a fifth sentence with nosotros where the stem does NOT change.",
+      materials: "This sheet, pencil, ruler optional, colored pencils optional.",
+      checklist: [
+        "Floor plan includes house, kitchen, sleeping room, and garden or cornfield",
+        "At least 8 items labeled in Spanish",
+        "Four sentences, each with a different stem-changing verb",
+        "Bonus: a nosotros sentence with the stem left unchanged",
+        "Neat, clearly labeled, and readable",
+      ],
+    },
+    teacherNote:
+      "Run after Caso 13's game + vocab days. ~35–45 min. Lead with the humanity of the site: no one died at Joya de Cerén, which frees students to be curious rather than solemn — the story here is survival plus an accidental time capsule of ordinary life. The 'compara' prompt is the emotional hook and works beautifully as a whole-class share; students are usually surprised by how much a stranger could infer from five objects. The project doubles as your stem-changing-verb production check, so collect it for a grade. Connect back to Casos 11 and 12: Copán gave us Maya writing, Tikal gave us Maya astronomy, and Cerén gives us the Maya kitchen — three very different ways to know a civilization. Floor plans make an excellent bulletin-board display.",
+  },
 };
 
 export function getCultureLesson(unitNumber: number): CultureLesson | null {
