@@ -1632,6 +1632,692 @@ export const STORIES: Record<number, CaseStory> = {
     teacherNote:
       "Run immediately before students open Caso 9. Two spines here. Grammatically: doler runs backwards from English — the body part does the verb, so duele/duelen changes with the body part and not with the person. Students who miss that will mis-hear every suspect statement. Thematically: the artifact slide and the discussion prompt are the strongest cultural moment in the semester. Read the Taíno loanword list out loud and let the room sit with it; most students have never been told that 'hurricane' and 'barbecue' are Indigenous Caribbean words, and the realisation lands hard. Be careful and accurate on framing: do not say the Taíno 'died out'. The deck deliberately says heritage persists in the language, the food, and the ancestry of Dominicans and Puerto Ricans today, and that is well supported. If you have Caribbean students, this deck is about their inheritance — let them talk. Watch the ESTO ES REAL stamps: the clinic, the figure, and the patients are invented, while the loanwords, the 1498 founding, the 1538 university, the UNESCO listings for merengue and bachata, and the s-dropping in Caribbean Spanish are real. Mention the s-dropping before the listening stage; it explains the difficulty rather than letting students conclude they are bad at listening. Use NÚCLEO to drop the country slide if short.",
   },
+
+  10: {
+    hook: "Everyone at the expo was talking about the future. One of them was lying about his.",
+
+    crime: {
+      eyebrow: "El Crimen",
+      headline: "Your Last Case of the Semester",
+      body: [
+        "La Expo del Futuro, at a university in Quito. Students and inventors are presenting the things they are going to build — a robot that cleans Andean rivers, an AI for hospitals, a solar screen.",
+        "In a display case in the middle of all that future sits something very old: a Montecristi toquilla-straw hat, woven by hand. An hour ago it stopped being in the case.",
+        "Every person in that hall stood up and described their plans. One of them registered no project at all and said only that he was going to be rich soon. In a room where everyone is talking about the future, the giveaway is the person whose future has no details in it.",
+      ],
+      pull: "Everyone described what they will build. One man described only what he will have.",
+      real: false,
+    },
+
+    artifact: [
+      {
+        eyebrow: "Lo Robado · What Was Stolen",
+        headline: "El Sombrero de Paja Toquilla",
+        body: [
+          "Here is the thing almost nobody outside Ecuador knows: the Panama hat is not from Panama. It is Ecuadorian, it always has been, and the finest ones come from Montecristi.",
+          "It is woven by hand from toquilla straw. The best weavers work at dawn and after dusk, because the straw has to stay damp and pliable and midday sun ruins it. A superfino can take months of work by one person and the weave can be fine enough to look like cloth.",
+          "In 2012 UNESCO added the weaving of the Ecuadorian toquilla hat to its Intangible Cultural Heritage list. The hat in that case was not a souvenir. It was the output of a skill.",
+        ],
+        facts: [
+          { label: "De dónde", value: "Montecristi, Ecuador — not Panama" },
+          { label: "Material", value: "Paja toquilla" },
+          { label: "Un superfino", value: "Months of work, by one weaver" },
+          { label: "Se teje", value: "Al amanecer y al anochecer — never midday" },
+          { label: "Patrimonio", value: "UNESCO Intangible Heritage, 2012" },
+        ],
+        real: true,
+      },
+    ],
+
+    place: [
+      {
+        eyebrow: "El País · The Country",
+        headline: "Ecuador",
+        body: [
+          "The country is named after the line that runs through it. You can stand north of Quito with one foot in each hemisphere, and the Galápagos Islands off the coast are where Darwin worked out what he worked out.",
+          "Ecuador also did something in 2008 that no country had done before: it wrote rights for nature directly into its constitution — rivers and forests as entities with legal standing rather than as property. Whatever you think of it, it is a genuinely new idea and it started here.",
+        ],
+        facts: [
+          { label: "Capital", value: "Quito" },
+          { label: "Población", value: "~18 million" },
+          { label: "Moneda", value: "US dollar" },
+          { label: "Idiomas", value: "Español, kichwa, shuar" },
+          { label: "2008", value: "First country to give nature constitutional rights" },
+        ],
+        real: true,
+        optional: true,
+      },
+      {
+        eyebrow: "La Ciudad · The City",
+        headline: "Quito",
+        body: [
+          "You are at 2.850 metres, in one of the highest capital cities in the world, in a valley with volcanoes on both sides. Take the stairs slowly for the first day; everyone does.",
+          "Quito's old town is one of the best-preserved colonial centres in the Americas, and it holds a distinction almost no city has: in 1978, when UNESCO created the World Heritage list, Quito was on the very first set of sites ever inscribed. There were twelve. It was one of them.",
+        ],
+        facts: [
+          { label: "Altitud", value: "~2.850 m" },
+          { label: "Patrimonio", value: "One of the first 12 World Heritage Sites, 1978" },
+          { label: "La mitad del mundo", value: "The equator runs just north of the city" },
+        ],
+        real: true,
+      },
+    ],
+
+    stakes: {
+      eyebrow: "Por Qué Importa · Why It Matters",
+      headline: "The Name Was Stolen First",
+      body: [
+        "Ecuadorian hats were shipped out through Panama, so that is where buyers thought they came from. In 1906 Theodore Roosevelt was photographed wearing one at the Panama Canal, the photo travelled the world, and the name stuck permanently.",
+        "So for over a century the most famous hat on Earth has been credited to the wrong country. The weavers in Montecristi kept weaving, and the money and the fame went to a name that was never theirs.",
+        "Which makes this the second theft, not the first. Somebody took the hat out of a case tonight. Somebody took the credit a hundred and twenty years ago.",
+      ],
+      pull: "You can steal an object in one night. Stealing where it comes from takes a century, and it works better.",
+      real: true,
+    },
+
+    vocab: [
+      {
+        eyebrow: "Herramienta 1 · The Easy Future",
+        headline: "IR A + Infinitive",
+        situation:
+          "The simplest way to talk about the future in Spanish is the same as English's 'going to': take ir, add a, add the plain verb. Every inventor at this expo will use it to describe their plans, and one of them will use it to describe nothing at all.",
+        entries: [
+          { spanish: "voy a…", english: "I'm going to…" },
+          { spanish: "vas a…", english: "you're going to…" },
+          { spanish: "va a…", english: "he/she is going to…" },
+          { spanish: "vamos a…", english: "we're going to…" },
+        ],
+        production: {
+          instruction: "Thirty seconds, partners. Answer for real.",
+          say: "¿Qué vas a hacer este fin de semana? — Voy a ______.",
+        },
+      },
+      {
+        eyebrow: "Herramienta 2 · The Formal Future",
+        headline: "One Ending, Every Verb",
+        situation:
+          "There is a second future tense, and it is easier than the present. You do not change the verb at all — you glue an ending onto the whole infinitive. Same endings for -AR, -ER and -IR. Every form carries an accent except nosotros.",
+        entries: [
+          { spanish: "seré", english: "I will be", note: "ser + é" },
+          { spanish: "tendré", english: "I will have" },
+          { spanish: "estudiaré", english: "I will study" },
+          { spanish: "trabajarás", english: "you will work" },
+          { spanish: "-é · -ás · -á · -emos · -án", english: "the whole pattern" },
+        ],
+      },
+      {
+        eyebrow: "Herramienta 3 · What They Will Be",
+        headline: "Professions Are Claims You Can Check",
+        situation:
+          "Everyone here says what they are going to become. A claimed profession comes with a claimed project, a claimed university, a claimed plan — which means it can be verified, or fail to be.",
+        entries: [
+          { spanish: "el ingeniero / la ingeniera", english: "engineer" },
+          { spanish: "el médico / la médica", english: "doctor" },
+          { spanish: "el programador / la programadora", english: "programmer" },
+          { spanish: "el científico / la científica", english: "scientist" },
+          { spanish: "el empresario / la empresaria", english: "businessperson" },
+          { spanish: "el / la periodista", english: "journalist" },
+        ],
+      },
+      {
+        eyebrow: "Herramienta 4 · What They Will Build",
+        headline: "A Plan Has Nouns in It",
+        situation:
+          "A real plan is specific. Listen for whether a suspect names an actual thing — an invention, an app, a project, a goal — or just gestures at being rich. Vagueness is the tell.",
+        entries: [
+          { spanish: "el invento", english: "invention" },
+          { spanish: "el proyecto", english: "project" },
+          { spanish: "la aplicación", english: "app" },
+          { spanish: "la inteligencia artificial", english: "artificial intelligence" },
+          { spanish: "la meta", english: "goal" },
+          { spanish: "el sueño", english: "dream" },
+        ],
+      },
+    ],
+
+    expect: {
+      headline: "What Happens When You Open the Case",
+      items: [
+        { label: "Briefing", text: "La Jefa gives you your last case of the semester." },
+        { label: "Vocabulario", text: "Match the phrases — professions, technology, the future." },
+        { label: "El Programa", text: "Read the expo programme. Every inventor registered a project." },
+        { label: "Escucha", text: "A guard's testimony. No subtitles, three replays." },
+        { label: "La Directora", text: "Interview Directora Paredes. She knows who was on the list." },
+        { label: "Construye", text: "Build sentences in the future. State what each one claimed." },
+        { label: "La Rueda", text: "Four people. Three described a future with details in it." },
+      ],
+    },
+
+    discuss: {
+      prompt:
+        "Turn and talk: the world calls it a Panama hat. Ecuador has been correcting people for over a century and it has not worked. Does it matter what a thing is called?",
+      followups: [
+        "Can you think of something else that is famous under the wrong name?",
+      ],
+    },
+
+    closer: "Tu último caso, agente. El caso está abierto.",
+
+    teacherNote:
+      "Run immediately before students open Caso 10, the last case of the semester — the deck says so and that framing is worth using. The spine is that everyone at the expo describes their future, so the future tense is literally how suspects incriminate themselves: a real plan has nouns in it, and the thief's has none. The Panama hat fact is the single best hook in the semester; ask the class where the Panama hat comes from BEFORE you advance to the artifact slide and let them be wrong. The stakes slide then reframes the whole case — the object was stolen tonight, the credit was stolen in 1906 — which is a genuinely sophisticated idea that 9th graders get immediately. Note this artifact slide is stamped ESTO ES REAL, unlike other cases, because the toquilla hat is real; only the expo and the suspects are invented. Also real: the 2012 UNESCO listing, Quito's altitude, Quito being among the first twelve World Heritage Sites in 1978, and Ecuador's 2008 constitutional rights of nature. The simple future is easier than students expect — one ending set for all three verb families — so lead with that reassurance. Use NÚCLEO to drop the country slide if short.",
+  },
+
+  11: {
+    hook: "The thief got there first. Not to the museum — to the year 750.",
+
+    crime: {
+      eyebrow: "El Crimen",
+      headline: "You Are Not Chasing Him Across a City. You Are Chasing Him Across Time.",
+      body: [
+        "Everything changes with this case. The Liga Sombra has built a time machine, because a thief called El Cronista has worked out something worse than robbing museums: he goes back and takes each treasure before it ever becomes a country's heritage. If he wins, the object does not get stolen from history. It never enters history at all.",
+        "Your first jump is Copán, Honduras, in the year 750. The Maya city is at its height. Scribes are carving, the plaza is full, and a stela of the king stands covered in glyphs.",
+        "One of those glyphs will be gone by morning unless you find him. And he is easy to spot if you know what to look for: he is a foreigner in every era he visits, and he does not know how to work like the people around him.",
+      ],
+      pull: "He does not steal from museums. He steals from the past, before the museum exists.",
+      real: false,
+    },
+
+    artifact: [
+      {
+        eyebrow: "Lo Robado · What Was Stolen",
+        headline: "Un Glifo de la Estela del Rey",
+        body: [
+          "Not the whole monument — one carved glyph block out of the king's stela. A single sign, prised out in the dark.",
+          "One stone. Which sounds survivable, until you know what a Maya inscription actually is.",
+        ],
+        facts: [
+          { label: "Qué", value: "Un glifo sagrado" },
+          { label: "De dónde", value: "La estela del rey, Copán" },
+          { label: "Cuándo", value: "Año 750 — de noche" },
+        ],
+        real: false,
+      },
+      {
+        eyebrow: "El Contexto · The Real Thing",
+        headline: "Maya Writing Is Real Writing",
+        body: [
+          "The Maya built the only fully developed writing system in the ancient Americas — not pictures that suggest ideas, but a real script that records spoken language, sign by sign, with signs for whole words and signs for syllables. It can be read today. Most of the decipherment happened within the last sixty years.",
+          "They also worked with a concept of zero and ran calendars accurate over enormous spans of time, centuries before either idea reached Europe.",
+        ],
+        facts: [
+          { label: "La escritura", value: "Logosyllabic — words and syllables" },
+          { label: "El cero", value: "Used centuries before it reached Europe" },
+          { label: "Descifrada", value: "Largely within the last 60 years" },
+          { label: "Copán", value: "UNESCO World Heritage, 1980" },
+        ],
+        real: true,
+      },
+    ],
+
+    place: [
+      {
+        eyebrow: "El País · The Country",
+        headline: "Honduras",
+        body: [
+          "You are in western Honduras, near the Guatemalan border, in a green river valley that was one of the most important cities in the Maya world. Overhead you will hear scarlet macaws — guacamayas, Honduras's national bird — which nest around the ruins and which the Maya kept and carved.",
+          "Copán is Honduras's great archaeological site and its most visited place. It is also, right now in the year you have landed in, simply a city where people live and work.",
+        ],
+        facts: [
+          { label: "Capital", value: "Tegucigalpa" },
+          { label: "Población", value: "~10.5 million" },
+          { label: "Moneda", value: "el lempira" },
+          { label: "Ave nacional", value: "La guacamaya roja" },
+        ],
+        real: true,
+        optional: true,
+      },
+      {
+        eyebrow: "El Sitio · The Site",
+        headline: "La Escalinata Jeroglífica",
+        body: [
+          "At Copán there is a stairway with writing carved into every step — sixty-three steps, roughly two thousand two hundred glyph blocks. It is the longest Maya inscription that exists anywhere, a dynasty's history written into a staircase.",
+          "And we cannot fully read it. Not because anyone stole it. In the early twentieth century it was collapsing, and the blocks were gathered up and reassembled — largely in the wrong order. The stones are all still there. The sentence is not.",
+        ],
+        facts: [
+          { label: "Escalones", value: "63" },
+          { label: "Bloques de glifos", value: "~2.200" },
+          { label: "Récord", value: "The longest known Maya inscription" },
+          { label: "El problema", value: "Reassembled out of order — the text is scrambled" },
+        ],
+        real: true,
+      },
+    ],
+
+    stakes: {
+      eyebrow: "Por Qué Importa · Why It Matters",
+      headline: "One Stone Is One Word",
+      body: [
+        "The Hieroglyphic Stairway is the proof of what is at stake tonight. Every one of those blocks survived. Not one was stolen. And the text is still unreadable in sequence, because the ORDER was lost — which means a Maya inscription is not decoration where each piece is interchangeable. It is a sentence.",
+        "So prising one glyph off a stela is not taking a stone. It is deleting a word out of a sentence nobody has finished reading yet, and there is no second copy anywhere on Earth.",
+      ],
+      pull: "Nobody stole the Hieroglyphic Stairway, and we still cannot read it. That is how fragile a sentence in stone is.",
+      real: true,
+    },
+
+    vocab: [
+      {
+        eyebrow: "Herramienta 1 · The Rule of Time Travel",
+        headline: "You Stand in 750 and You Speak in the Present",
+        situation:
+          "This is the rule that governs the whole second half of the year. You are in the past, but nobody around you thinks so — for them this is now. So you narrate everything in the present tense: the scribe carves, the sun rises, the stranger walks. Historians call this the historical present, and it is why your grammar does not have to change when the century does.",
+        entries: [
+          { spanish: "El escriba trabaja.", english: "The scribe works / is working." },
+          { spanish: "El sol sale.", english: "The sun rises." },
+          { spanish: "El forastero llega de noche.", english: "The stranger arrives at night." },
+        ],
+      },
+      {
+        eyebrow: "Herramienta 2 · The Three Families",
+        headline: "-AR, -ER, -IR",
+        situation:
+          "Every Spanish verb belongs to one of three groups, named for their last two letters. This case is your consolidation of all three at once — you will describe an entire working city, and every job in it is a verb.",
+        entries: [
+          { spanish: "trabajar → trabaja", english: "to work → he works", note: "-AR" },
+          { spanish: "aprender → aprende", english: "to learn → he learns", note: "-ER" },
+          { spanish: "vivir → vive", english: "to live → he lives", note: "-IR" },
+          { spanish: "observar → observo", english: "to observe → I observe", note: "Your own job." },
+        ],
+        production: {
+          instruction: "Thirty seconds, partners. One verb from each family, about a real person in this room.",
+          say: "Trabaja. / Aprende. / Escribe.",
+        },
+      },
+      {
+        eyebrow: "Herramienta 3 · The City",
+        headline: "What You Are Standing In",
+        situation:
+          "You need to be able to say where you are and what you are looking at, because your witness statements are all about place — who is near the stela, who is up on the stairway, who is in the plaza after dark.",
+        entries: [
+          { spanish: "la estela", english: "the stela (carved standing stone)" },
+          { spanish: "el glifo", english: "the glyph" },
+          { spanish: "la pirámide", english: "the pyramid" },
+          { spanish: "la escalera", english: "the stairway" },
+          { spanish: "la plaza", english: "the plaza" },
+          { spanish: "la piedra", english: "the stone" },
+        ],
+      },
+      {
+        eyebrow: "Herramienta 4 · The People",
+        headline: "Everyone Here Has a Craft",
+        situation:
+          "In Copán, what you do is written on your hands. Scribes have paint on them, carvers have stone dust, traders have sun. That is the thread of this whole case — a person's work shows on their body, and a man who does no work here shows nothing at all.",
+        entries: [
+          { spanish: "el escriba", english: "the scribe" },
+          { spanish: "el sacerdote", english: "the priest" },
+          { spanish: "el rey", english: "the king" },
+          { spanish: "el forastero", english: "the outsider / stranger" },
+        ],
+      },
+    ],
+
+    expect: {
+      headline: "What Happens When You Open the Case",
+      items: [
+        { label: "El Prólogo", text: "La Jefa explains the time machine and the three rules." },
+        { label: "Briefing", text: "Your destination: Copán, año 750." },
+        { label: "Vocabulario", text: "Match the phrases — the city, the crafts, the verbs." },
+        { label: "Construye", text: "Build sentences in the present. Describe a city that is alive." },
+        { label: "La Bitácora", text: "Read your own field log from inside the city." },
+        { label: "Escucha", text: "A night conversation. No subtitles, three replays." },
+        { label: "Balam", text: "Interview a young scribe who has been watching the plaza." },
+        { label: "La Rueda", text: "Four people in Copán. Three of them work here." },
+      ],
+    },
+
+    discuss: {
+      prompt:
+        "Turn and talk: the Hieroglyphic Stairway was never stolen, and we still cannot read it, because someone put it back together in the wrong order. Is that better or worse than a theft?",
+      followups: [
+        "Who is responsible when something is damaged by people trying to save it?",
+      ],
+    },
+
+    closer: "Bienvenido al pasado, agente. El caso está abierto.",
+
+    teacherNote:
+      "Run immediately before students open Caso 11 — the first case of the time-travel arc and a hard reset of the premise, so this deck does more setup than the others. Two things to land. First, the historical present: students stand in 750 and narrate in the present tense, which is the device that lets the whole second semester review present-tense grammar without feeling like review. Say the rule out loud; it recurs in every remaining case. Second, the stakes slide, which is the best real fact in the arc — the Hieroglyphic Stairway survived complete and is still unreadable because the blocks were reassembled out of order. That single fact makes 'one stolen glyph' feel catastrophic instead of trivial, and it teaches something true about archaeology: context is the data. It also sets up a discussion prompt with no clean answer, about damage done by people trying to help. Watch the ESTO ES REAL stamps: El Cronista, the stolen glyph, and the suspects are invented, while Maya logosyllabic writing, the zero, the 63 steps and ~2.200 blocks, the scrambled reassembly, and Copán's 1980 UNESCO listing are real. Be accurate that Maya writing is READ today — students often assume it is a mystery script. Use NÚCLEO to drop the country slide if short.",
+  },
+
+  12: {
+    hook: "He is pretending to be an astronomer. He picked the one disguise that cannot be faked.",
+
+    crime: {
+      eyebrow: "El Crimen",
+      headline: "Tikal, Año 700",
+      body: [
+        "Your second jump. Tikal is one of the largest cities in the Maya world, built into the Petén rainforest, and its temple-pyramids come up through the canopy. Templo IV is about seventy metres tall — for centuries one of the tallest structures anywhere in the Americas.",
+        "El Cronista is here for an astronomer's jade mask, which sits near the altar at the top of the temple. To get near it he is claiming to be an astronomer himself.",
+        "That was a mistake. He is tall and dark-haired, and so is a real astronomer here; he is near Templo IV at night, and so is the real astronomer. On description alone you cannot separate them. On what he KNOWS, you can.",
+      ],
+      pull: "Two men, same height, same place, same night. Only one of them can name the stars.",
+      real: false,
+    },
+
+    artifact: [
+      {
+        eyebrow: "Lo Robado · What Was Stolen",
+        headline: "La Máscara de Jade",
+        body: [
+          "A jade mask belonging to an astronomer-priest, kept near the altar high on Templo IV and worn for ceremonies.",
+          "It is green, it is heavy, and to the Maya it was worth more than gold — which is the part that usually surprises people.",
+        ],
+        facts: [
+          { label: "Qué", value: "Una máscara de jade" },
+          { label: "Dónde", value: "Cerca del altar, en lo alto del Templo IV" },
+          { label: "De quién", value: "Un astrónomo maya" },
+        ],
+        real: false,
+      },
+      {
+        eyebrow: "El Contexto · The Real Thing",
+        headline: "Jade Was Worth More Than Gold",
+        body: [
+          "For the Maya, jade outranked gold, and not arbitrarily. It is green — the colour of new maize coming up, and of the quetzal's tail feathers. It was the colour of life continuing, in a civilisation whose whole calendar was built around knowing when things would happen again.",
+          "This is worth sitting with, because it means value is not a property of a material. Gold is not objectively precious. A culture decides what matters, and then that thing becomes worth dying over.",
+        ],
+        facts: [
+          { label: "El jade", value: "Verde — como el maíz nuevo y el quetzal" },
+          { label: "El quetzal", value: "Guatemala's national bird AND its currency" },
+          { label: "La ceiba", value: "The sacred tree — Guatemala's national tree" },
+        ],
+        real: true,
+      },
+    ],
+
+    place: [
+      {
+        eyebrow: "El País · The Country",
+        headline: "Guatemala",
+        body: [
+          "More than twenty Maya languages are spoken in Guatemala today, by millions of people — K'iche', Q'eqchi', Kaqchikel and others, alongside Spanish. The Maya are not a civilisation that ended; they are a population that is still here, in the same places, speaking related languages.",
+          "The country's money is called the quetzal, after the bird, whose tail feathers were traded across Mesoamerica and reserved for rulers.",
+        ],
+        facts: [
+          { label: "Capital", value: "Ciudad de Guatemala" },
+          { label: "Población", value: "~18 million" },
+          { label: "Moneda", value: "el quetzal" },
+          { label: "Idiomas", value: "Español + más de 20 idiomas mayas" },
+        ],
+        real: true,
+        optional: true,
+      },
+      {
+        eyebrow: "El Sitio · The Site",
+        headline: "Tikal",
+        body: [
+          "You are in rainforest so dense that the city was invisible from a short distance away, and you will hear howler monkeys before you see anything at all — a sound that genuinely does not sound like a monkey.",
+          "Tikal is a UNESCO World Heritage Site, and it is one of a small number of places listed for BOTH its culture and its nature: the ruins and the rainforest were recognised together, because you cannot sensibly separate them.",
+        ],
+        facts: [
+          { label: "Templo IV", value: "~70 m — one of the tallest in the ancient Americas" },
+          { label: "La selva", value: "El Petén" },
+          { label: "Patrimonio", value: "UNESCO — cultural AND natural, 1979" },
+          { label: "Los monos", value: "Monos aulladores — you will hear them first" },
+        ],
+        real: true,
+      },
+    ],
+
+    stakes: {
+      eyebrow: "Por Qué Importa · Why It Matters",
+      headline: "Some Things Take a Lifetime and Cannot Be Faked",
+      body: [
+        "Maya astronomers tracked the sun, the moon, and especially Venus, night after night, across generations, and recorded it well enough to predict eclipses. That was not a hobby. It told farmers when to plant and rulers when to hold ceremony, and the person who held that knowledge held real authority.",
+        "Knowledge like that takes a lifetime to acquire, which means it also cannot be borrowed for an evening. A thief can copy a costume, a title, and a location. He cannot look at the night sky and produce the names.",
+      ],
+      pull: "You can steal a mask in a night. You cannot steal thirty years of watching the sky.",
+      real: true,
+    },
+
+    vocab: [
+      {
+        eyebrow: "Herramienta 1 · Two Verbs, One Meaning",
+        headline: "SER vs. ESTAR — and This Time It Catches Him",
+        situation:
+          "You met these in Costa Rica. Here they are the entire solution. SER is who or what something IS: tall, ancient, an astronomer. ESTAR is where it is and how it is right now: near the temple, nervous, confused. Your suspect and your innocent astronomer are identical under SER. They come apart under ESTAR.",
+        entries: [
+          { spanish: "es", english: "is — identity, permanent traits", note: "Es alto. Es antigua." },
+          { spanish: "está", english: "is — location, right-now state", note: "Está en el templo. Está nervioso." },
+          { spanish: "son", english: "they are (traits)" },
+          { spanish: "están", english: "they are (place / state)" },
+        ],
+        production: {
+          instruction: "Thirty seconds, partners. One sentence with each, about yourself.",
+          say: "Soy ______. / Estoy ______.",
+        },
+      },
+      {
+        eyebrow: "Herramienta 2 · Describing People",
+        headline: "SER Words",
+        situation:
+          "These go with SER, because they are what a person or a thing IS. They will describe both your thief and an innocent man equally well — that is the trap this case is built on.",
+        entries: [
+          { spanish: "alto / bajo", english: "tall / short" },
+          { spanish: "moreno", english: "dark-haired" },
+          { spanish: "fuerte", english: "strong" },
+          { spanish: "inteligente", english: "intelligent" },
+          { spanish: "antiguo", english: "ancient" },
+        ],
+      },
+      {
+        eyebrow: "Herramienta 3 · Place and State",
+        headline: "ESTAR Words",
+        situation:
+          "These go with ESTAR, because they are all temporary or positional. This is the half of the case that actually separates your suspects, so listen hardest here.",
+        entries: [
+          { spanish: "cansado", english: "tired" },
+          { spanish: "contento", english: "happy" },
+          { spanish: "confundido", english: "confused" },
+          { spanish: "aquí / allí", english: "here / there" },
+          { spanish: "cerca / lejos", english: "near / far" },
+        ],
+      },
+      {
+        eyebrow: "Herramienta 4 · The Sky and the Forest",
+        headline: "What an Astronomer Would Know",
+        situation:
+          "A real astronomer names these without thinking. Your impostor will not. Watch the moment somebody has to describe the sky and produces nothing.",
+        entries: [
+          { spanish: "la luna", english: "the moon" },
+          { spanish: "la noche", english: "the night" },
+          { spanish: "el amanecer", english: "dawn" },
+          { spanish: "el quetzal", english: "the quetzal" },
+          { spanish: "la ceiba", english: "the sacred ceiba tree" },
+        ],
+      },
+    ],
+
+    expect: {
+      headline: "What Happens When You Open the Case",
+      items: [
+        { label: "Briefing", text: "La Jefa sends you to Tikal, año 700." },
+        { label: "Vocabulario", text: "Match the phrases — the forest, the sky, ser and estar." },
+        { label: "Clasificar", text: "Swipe each card: SER or ESTAR? Speed matters." },
+        { label: "Construye", text: "Build sentences with both verbs." },
+        { label: "La Bitácora", text: "Read your field log from the top of the temple." },
+        { label: "Escucha", text: "A night conversation. No subtitles, three replays." },
+        { label: "Itzel", text: "Interview a young astronomer who watches the sky nightly." },
+        { label: "La Rueda", text: "Four people. Two of them are tall, dark, and near the temple." },
+      ],
+    },
+
+    discuss: {
+      prompt:
+        "Turn and talk: to the Maya, jade was worth more than gold. What makes something valuable — the thing itself, or what people decide about it?",
+      followups: [
+        "What is something your generation treats as valuable that adults do not?",
+      ],
+    },
+
+    closer: "Antes del amanecer, agente. El caso está abierto.",
+
+    teacherNote:
+      "Run immediately before students open Caso 12. The spine is the trap: the guilty man and an innocent astronomer are indistinguishable under SER — both tall, dark-haired, at Templo IV at night — and only ESTAR separates them. That is the most elegant grammar-as-plot design in the game, and saying it out loud before students play makes the swipe-sort stage feel like training rather than a drill. If you taught Caso 4, connect back: same two verbs, higher stakes. The jade-over-gold fact drives the discussion prompt and reliably produces good argument, because 14-year-olds have strong intuitions about what is valuable and enjoy defending them. Be precise on one point: say that the Maya ARE, not were. More than twenty Maya languages are spoken in Guatemala today by millions of people, and students who leave thinking Maya means extinct have learned something false. Watch the ESTO ES REAL stamps: El Cronista, the mask, and the suspects are invented, while Templo IV's height, the mixed cultural-and-natural UNESCO listing, jade's value, the quetzal as bird and currency, Venus tracking, and the living Maya languages are real. Use NÚCLEO to drop the country slide if short.",
+  },
+
+  13: {
+    hook: "No kings, no pyramids, no gold. A village kitchen — and that is exactly why it matters.",
+
+    crime: {
+      eyebrow: "El Crimen",
+      headline: "Joya de Cerén, Año 600",
+      body: [
+        "Your third jump, and the strangest destination yet. There is no palace here and no king. Joya de Cerén is a farming village: clay houses with thatched roofs, a kitchen, a sleeping room, a garden of maize and beans and chiles behind each one.",
+        "In one of those houses there is a painted vessel — the finest thing anyone here owns. El Cronista wants it before the night is out.",
+        "He has the same problem he has in every era: he does not know how to live here. In a village where everyone does the same work at the same hours, a man who does none of it is visible from across the yard.",
+      ],
+      real: false,
+    },
+
+    artifact: [
+      {
+        eyebrow: "Lo Robado · What Was Stolen",
+        headline: "La Vasija Pintada",
+        body: [
+          "A painted clay vessel from an ordinary household — not a royal tomb offering, not temple treasure. A container, decorated, kept on a shelf in a kitchen.",
+          "Its whole value comes from where it is sitting. In a palace it would be one object among thousands. In a farmer's kitchen it is evidence of how a normal family lived, which is the rarest thing archaeology ever gets.",
+        ],
+        facts: [
+          { label: "Qué", value: "Una vasija de barro pintada" },
+          { label: "Dónde", value: "La cocina de una casa del pueblo" },
+          { label: "Cuándo", value: "Año 600 — antes de la erupción" },
+        ],
+        real: false,
+      },
+    ],
+
+    place: [
+      {
+        eyebrow: "El País · The Country",
+        headline: "El Salvador",
+        body: [
+          "The smallest country in Central America, on the Pacific coast, with more than twenty volcanoes — which is why the soil is so good and why the story of this village goes the way it does.",
+          "Joya de Cerén is El Salvador's only cultural World Heritage Site, and Salvadorans are proud of it for a reason that has nothing to do with treasure.",
+        ],
+        facts: [
+          { label: "Capital", value: "San Salvador" },
+          { label: "Población", value: "~6.3 million" },
+          { label: "Tamaño", value: "The smallest country in Central America" },
+          { label: "Patrimonio", value: "Joya de Cerén — UNESCO World Heritage, 1993" },
+        ],
+        real: true,
+        optional: true,
+      },
+      {
+        eyebrow: "El Sitio · The Site",
+        headline: "La Pompeya de América",
+        body: [
+          "Around the year 600, a nearby vent called Loma Caldera erupted and buried this village in ash. Archaeologists call it the Pompeii of the Americas — with one enormous difference, and it is the first thing you should know about the place.",
+          "No human remains have ever been found here. The villagers saw it coming and got out. What the ash buried was not people; it was an ordinary evening, sealed and kept for fourteen centuries.",
+          "So we have the pots still by the fire, maize still on the grinding stone, beans and chiles still in the gardens, painted vessels still on the shelves — and even the fields, with the rows still visible. It is the best picture anyone has of daily Maya life, and it exists because a village evacuated in time.",
+        ],
+        facts: [
+          { label: "Cuándo", value: "~600 d.C." },
+          { label: "El volcán", value: "Loma Caldera" },
+          { label: "Restos humanos", value: "Ninguno — la gente salió a tiempo" },
+          { label: "Lo que se conservó", value: "Cocinas, jardines, milpas, vasijas" },
+        ],
+        real: true,
+      },
+    ],
+
+    stakes: {
+      eyebrow: "Por Qué Importa · Why It Matters",
+      headline: "Almost Everything We Know Is About Kings",
+      body: [
+        "Think about what survives from the ancient world. Tombs, temples, palaces, monuments with rulers' names on them. Archaeology is heavily weighted toward the powerful, because the powerful built in stone and were buried with their possessions.",
+        "Ordinary houses rot. Ordinary meals get eaten. Ordinary evenings leave nothing. Which is why a farming village frozen mid-evening is worth more, scientifically, than another royal tomb — it answers questions that nothing else can answer.",
+        "So what a thief takes from a place like this is not treasure. It is the record of one family's normal day — the only thing this site was ever able to give us.",
+      ],
+      pull: "History remembers kings by default. This village is one of the few places that remembers everyone else.",
+      real: true,
+    },
+
+    vocab: [
+      {
+        eyebrow: "Herramienta 1 · The Boot",
+        headline: "Verbs That Change in the Middle",
+        situation:
+          "Some verbs change their stem — the part before the ending — when you conjugate them. querer becomes quiero, poder becomes puedo, dormir becomes duermo, servir becomes sirvo. This is the grammar of the whole case, because every clue you get is one of these verbs.",
+        entries: [
+          { spanish: "querer → quiero", english: "to want → I want", note: "e → ie" },
+          { spanish: "poder → puedo", english: "to be able → I can", note: "o → ue" },
+          { spanish: "dormir → duermo", english: "to sleep → I sleep", note: "o → ue" },
+          { spanish: "servir → sirvo", english: "to serve → I serve", note: "e → i" },
+        ],
+      },
+      {
+        eyebrow: "Herramienta 2 · The Trap",
+        headline: "NOSOTROS Does Not Change",
+        situation:
+          "Here is the mistake almost everyone makes. The stem changes for yo, tú, él and ellos — but NOT for nosotros. It is nosotros dormimos, never 'duermimos'. Teachers draw a boot around the four forms that change; nosotros sits outside it, untouched.",
+        entries: [
+          { spanish: "yo duermo", english: "I sleep", note: "Changes." },
+          { spanish: "nosotros dormimos", english: "we sleep", note: "Does NOT change." },
+          { spanish: "yo quiero", english: "I want", note: "Changes." },
+          { spanish: "nosotros queremos", english: "we want", note: "Does NOT change." },
+        ],
+        production: {
+          instruction: "Thirty seconds. Say both halves out loud, twice, so the difference is in your mouth.",
+          say: "Yo duermo — nosotros dormimos.",
+        },
+      },
+      {
+        eyebrow: "Herramienta 3 · The House",
+        headline: "You Are Investigating a Kitchen",
+        situation:
+          "This case has no palace and no temple. Every location in it is domestic, and every witness statement is about ordinary rooms and ordinary objects.",
+        entries: [
+          { spanish: "la casa", english: "house" },
+          { spanish: "la cocina", english: "kitchen" },
+          { spanish: "el jardín", english: "garden" },
+          { spanish: "la milpa", english: "cornfield" },
+          { spanish: "el metate", english: "grinding stone" },
+          { spanish: "la vasija", english: "clay vessel" },
+        ],
+      },
+      {
+        eyebrow: "Herramienta 4 · What a Village Eats",
+        headline: "Food Is the Daily Routine",
+        situation:
+          "Everyone here grows, grinds, cooks and shares the same things at the same times of day. Knowing the food is knowing the schedule — and the schedule is how you spot someone who is not on it.",
+        entries: [
+          { spanish: "el maíz", english: "corn" },
+          { spanish: "el frijol", english: "bean" },
+          { spanish: "la tortilla", english: "tortilla" },
+          { spanish: "la calabaza", english: "squash" },
+          { spanish: "el chile", english: "chili" },
+          { spanish: "el vecino", english: "neighbour" },
+        ],
+      },
+    ],
+
+    expect: {
+      headline: "What Happens When You Open the Case",
+      items: [
+        { label: "Briefing", text: "La Jefa sends you to Joya de Cerén, año 600." },
+        { label: "Vocabulario", text: "Match the phrases — the house, the food, the verbs." },
+        { label: "Clasificar", text: "Swipe each card: does the stem change, or not?" },
+        { label: "Construye", text: "Build sentences with the stem-changing verbs." },
+        { label: "La Bitácora", text: "Read your field log from inside the village." },
+        { label: "Escucha", text: "A morning conversation. No subtitles, three replays." },
+        { label: "Sak Nik", text: "Interview a neighbour who has been watching the stranger." },
+        { label: "La Rueda", text: "Four people. Each of the decoys matches exactly one clue." },
+      ],
+    },
+
+    discuss: {
+      prompt:
+        "Turn and talk: if ash buried your home tonight exactly as it is, what would someone in the year 3600 conclude about how you live?",
+      followups: [
+        "What would they get completely wrong?",
+      ],
+    },
+
+    closer: "Antes de que empiece la noche, agente. El caso está abierto.",
+
+    teacherNote:
+      "Run immediately before students open Caso 13. Lead with the humanity of the site: no human remains have ever been found at Joya de Cerén, which means this is a story about a village that got out in time, not a disaster. That frees students to be curious rather than solemn, and it is the honest framing. The stakes slide carries the idea worth keeping — archaeology is weighted toward kings because the powerful built in stone, so a frozen ordinary evening answers questions no royal tomb can. Students find that genuinely interesting, and the discussion prompt turns it on their own lives, which is the best turn-and-talk in the arc. Grammatically the spine is the boot: the stem changes for yo, tú, él and ellos and NOT for nosotros, which is the single most common error with these verbs. Do the production beat — saying 'yo duermo, nosotros dormimos' out loud twice does more than any explanation. If you taught Caso 6, note students met stem-changers there first; this is the case that makes the nosotros exception explicit. Watch the ESTO ES REAL stamps: El Cronista, the vessel, and the suspects are invented, while the eruption, the absence of human remains, the preserved kitchens and fields, and the 1993 UNESCO listing are real. Use NÚCLEO to drop the country slide if short.",
+  },
 };
 
 export function getCaseStory(unitNumber: number): CaseStory | null {
