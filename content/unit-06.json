@@ -853,7 +853,7 @@
           "name": "El Cocinero Secreto",
           "realName": "Diego Reyes Castillo",
           "age": 22,
-          "description": "Tiene veintidós años. Esta mañana dice que tiene que limpiar 'estas verduras' — pero esas verduras no son de su sección. Su celular tiene fotos que no quiere mostrar. Quiere salir pronto: dice que 'tiene que ir a un lugar importante' después del trabajo.",
+          "description": "Tiene veintidós años. Esta mañana dice que tiene que limpiar 'estas verduras' — pero esas verduras no son de su sección. Su celular tiene fotos que no quiere mostrar. Quiere salir pronto: dice que 'tiene que ir a un lugar importante' después del trabajo. Tiene tierra fresca de jardín en las suelas de los zapatos.",
           "imageSeed": 27,
           "imageUrl": "/images/characters/unit-06-cocinero-secreto.png"
         },
@@ -862,7 +862,7 @@
           "name": "El Jefe de Cocina",
           "realName": "Andrés Morales Suárez",
           "age": 35,
-          "description": "Tiene treinta y cinco años. Esta mañana tiene que preparar cincuenta arepas — trabaja con ese maíz y esa mantequilla de su estación. Está lejos de la oficina del chef. Lo ven en su puesto toda la mañana. Él mismo reporta que Diego entra a la oficina.",
+          "description": "Tiene treinta y cinco años. Esta mañana tiene que preparar cincuenta arepas — trabaja con ese maíz y esa mantequilla de su estación. Está lejos de la oficina del chef. Lo ven en su puesto toda la mañana. Él mismo reporta que Diego entra a la oficina. Sus zapatos están limpios: no salió del restaurante.",
           "imageSeed": 40,
           "imageUrl": "/images/characters/unit-06-jefe-cocina.png"
         },
@@ -871,7 +871,7 @@
           "name": "La Sous Chef",
           "realName": "Carmen Villegas Ospina",
           "age": 28,
-          "description": "Tiene veintiocho años. Esta mañana tiene que supervisar ese sancocho en la cocina principal. No puede dejar ese sancocho — si lo deja, se quema. Trabaja con esa papa, ese pollo y esa cebolla. Tiene coartada perfecta y conoce bien las reglas.",
+          "description": "Tiene veintiocho años. Esta mañana tiene que supervisar ese sancocho en la cocina principal. No puede dejar ese sancocho — si lo deja, se quema. Trabaja con esa papa, ese pollo y esa cebolla. Tiene coartada perfecta y conoce bien las reglas. Sus zapatos están limpios: no salió de la cocina.",
           "imageSeed": 42,
           "imageUrl": "/images/characters/unit-06-sous-chef.png"
         },
@@ -880,7 +880,7 @@
           "name": "La Repostera",
           "realName": "Lucía Paredes Mendoza",
           "age": 30,
-          "description": "Tiene treinta años. Esta mañana tiene que preparar aquellos postres en su sección, al otro lado del restaurante. Trabaja con esa harina, ese azúcar y aquella mantequilla. No tiene acceso a la oficina del chef. Es ella quien ve a Diego fotografiar algo con el celular.",
+          "description": "Tiene treinta años. Esta mañana tiene que preparar aquellos postres en su sección, al otro lado del restaurante. Trabaja con esa harina, ese azúcar y aquella mantequilla. No tiene acceso a la oficina del chef. Es ella quien ve a Diego fotografiar algo con el celular. Sus zapatos están limpios: no salió de su sección.",
           "imageSeed": 38,
           "imageUrl": "/images/characters/unit-06-repostera.png"
         }

@@ -24,7 +24,7 @@ export const ROMAN = [
 export const UNITS: UnitMeta[] = [
   {
     number: 1, country: "México",               countryCode: "MX", flag: "🇲🇽",
-    titleEs: "¿Quién soy yo?",    titleEn: "Who Am I?",
+    titleEs: "El Misterio del Mariachi Perdido", titleEn: "The Mystery of the Lost Mariachi",
     description: "Greetings, introductions, and numbers",
     criminal: "El Camaleón",      stolenItem: "La Guitarra del Sol",   rotation: -2,    themeColor: "#c0392b",
   },
@@ -62,7 +62,7 @@ export const UNITS: UnitMeta[] = [
     number: 7, country: "Chile",                 countryCode: "CL", flag: "🇨🇱",
     titleEs: "Sabotaje en el Festival", titleEn: "Festival Sabotage",
     description: "Music, performing arts, and the verb 'ir' in context",
-    criminal: "El Técnico Oscuro", stolenItem: "El Instrumento Antiguo", rotation: -2,    themeColor: "#8b1a1a",
+    criminal: "El Técnico Oscuro", stolenItem: "El Sonido del Festival", rotation: -2,    themeColor: "#8b1a1a",
   },
   {
     number: 8, country: "Perú",                  countryCode: "PE", flag: "🇵🇪",

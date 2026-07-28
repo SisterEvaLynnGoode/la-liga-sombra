@@ -746,7 +746,7 @@
           "name": "El Heredero",
           "realName": "Marco Montoya Solís",
           "age": 19,
-          "description": "Es el nieto de la abuela Carmen. Tiene diecinueve años. Durante la interrogación dice que está en su habitación toda la mañana, pero está nervioso y sus respuestas son inconsistentes. Conoce bien la habitación de la abuela y tiene acceso directo.",
+          "description": "Es el nieto de la abuela Carmen. Tiene diecinueve años. Durante la interrogación dice que está en su habitación toda la mañana, pero está nervioso y sus respuestas son inconsistentes. Conoce bien la habitación de la abuela y tiene acceso directo. Tiene polvo de pintura amarilla en la manga derecha de su camisa.",
           "imageSeed": 15,
           "imageUrl": "/images/characters/unit-04-heredero.png"
         },
@@ -755,7 +755,7 @@
           "name": "La Tía Generosa",
           "realName": "Elena Vargas de Montoya",
           "age": 45,
-          "description": "Es la esposa de Carlos, el hijo de la abuela. Tiene cuarenta y cinco años. Está en el mercado central de San José toda la mañana — tiene los recibos como prueba. Está preocupada pero no es sospechosa.",
+          "description": "Es la esposa de Carlos, el hijo de la abuela. Tiene cuarenta y cinco años. Está en el mercado central de San José toda la mañana — tiene los recibos como prueba. Está preocupada pero no es sospechosa. No tiene pintura en la ropa.",
           "imageSeed": 35,
           "imageUrl": "/images/characters/unit-04-tia-generosa.png"
         },
@@ -764,7 +764,7 @@
           "name": "El Primo Activo",
           "realName": "Diego Montoya Vargas",
           "age": 22,
-          "description": "Es el primo de Marco. Tiene veintidós años. Está en la finca de café con el tío Carlos toda la mañana — tiene coartada perfecta. Está cansado del trabajo pero está tranquilo y no es sospechoso.",
+          "description": "Es el primo de Marco. Tiene veintidós años. Está en la finca de café con el tío Carlos toda la mañana — tiene coartada perfecta. Está cansado del trabajo pero está tranquilo y no es sospechoso. No tiene pintura en la ropa.",
           "imageSeed": 25,
           "imageUrl": "/images/characters/unit-04-primo-activo.png"
         },
@@ -773,7 +773,7 @@
           "name": "La Hija Seria",
           "realName": "Ana Lucía Montoya Solís",
           "age": 48,
-          "description": "Es la hija de la abuela Carmen y la madre de Marco. Tiene cuarenta y ocho años. Está en San José en una reunión de negocios toda la mañana. Es muy seria y está muy preocupada por el collar de su madre.",
+          "description": "Es la hija de la abuela Carmen y la madre de Marco. Tiene cuarenta y ocho años. Está en San José en una reunión de negocios toda la mañana. Es muy seria y está muy preocupada por el collar de su madre. No tiene pintura en la ropa.",
           "imageSeed": 40,
           "imageUrl": "/images/characters/unit-04-hija-seria.png"
         }

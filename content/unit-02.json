@@ -515,7 +515,7 @@
           "name": "El Tecladista",
           "realName": "Rodrigo Mateo Herrera",
           "age": 17,
-          "description": "Es un muchacho alto y moreno. Tiene diecisiete años y es muy serio. Usa la computadora todos los días en el laboratorio de informática. Es de la República Dominicana.",
+          "description": "Es un muchacho alto y moreno. Tiene diecisiete años y es muy serio. Usa la computadora todos los días en el laboratorio de informática. Es de la República Dominicana. Nunca se quita los auriculares — los lleva puestos incluso durante las clases.",
           "imageSeed": 15,
           "imageUrl": "/images/characters/unit-02-tecladista.png"
         },
@@ -524,7 +524,7 @@
           "name": "La Estudiosa",
           "realName": "Isabella María Santos Colón",
           "age": 16,
-          "description": "Es una muchacha alta y morena. Es muy simpática y trabajadora. Estudia mucho en la biblioteca todos los días después de clases. Es de San Juan, Puerto Rico.",
+          "description": "Es una muchacha alta y morena. Es muy simpática y trabajadora. Estudia mucho en la biblioteca todos los días después de clases. Es de San Juan, Puerto Rico. No usa auriculares nunca.",
           "imageSeed": 35,
           "imageUrl": "/images/characters/unit-02-estudiosa.png"
         },
@@ -533,7 +533,7 @@
           "name": "El Gracioso",
           "realName": "Alejandro Cruz Pérez",
           "age": 16,
-          "description": "Es un muchacho bajo y rubio. Es muy gracioso y simpático. Le gusta mucho el fútbol y escucha música en clase. Es de Bayamón, Puerto Rico.",
+          "description": "Es un muchacho bajo y rubio. Es muy gracioso y simpático. Le gusta mucho el fútbol y escucha música en clase. Es de Bayamón, Puerto Rico. No usa auriculares en clase.",
           "imageSeed": 64,
           "imageUrl": "/images/characters/unit-02-gracioso.png"
         },
@@ -542,7 +542,7 @@
           "name": "El Tranquilo",
           "realName": "Carlos Medina Rivera",
           "age": 18,
-          "description": "Es un muchacho alto y moreno, pero es muy tímido. Tiene dieciocho años. Escucha música con auriculares en clase y trabaja en la cafetería. Es de Ponce, Puerto Rico.",
+          "description": "Es un muchacho alto y moreno, pero es muy tímido. Tiene dieciocho años. Escucha música en su teléfono, sin auriculares, y trabaja en la cafetería. Es de Ponce, Puerto Rico.",
           "imageSeed": 48,
           "imageUrl": "/images/characters/unit-02-tranquilo.png"
         }
