@@ -2,7 +2,7 @@
 
 import { useState, useEffect, useCallback } from "react";
 import { TabHeader, Empty } from "./OverviewTab";
-import { ARCS, SEMESTER, ALL_TASK_IDS, type WeekType } from "@/lib/pacing/plan";
+import { ARCS, SEMESTER, SEMESTERS, TEACHABLE_TASK_IDS, type WeekType } from "@/lib/pacing/plan";
 
 const TYPE_META: Record<WeekType, { label: string; color: string }> = {
   unit:      { label: "Unit",      color: "#c9933a" },
@@ -59,24 +59,27 @@ export default function PacingTab({ classId }: { classId: string }) {
 
   if (!classId) return <Empty />;
 
-  const totalDone = ALL_TASK_IDS.filter((id) => done[id]).length;
-  const pct = Math.round((totalDone / ALL_TASK_IDS.length) * 100);
+  const totalDone = TEACHABLE_TASK_IDS.filter((id) => done[id]).length;
+  const pct = Math.round((totalDone / TEACHABLE_TASK_IDS.length) * 100);
 
   // Which week is "current" = first week not fully complete
-  const currentWeek = SEMESTER.find((w) => !w.tasks.every((t) => done[t.id]))?.week ?? null;
+  // "Now" only ever points at a week whose content actually exists — otherwise
+  // finishing Caso 13 would jump the marker onto an unbuilt week.
+  const currentWeek =
+    SEMESTER.find((w) => w.status !== "planned" && !w.tasks.every((t) => done[t.id]))?.week ?? null;
 
   return (
     <div className="space-y-5">
-      <TabHeader title="18-Week Pacing Plan" lastUpdated={null} onRefresh={resetAll} />
+      <TabHeader title="36-Week Pacing Plan" lastUpdated={null} onRefresh={resetAll} />
 
       {/* Progress summary */}
       <div className="border border-[rgba(201,147,58,0.2)] bg-[#1a1614] p-4">
         <div className="flex items-center justify-between mb-2">
           <p className="font-typewriter text-[10px] tracking-[0.25em] uppercase text-[#8b7355]">
-            Semester progress
+            Year progress
           </p>
           <p className="font-typewriter text-xs text-[#8b7355]">
-            {currentWeek != null ? `Now on Week ${currentWeek}` : "Semester complete 🎉"}
+            {currentWeek != null ? `Now on Week ${currentWeek}` : "All built cases taught 🎉"}
           </p>
         </div>
         <div className="flex items-center gap-3">
@@ -86,12 +89,21 @@ export default function PacingTab({ classId }: { classId: string }) {
           <span className="font-typewriter text-sm font-bold text-[#e8b455] shrink-0">{pct}%</span>
         </div>
         <p className="font-typewriter text-[10px] text-[#4a3a2a] mt-1">
-          {totalDone} / {ALL_TASK_IDS.length} tasks · check items off as you teach. Progress is saved in this browser, per class.
+          {totalDone} / {TEACHABLE_TASK_IDS.length} tasks · check items off as you teach. Progress is saved in this browser, per class.
         </p>
       </div>
 
-      {/* Arcs + weeks */}
-      {ARCS.map((arc) => {
+      {/* Semester → arc → week */}
+      {SEMESTERS.map((sem) => (
+        <div key={sem.n} className="space-y-5">
+          <div className="border-l-4 border-[#c9933a] pl-3 py-1">
+            <h2 className="font-display font-black text-lg text-[#e8b455] leading-tight">{sem.title}</h2>
+            <p className="font-typewriter text-[10px] text-[#8b7355] mt-0.5">
+              {sem.weeks} — {sem.blurb}
+            </p>
+          </div>
+
+      {ARCS.filter((a) => a.semester === sem.n).map((arc) => {
         const weeks = SEMESTER.filter((w) => w.arc === arc.n);
         return (
           <div key={arc.n} className="space-y-3">
@@ -115,6 +127,7 @@ export default function PacingTab({ classId }: { classId: string }) {
                   className={`border bg-[#1a1614] transition-opacity ${
                     allDone ? "border-[rgba(201,147,58,0.12)] opacity-60"
                     : isCurrent ? "border-[#c9933a]"
+                    : w.status === "planned" ? "border-[rgba(201,147,58,0.12)] opacity-50"
                     : "border-[rgba(201,147,58,0.2)]"
                   }`}
                 >
@@ -137,6 +150,14 @@ export default function PacingTab({ classId }: { classId: string }) {
                           {isCurrent && (
                             <span className="font-typewriter text-[9px] px-1.5 py-0.5 uppercase tracking-wider bg-[rgba(201,147,58,0.15)] text-[#e8b455] border border-[rgba(201,147,58,0.3)]">
                               Now
+                            </span>
+                          )}
+                          {w.status === "planned" && (
+                            <span
+                              className="font-typewriter text-[9px] px-1.5 py-0.5 uppercase tracking-wider border border-[rgba(139,115,85,0.5)] text-[#8b7355]"
+                              title="Planned in the curriculum map — this case has not been built yet"
+                            >
+                              Not built yet
                             </span>
                           )}
                         </div>
@@ -176,7 +197,7 @@ export default function PacingTab({ classId }: { classId: string }) {
                         </span>
                       </button>
                     ))}
-                    {w.link && (
+                    {w.link && w.status !== "planned" && (
                       <a
                         href={w.link.href}
                         className="inline-flex items-center gap-1 mt-1 font-typewriter text-[10px] tracking-wider uppercase text-[#c9933a] hover:text-[#e8b455] transition-colors"
@@ -191,6 +212,8 @@ export default function PacingTab({ classId }: { classId: string }) {
           </div>
         );
       })}
+        </div>
+      ))}
 
       {!loaded && (
         <p className="font-typewriter text-[10px] text-[#4a3a2a] text-center">Loading saved progress…</p>
