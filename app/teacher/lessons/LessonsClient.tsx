@@ -1,16 +1,34 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 import type { LessonPlan } from "@/lib/lessons/build";
+import {
+  SCHEDULES,
+  loadScheduleId,
+  saveScheduleId,
+  DEFAULT_SCHEDULE,
+  type ScheduleId,
+} from "@/lib/lessons/schedule";
 
 interface Props {
-  plans: LessonPlan[];
+  plansBySchedule: Record<string, LessonPlan[]>;
 }
 
-export default function LessonsClient({ plans }: Props) {
-  const [active, setActive] = useState<number>(plans[0]?.meta.unitNumber ?? 1);
+export default function LessonsClient({ plansBySchedule }: Props) {
+  const [scheduleId, setScheduleId] = useState<ScheduleId>(DEFAULT_SCHEDULE);
+  const plans = plansBySchedule[scheduleId] ?? plansBySchedule[DEFAULT_SCHEDULE] ?? [];
+
+  const [active, setActive] = useState<number>(1);
   const [showAll, setShowAll] = useState(false);
+
+  // The choice is shared with the dashboard Pacing tab via localStorage.
+  useEffect(() => { setScheduleId(loadScheduleId()); }, []);
+
+  function chooseSchedule(id: ScheduleId) {
+    setScheduleId(id);
+    saveScheduleId(id);
+  }
 
   if (plans.length === 0) {
     return (
@@ -71,6 +89,16 @@ export default function LessonsClient({ plans }: Props) {
           >
             {showAll ? `All ${plans.length} cases` : "Whole semester"}
           </button>
+          <select
+            value={scheduleId}
+            onChange={(e) => chooseSchedule(e.target.value as ScheduleId)}
+            title="Your bell schedule. The five work items stay the same; only how they pack into periods changes."
+            className="bg-[#0d0b0a] border border-[rgba(201,147,58,0.3)] text-[#f5e6c8] font-typewriter text-xs px-3 py-1.5 focus:outline-none focus:border-[#c9933a]"
+          >
+            {SCHEDULES.map((sc) => (
+              <option key={sc.id} value={sc.id}>{sc.label}</option>
+            ))}
+          </select>
           <button
             onClick={() => window.print()}
             className="clip-skew px-4 py-1.5 font-typewriter text-[10px] tracking-[0.2em] uppercase bg-[rgba(201,147,58,0.12)] text-[#e8b455] border border-[rgba(201,147,58,0.35)] hover:bg-[rgba(201,147,58,0.22)] transition-colors"
@@ -113,7 +141,8 @@ function Plan({ plan }: { plan: LessonPlan }) {
           <div className="font-mono text-[10px] text-right leading-relaxed">
             <div>ACTFL: {m.band}</div>
             <div>{m.vocabCount} terms · {m.stageLabels.length} stages</div>
-            <div>5 days · ~{m.totalMinutes} min</div>
+            <div>{plan.days.length} meetings · ~{m.totalMinutes} min/week</div>
+            <div className="italic">{plan.schedule.label}</div>
           </div>
         </div>
       </header>
@@ -180,14 +209,20 @@ function Plan({ plan }: { plan: LessonPlan }) {
 
       {/* ── DAY BY DAY ─────────────────────────────────────────────────── */}
       <p className="font-mono text-[9px] tracking-[0.3em] uppercase text-[#666] mb-2 border-t-2 border-black pt-3">
-        Part B · Day by day
+        Part B · Meeting by meeting — {plan.schedule.label}
       </p>
+      <p className="font-serif text-[11px] italic mb-2">{plan.schedule.description}</p>
 
       {plan.days.map((d) => (
         <section key={d.n} className="border border-black mb-2">
           <div className="flex justify-between items-baseline gap-4 bg-black text-white px-3 py-1.5">
             <h3 className="font-display font-black text-sm uppercase">
-              Day {d.n} — {d.title}
+              {d.title}
+              {d.workItems.length > 0 && (
+                <span className="font-mono text-[10px] normal-case ml-2 opacity-80">
+                  {d.workItems.join(" + ")}
+                </span>
+              )}
             </h3>
             <span className="font-mono text-[10px]">{d.minutes} min</span>
           </div>

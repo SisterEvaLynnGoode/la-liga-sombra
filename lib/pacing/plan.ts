@@ -23,6 +23,13 @@ export type ArcNumber = 1 | 2 | 3 | 4 | 5 | 6;
 export interface PacingTask {
   id: string;
   label: string;
+  /**
+   * Index into WORK_ITEMS (lib/lessons/schedule.ts) for the five weekly work
+   * items. The Pacing tab prefixes the label with the meeting that work item
+   * falls in under the teacher's chosen schedule ("Mon", "W/Th block", …).
+   * Ids never change when the schedule does, so saved progress survives.
+   */
+  workItem?: 0 | 1 | 2 | 3 | 4;
 }
 
 export interface PacingLink {
@@ -78,11 +85,11 @@ export const SEMESTERS: Array<{ n: Semester; title: string; weeks: string; blurb
  * are two views of the same week.
  */
 const unitTasks = (w: number): PacingTask[] => [
-  { id: `w${w}-t1`, label: "Day 1 · Briefing: story deck → vocab deck → open the case" },
-  { id: `w${w}-t2`, label: "Day 2 · Field I: clue-bearing stages" },
-  { id: `w${w}-t3`, label: "Day 3 · Field II: finish the case + justify the arrest" },
-  { id: `w${w}-t4`, label: "Day 4 · HQ: Vocabulary + Grammar files on paper" },
-  { id: `w${w}-t5`, label: "Day 5 · Culture file + Pasaporte page, stamp it" },
+  { id: `w${w}-t1`, workItem: 0, label: "Briefing: story deck → vocab deck → open the case" },
+  { id: `w${w}-t2`, workItem: 1, label: "Field I: clue-bearing stages" },
+  { id: `w${w}-t3`, workItem: 2, label: "Field II: finish the case + justify the arrest" },
+  { id: `w${w}-t4`, workItem: 3, label: "HQ: Vocabulary + Grammar files on paper" },
+  { id: `w${w}-t5`, workItem: 4, label: "Culture file + Pasaporte page, stamp it" },
 ];
 
 const WORKSHEETS: PacingLink = { href: "/teacher/worksheets", label: "Print worksheets" };

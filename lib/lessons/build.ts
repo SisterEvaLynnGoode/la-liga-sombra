@@ -27,6 +27,7 @@ import type { UnitMeta } from "@/lib/game/units";
 import type { GrammarLesson } from "@/lib/worksheets/grammar";
 import type { CultureLesson } from "@/lib/worksheets/culture";
 import type { CaseStory } from "@/lib/decks/stories";
+import { getSchedule, meetingForWorkItem, type Schedule, type ScheduleId } from "@/lib/lessons/schedule";
 
 /** Teacher-facing English name for each stage type. */
 const STAGE_LABEL: Record<string, string> = {
@@ -55,12 +56,16 @@ export interface LessonStep {
   what: string;
 }
 
+/** One meeting of the class — a period or a block, depending on the schedule. */
 export interface LessonDay {
   n: number;
+  /** Meeting label from the schedule, e.g. "Wed / Thu — 80-min block". */
   title: string;
   subtitle: string;
   minutes: number;
-  /** Shown as "Project:" / "Print:" chips at the top of the day. */
+  /** Work items packed into this meeting, e.g. ["Field II", "HQ"]. */
+  workItems: string[];
+  /** Shown as "Project:" / "Print:" chips at the top of the meeting. */
   project: string[];
   print: string[];
   steps: LessonStep[];
@@ -95,12 +100,72 @@ export interface LessonPlan {
   standards: string[];
   materials: Material[];
   days: LessonDay[];
+  schedule: { id: string; label: string; description: string; totalMinutes: number };
   assessment: string[];
   differentiation: string[];
   /** Case-specific things to say out loud, pulled from the story deck. */
   watchFor: string[];
   /** Anything missing. Rendered loudly so nobody plans around a gap. */
   gaps: string[];
+}
+
+/** A single work item, authored at its natural ~50-minute shape. */
+interface WorkItem {
+  title: string;
+  subtitle: string;
+  project: string[];
+  print: string[];
+  steps: LessonStep[];
+  exitTicket: string;
+  link?: { href: string; label: string };
+}
+
+/**
+ * Pack the five work items into the schedule's meetings and scale each step so
+ * the times add up to the real period length.
+ *
+ * The scaling is the point. On a block schedule two items share 80 minutes, not
+ * 100, so simply concatenating them would print a plan that overruns the period
+ * by twenty minutes — which is exactly the kind of quiet lie that makes a
+ * teacher stop trusting the document.
+ */
+function packIntoMeetings(items: WorkItem[], schedule: Schedule): LessonDay[] {
+  const days: LessonDay[] = [];
+
+  schedule.meetings.forEach((meeting, mi) => {
+    const mine = items.filter((_, i) => meetingForWorkItem(schedule, i).key === meeting.key);
+    if (mine.length === 0) return;
+
+    const natural = mine.reduce((t, it) => t + it.steps.reduce((a, s) => a + s.mins, 0), 0);
+    const scale = natural > 0 ? meeting.minutes / natural : 1;
+
+    // Scale, floor to whole minutes, then hand any rounding remainder to the
+    // longest step so the printed times sum exactly to the period.
+    const steps: LessonStep[] = mine.flatMap((it) =>
+      it.steps.map((s) => ({ mins: Math.max(1, Math.floor(s.mins * scale)), what: s.what }))
+    );
+    const drift = meeting.minutes - steps.reduce((t, s) => t + s.mins, 0);
+    if (drift !== 0 && steps.length > 0) {
+      let longest = 0;
+      steps.forEach((s, i) => { if (s.mins > steps[longest].mins) longest = i; });
+      steps[longest] = { ...steps[longest], mins: Math.max(1, steps[longest].mins + drift) };
+    }
+
+    days.push({
+      n: mi + 1,
+      title: meeting.label,
+      subtitle: mine.map((it) => it.subtitle).join("  ·  "),
+      minutes: meeting.minutes,
+      workItems: mine.map((it) => it.title),
+      project: mine.flatMap((it) => it.project),
+      print: mine.flatMap((it) => it.print),
+      steps,
+      exitTicket: mine.map((it) => it.exitTicket).join("  +  "),
+      link: mine.find((it) => it.link)?.link,
+    });
+  });
+
+  return days;
 }
 
 /** Rough ACTFL band by position in the sequence. */
@@ -138,6 +203,8 @@ export interface BuildLessonInput {
   hasAudio: boolean;
   hasColdCase: boolean;
   hasScrollWorld: boolean;
+  /** Which bell schedule to lay the five work items out against. */
+  scheduleId?: ScheduleId;
 }
 
 export function buildLessonPlan(input: BuildLessonInput): LessonPlan {
@@ -188,14 +255,15 @@ export function buildLessonPlan(input: BuildLessonInput): LessonPlan {
   if (input.hasColdCase) materials.push({ label: "Cold case (re-play / make-up work)", ready: true, href: `/play/${n}/cold` });
   if (input.hasScrollWorld) materials.push({ label: "Scroll-world flythrough (optional hook)", ready: true, href: `/teacher/mundo/${n}` });
 
-  // ── Days ────────────────────────────────────────────────────────────────
-  const days: LessonDay[] = [];
+  // ── Work items ──────────────────────────────────────────────────────────
+  // Five fixed items. The schedule decides how they pack into meetings, and
+  // the minutes below are the "natural" 50-minute shape — they get scaled to
+  // whatever the real meeting length is when the items are assembled.
+  const items: WorkItem[] = [];
 
-  days.push({
-    n: 1,
+  items.push({
     title: "Briefing",
     subtitle: "Why this theft matters, and the words you need",
-    minutes: 50,
     project: [story ? "Story deck" : "Vocabulary deck", "Vocabulary deck"],
     print: [],
     steps: [
@@ -210,11 +278,9 @@ export function buildLessonPlan(input: BuildLessonInput): LessonPlan {
     link: { href: "/teacher/decks", label: "Open the decks" },
   });
 
-  days.push({
-    n: 2,
+  items.push({
     title: "Field I",
     subtitle: day2.length ? day2.join(" · ") : "Case work",
-    minutes: 50,
     project: [],
     print: [],
     steps: [
@@ -226,11 +292,9 @@ export function buildLessonPlan(input: BuildLessonInput): LessonPlan {
     link: { href: `/play/${n}`, label: "Open the case" },
   });
 
-  days.push({
-    n: 3,
+  items.push({
     title: "Field II — the arrest",
     subtitle: day3.length ? day3.join(" · ") : "Solve the case",
-    minutes: 50,
     project: [],
     print: [],
     steps: [
@@ -242,11 +306,9 @@ export function buildLessonPlan(input: BuildLessonInput): LessonPlan {
     link: { href: `/play/${n}`, label: "Open the case" },
   });
 
-  days.push({
-    n: 4,
+  items.push({
     title: "HQ — paper day",
     subtitle: grammar ? grammar.title : "Vocabulary and grammar",
-    minutes: 50,
     project: [],
     print: ["Vocabulary file", "Grammar file"],
     steps: [
@@ -259,11 +321,9 @@ export function buildLessonPlan(input: BuildLessonInput): LessonPlan {
     link: { href: "/teacher/worksheets", label: "Print the files" },
   });
 
-  days.push({
-    n: 5,
+  items.push({
     title: "Culture",
     subtitle: culture ? culture.theme : "Culture day (no handout authored yet)",
-    minutes: 50,
     project: [],
     print: culture ? ["Culture file", "Passport page"] : ["Passport page"],
     steps: culture
@@ -310,6 +370,8 @@ export function buildLessonPlan(input: BuildLessonInput): LessonPlan {
       .forEach((s) => watchFor.push(s));
   }
 
+  const schedule = getSchedule(input.scheduleId);
+  const days = packIntoMeetings(items, schedule);
   const totalMinutes = days.reduce((t, d) => t + d.minutes, 0);
 
   return {
@@ -331,6 +393,12 @@ export function buildLessonPlan(input: BuildLessonInput): LessonPlan {
     standards,
     materials,
     days,
+    schedule: {
+      id: schedule.id,
+      label: schedule.label,
+      description: schedule.description,
+      totalMinutes,
+    },
     assessment,
     differentiation,
     watchFor,

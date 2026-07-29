@@ -10,6 +10,7 @@ import { getCaseStory } from "@/lib/decks/stories";
 import { getGrammarLesson, GRAMMAR } from "@/lib/worksheets/grammar";
 import { getCultureLesson } from "@/lib/worksheets/culture";
 import type { UnitContent } from "@/lib/types/unit-content";
+import { SCHEDULES, type ScheduleId } from "@/lib/lessons/schedule";
 import LessonsClient from "./LessonsClient";
 
 export const metadata = { title: "Lesson Plans — La Liga Sombra" };
@@ -36,7 +37,10 @@ function fileExists(rel: string): boolean {
 export default async function LessonsPage() {
   if (!(await getTeacherSession())) redirect("/teacher/login");
 
-  const plans: LessonPlan[] = [];
+  // Build every schedule variant server-side — they are pure functions over data
+  // already in memory, so switching schedules in the UI needs no round trip.
+  const plansBySchedule: Record<string, LessonPlan[]> = {};
+  for (const sc of SCHEDULES) plansBySchedule[sc.id] = [];
 
   for (const unit of UNITS) {
     const content = getUnitContent(unit.number);
@@ -54,21 +58,22 @@ export default async function LessonsPage() {
       audioUrls.length === 0 ||
       audioUrls.every((u) => fileExists(path.join("public", u.replace(/^\//, ""))));
 
-    plans.push(
-      buildLessonPlan({
-        unit,
-        content,
-        grammar,
-        culture,
-        story,
-        storyMinutes: story ? buildStoryDeck(content, story).meta.coreMinutes : null,
-        vocabDeckSlides: buildDeck(content, grammar).meta.slideCount,
-        hasAudio,
-        hasColdCase: !!getUnitContent(unit.number, true),
-        hasScrollWorld: fileExists(`public/scroll-worlds/unit-${String(unit.number).padStart(2, "0")}`),
-      })
-    );
+    const shared = {
+      unit,
+      content,
+      grammar,
+      culture,
+      story,
+      storyMinutes: story ? buildStoryDeck(content, story).meta.coreMinutes : null,
+      vocabDeckSlides: buildDeck(content, grammar).meta.slideCount,
+      hasAudio,
+      hasColdCase: !!getUnitContent(unit.number, true),
+      hasScrollWorld: fileExists(`public/scroll-worlds/unit-${String(unit.number).padStart(2, "0")}`),
+    };
+    for (const sc of SCHEDULES) {
+      plansBySchedule[sc.id].push(buildLessonPlan({ ...shared, scheduleId: sc.id as ScheduleId }));
+    }
   }
 
-  return <LessonsClient plans={plans} />;
+  return <LessonsClient plansBySchedule={plansBySchedule} />;
 }

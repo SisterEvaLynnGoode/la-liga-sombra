@@ -3,6 +3,10 @@
 import { useState, useEffect, useCallback } from "react";
 import { TabHeader, Empty } from "./OverviewTab";
 import { ARCS, SEMESTER, SEMESTERS, TEACHABLE_TASK_IDS, type WeekType } from "@/lib/pacing/plan";
+import {
+  SCHEDULES, getSchedule, taskPrefix, loadScheduleId, saveScheduleId,
+  DEFAULT_SCHEDULE, type ScheduleId,
+} from "@/lib/lessons/schedule";
 
 const TYPE_META: Record<WeekType, { label: string; color: string }> = {
   unit:      { label: "Unit",      color: "#c9933a" },
@@ -19,6 +23,11 @@ function storageKey(classId: string) {
 export default function PacingTab({ classId }: { classId: string }) {
   const [done, setDone] = useState<Record<string, boolean>>({});
   const [loaded, setLoaded] = useState(false);
+  const [scheduleId, setScheduleId] = useState<ScheduleId>(DEFAULT_SCHEDULE);
+  const schedule = getSchedule(scheduleId);
+
+  // Shared with the Lesson Plans page, so the two never describe different weeks.
+  useEffect(() => { setScheduleId(loadScheduleId()); }, []);
 
   // Load this class's progress from localStorage
   useEffect(() => {
@@ -87,6 +96,17 @@ export default function PacingTab({ classId }: { classId: string }) {
             <div className="h-full bg-[#c9933a] rounded-full transition-all" style={{ width: `${pct}%` }} />
           </div>
           <span className="font-typewriter text-sm font-bold text-[#e8b455] shrink-0">{pct}%</span>
+        </div>
+        <div className="flex items-center gap-2 mt-3 flex-wrap">
+          <span className="font-typewriter text-[9px] tracking-[0.2em] uppercase text-[#8b7355]">Bell schedule</span>
+          <select
+            value={scheduleId}
+            onChange={(e) => { const v = e.target.value as ScheduleId; setScheduleId(v); saveScheduleId(v); }}
+            title="Changing this relabels which meeting each task falls in. Your check-offs are kept."
+            className="bg-[#0d0b0a] border border-[rgba(201,147,58,0.3)] text-[#f5e6c8] font-typewriter text-[11px] px-2 py-1 focus:outline-none focus:border-[#c9933a]"
+          >
+            {SCHEDULES.map((sc) => (<option key={sc.id} value={sc.id}>{sc.label}</option>))}
+          </select>
         </div>
         <p className="font-typewriter text-[10px] text-[#4a3a2a] mt-1">
           {totalDone} / {TEACHABLE_TASK_IDS.length} tasks · check items off as you teach. Progress is saved in this browser, per class.
@@ -193,6 +213,9 @@ export default function PacingTab({ classId }: { classId: string }) {
                           ✓
                         </span>
                         <span className={`font-typewriter text-[11px] leading-snug ${done[t.id] ? "text-[#4a3a2a] line-through" : "text-[#c4a882]"}`}>
+                          {t.workItem != null && (
+                            <span className="text-[#8b7355]">{taskPrefix(schedule, t.workItem)} · </span>
+                          )}
                           {t.label}
                         </span>
                       </button>
