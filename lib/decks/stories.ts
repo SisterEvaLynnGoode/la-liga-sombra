@@ -2500,6 +2500,190 @@ export const STORIES: Record<number, CaseStory> = {
     teacherNote:
       "Run immediately before students open Caso 14. Two spines. Grammatically: gustar runs backwards, and the verb agrees with the THING and not the person — 'me gustan' with one thing is the error to hunt all week. Say the connection to Caso 9's doler out loud; students who see it as the same machine stop treating it as a new rule. The second production beat ('me gusta el poema — me gustan los poemas') is thirty seconds and does more than any explanation. Thematically: the stakes slide carries the fact that makes the theft matter — modernismo reversed the direction literary influence had flowed for four centuries, so a handwritten page from Darío is evidence of origin, not merchandise. The discussion prompt reliably works because every class memorises something (lyrics, prayers, chants, bits) and nobody has framed that as the same behaviour as reciting poetry in a plaza. Watch the ESTO ES REAL stamps: the manuscript, the stranger and the four suspects are invented, while Darío's dates and books, the reversal of influence, his tomb under the weeping lion, León's cathedral and UNESCO listing, and Nicaraguan voseo are real. The case is set in 1907, the year of his return, so do NOT hand out 'A Margarita Debayle' as the stolen poem — it was written in 1908. Use NÚCLEO to drop the country slide if short.",
   },
+
+  15: {
+    hook: "One disc. No copy. If it leaves the room tonight, the song has never existed.",
+
+    crime: {
+      eyebrow: "El Crimen",
+      headline: "There Is No Second Copy",
+      body: [
+        "Havana, 1954. A small recording studio, a piano, a trumpet, a double bass, a tres. This morning a band recorded a new mambo and cut it to a single master disc.",
+        "That word matters. Master. Before tape was cheap and copying was easy, the master was not the best copy of a song — it was the only physical place the song existed. Lose it and there is nothing to press records from, nothing to broadcast, nothing at all.",
+        "A man came in and asked to borrow it. Twice. He was told no. And then, when nobody was looking, he took it anyway.",
+      ],
+      pull: "This is the only case this year where the object IS the artwork. There is no original left behind.",
+      real: false,
+    },
+
+    artifact: [
+      {
+        eyebrow: "Lo Robado · What Was Stolen",
+        headline: "El Disco Maestro",
+        body: [
+          "One lacquer disc, cut this morning, still in its paper sleeve. The band's only recording of a mambo that has never been broadcast.",
+          "It was supposed to go out on the radio on Friday. Instead it is in a stranger's coat.",
+        ],
+        facts: [
+          { label: "Qué", value: "El disco maestro — la única grabación" },
+          { label: "Dónde", value: "Un estudio de grabación en La Habana" },
+          { label: "Cuándo", value: "1954, la noche antes de la radio" },
+          { label: "Copias", value: "Ninguna" },
+        ],
+        real: false,
+      },
+      {
+        eyebrow: "El Contexto · The Real Thing",
+        headline: "A Small Island Rebuilt the World's Dance Music",
+        body: [
+          "Son cubano came first. The mambo grew out of the danzón tradition in the 1930s and 40s. And in the early 1950s — right when you are standing there — Enrique Jorrín invented the cha-cha-chá, and he invented it slower on purpose, so that ordinary people could actually dance it.",
+          "It travelled absurdly far for a country this size. Latin jazz runs on Cuban rhythm. When Cuban, Puerto Rican and other Latino musicians built salsa in New York in the 1960s and 70s, they built it on Cuban foundations. A great deal of what the world dances to is sitting on top of what was invented on this island.",
+        ],
+        facts: [
+          { label: "El son", value: "The root form" },
+          { label: "El mambo", value: "Out of the danzón, 1930s–40s" },
+          { label: "El cha-cha-chá", value: "Enrique Jorrín, early 1950s" },
+          { label: "La rumba", value: "UNESCO Intangible Heritage, 2016" },
+          { label: "El tres", value: "Guitar with three doubled courses of strings" },
+        ],
+        real: true,
+      },
+    ],
+
+    place: [
+      {
+        eyebrow: "El País · The Country",
+        headline: "Cuba",
+        body: [
+          "You are on the largest island in the Caribbean, and you will notice the Spanish immediately: Cuban speakers drop the s at the end of syllables, so 'los discos' comes out closer to 'lo' disco'. That is not sloppiness, it is the accent, and it is why this case gives you three replays on the listening.",
+          "One honest note before you go in. The Havana of 1954 that shows up in films — casinos, big hotels, glamour — was real, but it was not most Cubans' life, and the musicians who invented this music were largely not the people getting rich from it. Keep that in mind while you admire the city.",
+        ],
+        facts: [
+          { label: "Capital", value: "La Habana" },
+          { label: "Población", value: "~11 million" },
+          { label: "Moneda", value: "el peso cubano" },
+          { label: "El acento", value: "Final -s often dropped" },
+        ],
+        real: true,
+        optional: true,
+      },
+      {
+        eyebrow: "La Ciudad · The City",
+        headline: "La Habana",
+        body: [
+          "You will hear this city before you see anything. Music here is not an event you buy a ticket for — it comes out of doorways and open windows, off the radio, and along the Malecón, the seawall where the whole city goes to sit at night.",
+          "Habana Vieja, the old city, is a UNESCO World Heritage Site: five centuries of Spanish colonial building, laid out around plazas, with fortresses guarding the harbour mouth.",
+        ],
+        facts: [
+          { label: "Habana Vieja", value: "UNESCO World Heritage, 1982" },
+          { label: "El Malecón", value: "The seawall — the city's front porch" },
+          { label: "Fundada", value: "1519" },
+          { label: "Población", value: "~2.1 million" },
+        ],
+        real: true,
+      },
+    ],
+
+    stakes: {
+      eyebrow: "Por Qué Importa · Why It Matters",
+      headline: "Everybody Here Carries the Clave",
+      body: [
+        "Underneath nearly all of this music is one pattern: la clave. Five strokes spread across two measures, and every other instrument lines itself up against it.",
+        "Here is the part that matters. This is not specialist knowledge. People who have never taken a music lesson hold the clave in their bodies — they tap it on a table without noticing, and they can hear instantly when a band is playing against it. It is shared, physical, unwritten knowledge, held by an entire population.",
+        "Which is the thief's problem. He can copy an accent and buy the right jacket. He cannot make his hand find a rhythm that everyone around him has known since they were four.",
+      ],
+      pull: "You can fake a name. You cannot fake the clave in a room full of people who have it.",
+      real: true,
+    },
+
+    vocab: [
+      {
+        eyebrow: "Herramienta 1 · Both Halves at Once",
+        headline: "Person First, Thing Second",
+        situation:
+          "You already own both pieces. Lo/la/los/las stand in for the THING. Me/te/le/nos/les say TO WHOM. Now they appear together, and the order never changes: the person comes first, then the thing. '¿Me lo puede prestar?' — me, then lo. Never 'lo me'.",
+        entries: [
+          { spanish: "me lo / me la", english: "it to me", note: "¿Me lo prestas?" },
+          { spanish: "te lo / te la", english: "it to you" },
+          { spanish: "nos lo / nos la", english: "it to us" },
+          { spanish: "me los / me las", english: "them to me" },
+        ],
+        production: {
+          instruction: "Thirty seconds. Ask your partner to lend you something on your desk, both pronouns.",
+          say: "¿Me lo prestas? / ¿Me la prestas?",
+        },
+      },
+      {
+        eyebrow: "Herramienta 2 · The Famous Rule",
+        headline: "LE + LO Is Impossible. It Becomes SE.",
+        situation:
+          "This is the most tested single fact in the unit. Spanish will not allow le lo or les las — the sound is banned. So le and les turn into SE whenever a lo/la/los/las follows. 'Le doy el disco a Rogelio' becomes 'SE lo doy.' There is no exception to hunt for.",
+        entries: [
+          { spanish: "se lo / se la", english: "it to him / her / them", note: "From le or les — never 'le lo'." },
+          { spanish: "se los / se las", english: "them to him / her / them" },
+          { spanish: "Se lo guarda.", english: "He keeps it for her." },
+          { spanish: "No se lo da a nadie.", english: "He doesn't give it to anyone." },
+        ],
+        production: {
+          instruction: "Thirty seconds. Say the wrong one, then the right one, so your ear learns the difference.",
+          say: "✗ le lo doy → ✓ se lo doy",
+        },
+      },
+      {
+        eyebrow: "Herramienta 3 · Give, Ask, Lend, Take",
+        headline: "The Verbs That Need Two Pronouns",
+        situation:
+          "Double pronouns cluster around a specific family of verbs: things moving from one person to another. Every witness statement in this case is about who gave, lent, kept or took the disc — and from whom.",
+        entries: [
+          { spanish: "dar", english: "to give" },
+          { spanish: "pedir", english: "to ask for" },
+          { spanish: "prestar", english: "to lend" },
+          { spanish: "guardar", english: "to keep, to put away" },
+          { spanish: "llevar", english: "to take away" },
+          { spanish: "devolver", english: "to give back" },
+        ],
+      },
+      {
+        eyebrow: "Herramienta 4 · Recognize, Don't Produce",
+        headline: "When Both Pronouns Glue Onto the Verb",
+        situation:
+          "You will hear both pronouns stuck onto the end of an infinitive, as one word with an accent. You do not have to produce these yet — but you must recognise them, because the case's most important line is one of them.",
+        entries: [
+          { spanish: "escucharlo", english: "to listen to it" },
+          { spanish: "llevármelo", english: "to take it with me", note: "llevar + me + lo" },
+          { spanish: "llevárselo", english: "to take it away from him", note: "llevar + se + lo" },
+          { spanish: "prestármelo", english: "to lend it to me" },
+        ],
+      },
+    ],
+
+    expect: {
+      headline: "What Happens When You Open the Case",
+      items: [
+        { label: "Briefing", text: "La Jefa sends you to La Habana, año 1954." },
+        { label: "Vocabulario", text: "Match the phrases — the studio, the instruments, the verbs of giving." },
+        { label: "Clasificar", text: "Swipe each card: ¿me LO or me LA? Decide by the thing's gender." },
+        { label: "Construye", text: "Build sentences with both pronouns, including le → se." },
+        { label: "La Bitácora", text: "Read your field log from inside the studio." },
+        { label: "Escucha", text: "An exchange in the studio. Fast Cuban Spanish, three replays." },
+        { label: "Rogelio", text: "Interview the engineer who was guarding the disc." },
+        { label: "La Rueda", text: "Four people. Each decoy matches exactly one of the three clues." },
+      ],
+    },
+
+    discuss: {
+      prompt:
+        "Turn and talk: why would someone want a recording they never intend to listen to?",
+      followups: [
+        "Is there anything you own that you value but never actually use?",
+      ],
+    },
+
+    closer: "Antes de que salga de la isla, agente. El caso está abierto.",
+
+    teacherNote:
+      "Run immediately before students open Caso 15 — the last case before the midterm boss, so it is also a consolidation week. Grammatically there are two things and the second one is the whole unit: order never changes (person, then thing), and le/les ALWAYS become SE before lo/la/los/las. Do the second production beat exactly as written — saying the wrong form out loud once ('le lo doy') and then the right one trains the ear faster than any rule statement, and students stop producing 'le lo' almost immediately. Before you show the stakes slide, clap the 3-2 son clave and have the class join, then deliberately clap against it so they hear the wrongness; that is the case's second clue made physical, and it takes thirty seconds. The thief's tell is thematic rather than physical: he asks to borrow the record and explicitly does NOT want to hear it, which is the discussion prompt too. Watch the ESTO ES REAL stamps: the studio, the disc and the four suspects are invented, while the son/mambo/cha-cha-chá lineage, Jorrín, rumba's UNESCO listing, the tres, the clave, Habana Vieja's World Heritage status and Cuban s-dropping are real. Two honest guards, both written into the slides: 1950s Havana's film glamour was real but was not most Cubans' life and the musicians largely were not the ones profiting; and salsa is NOT Cuban music renamed — it was built in New York on Cuban foundations by Cuban, Puerto Rican and other Latino musicians. We stay on the music; the politics of the era is a separate and later topic. Use NÚCLEO to drop the country slide if short.",
+  },
 };
 
 export function getCaseStory(unitNumber: number): CaseStory | null {

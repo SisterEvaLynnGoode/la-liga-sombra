@@ -109,4 +109,10 @@ export const UNITS: UnitMeta[] = [
     description: "León in 1907 and the return of Rubén Darío — gustar, encantar and indirect object pronouns",
     criminal: "El Cronista",      stolenItem: "El Manuscrito de Darío", rotation: 2.1, themeColor: "#6b4c9b",
   },
+  {
+    number: 15, country: "Cuba",                countryCode: "CU", flag: "🇨🇺",
+    titleEs: "El Disco Maestro", titleEn: "The Master Record",
+    description: "Havana in 1954 and the mambo — direct and indirect object pronouns together (me lo, se la)",
+    criminal: "El Cronista",      stolenItem: "El Disco Maestro",      rotation: -2.4, themeColor: "#b8860b",
+  },
 ];

@@ -303,8 +303,8 @@ export const SEMESTER: PacingWeek[] = [
   },
   {
     week: 26, semester: 2, arc: 5, title: "Unit 15 · Cuba", type: "unit", unitNumber: 15,
-    summary: "Caso XV (1950s Havana). Direct and indirect object pronouns together. Vocabulary: music, dance, the city.",
-    tasks: unitTasks(26), link: LESSONS, status: "planned",
+    summary: "Caso XV (El Disco Maestro). Havana, 1954. Direct and indirect object pronouns together — me lo, te la, and the le + lo → se lo rule.",
+    tasks: unitTasks(26), link: LESSONS,
   },
   {
     week: 27, semester: 2, arc: 5, title: "Operación Reloj de Arena · midterm boss", type: "boss",

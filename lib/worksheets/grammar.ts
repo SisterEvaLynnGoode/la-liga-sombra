@@ -618,6 +618,47 @@ export const GRAMMAR: Record<number, GrammarLesson> = {
       ],
     },
   },
+  15: {
+    title: "Both Pronouns at Once (me lo, te la, se los)",
+    briefing:
+      "You already own both halves. Direct object pronouns replace the THING: lo, la, los, las. Indirect object pronouns say TO WHOM: me, te, le, nos, les. Now they go in the same sentence, and two rules govern them. First, the order never changes: the PERSON comes before the THING. '¿Me lo puede prestar?' — me (to me) then lo (the record). Never 'lo me'. Second, the famous one: le + lo is impossible in Spanish, so le and les turn into SE. You cannot say 'le lo doy'; you say 'SE lo doy'. That one substitution is the single most tested thing in this unit. You will also hear both pronouns glued onto the end of an infinitive — llevármelo, prestármelo, ponérselo. Learn to RECOGNIZE those; you do not have to produce them yet.",
+    examples: [
+      { es: "¿Me lo puede prestar? — Can you lend it to me?", en: "me = to me · lo = the record. Person first, thing second." },
+      { es: "Le doy el disco a Rogelio → SE lo doy.", en: "le + lo is impossible, so le becomes se." },
+      { es: "No quiero escucharlo. Quiero llevármelo.", en: "I don't want to listen to it. I want to take it with me. (Attached forms — recognize only.)" },
+    ],
+    referenceTable: {
+      caption: "Person first, thing second — and le/les always become SE",
+      headers: ["A quién (persona)", "+ lo / la / los / las", "Ejemplo"],
+      rows: [
+        ["me", "me lo · me la · me los · me las", "¿Me lo prestas?"],
+        ["te", "te lo · te la · te los · te las", "Te la doy mañana."],
+        ["le → SE", "se lo · se la · se los · se las", "Se lo guardo a Celia."],
+        ["nos", "nos lo · nos la · nos los · nos las", "Nos lo pone en el estudio."],
+        ["les → SE", "se lo · se la · se los · se las", "Se los devuelvo esta noche."],
+      ],
+    },
+    drills: [
+      { prompt: "¿____ lo puede prestar (a mí)? (¿qué pronombre de persona?)", answer: "me" },
+      { prompt: "Rogelio guarda el disco a Celia → Rogelio ____ lo guarda. (le → ?)", answer: "se" },
+      { prompt: "Te doy la cinta → Te ____ doy. (¿lo o la?)", answer: "la" },
+      { prompt: "Nos ponen los discos → Nos ____ ponen. (¿lo o los?)", answer: "los" },
+      { prompt: "No ____ lo da a nadie. (a él → ?)", answer: "se" },
+      { prompt: "Las cintas: se ____ devuelvo esta noche. (¿la o las?)", answer: "las" },
+    ],
+    secondDrill: {
+      title: "Rewrite It With Both Pronouns",
+      instructions:
+        "Replace BOTH the person and the thing. Person first, thing second. Watch for le/les — they become SE. Write just the two pronouns plus the verb.",
+      items: [
+        { prompt: "¿Puede prestarme el disco? → ¿____ ____ puede prestar?", answer: "me lo" },
+        { prompt: "Doy la grabación a Rogelio. → ____ ____ doy.", answer: "se la" },
+        { prompt: "Ponen el mambo a nosotros. → ____ ____ ponen.", answer: "nos lo" },
+        { prompt: "Devuelvo las cintas a los músicos. → ____ ____ devuelvo.", answer: "se las" },
+        { prompt: "Pido el disco a ti. → ____ ____ pido.", answer: "te lo" },
+      ],
+    },
+  },
 };
 
 /** Fallback for units without an authored grammar lesson yet. */

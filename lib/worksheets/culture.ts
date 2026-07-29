@@ -508,6 +508,41 @@ export const CULTURE: Record<number, CultureLesson> = {
     teacherNote:
       "Run after Caso 14's game + vocab days. ~35–45 min. The perspectives paragraph is the one to read out loud: modernismo reversed the direction of literary influence, which is the fact that explains why a small country treats a poet as a national hero and why the stolen manuscript is evidence rather than merchandise. That reframes the whole case. The project is deliberately tiny — one line — because it is really a grammar check wearing a poem's clothes: students cannot write it without choosing a pronoun and matching the verb to the thing. Collect it for a grade and display the good ones. If you want an extra two minutes with big payoff, read the opening of 'Sonatina' aloud ('La princesa está triste… ¿qué tendrá la princesa?') and let them hear the rhythm before they understand every word; that IS how poetry works here. Note for accuracy: the case is set in 1907, the year of Darío's return, so 'A Margarita Debayle' (1908) does not exist yet — don't hand it out as the stolen poem.",
   },
+  15: {
+    theme: "La Clave y la Música Cubana (Cuba)",
+    reading: {
+      products:
+        "Cuba is a small island that rebuilt the world's popular music. Son cubano came first, then the mambo grew out of the danzón tradition in the late 1930s and 40s, and in the early 1950s Enrique Jorrín created the cha-cha-chá — a rhythm slowed down deliberately so that ordinary dancers could keep up. Cuban rumba is on UNESCO's list of the Intangible Cultural Heritage of Humanity. The instruments are part of the invention: the tres, a guitar with three doubled courses of strings that gives son its bright plucked sound, plus congas, timbales, maracas and the two hardwood sticks called claves.",
+      practices:
+        "Underneath almost all of it is one pattern: la clave. Five strokes spread across two measures, and every other instrument lines up against it. What makes it remarkable is that this is not specialist knowledge — people who have never studied music hold the clave in their bodies, tap it on a table, and can hear immediately when a band is 'crossed' and playing against it. Music here is public. It happens on the street, on the Malecón, in doorways, through open windows from the radio. Singing is call-and-response: a lead voice improvises and a chorus answers, so listening and performing are the same activity.",
+      perspectives:
+        "Cuban music travelled further than almost any other national music of its size. When Cuban, Puerto Rican and other Latino musicians built salsa in New York in the 1960s and 70s, they built it on Cuban structures. Latin jazz runs on Cuban rhythm. A great deal of what the world dances to sits on top of the clave. That is why a single master recording matters: before tape was cheap and copies were easy, one disc could be the only physical existence of a song. One honest note about the era: the Havana of 1954 that appears in films — casinos, big hotels, glamour — was real but was not shared by most Cubans, and the musicians who made this music were mostly not the people getting rich from it.",
+    },
+    comprehension: [
+      { question: "What is la clave?", answer: "A five-stroke rhythmic pattern across two measures that the rest of the music lines up against" },
+      { question: "Who created the cha-cha-chá, and why was it slower?", answer: "Enrique Jorrín, in the early 1950s — slowed down so ordinary dancers could follow it" },
+      { question: "What is the tres?", answer: "A Cuban guitar with three doubled courses of strings, central to son" },
+      { question: "Which Cuban music form is on the UNESCO intangible heritage list?", answer: "Cuban rumba" },
+      { question: "True or false: salsa is simply Cuban music renamed.", answer: "False — it was built in New York by Cuban, Puerto Rican and other Latino musicians on Cuban foundations" },
+    ],
+    compara:
+      "In Cuba, people who have never taken a music class can hold the clave and hear instantly when a band is playing against it. Is there a rhythm, beat or pattern your community just knows without being taught — a song everyone claps the same way, a chant at games, a beat everyone can find? Write 2–3 sentences comparing it to the clave. Use at least two double object pronouns (Alguien me lo enseñó, nadie me la explicó, se lo aprendí a mi abuela).",
+    project: {
+      title: "La Etiqueta del Disco / Design the Record Label",
+      brief:
+        "Design the paper label for the stolen master record: song title in Spanish, the band's name, the city and the year. Then, underneath, write a four-line dialogue in which one person asks to borrow the record and the other refuses — using BOTH pronouns together at least twice (¿Me lo prestas? / No, no te lo puedo prestar. Se lo guardo a Rogelio). Bonus: clap the clave for the class before you present it.",
+      materials: "This sheet, pencil, colored pencils optional. A pair of pencils works as claves.",
+      checklist: [
+        "Label has a Spanish song title, band, city and year",
+        "Four-line dialogue about lending the record",
+        "Uses both pronouns together at least twice, in the right order",
+        "At least one instance of le/les correctly becoming SE",
+        "Neat enough to display",
+      ],
+    },
+    teacherNote:
+      "Run after Caso 15's game + vocab days. ~35–45 min. Do the clave physically before anything else: clap the 3-2 son clave, have the class join, then deliberately clap against it so they can HEAR the wrongness. That thirty seconds is what makes the reading land, and it is also the case's second clue — the thief is the one man in Havana who cannot find it. The project is a grammar check in costume: students cannot write the dialogue without ordering the pronouns correctly and making le become se at least once. Collect it. On sensitivity, read the last sentence of the perspectives paragraph as written: the glamorous 1950s Havana of the movies was real but was not most Cubans' experience, and the musicians who invented this music largely were not the ones profiting. We stay on the music deliberately — this deck does not teach the politics of the era, and if students ask about Batista or the revolution, it is honest to say that is a later and separate topic. Accuracy guard: do NOT tell students salsa is Cuban music renamed; it was built in New York on Cuban foundations by Cuban, Puerto Rican and other Latino musicians.",
+  },
 };
 
 export function getCultureLesson(unitNumber: number): CultureLesson | null {
