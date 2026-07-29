@@ -10,212 +10,296 @@
     {
       "spanish": "barrer",
       "english": "to sweep",
-      "audio": "/audio/unit-08/barrer.mp3"
+      "audio": "/audio/unit-08/barrer.mp3",
+      "section": "Verbos de la Casa y del Día",
+      "example": "Doña Rosa barrió su puesto antes de abrir."
     },
     {
       "spanish": "limpiar",
       "english": "to clean",
-      "audio": "/audio/unit-08/limpiar.mp3"
+      "audio": "/audio/unit-08/limpiar.mp3",
+      "section": "Verbos de la Casa y del Día",
+      "example": "El vendedor limpió las figurillas cada mañana."
     },
     {
       "spanish": "cocinar",
       "english": "to cook",
-      "audio": "/audio/unit-08/cocinar.mp3"
+      "audio": "/audio/unit-08/cocinar.mp3",
+      "section": "Verbos de la Casa y del Día",
+      "example": "En el mercado cocinan sopa de quinoa temprano."
     },
     {
       "spanish": "lavar",
       "english": "to wash",
-      "audio": "/audio/unit-08/lavar.mp3"
+      "audio": "/audio/unit-08/lavar.mp3",
+      "section": "Verbos de la Casa y del Día",
+      "example": "Lavó las verduras en el puesto de al lado."
     },
     {
       "spanish": "planchar",
       "english": "to iron",
-      "audio": "/audio/unit-08/planchar.mp3"
+      "audio": "/audio/unit-08/planchar.mp3",
+      "section": "Verbos de la Casa y del Día",
+      "example": "Nadie plancha en el mercado a las ocho de la mañana."
     },
     {
       "spanish": "comprar",
       "english": "to buy / to shop",
-      "audio": "/audio/unit-08/comprar.mp3"
+      "audio": "/audio/unit-08/comprar.mp3",
+      "section": "Verbos de la Casa y del Día",
+      "example": "Carmen llegó a las nueve para comprar quinoa y frijoles."
     },
     {
       "spanish": "llevar",
       "english": "to carry / to take",
-      "audio": "/audio/unit-08/llevar.mp3"
+      "audio": "/audio/unit-08/llevar.mp3",
+      "section": "Verbos de la Casa y del Día",
+      "example": "La bolsa que llevaba era tan grande como un costal de quinoa."
     },
     {
       "spanish": "dejar",
       "english": "to leave behind / to let",
-      "audio": "/audio/unit-08/dejar.mp3"
+      "audio": "/audio/unit-08/dejar.mp3",
+      "section": "Verbos de la Casa y del Día",
+      "example": "Don Aurelio no dejó su puesto en ningún momento."
     },
     {
       "spanish": "olvidar",
       "english": "to forget",
-      "audio": "/audio/unit-08/olvidar.mp3"
+      "audio": "/audio/unit-08/olvidar.mp3",
+      "section": "Verbos de la Casa y del Día",
+      "example": "El ladrón no olvidó nada: se lo llevó todo."
     },
     {
       "spanish": "guardar",
       "english": "to put away / to keep",
-      "audio": "/audio/unit-08/guardar.mp3"
+      "audio": "/audio/unit-08/guardar.mp3",
+      "section": "Verbos de la Casa y del Día",
+      "example": "Don Aurelio guardaba las figurillas debajo de la mesa."
     },
     {
       "spanish": "buscar",
       "english": "to look for / to search",
-      "audio": "/audio/unit-08/buscar.mp3"
+      "audio": "/audio/unit-08/buscar.mp3",
+      "section": "Verbos de la Casa y del Día",
+      "example": "Busco a un hombre alto que llegó antes de las ocho."
     },
     {
       "spanish": "arreglar",
       "english": "to arrange / to tidy up",
-      "audio": "/audio/unit-08/arreglar.mp3"
+      "audio": "/audio/unit-08/arreglar.mp3",
+      "section": "Verbos de la Casa y del Día",
+      "example": "El comerciante arregló su puesto después del robo."
     },
     {
       "spanish": "el mercado",
       "english": "market",
-      "audio": "/audio/unit-08/mercado.mp3"
+      "audio": "/audio/unit-08/mercado.mp3",
+      "section": "El Mercado de San Pedro",
+      "example": "Ayer alguien robó figurillas de oro del Mercado de San Pedro."
     },
     {
       "spanish": "el puesto",
       "english": "market stall / booth",
-      "audio": "/audio/unit-08/puesto.mp3"
+      "audio": "/audio/unit-08/puesto.mp3",
+      "section": "El Mercado de San Pedro",
+      "example": "Las figurillas desaparecieron del puesto de Don Aurelio."
     },
     {
       "spanish": "la quinoa",
       "english": "quinoa",
-      "audio": "/audio/unit-08/quinoa.mp3"
+      "audio": "/audio/unit-08/quinoa.mp3",
+      "section": "El Mercado de San Pedro",
+      "example": "Doña Rosa le vendió quinoa a una estudiante."
     },
     {
       "spanish": "el arroz",
       "english": "rice",
-      "audio": "/audio/unit-08/arroz.mp3"
+      "audio": "/audio/unit-08/arroz.mp3",
+      "section": "El Mercado de San Pedro",
+      "example": "El arroz se vende por kilos en el mercado."
     },
     {
       "spanish": "los mariscos",
       "english": "seafood",
-      "audio": "/audio/unit-08/mariscos.mp3"
+      "audio": "/audio/unit-08/mariscos.mp3",
+      "section": "El Mercado de San Pedro",
+      "example": "Los mariscos no llegan a Cusco: estamos en la montaña."
     },
     {
       "spanish": "el ajo",
       "english": "garlic",
-      "audio": "/audio/unit-08/ajo.mp3"
+      "audio": "/audio/unit-08/ajo.mp3",
+      "section": "El Mercado de San Pedro",
+      "example": "El ajo y el limón están en el mismo puesto."
     },
     {
       "spanish": "el limón",
       "english": "lemon / lime",
-      "audio": "/audio/unit-08/limon.mp3"
+      "audio": "/audio/unit-08/limon.mp3",
+      "section": "El Mercado de San Pedro",
+      "example": "El limón peruano es pequeño y muy fuerte."
     },
     {
       "spanish": "el azúcar",
       "english": "sugar",
-      "audio": "/audio/unit-08/azucar.mp3"
+      "audio": "/audio/unit-08/azucar.mp3",
+      "section": "El Mercado de San Pedro",
+      "example": "El azúcar está al lado del aceite."
     },
     {
       "spanish": "el aceite",
       "english": "cooking oil",
-      "audio": "/audio/unit-08/aceite.mp3"
+      "audio": "/audio/unit-08/aceite.mp3",
+      "section": "El Mercado de San Pedro",
+      "example": "El aceite se vende en botellas grandes."
     },
     {
       "spanish": "las especias",
       "english": "spices",
-      "audio": "/audio/unit-08/especias.mp3"
+      "audio": "/audio/unit-08/especias.mp3",
+      "section": "El Mercado de San Pedro",
+      "example": "Las especias del mercado huelen desde la puerta."
     },
     {
       "spanish": "los frijoles",
       "english": "beans",
-      "audio": "/audio/unit-08/frijoles.mp3"
+      "audio": "/audio/unit-08/frijoles.mp3",
+      "section": "El Mercado de San Pedro",
+      "example": "Carmen compró quinoa y frijoles para su familia."
     },
     {
       "spanish": "el maíz",
       "english": "corn / maize",
-      "audio": "/audio/unit-08/maiz.mp3"
+      "audio": "/audio/unit-08/maiz.mp3",
+      "section": "El Mercado de San Pedro",
+      "example": "En los Andes hay maíz de muchos colores."
     },
     {
       "spanish": "más...que",
       "english": "more...than",
-      "audio": "/audio/unit-08/mas-que.mp3"
+      "audio": "/audio/unit-08/mas-que.mp3",
+      "section": "Las Comparaciones",
+      "example": "El sospechoso es más alto que Don Aurelio."
     },
     {
       "spanish": "menos...que",
       "english": "less/fewer...than",
-      "audio": "/audio/unit-08/menos-que.mp3"
+      "audio": "/audio/unit-08/menos-que.mp3",
+      "section": "Las Comparaciones",
+      "example": "Doña Rosa es menos sospechosa que los demás."
     },
     {
       "spanish": "tan...como",
       "english": "as...as",
-      "audio": "/audio/unit-08/tan-como.mp3"
+      "audio": "/audio/unit-08/tan-como.mp3",
+      "section": "Las Comparaciones",
+      "example": "La bolsa era tan grande como un costal de quinoa."
     },
     {
       "spanish": "mejor",
       "english": "better (irregular comparison)",
-      "audio": "/audio/unit-08/mejor.mp3"
+      "audio": "/audio/unit-08/mejor.mp3",
+      "section": "Las Comparaciones",
+      "example": "Esta pista es mejor que la anterior."
     },
     {
       "spanish": "peor",
       "english": "worse (irregular comparison)",
-      "audio": "/audio/unit-08/peor.mp3"
+      "audio": "/audio/unit-08/peor.mp3",
+      "section": "Las Comparaciones",
+      "example": "Llegar antes de que abra el mercado es la peor excusa."
     },
     {
       "spanish": "el/la mayor",
       "english": "the oldest / the greatest",
-      "audio": "/audio/unit-08/mayor.mp3"
+      "audio": "/audio/unit-08/mayor.mp3",
+      "section": "Las Comparaciones",
+      "example": "Carmen es la menor de los sospechosos; Donato es el mayor."
     },
     {
       "spanish": "me",
       "english": "(to) me — indirect object pronoun",
-      "audio": "/audio/unit-08/me.mp3"
+      "audio": "/audio/unit-08/me.mp3",
+      "section": "Pronombres de Objeto Indirecto",
+      "example": "¿Quién me dijo eso? El vendedor de al lado."
     },
     {
       "spanish": "te",
       "english": "(to) you — indirect object pronoun",
-      "audio": "/audio/unit-08/te.mp3"
+      "audio": "/audio/unit-08/te.mp3",
+      "section": "Pronombres de Objeto Indirecto",
+      "example": "¿Quién te vendió el tejido andino?"
     },
     {
       "spanish": "le",
       "english": "(to) him/her/you formal — indirect object pronoun",
-      "audio": "/audio/unit-08/le.mp3"
+      "audio": "/audio/unit-08/le.mp3",
+      "section": "Pronombres de Objeto Indirecto",
+      "example": "Le ofreció mucho dinero a Don Aurelio."
     },
     {
       "spanish": "les",
       "english": "(to) them/you all — indirect object pronoun",
-      "audio": "/audio/unit-08/les.mp3"
+      "audio": "/audio/unit-08/les.mp3",
+      "section": "Pronombres de Objeto Indirecto",
+      "example": "Les preguntó a todos por las figurillas de oro."
     },
     {
       "spanish": "acabar de + infinitivo",
       "english": "to have just (done something) — e.g., acabo de llegar = I just arrived",
-      "audio": "/audio/unit-08/acabar-de.mp3"
+      "audio": "/audio/unit-08/acabar-de.mp3",
+      "section": "Otros Verbos Clave",
+      "example": "Dijo que acababa de llegar de Lima, pero el tren llega a las seis."
     },
     {
       "spanish": "oír",
       "english": "to hear",
-      "audio": "/audio/unit-08/oir.mp3"
+      "audio": "/audio/unit-08/oir.mp3",
+      "section": "Otros Verbos Clave",
+      "example": "Doña Rosa oyó la conversación desde su puesto."
     },
     {
       "spanish": "traer",
       "english": "to bring",
-      "audio": "/audio/unit-08/traer.mp3"
+      "audio": "/audio/unit-08/traer.mp3",
+      "section": "Otros Verbos Clave",
+      "example": "El turista trajo el recibo del bus como prueba."
     },
     {
       "spanish": "-é  (hablé)",
       "english": "★ Mini-Glosario Pretérito: yo spoke / arrived / cleaned",
-      "audio": "/audio/unit-08/preterite-e.mp3"
+      "audio": "/audio/unit-08/preterite-e.mp3",
+      "section": "El Pretérito de los Verbos -AR",
+      "example": "Yo hablé con Don Aurelio a las diez de la mañana."
     },
     {
       "spanish": "-aste  (hablaste)",
       "english": "★ Mini-Glosario Pretérito: tú spoke / arrived / cleaned",
-      "audio": "/audio/unit-08/preterite-aste.mp3"
+      "audio": "/audio/unit-08/preterite-aste.mp3",
+      "section": "El Pretérito de los Verbos -AR",
+      "example": "¿Tú hablaste con el hombre alto?"
     },
     {
       "spanish": "-ó  (habló)",
       "english": "★ Mini-Glosario Pretérito: él/ella spoke / arrived / cleaned",
-      "audio": "/audio/unit-08/preterite-o.mp3"
+      "audio": "/audio/unit-08/preterite-o.mp3",
+      "section": "El Pretérito de los Verbos -AR",
+      "example": "Él llegó al mercado antes de las ocho."
     },
     {
       "spanish": "-amos  (hablamos)",
       "english": "★ Mini-Glosario Pretérito: nosotros spoke / arrived / cleaned",
-      "audio": "/audio/unit-08/preterite-amos.mp3"
+      "audio": "/audio/unit-08/preterite-amos.mp3",
+      "section": "El Pretérito de los Verbos -AR",
+      "example": "Nosotros llegamos después del robo."
     },
     {
       "spanish": "-aron  (hablaron)",
       "english": "★ Mini-Glosario Pretérito: ellos/ellas spoke / arrived / cleaned",
-      "audio": "/audio/unit-08/preterite-aron.mp3"
+      "audio": "/audio/unit-08/preterite-aron.mp3",
+      "section": "El Pretérito de los Verbos -AR",
+      "example": "Ellos hablaron con la policía por la tarde."
     }
   ],
   "stages": [

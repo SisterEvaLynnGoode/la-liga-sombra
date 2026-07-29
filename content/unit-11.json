@@ -7,42 +7,258 @@
   "criminalName": "El Cronista",
   "bonusClue": "El Cronista lleva sandalias extrañas que nadie en Copán reconoce, y tiene las manos pálidas porque nunca trabaja bajo el sol. Solo un sospechoso es un forastero así.",
   "vocab": [
-    { "spanish": "la estela", "english": "carved stone monument (stela)", "audio": "/audio/unit-11/estela.mp3" },
-    { "spanish": "el glifo", "english": "glyph", "audio": "/audio/unit-11/glifo.mp3" },
-    { "spanish": "el templo", "english": "temple", "audio": "/audio/unit-11/templo.mp3" },
-    { "spanish": "la pirámide", "english": "pyramid", "audio": "/audio/unit-11/piramide.mp3" },
-    { "spanish": "la escalera", "english": "staircase", "audio": "/audio/unit-11/escalera.mp3" },
-    { "spanish": "la piedra", "english": "stone", "audio": "/audio/unit-11/piedra.mp3" },
-    { "spanish": "el altar", "english": "altar", "audio": "/audio/unit-11/altar.mp3" },
-    { "spanish": "la selva", "english": "jungle", "audio": "/audio/unit-11/selva.mp3" },
-    { "spanish": "la ciudad", "english": "city", "audio": "/audio/unit-11/ciudad.mp3" },
-    { "spanish": "el rey", "english": "king", "audio": "/audio/unit-11/rey.mp3" },
-    { "spanish": "el sacerdote", "english": "priest", "audio": "/audio/unit-11/sacerdote.mp3" },
-    { "spanish": "el escriba", "english": "scribe", "audio": "/audio/unit-11/escriba.mp3" },
-    { "spanish": "el jade", "english": "jade", "audio": "/audio/unit-11/jade.mp3" },
-    { "spanish": "el tesoro", "english": "treasure", "audio": "/audio/unit-11/tesoro.mp3" },
-    { "spanish": "excavar", "english": "to excavate / dig", "audio": "/audio/unit-11/excavar.mp3" },
-    { "spanish": "estudiar", "english": "to study", "audio": "/audio/unit-11/estudiar.mp3" },
-    { "spanish": "trabajar", "english": "to work", "audio": "/audio/unit-11/trabajar.mp3" },
-    { "spanish": "observar", "english": "to observe / watch", "audio": "/audio/unit-11/observar.mp3" },
-    { "spanish": "dibujar", "english": "to draw", "audio": "/audio/unit-11/dibujar.mp3" },
-    { "spanish": "tallar", "english": "to carve", "audio": "/audio/unit-11/tallar.mp3" },
-    { "spanish": "llevar", "english": "to carry / wear", "audio": "/audio/unit-11/llevar.mp3" },
-    { "spanish": "leer", "english": "to read", "audio": "/audio/unit-11/leer.mp3" },
-    { "spanish": "aprender", "english": "to learn", "audio": "/audio/unit-11/aprender.mp3" },
-    { "spanish": "correr", "english": "to run", "audio": "/audio/unit-11/correr.mp3" },
-    { "spanish": "comer", "english": "to eat", "audio": "/audio/unit-11/comer.mp3" },
-    { "spanish": "vender", "english": "to sell", "audio": "/audio/unit-11/vender.mp3" },
-    { "spanish": "ver", "english": "to see", "audio": "/audio/unit-11/ver.mp3" },
-    { "spanish": "escribir", "english": "to write", "audio": "/audio/unit-11/escribir.mp3" },
-    { "spanish": "descubrir", "english": "to discover", "audio": "/audio/unit-11/descubrir.mp3" },
-    { "spanish": "abrir", "english": "to open", "audio": "/audio/unit-11/abrir.mp3" },
-    { "spanish": "subir", "english": "to go up / climb", "audio": "/audio/unit-11/subir.mp3" },
-    { "spanish": "vivir", "english": "to live", "audio": "/audio/unit-11/vivir.mp3" },
-    { "spanish": "recibir", "english": "to receive", "audio": "/audio/unit-11/recibir.mp3" },
-    { "spanish": "hoy", "english": "today", "audio": "/audio/unit-11/hoy.mp3" },
-    { "spanish": "ahora", "english": "now", "audio": "/audio/unit-11/ahora.mp3" },
-    { "spanish": "siempre", "english": "always", "audio": "/audio/unit-11/siempre.mp3" }
+    {
+      "spanish": "la estela",
+      "english": "carved stone monument (stela)",
+      "audio": "/audio/unit-11/estela.mp3",
+      "section": "La Ciudad de Copán",
+      "example": "La estela del rey tiene un glifo que El Cronista quiere robar."
+    },
+    {
+      "spanish": "el glifo",
+      "english": "glyph",
+      "audio": "/audio/unit-11/glifo.mp3",
+      "section": "La Ciudad de Copán",
+      "example": "El glifo desaparece de la estela del rey durante la noche."
+    },
+    {
+      "spanish": "el templo",
+      "english": "temple",
+      "audio": "/audio/unit-11/templo.mp3",
+      "section": "La Ciudad de Copán",
+      "example": "K'an Chan vive cerca del templo."
+    },
+    {
+      "spanish": "la pirámide",
+      "english": "pyramid",
+      "audio": "/audio/unit-11/piramide.mp3",
+      "section": "La Ciudad de Copán",
+      "example": "Las pirámides de Copán suben por encima de la plaza."
+    },
+    {
+      "spanish": "la escalera",
+      "english": "staircase",
+      "audio": "/audio/unit-11/escalera.mp3",
+      "section": "La Ciudad de Copán",
+      "example": "La escalera jeroglífica tiene sesenta y tres escalones."
+    },
+    {
+      "spanish": "la piedra",
+      "english": "stone",
+      "audio": "/audio/unit-11/piedra.mp3",
+      "section": "La Ciudad de Copán",
+      "example": "Yax Balam talla la piedra todos los días bajo el sol."
+    },
+    {
+      "spanish": "el altar",
+      "english": "altar",
+      "audio": "/audio/unit-11/altar.mp3",
+      "section": "La Ciudad de Copán",
+      "example": "Delante de la estela hay un altar de piedra."
+    },
+    {
+      "spanish": "la selva",
+      "english": "jungle",
+      "audio": "/audio/unit-11/selva.mp3",
+      "section": "La Selva y el Tesoro",
+      "example": "La selva rodea la ciudad por todos lados."
+    },
+    {
+      "spanish": "la ciudad",
+      "english": "city",
+      "audio": "/audio/unit-11/ciudad.mp3",
+      "section": "La Selva y el Tesoro",
+      "example": "En esta ciudad todos conocen a los escribas."
+    },
+    {
+      "spanish": "el rey",
+      "english": "king",
+      "audio": "/audio/unit-11/rey.mp3",
+      "section": "La Selva y el Tesoro",
+      "example": "La estela del rey está en el centro de la plaza."
+    },
+    {
+      "spanish": "el sacerdote",
+      "english": "priest",
+      "audio": "/audio/unit-11/sacerdote.mp3",
+      "section": "La Selva y el Tesoro",
+      "example": "El sacerdote observa el cielo desde el templo."
+    },
+    {
+      "spanish": "el escriba",
+      "english": "scribe",
+      "audio": "/audio/unit-11/escriba.mp3",
+      "section": "La Selva y el Tesoro",
+      "example": "Balam es un joven escriba y escribe glifos cada mañana."
+    },
+    {
+      "spanish": "el jade",
+      "english": "jade",
+      "audio": "/audio/unit-11/jade.mp3",
+      "section": "La Selva y el Tesoro",
+      "example": "Ix Mut vende jade y plumas de quetzal en el mercado."
+    },
+    {
+      "spanish": "el tesoro",
+      "english": "treasure",
+      "audio": "/audio/unit-11/tesoro.mp3",
+      "section": "La Selva y el Tesoro",
+      "example": "El glifo es un tesoro de Copán, no una piedra cualquiera."
+    },
+    {
+      "spanish": "excavar",
+      "english": "to excavate / dig",
+      "audio": "/audio/unit-11/excavar.mp3",
+      "section": "Verbos -AR",
+      "example": "Los arqueólogos excavan aquí muchos siglos después."
+    },
+    {
+      "spanish": "estudiar",
+      "english": "to study",
+      "audio": "/audio/unit-11/estudiar.mp3",
+      "section": "Verbos -AR",
+      "example": "El joven escriba estudia los glifos de la escalera."
+    },
+    {
+      "spanish": "trabajar",
+      "english": "to work",
+      "audio": "/audio/unit-11/trabajar.mp3",
+      "section": "Verbos -AR",
+      "example": "Yax Balam trabaja de día, no de noche."
+    },
+    {
+      "spanish": "observar",
+      "english": "to observe / watch",
+      "audio": "/audio/unit-11/observar.mp3",
+      "section": "Verbos -AR",
+      "example": "El forastero observa la estela del rey todas las noches."
+    },
+    {
+      "spanish": "dibujar",
+      "english": "to draw",
+      "audio": "/audio/unit-11/dibujar.mp3",
+      "section": "Verbos -AR",
+      "example": "Balam dibuja los glifos antes de tallarlos."
+    },
+    {
+      "spanish": "tallar",
+      "english": "to carve",
+      "audio": "/audio/unit-11/tallar.mp3",
+      "section": "Verbos -AR",
+      "example": "Yax Balam talla la piedra y tiene las manos llenas de polvo."
+    },
+    {
+      "spanish": "llevar",
+      "english": "to carry / wear",
+      "audio": "/audio/unit-11/llevar.mp3",
+      "section": "Verbos -AR",
+      "example": "El forastero lleva sandalias extrañas que nadie reconoce."
+    },
+    {
+      "spanish": "leer",
+      "english": "to read",
+      "audio": "/audio/unit-11/leer.mp3",
+      "section": "Verbos -ER",
+      "example": "El agente aprende a leer los glifos de la estela."
+    },
+    {
+      "spanish": "aprender",
+      "english": "to learn",
+      "audio": "/audio/unit-11/aprender.mp3",
+      "section": "Verbos -ER",
+      "example": "Aprendo a leer los glifos con la ayuda de Balam."
+    },
+    {
+      "spanish": "correr",
+      "english": "to run",
+      "audio": "/audio/unit-11/correr.mp3",
+      "section": "Verbos -ER",
+      "example": "Los niños corren por la plaza al final del día."
+    },
+    {
+      "spanish": "comer",
+      "english": "to eat",
+      "audio": "/audio/unit-11/comer.mp3",
+      "section": "Verbos -ER",
+      "example": "Las familias comen juntas cuando baja el sol."
+    },
+    {
+      "spanish": "vender",
+      "english": "to sell",
+      "audio": "/audio/unit-11/vender.mp3",
+      "section": "Verbos -ER",
+      "example": "Ix Mut vende jade en el mercado y habla con todos."
+    },
+    {
+      "spanish": "ver",
+      "english": "to see",
+      "audio": "/audio/unit-11/ver.mp3",
+      "section": "Verbos -ER",
+      "example": "¿Ves al hombre que llega de noche a la plaza?"
+    },
+    {
+      "spanish": "escribir",
+      "english": "to write",
+      "audio": "/audio/unit-11/escribir.mp3",
+      "section": "Verbos -IR",
+      "example": "K'an Chan escribe glifos en las estelas cada mañana."
+    },
+    {
+      "spanish": "descubrir",
+      "english": "to discover",
+      "audio": "/audio/unit-11/descubrir.mp3",
+      "section": "Verbos -IR",
+      "example": "Descubro quién es el forastero antes de la medianoche."
+    },
+    {
+      "spanish": "abrir",
+      "english": "to open",
+      "audio": "/audio/unit-11/abrir.mp3",
+      "section": "Verbos -IR",
+      "example": "Nadie abre la plaza de noche: está vacía."
+    },
+    {
+      "spanish": "subir",
+      "english": "to go up / climb",
+      "audio": "/audio/unit-11/subir.mp3",
+      "section": "Verbos -IR",
+      "example": "El sacerdote sube la escalera del templo al amanecer."
+    },
+    {
+      "spanish": "vivir",
+      "english": "to live",
+      "audio": "/audio/unit-11/vivir.mp3",
+      "section": "Verbos -IR",
+      "example": "K'an Chan vive cerca del templo y todos lo conocen."
+    },
+    {
+      "spanish": "recibir",
+      "english": "to receive",
+      "audio": "/audio/unit-11/recibir.mp3",
+      "section": "Verbos -IR",
+      "example": "El rey recibe a los escribas en la plaza."
+    },
+    {
+      "spanish": "hoy",
+      "english": "today",
+      "audio": "/audio/unit-11/hoy.mp3",
+      "section": "Palabras de Tiempo",
+      "example": "Hoy el sol está fuerte sobre la plaza."
+    },
+    {
+      "spanish": "ahora",
+      "english": "now",
+      "audio": "/audio/unit-11/ahora.mp3",
+      "section": "Palabras de Tiempo",
+      "example": "Ahora mismo el forastero observa la estela."
+    },
+    {
+      "spanish": "siempre",
+      "english": "always",
+      "audio": "/audio/unit-11/siempre.mp3",
+      "section": "Palabras de Tiempo",
+      "example": "Los escribas trabajan siempre con la luz del sol."
+    }
   ],
   "stages": [
     {
@@ -85,29 +301,80 @@
     {
       "type": "vocabMatch",
       "pairs": [
-        { "spanish": "la estela", "english": "stela" },
-        { "spanish": "el glifo", "english": "glyph" },
-        { "spanish": "el templo", "english": "temple" },
-        { "spanish": "la selva", "english": "jungle" },
-        { "spanish": "el escriba", "english": "scribe" },
-        { "spanish": "el rey", "english": "king" },
-        { "spanish": "excavar", "english": "to dig" },
-        { "spanish": "tallar", "english": "to carve" },
-        { "spanish": "escribir", "english": "to write" },
-        { "spanish": "descubrir", "english": "to discover" },
-        { "spanish": "leer", "english": "to read" },
-        { "spanish": "subir", "english": "to climb" }
+        {
+          "spanish": "la estela",
+          "english": "stela"
+        },
+        {
+          "spanish": "el glifo",
+          "english": "glyph"
+        },
+        {
+          "spanish": "el templo",
+          "english": "temple"
+        },
+        {
+          "spanish": "la selva",
+          "english": "jungle"
+        },
+        {
+          "spanish": "el escriba",
+          "english": "scribe"
+        },
+        {
+          "spanish": "el rey",
+          "english": "king"
+        },
+        {
+          "spanish": "excavar",
+          "english": "to dig"
+        },
+        {
+          "spanish": "tallar",
+          "english": "to carve"
+        },
+        {
+          "spanish": "escribir",
+          "english": "to write"
+        },
+        {
+          "spanish": "descubrir",
+          "english": "to discover"
+        },
+        {
+          "spanish": "leer",
+          "english": "to read"
+        },
+        {
+          "spanish": "subir",
+          "english": "to climb"
+        }
       ]
     },
     {
       "type": "sentenceBuilder",
       "clueReward": "El agente aprende a leer los glifos. La estela del rey tiene un glifo especial que El Cronista quiere robar esta noche.",
       "sentences": [
-        { "sentence": "El escriba escribe en la estela", "translation": "The scribe writes on the stela." },
-        { "sentence": "Los mayas suben al templo", "translation": "The Maya climb up to the temple." },
-        { "sentence": "Yo observo la ciudad de Copán", "translation": "I observe the city of Copán." },
-        { "sentence": "Tú lees los glifos antiguos", "translation": "You read the ancient glyphs." },
-        { "sentence": "Nosotros descubrimos un tesoro", "translation": "We discover a treasure." }
+        {
+          "sentence": "El escriba escribe en la estela",
+          "translation": "The scribe writes on the stela."
+        },
+        {
+          "sentence": "Los mayas suben al templo",
+          "translation": "The Maya climb up to the temple."
+        },
+        {
+          "sentence": "Yo observo la ciudad de Copán",
+          "translation": "I observe the city of Copán."
+        },
+        {
+          "sentence": "Tú lees los glifos antiguos",
+          "translation": "You read the ancient glyphs."
+        },
+        {
+          "sentence": "Nosotros descubrimos un tesoro",
+          "translation": "We discover a treasure."
+        }
       ]
     },
     {
@@ -115,21 +382,50 @@
       "clueReward": "El glifo desaparece de la estela del rey durante la noche. El ladrón conoce bien la plaza y trabaja cuando no hay sol.",
       "passage": "BITÁCORA TEMPORAL — AGENTE DE LA LIGA SOMBRA\nDestino: Copán, Honduras. Año 750 (aproximado).\n\nLa máquina del tiempo funciona. Ahora estoy en Copán, una gran ciudad maya en la selva. Es una ciudad increíble: hay templos altos, pirámides de piedra y una escalera enorme con muchos glifos. Los mayas la llaman la Escalinata de los Jeroglíficos.\n\nEn la plaza, un escriba escribe en una estela nueva. Un escultor talla la piedra con cuidado. El sacerdote sube al templo para la ceremonia. Muchas personas trabajan, estudian y aprenden aquí. El rey observa todo desde su trono.\n\nPero hay un problema grave. El Cronista, el ladrón del tiempo, quiere robar un glifo de la estela del rey. Este glifo es un tesoro: cuenta la historia de Copán. Si El Cronista lo roba ahora, el mundo pierde esta historia para siempre.\n\nMi misión es clara: observo, escucho y descubro quién es El Cronista antes de la medianoche.",
       "glossary": [
-        { "word": "bitácora", "translation": "log / journal" },
-        { "word": "escalinata", "translation": "grand staircase" },
-        { "word": "talla", "translation": "carves (from tallar)" },
-        { "word": "trono", "translation": "throne" },
-        { "word": "cuidado", "translation": "care" },
-        { "word": "grave", "translation": "serious" },
-        { "word": "pierde", "translation": "loses (from perder)" },
-        { "word": "medianoche", "translation": "midnight" }
+        {
+          "word": "bitácora",
+          "translation": "log / journal"
+        },
+        {
+          "word": "escalinata",
+          "translation": "grand staircase"
+        },
+        {
+          "word": "talla",
+          "translation": "carves (from tallar)"
+        },
+        {
+          "word": "trono",
+          "translation": "throne"
+        },
+        {
+          "word": "cuidado",
+          "translation": "care"
+        },
+        {
+          "word": "grave",
+          "translation": "serious"
+        },
+        {
+          "word": "pierde",
+          "translation": "loses (from perder)"
+        },
+        {
+          "word": "medianoche",
+          "translation": "midnight"
+        }
       ],
       "questions": [
         {
           "id": "r1",
           "text": "¿Dónde está el agente?",
           "type": "multiple_choice",
-          "options": ["En Copán, Honduras", "En Madrid, España", "En Buenos Aires, Argentina", "En Cusco, Perú"],
+          "options": [
+            "En Copán, Honduras",
+            "En Madrid, España",
+            "En Buenos Aires, Argentina",
+            "En Cusco, Perú"
+          ],
           "correctIndex": 0,
           "explanationEs": "La bitácora dice: 'Ahora estoy en Copán, una gran ciudad maya en la selva.'",
           "explanationEn": "The log says the agent is in Copán, a Maya city in the jungle."
@@ -138,7 +434,12 @@
           "id": "r2",
           "text": "¿Qué hace el escriba?",
           "type": "multiple_choice",
-          "options": ["Escribe en una estela", "Vende jade en el mercado", "Sube al templo", "Talla la piedra"],
+          "options": [
+            "Escribe en una estela",
+            "Vende jade en el mercado",
+            "Sube al templo",
+            "Talla la piedra"
+          ],
           "correctIndex": 0,
           "explanationEs": "'Un escriba escribe en una estela nueva.' El verbo escribir es un verbo -IR.",
           "explanationEn": "The scribe writes on a new stela — 'escribir' is an -IR verb."
@@ -147,7 +448,12 @@
           "id": "r3",
           "text": "¿Qué quiere robar El Cronista?",
           "type": "multiple_choice",
-          "options": ["Un glifo de la estela del rey", "Una pirámide entera", "El trono del rey", "Un collar de jade"],
+          "options": [
+            "Un glifo de la estela del rey",
+            "Una pirámide entera",
+            "El trono del rey",
+            "Un collar de jade"
+          ],
           "correctIndex": 0,
           "explanationEs": "'El Cronista... quiere robar un glifo de la estela del rey.'",
           "explanationEn": "El Cronista wants to steal a glyph from the king's stela."
@@ -156,7 +462,12 @@
           "id": "r4",
           "text": "¿Por qué es importante el glifo?",
           "type": "multiple_choice",
-          "options": ["Cuenta la historia de Copán", "Es de oro puro", "Abre la puerta del templo", "Es el mapa de la ciudad"],
+          "options": [
+            "Cuenta la historia de Copán",
+            "Es de oro puro",
+            "Abre la puerta del templo",
+            "Es el mapa de la ciudad"
+          ],
           "correctIndex": 0,
           "explanationEs": "'Este glifo es un tesoro: cuenta la historia de Copán.'",
           "explanationEn": "The glyph is a treasure because it tells the history of Copán."
@@ -188,35 +499,60 @@
       "questions": [
         {
           "question": "¿Qué quiere tomar esta persona?",
-          "options": ["El glifo del rey", "Un collar de jade", "El trono", "Una máscara"],
+          "options": [
+            "El glifo del rey",
+            "Un collar de jade",
+            "El trono",
+            "Una máscara"
+          ],
           "correctIndex": 0,
           "explanationEs": "Dice: 'El glifo más importante está ahí... esta noche lo tomo.'",
           "explanationEn": "He wants the king's most important glyph."
         },
         {
           "question": "¿Cuándo va a la plaza?",
-          "options": ["Esta noche", "Mañana por la mañana", "En una semana", "Nunca"],
+          "options": [
+            "Esta noche",
+            "Mañana por la mañana",
+            "En una semana",
+            "Nunca"
+          ],
           "correctIndex": 0,
           "explanationEs": "'Esta noche subo a la plaza y lo tomo.' El ladrón actúa de noche.",
           "explanationEn": "He says 'tonight I go up to the plaza' — he acts at night."
         },
         {
           "question": "¿Vende jade en el mercado?",
-          "options": ["No, nunca vende jade", "Sí, todos los días", "Solo los domingos", "Sí, vende jade y plumas"],
+          "options": [
+            "No, nunca vende jade",
+            "Sí, todos los días",
+            "Solo los domingos",
+            "Sí, vende jade y plumas"
+          ],
           "correctIndex": 0,
           "explanationEs": "'Yo no vendo jade como los otros.' El verbo vender es un verbo -ER.",
           "explanationEn": "He says he does NOT sell jade like the others — 'vender' is an -ER verb."
         },
         {
           "question": "¿Cómo son sus manos?",
-          "options": ["Limpias — no talla ni escribe", "Llenas de polvo de piedra", "Con pintura roja", "Con jade y oro"],
+          "options": [
+            "Limpias — no talla ni escribe",
+            "Llenas de polvo de piedra",
+            "Con pintura roja",
+            "Con jade y oro"
+          ],
           "correctIndex": 0,
           "explanationEs": "'Mis manos están limpias. Nunca tallo piedra, nunca escribo glifos.'",
           "explanationEn": "His hands are clean — he never carves stone or writes glyphs."
         },
         {
           "question": "¿Qué es diferente en él?",
-          "options": ["Sus sandalias", "Su sombrero", "Su lengua", "Su jade"],
+          "options": [
+            "Sus sandalias",
+            "Su sombrero",
+            "Su lengua",
+            "Su jade"
+          ],
           "correctIndex": 0,
           "explanationEs": "'Mis sandalias son diferentes; camino sin ruido.' Es un forastero.",
           "explanationEn": "His sandals are different and he walks silently — he is an outsider."

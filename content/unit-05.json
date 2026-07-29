@@ -10,192 +10,268 @@
     {
       "spanish": "la computadora portátil",
       "english": "laptop computer",
-      "audio": "/audio/unit-05/computadora-portatil.mp3"
+      "audio": "/audio/unit-05/computadora-portatil.mp3",
+      "section": "La Tecnología",
+      "example": "El hacker lleva la computadora portátil consigo siempre."
     },
     {
       "spanish": "el celular",
       "english": "cell phone",
-      "audio": "/audio/unit-05/celular.mp3"
+      "audio": "/audio/unit-05/celular.mp3",
+      "section": "La Tecnología",
+      "example": "El sospechoso tiene un celular y una tableta."
     },
     {
       "spanish": "la tableta",
       "english": "tablet",
-      "audio": "/audio/unit-05/tableta.mp3"
+      "audio": "/audio/unit-05/tableta.mp3",
+      "section": "La Tecnología",
+      "example": "La ven entrar con una tableta y una carpeta azul."
     },
     {
       "spanish": "la cámara",
       "english": "camera",
-      "audio": "/audio/unit-05/camara.mp3"
+      "audio": "/audio/unit-05/camara.mp3",
+      "section": "La Tecnología",
+      "example": "Las cámaras del edificio confirman las cuatro entradas."
     },
     {
       "spanish": "los audífonos",
       "english": "headphones",
-      "audio": "/audio/unit-05/audifonos.mp3"
+      "audio": "/audio/unit-05/audifonos.mp3",
+      "section": "La Tecnología",
+      "example": "Carolina tiene los audífonos en el cuello."
     },
     {
       "spanish": "el cargador",
       "english": "charger",
-      "audio": "/audio/unit-05/cargador.mp3"
+      "audio": "/audio/unit-05/cargador.mp3",
+      "section": "La Tecnología",
+      "example": "Deja el cargador en el suelo del pasillo."
     },
     {
       "spanish": "el teclado",
       "english": "keyboard",
-      "audio": "/audio/unit-05/teclado.mp3"
+      "audio": "/audio/unit-05/teclado.mp3",
+      "section": "La Tecnología",
+      "example": "El teclado del servidor tiene huellas frescas."
     },
     {
       "spanish": "el ratón",
       "english": "mouse (computer)",
-      "audio": "/audio/unit-05/raton.mp3"
+      "audio": "/audio/unit-05/raton.mp3",
+      "section": "La Tecnología",
+      "example": "Nadie toca el ratón de esa computadora desde el lunes."
     },
     {
       "spanish": "el servidor",
       "english": "server",
-      "audio": "/audio/unit-05/servidor.mp3"
+      "audio": "/audio/unit-05/servidor.mp3",
+      "section": "La Tecnología",
+      "example": "Roba el servidor portátil el 22 de marzo."
     },
     {
       "spanish": "la red",
       "english": "network",
-      "audio": "/audio/unit-05/red.mp3"
+      "audio": "/audio/unit-05/red.mp3",
+      "section": "La Tecnología",
+      "example": "Entra en la red del edificio después de las once."
     },
     {
       "spanish": "la contraseña",
       "english": "password",
-      "audio": "/audio/unit-05/contrasena.mp3"
+      "audio": "/audio/unit-05/contrasena.mp3",
+      "section": "La Tecnología",
+      "example": "El disco duro tiene dos mil contraseñas."
     },
     {
       "spanish": "el disco duro",
       "english": "hard drive",
-      "audio": "/audio/unit-05/disco-duro.mp3"
+      "audio": "/audio/unit-05/disco-duro.mp3",
+      "section": "La Tecnología",
+      "example": "Roba el disco duro con 2.000 contraseñas el 1 de abril."
     },
     {
       "spanish": "enero",
       "english": "January",
-      "audio": "/audio/unit-05/enero.mp3"
+      "audio": "/audio/unit-05/enero.mp3",
+      "section": "Los Meses",
+      "example": "El edificio abrió en enero de este año."
     },
     {
       "spanish": "febrero",
       "english": "February",
-      "audio": "/audio/unit-05/febrero.mp3"
+      "audio": "/audio/unit-05/febrero.mp3",
+      "section": "Los Meses",
+      "example": "En febrero nadie reporta ningún problema."
     },
     {
       "spanish": "marzo",
       "english": "March",
-      "audio": "/audio/unit-05/marzo.mp3"
+      "audio": "/audio/unit-05/marzo.mp3",
+      "section": "Los Meses",
+      "example": "El primer ataque es el 15 de marzo a las 23:14."
     },
     {
       "spanish": "abril",
       "english": "April",
-      "audio": "/audio/unit-05/abril.mp3"
+      "audio": "/audio/unit-05/abril.mp3",
+      "section": "Los Meses",
+      "example": "El último ataque es el 1 de abril: 01/04."
     },
     {
       "spanish": "mayo",
       "english": "May",
-      "audio": "/audio/unit-05/mayo.mp3"
+      "audio": "/audio/unit-05/mayo.mp3",
+      "section": "Los Meses",
+      "example": "El informe final se publica en mayo."
     },
     {
       "spanish": "junio",
       "english": "June",
-      "audio": "/audio/unit-05/junio.mp3"
+      "audio": "/audio/unit-05/junio.mp3",
+      "section": "Los Meses",
+      "example": "En junio la empresa cambia todas las contraseñas."
     },
     {
       "spanish": "julio",
       "english": "July",
-      "audio": "/audio/unit-05/julio.mp3"
+      "audio": "/audio/unit-05/julio.mp3",
+      "section": "Los Meses",
+      "example": "El juicio empieza en julio."
     },
     {
       "spanish": "agosto",
       "english": "August",
-      "audio": "/audio/unit-05/agosto.mp3"
+      "audio": "/audio/unit-05/agosto.mp3",
+      "section": "Los Meses",
+      "example": "En agosto el edificio instala cámaras nuevas."
     },
     {
       "spanish": "septiembre",
       "english": "September",
-      "audio": "/audio/unit-05/septiembre.mp3"
+      "audio": "/audio/unit-05/septiembre.mp3",
+      "section": "Los Meses",
+      "example": "Las víctimas reciben cartas en septiembre."
     },
     {
       "spanish": "octubre",
       "english": "October",
-      "audio": "/audio/unit-05/octubre.mp3"
+      "audio": "/audio/unit-05/octubre.mp3",
+      "section": "Los Meses",
+      "example": "En octubre todavía hay datos en venta."
     },
     {
       "spanish": "noviembre",
       "english": "November",
-      "audio": "/audio/unit-05/noviembre.mp3"
+      "audio": "/audio/unit-05/noviembre.mp3",
+      "section": "Los Meses",
+      "example": "El caso se cierra en noviembre."
     },
     {
       "spanish": "diciembre",
       "english": "December",
-      "audio": "/audio/unit-05/diciembre.mp3"
+      "audio": "/audio/unit-05/diciembre.mp3",
+      "section": "Los Meses",
+      "example": "En diciembre nadie recuerda el nombre del hacker."
     },
     {
       "spanish": "cien (100)",
       "english": "one hundred",
-      "audio": "/audio/unit-05/cien.mp3"
+      "audio": "/audio/unit-05/cien.mp3",
+      "section": "Los Números Grandes",
+      "example": "Cien personas trabajan en el Edificio Omega."
     },
     {
       "spanish": "doscientos (200)",
       "english": "two hundred",
-      "audio": "/audio/unit-05/doscientos.mp3"
+      "audio": "/audio/unit-05/doscientos.mp3",
+      "section": "Los Números Grandes",
+      "example": "Doscientos empleados tienen credencial de acceso."
     },
     {
       "spanish": "quinientos (500)",
       "english": "five hundred",
-      "audio": "/audio/unit-05/quinientos.mp3"
+      "audio": "/audio/unit-05/quinientos.mp3",
+      "section": "Los Números Grandes",
+      "example": "Quinientos archivos salen del servidor esa noche."
     },
     {
       "spanish": "mil (1.000)",
       "english": "one thousand",
-      "audio": "/audio/unit-05/mil.mp3"
+      "audio": "/audio/unit-05/mil.mp3",
+      "section": "Los Números Grandes",
+      "example": "Mil nombres aparecen en el primer archivo."
     },
     {
       "spanish": "dos mil (2.000)",
       "english": "two thousand",
-      "audio": "/audio/unit-05/dos-mil.mp3"
+      "audio": "/audio/unit-05/dos-mil.mp3",
+      "section": "Los Números Grandes",
+      "example": "El disco duro tiene dos mil contraseñas."
     },
     {
       "spanish": "un millón (1.000.000)",
       "english": "one million",
-      "audio": "/audio/unit-05/millon.mp3"
+      "audio": "/audio/unit-05/millon.mp3",
+      "section": "Los Números Grandes",
+      "example": "Los datos valen más de un millón de pesos."
     },
     {
       "spanish": "tener X años",
       "english": "to be X years old",
-      "audio": "/audio/unit-05/tener-anos.mp3"
+      "audio": "/audio/unit-05/tener-anos.mp3",
+      "section": "Expresiones con TENER",
+      "example": "El sospechoso tiene veintiocho años."
     },
     {
       "spanish": "tener hambre",
       "english": "to be hungry",
-      "audio": "/audio/unit-05/tener-hambre.mp3"
+      "audio": "/audio/unit-05/tener-hambre.mp3",
+      "section": "Expresiones con TENER",
+      "example": "El portero tiene hambre a esa hora de la noche."
     },
     {
       "spanish": "tener sed",
       "english": "to be thirsty",
-      "audio": "/audio/unit-05/tener-sed.mp3"
+      "audio": "/audio/unit-05/tener-sed.mp3",
+      "section": "Expresiones con TENER",
+      "example": "Tengo sed después de revisar el registro completo."
     },
     {
       "spanish": "tener miedo",
       "english": "to be afraid / scared",
-      "audio": "/audio/unit-05/tener-miedo.mp3"
+      "audio": "/audio/unit-05/tener-miedo.mp3",
+      "section": "Expresiones con TENER",
+      "example": "El portero tiene miedo de decir lo que vio."
     },
     {
       "spanish": "tener prisa",
       "english": "to be in a hurry",
-      "audio": "/audio/unit-05/tener-prisa.mp3"
+      "audio": "/audio/unit-05/tener-prisa.mp3",
+      "section": "Expresiones con TENER",
+      "example": "Tiene mucha prisa cuando sale del edificio."
     },
     {
       "spanish": "yo vengo",
       "english": "I come / I arrive",
-      "audio": "/audio/unit-05/vengo.mp3"
+      "audio": "/audio/unit-05/vengo.mp3",
+      "section": "El Verbo VENIR",
+      "example": "Yo vengo al edificio de día, no de noche."
     },
     {
       "spanish": "tú vienes",
       "english": "you come (informal)",
-      "audio": "/audio/unit-05/vienes.mp3"
+      "audio": "/audio/unit-05/vienes.mp3",
+      "section": "El Verbo VENIR",
+      "example": "¿Tú vienes siempre después de las once?"
     },
     {
       "spanish": "él/ella viene",
       "english": "he/she comes",
-      "audio": "/audio/unit-05/viene.mp3"
+      "audio": "/audio/unit-05/viene.mp3",
+      "section": "El Verbo VENIR",
+      "example": "Él viene al edificio siempre después de las once de la noche."
     }
   ],
   "stages": [

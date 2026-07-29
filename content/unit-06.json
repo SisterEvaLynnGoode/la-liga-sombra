@@ -10,212 +10,296 @@
     {
       "spanish": "el mango",
       "english": "mango",
-      "audio": "/audio/unit-06/mango.mp3"
+      "audio": "/audio/unit-06/mango.mp3",
+      "section": "Frutas y Verduras",
+      "example": "En el mercado de Cartagena hay mangos de tres clases."
     },
     {
       "spanish": "la guanábana",
       "english": "soursop",
-      "audio": "/audio/unit-06/guanabana.mp3"
+      "audio": "/audio/unit-06/guanabana.mp3",
+      "section": "Frutas y Verduras",
+      "example": "El jugo de guanábana es el favorito de la chef."
     },
     {
       "spanish": "la papaya",
       "english": "papaya",
-      "audio": "/audio/unit-06/papaya.mp3"
+      "audio": "/audio/unit-06/papaya.mp3",
+      "section": "Frutas y Verduras",
+      "example": "La papaya se sirve fría por la mañana."
     },
     {
       "spanish": "el banano",
       "english": "banana",
-      "audio": "/audio/unit-06/banano.mp3"
+      "audio": "/audio/unit-06/banano.mp3",
+      "section": "Frutas y Verduras",
+      "example": "El banano no entra en el ajiaco."
     },
     {
       "spanish": "la piña",
       "english": "pineapple",
-      "audio": "/audio/unit-06/pina.mp3"
+      "audio": "/audio/unit-06/pina.mp3",
+      "section": "Frutas y Verduras",
+      "example": "La piña es para el postre, no para el sancocho."
     },
     {
       "spanish": "la papa",
       "english": "potato",
-      "audio": "/audio/unit-06/papa.mp3"
+      "audio": "/audio/unit-06/papa.mp3",
+      "section": "Frutas y Verduras",
+      "example": "El ajiaco necesita tres clases de papa."
     },
     {
       "spanish": "la zanahoria",
       "english": "carrot",
-      "audio": "/audio/unit-06/zanahoria.mp3"
+      "audio": "/audio/unit-06/zanahoria.mp3",
+      "section": "Frutas y Verduras",
+      "example": "Diego tiene que limpiar estas zanahorias de la sección B."
     },
     {
       "spanish": "el maíz",
       "english": "corn",
-      "audio": "/audio/unit-06/maiz.mp3"
+      "audio": "/audio/unit-06/maiz.mp3",
+      "section": "Frutas y Verduras",
+      "example": "Ese maíz de la sección B es diferente al maíz del ajiaco."
     },
     {
       "spanish": "el aguacate",
       "english": "avocado",
-      "audio": "/audio/unit-06/aguacate.mp3"
+      "audio": "/audio/unit-06/aguacate.mp3",
+      "section": "Frutas y Verduras",
+      "example": "El ajiaco se sirve con aguacate y crema."
     },
     {
       "spanish": "la cebolla",
       "english": "onion",
-      "audio": "/audio/unit-06/cebolla.mp3"
+      "audio": "/audio/unit-06/cebolla.mp3",
+      "section": "Carnes y Proteínas",
+      "example": "Carmen trabaja con esa papa, ese pollo y esa cebolla."
     },
     {
       "spanish": "el pollo",
       "english": "chicken",
-      "audio": "/audio/unit-06/pollo.mp3"
+      "audio": "/audio/unit-06/pollo.mp3",
+      "section": "Carnes y Proteínas",
+      "example": "El ajiaco lleva pollo, maíz y tres clases de papa."
     },
     {
       "spanish": "la res",
       "english": "beef",
-      "audio": "/audio/unit-06/res.mp3"
+      "audio": "/audio/unit-06/res.mp3",
+      "section": "Carnes y Proteínas",
+      "example": "La bandeja paisa lleva carne de res."
     },
     {
       "spanish": "el cerdo",
       "english": "pork",
-      "audio": "/audio/unit-06/cerdo.mp3"
+      "audio": "/audio/unit-06/cerdo.mp3",
+      "section": "Carnes y Proteínas",
+      "example": "El cerdo es para la bandeja paisa, no para el ajiaco."
     },
     {
       "spanish": "el pescado",
       "english": "fish",
-      "audio": "/audio/unit-06/pescado.mp3"
+      "audio": "/audio/unit-06/pescado.mp3",
+      "section": "Carnes y Proteínas",
+      "example": "En la costa caribeña el pescado es fresquísimo."
     },
     {
       "spanish": "el camarón",
       "english": "shrimp",
-      "audio": "/audio/unit-06/camaron.mp3"
+      "audio": "/audio/unit-06/camaron.mp3",
+      "section": "Carnes y Proteínas",
+      "example": "Los camarones llegan del mercado cada mañana."
     },
     {
       "spanish": "el café",
       "english": "coffee",
-      "audio": "/audio/unit-06/cafe.mp3"
+      "audio": "/audio/unit-06/cafe.mp3",
+      "section": "Las Bebidas",
+      "example": "Colombia es famosa por su café."
     },
     {
       "spanish": "el jugo",
       "english": "juice",
-      "audio": "/audio/unit-06/jugo.mp3"
+      "audio": "/audio/unit-06/jugo.mp3",
+      "section": "Las Bebidas",
+      "example": "Quiero un jugo de guanábana, por favor."
     },
     {
       "spanish": "el agua",
       "english": "water",
-      "audio": "/audio/unit-06/agua.mp3"
+      "audio": "/audio/unit-06/agua.mp3",
+      "section": "Las Bebidas",
+      "example": "El agua está en la mesa de la cocina."
     },
     {
       "spanish": "la leche",
       "english": "milk",
-      "audio": "/audio/unit-06/leche.mp3"
+      "audio": "/audio/unit-06/leche.mp3",
+      "section": "Las Bebidas",
+      "example": "El ajiaco se sirve con crema de leche."
     },
     {
       "spanish": "la limonada",
       "english": "lemonade",
-      "audio": "/audio/unit-06/limonada.mp3"
+      "audio": "/audio/unit-06/limonada.mp3",
+      "section": "Las Bebidas",
+      "example": "La limonada de coco es de la costa."
     },
     {
       "spanish": "el ajiaco",
       "english": "traditional Colombian potato and chicken soup",
-      "audio": "/audio/unit-06/ajiaco.mp3"
+      "audio": "/audio/unit-06/ajiaco.mp3",
+      "section": "Platos Colombianos",
+      "example": "Alguien roba la receta secreta del ajiaco bogotano."
     },
     {
       "spanish": "la bandeja paisa",
       "english": "traditional Colombian mixed platter",
-      "audio": "/audio/unit-06/bandeja-paisa.mp3"
+      "audio": "/audio/unit-06/bandeja-paisa.mp3",
+      "section": "Platos Colombianos",
+      "example": "Diego prepara la bandeja paisa secretamente, para él mismo."
     },
     {
       "spanish": "las arepas",
       "english": "corn cakes",
-      "audio": "/audio/unit-06/arepas.mp3"
+      "audio": "/audio/unit-06/arepas.mp3",
+      "section": "Platos Colombianos",
+      "example": "Andrés tiene que preparar cincuenta arepas de maíz."
     },
     {
       "spanish": "el sancocho",
       "english": "hearty Colombian stew",
-      "audio": "/audio/unit-06/sancocho.mp3"
+      "audio": "/audio/unit-06/sancocho.mp3",
+      "section": "Platos Colombianos",
+      "example": "Carmen no puede dejar ese sancocho: si lo deja, se quema."
     },
     {
       "spanish": "las empanadas",
       "english": "stuffed pastries",
-      "audio": "/audio/unit-06/empanadas.mp3"
+      "audio": "/audio/unit-06/empanadas.mp3",
+      "section": "Platos Colombianos",
+      "example": "Las empanadas se venden en la calle todo el día."
     },
     {
       "spanish": "querer (e→ie)",
       "english": "to want (stem-changing)",
-      "audio": "/audio/unit-06/querer.mp3"
+      "audio": "/audio/unit-06/querer.mp3",
+      "section": "Verbos con Cambio de Raíz",
+      "example": "Diego quiere salir pronto del restaurante."
     },
     {
       "spanish": "poder (o→ue)",
       "english": "to be able to / can (stem-changing)",
-      "audio": "/audio/unit-06/poder.mp3"
+      "audio": "/audio/unit-06/poder.mp3",
+      "section": "Verbos con Cambio de Raíz",
+      "example": "Carmen no puede dejar ese sancocho sola."
     },
     {
       "spanish": "preferir (e→ie)",
       "english": "to prefer (stem-changing)",
-      "audio": "/audio/unit-06/preferir.mp3"
+      "audio": "/audio/unit-06/preferir.mp3",
+      "section": "Verbos con Cambio de Raíz",
+      "example": "La abuela prefiere este ají picante, no ese dulce."
     },
     {
       "spanish": "pensar (e→ie)",
       "english": "to think / to plan (stem-changing)",
-      "audio": "/audio/unit-06/pensar.mp3"
+      "audio": "/audio/unit-06/pensar.mp3",
+      "section": "Verbos con Cambio de Raíz",
+      "example": "Pienso que las fotos del celular son la prueba."
     },
     {
       "spanish": "dormir (o→ue)",
       "english": "to sleep (stem-changing)",
-      "audio": "/audio/unit-06/dormir.mp3"
+      "audio": "/audio/unit-06/dormir.mp3",
+      "section": "Verbos con Cambio de Raíz",
+      "example": "Nadie duerme la noche antes de la inspección."
     },
     {
       "spanish": "volver (o→ue)",
       "english": "to return / to come back (stem-changing)",
-      "audio": "/audio/unit-06/volver.mp3"
+      "audio": "/audio/unit-06/volver.mp3",
+      "section": "Verbos con Cambio de Raíz",
+      "example": "El proveedor vuelve de Barranquilla mañana."
     },
     {
       "spanish": "este / esta",
       "english": "this (near speaker, m/f)",
-      "audio": "/audio/unit-06/este.mp3"
+      "audio": "/audio/unit-06/este.mp3",
+      "section": "Este, Ese, Aquel",
+      "example": "Diego dice que tiene que limpiar estas verduras."
     },
     {
       "spanish": "ese / esa",
       "english": "that (near listener, m/f)",
-      "audio": "/audio/unit-06/ese.mp3"
+      "audio": "/audio/unit-06/ese.mp3",
+      "section": "Este, Ese, Aquel",
+      "example": "Pero esas verduras no son de su sección."
     },
     {
       "spanish": "aquel / aquella",
       "english": "that over there (far away, m/f)",
-      "audio": "/audio/unit-06/aquel.mp3"
+      "audio": "/audio/unit-06/aquel.mp3",
+      "section": "Este, Ese, Aquel",
+      "example": "No tiene acceso a aquel armario de la oficina."
     },
     {
       "spanish": "estos / estas",
       "english": "these (plural, m/f)",
-      "audio": "/audio/unit-06/estos.mp3"
+      "audio": "/audio/unit-06/estos.mp3",
+      "section": "Este, Ese, Aquel",
+      "example": "Estos son sus ingredientes: ese maíz, esa mantequilla."
     },
     {
       "spanish": "la cuenta",
       "english": "the bill / check",
-      "audio": "/audio/unit-06/cuenta.mp3"
+      "audio": "/audio/unit-06/cuenta.mp3",
+      "section": "En el Restaurante",
+      "example": "El mesero trae la cuenta al final."
     },
     {
       "spanish": "la propina",
       "english": "the tip",
-      "audio": "/audio/unit-06/propina.mp3"
+      "audio": "/audio/unit-06/propina.mp3",
+      "section": "En el Restaurante",
+      "example": "La propina se deja en la mesa."
     },
     {
       "spanish": "el menú",
       "english": "the menu",
-      "audio": "/audio/unit-06/menu.mp3"
+      "audio": "/audio/unit-06/menu.mp3",
+      "section": "En el Restaurante",
+      "example": "El ajiaco no está en el menú de hoy."
     },
     {
       "spanish": "el plato",
       "english": "the dish / plate",
-      "audio": "/audio/unit-06/plato.mp3"
+      "audio": "/audio/unit-06/plato.mp3",
+      "section": "En el Restaurante",
+      "example": "El ajiaco es un plato del patrimonio cultural de Colombia."
     },
     {
       "spanish": "tener que + infinitivo",
       "english": "to have to + verb",
-      "audio": "/audio/unit-06/tener-que.mp3"
+      "audio": "/audio/unit-06/tener-que.mp3",
+      "section": "En el Restaurante",
+      "example": "Cada cocinero dice qué tiene que hacer esta mañana."
     },
     {
       "spanish": "decir",
       "english": "to say / to tell",
-      "audio": "/audio/unit-06/decir.mp3"
+      "audio": "/audio/unit-06/decir.mp3",
+      "section": "En el Restaurante",
+      "example": "Andrés dice que Diego entra en la oficina del chef."
     },
     {
       "spanish": "la receta",
       "english": "the recipe",
-      "audio": "/audio/unit-06/receta.mp3"
+      "audio": "/audio/unit-06/receta.mp3",
+      "section": "En el Restaurante",
+      "example": "Las fotos del celular muestran la receta robada."
     }
   ],
   "stages": [

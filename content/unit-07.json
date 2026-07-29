@@ -10,202 +10,282 @@
     {
       "spanish": "el cine",
       "english": "movie theater / the cinema",
-      "audio": "/audio/unit-07/cine.mp3"
+      "audio": "/audio/unit-07/cine.mp3",
+      "section": "Lugares de Diversión",
+      "example": "Después del festival, la gente va al cine."
     },
     {
       "spanish": "el concierto",
       "english": "concert",
-      "audio": "/audio/unit-07/concierto.mp3"
+      "audio": "/audio/unit-07/concierto.mp3",
+      "section": "Lugares de Diversión",
+      "example": "El concierto empieza a las nueve en la Quinta Vergara."
     },
     {
       "spanish": "la fiesta",
       "english": "party / celebration",
-      "audio": "/audio/unit-07/fiesta.mp3"
+      "audio": "/audio/unit-07/fiesta.mp3",
+      "section": "Lugares de Diversión",
+      "example": "Hay fiesta en Viña del Mar toda la semana."
     },
     {
       "spanish": "el parque",
       "english": "park",
-      "audio": "/audio/unit-07/parque.mp3"
+      "audio": "/audio/unit-07/parque.mp3",
+      "section": "Lugares de Diversión",
+      "example": "El parque está lleno de gente antes del festival."
     },
     {
       "spanish": "el deporte",
       "english": "sport",
-      "audio": "/audio/unit-07/deporte.mp3"
+      "audio": "/audio/unit-07/deporte.mp3",
+      "section": "Lugares de Diversión",
+      "example": "El deporte favorito del técnico es el fútbol."
     },
     {
       "spanish": "el estadio",
       "english": "stadium",
-      "audio": "/audio/unit-07/estadio.mp3"
+      "audio": "/audio/unit-07/estadio.mp3",
+      "section": "Lugares de Diversión",
+      "example": "El estadio está al otro lado de la ciudad."
     },
     {
       "spanish": "el festival",
       "english": "festival",
-      "audio": "/audio/unit-07/festival.mp3"
+      "audio": "/audio/unit-07/festival.mp3",
+      "section": "Lugares de Diversión",
+      "example": "Alguien está saboteando los equipos del festival."
     },
     {
       "spanish": "el teatro",
       "english": "theater",
-      "audio": "/audio/unit-07/teatro.mp3"
+      "audio": "/audio/unit-07/teatro.mp3",
+      "section": "Lugares de Diversión",
+      "example": "El anfiteatro no es un teatro cerrado: está al aire libre."
     },
     {
       "spanish": "la playa",
       "english": "beach",
-      "audio": "/audio/unit-07/playa.mp3"
+      "audio": "/audio/unit-07/playa.mp3",
+      "section": "Lugares de Diversión",
+      "example": "Viña del Mar está en la costa: la playa está cerca del escenario."
     },
     {
       "spanish": "la discoteca",
       "english": "nightclub / dance club",
-      "audio": "/audio/unit-07/discoteca.mp3"
+      "audio": "/audio/unit-07/discoteca.mp3",
+      "section": "Lugares de Diversión",
+      "example": "La discoteca abre después del concierto."
     },
     {
       "spanish": "el verano",
       "english": "summer",
-      "audio": "/audio/unit-07/verano.mp3"
+      "audio": "/audio/unit-07/verano.mp3",
+      "section": "Las Estaciones",
+      "example": "En Chile, febrero es verano."
     },
     {
       "spanish": "el otoño",
       "english": "autumn / fall",
-      "audio": "/audio/unit-07/otono.mp3"
+      "audio": "/audio/unit-07/otono.mp3",
+      "section": "Las Estaciones",
+      "example": "El otoño chileno empieza en marzo."
     },
     {
       "spanish": "el invierno",
       "english": "winter",
-      "audio": "/audio/unit-07/invierno.mp3"
+      "audio": "/audio/unit-07/invierno.mp3",
+      "section": "Las Estaciones",
+      "example": "En Chile el invierno es en julio."
     },
     {
       "spanish": "la primavera",
       "english": "spring",
-      "audio": "/audio/unit-07/primavera.mp3"
+      "audio": "/audio/unit-07/primavera.mp3",
+      "section": "Las Estaciones",
+      "example": "La primavera llega en septiembre en el hemisferio sur."
     },
     {
       "spanish": "hace calor",
       "english": "it's hot",
-      "audio": "/audio/unit-07/hace-calor.mp3"
+      "audio": "/audio/unit-07/hace-calor.mp3",
+      "section": "El Tiempo",
+      "example": "Hace calor esta tarde en el anfiteatro."
     },
     {
       "spanish": "hace frío",
       "english": "it's cold",
-      "audio": "/audio/unit-07/hace-frio.mp3"
+      "audio": "/audio/unit-07/hace-frio.mp3",
+      "section": "El Tiempo",
+      "example": "De noche hace frío por el viento del Pacífico."
     },
     {
       "spanish": "hace viento",
       "english": "it's windy",
-      "audio": "/audio/unit-07/hace-viento.mp3"
+      "audio": "/audio/unit-07/hace-viento.mp3",
+      "section": "El Tiempo",
+      "example": "Hace viento: el viento del Pacífico es fuerte."
     },
     {
       "spanish": "hace sol",
       "english": "it's sunny",
-      "audio": "/audio/unit-07/hace-sol.mp3"
+      "audio": "/audio/unit-07/hace-sol.mp3",
+      "section": "El Tiempo",
+      "example": "Hace sol hoy, pero el viento no para."
     },
     {
       "spanish": "está nublado",
       "english": "it's cloudy",
-      "audio": "/audio/unit-07/esta-nublado.mp3"
+      "audio": "/audio/unit-07/esta-nublado.mp3",
+      "section": "El Tiempo",
+      "example": "Está nublado sobre el mar, pero no llueve."
     },
     {
       "spanish": "el/la cantante",
       "english": "singer",
-      "audio": "/audio/unit-07/cantante.mp3"
+      "audio": "/audio/unit-07/cantante.mp3",
+      "section": "Profesiones del Arte",
+      "example": "Valentina es cantante y está en el escenario principal."
     },
     {
       "spanish": "el bailarín / la bailarina",
       "english": "dancer (m/f)",
-      "audio": "/audio/unit-07/bailarin.mp3"
+      "audio": "/audio/unit-07/bailarin.mp3",
+      "section": "Profesiones del Arte",
+      "example": "La bailarina ensayó su coreografía hasta las 22:30."
     },
     {
       "spanish": "el jugador / la jugadora",
       "english": "player / athlete (m/f)",
-      "audio": "/audio/unit-07/jugador.mp3"
+      "audio": "/audio/unit-07/jugador.mp3",
+      "section": "Profesiones del Arte",
+      "example": "Un jugador de fútbol famoso está en el público."
     },
     {
       "spanish": "el/la artista",
       "english": "artist",
-      "audio": "/audio/unit-07/artista.mp3"
+      "audio": "/audio/unit-07/artista.mp3",
+      "section": "Profesiones del Arte",
+      "example": "Cada artista tiene su propio camerino."
     },
     {
       "spanish": "el/la periodista",
       "english": "journalist / reporter",
-      "audio": "/audio/unit-07/periodista.mp3"
+      "audio": "/audio/unit-07/periodista.mp3",
+      "section": "Profesiones del Arte",
+      "example": "María José es periodista y graba el concierto."
     },
     {
       "spanish": "el/la guitarrista",
       "english": "guitarist",
-      "audio": "/audio/unit-07/guitarrista.mp3"
+      "audio": "/audio/unit-07/guitarrista.mp3",
+      "section": "Profesiones del Arte",
+      "example": "Alejandro es guitarrista de la banda principal."
     },
     {
       "spanish": "el pintor / la pintora",
       "english": "painter (m/f)",
-      "audio": "/audio/unit-07/pintor.mp3"
+      "audio": "/audio/unit-07/pintor.mp3",
+      "section": "Profesiones del Arte",
+      "example": "Una pintora hace el cartel del festival."
     },
     {
       "spanish": "el/la tenista",
       "english": "tennis player",
-      "audio": "/audio/unit-07/tenista.mp3"
+      "audio": "/audio/unit-07/tenista.mp3",
+      "section": "Profesiones del Arte",
+      "example": "El tenista chileno entrega uno de los premios."
     },
     {
       "spanish": "el actor / la actriz",
       "english": "actor / actress",
-      "audio": "/audio/unit-07/actor.mp3"
+      "audio": "/audio/unit-07/actor.mp3",
+      "section": "Profesiones del Arte",
+      "example": "El actor presenta el festival esta noche."
     },
     {
       "spanish": "el/la turista",
       "english": "tourist",
-      "audio": "/audio/unit-07/turista.mp3"
+      "audio": "/audio/unit-07/turista.mp3",
+      "section": "Profesiones del Arte",
+      "example": "Los turistas llenan la ciudad en febrero."
     },
     {
       "spanish": "jugar (u→ue)",
       "english": "to play — sports/games (stem-changing)",
-      "audio": "/audio/unit-07/jugar.mp3"
+      "audio": "/audio/unit-07/jugar.mp3",
+      "section": "Verbos con Cambio de Raíz",
+      "example": "Los niños juegan en la playa antes del concierto."
     },
     {
       "spanish": "encontrar (o→ue)",
       "english": "to find / to encounter (stem-changing)",
-      "audio": "/audio/unit-07/encontrar.mp3"
+      "audio": "/audio/unit-07/encontrar.mp3",
+      "section": "Verbos con Cambio de Raíz",
+      "example": "No encuentro al técnico en la lista oficial."
     },
     {
       "spanish": "poder (o→ue)",
       "english": "to be able to / can (stem-changing)",
-      "audio": "/audio/unit-07/poder.mp3"
+      "audio": "/audio/unit-07/poder.mp3",
+      "section": "Verbos con Cambio de Raíz",
+      "example": "No puedo ver bien las cámaras: hay muchas escenas."
     },
     {
       "spanish": "dormir (o→ue)",
       "english": "to sleep (stem-changing)",
-      "audio": "/audio/unit-07/dormir.mp3"
+      "audio": "/audio/unit-07/dormir.mp3",
+      "section": "Verbos con Cambio de Raíz",
+      "example": "Nadie duerme la noche del festival."
     },
     {
       "spanish": "volver (o→ue)",
       "english": "to return / come back (stem-changing)",
-      "audio": "/audio/unit-07/volver.mp3"
+      "audio": "/audio/unit-07/volver.mp3",
+      "section": "Verbos con Cambio de Raíz",
+      "example": "El saboteador no vuelve al escenario después."
     },
     {
       "spanish": "almorzar (o→ue)",
       "english": "to have lunch (stem-changing)",
-      "audio": "/audio/unit-07/almorzar.mp3"
+      "audio": "/audio/unit-07/almorzar.mp3",
+      "section": "Verbos con Cambio de Raíz",
+      "example": "Los técnicos almuerzan juntos antes del concierto."
     },
     {
       "spanish": "primero / primera",
       "english": "first (m/f)",
-      "audio": "/audio/unit-07/primero.mp3"
+      "audio": "/audio/unit-07/primero.mp3",
+      "section": "Los Números Ordinales",
+      "example": "Sebastián es el primer sospechoso de la lista."
     },
     {
       "spanish": "segundo / segunda",
       "english": "second (m/f)",
-      "audio": "/audio/unit-07/segundo.mp3"
+      "audio": "/audio/unit-07/segundo.mp3",
+      "section": "Los Números Ordinales",
+      "example": "Valentina es la segunda sospechosa."
     },
     {
       "spanish": "tercero / tercera",
       "english": "third (m/f)",
-      "audio": "/audio/unit-07/tercero.mp3"
+      "audio": "/audio/unit-07/tercero.mp3",
+      "section": "Los Números Ordinales",
+      "example": "El sospechoso es la tercera persona desde la izquierda."
     },
     {
       "spanish": "cuarto / cuarta",
       "english": "fourth (m/f)",
-      "audio": "/audio/unit-07/cuarto.mp3"
+      "audio": "/audio/unit-07/cuarto.mp3",
+      "section": "Los Números Ordinales",
+      "example": "María José es la cuarta sospechosa."
     },
     {
       "spanish": "quinto / quinta",
       "english": "fifth (m/f)",
-      "audio": "/audio/unit-07/quinto.mp3"
+      "audio": "/audio/unit-07/quinto.mp3",
+      "section": "Los Números Ordinales",
+      "example": "El músico toca en el quinto turno del programa."
     }
   ],
   "stages": [

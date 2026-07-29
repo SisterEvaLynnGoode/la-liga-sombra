@@ -10,177 +10,247 @@
     {
       "spanish": "el libro",
       "english": "book",
-      "audio": "/audio/unit-02/libro.mp3"
+      "audio": "/audio/unit-02/libro.mp3",
+      "section": "En el Aula",
+      "example": "El libro de español está sobre el escritorio."
     },
     {
       "spanish": "la silla",
       "english": "chair",
-      "audio": "/audio/unit-02/silla.mp3"
+      "audio": "/audio/unit-02/silla.mp3",
+      "section": "En el Aula",
+      "example": "Hay una silla vacía en el laboratorio."
     },
     {
       "spanish": "la pizarra",
       "english": "whiteboard",
-      "audio": "/audio/unit-02/pizarra.mp3"
+      "audio": "/audio/unit-02/pizarra.mp3",
+      "section": "En el Aula",
+      "example": "La directora escribe el nombre en la pizarra."
     },
     {
       "spanish": "la mochila",
       "english": "backpack",
-      "audio": "/audio/unit-02/mochila.mp3"
+      "audio": "/audio/unit-02/mochila.mp3",
+      "section": "En el Aula",
+      "example": "El sospechoso lleva una mochila grande y negra."
     },
     {
       "spanish": "el lápiz",
       "english": "pencil",
-      "audio": "/audio/unit-02/lapiz.mp3"
+      "audio": "/audio/unit-02/lapiz.mp3",
+      "section": "En el Aula",
+      "example": "Necesito un lápiz para escribir las pistas."
     },
     {
       "spanish": "el cuaderno",
       "english": "notebook",
-      "audio": "/audio/unit-02/cuaderno.mp3"
+      "audio": "/audio/unit-02/cuaderno.mp3",
+      "section": "En el Aula",
+      "example": "Escribo cada pista en mi cuaderno."
     },
     {
       "spanish": "el bolígrafo",
       "english": "pen",
-      "audio": "/audio/unit-02/boligrafo.mp3"
+      "audio": "/audio/unit-02/boligrafo.mp3",
+      "section": "En el Aula",
+      "example": "Firma el registro con un bolígrafo azul."
     },
     {
       "spanish": "el escritorio",
       "english": "desk",
-      "audio": "/audio/unit-02/escritorio.mp3"
+      "audio": "/audio/unit-02/escritorio.mp3",
+      "section": "En el Aula",
+      "example": "El escritorio del laboratorio está vacío."
     },
     {
       "spanish": "las tijeras",
       "english": "scissors",
-      "audio": "/audio/unit-02/tijeras.mp3"
+      "audio": "/audio/unit-02/tijeras.mp3",
+      "section": "En el Aula",
+      "example": "Las tijeras están en el escritorio de la maestra."
     },
     {
       "spanish": "la regla",
       "english": "ruler",
-      "audio": "/audio/unit-02/regla.mp3"
+      "audio": "/audio/unit-02/regla.mp3",
+      "section": "En el Aula",
+      "example": "Uso una regla para medir la ventana."
     },
     {
       "spanish": "el borrador",
       "english": "eraser",
-      "audio": "/audio/unit-02/borrador.mp3"
+      "audio": "/audio/unit-02/borrador.mp3",
+      "section": "En el Aula",
+      "example": "El borrador está debajo de la pizarra."
     },
     {
       "spanish": "el papel",
       "english": "paper",
-      "audio": "/audio/unit-02/papel.mp3"
+      "audio": "/audio/unit-02/papel.mp3",
+      "section": "En el Aula",
+      "example": "Hay un papel con un nombre en el suelo."
     },
     {
       "spanish": "la computadora",
       "english": "computer",
-      "audio": "/audio/unit-02/computadora.mp3"
+      "audio": "/audio/unit-02/computadora.mp3",
+      "section": "El Laboratorio de Computadoras",
+      "example": "El sospechoso usa mucho la computadora."
     },
     {
       "spanish": "el ratón",
       "english": "mouse (computer)",
-      "audio": "/audio/unit-02/raton.mp3"
+      "audio": "/audio/unit-02/raton.mp3",
+      "section": "El Laboratorio de Computadoras",
+      "example": "El ladrón robó ratones y teclados del laboratorio."
     },
     {
       "spanish": "el teclado",
       "english": "keyboard",
-      "audio": "/audio/unit-02/teclado.mp3"
+      "audio": "/audio/unit-02/teclado.mp3",
+      "section": "El Laboratorio de Computadoras",
+      "example": "El ladrón robó ratones, teclados y una pantalla nueva."
     },
     {
       "spanish": "la pantalla",
       "english": "screen / monitor",
-      "audio": "/audio/unit-02/pantalla.mp3"
+      "audio": "/audio/unit-02/pantalla.mp3",
+      "section": "El Laboratorio de Computadoras",
+      "example": "Robó una pantalla nueva del laboratorio de computadoras."
     },
     {
       "spanish": "la impresora",
       "english": "printer",
-      "audio": "/audio/unit-02/impresora.mp3"
+      "audio": "/audio/unit-02/impresora.mp3",
+      "section": "El Laboratorio de Computadoras",
+      "example": "La impresora todavía está en el laboratorio."
     },
     {
       "spanish": "los auriculares",
       "english": "headphones",
-      "audio": "/audio/unit-02/auriculares.mp3"
+      "audio": "/audio/unit-02/auriculares.mp3",
+      "section": "El Laboratorio de Computadoras",
+      "example": "Un estudiante escucha música con auriculares en clase."
     },
     {
       "spanish": "la tableta",
       "english": "tablet",
-      "audio": "/audio/unit-02/tableta.mp3"
+      "audio": "/audio/unit-02/tableta.mp3",
+      "section": "El Laboratorio de Computadoras",
+      "example": "Nadie usa la tableta de la biblioteca."
     },
     {
       "spanish": "el proyector",
       "english": "projector",
-      "audio": "/audio/unit-02/proyector.mp3"
+      "audio": "/audio/unit-02/proyector.mp3",
+      "section": "El Laboratorio de Computadoras",
+      "example": "El proyector de la clase no funciona hoy."
     },
     {
       "spanish": "alto / alta",
       "english": "tall (m/f)",
-      "audio": "/audio/unit-02/alto.mp3"
+      "audio": "/audio/unit-02/alto.mp3",
+      "section": "Descripciones con SER",
+      "example": "El sospechoso es alto y moreno."
     },
     {
       "spanish": "bajo / baja",
       "english": "short (m/f)",
-      "audio": "/audio/unit-02/bajo.mp3"
+      "audio": "/audio/unit-02/bajo.mp3",
+      "section": "Descripciones con SER",
+      "example": "Rosa es baja y rubia."
     },
     {
       "spanish": "simpático / simpática",
       "english": "nice, friendly (m/f)",
-      "audio": "/audio/unit-02/simpatico.mp3"
+      "audio": "/audio/unit-02/simpatico.mp3",
+      "section": "Descripciones con SER",
+      "example": "Isabella es muy simpática y trabajadora."
     },
     {
       "spanish": "inteligente",
       "english": "intelligent (m & f)",
-      "audio": "/audio/unit-02/inteligente.mp3"
+      "audio": "/audio/unit-02/inteligente.mp3",
+      "section": "Descripciones con SER",
+      "example": "El sospechoso es alto, moreno e inteligente."
     },
     {
       "spanish": "rubio / rubia",
       "english": "blond (m/f)",
-      "audio": "/audio/unit-02/rubio.mp3"
+      "audio": "/audio/unit-02/rubio.mp3",
+      "section": "Descripciones con SER",
+      "example": "Mi amiga Valentina es alta y rubia."
     },
     {
       "spanish": "moreno / morena",
       "english": "dark-haired / dark-skinned (m/f)",
-      "audio": "/audio/unit-02/moreno.mp3"
+      "audio": "/audio/unit-02/moreno.mp3",
+      "section": "Descripciones con SER",
+      "example": "Rodrigo también es alto y moreno."
     },
     {
       "spanish": "serio / seria",
       "english": "serious (m/f)",
-      "audio": "/audio/unit-02/serio.mp3"
+      "audio": "/audio/unit-02/serio.mp3",
+      "section": "Descripciones con SER",
+      "example": "Rodrigo tiene diecisiete años y es muy serio."
     },
     {
       "spanish": "trabajador / trabajadora",
       "english": "hardworking (m/f)",
-      "audio": "/audio/unit-02/trabajador.mp3"
+      "audio": "/audio/unit-02/trabajador.mp3",
+      "section": "Descripciones con SER",
+      "example": "Valentina estudia mucho y es muy trabajadora."
     },
     {
       "spanish": "tímido / tímida",
       "english": "shy (m/f)",
-      "audio": "/audio/unit-02/timido.mp3"
+      "audio": "/audio/unit-02/timido.mp3",
+      "section": "Descripciones con SER",
+      "example": "Carlos es alto y moreno, pero es muy tímido."
     },
     {
       "spanish": "gracioso / graciosa",
       "english": "funny (m/f)",
-      "audio": "/audio/unit-02/gracioso.mp3"
+      "audio": "/audio/unit-02/gracioso.mp3",
+      "section": "Descripciones con SER",
+      "example": "Alejandro es muy gracioso y simpático."
     },
     {
       "spanish": "estudiar",
       "english": "to study",
-      "audio": "/audio/unit-02/estudiar.mp3"
+      "audio": "/audio/unit-02/estudiar.mp3",
+      "section": "Verbos -AR",
+      "example": "Isabella estudia mucho en la biblioteca después de clases."
     },
     {
       "spanish": "usar",
       "english": "to use",
-      "audio": "/audio/unit-02/usar.mp3"
+      "audio": "/audio/unit-02/usar.mp3",
+      "section": "Verbos -AR",
+      "example": "El sospechoso usa mucho la computadora del laboratorio."
     },
     {
       "spanish": "hablar",
       "english": "to speak / to talk",
-      "audio": "/audio/unit-02/hablar.mp3"
+      "audio": "/audio/unit-02/hablar.mp3",
+      "section": "Verbos -AR",
+      "example": "La directora habla con el detective en la oficina."
     },
     {
       "spanish": "escuchar",
       "english": "to listen",
-      "audio": "/audio/unit-02/escuchar.mp3"
+      "audio": "/audio/unit-02/escuchar.mp3",
+      "section": "Verbos -AR",
+      "example": "Carlos escucha música con auriculares en clase."
     },
     {
       "spanish": "trabajar",
       "english": "to work",
-      "audio": "/audio/unit-02/trabajar.mp3"
+      "audio": "/audio/unit-02/trabajar.mp3",
+      "section": "Verbos -AR",
+      "example": "Carlos trabaja en la cafetería de la escuela."
     }
   ],
   "stages": [

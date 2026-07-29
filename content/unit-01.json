@@ -10,62 +10,86 @@
     {
       "spanish": "hola",
       "english": "hello",
-      "audio": "/audio/unit-01/hola.mp3"
+      "audio": "/audio/unit-01/hola.mp3",
+      "section": "Saludos y Despedidas",
+      "example": "Hola. Soy detective de La Liga Sombra."
     },
     {
       "spanish": "adiós",
       "english": "goodbye",
-      "audio": "/audio/unit-01/adios.mp3"
+      "audio": "/audio/unit-01/adios.mp3",
+      "section": "Saludos y Despedidas",
+      "example": "Adiós, señor. Gracias por su ayuda."
     },
     {
       "spanish": "buenos días",
       "english": "good morning",
-      "audio": "/audio/unit-01/buenos-dias.mp3"
+      "audio": "/audio/unit-01/buenos-dias.mp3",
+      "section": "Saludos y Despedidas",
+      "example": "Buenos días, señor. ¿Vio algo sospechoso esta mañana?"
     },
     {
       "spanish": "buenas tardes",
       "english": "good afternoon",
-      "audio": "/audio/unit-01/buenas-tardes.mp3"
+      "audio": "/audio/unit-01/buenas-tardes.mp3",
+      "section": "Saludos y Despedidas",
+      "example": "Buenas tardes. ¿Trabaja usted en el museo?"
     },
     {
       "spanish": "buenas noches",
       "english": "good night",
-      "audio": "/audio/unit-01/buenas-noches.mp3"
+      "audio": "/audio/unit-01/buenas-noches.mp3",
+      "section": "Saludos y Despedidas",
+      "example": "Buenas noches. El museo cierra a las nueve."
     },
     {
       "spanish": "por favor",
       "english": "please",
-      "audio": "/audio/unit-01/por-favor.mp3"
+      "audio": "/audio/unit-01/por-favor.mp3",
+      "section": "Cortesía",
+      "example": "Dígame lo que vio, por favor."
     },
     {
       "spanish": "gracias",
       "english": "thank you",
-      "audio": "/audio/unit-01/gracias.mp3"
+      "audio": "/audio/unit-01/gracias.mp3",
+      "section": "Cortesía",
+      "example": "Muchas gracias, señor. Usted es muy amable."
     },
     {
       "spanish": "de nada",
       "english": "you're welcome",
-      "audio": "/audio/unit-01/de-nada.mp3"
+      "audio": "/audio/unit-01/de-nada.mp3",
+      "section": "Cortesía",
+      "example": "—Gracias, Don Rodrigo. —De nada, detective."
     },
     {
       "spanish": "me llamo",
       "english": "my name is",
-      "audio": "/audio/unit-01/me-llamo.mp3"
+      "audio": "/audio/unit-01/me-llamo.mp3",
+      "section": "Presentaciones",
+      "example": "Me llamo 'El Camaleón'. Soy de Guadalajara."
     },
     {
       "spanish": "¿cómo te llamas?",
       "english": "what's your name?",
-      "audio": "/audio/unit-01/como-te-llamas.mp3"
+      "audio": "/audio/unit-01/como-te-llamas.mp3",
+      "section": "Presentaciones",
+      "example": "¿Cómo te llamas? Necesito tu nombre verdadero."
     },
     {
       "spanish": "¿de dónde eres?",
       "english": "where are you from?",
-      "audio": "/audio/unit-01/de-donde-eres.mp3"
+      "audio": "/audio/unit-01/de-donde-eres.mp3",
+      "section": "¿De Dónde Eres?",
+      "example": "¿De dónde eres? Solo un sospechoso es de Guadalajara."
     },
     {
       "spanish": "soy de...",
       "english": "I'm from...",
-      "audio": "/audio/unit-01/soy-de.mp3"
+      "audio": "/audio/unit-01/soy-de.mp3",
+      "section": "¿De Dónde Eres?",
+      "example": "Soy de Guadalajara — la ciudad más bella de todo México."
     }
   ],
   "stages": [

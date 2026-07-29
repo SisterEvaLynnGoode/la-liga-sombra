@@ -10,182 +10,254 @@
     {
       "spanish": "la madre / la mamá",
       "english": "mother / mom",
-      "audio": "/audio/unit-04/madre.mp3"
+      "audio": "/audio/unit-04/madre.mp3",
+      "section": "La Familia",
+      "example": "Ana Lucía es la madre de Marco y la hija de la abuela Carmen."
     },
     {
       "spanish": "el padre / el papá",
       "english": "father / dad",
-      "audio": "/audio/unit-04/padre.mp3"
+      "audio": "/audio/unit-04/padre.mp3",
+      "section": "La Familia",
+      "example": "Su padre trabaja en la finca de café desde las seis."
     },
     {
       "spanish": "el hermano",
       "english": "brother",
-      "audio": "/audio/unit-04/hermano.mp3"
+      "audio": "/audio/unit-04/hermano.mp3",
+      "section": "La Familia",
+      "example": "Marco no tiene hermanos: es hijo único."
     },
     {
       "spanish": "la hermana",
       "english": "sister",
-      "audio": "/audio/unit-04/hermana.mp3"
+      "audio": "/audio/unit-04/hermana.mp3",
+      "section": "La Familia",
+      "example": "La hermana de Carlos vive en San José."
     },
     {
       "spanish": "la abuela",
       "english": "grandmother",
-      "audio": "/audio/unit-04/abuela.mp3"
+      "audio": "/audio/unit-04/abuela.mp3",
+      "section": "La Familia",
+      "example": "El collar de esmeraldas es de la abuela Carmen."
     },
     {
       "spanish": "el abuelo",
       "english": "grandfather",
-      "audio": "/audio/unit-04/abuelo.mp3"
+      "audio": "/audio/unit-04/abuelo.mp3",
+      "section": "La Familia",
+      "example": "El abuelo le regaló el collar hace más de treinta años."
     },
     {
       "spanish": "el tío",
       "english": "uncle",
-      "audio": "/audio/unit-04/tio.mp3"
+      "audio": "/audio/unit-04/tio.mp3",
+      "section": "La Familia",
+      "example": "Diego está en la finca de café con el tío Carlos."
     },
     {
       "spanish": "la tía",
       "english": "aunt",
-      "audio": "/audio/unit-04/tia.mp3"
+      "audio": "/audio/unit-04/tia.mp3",
+      "section": "La Familia",
+      "example": "La tía Elena está en el mercado central toda la mañana."
     },
     {
       "spanish": "el primo",
       "english": "male cousin",
-      "audio": "/audio/unit-04/primo.mp3"
+      "audio": "/audio/unit-04/primo.mp3",
+      "section": "La Familia",
+      "example": "Diego es el primo de Marco."
     },
     {
       "spanish": "la prima",
       "english": "female cousin",
-      "audio": "/audio/unit-04/prima.mp3"
+      "audio": "/audio/unit-04/prima.mp3",
+      "section": "La Familia",
+      "example": "La prima de Puntarenas no conoce al perro de la familia."
     },
     {
       "spanish": "el nieto",
       "english": "grandson",
-      "audio": "/audio/unit-04/nieto.mp3"
+      "audio": "/audio/unit-04/nieto.mp3",
+      "section": "La Familia",
+      "example": "Marco es el nieto de la abuela Carmen."
     },
     {
       "spanish": "el esposo / el marido",
       "english": "husband",
-      "audio": "/audio/unit-04/esposo.mp3"
+      "audio": "/audio/unit-04/esposo.mp3",
+      "section": "La Familia",
+      "example": "El collar es un regalo de su esposo."
     },
     {
       "spanish": "contento / contenta",
       "english": "happy / pleased (m/f)",
-      "audio": "/audio/unit-04/contento.mp3"
+      "audio": "/audio/unit-04/contento.mp3",
+      "section": "Las Emociones (con ESTAR)",
+      "example": "La abuela está contenta con toda la familia en casa."
     },
     {
       "spanish": "triste",
       "english": "sad",
-      "audio": "/audio/unit-04/triste.mp3"
+      "audio": "/audio/unit-04/triste.mp3",
+      "section": "Las Emociones (con ESTAR)",
+      "example": "La abuela está triste porque el collar no aparece."
     },
     {
       "spanish": "nervioso / nerviosa",
       "english": "nervous (m/f)",
-      "audio": "/audio/unit-04/nervioso.mp3"
+      "audio": "/audio/unit-04/nervioso.mp3",
+      "section": "Las Emociones (con ESTAR)",
+      "example": "Marco está nervioso y sus respuestas son inconsistentes."
     },
     {
       "spanish": "enojado / enojada",
       "english": "angry (m/f)",
-      "audio": "/audio/unit-04/enojado.mp3"
+      "audio": "/audio/unit-04/enojado.mp3",
+      "section": "Las Emociones (con ESTAR)",
+      "example": "El tío Carlos está enojado con el ladrón, no con la familia."
     },
     {
       "spanish": "cansado / cansada",
       "english": "tired (m/f)",
-      "audio": "/audio/unit-04/cansado.mp3"
+      "audio": "/audio/unit-04/cansado.mp3",
+      "section": "Las Emociones (con ESTAR)",
+      "example": "Diego está cansado del trabajo, pero está tranquilo."
     },
     {
       "spanish": "preocupado / preocupada",
       "english": "worried (m/f)",
-      "audio": "/audio/unit-04/preocupado.mp3"
+      "audio": "/audio/unit-04/preocupado.mp3",
+      "section": "Las Emociones (con ESTAR)",
+      "example": "Ana Lucía está muy preocupada por el collar de su madre."
     },
     {
       "spanish": "emocionado / emocionada",
       "english": "excited (m/f)",
-      "audio": "/audio/unit-04/emocionado.mp3"
+      "audio": "/audio/unit-04/emocionado.mp3",
+      "section": "Las Emociones (con ESTAR)",
+      "example": "Gabriela está emocionada porque su novio viene a cenar."
     },
     {
       "spanish": "aburrido / aburrida",
       "english": "bored (m/f)",
-      "audio": "/audio/unit-04/aburrido.mp3"
+      "audio": "/audio/unit-04/aburrido.mp3",
+      "section": "Las Emociones (con ESTAR)",
+      "example": "Nadie está aburrido en una reunión familiar así."
     },
     {
       "spanish": "asustado / asustada",
       "english": "scared / frightened (m/f)",
-      "audio": "/audio/unit-04/asustado.mp3"
+      "audio": "/audio/unit-04/asustado.mp3",
+      "section": "Las Emociones (con ESTAR)",
+      "example": "La criada está asustada y no quiere hablar."
     },
     {
       "spanish": "sorprendido / sorprendida",
       "english": "surprised (m/f)",
-      "audio": "/audio/unit-04/sorprendido.mp3"
+      "audio": "/audio/unit-04/sorprendido.mp3",
+      "section": "Las Emociones (con ESTAR)",
+      "example": "Estoy sorprendido: nadie entró en la casa."
     },
     {
       "spanish": "feliz",
       "english": "happy / joyful",
-      "audio": "/audio/unit-04/feliz.mp3"
+      "audio": "/audio/unit-04/feliz.mp3",
+      "section": "Las Emociones (con ESTAR)",
+      "example": "La abuela es feliz aquí, en su finca cerca del volcán."
     },
     {
       "spanish": "tranquilo / tranquila",
       "english": "calm / relaxed (m/f)",
-      "audio": "/audio/unit-04/tranquilo.mp3"
+      "audio": "/audio/unit-04/tranquilo.mp3",
+      "section": "Las Emociones (con ESTAR)",
+      "example": "Diego está tranquilo porque tiene coartada perfecta."
     },
     {
       "spanish": "vivir",
       "english": "to live",
-      "audio": "/audio/unit-04/vivir.mp3"
+      "audio": "/audio/unit-04/vivir.mp3",
+      "section": "Verbos -IR",
+      "example": "La familia Montoya vive en una finca cerca del Volcán Arenal."
     },
     {
       "spanish": "escribir",
       "english": "to write",
-      "audio": "/audio/unit-04/escribir.mp3"
+      "audio": "/audio/unit-04/escribir.mp3",
+      "section": "Verbos -IR",
+      "example": "Escribo cada declaración en mi cuaderno."
     },
     {
       "spanish": "abrir",
       "english": "to open",
-      "audio": "/audio/unit-04/abrir.mp3"
+      "audio": "/audio/unit-04/abrir.mp3",
+      "section": "Verbos -IR",
+      "example": "Alguien abre la caja azul de la habitación."
     },
     {
       "spanish": "recibir",
       "english": "to receive",
-      "audio": "/audio/unit-04/recibir.mp3"
+      "audio": "/audio/unit-04/recibir.mp3",
+      "section": "Verbos -IR",
+      "example": "La abuela recibe a toda la familia el domingo."
     },
     {
       "spanish": "compartir",
       "english": "to share",
-      "audio": "/audio/unit-04/compartir.mp3"
+      "audio": "/audio/unit-04/compartir.mp3",
+      "section": "Verbos -IR",
+      "example": "En esta familia todos comparten la mesa y el café."
     },
     {
       "spanish": "describir",
       "english": "to describe",
-      "audio": "/audio/unit-04/describir.mp3"
+      "audio": "/audio/unit-04/describir.mp3",
+      "section": "Verbos -IR",
+      "example": "Describo a cada sospechoso con ser y con estar."
     },
     {
       "spanish": "mi / mis",
       "english": "my (sing. / plural)",
-      "audio": "/audio/unit-04/mi.mp3"
+      "audio": "/audio/unit-04/mi.mp3",
+      "section": "Los Posesivos",
+      "example": "Mi collar no está en la caja azul, dice la abuela."
     },
     {
       "spanish": "tu / tus",
       "english": "your informal (sing. / plural)",
-      "audio": "/audio/unit-04/tu-pos.mp3"
+      "audio": "/audio/unit-04/tu-pos.mp3",
+      "section": "Los Posesivos",
+      "example": "¿Dónde están tus hermanos esta mañana?"
     },
     {
       "spanish": "su / sus",
       "english": "his / her / your formal (sing. / plural)",
-      "audio": "/audio/unit-04/su.mp3"
+      "audio": "/audio/unit-04/su.mp3",
+      "section": "Los Posesivos",
+      "example": "Su collar — pero ¿el collar de quién?"
     },
     {
       "spanish": "nuestro / nuestra",
       "english": "our (m / f)",
-      "audio": "/audio/unit-04/nuestro.mp3"
+      "audio": "/audio/unit-04/nuestro.mp3",
+      "section": "Los Posesivos",
+      "example": "Nuestra finca está cerca del Volcán Arenal."
     },
     {
       "spanish": "me gusta / me gustan",
       "english": "I like (sing. / plural)",
-      "audio": "/audio/unit-04/me-gusta.mp3"
+      "audio": "/audio/unit-04/me-gusta.mp3",
+      "section": "Me Gusta",
+      "example": "A la abuela le gusta el café de su propia finca."
     },
     {
       "spanish": "no me gusta",
       "english": "I don't like",
-      "audio": "/audio/unit-04/no-me-gusta.mp3"
+      "audio": "/audio/unit-04/no-me-gusta.mp3",
+      "section": "Me Gusta",
+      "example": "No me gusta esta declaración: no concuerda con las otras."
     }
   ],
   "stages": [

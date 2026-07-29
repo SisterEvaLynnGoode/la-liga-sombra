@@ -10,192 +10,268 @@
     {
       "spanish": "la Puerta del Sol",
       "english": "Puerta del Sol (main square)",
-      "audio": "/audio/unit-03/puerta-del-sol.mp3"
+      "audio": "/audio/unit-03/puerta-del-sol.mp3",
+      "section": "Lugares de Madrid",
+      "example": "La Sombra va a la Puerta del Sol con mucha prisa."
     },
     {
       "spanish": "el Museo del Prado",
       "english": "Prado Museum",
-      "audio": "/audio/unit-03/museo-del-prado.mp3"
+      "audio": "/audio/unit-03/museo-del-prado.mp3",
+      "section": "Lugares de Madrid",
+      "example": "La Sombra va al Museo del Prado primero."
     },
     {
       "spanish": "el Parque del Retiro",
       "english": "Retiro Park",
-      "audio": "/audio/unit-03/parque-del-retiro.mp3"
+      "audio": "/audio/unit-03/parque-del-retiro.mp3",
+      "section": "Lugares de Madrid",
+      "example": "Toma un café en un bar cerca del Parque del Retiro."
     },
     {
       "spanish": "la Gran Vía",
       "english": "Gran Vía (main street)",
-      "audio": "/audio/unit-03/gran-via.mp3"
+      "audio": "/audio/unit-03/gran-via.mp3",
+      "section": "Lugares de Madrid",
+      "example": "Corre por la Gran Vía y baja al metro."
     },
     {
       "spanish": "la Estación de Atocha",
       "english": "Atocha Train Station",
-      "audio": "/audio/unit-03/atocha.mp3"
+      "audio": "/audio/unit-03/atocha.mp3",
+      "section": "Lugares de Madrid",
+      "example": "Intenta escapar a París en tren desde la Estación de Atocha."
     },
     {
       "spanish": "el aeropuerto",
       "english": "airport",
-      "audio": "/audio/unit-03/aeropuerto.mp3"
+      "audio": "/audio/unit-03/aeropuerto.mp3",
+      "section": "Lugares de la Ciudad",
+      "example": "No va al aeropuerto: va a la estación de tren."
     },
     {
       "spanish": "el hotel",
       "english": "hotel",
-      "audio": "/audio/unit-03/hotel.mp3"
+      "audio": "/audio/unit-03/hotel.mp3",
+      "section": "Lugares de la Ciudad",
+      "example": "Nadie la ve entrar en el hotel."
     },
     {
       "spanish": "la farmacia",
       "english": "pharmacy",
-      "audio": "/audio/unit-03/farmacia.mp3"
+      "audio": "/audio/unit-03/farmacia.mp3",
+      "section": "Lugares de la Ciudad",
+      "example": "Pasa por delante de la farmacia y sigue corriendo."
     },
     {
       "spanish": "el restaurante",
       "english": "restaurant",
-      "audio": "/audio/unit-03/restaurante.mp3"
+      "audio": "/audio/unit-03/restaurante.mp3",
+      "section": "Lugares de la Ciudad",
+      "example": "Come algo rápido en un restaurante pequeño."
     },
     {
       "spanish": "el mercado",
       "english": "market",
-      "audio": "/audio/unit-03/mercado.mp3"
+      "audio": "/audio/unit-03/mercado.mp3",
+      "section": "Lugares de la Ciudad",
+      "example": "Cruza el mercado sin mirar a nadie."
     },
     {
       "spanish": "la plaza",
       "english": "plaza / town square",
-      "audio": "/audio/unit-03/plaza.mp3"
+      "audio": "/audio/unit-03/plaza.mp3",
+      "section": "Lugares de la Ciudad",
+      "example": "En la plaza hay mucha gente por la tarde."
     },
     {
       "spanish": "la calle",
       "english": "street",
-      "audio": "/audio/unit-03/calle.mp3"
+      "audio": "/audio/unit-03/calle.mp3",
+      "section": "Lugares de la Ciudad",
+      "example": "Los testigos la ven correr por las calles de Madrid."
     },
     {
       "spanish": "el banco",
       "english": "bank",
-      "audio": "/audio/unit-03/banco.mp3"
+      "audio": "/audio/unit-03/banco.mp3",
+      "section": "Lugares de la Ciudad",
+      "example": "El banco está cerrado a esa hora de la noche."
     },
     {
       "spanish": "la comisaría",
       "english": "police station",
-      "audio": "/audio/unit-03/comisaria.mp3"
+      "audio": "/audio/unit-03/comisaria.mp3",
+      "section": "Lugares de la Ciudad",
+      "example": "La comisaría está a dos calles del museo."
     },
     {
       "spanish": "el metro",
       "english": "subway / metro",
-      "audio": "/audio/unit-03/metro.mp3"
+      "audio": "/audio/unit-03/metro.mp3",
+      "section": "El Transporte",
+      "example": "Baja al metro en la Gran Vía."
     },
     {
       "spanish": "el autobús",
       "english": "bus",
-      "audio": "/audio/unit-03/autobus.mp3"
+      "audio": "/audio/unit-03/autobus.mp3",
+      "section": "El Transporte",
+      "example": "No toma el autobús: va a pie."
     },
     {
       "spanish": "el taxi",
       "english": "taxi",
-      "audio": "/audio/unit-03/taxi.mp3"
+      "audio": "/audio/unit-03/taxi.mp3",
+      "section": "El Transporte",
+      "example": "Un taxi la espera en la esquina."
     },
     {
       "spanish": "el tren",
       "english": "train",
-      "audio": "/audio/unit-03/tren.mp3"
+      "audio": "/audio/unit-03/tren.mp3",
+      "section": "El Transporte",
+      "example": "La Sombra va a tomar un tren. ¡No la dejes escapar!"
     },
     {
       "spanish": "a pie",
       "english": "on foot",
-      "audio": "/audio/unit-03/a-pie.mp3"
+      "audio": "/audio/unit-03/a-pie.mp3",
+      "section": "El Transporte",
+      "example": "Va al Museo del Prado a pie desde la Puerta del Sol."
     },
     {
       "spanish": "la bicicleta",
       "english": "bicycle",
-      "audio": "/audio/unit-03/bicicleta.mp3"
+      "audio": "/audio/unit-03/bicicleta.mp3",
+      "section": "El Transporte",
+      "example": "Nadie escapa de Madrid en bicicleta."
     },
     {
       "spanish": "el coche",
       "english": "car",
-      "audio": "/audio/unit-03/coche.mp3"
+      "audio": "/audio/unit-03/coche.mp3",
+      "section": "El Transporte",
+      "example": "El coche negro de la esquina no es suyo."
     },
     {
       "spanish": "el avión",
       "english": "airplane",
-      "audio": "/audio/unit-03/avion.mp3"
+      "audio": "/audio/unit-03/avion.mp3",
+      "section": "El Transporte",
+      "example": "Si toma un avión, el caso se termina."
     },
     {
       "spanish": "comer",
       "english": "to eat",
-      "audio": "/audio/unit-03/comer.mp3"
+      "audio": "/audio/unit-03/comer.mp3",
+      "section": "Verbos -ER",
+      "example": "Los testigos comen en la plaza cuando ella pasa."
     },
     {
       "spanish": "beber",
       "english": "to drink",
-      "audio": "/audio/unit-03/beber.mp3"
+      "audio": "/audio/unit-03/beber.mp3",
+      "section": "Verbos -ER",
+      "example": "Bebe un café en el Retiro y sigue su ruta."
     },
     {
       "spanish": "correr",
       "english": "to run",
-      "audio": "/audio/unit-03/correr.mp3"
+      "audio": "/audio/unit-03/correr.mp3",
+      "section": "Verbos -ER",
+      "example": "Los testigos la ven correr con una bolsa grande y oscura."
     },
     {
       "spanish": "leer",
       "english": "to read",
-      "audio": "/audio/unit-03/leer.mp3"
+      "audio": "/audio/unit-03/leer.mp3",
+      "section": "Verbos -ER",
+      "example": "Leo el periódico del día siguiente."
     },
     {
       "spanish": "vender",
       "english": "to sell",
-      "audio": "/audio/unit-03/vender.mp3"
+      "audio": "/audio/unit-03/vender.mp3",
+      "section": "Verbos -ER",
+      "example": "Nadie vende cuadros robados en Madrid."
     },
     {
       "spanish": "aprender",
       "english": "to learn",
-      "audio": "/audio/unit-03/aprender.mp3"
+      "audio": "/audio/unit-03/aprender.mp3",
+      "section": "Verbos -ER",
+      "example": "Aprendo la ruta de La Sombra por la ciudad."
     },
     {
       "spanish": "comprender",
       "english": "to understand",
-      "audio": "/audio/unit-03/comprender.mp3"
+      "audio": "/audio/unit-03/comprender.mp3",
+      "section": "Verbos -ER",
+      "example": "Comprendo su plan: quiere ir a París."
     },
     {
       "spanish": "ver",
       "english": "to see",
-      "audio": "/audio/unit-03/ver.mp3"
+      "audio": "/audio/unit-03/ver.mp3",
+      "section": "Verbos -ER",
+      "example": "¿Vio usted a una mujer con una bolsa negra?"
     },
     {
       "spanish": "¿adónde?",
       "english": "where to?",
-      "audio": "/audio/unit-03/adonde.mp3"
+      "audio": "/audio/unit-03/adonde.mp3",
+      "section": "Palabras de Pregunta",
+      "example": "¿Adónde va La Sombra ahora?"
     },
     {
       "spanish": "¿cuándo?",
       "english": "when?",
-      "audio": "/audio/unit-03/cuando.mp3"
+      "audio": "/audio/unit-03/cuando.mp3",
+      "section": "Palabras de Pregunta",
+      "example": "¿Cuándo sale el tren para París?"
     },
     {
       "spanish": "¿cómo?",
       "english": "how?",
-      "audio": "/audio/unit-03/como.mp3"
+      "audio": "/audio/unit-03/como.mp3",
+      "section": "Palabras de Pregunta",
+      "example": "¿Cómo va al museo, a pie o en metro?"
     },
     {
       "spanish": "¿por qué?",
       "english": "why?",
-      "audio": "/audio/unit-03/por-que.mp3"
+      "audio": "/audio/unit-03/por-que.mp3",
+      "section": "Palabras de Pregunta",
+      "example": "¿Por qué va a la Estación de Atocha?"
     },
     {
       "spanish": "¿quién?",
       "english": "who?",
-      "audio": "/audio/unit-03/quien.mp3"
+      "audio": "/audio/unit-03/quien.mp3",
+      "section": "Palabras de Pregunta",
+      "example": "¿Quién la vio en la Puerta del Sol?"
     },
     {
       "spanish": "¿cuánto?",
       "english": "how much / how many?",
-      "audio": "/audio/unit-03/cuanto.mp3"
+      "audio": "/audio/unit-03/cuanto.mp3",
+      "section": "Palabras de Pregunta",
+      "example": "¿Cuánto cuesta un billete de tren a París?"
     },
     {
       "spanish": "ir + a",
       "english": "to go to (verb + preposition)",
-      "audio": "/audio/unit-03/ir-a.mp3"
+      "audio": "/audio/unit-03/ir-a.mp3",
+      "section": "IR + A",
+      "example": "Ella va a la estación; yo voy al museo."
     },
     {
       "spanish": "voy a",
       "english": "I go to / I am going to",
-      "audio": "/audio/unit-03/voy-a.mp3"
+      "audio": "/audio/unit-03/voy-a.mp3",
+      "section": "IR + A",
+      "example": "Voy a la Puerta del Sol ahora mismo."
     }
   ],
   "stages": [

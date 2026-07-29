@@ -7,43 +7,265 @@
   "criminalName": "La Mariposa Roja",
   "bonusClue": "La Mariposa Roja lleva un pañuelo de seda roja con una mariposa bordada. Es la única sospechosa que dijo tener dolor de estómago pero comió un sándwich grande en la sala de espera sin ningún problema.",
   "vocab": [
-    { "spanish": "la cabeza", "english": "head", "audio": "/audio/unit-09/cabeza.mp3" },
-    { "spanish": "la cara", "english": "face", "audio": "/audio/unit-09/cara.mp3" },
-    { "spanish": "el ojo", "english": "eye", "audio": "/audio/unit-09/ojo.mp3" },
-    { "spanish": "la nariz", "english": "nose", "audio": "/audio/unit-09/nariz.mp3" },
-    { "spanish": "la boca", "english": "mouth", "audio": "/audio/unit-09/boca.mp3" },
-    { "spanish": "el diente", "english": "tooth", "audio": "/audio/unit-09/diente.mp3" },
-    { "spanish": "la oreja", "english": "ear", "audio": "/audio/unit-09/oreja.mp3" },
-    { "spanish": "el cuello", "english": "neck", "audio": "/audio/unit-09/cuello.mp3" },
-    { "spanish": "el hombro", "english": "shoulder", "audio": "/audio/unit-09/hombro.mp3" },
-    { "spanish": "el brazo", "english": "arm", "audio": "/audio/unit-09/brazo.mp3" },
-    { "spanish": "la mano", "english": "hand", "audio": "/audio/unit-09/mano.mp3" },
-    { "spanish": "el dedo", "english": "finger", "audio": "/audio/unit-09/dedo.mp3" },
-    { "spanish": "el estómago", "english": "stomach", "audio": "/audio/unit-09/estomago.mp3" },
-    { "spanish": "la espalda", "english": "back", "audio": "/audio/unit-09/espalda.mp3" },
-    { "spanish": "la pierna", "english": "leg", "audio": "/audio/unit-09/pierna.mp3" },
-    { "spanish": "el pie", "english": "foot", "audio": "/audio/unit-09/pie.mp3" },
-    { "spanish": "el corazón", "english": "heart", "audio": "/audio/unit-09/corazon.mp3" },
-    { "spanish": "el pelo", "english": "hair", "audio": "/audio/unit-09/pelo.mp3" },
-    { "spanish": "el doctor / la doctora", "english": "doctor (m/f)", "audio": "/audio/unit-09/doctor.mp3" },
-    { "spanish": "el enfermero / la enfermera", "english": "nurse (m/f)", "audio": "/audio/unit-09/enfermera.mp3" },
-    { "spanish": "la clínica", "english": "clinic", "audio": "/audio/unit-09/clinica.mp3" },
-    { "spanish": "el hospital", "english": "hospital", "audio": "/audio/unit-09/hospital.mp3" },
-    { "spanish": "la medicina", "english": "medicine", "audio": "/audio/unit-09/medicina.mp3" },
-    { "spanish": "la pastilla", "english": "pill", "audio": "/audio/unit-09/pastilla.mp3" },
-    { "spanish": "la receta", "english": "prescription", "audio": "/audio/unit-09/receta.mp3" },
-    { "spanish": "la cita", "english": "appointment", "audio": "/audio/unit-09/cita.mp3" },
-    { "spanish": "estar enfermo / enferma", "english": "to be sick (m/f)", "audio": "/audio/unit-09/enfermo.mp3" },
-    { "spanish": "estar sano / sana", "english": "to be healthy (m/f)", "audio": "/audio/unit-09/sano.mp3" },
-    { "spanish": "el dolor", "english": "pain / ache", "audio": "/audio/unit-09/dolor.mp3" },
-    { "spanish": "la fiebre", "english": "fever", "audio": "/audio/unit-09/fiebre.mp3" },
-    { "spanish": "la tos", "english": "cough", "audio": "/audio/unit-09/tos.mp3" },
-    { "spanish": "sentirse bien", "english": "to feel well", "audio": "/audio/unit-09/sentirse-bien.mp3" },
-    { "spanish": "sentirse mal", "english": "to feel bad", "audio": "/audio/unit-09/sentirse-mal.mp3" },
-    { "spanish": "me duele", "english": "it hurts me (one thing: me duele la cabeza)", "audio": "/audio/unit-09/me-duele.mp3" },
-    { "spanish": "me duelen", "english": "they hurt me (plural: me duelen los pies)", "audio": "/audio/unit-09/me-duelen.mp3" },
-    { "spanish": "tener dolor de", "english": "to have an ache in (tener dolor de cabeza)", "audio": "/audio/unit-09/tener-dolor.mp3" },
-    { "spanish": "¿qué te pasa?", "english": "what's wrong with you?", "audio": "/audio/unit-09/que-te-pasa.mp3" }
+    {
+      "spanish": "la cabeza",
+      "english": "head",
+      "audio": "/audio/unit-09/cabeza.mp3",
+      "section": "El Cuerpo",
+      "example": "El 'farmacéutico' dijo que le dolía la cabeza tres veces."
+    },
+    {
+      "spanish": "la cara",
+      "english": "face",
+      "audio": "/audio/unit-09/cara.mp3",
+      "section": "El Cuerpo",
+      "example": "Pablo tenía la cara hinchada por el dolor de dientes."
+    },
+    {
+      "spanish": "el ojo",
+      "english": "eye",
+      "audio": "/audio/unit-09/ojo.mp3",
+      "section": "El Cuerpo",
+      "example": "Le examinaron los ojos y estaban normales."
+    },
+    {
+      "spanish": "la nariz",
+      "english": "nose",
+      "audio": "/audio/unit-09/nariz.mp3",
+      "section": "El Cuerpo",
+      "example": "La enfermera le limpió la nariz al niño."
+    },
+    {
+      "spanish": "la boca",
+      "english": "mouth",
+      "audio": "/audio/unit-09/boca.mp3",
+      "section": "El Cuerpo",
+      "example": "El dentista le miró la boca a Pablo."
+    },
+    {
+      "spanish": "el diente",
+      "english": "tooth",
+      "audio": "/audio/unit-09/diente.mp3",
+      "section": "El Cuerpo",
+      "example": "Pablo llegó con un dolor de dientes real."
+    },
+    {
+      "spanish": "la oreja",
+      "english": "ear",
+      "audio": "/audio/unit-09/oreja.mp3",
+      "section": "El Cuerpo",
+      "example": "Al paciente le duele la oreja izquierda."
+    },
+    {
+      "spanish": "el cuello",
+      "english": "neck",
+      "audio": "/audio/unit-09/cuello.mp3",
+      "section": "El Cuerpo",
+      "example": "Beatriz llevaba un pañuelo rojo al cuello."
+    },
+    {
+      "spanish": "el hombro",
+      "english": "shoulder",
+      "audio": "/audio/unit-09/hombro.mp3",
+      "section": "El Cuerpo",
+      "example": "Don Aurelio no puede mover el hombro derecho."
+    },
+    {
+      "spanish": "el brazo",
+      "english": "arm",
+      "audio": "/audio/unit-09/brazo.mp3",
+      "section": "El Cuerpo",
+      "example": "La doctora le tomó la presión en el brazo."
+    },
+    {
+      "spanish": "la mano",
+      "english": "hand",
+      "audio": "/audio/unit-09/mano.mp3",
+      "section": "El Cuerpo",
+      "example": "Le tomó la mano para tomarle el pulso."
+    },
+    {
+      "spanish": "el dedo",
+      "english": "finger",
+      "audio": "/audio/unit-09/dedo.mp3",
+      "section": "El Cuerpo",
+      "example": "Se cortó un dedo en la cocina de la clínica."
+    },
+    {
+      "spanish": "el estómago",
+      "english": "stomach",
+      "audio": "/audio/unit-09/estomago.mp3",
+      "section": "El Cuerpo",
+      "example": "Beatriz dijo que le dolía el estómago, pero comió un sándwich."
+    },
+    {
+      "spanish": "la espalda",
+      "english": "back",
+      "audio": "/audio/unit-09/espalda.mp3",
+      "section": "El Cuerpo",
+      "example": "Tomás tiene dolor de espalda real y camina muy despacio."
+    },
+    {
+      "spanish": "la pierna",
+      "english": "leg",
+      "audio": "/audio/unit-09/pierna.mp3",
+      "section": "El Cuerpo",
+      "example": "No puede mover la pierna sin ayuda."
+    },
+    {
+      "spanish": "el pie",
+      "english": "foot",
+      "audio": "/audio/unit-09/pie.mp3",
+      "section": "El Cuerpo",
+      "example": "A Karina le dolían los pies de estar parada toda la mañana."
+    },
+    {
+      "spanish": "el corazón",
+      "english": "heart",
+      "audio": "/audio/unit-09/corazon.mp3",
+      "section": "El Cuerpo",
+      "example": "La doctora le escuchó el corazón: todo normal."
+    },
+    {
+      "spanish": "el pelo",
+      "english": "hair",
+      "audio": "/audio/unit-09/pelo.mp3",
+      "section": "El Cuerpo",
+      "example": "Beatriz tiene el pelo oscuro y suelto."
+    },
+    {
+      "spanish": "el doctor / la doctora",
+      "english": "doctor (m/f)",
+      "audio": "/audio/unit-09/doctor.mp3",
+      "section": "En la Clínica",
+      "example": "La doctora Méndez examinó a todos los pacientes."
+    },
+    {
+      "spanish": "el enfermero / la enfermera",
+      "english": "nurse (m/f)",
+      "audio": "/audio/unit-09/enfermera.mp3",
+      "section": "En la Clínica",
+      "example": "La enfermera nueva estuvo en la recepción toda la mañana."
+    },
+    {
+      "spanish": "la clínica",
+      "english": "clinic",
+      "audio": "/audio/unit-09/clinica.mp3",
+      "section": "En la Clínica",
+      "example": "El Taíno desapareció de la Clínica Santa Bárbara."
+    },
+    {
+      "spanish": "el hospital",
+      "english": "hospital",
+      "audio": "/audio/unit-09/hospital.mp3",
+      "section": "En la Clínica",
+      "example": "El hospital está a tres calles de la clínica."
+    },
+    {
+      "spanish": "la medicina",
+      "english": "medicine",
+      "audio": "/audio/unit-09/medicina.mp3",
+      "section": "En la Clínica",
+      "example": "La medicina está en el armario de la sala."
+    },
+    {
+      "spanish": "la pastilla",
+      "english": "pill",
+      "audio": "/audio/unit-09/pastilla.mp3",
+      "section": "En la Clínica",
+      "example": "El 'farmacéutico' rechazó la pastilla que le ofrecieron."
+    },
+    {
+      "spanish": "la receta",
+      "english": "prescription",
+      "audio": "/audio/unit-09/receta.mp3",
+      "section": "En la Clínica",
+      "example": "La doctora le escribió una receta a Pablo."
+    },
+    {
+      "spanish": "la cita",
+      "english": "appointment",
+      "audio": "/audio/unit-09/cita.mp3",
+      "section": "En la Clínica",
+      "example": "Tomás llegó a las nueve para su cita."
+    },
+    {
+      "spanish": "estar enfermo / enferma",
+      "english": "to be sick (m/f)",
+      "audio": "/audio/unit-09/enfermo.mp3",
+      "section": "Estar Enfermo",
+      "example": "Pablo estaba demasiado enfermo para robar nada."
+    },
+    {
+      "spanish": "estar sano / sana",
+      "english": "to be healthy (m/f)",
+      "audio": "/audio/unit-09/sano.mp3",
+      "section": "Estar Enfermo",
+      "example": "La doctora la examinó: estaba completamente sana."
+    },
+    {
+      "spanish": "el dolor",
+      "english": "pain / ache",
+      "audio": "/audio/unit-09/dolor.mp3",
+      "section": "Estar Enfermo",
+      "example": "El dolor no se puede medir — por eso es fácil fingirlo."
+    },
+    {
+      "spanish": "la fiebre",
+      "english": "fever",
+      "audio": "/audio/unit-09/fiebre.mp3",
+      "section": "Estar Enfermo",
+      "example": "No tenía fiebre ni ningún síntoma real."
+    },
+    {
+      "spanish": "la tos",
+      "english": "cough",
+      "audio": "/audio/unit-09/tos.mp3",
+      "section": "Estar Enfermo",
+      "example": "Un paciente con tos esperaba en la sala."
+    },
+    {
+      "spanish": "sentirse bien",
+      "english": "to feel well",
+      "audio": "/audio/unit-09/sentirse-bien.mp3",
+      "section": "Estar Enfermo",
+      "example": "Cuando salió caminando rápido, se sentía muy bien."
+    },
+    {
+      "spanish": "sentirse mal",
+      "english": "to feel bad",
+      "audio": "/audio/unit-09/sentirse-mal.mp3",
+      "section": "Estar Enfermo",
+      "example": "Dijo que se sentía mal, pero comió sin problema."
+    },
+    {
+      "spanish": "me duele",
+      "english": "it hurts me (one thing: me duele la cabeza)",
+      "audio": "/audio/unit-09/me-duele.mp3",
+      "section": "El Verbo DOLER",
+      "example": "Me duele la cabeza — una cosa, así que duele."
+    },
+    {
+      "spanish": "me duelen",
+      "english": "they hurt me (plural: me duelen los pies)",
+      "audio": "/audio/unit-09/me-duelen.mp3",
+      "section": "El Verbo DOLER",
+      "example": "Me duelen los pies — varias cosas, así que duelen."
+    },
+    {
+      "spanish": "tener dolor de",
+      "english": "to have an ache in (tener dolor de cabeza)",
+      "audio": "/audio/unit-09/tener-dolor.mp3",
+      "section": "El Verbo DOLER",
+      "example": "Dijo tener dolor de estómago para entrar en la sala."
+    },
+    {
+      "spanish": "¿qué te pasa?",
+      "english": "what's wrong with you?",
+      "audio": "/audio/unit-09/que-te-pasa.mp3",
+      "section": "El Verbo DOLER",
+      "example": "¿Qué te pasa? Escucha bien la respuesta."
+    }
   ],
   "stages": [
     {
@@ -65,18 +287,54 @@
     {
       "type": "vocabMatch",
       "pairs": [
-        { "spanish": "la cabeza", "english": "head" },
-        { "spanish": "la mano", "english": "hand" },
-        { "spanish": "el estómago", "english": "stomach" },
-        { "spanish": "la espalda", "english": "back" },
-        { "spanish": "el pie", "english": "foot" },
-        { "spanish": "la enfermera", "english": "nurse" },
-        { "spanish": "el dolor", "english": "pain / ache" },
-        { "spanish": "la fiebre", "english": "fever" },
-        { "spanish": "la pastilla", "english": "pill" },
-        { "spanish": "me duele", "english": "it hurts me (one)" },
-        { "spanish": "me duelen", "english": "they hurt me (plural)" },
-        { "spanish": "sentirse mal", "english": "to feel bad" }
+        {
+          "spanish": "la cabeza",
+          "english": "head"
+        },
+        {
+          "spanish": "la mano",
+          "english": "hand"
+        },
+        {
+          "spanish": "el estómago",
+          "english": "stomach"
+        },
+        {
+          "spanish": "la espalda",
+          "english": "back"
+        },
+        {
+          "spanish": "el pie",
+          "english": "foot"
+        },
+        {
+          "spanish": "la enfermera",
+          "english": "nurse"
+        },
+        {
+          "spanish": "el dolor",
+          "english": "pain / ache"
+        },
+        {
+          "spanish": "la fiebre",
+          "english": "fever"
+        },
+        {
+          "spanish": "la pastilla",
+          "english": "pill"
+        },
+        {
+          "spanish": "me duele",
+          "english": "it hurts me (one)"
+        },
+        {
+          "spanish": "me duelen",
+          "english": "they hurt me (plural)"
+        },
+        {
+          "spanish": "sentirse mal",
+          "english": "to feel bad"
+        }
       ]
     },
     {
@@ -84,13 +342,34 @@
       "clueReward": "El Taíno desapareció entre las nueve y las diez de la mañana. Una mujer con un pañuelo rojo dijo que tenía dolor de estómago, pero la enfermera la vio comer un sándwich grande sin problema.",
       "passage": "REGISTRO DE LA CLÍNICA SANTA BÁRBARA\nZona Colonial, Santo Domingo — República Dominicana\nTurno de la mañana — Enfermera Yolanda\n\nA las ocho de la mañana abrí la clínica. El Taíno de Madera estaba en su vitrina, como siempre. La doctora Méndez llegó a las ocho y media.\n\nA las nueve llegaron los pacientes. El señor Reyes dijo: 'Me duele mucho la espalda. No puedo trabajar.' Le di una cita con la doctora. Es un hombre mayor y caminaba despacio — de verdad le dolía la espalda.\n\nDespués llegó un joven, Pablo. Dijo: 'Me duelen los dientes. Tengo mucho dolor.' Tenía la cara hinchada — claramente estaba enfermo. La doctora le escribió una receta.\n\nA las nueve y media llegó una mujer con un pañuelo rojo de seda. Dijo: 'Me duele el estómago. Me siento muy mal.' Pero pocos minutos después, la vi comer un sándwich grande en la sala de espera, sin ningún problema. ¡Una persona con dolor de estómago no come así! Me pareció muy extraño.\n\nLa mujer caminó cerca de la vitrina del Taíno dos veces. A las diez, cuando llamé su nombre para la cita, ya no estaba. Y entonces lo vi: ¡la vitrina estaba vacía! El Taíno de Madera había desaparecido.\n\nNota cultural: Los taínos fueron el pueblo indígena de La Española (hoy República Dominicana y Haití). Usaban figuras de madera llamadas 'cemíes' en sus ceremonias de sanación. El merengue y la bachata, la música nacional dominicana, nacieron mucho después en esta misma isla.",
       "glossary": [
-        { "word": "me duele la espalda", "translation": "my back hurts (doler: me duele + one body part)" },
-        { "word": "me duelen los dientes", "translation": "my teeth hurt (doler: me duelen + plural body part)" },
-        { "word": "la vitrina", "translation": "display case / glass case" },
-        { "word": "hinchada", "translation": "swollen" },
-        { "word": "la sala de espera", "translation": "the waiting room" },
-        { "word": "el pañuelo", "translation": "scarf / handkerchief" },
-        { "word": "cemíes", "translation": "carved Taíno figures used in healing ceremonies" }
+        {
+          "word": "me duele la espalda",
+          "translation": "my back hurts (doler: me duele + one body part)"
+        },
+        {
+          "word": "me duelen los dientes",
+          "translation": "my teeth hurt (doler: me duelen + plural body part)"
+        },
+        {
+          "word": "la vitrina",
+          "translation": "display case / glass case"
+        },
+        {
+          "word": "hinchada",
+          "translation": "swollen"
+        },
+        {
+          "word": "la sala de espera",
+          "translation": "the waiting room"
+        },
+        {
+          "word": "el pañuelo",
+          "translation": "scarf / handkerchief"
+        },
+        {
+          "word": "cemíes",
+          "translation": "carved Taíno figures used in healing ceremonies"
+        }
       ],
       "questions": [
         {
@@ -169,14 +448,24 @@
       "questions": [
         {
           "question": "¿Qué dijo la mujer que le dolía?",
-          "options": ["La cabeza", "El estómago", "La espalda", "Los dientes"],
+          "options": [
+            "La cabeza",
+            "El estómago",
+            "La espalda",
+            "Los dientes"
+          ],
           "correctIndex": 1,
           "explanationEs": "La enfermera dice: 'Me dijo que le dolía el estómago.' Doler: le dolía el estómago.",
           "explanationEn": "The nurse says the woman told her 'her stomach hurt.' Doler: le dolía el estómago."
         },
         {
           "question": "¿Qué comió la mujer en la sala de espera?",
-          "options": ["Una pastilla", "Una sopa", "Un sándwich grande", "Nada"],
+          "options": [
+            "Una pastilla",
+            "Una sopa",
+            "Un sándwich grande",
+            "Nada"
+          ],
           "correctIndex": 2,
           "explanationEs": "Dice: 'Comió un sándwich grande.' Una persona con dolor de estómago no come así.",
           "explanationEn": "She ate a big sandwich — strange for someone with a stomachache."
@@ -295,12 +584,30 @@
     {
       "type": "sentenceBuilder",
       "sentences": [
-        { "sentence": "Me duele la cabeza", "translation": "My head hurts. (doler + one body part: me duele la cabeza)" },
-        { "sentence": "Me duelen los pies", "translation": "My feet hurt. (doler + plural: me duelen los pies)" },
-        { "sentence": "El señor Reyes tiene dolor de espalda", "translation": "Mr. Reyes has a backache. (tener dolor de + body part)" },
-        { "sentence": "La mujer mintió sobre su dolor de estómago", "translation": "The woman lied about her stomachache." },
-        { "sentence": "Pablo está enfermo y le duelen los dientes", "translation": "Pablo is sick and his teeth hurt him." },
-        { "sentence": "La ladrona caminó rápido y no le dolía nada", "translation": "The thief walked fast and nothing hurt her." }
+        {
+          "sentence": "Me duele la cabeza",
+          "translation": "My head hurts. (doler + one body part: me duele la cabeza)"
+        },
+        {
+          "sentence": "Me duelen los pies",
+          "translation": "My feet hurt. (doler + plural: me duelen los pies)"
+        },
+        {
+          "sentence": "El señor Reyes tiene dolor de espalda",
+          "translation": "Mr. Reyes has a backache. (tener dolor de + body part)"
+        },
+        {
+          "sentence": "La mujer mintió sobre su dolor de estómago",
+          "translation": "The woman lied about her stomachache."
+        },
+        {
+          "sentence": "Pablo está enfermo y le duelen los dientes",
+          "translation": "Pablo is sick and his teeth hurt him."
+        },
+        {
+          "sentence": "La ladrona caminó rápido y no le dolía nada",
+          "translation": "The thief walked fast and nothing hurt her."
+        }
       ]
     },
     {
