@@ -167,6 +167,9 @@ export default function DashboardClient({ isAdmin = false }: { isAdmin?: boolean
               </div>
             )}
           </div>
+          <a href="/teacher/lessons" className="font-typewriter text-[10px] tracking-widest uppercase text-[#8b7355] hover:text-[#c9933a] transition-colors">
+            📋 Lesson Plans
+          </a>
           <a href="/teacher/worksheets" className="font-typewriter text-[10px] tracking-widest uppercase text-[#8b7355] hover:text-[#c9933a] transition-colors">
             🖨 Worksheets
           </a>

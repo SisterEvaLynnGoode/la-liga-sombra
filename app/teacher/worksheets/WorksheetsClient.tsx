@@ -194,38 +194,24 @@ function LessonPlan({ packet, roman }: { packet: WorksheetPacket; roman: string 
         <li><strong>Communication:</strong> Students describe a suspect and report findings in Spanish, staying in the detective role.</li>
       </ul>
 
-      {/* Weekly rhythm */}
-      <h3 className="font-display font-black text-base uppercase mt-4 mb-1">The 4-Day Weekly Engine</h3>
-      <table className="w-full border-collapse font-serif text-[12px] mb-3">
-        <tbody>
-          {[
-            ["Day 1 — Field (game)", "Play this unit in La Liga Sombra: Academia + Briefing + first stages. Meet the vocabulary in context."],
-            ["Day 2 — Field (game)", "Continue the case to the Identificación stage and solve it. Capture the suspect."],
-            ["Day 3 — HQ (worksheet)", "Print the Vocabulary + Grammar files. Reinforce the same words and grammar on paper, away from the screen."],
-            ["Day 4 — Culture", "Print the Culture file. Read the three P's, do the comparison, and build the cultural product. Work toward the arc's presentation milestone."],
-          ].map(([d, desc]) => (
-            <tr key={d} className="border border-black align-top">
-              <td className="border border-black p-2 font-mono text-[11px] w-[30%]">{d}</td>
-              <td className="border border-black p-2">{desc}</td>
-            </tr>
-          ))}
-        </tbody>
-      </table>
-      <p className="font-serif text-[11px] italic mb-3">
-        Across an 18-week semester this engine repeats once per unit, ending each six-week arc with a student presentation.
+      {/* Where the day-by-day plan lives now.
+          The 4-day engine table used to be duplicated here. It predated the story
+          decks and the vocab decks, so it described a week with no slot for either,
+          and it disagreed with lib/pacing/plan.ts and the static PDF. The full
+          5-day plan is now generated per case at /teacher/lessons from the
+          materials that actually exist. */}
+      <h3 className="font-display font-black text-base uppercase mt-4 mb-1">This Week&apos;s Plan</h3>
+      <p className="font-serif text-[13px] leading-snug mb-2">
+        These printable files are the <strong>Day 4 (HQ)</strong> and <strong>Day 5 (Culture)</strong> materials
+        for this case. The full five-day plan — including the story deck briefing, the vocabulary deck,
+        and the two field days on the game — is generated per case on the{" "}
+        <strong>Lesson Plans</strong> page, along with objectives, ACTFL modes, assessment and
+        differentiation for an observer or a sub.
       </p>
-
-      {/* Lesson flow */}
-      <h3 className="font-display font-black text-base uppercase mt-4 mb-1">HQ-Day Flow (≈45 min)</h3>
-      <ol className="list-decimal ml-5 font-serif text-[13px] leading-snug space-y-0.5">
-        <li><strong>Warm-up (5 min):</strong> Post the suspect&apos;s name. Students brainstorm 5 Spanish words to describe a suspect.</li>
-        <li><strong>Vocabulary File (15 min):</strong> Matching, Translate the Evidence, Unscramble the Clues.</li>
-        <li><strong>Grammar File (20 min):</strong> Reference table + mini-lesson, the Crack-the-Code drill, the transformation/conjugation drill, then a short production task.</li>
-        <li><strong>Exit ticket (5 min):</strong> One Spanish sentence describing the suspect.</li>
-      </ol>
+      <p className="font-mono text-[11px] mb-3">→ /teacher/lessons</p>
 
       <div className="border-l-4 border-black pl-3 mt-4 font-serif text-[12px]">
-        <strong>Materials:</strong> printed files (this document), pencil. No screens required.
+        <strong>Materials for these two days:</strong> the printed files in this document, and a pencil. No screens required.
         <br /><strong>Differentiation:</strong> struggling agents may use the in-app Academia or the Vocabulary Bank page as a word reference; the Grammar reference table stays beside them while they work.
       </div>
     </section>
