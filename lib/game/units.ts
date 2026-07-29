@@ -103,4 +103,10 @@ export const UNITS: UnitMeta[] = [
     description: "Joya de Cerén and Maya village daily life — stem-changing verbs (e→ie, o→ue, e→i)",
     criminal: "El Cronista",      stolenItem: "La Vasija Pintada",     rotation: -1.4, themeColor: "#3f6f7f",
   },
+  {
+    number: 14, country: "Nicaragua",           countryCode: "NI", flag: "🇳🇮",
+    titleEs: "El Manuscrito de Darío", titleEn: "Darío's Manuscript",
+    description: "León in 1907 and the return of Rubén Darío — gustar, encantar and indirect object pronouns",
+    criminal: "El Cronista",      stolenItem: "El Manuscrito de Darío", rotation: 2.1, themeColor: "#6b4c9b",
+  },
 ];

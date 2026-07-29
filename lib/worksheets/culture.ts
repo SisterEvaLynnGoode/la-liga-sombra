@@ -474,6 +474,40 @@ export const CULTURE: Record<number, CultureLesson> = {
     teacherNote:
       "Run after Caso 13's game + vocab days. ~35–45 min. Lead with the humanity of the site: no one died at Joya de Cerén, which frees students to be curious rather than solemn — the story here is survival plus an accidental time capsule of ordinary life. The 'compara' prompt is the emotional hook and works beautifully as a whole-class share; students are usually surprised by how much a stranger could infer from five objects. The project doubles as your stem-changing-verb production check, so collect it for a grade. Connect back to Casos 11 and 12: Copán gave us Maya writing, Tikal gave us Maya astronomy, and Cerén gives us the Maya kitchen — three very different ways to know a civilization. Floor plans make an excellent bulletin-board display.",
   },
+  14: {
+    theme: "Rubén Darío y León (Nicaragua)",
+    reading: {
+      products:
+        "Nicaragua's most famous export is not a crop. It is a poet. Rubén Darío was born in 1867 in a village now renamed Ciudad Darío in his honour, and he became the most influential poet in the Spanish language of his generation. His books — Azul… (1888), Prosas profanas (1896), Cantos de vida y esperanza (1905) — were read across Latin America and Spain, and Spanish speakers still know his opening lines by heart the way English speakers know Shakespeare's. He is called el Príncipe de las Letras Castellanas, the Prince of Castilian Letters. He died in León in 1916 and is buried inside its cathedral, beneath a sculpted lion that appears to be weeping.",
+      practices:
+        "In León, poetry is spoken, not just read. Verses are recited out loud in plazas, at gatherings, at school, at funerals — memorising and performing poems is ordinary here, not something only specialists do. The cathedral where Darío is buried, the Basílica de la Asunción, is the largest cathedral in Central America and a UNESCO World Heritage Site. People still visit the tomb. When Darío returned to Nicaragua in 1907 after years in Europe, the country received him the way other countries receive a winning team.",
+      perspectives:
+        "Here is why Darío matters beyond the poems. For four centuries, literary movements in Spanish flowed one direction: from Spain outward to the Americas. Darío reversed it. Modernismo started in Latin America and travelled to Spain, and Spanish poets took their lead from a Nicaraguan. That is why a country of six million people treats a poet as a national hero, and why an original page in his own handwriting is not a collectible — it is evidence that the words came from here.",
+    },
+    comprehension: [
+      { question: "What is Rubén Darío called?", answer: "El Príncipe de las Letras Castellanas — the Prince of Castilian Letters" },
+      { question: "Name one of his books.", answer: "Azul… (1888), Prosas profanas (1896) or Cantos de vida y esperanza (1905)" },
+      { question: "Where is he buried, and what marks the tomb?", answer: "Inside León's cathedral, beneath a sculpted weeping lion" },
+      { question: "Which direction did literary influence usually flow before Darío?", answer: "From Spain out to the Americas — Darío reversed it" },
+      { question: "True or false: in León, poems are mainly read silently.", answer: "False — they are recited out loud, in public" },
+    ],
+    compara:
+      "In León, ordinary people memorise poems and say them out loud in public. In a lot of US schools, poetry is something you analyze on a worksheet. Is there anything your community DOES memorise and perform out loud — song lyrics, a prayer, a chant, a speech, a comedy bit? Write 2–3 sentences comparing that to reciting Darío in a plaza. Use gustar or encantar at least twice (A mí me encanta…, A mi familia le gusta…).",
+    project: {
+      title: "Tu Propio Verso / Write One Line",
+      brief:
+        "Write ONE line of poetry in Spanish about something you love, using gustar or encantar correctly — then illustrate it. The line must have the pronoun and the right ending (A mí me encantan las noches de verano). Copy Darío's move and make it about something ordinary: the sea, a street, your grandmother's kitchen, a sound. One good line beats four bad ones, and one line is enough to get the grammar wrong or right.",
+      materials: "This sheet, pencil, colored pencils optional.",
+      checklist: [
+        "One line of original Spanish poetry",
+        "Uses gustar, encantar, interesar or importar with the correct pronoun",
+        "Verb ending matches the THING, not the person (gusta vs gustan)",
+        "Illustrated, and readable enough to display",
+      ],
+    },
+    teacherNote:
+      "Run after Caso 14's game + vocab days. ~35–45 min. The perspectives paragraph is the one to read out loud: modernismo reversed the direction of literary influence, which is the fact that explains why a small country treats a poet as a national hero and why the stolen manuscript is evidence rather than merchandise. That reframes the whole case. The project is deliberately tiny — one line — because it is really a grammar check wearing a poem's clothes: students cannot write it without choosing a pronoun and matching the verb to the thing. Collect it for a grade and display the good ones. If you want an extra two minutes with big payoff, read the opening of 'Sonatina' aloud ('La princesa está triste… ¿qué tendrá la princesa?') and let them hear the rhythm before they understand every word; that IS how poetry works here. Note for accuracy: the case is set in 1907, the year of Darío's return, so 'A Margarita Debayle' (1908) does not exist yet — don't hand it out as the stolen poem.",
+  },
 };
 
 export function getCultureLesson(unitNumber: number): CultureLesson | null {

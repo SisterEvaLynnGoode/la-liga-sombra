@@ -577,6 +577,47 @@ export const GRAMMAR: Record<number, GrammarLesson> = {
       ],
     },
   },
+  14: {
+    title: "Gustar, Encantar & Interesar — Verbs That Run Backwards",
+    briefing:
+      "English says 'I like the poem.' Spanish says 'me gusta el poema' — literally, the poem is pleasing TO ME. That flip changes everything. The person becomes an indirect object (me, te, le, nos, les) and THE THING becomes the subject, which means the verb agrees with the thing and not with you. One thing: me gusta el poema. More than one thing: me gustan los poemas. You never say 'yo gusto' unless you mean that other people find YOU pleasing. Encantar (to love something), interesar (to interest), importar (to matter) and molestar (to bother) all work exactly the same way. If you met doler in Santo Domingo — me duele la cabeza, me duelen los pies — this is the same machine with a different verb.",
+    examples: [
+      { es: "Me gusta el poema. / Me gustan los poemas.", en: "I like the poem. / I like the poems. (The verb follows the thing.)" },
+      { es: "A todos aquí nos encanta la poesía.", en: "Everyone here loves poetry." },
+      { es: "Al forastero le interesa el papel, no las palabras.", en: "The paper interests the stranger, not the words." },
+    ],
+    referenceTable: {
+      caption: "The person is the pronoun; the THING decides the ending",
+      headers: ["Pronombre", "una cosa", "varias cosas"],
+      rows: [
+        ["me (to me)", "me gusta", "me gustan"],
+        ["te (to you)", "te gusta", "te gustan"],
+        ["le (to him / her / you formal)", "le gusta", "le gustan"],
+        ["nos (to us)", "nos gusta", "nos gustan"],
+        ["les (to them)", "les gusta", "les gustan"],
+      ],
+    },
+    drills: [
+      { prompt: "Me ____ el poema. (una cosa)", answer: "gusta" },
+      { prompt: "Me ____ los poemas. (varias cosas)", answer: "gustan" },
+      { prompt: "A todos nosotros ____ encanta la poesía. (¿qué pronombre?)", answer: "nos" },
+      { prompt: "A ella ____ gustan los versos del mar. (¿qué pronombre?)", answer: "le" },
+      { prompt: "Al forastero le ____ el papel, no las palabras. (interesar)", answer: "interesa" },
+      { prompt: "A los jóvenes les ____ las palabras. (importar)", answer: "importan" },
+    ],
+    secondDrill: {
+      title: "Whose Feeling Is It? — Pick the Pronoun, Then the Ending",
+      instructions:
+        "Two decisions every time. First: WHO feels it → me, te, le, nos, les. Second: how many THINGS → singular or plural ending. Write both.",
+      items: [
+        { prompt: "A mí ____ ____ la rima. (gustar)", answer: "me gusta" },
+        { prompt: "A ti ____ ____ los libros. (encantar)", answer: "te encantan" },
+        { prompt: "A Amanda ____ ____ la poesía. (encantar)", answer: "le encanta" },
+        { prompt: "A nosotros ____ ____ las palabras. (importar)", answer: "nos importan" },
+        { prompt: "A ellos ____ ____ el manuscrito. (interesar)", answer: "les interesa" },
+      ],
+    },
+  },
 };
 
 /** Fallback for units without an authored grammar lesson yet. */

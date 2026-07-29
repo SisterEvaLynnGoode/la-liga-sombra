@@ -2318,6 +2318,188 @@ export const STORIES: Record<number, CaseStory> = {
     teacherNote:
       "Run immediately before students open Caso 13. Lead with the humanity of the site: no human remains have ever been found at Joya de Cerén, which means this is a story about a village that got out in time, not a disaster. That frees students to be curious rather than solemn, and it is the honest framing. The stakes slide carries the idea worth keeping — archaeology is weighted toward kings because the powerful built in stone, so a frozen ordinary evening answers questions no royal tomb can. Students find that genuinely interesting, and the discussion prompt turns it on their own lives, which is the best turn-and-talk in the arc. Grammatically the spine is the boot: the stem changes for yo, tú, él and ellos and NOT for nosotros, which is the single most common error with these verbs. Do the production beat — saying 'yo duermo, nosotros dormimos' out loud twice does more than any explanation. If you taught Caso 6, note students met stem-changers there first; this is the case that makes the nosotros exception explicit. Watch the ESTO ES REAL stamps: El Cronista, the vessel, and the suspects are invented, while the eruption, the absence of human remains, the preserved kitchens and fields, and the 1993 UNESCO listing are real. Use NÚCLEO to drop the country slide if short.",
   },
+
+  14: {
+    hook: "A whole city turned out for a poet. One man in the crowd wanted to know what the poem was worth.",
+
+    crime: {
+      eyebrow: "El Crimen",
+      headline: "The Whole City Is in the Plaza",
+      body: [
+        "León, Nicaragua, 1907. Rubén Darío has come home after years in Europe, and the country is receiving him the way other countries receive a winning team. There is music in the plaza and young people reading verses out loud in front of the cathedral.",
+        "Inside the library there is a page in his own handwriting — a poem, the ink still dark. Tonight it is supposed to stay there.",
+        "Your thief is somewhere in that crowd, and for once he is not hiding behind a costume. He is hiding behind an opinion: he is pretending to be an admirer. The problem is that he does not actually like poetry, and in this city that is very hard to fake.",
+      ],
+      pull: "In León, not liking poetry is a disguise that slips.",
+      real: false,
+    },
+
+    artifact: [
+      {
+        eyebrow: "Lo Robado · What Was Stolen",
+        headline: "El Manuscrito",
+        body: [
+          "One page, handwritten, in the poet's own ink. Not a printed book — the actual sheet the words first landed on.",
+          "That is the whole reason it matters and the whole reason it is stealable: it is small, it is paper, and it is the only copy that was ever touched by the person who made it.",
+        ],
+        facts: [
+          { label: "Qué", value: "Un manuscrito original — un poema escrito a mano" },
+          { label: "Dónde", value: "La biblioteca de León" },
+          { label: "Cuándo", value: "La noche de la fiesta, 1907" },
+        ],
+        real: false,
+      },
+      {
+        eyebrow: "El Contexto · The Real Thing",
+        headline: "Rubén Darío Turned the Traffic Around",
+        body: [
+          "For four hundred years, literary movements in Spanish went one direction: out from Spain to the Americas. Darío reversed it. Modernismo began in Latin America and travelled to Spain, and Spanish poets started taking their lead from a Nicaraguan.",
+          "He is called el Príncipe de las Letras Castellanas. Spanish speakers still know his opening lines the way English speakers know Shakespeare's — 'La princesa está triste… ¿qué tendrá la princesa?' He died in León in 1916 and is buried inside its cathedral, under a carved lion that looks like it is weeping.",
+        ],
+        facts: [
+          { label: "Nació", value: "1867 — in a village now called Ciudad Darío" },
+          { label: "Azul…", value: "1888" },
+          { label: "Cantos de vida y esperanza", value: "1905" },
+          { label: "Su tumba", value: "Inside León's cathedral, beneath a weeping lion" },
+        ],
+        real: true,
+      },
+    ],
+
+    place: [
+      {
+        eyebrow: "El País · The Country",
+        headline: "Nicaragua",
+        body: [
+          "You are in the largest country in Central America by area, and one of the emptiest — most of it is lake, forest and volcano. Lake Nicaragua is big enough to have islands with their own volcanoes on them.",
+          "Spanish here uses vos rather than tú, the same as Argentina, and on the Caribbean side of the country people speak Miskito and English Creole as well. Your case files use tú, so you will not have to produce vos — just do not be thrown when you hear it.",
+        ],
+        facts: [
+          { label: "Capital", value: "Managua" },
+          { label: "Población", value: "~7 million" },
+          { label: "Moneda", value: "el córdoba" },
+          { label: "Idiomas", value: "Español, miskito, criollo inglés" },
+        ],
+        real: true,
+        optional: true,
+      },
+      {
+        eyebrow: "La Ciudad · The City",
+        headline: "León",
+        body: [
+          "You will hear poetry in the street here, and that is not a figure of speech. In León verses get recited out loud — in plazas, at school, at gatherings, at funerals. Memorising a poem and performing it is an ordinary thing to be able to do, not a specialist skill.",
+          "The cathedral on the plaza, the Basílica de la Asunción, is the largest cathedral in Central America and a UNESCO World Heritage Site. León was Nicaragua's capital until 1852, and it has been the country's university and argument town ever since.",
+        ],
+        facts: [
+          { label: "La catedral", value: "Largest in Central America · UNESCO World Heritage" },
+          { label: "Fue capital", value: "Hasta 1852" },
+          { label: "Población", value: "~200.000" },
+          { label: "Cerca", value: "Volcán Cerro Negro — people sled down it" },
+        ],
+        real: true,
+      },
+    ],
+
+    stakes: {
+      eyebrow: "Por Qué Importa · Why It Matters",
+      headline: "A Handwritten Page Is Proof of Where the Words Came From",
+      body: [
+        "A printed poem can be reprinted forever, so a book is never really destroyed. A manuscript is different. It is the single physical object that connects the words to the hand and the place they came from.",
+        "For a country whose main claim on world literature is that one of its sons changed the direction the whole language was flowing, that page is not a collectible. It is evidence. Take it into a private collection and the poem survives — but the proof that it started here does not.",
+      ],
+      pull: "You cannot steal a poem. You can steal the proof of who wrote it, and where.",
+      real: true,
+    },
+
+    vocab: [
+      {
+        eyebrow: "Herramienta 1 · The Backwards Verb",
+        headline: "You Do Not Like Things. Things Please You.",
+        situation:
+          "English: 'I like the poem.' Spanish: 'me gusta el poema' — the poem is pleasing TO ME. The person becomes a little pronoun and the THING becomes the subject. You met this exact machine in Santo Domingo with doler: me duele la cabeza. Same engine, new verb.",
+        entries: [
+          { spanish: "me gusta…", english: "I like…", note: "Literally: it is pleasing to me." },
+          { spanish: "te gusta…", english: "you like…" },
+          { spanish: "le gusta…", english: "he / she likes… (or: you, formal)" },
+          { spanish: "nos gusta…", english: "we like…" },
+          { spanish: "les gusta…", english: "they like…" },
+        ],
+        production: {
+          instruction: "Thirty seconds, partners. Answer for real — and notice you never say 'yo gusto'.",
+          say: "¿Qué te gusta? — Me gusta ______.",
+        },
+      },
+      {
+        eyebrow: "Herramienta 2 · The Trap",
+        headline: "The Verb Follows the THING, Not You",
+        situation:
+          "This is the mistake almost everyone makes. Because the thing is the subject, the ending changes with how many THINGS there are — never with who is doing the liking. One poem, gusta. Several poems, gustan. 'Me gustan' with a single thing is the single most common error in this unit.",
+        entries: [
+          { spanish: "me gusta el poema", english: "I like the poem", note: "One thing → gusta." },
+          { spanish: "me gustan los poemas", english: "I like the poems", note: "Several things → gustan." },
+          { spanish: "nos encanta la poesía", english: "we love poetry", note: "One thing, even though 'we' is plural." },
+          { spanish: "les importan las palabras", english: "the words matter to them", note: "Several things → importan." },
+        ],
+        production: {
+          instruction: "Thirty seconds. Say both out loud twice so the difference is in your mouth.",
+          say: "Me gusta el poema — me gustan los poemas.",
+        },
+      },
+      {
+        eyebrow: "Herramienta 3 · The Family",
+        headline: "Four More Verbs That Work the Same Way",
+        situation:
+          "Learn the pattern once and you get five verbs. These are the ones the case actually turns on, because what separates your suspects is not what they DO — it is what they care about.",
+        entries: [
+          { spanish: "encantar", english: "to love (something)", note: "Stronger than gustar." },
+          { spanish: "interesar", english: "to interest" },
+          { spanish: "importar", english: "to matter to someone" },
+          { spanish: "molestar", english: "to bother" },
+        ],
+      },
+      {
+        eyebrow: "Herramienta 4 · The Room",
+        headline: "Poetry Words, Because Everyone Here Has Them",
+        situation:
+          "You are interviewing people at a poetry celebration. These are the nouns they will use — and the difference between a suspect who talks about the words and one who talks about the paper is the case.",
+        entries: [
+          { spanish: "el poema", english: "poem" },
+          { spanish: "el verso", english: "verse, line" },
+          { spanish: "la palabra", english: "word" },
+          { spanish: "el manuscrito", english: "manuscript" },
+          { spanish: "el papel", english: "paper" },
+          { spanish: "la tinta", english: "ink" },
+        ],
+      },
+    ],
+
+    expect: {
+      headline: "What Happens When You Open the Case",
+      items: [
+        { label: "Briefing", text: "La Jefa sends you to León, año 1907." },
+        { label: "Vocabulario", text: "Match the phrases — poetry words and the backwards verbs." },
+        { label: "Clasificar", text: "Swipe each card: ¿GUSTA or GUSTAN? Decide by the thing." },
+        { label: "Construye", text: "Build sentences with gustar, encantar and interesar." },
+        { label: "La Bitácora", text: "Read your field log from the plaza." },
+        { label: "Escucha", text: "An exchange in the plaza. No subtitles, three replays." },
+        { label: "Amanda", text: "Interview a young poet who has been watching the stranger." },
+        { label: "La Rueda", text: "Four people. Each decoy matches exactly one of the three clues." },
+      ],
+    },
+
+    discuss: {
+      prompt:
+        "Turn and talk: in León, people memorise poems and say them out loud in public. What does your community memorise and perform out loud?",
+      followups: [
+        "Why is that one worth knowing by heart?",
+      ],
+    },
+
+    closer: "Antes de la noche de la fiesta, agente. El caso está abierto.",
+
+    teacherNote:
+      "Run immediately before students open Caso 14. Two spines. Grammatically: gustar runs backwards, and the verb agrees with the THING and not the person — 'me gustan' with one thing is the error to hunt all week. Say the connection to Caso 9's doler out loud; students who see it as the same machine stop treating it as a new rule. The second production beat ('me gusta el poema — me gustan los poemas') is thirty seconds and does more than any explanation. Thematically: the stakes slide carries the fact that makes the theft matter — modernismo reversed the direction literary influence had flowed for four centuries, so a handwritten page from Darío is evidence of origin, not merchandise. The discussion prompt reliably works because every class memorises something (lyrics, prayers, chants, bits) and nobody has framed that as the same behaviour as reciting poetry in a plaza. Watch the ESTO ES REAL stamps: the manuscript, the stranger and the four suspects are invented, while Darío's dates and books, the reversal of influence, his tomb under the weeping lion, León's cathedral and UNESCO listing, and Nicaraguan voseo are real. The case is set in 1907, the year of his return, so do NOT hand out 'A Margarita Debayle' as the stolen poem — it was written in 1908. Use NÚCLEO to drop the country slide if short.",
+  },
 };
 
 export function getCaseStory(unitNumber: number): CaseStory | null {

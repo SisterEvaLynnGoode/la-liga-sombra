@@ -12,6 +12,7 @@ import { unit10Scripts } from "./scripts/unit-10.js";
 import { unit11Scripts } from "./scripts/unit-11.js";
 import { unit12Scripts } from "./scripts/unit-12.js";
 import { unit13Scripts } from "./scripts/unit-13.js";
+import { unit14Scripts } from "./scripts/unit-14.js";
 import { unit01ColdScripts } from "./scripts/unit-01-cold.js";
 import { bossEclipseScripts } from "./scripts/boss-eclipse.js";
 
@@ -35,6 +36,7 @@ export const scripts: AudioScript[] = [
   ...unit11Scripts,
   ...unit12Scripts,
   ...unit13Scripts,
+  ...unit14Scripts,
   // ── Cold Cases ──────────────────────────────────────────────────────────────
   ...unit01ColdScripts,
   // ── Boss Fights ─────────────────────────────────────────────────────────────

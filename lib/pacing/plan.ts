@@ -298,8 +298,8 @@ export const SEMESTER: PacingWeek[] = [
   // ── Arc 5 · Pronouns & the pursuit ─────────────────────────────────────────
   {
     week: 25, semester: 2, arc: 5, title: "Unit 14 · Nicaragua", type: "unit", unitNumber: 14,
-    summary: "Caso XIV (León, the era of Rubén Darío). Gustar and encantar with indirect object pronouns. Vocabulary: arts, poetry, emotions.",
-    tasks: unitTasks(25), link: LESSONS, status: "planned",
+    summary: "Caso XIV (El Manuscrito de Darío). León in 1907, the year Rubén Darío came home. Gustar, encantar and interesar with indirect object pronouns — the verb agrees with the thing, not the person.",
+    tasks: unitTasks(25), link: LESSONS,
   },
   {
     week: 26, semester: 2, arc: 5, title: "Unit 15 · Cuba", type: "unit", unitNumber: 15,
