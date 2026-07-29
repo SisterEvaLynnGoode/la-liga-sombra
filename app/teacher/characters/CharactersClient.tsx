@@ -112,7 +112,7 @@ function CharacterForm({ char, onSaved }: { char: CharacterSheet; onSaved: (c: C
             disabled={saving}
             className="clip-skew px-4 py-1.5 font-typewriter text-[10px] tracking-[0.2em] uppercase bg-[rgba(201,147,58,0.1)] text-[#e8b455] border border-[rgba(201,147,58,0.3)] hover:bg-[rgba(201,147,58,0.2)] transition-colors disabled:opacity-40"
           >
-            {saving ? "Guardando…" : saved ? "✓ Guardado" : "Guardar"}
+            {saving ? "Saving…" : saved ? "✓ Saved" : "Save"}
           </button>
         </div>
       </div>
@@ -198,7 +198,7 @@ function CharacterForm({ char, onSaved }: { char: CharacterSheet; onSaved: (c: C
         <input type="text"
           value={draft.accessories.join(", ")}
           onChange={(e) => setArray("accessories", e.target.value)}
-          placeholder="sombrero de charro negro, mochila negra, estuche de música…"
+          placeholder="sombrero negro elegante, mochila negra, estuche de música…"
           className={INPUT}
         />
         {draft.accessories.length === 0 && draft.spanishDescription && (
@@ -259,14 +259,14 @@ export default function CharactersClient() {
 
   // Group by unit
   const grouped = characters.reduce<Record<string, CharacterSheet[]>>((acc, c) => {
-    const key = c.unitNumber ? `Unidad ${c.unitNumber}` : "Recurrentes";
+    const key = c.unitNumber ? `Unit ${c.unitNumber}` : "Recurring";
     (acc[key] ??= []).push(c);
     return acc;
   }, {});
 
   const unitKeys = Object.keys(grouped).sort((a, b) => {
-    if (a === "Recurrentes") return -1;
-    if (b === "Recurrentes") return 1;
+    if (a === "Recurring") return -1;
+    if (b === "Recurring") return 1;
     return parseInt(a.split(" ")[1]) - parseInt(b.split(" ")[1]);
   });
 
@@ -284,8 +284,8 @@ export default function CharactersClient() {
       {/* Header */}
       <header className="shrink-0 border-b border-[rgba(201,147,58,0.15)] bg-[#111218] px-6 py-3 flex items-center justify-between gap-4 flex-wrap">
         <div>
-          <p className="font-typewriter text-[9px] tracking-[0.3em] uppercase text-[#8b7355]">Panel del Maestro</p>
-          <h1 className="font-display font-bold text-lg text-[#e8b455]">Fichas de Personajes</h1>
+          <p className="font-typewriter text-[9px] tracking-[0.3em] uppercase text-[#8b7355]">Teacher Panel</p>
+          <h1 className="font-display font-bold text-lg text-[#e8b455]">Character Sheets</h1>
         </div>
         <div className="flex items-center gap-4">
           <div className="flex items-center gap-4 font-typewriter text-[10px] text-[#8b7355]">
@@ -301,16 +301,16 @@ export default function CharactersClient() {
       <div className="shrink-0 border-b border-[rgba(201,147,58,0.1)] bg-[#111218] px-6 py-3 flex items-center gap-4 flex-wrap">
         <input
           type="text" value={search} onChange={(e) => setSearch(e.target.value)}
-          placeholder="Buscar por nombre o ID…"
+          placeholder="Search by name or ID…"
           className="bg-[#0d0b0a] border border-[rgba(201,147,58,0.25)] focus:border-[#c9933a] focus:outline-none px-3 py-1.5 font-typewriter text-sm text-[#f5e6c8] placeholder-[#3a3028] w-48"
         />
         {[
-          { id: "all",        label: "Todos" },
-          { id: "incomplete", label: `Incompletos (${totalIncomplete})` },
-          { id: "suspect",    label: "Sospechosos" },
-          { id: "witness",    label: "Testigos" },
-          { id: "villain",    label: "Villanos" },
-          { id: "recurring",  label: "Recurrentes" },
+          { id: "all",        label: "All" },
+          { id: "incomplete", label: `Incomplete (${totalIncomplete})` },
+          { id: "suspect",    label: "Suspects" },
+          { id: "witness",    label: "Witnesses" },
+          { id: "villain",    label: "Villains" },
+          { id: "recurring",  label: "Recurring" },
         ].map((f) => (
           <button key={f.id} onClick={() => setFilter(f.id)}
             className={`font-typewriter text-[10px] tracking-[0.15em] uppercase transition-colors ${filter === f.id ? "text-[#e8b455]" : "text-[#8b7355] hover:text-[#c4a882]"}`}>
@@ -323,7 +323,7 @@ export default function CharactersClient() {
       <main className="flex-1 overflow-auto p-6">
         {loading && (
           <div className="flex items-center justify-center h-64">
-            <p className="font-typewriter text-xs text-[#4a3a2a] animate-pulse">Cargando fichas…</p>
+            <p className="font-typewriter text-xs text-[#4a3a2a] animate-pulse">Loading character sheets…</p>
           </div>
         )}
 
@@ -413,7 +413,7 @@ function CharacterRow({ char, manifest: entry, expanded, onToggle, onSaved }: {
 
         <div className="flex items-center gap-3 shrink-0">
           {hasAccessoryGap && (
-            <span title="Sin accesorios — revisa la descripción española"
+            <span title="No accessories — check the Spanish description"
               className="font-typewriter text-[9px] px-1.5 py-0.5 border border-[rgba(192,57,43,0.4)] text-[#c0392b]">
               ⚠ acc
             </span>
@@ -452,7 +452,7 @@ function CharacterRow({ char, manifest: entry, expanded, onToggle, onSaved }: {
           {/* Sheet edit form */}
           <div>
             <p className="font-typewriter text-[9px] tracking-widest uppercase text-[#8b7355] mb-3">
-              ✏ Ficha del personaje
+              ✏ Character sheet
             </p>
             <CharacterForm char={char} onSaved={onSaved} />
           </div>

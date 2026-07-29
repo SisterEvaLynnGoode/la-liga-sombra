@@ -40,7 +40,7 @@ export default function PasaporteClient({ countries }: Props) {
           <div className="w-px h-8 bg-[rgba(201,147,58,0.15)]" />
           <div>
             <p className="font-typewriter text-[9px] tracking-[0.3em] uppercase text-[#8b7355]">Detective Academy</p>
-            <h1 className="font-display font-bold text-lg text-[#e8b455] leading-tight">Pasaporte Cultural</h1>
+            <h1 className="font-display font-bold text-lg text-[#e8b455] leading-tight">Cultural Passport</h1>
           </div>
         </div>
 

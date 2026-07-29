@@ -4,7 +4,7 @@ import { UNITS } from "@/lib/game/units";
 import { CULTURE } from "@/lib/worksheets/culture";
 import PasaporteClient, { type CountryEntry } from "./PasaporteClient";
 
-export const metadata = { title: "Pasaporte Cultural — La Liga Sombra" };
+export const metadata = { title: "Cultural Passport — La Liga Sombra" };
 
 export default async function PasaportePage() {
   if (!(await getTeacherSession())) redirect("/teacher/login");

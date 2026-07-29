@@ -3,7 +3,7 @@ import { getTeacherSession } from "@/lib/auth/session";
 import { hasWorld } from "@/lib/scroll-world/worlds";
 import ScrollWorld from "@/components/scroll-world/ScrollWorld";
 
-export const metadata = { title: "Mundo de enseñanza — La Liga Sombra" };
+export const metadata = { title: "Teaching World — La Liga Sombra" };
 
 // Teacher-facing full-screen projection of a unit's teaching world. Use on the
 // board/projector to teach the vocab + grammar before assigning the case.
@@ -18,7 +18,7 @@ export default async function TeacherMundoPage({ params }: { params: { unit: str
     <main style={{ background: "#0d0b0a", minHeight: "100vh" }}>
       <ScrollWorld
         unitNumber={unitNumber}
-        cta={{ primaryLabel: "← Volver al panel", primaryHref: "/teacher/dashboard" }}
+        cta={{ primaryLabel: "← Back to dashboard", primaryHref: "/teacher/dashboard" }}
       />
     </main>
   );

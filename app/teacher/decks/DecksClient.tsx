@@ -23,7 +23,7 @@ export default function DecksClient({ decks, stories }: Props) {
   if (!deck) {
     return (
       <div className="min-h-screen bg-[#0d0b0a] flex items-center justify-center">
-        <p className="font-typewriter text-sm text-[#8b7355]">No hay unidades con vocabulario todavía.</p>
+        <p className="font-typewriter text-sm text-[#8b7355]">No units with vocabulary yet.</p>
       </div>
     );
   }
@@ -46,8 +46,8 @@ export default function DecksClient({ decks, stories }: Props) {
           {/* Mode toggle */}
           <div className="flex border border-[rgba(201,147,58,0.3)]">
             {([
-              ["vocab", "Vocabulario"],
-              ["story", "Historia"],
+              ["vocab", "Vocabulary"],
+              ["story", "Story"],
             ] as Array<[Mode, string]>).map(([id, label]) => (
               <button
                 key={id}
@@ -84,14 +84,14 @@ export default function DecksClient({ decks, stories }: Props) {
                     ? "bg-[rgba(111,170,92,0.15)] text-[#6faa5c] border-[rgba(111,170,92,0.5)]"
                     : "text-[#8b7355] border-[rgba(201,147,58,0.3)] hover:text-[#c9933a]"
                 }`}
-                title="Quita las diapositivas opcionales para una versión más corta"
+                title="Drop the optional slides for a shorter run"
               >
-                Núcleo
+                Core
               </button>
               <span className="font-typewriter text-[10px] text-[#8b7355]">
                 {coreOnly
-                  ? `${story.meta.coreSlideCount} diapositivas · ~${story.meta.coreMinutes} min`
-                  : `${story.meta.slideCount} diapositivas · ~${story.meta.estimatedMinutes} min`}
+                  ? `${story.meta.coreSlideCount} slides · ~${story.meta.coreMinutes} min`
+                  : `${story.meta.slideCount} slides · ~${story.meta.estimatedMinutes} min`}
               </span>
             </>
           ) : (
@@ -108,7 +108,7 @@ export default function DecksClient({ decks, stories }: Props) {
                 ))}
               </select>
               <span className="font-typewriter text-[10px] text-[#8b7355]">
-                {deck.meta.vocabCount} palabras · {deck.meta.slideCount} diapositivas
+                {deck.meta.vocabCount} words · {deck.meta.slideCount} slides
               </span>
             </>
           )}
@@ -117,21 +117,21 @@ export default function DecksClient({ decks, stories }: Props) {
           onClick={() => window.print()}
           className="clip-skew px-4 py-1.5 font-typewriter text-[10px] tracking-[0.2em] uppercase bg-[rgba(201,147,58,0.12)] text-[#e8b455] border border-[rgba(201,147,58,0.35)] hover:bg-[rgba(201,147,58,0.22)] transition-colors"
         >
-          Imprimir / Guardar PDF
+          Print / Save PDF
         </button>
       </div>
 
       <p className="print:hidden text-center font-typewriter text-[10px] text-[#4a3a2a] py-2 px-4 max-w-[70rem] mx-auto">
         {showStory
-          ? "Proyecta esto ANTES de que los estudiantes abran el caso. El sello ESTO ES REAL marca los hechos verificables; lo demás es ficción del caso."
-          : "Proyecta esta página en clase, o usa “Imprimir / Guardar PDF” (horizontal, una diapositiva por página). Todo el contenido viene del archivo del caso — no hay que editar nada a mano."}
+          ? "Project this BEFORE students open the case. The ESTO ES REAL stamp marks verifiable facts; everything else is invented for the case."
+          : "Project this page in class, or use “Print / Save PDF” (landscape, one slide per page). Everything is generated from the case file — nothing to edit by hand."}
       </p>
 
       {showStory && (
         <div className="print:hidden mx-auto max-w-[70rem] px-6 pb-4">
           <details className="border border-[rgba(201,147,58,0.2)] bg-[#110f0d] px-4 py-2">
             <summary className="cursor-pointer font-typewriter text-[10px] tracking-[0.2em] uppercase text-[#c9933a]">
-              Nota para el maestro
+              Teacher note
             </summary>
             <p className="mt-3 font-typewriter text-[11px] leading-relaxed text-[#c4a882]">
               {story.teacherNote}
@@ -210,7 +210,7 @@ function StorySlideBody({ slide }: { slide: StorySlide }) {
             {slide.eyebrow}
             {slide.optional && (
               <span className="print:hidden ml-3 normal-case tracking-normal text-[9px] text-[#4a3a2a]">
-                (opcional — se quita con “Núcleo”)
+                (optional — removed by “Core”)
               </span>
             )}
           </p>

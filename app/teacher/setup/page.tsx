@@ -90,16 +90,16 @@ export default function TeacherSetupPage() {
         <div className="flex items-center justify-between mb-8 pb-4 border-b border-[rgba(201,147,58,0.15)]">
           <div>
             <p className="font-typewriter text-xs tracking-[0.25em] uppercase text-[#8b7355]">
-              Panel del Maestro
+              Teacher Panel
             </p>
-            <h1 className="font-display text-3xl font-bold text-[#f5e6c8]">Configuración</h1>
+            <h1 className="font-display text-3xl font-bold text-[#f5e6c8]">Settings</h1>
           </div>
           <div className="flex items-center gap-4">
             <a href="/teacher/dashboard" className="clip-skew px-4 py-2 font-typewriter text-xs tracking-[0.2em] uppercase bg-[rgba(201,147,58,0.1)] text-[#e8b455] border border-[rgba(201,147,58,0.3)] hover:bg-[rgba(201,147,58,0.2)] transition-colors">
               📊 Dashboard →
             </a>
             <button onClick={handleLogout} className="font-typewriter text-xs tracking-widest uppercase text-[#8b7355] hover:text-[#c0392b] transition-colors">
-              Cerrar sesión →
+              Sign out →
             </button>
           </div>
         </div>
@@ -107,7 +107,7 @@ export default function TeacherSetupPage() {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
           {/* ── Create Class ─────────────────────────────────────────────── */}
           <div className="border border-[rgba(201,147,58,0.2)] bg-[#1a1614] p-6">
-            <h2 className="font-display text-xl font-bold text-[#e8b455] mb-1">Nueva Clase</h2>
+            <h2 className="font-display text-xl font-bold text-[#e8b455] mb-1">New Class</h2>
             <p className="font-typewriter text-xs text-[#8b7355] mb-5">
               Creates a unique 6-character class code for your students.
             </p>
@@ -142,7 +142,7 @@ export default function TeacherSetupPage() {
                 disabled={creating}
                 className="w-full clip-skew py-2.5 font-typewriter text-xs tracking-[0.2em] uppercase bg-[#8b1a1a] text-[#f5e6c8] border border-[#c0392b] hover:bg-[#c0392b] transition-colors disabled:opacity-50"
               >
-                {creating ? "Generating..." : "Crear clase"}
+                {creating ? "Generating..." : "Create class"}
               </button>
             </form>
 
@@ -230,7 +230,7 @@ export default function TeacherSetupPage() {
         {/* ── Class List ─────────────────────────────────────────────────── */}
         <div className="mt-6 border border-[rgba(201,147,58,0.2)] bg-[#1a1614] p-6">
           <div className="flex items-center justify-between mb-5">
-            <h2 className="font-display text-xl font-bold text-[#e8b455]">Mis Clases</h2>
+            <h2 className="font-display text-xl font-bold text-[#e8b455]">My Classes</h2>
             <button
               onClick={fetchClasses}
               className="font-typewriter text-[10px] tracking-widest uppercase text-[#8b7355] hover:text-[#c9933a] transition-colors"

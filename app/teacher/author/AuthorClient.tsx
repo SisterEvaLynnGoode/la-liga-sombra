@@ -14,12 +14,12 @@ const ListeningComprehension = dynamic(() => import("@/components/games/Listenin
 type Step = "meta" | "vocab" | "dialogue" | "reading" | "listening" | "lineup";
 
 const STEPS: Array<{ id: Step; label: string; emoji: string }> = [
-  { id: "meta",      label: "Información",  emoji: "📋" },
-  { id: "vocab",     label: "Vocabulario",  emoji: "📚" },
-  { id: "dialogue",  label: "Diálogo",      emoji: "💬" },
-  { id: "reading",   label: "Lectura",      emoji: "📖" },
+  { id: "meta",      label: "Details",     emoji: "📋" },
+  { id: "vocab",     label: "Vocabulary",  emoji: "📚" },
+  { id: "dialogue",  label: "Dialogue",    emoji: "💬" },
+  { id: "reading",   label: "Reading",     emoji: "📖" },
   { id: "listening", label: "Audio",        emoji: "🎧" },
-  { id: "lineup",    label: "Sospechosos",  emoji: "🔎" },
+  { id: "lineup",    label: "Suspects",    emoji: "🔎" },
 ];
 
 const EMPTY_STATE = {
@@ -264,8 +264,8 @@ export default function AuthorClient() {
       {/* Header */}
       <header className="shrink-0 border-b border-[rgba(201,147,58,0.15)] bg-[#111218] px-6 py-3 flex items-center justify-between gap-4 flex-wrap">
         <div>
-          <p className="font-typewriter text-[9px] tracking-[0.3em] uppercase text-[#8b7355]">Panel del Maestro</p>
-          <h1 className="font-display font-bold text-lg text-[#e8b455]">Crear Nueva Unidad</h1>
+          <p className="font-typewriter text-[9px] tracking-[0.3em] uppercase text-[#8b7355]">Teacher Panel</p>
+          <h1 className="font-display font-bold text-lg text-[#e8b455]">Create New Unit</h1>
         </div>
         <div className="flex items-center gap-3">
           <button
@@ -278,7 +278,7 @@ export default function AuthorClient() {
             onClick={handleDownload}
             className="clip-skew px-5 py-2 font-typewriter text-[10px] tracking-[0.2em] uppercase bg-[rgba(201,147,58,0.1)] text-[#e8b455] border border-[rgba(201,147,58,0.3)] hover:bg-[rgba(201,147,58,0.2)] transition-colors"
           >
-            ↓ Descargar JSON
+            ↓ Download JSON
           </button>
           <button
             onClick={() => setShowColdGen((v) => !v)}
@@ -326,7 +326,7 @@ export default function AuthorClient() {
           </div>
           <div className="flex items-center gap-3">
             <label className="font-typewriter text-[10px] text-[rgba(74,158,255,0.6)] uppercase tracking-widest">
-              Basado en Unidad:
+              Based on Unit:
             </label>
             <select
               value={coldSourceUnit}
@@ -334,7 +334,7 @@ export default function AuthorClient() {
               className="bg-[#0d0b0a] border border-[rgba(74,158,255,0.3)] px-3 py-1.5 font-typewriter text-sm text-[#c8d8f0] focus:outline-none focus:border-[#4a9eff]"
             >
               {[1,2,3,4,5,6,7,8].map((n) => (
-                <option key={n} value={n}>Unidad {n}</option>
+                <option key={n} value={n}>Unit {n}</option>
               ))}
             </select>
             <button
@@ -350,11 +350,11 @@ export default function AuthorClient() {
               }}
               className="px-5 py-2 font-typewriter text-[10px] tracking-[0.2em] uppercase bg-[rgba(74,158,255,0.1)] text-[#4a9eff] border border-[rgba(74,158,255,0.3)] hover:bg-[rgba(74,158,255,0.2)] transition-colors"
             >
-              ↓ Descargar template frío
+              ↓ Download cold-case template
             </button>
           </div>
           <p className="font-typewriter text-[9px] text-[rgba(74,158,255,0.3)]">
-            Tip: Carga el vocab de la unidad primero (pestaña Vocabulario) para que el template incluya los pares correctos.
+            Tip: load the vocab for that unit first (Vocabulary tab) so the template includes the right pairs.
             Archivo: <code>content/unit-0{coldSourceUnit}-cold.json</code> · Route: <code>/play/{coldSourceUnit}/cold</code>
           </p>
         </div>
@@ -469,7 +469,7 @@ export default function AuthorClient() {
         <div className="fixed inset-0 z-50 bg-black/60 flex items-center justify-center px-4">
           <div className="bg-[#1a1614] border border-[rgba(201,147,58,0.3)] p-6 w-full max-w-2xl max-h-[80vh] overflow-y-auto">
             <div className="flex justify-between items-center mb-4">
-              <h2 className="font-display font-bold text-lg text-[#f5e6c8]">Importar Vocabulario (CSV)</h2>
+              <h2 className="font-display font-bold text-lg text-[#f5e6c8]">Import Vocabulary (CSV)</h2>
               <button onClick={() => setShowCsvImporter(false)} className="font-typewriter text-[#8b7355] hover:text-[#f5e6c8]">✕</button>
             </div>
             <VocabCsvImporter
@@ -530,7 +530,7 @@ function VocabForm({ state, set, onImportCsv }: { state: AuthorState; set: (k: k
           <button onClick={() => removePair(i)} aria-label="Remove pair" className="font-typewriter text-xs text-[#4a3a2a] hover:text-[#c0392b] px-1">✕</button>
         </div>
       ))}
-      <button onClick={addPair} className="font-typewriter text-xs text-[#c9933a] hover:underline">+ Añadir par</button>
+      <button onClick={addPair} className="font-typewriter text-xs text-[#c9933a] hover:underline">+ Add pair</button>
     </div>
   );
 }
@@ -555,7 +555,7 @@ function DialogueForm({ state, set }: { state: AuthorState; set: (k: keyof Autho
         <Field label="Nombre del testigo"><input type="text" value={d.npcName} onChange={e => updateD({ npcName: e.target.value })} placeholder="Don Rodrigo" className={INPUT} /></Field>
         <Field label="Emoji del testigo"><input type="text" value={d.npcAvatar} onChange={e => updateD({ npcAvatar: e.target.value })} placeholder="👴" className={INPUT} /></Field>
       </div>
-      <Field label="Pista revelada (clue reward)" hint="Shown to students after they complete this stage.">
+      <Field label="Clue reward" hint="Shown to students after they complete this stage.">
         <input type="text" value={d.clueReward} onChange={e => updateD({ clueReward: e.target.value })} placeholder="El sospechoso lleva un sombrero negro..." className={INPUT} />
       </Field>
 
@@ -605,7 +605,7 @@ function ReadingForm({ state, set }: { state: AuthorState; set: (k: keyof Author
   return (
     <div className="space-y-4 max-w-xl">
       <SectionHead title="Comprensión lectora" />
-      <Field label="Pista revelada"><input type="text" value={r.clueReward} onChange={e => updateR({ clueReward: e.target.value })} placeholder="El sospechoso..." className={INPUT} /></Field>
+      <Field label="Clue reward"><input type="text" value={r.clueReward} onChange={e => updateR({ clueReward: e.target.value })} placeholder="El sospechoso..." className={INPUT} /></Field>
       <Field label="Pasaje en español" hint="50-150 words. This is the document the thief left behind.">
         <textarea value={r.passage} onChange={e => updateR({ passage: e.target.value })} className={TEXTAREA + " min-h-[140px]"} placeholder="Querida guitarra,&#10;Finalmente te tengo. Me llamo..." />
       </Field>
@@ -631,7 +631,7 @@ function ListeningForm({ state, set }: { state: AuthorState; set: (k: keyof Auth
   return (
     <div className="space-y-4 max-w-lg">
       <SectionHead title="Comprensión auditiva" />
-      <Field label="Pista revelada"><input type="text" value={l.clueReward} onChange={e => updateL({ clueReward: e.target.value })} placeholder="El sospechoso..." className={INPUT} /></Field>
+      <Field label="Clue reward"><input type="text" value={l.clueReward} onChange={e => updateL({ clueReward: e.target.value })} placeholder="El sospechoso..." className={INPUT} /></Field>
       <Field label="URL del audio" hint="Drop .mp3 in /public/audio/unit-0N/ — reference as /audio/unit-0N/phone-call.mp3">
         <input type="text" value={l.audioUrl} onChange={e => updateL({ audioUrl: e.target.value })} placeholder="/audio/unit-02/phone-call.mp3" className={INPUT} />
       </Field>
@@ -666,12 +666,12 @@ function LineupForm({ state, set }: { state: AuthorState; set: (k: keyof AuthorS
   }
   return (
     <div className="space-y-5 max-w-xl">
-      <SectionHead title="Rueda de reconocimiento (4 sospechosos)" />
-      <Field label="Pista general (hint shown after 1 wrong answer)">
+      <SectionHead title="Lineup (4 suspects)" />
+      <Field label="General hint (shown after 1 wrong answer)">
         <textarea value={l.hint} onChange={e => updateL({ hint: e.target.value })} className={TEXTAREA + " min-h-[60px]"} placeholder="Recuerda las pistas: [clue 1], [clue 2], [clue 3]. ¿Quién tiene TODAS?" />
       </Field>
       <div className="flex items-center gap-2">
-        <label className="font-typewriter text-[10px] uppercase text-[#8b7355]">Sospechoso correcto (id):</label>
+        <label className="font-typewriter text-[10px] uppercase text-[#8b7355]">Correct suspect (id):</label>
         <select value={l.correctSuspectId} onChange={e => updateL({ correctSuspectId: e.target.value })} className="bg-[#1a1614] border border-[rgba(201,147,58,0.2)] px-2 py-1 font-typewriter text-xs text-[#f5e6c8]">
           {l.suspects.map(s => <option key={s.id} value={s.id}>{s.id} ({s.name || "unnamed"})</option>)}
         </select>

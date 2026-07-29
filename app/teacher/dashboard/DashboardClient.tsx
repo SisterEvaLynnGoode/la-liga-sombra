@@ -171,10 +171,10 @@ export default function DashboardClient({ isAdmin = false }: { isAdmin?: boolean
             🖨 Worksheets
           </a>
           <a href="/teacher/decks" className="font-typewriter text-[10px] tracking-widest uppercase text-[#8b7355] hover:text-[#c9933a] transition-colors">
-            🃏 Barajas
+            🃏 Decks
           </a>
           <a href="/teacher/pasaporte" className="font-typewriter text-[10px] tracking-widest uppercase text-[#8b7355] hover:text-[#c9933a] transition-colors">
-            📕 Pasaporte
+            📕 Passport
           </a>
           <a href="/teacher/presentations" className="font-typewriter text-[10px] tracking-widest uppercase text-[#8b7355] hover:text-[#c9933a] transition-colors">
             🎤 Presentations
