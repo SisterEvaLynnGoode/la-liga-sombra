@@ -110,12 +110,40 @@ export interface BossListeningStage {
   codeHint: string;    // hint shown to student
 }
 
+/**
+ * Swipe-sort, as introduced in Caso 12. A boss uses it to re-run a binary
+ * grammar decision at speed.
+ */
+export interface BossSwipeSortStage {
+  type: "swipeSort";
+  country: string;
+  title: string;
+  clueReward: string;
+  prompt: string;
+  leftLabel: string;
+  leftHint?: string;
+  rightLabel: string;
+  rightHint?: string;
+  items: Array<{ text: string; category: "left" | "right"; explanation?: string }>;
+}
+
+/** Sentence builder, as used from Caso 3 onward. */
+export interface BossSentenceBuilderStage {
+  type: "sentenceBuilder";
+  country: string;
+  title: string;
+  clueReward: string;
+  sentences: Array<{ sentence: string; translation: string }>;
+}
+
 export type BossStageContent =
   | BossReadingStage
   | BossLineupStage
   | BossChaseStage
   | BossInterrogationStage
-  | BossListeningStage;
+  | BossListeningStage
+  | BossSwipeSortStage
+  | BossSentenceBuilderStage;
 
 // ── Ethical choice ─────────────────────────────────────────────────────────────
 
@@ -160,6 +188,13 @@ export interface BossContent {
   pointsMultiplier: { easy: number; normal: number; hard: number };
   collaborationBonus: number;
   stages: BossStageContent[];
+  /** What the chief says on the briefing screen. Was hardcoded to Eclipse. */
+  briefingLine?: string;
+  /**
+   * 0-based index of the stage AFTER which the ethical choice fires.
+   * Defaults to second-to-last, which is where Eclipse puts it.
+   */
+  ethicalChoiceAfterStage?: number;
   ethicalChoice: BossEthicalChoice;
   endings: Record<EthicalChoiceKey, BossEndingDef>;
 }

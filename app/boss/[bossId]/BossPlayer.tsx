@@ -2,8 +2,13 @@
 
 import { useState, useCallback, useRef } from "react";
 import { useRouter } from "next/navigation";
-import type { BossContent, BossState, BossDifficulty, EthicalChoiceKey, BossEnding, BossPhase } from "@/lib/types/boss";
+import type {
+  BossContent, BossState, BossDifficulty, EthicalChoiceKey, BossEndingDef,
+  BossStageContent, BossReadingStage, BossListeningStage, BossChaseStage,
+  BossInterrogationStage, BossLineupStage, BossSwipeSortStage, BossSentenceBuilderStage,
+} from "@/lib/types/boss";
 import type { GameResult } from "@/lib/games/types";
+import type { BadgeType } from "@/lib/types/database";
 
 import DifficultySelect from "@/components/boss/DifficultySelect";
 import CollaborationToggle from "@/components/boss/CollaborationToggle";
@@ -14,14 +19,10 @@ import ReadingComprehension from "@/components/games/ReadingComprehension";
 import ListeningComprehension from "@/components/games/ListeningComprehension";
 import ChaseMap from "@/components/games/ChaseMap";
 import Interrogation from "@/components/games/Interrogation";
-import type { BadgeType } from "@/lib/types/database";
-import type {
-  BossReadingStage, BossListeningStage, BossChaseStage,
-  BossInterrogationStage, BossLineupStage,
-} from "@/lib/types/boss";
-
-// Inline lineup component (re-uses existing LineupStage logic inline for boss)
+import SwipeSort from "@/components/games/SwipeSort";
+import SentenceBuilder from "@/components/games/SentenceBuilder";
 import LineupStage from "@/components/play/LineupStage";
+import { buildSlots } from "@/lib/boss/slots";
 
 interface Props {
   content: BossContent;
@@ -29,52 +30,29 @@ interface Props {
   displayName: string;
 }
 
-const PHASE_ORDER: BossPhase[] = [
-  "briefing",
-  "stage1", "stage2", "stage3", "stage4",
-  "ethical_choice",
-  "stage5",
-  "resolution",
-];
-
-const PHASE_LABELS: Record<BossPhase, string> = {
-  briefing: "Briefing",
-  stage1: "México",
-  stage2: "Puerto Rico",
-  stage3: "España",
-  stage4: "Costa Rica",
-  ethical_choice: "Decisión",
-  stage5: "Argentina",
-  resolution: "Resolución",
-  completed: "Completado",
-};
-
 export default function BossPlayer({ content, initialState, displayName }: Props) {
   const router = useRouter();
+  const slots = buildSlots(content);
 
-  // Derive initial phase from currentStage
-  function stageToPhase(stage: number): BossPhase {
-    return PHASE_ORDER[Math.min(stage, PHASE_ORDER.length - 1)];
-  }
-
-  const [phase, setPhase] = useState<BossPhase>(() => {
-    if (initialState.completedAt) return "completed";
-    return stageToPhase(initialState.currentStage);
-  });
-  const [difficulty, setDifficulty]   = useState<BossDifficulty | null>(initialState.difficulty);
+  const [slotIndex, setSlotIndex] = useState<number>(() =>
+    Math.max(0, Math.min(initialState.currentStage, slots.length - 1))
+  );
+  const [completed, setCompleted] = useState<boolean>(!!initialState.completedAt);
+  const [difficulty, setDifficulty] = useState<BossDifficulty | null>(initialState.difficulty);
   const [partnerName, setPartnerName] = useState<string | null>(initialState.partnerName);
   const [ethicalChoice, setEthicalChoice] = useState<EthicalChoiceKey | null>(
-    initialState.ethicalChoices?.[0]?.choice as EthicalChoiceKey ?? null
+    (initialState.ethicalChoices?.[0]?.choice as EthicalChoiceKey) ?? null
   );
-  const [clues, setClues]         = useState<string[]>([]);
+  const [clues, setClues] = useState<string[]>([]);
   const [savedToast, setSavedToast] = useState(false);
   const [newBadges, setNewBadges] = useState<BadgeType[]>([]);
-  const [listeningDone, setListeningDone] = useState(false);
   const [stageScore, setStageScore] = useState(0);
+  /** Sub-step inside one stage: listening→code, or sentence N of M. */
+  const [subStep, setSubStep] = useState(0);
 
   const saveRef = useRef(false);
-
-  // ── Save state after stage ─────────────────────────────────────────────────
+  const slot = slots[slotIndex];
+  const diff = difficulty ?? "normal";
 
   const saveState = useCallback(async (updates: Record<string, unknown>) => {
     await fetch(`/api/boss/${content.id}/state`, {
@@ -86,85 +64,48 @@ export default function BossPlayer({ content, initialState, displayName }: Props
     setTimeout(() => setSavedToast(false), 2500);
   }, [content.id]);
 
-  // ── Advance phase ──────────────────────────────────────────────────────────
-
-  const advanceTo = useCallback(async (nextPhase: BossPhase, extraUpdates: Record<string, unknown> = {}) => {
-    const stageIndex = PHASE_ORDER.indexOf(nextPhase);
-    setPhase(nextPhase);
-    await saveState({ current_stage: stageIndex, ...extraUpdates });
-  }, [saveState]);
-
-  // ── Briefing complete ──────────────────────────────────────────────────────
+  const advance = useCallback(async (extra: Record<string, unknown> = {}) => {
+    setSubStep(0);
+    setSlotIndex((cur) => {
+      const next = Math.min(cur + 1, slots.length - 1);
+      void saveState({ current_stage: next, ...extra });
+      return next;
+    });
+  }, [slots.length, saveState]);
 
   async function handleBriefingConfirm() {
     if (!difficulty) return;
-    await advanceTo("stage1", { difficulty, partner_name: partnerName });
+    await advance({ difficulty, partner_name: partnerName });
   }
 
-  // ── Stage completions ──────────────────────────────────────────────────────
-
-  async function handleStage1Complete(result: GameResult) {
-    const stage = content.stages[0] as BossReadingStage;
-    setClues((c) => [...c, stage.clueReward]);
-    setStageScore((s) => s + result.score);
-    await advanceTo("stage2");
-  }
-
-  // eslint-disable-next-line @typescript-eslint/no-unused-vars
-  async function handleStage2Complete(..._: unknown[]) {
-    const stage = content.stages[1] as BossLineupStage;
-    setClues((c) => [...c, stage.clueReward]);
-    await advanceTo("stage3");
-  }
-
-  async function handleStage3Complete(result: GameResult) {
-    const stage = content.stages[2] as BossChaseStage;
-    setClues((c) => [...c, stage.clueReward]);
-    setStageScore((s) => s + result.score);
-    await advanceTo("stage4");
-  }
-
-  async function handleStage4Complete() {
-    const stage = content.stages[3] as BossInterrogationStage;
-    setClues((c) => [...c, stage.clueReward]);
-    await advanceTo("ethical_choice");
+  /** One completion path for every stage type. */
+  async function completeStage(stage: BossStageContent, result?: GameResult) {
+    if (stage.clueReward) {
+      setClues((c) => (c.includes(stage.clueReward) ? c : [...c, stage.clueReward]));
+    }
+    if (result) setStageScore((s) => s + result.score);
+    await advance();
   }
 
   async function handleEthicalChoice(key: EthicalChoiceKey, sentence?: string) {
     setEthicalChoice(key);
-    const choiceRecord = { stage: 4, choice: key, sentence };
-    await advanceTo("stage5", {
-      ethical_choices: JSON.stringify([choiceRecord]),
-    });
+    await advance({ ethical_choices: JSON.stringify([{ stage: slotIndex, choice: key, sentence }]) });
   }
-
-  async function handleListeningComplete(result: GameResult) {
-    setStageScore((s) => s + result.score);
-    setListeningDone(true); // now show code breaker
-  }
-
-  async function handleCodeComplete(correct: boolean) {
-    const stage = content.stages[4] as BossListeningStage;
-    if (correct) setClues((c) => [...c, stage.clueReward]);
-    await advanceTo("resolution");
-  }
-
-  // ── Boss complete ──────────────────────────────────────────────────────────
 
   async function handleResolutionComplete() {
     if (saveRef.current) return;
     saveRef.current = true;
 
-    const ending = ethicalChoice === "A" ? "pacto_silencioso"
-      : ethicalChoice === "C" ? "maestro_negociador"
-      : "cazador" as BossEnding;
+    const key = ethicalChoice ?? "B";
+    // Ending id comes from the boss's own content, not a hardcoded mapping.
+    const ending = content.endings[key]?.id ?? content.endings.B?.id;
 
     const res = await fetch(`/api/boss/${content.id}/complete`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({
-        difficulty: difficulty ?? "normal",
-        ethicalChoice: ethicalChoice ?? "B",
+        difficulty: diff,
+        ethicalChoice: key,
         finalEnding: ending,
         baseScore: stageScore,
         hadPartner: !!partnerName,
@@ -173,51 +114,24 @@ export default function BossPlayer({ content, initialState, displayName }: Props
     }).catch(() => null);
 
     if (res?.ok) {
-      const data = await res.json() as { newBadges?: BadgeType[] };
+      const data = (await res.json()) as { newBadges?: BadgeType[] };
       if (data.newBadges?.length) setNewBadges(data.newBadges);
     }
-    setPhase("completed");
+    setCompleted(true);
   }
 
-  // ── Helpers ────────────────────────────────────────────────────────────────
-
-  const diff = difficulty ?? "normal";
-  const phaseIndex = PHASE_ORDER.indexOf(phase);
-
-  // Get difficulty-adjusted stage data
-  function getReadingQuestions(stage: BossReadingStage) {
-    return stage.questions[diff];
-  }
-
-  function getSuspects(stage: BossLineupStage) {
-    return stage.suspects[diff];
-  }
-
-  // ── Render ─────────────────────────────────────────────────────────────────
-
-  const stage1 = content.stages[0] as BossReadingStage;
-  const stage2 = content.stages[1] as BossLineupStage;
-  const stage3 = content.stages[2] as BossChaseStage;
-  const stage4 = content.stages[3] as BossInterrogationStage;
-  const stage5 = content.stages[4] as BossListeningStage;
-
-  // ── Completed screen ───────────────────────────────────────────────────────
-  if (phase === "completed") {
+  // ── Completed ──────────────────────────────────────────────────────────────
+  if (completed) {
+    const ending = content.endings[ethicalChoice ?? "B"];
     return (
       <div className="min-h-screen bg-[#0d0b0a] flex flex-col items-center justify-center px-6 py-12">
         <div className="max-w-lg w-full text-center space-y-6">
           <div className="text-6xl mb-2">🎯</div>
           <h1 className="font-display font-black text-4xl text-[#e8b455]">Operación Completada</h1>
           <p className="font-typewriter text-sm text-[#8b7355]">
-            Desenlace: <span className="text-[#f5e6c8]">{
-              ethicalChoice === "A" ? "El Pacto Silencioso"
-              : ethicalChoice === "C" ? "El Maestro Negociador"
-              : "El Cazador"
-            }</span>
+            Desenlace: <span className="text-[#f5e6c8]">{ending?.title ?? "—"}</span>
           </p>
-          {newBadges.length > 0 && (
-            <BadgeEarned badges={newBadges} onDismiss={() => setNewBadges([])} />
-          )}
+          {newBadges.length > 0 && <BadgeEarned badges={newBadges} onDismiss={() => setNewBadges([])} />}
           <button
             onClick={() => router.push("/mission-board")}
             className="clip-skew px-8 py-3 font-typewriter text-sm tracking-[0.2em] uppercase bg-[#8b1a1a] text-[#f5e6c8] border border-[#c0392b] hover:bg-[#c0392b] transition-colors"
@@ -229,9 +143,118 @@ export default function BossPlayer({ content, initialState, displayName }: Props
     );
   }
 
+  /** Render whichever mechanic this stage declares. */
+  function renderStage(stage: BossStageContent) {
+    const title = `${stage.country}: ${stage.title}`;
+
+    switch (stage.type) {
+      case "readingComp": {
+        const st = stage as BossReadingStage;
+        return (
+          <ReadingComprehension
+            key={`s${slotIndex}`} title={title} passage={st.passage} glossary={st.glossary}
+            questions={st.questions[diff]} unitId=""
+            onComplete={(r) => void completeStage(st, r)}
+          />
+        );
+      }
+      case "lineup": {
+        const st = stage as BossLineupStage;
+        return (
+          <LineupStage
+            key={`s${slotIndex}`}
+            suspects={st.suspects[diff].map((s) => ({
+              id: s.id, name: s.name, realName: s.realName, age: s.age,
+              description: s.description, imageSeed: s.imageSeed, imageUrl: s.imageUrl,
+            }))}
+            correctSuspectId={st.correctSuspectId} hint={st.hint} earnedClues={clues}
+            onComplete={() => void completeStage(st)}
+          />
+        );
+      }
+      case "chaseMap": {
+        const st = stage as BossChaseStage;
+        return (
+          <ChaseMap
+            key={`s${slotIndex}`} locations={st.locations} correctRoute={st.correctRoute} clues={st.clues}
+            wrongPenalty={diff === "hard" ? (st.wrongPenalty ?? 15) + 10 : st.wrongPenalty}
+            onComplete={(r) => void completeStage(st, r)}
+          />
+        );
+      }
+      case "interrogation": {
+        const st = stage as BossInterrogationStage;
+        return (
+          <Interrogation
+            key={`s${slotIndex}`} character={st.character} questionBank={st.questionBank}
+            requiredInfo={st.requiredInfo}
+            maxQuestions={diff === "hard" ? st.maxQuestions - 1 : st.maxQuestions + (diff === "easy" ? 2 : 0)}
+            unitId="" onComplete={() => void completeStage(st)}
+          />
+        );
+      }
+      case "swipeSort": {
+        const st = stage as BossSwipeSortStage;
+        return (
+          <SwipeSort
+            key={`s${slotIndex}`} title={title} prompt={st.prompt}
+            leftLabel={st.leftLabel} leftHint={st.leftHint}
+            rightLabel={st.rightLabel} rightHint={st.rightHint}
+            items={st.items} unitId=""
+            onComplete={(r) => void completeStage(st, r)}
+          />
+        );
+      }
+      case "sentenceBuilder": {
+        // SentenceBuilder takes one sentence, so walk the list with subStep.
+        const st = stage as BossSentenceBuilderStage;
+        const idx = Math.min(subStep, st.sentences.length - 1);
+        const line = st.sentences[idx];
+        const last = idx >= st.sentences.length - 1;
+        return (
+          <SentenceBuilder
+            key={`s${slotIndex}-${idx}`}
+            title={`${title} (${idx + 1}/${st.sentences.length})`}
+            sentence={line.sentence} translation={line.translation} unitId=""
+            onComplete={(r) => {
+              if (last) { void completeStage(st, r); }
+              else { setStageScore((s) => s + r.score); setSubStep((n) => n + 1); }
+            }}
+          />
+        );
+      }
+      case "listeningComp": {
+        // Eclipse follows listening with a code breaker. Only do that when the
+        // stage actually defines a code — other bosses need not have one.
+        const st = stage as BossListeningStage;
+        const hasCode = Boolean(st.codeAnswer);
+        if (!hasCode || subStep === 0) {
+          return (
+            <ListeningComprehension
+              key={`s${slotIndex}-listen`} title={title} audioUrl={st.audioUrl}
+              transcript={st.transcript} translation={st.translation} questions={st.questions}
+              maxReplays={diff === "hard" ? 1 : st.maxReplays} passingScore={0.6} unitId=""
+              onComplete={(r) => {
+                setStageScore((s) => s + r.score);
+                if (hasCode) setSubStep(1); else void completeStage(st);
+              }}
+            />
+          );
+        }
+        return (
+          <CodeBreaker
+            key={`s${slotIndex}-code`} hint={st.codeHint} answer={st.codeAnswer}
+            onComplete={() => void completeStage(st)}
+          />
+        );
+      }
+      default:
+        return null;
+    }
+  }
+
   return (
     <div className="min-h-screen bg-[#0d0b0a] flex flex-col">
-      {/* Header */}
       <header className="shrink-0 border-b border-[rgba(192,57,43,0.3)] bg-[#110808] px-5 py-2 flex items-center justify-between gap-4">
         <div className="flex items-center gap-3">
           <span className="text-xl">🎯</span>
@@ -243,18 +266,17 @@ export default function BossPlayer({ content, initialState, displayName }: Props
           </div>
         </div>
 
-        {/* Stage progress pills */}
         <div className="hidden sm:flex items-center gap-1.5">
-          {PHASE_ORDER.filter((p) => p !== "completed").map((p, i) => (
-            <div key={p} title={PHASE_LABELS[p]}
+          {slots.map((sl, i) => (
+            <div key={i} title={sl.label}
               className={`w-2.5 h-2.5 rounded-full transition-all ${
-                i < phaseIndex ? "bg-[#c9933a]"
-                : i === phaseIndex ? "bg-[#c0392b] shadow-[0_0_6px_rgba(192,57,43,0.8)] scale-110"
+                i < slotIndex ? "bg-[#c9933a]"
+                : i === slotIndex ? "bg-[#c0392b] shadow-[0_0_6px_rgba(192,57,43,0.8)] scale-110"
                 : "bg-[#2c1a1a]"
               }`}
             />
           ))}
-          <span className="font-typewriter text-[9px] text-[#8b4a4a] ml-1">{PHASE_LABELS[phase]}</span>
+          <span className="font-typewriter text-[9px] text-[#8b4a4a] ml-1">{slot?.label}</span>
         </div>
 
         <button onClick={() => router.push("/mission-board")}
@@ -263,15 +285,13 @@ export default function BossPlayer({ content, initialState, displayName }: Props
         </button>
       </header>
 
-      {/* Save toast */}
       {savedToast && (
         <div className="fixed bottom-4 right-4 z-50 font-typewriter text-xs bg-[#1a1614] border border-[rgba(201,147,58,0.3)] text-[#c9933a] px-4 py-2 shadow-lg">
           ✓ Progreso guardado
         </div>
       )}
 
-      {/* Clue notepad */}
-      {clues.length > 0 && phase !== "briefing" && (
+      {clues.length > 0 && slot?.kind !== "briefing" && (
         <div className="shrink-0 border-b border-[rgba(192,57,43,0.15)] bg-[#130808] px-5 py-2">
           <div className="flex items-start gap-2 overflow-x-auto">
             <span className="font-typewriter text-[9px] uppercase text-[#8b4a4a] shrink-0 mt-0.5">Pistas:</span>
@@ -284,11 +304,8 @@ export default function BossPlayer({ content, initialState, displayName }: Props
         </div>
       )}
 
-      {/* Main content */}
       <main className="flex-1 overflow-auto">
-
-        {/* ── Briefing ── */}
-        {phase === "briefing" && (
+        {slot?.kind === "briefing" && (
           <div className="max-w-xl mx-auto px-5 py-8 space-y-6">
             <div className="text-center mb-6">
               <p className="font-typewriter text-[9px] tracking-[0.4em] uppercase text-[#c0392b] mb-1">Misión Especial</p>
@@ -302,15 +319,15 @@ export default function BossPlayer({ content, initialState, displayName }: Props
                 <img src="https://i.pravatar.cc/300?img=60" alt="Chief" className="w-full h-full object-cover grayscale" />
               </div>
               <div>
-                <p className="font-typewriter text-[10px] uppercase text-[#8b7355] mb-1">Jefe Ramírez</p>
+                <p className="font-typewriter text-[10px] uppercase text-[#8b7355] mb-1">Jefa Ramírez</p>
                 <p className="font-typewriter text-sm text-[#c4a882] leading-relaxed italic">
-                  &ldquo;Recluta, esta operación es peligrosa. Seguirás el rastro de El Tejedor a través de cinco países. Necesitarás todo lo que aprendiste. ¿Cómo prefieres atacarla?&rdquo;
+                  &ldquo;{content.briefingLine ??
+                    "Recluta, esta operación es peligrosa. Necesitarás todo lo que aprendiste. ¿Cómo prefieres atacarla?"}&rdquo;
                 </p>
               </div>
             </div>
 
             <DifficultySelect selected={difficulty} onChange={setDifficulty} />
-
             <CollaborationToggle partnerName={partnerName} onChange={setPartnerName} />
 
             <div className="border border-[rgba(201,147,58,0.1)] bg-[rgba(201,147,58,0.04)] p-4">
@@ -320,107 +337,22 @@ export default function BossPlayer({ content, initialState, displayName }: Props
               </p>
             </div>
 
-            <button
-              disabled={!difficulty}
-              onClick={handleBriefingConfirm}
-              className="w-full clip-skew py-3 font-typewriter text-sm tracking-[0.2em] uppercase bg-[#8b1a1a] text-[#f5e6c8] border border-[#c0392b] hover:bg-[#c0392b] transition-colors disabled:opacity-40"
-            >
+            <button disabled={!difficulty} onClick={handleBriefingConfirm}
+              className="w-full clip-skew py-3 font-typewriter text-sm tracking-[0.2em] uppercase bg-[#8b1a1a] text-[#f5e6c8] border border-[#c0392b] hover:bg-[#c0392b] transition-colors disabled:opacity-40">
               Comenzar operación →
             </button>
           </div>
         )}
 
-        {/* ── Stage 1: México Reading ── */}
-        {phase === "stage1" && (
-          <ReadingComprehension
-            key="stage1"
-            title={`${stage1.country}: ${stage1.title}`}
-            passage={stage1.passage}
-            glossary={stage1.glossary}
-            questions={getReadingQuestions(stage1)}
-            unitId=""
-            onComplete={handleStage1Complete}
-          />
+        {slot?.kind === "stage" && renderStage(content.stages[slot.stageIndex])}
+
+        {slot?.kind === "ethical" && (
+          <EthicalChoice choice={content.ethicalChoice} onSelect={handleEthicalChoice} />
         )}
 
-        {/* ── Stage 2: Puerto Rico Lineup ── */}
-        {phase === "stage2" && (
-          <LineupStage
-            key="stage2"
-            suspects={getSuspects(stage2).map((s) => ({
-              id: s.id, name: s.name, realName: s.realName,
-              age: s.age, description: s.description,
-              imageSeed: s.imageSeed, imageUrl: s.imageUrl,
-            }))}
-            correctSuspectId={stage2.correctSuspectId}
-            hint={stage2.hint}
-            earnedClues={clues}
-            onComplete={handleStage2Complete}
-          />
-        )}
-
-        {/* ── Stage 3: España ChaseMap ── */}
-        {phase === "stage3" && (
-          <ChaseMap
-            key="stage3"
-            locations={stage3.locations}
-            correctRoute={stage3.correctRoute}
-            clues={stage3.clues}
-            wrongPenalty={diff === "hard" ? (stage3.wrongPenalty ?? 15) + 10 : stage3.wrongPenalty}
-            onComplete={handleStage3Complete}
-          />
-        )}
-
-        {/* ── Stage 4: Costa Rica Interrogation ── */}
-        {phase === "stage4" && (
-          <Interrogation
-            key="stage4"
-            character={stage4.character}
-            questionBank={stage4.questionBank}
-            requiredInfo={stage4.requiredInfo}
-            maxQuestions={diff === "hard" ? stage4.maxQuestions - 1 : stage4.maxQuestions + (diff === "easy" ? 2 : 0)}
-            unitId=""
-            onComplete={handleStage4Complete}
-          />
-        )}
-
-        {/* ── Ethical Choice overlay ── */}
-        {phase === "ethical_choice" && (
-          <EthicalChoice
-            choice={content.ethicalChoice}
-            onSelect={handleEthicalChoice}
-          />
-        )}
-
-        {/* ── Stage 5: Argentina Listening + Code ── */}
-        {phase === "stage5" && (
-          <div>
-            {!listeningDone ? (
-              <ListeningComprehension
-                key="stage5-listening"
-                title={`${stage5.country}: ${stage5.title}`}
-                audioUrl={stage5.audioUrl}
-                transcript={stage5.transcript}
-                translation={stage5.translation}
-                questions={stage5.questions}
-                maxReplays={diff === "hard" ? 1 : stage5.maxReplays}
-                passingScore={0.6}
-                unitId=""
-                onComplete={handleListeningComplete}
-              />
-            ) : (
-              <CodeBreaker
-                hint={stage5.codeHint}
-                answer={stage5.codeAnswer}
-                onComplete={handleCodeComplete}
-              />
-            )}
-          </div>
-        )}
-
-        {/* ── Resolution ── */}
-        {phase === "resolution" && (
+        {slot?.kind === "resolution" && (
           <BossResolution
+            bossTitle={content.title}
             ending={content.endings[ethicalChoice ?? "B"]}
             choice={ethicalChoice ?? "B"}
             difficulty={diff}
@@ -430,18 +362,15 @@ export default function BossPlayer({ content, initialState, displayName }: Props
         )}
       </main>
 
-      {newBadges.length > 0 && (
-        <BadgeEarned badges={newBadges} onDismiss={() => setNewBadges([])} />
-      )}
+      {newBadges.length > 0 && <BadgeEarned badges={newBadges} onDismiss={() => setNewBadges([])} />}
     </div>
   );
 }
 
 // ── Resolution sub-component ──────────────────────────────────────────────────
 
-import type { BossEndingDef } from "@/lib/types/boss";
-
-function BossResolution({ ending, choice, difficulty, partnerName, onComplete }: {
+function BossResolution({ bossTitle, ending, choice, difficulty, partnerName, onComplete }: {
+  bossTitle: string;
   ending: BossEndingDef;
   choice: EthicalChoiceKey;
   difficulty: BossDifficulty;
@@ -453,13 +382,13 @@ function BossResolution({ ending, choice, difficulty, partnerName, onComplete }:
   const difficultyBadge = difficulty === "hard" ? "🔥 Agente Élite" : difficulty === "normal" ? "⚡ Agente Estándar" : "🔍 Agente Cuidadoso";
   const choiceBadge = choice === "A" ? "🕊️ Diplomático" : choice === "C" ? "🤝 Maestro Negociador" : "⚖️ Cazador Implacable";
 
-  const lines = ending.description;
+  const lines = ending?.description ?? [];
 
   return (
     <div className="max-w-lg mx-auto px-5 py-8 space-y-6">
       <div className="text-center">
         <p className="font-typewriter text-[9px] tracking-[0.4em] uppercase text-[#c0392b] mb-1">Resolución</p>
-        <h2 className="font-display font-black text-3xl text-[#e8b455]">{ending.title}</h2>
+        <h2 className="font-display font-black text-3xl text-[#e8b455]">{ending?.title ?? "—"}</h2>
       </div>
 
       {/* Story lines revealed one at a time */}
@@ -472,9 +401,9 @@ function BossResolution({ ending, choice, difficulty, partnerName, onComplete }:
       </div>
 
       {/* Final clue reveal */}
-      {step >= lines.length && (
+      {step >= lines.length && ending?.finalClue && (
         <div className="border border-[rgba(192,57,43,0.3)] bg-[rgba(192,57,43,0.06)] p-5">
-          <p className="font-typewriter text-[9px] uppercase text-[#c0392b] mb-2">🔍 Pista final — El Coleccionista</p>
+          <p className="font-typewriter text-[9px] uppercase text-[#c0392b] mb-2">🔍 Pista final</p>
           <p className="font-typewriter text-sm text-[#f5e6c8] leading-relaxed italic">
             &ldquo;{ending.finalClue}&rdquo;
           </p>
@@ -485,7 +414,7 @@ function BossResolution({ ending, choice, difficulty, partnerName, onComplete }:
       {step >= lines.length && (
         <div className="border border-[rgba(201,147,58,0.2)] bg-[#1a1614] p-4 space-y-2">
           <p className="font-typewriter text-[9px] uppercase text-[#8b7355] mb-2">Insignias ganadas</p>
-          <p className="font-typewriter text-sm text-[#c9933a]">🎯 Operación Eclipse Completada</p>
+          <p className="font-typewriter text-sm text-[#c9933a]">🎯 {bossTitle} Completada</p>
           <p className="font-typewriter text-sm text-[#c9933a]">{difficultyBadge}</p>
           <p className="font-typewriter text-sm text-[#c9933a]">{choiceBadge}</p>
           {partnerName && (
@@ -496,11 +425,8 @@ function BossResolution({ ending, choice, difficulty, partnerName, onComplete }:
 
       <button
         onClick={() => {
-          if (step < lines.length) {
-            setStep((s) => s + 1);
-          } else {
-            onComplete();
-          }
+          if (step < lines.length) setStep((s) => s + 1);
+          else onComplete();
         }}
         className="w-full clip-skew py-3 font-typewriter text-sm tracking-[0.2em] uppercase bg-[#8b1a1a] text-[#f5e6c8] border border-[#c0392b] hover:bg-[#c0392b] transition-colors"
       >
