@@ -78,7 +78,7 @@ export default function TeacherLoginPage() {
           <div className="mt-5 pt-4 border-t border-[rgba(201,147,58,0.12)] space-y-2 text-center">
             <p className="font-typewriter text-[11px] text-[#8b7355]">
               New teacher?{" "}
-              <Link href="/teacher/signup" className="text-[#c9933a] hover:underline">Redeem your access code →</Link>
+              <Link href="/teacher/signup" className="text-[#c9933a] hover:underline">Create a free account →</Link>
             </p>
             <button
               onClick={() => { setMode(mode === "owner" ? "teacher" : "owner"); setError(null); }}

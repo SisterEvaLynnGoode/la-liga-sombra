@@ -21,13 +21,11 @@ export async function POST(request: NextRequest) {
   if (!verifyPassword(password, t.password_salt, t.password_hash)) return bad();
   if (t.status !== "active") return NextResponse.json({ error: "This account is inactive. Contact your administrator." }, { status: 403 });
 
-  // Expired free trial → block with an upgrade path
-  if (t.trial_ends_at && new Date(t.trial_ends_at).getTime() < Date.now()) {
-    return NextResponse.json(
-      { error: "Your free trial has ended. Enter an access code at /teacher/signup to continue." },
-      { status: 403 }
-    );
-  }
+  // OPEN BETA: no trial expiry gate. This previously blocked login once
+  // trial_ends_at passed and told the teacher to go find an access code — which
+  // in an open beta means locking out the exact people we asked to try it, in
+  // the middle of a school term, with their classes already running. The column
+  // is left on the table for a future paid tier; nothing reads it to deny entry.
 
   const token = await signToken({ role: "teacher", teacherId: t.id, isAdmin: t.is_admin });
   const response = NextResponse.json({ ok: true });
