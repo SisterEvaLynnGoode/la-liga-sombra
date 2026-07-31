@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { guardClass, isResponse } from "@/lib/auth/teacher";
 import { createClient } from "@/lib/supabase/server";
 import { computeClassGrades } from "@/lib/grading";
+import { buildStudentReport } from "@/lib/grading-report";
 
 // ACTFL band → Aeries-style 1–4 standards proficiency mark
 const BAND_TO_MARK: Record<string, number> = {
@@ -69,6 +70,17 @@ export async function GET(request: NextRequest) {
     }
   } else if (type === "grades" || type === "grades-aeries") {
     const grades = await computeClassGrades(ids, supabase);
+    // Same definition the Grades tab uses: how far the class has actually got.
+    const casesAssigned = Math.max(1, ...ids.map((id) => grades.get(id)?.casesSolved ?? 0));
+    const reportFor = (sid: string, name: string) => {
+      const g = grades.get(sid);
+      if (!g) return null;
+      return buildStudentReport({
+        firstName: (name ?? "").trim().split(/\s+/)[0] || "This student",
+        grade: g,
+        casesAssigned,
+      });
+    };
     if (type === "grades-aeries") {
       // Aeries standards-based import shape: SIS id + 1–4 proficiency marks.
       // Column names are a sensible default — remap in Aeries' import wizard.
@@ -79,7 +91,11 @@ export async function GET(request: NextRequest) {
           "Student Name": s.display_name,
           "ACTFL Level": g?.band ?? "Novice Low",
           "Overall Mark": BAND_TO_MARK[g?.band ?? "Novice Low"] ?? 1,
-          "Percent": g ? Math.round(g.score * 100) : 0,
+          // Percent feeds a gradebook column, so it must be the course grade —
+          // NOT the ACTFL proficiency composite, which reads as a failing mark
+          // for students who are perfectly on track.
+          "Percent": reportFor(s.id, s.display_name)?.courseGrade.pct ?? 0,
+          "Proficiency Score": g ? Math.round(g.score * 100) : 0,
           "Vocabulary": g ? g.skills.vocab.bandIndex + 1 : 1,
           "Grammar": g ? g.skills.grammar.bandIndex + 1 : 1,
           "Communication": g ? g.skills.communication.bandIndex + 1 : 1,
@@ -93,11 +109,15 @@ export async function GET(request: NextRequest) {
           student: s.display_name,
           sis_id: s.sis_id ?? "",
           actfl_band: g?.band ?? "Novice Low",
-          percent: g ? Math.round(g.score * 100) : 0,
+          grade_percent: reportFor(s.id, s.display_name)?.courseGrade.pct ?? 0,
+          grade_letter: reportFor(s.id, s.display_name)?.courseGrade.letter ?? "",
+          proficiency_percent: g ? Math.round(g.score * 100) : 0,
           vocab_band: g?.skills.vocab.band ?? "Novice Low",
           grammar_band: g?.skills.grammar.band ?? "Novice Low",
           communication_band: g?.skills.communication.band ?? "Novice Low",
           cases_solved: g?.casesSolved ?? 0,
+          cases_assigned: casesAssigned,
+          family_note: reportFor(s.id, s.display_name)?.narrative ?? "",
         };
       });
       csv = toCSV(rows);
