@@ -11,6 +11,27 @@ export default function TeacherLoginPage() {
   const [password, setPassword] = useState("");
   const [error, setError] = useState<string | null>(null);
   const [loading, setLoading] = useState(false);
+  const [forgot, setForgot] = useState(false);
+  const [forgotSent, setForgotSent] = useState<{ emailConfigured: boolean } | null>(null);
+  const [forgotBusy, setForgotBusy] = useState(false);
+
+  async function requestReset(e: React.FormEvent) {
+    e.preventDefault();
+    setForgotBusy(true);
+    setError(null);
+    try {
+      const res = await fetch("/api/teacher/password/forgot", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email }),
+      });
+      const data = (await res.json().catch(() => ({}))) as { emailConfigured?: boolean };
+      setForgotSent({ emailConfigured: Boolean(data.emailConfigured) });
+    } catch {
+      setError("Server error — please try again.");
+    }
+    setForgotBusy(false);
+  }
 
   async function submit(e: React.FormEvent) {
     e.preventDefault();
@@ -53,6 +74,50 @@ export default function TeacherLoginPage() {
             <div className="mt-3 h-px bg-gradient-to-r from-transparent via-[#c9933a] to-transparent" />
           </div>
 
+          {forgot ? (
+            /* ── Forgot password ─────────────────────────────────────────── */
+            forgotSent ? (
+              <div className="text-center space-y-3">
+                <p className="font-typewriter text-[12px] leading-relaxed text-[#f5e6c8]">
+                  If an account exists for that email, a reset link is on its way. The link works
+                  once and expires in an hour.
+                </p>
+                {!forgotSent.emailConfigured && (
+                  <p className="font-typewriter text-[11px] leading-relaxed text-[#e8b455] border border-[rgba(232,180,85,0.35)] bg-[rgba(232,180,85,0.06)] p-3 text-left">
+                    Heads up: email delivery isn&apos;t switched on for this site yet, so the message
+                    won&apos;t actually arrive. Contact your administrator and they can send you the
+                    reset link directly.
+                  </p>
+                )}
+                <button
+                  onClick={() => { setForgot(false); setForgotSent(null); }}
+                  className="font-typewriter text-[11px] text-[#c9933a] hover:underline"
+                >
+                  ← Back to sign in
+                </button>
+              </div>
+            ) : (
+              <form onSubmit={requestReset} className="space-y-4">
+                <p className="font-typewriter text-[11px] leading-relaxed text-[#8b7355]">
+                  Enter the email on your account and we&apos;ll send a link to set a new password.
+                </p>
+                <div>
+                  <label className="block font-typewriter text-[10px] tracking-[0.25em] uppercase text-[#8b7355] mb-1.5">Email</label>
+                  <input type="email" value={email} onChange={(e) => setEmail(e.target.value)}
+                    placeholder="you@school.org" autoComplete="email" autoFocus className={inputCls} />
+                </div>
+                {error && <p className="font-typewriter text-xs text-[#c0392b]">{error}</p>}
+                <button type="submit" disabled={forgotBusy}
+                  className="w-full clip-skew py-3 font-typewriter text-sm tracking-[0.2em] uppercase bg-[#8b1a1a] text-[#f5e6c8] border border-[#c0392b] hover:bg-[#c0392b] transition-colors disabled:opacity-50">
+                  {forgotBusy ? "Sending…" : "Send reset link →"}
+                </button>
+                <button type="button" onClick={() => { setForgot(false); setError(null); }}
+                  className="w-full font-typewriter text-[11px] text-[#8b7355] hover:text-[#c9933a] transition-colors">
+                  ← Back to sign in
+                </button>
+              </form>
+            )
+          ) : (
           <form onSubmit={submit} className="space-y-4">
             {mode === "teacher" && (
               <div>
@@ -73,7 +138,15 @@ export default function TeacherLoginPage() {
               className="w-full clip-skew py-3 font-typewriter text-sm tracking-[0.2em] uppercase bg-[#8b1a1a] text-[#f5e6c8] border border-[#c0392b] hover:bg-[#c0392b] transition-colors disabled:opacity-50">
               {loading ? "Signing in…" : "Sign in →"}
             </button>
+
+            {mode === "teacher" && (
+              <button type="button" onClick={() => { setForgot(true); setError(null); }}
+                className="w-full font-typewriter text-[11px] text-[#8b7355] hover:text-[#c9933a] transition-colors">
+                Forgot your password?
+              </button>
+            )}
           </form>
+          )}
 
           <div className="mt-5 pt-4 border-t border-[rgba(201,147,58,0.12)] space-y-2 text-center">
             <p className="font-typewriter text-[11px] text-[#8b7355]">

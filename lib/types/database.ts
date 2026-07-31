@@ -333,6 +333,12 @@ export interface Database {
         };
         Relationships: [];
       };
+      password_resets: {
+        Row: { id: string; teacher_id: string; token_hash: string; expires_at: string; used_at: string | null; created_at: string };
+        Insert: { id?: string; teacher_id: string; token_hash: string; expires_at: string; used_at?: string | null; created_at?: string };
+        Update: { id?: string; teacher_id?: string; token_hash?: string; expires_at?: string; used_at?: string | null; created_at?: string };
+        Relationships: [];
+      };
       student_mastery: {
         Row: { student_id: string; band_index: number; band: string; score: number; updated_at: string };
         Insert: { student_id: string; band_index?: number; band?: string; score?: number; updated_at?: string };

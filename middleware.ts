@@ -11,7 +11,9 @@ export async function middleware(request: NextRequest) {
   // Teacher pages reachable WITHOUT a session. Signup has to be here or the
   // account-creation page requires an account to open it — the link on the
   // login page just bounces straight back to the login page.
-  const TEACHER_PUBLIC = ["/teacher/login", "/teacher/signup"];
+  // /teacher/reset is reached from an emailed link by someone who by
+  // definition cannot log in. Gating it would make the reset link useless.
+  const TEACHER_PUBLIC = ["/teacher/login", "/teacher/signup", "/teacher/reset"];
 
   // ── Teacher routes (everything except the public ones above) ───────────────
   if (pathname.startsWith("/teacher") && !TEACHER_PUBLIC.includes(pathname)) {
