@@ -51,12 +51,12 @@
     "characterId": "unit-01-camaleon",
     "localPath": "images/characters/unit-01-camaleon.png",
     "publicUrl": "/images/characters/unit-01-camaleon.png",
-    "higgsfieldJobId": "ba95583f-ed2f-4425-9bd8-727d5cd5a21c",
-    "higgsfieldUrl": "https://d8j0ntlcm91z4.cloudfront.net/user_3DQG5ve4hcMymLqHAOYWqsoLTCo/hf_20260520_014015_ba95583f-ed2f-4425-9bd8-727d5cd5a21c.png",
-    "timestamp": "2026-05-20T01:40:15Z",
+    "higgsfieldJobId": "71dca441-0396-4635-9e6a-3a8dfd816729",
+    "higgsfieldUrl": "https://d8j0ntlcm91z4.cloudfront.net/user_3DQG5ve4hcMymLqHAOYWqsoLTCo/hf_20260729_223012_71dca441-0396-4635-9e6a-3a8dfd816729.png",
+    "timestamp": "2026-07-29T22:30:12Z",
     "status": "approved",
-    "creditsUsed": 1.5,
-    "sourcePrompt": "El Camaleón — Unit 1 criminal. Tall slender man, black charro hat (sombrero de charro negro) MUST be visible, thick black mustache MUST be visible, dark casual shirt. Guadalajara México. Noir watercolor style.",
+    "creditsUsed": 2,
+    "sourcePrompt": "El Camaleón — Unit 1 criminal. REGENERATED as an image-to-image edit of the original portrait, changing ONLY the hat: the ornate sombrero de charro was replaced with a plain elegant black wide-brimmed hat. Face, mustache, pose, clothing, background and noir watercolour style preserved from the source so he still matches the other three suspects in the lineup. The charro hat was removed deliberately — see content/characters/unit-01.json notes.",
     "version": "19f2f944"
   },
   {
