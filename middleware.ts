@@ -27,7 +27,7 @@ export async function middleware(request: NextRequest) {
   }
 
   // ── Student-protected routes ───────────────────────────────────────────────
-  if (pathname.startsWith("/mission-board") || pathname.startsWith("/game") || pathname.startsWith("/play") || pathname.startsWith("/expediente")) {
+  if (pathname.startsWith("/mission-board") || pathname.startsWith("/game") || pathname.startsWith("/play") || pathname.startsWith("/expediente") || pathname.startsWith("/season")) {
     const token = request.cookies.get(AGENT_COOKIE)?.value;
     if (!token) return NextResponse.redirect(new URL("/login", request.url));
     const payload = await verifyToken(token);
@@ -43,5 +43,5 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ["/mission-board/:path*", "/game/:path*", "/play/:path*", "/expediente/:path*", "/expediente", "/teacher/:path*"],
+  matcher: ["/mission-board/:path*", "/game/:path*", "/play/:path*", "/expediente/:path*", "/expediente", "/season/:path*", "/season", "/teacher/:path*"],
 };

@@ -86,6 +86,8 @@ export interface Database {
           pin_hash: string | null;
           pin_salt: string | null;
           sis_id: string | null;
+          /** La Última Estación faction override; null = derive from the boss ending. */
+          faction: string | null;
           created_at: string;
         };
         Insert: {
@@ -96,6 +98,7 @@ export interface Database {
           pin_hash?: string | null;
           pin_salt?: string | null;
           sis_id?: string | null;
+          faction?: string | null;
           created_at?: string;
         };
         Update: {
@@ -106,6 +109,7 @@ export interface Database {
           pin_hash?: string | null;
           pin_salt?: string | null;
           sis_id?: string | null;
+          faction?: string | null;
           created_at?: string;
         };
         Relationships: [
