@@ -39,6 +39,9 @@ export type StorySlide =
       kind: "storyExpect";
       headline: string;
       items: Array<{ label: string; text: string }>;
+      /** Section label. Defaults to "La Misión", which is right for a case
+       *  deck and wrong for a slide of classroom norms. */
+      eyebrow?: string;
     }
   | { kind: "storyDiscuss"; prompt: string; followups: string[] }
   | { kind: "storyCloser"; text: string; caseTitle: string };
@@ -55,6 +58,11 @@ export interface StoryDeckMeta {
   /** Same, with `optional` slides dropped (the NÚCLEO run). */
   coreSlideCount: number;
   coreMinutes: number;
+  /**
+   * Selector label. Case decks leave this unset and get "Caso N — title";
+   * the orientation decks are not cases and set it explicitly.
+   */
+  label?: string;
 }
 
 export interface StoryDeck {
@@ -71,7 +79,9 @@ export interface StoryDeck {
  * pronunciation. 130 under-reported a measured run by ~2 minutes, and a
  * bell-ringer estimate that lies is worse than no estimate.
  */
-function estimateMinutes(slides: StorySlide[]): number {
+const WPM = 118;
+
+export function estimateMinutes(slides: StorySlide[]): number {
   let words = 0;
   let fixedSeconds = 0;
 
@@ -99,7 +109,7 @@ function estimateMinutes(slides: StorySlide[]): number {
     fixedSeconds += 5; // slide transition
   }
 
-  return Math.round(((words / 130) * 60 + fixedSeconds) / 60);
+  return Math.round(((words / WPM) * 60 + fixedSeconds) / 60);
 }
 
 function countWords(s: string): number {

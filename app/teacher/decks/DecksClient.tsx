@@ -73,7 +73,7 @@ export default function DecksClient({ decks, stories }: Props) {
               >
                 {stories.map((s) => (
                   <option key={s.meta.unitNumber} value={s.meta.unitNumber}>
-                    Caso {s.meta.unitNumber} — {s.meta.caseTitle} ({s.meta.country})
+                    {s.meta.label ?? `Caso ${s.meta.unitNumber} — ${s.meta.caseTitle} (${s.meta.country})`}
                   </option>
                 ))}
               </select>
@@ -191,10 +191,14 @@ function StorySlideBody({ slide }: { slide: StorySlide }) {
           <p className="font-typewriter text-[11px] tracking-[0.35em] uppercase text-[#8b7355]">
             La Liga Sombra — Antes de Empezar
           </p>
-          <h1 className="font-display font-bold text-5xl text-[#e8b455] mt-4">Caso {slide.unitNumber}</h1>
+          {/* The orientation decks are not cases — a cover reading "Caso 0" on
+              the first day of school is just wrong. They carry their own title. */}
+          {slide.unitNumber >= 1 && (
+            <h1 className="font-display font-bold text-5xl text-[#e8b455] mt-4">Caso {slide.unitNumber}</h1>
+          )}
           <p className="font-display font-bold text-3xl text-[#f5e6c8] mt-2">{slide.caseTitle}</p>
           <p className="font-typewriter text-sm text-[#c4a882] mt-4">
-            {slide.city}, {slide.country}
+            {slide.unitNumber >= 1 ? `${slide.city}, ${slide.country}` : slide.city}
           </p>
           <p className="font-typewriter text-[12px] text-[#8b7355] mt-8 max-w-[38rem] mx-auto leading-relaxed">
             {slide.hook}
@@ -288,7 +292,7 @@ function StorySlideBody({ slide }: { slide: StorySlide }) {
       return (
         <div>
           <p className="font-typewriter text-[10px] tracking-[0.3em] uppercase text-[#8b7355]">
-            La Misión
+            {slide.eyebrow ?? "La Misión"}
           </p>
           <h2 className="font-display font-bold text-4xl text-[#e8b455] mt-2">{slide.headline}</h2>
           <ol className="mt-7 space-y-3">
