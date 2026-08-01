@@ -207,15 +207,15 @@ function dayTwoSlides(): StorySlide[] {
         },
         {
           label: "Sin burlas",
-          text: "Nobody laughs at anybody's accent, anybody's mistake, or anybody's family's Spanish. This is the one rule with no version where you get a warning.",
+          text: "Nobody in this room gets laughed at. Not for an accent, not for a wrong answer, not for the Spanish your family speaks — and not for how you look, who you are, who you love, what you can afford, or what you are still figuring out. You do not have to be friends with everyone in here. You do have to make this a room where anyone can take a risk out loud. This is the one rule with no version where you get a warning.",
         },
         {
           label: "Llega y empieza",
           text: "There is work on the board when the bell rings. Start it before you talk to me. Five minutes at the top of class is over three full class periods across the year.",
         },
         {
-          label: "Teléfonos abajo",
-          text: "Phones face down and away during instruction and during cases. You will have a laptop out — that is the tool for this class. If you need your phone for something real, ask; the answer is often yes.",
+          label: "Sin teléfonos",
+          text: "Phones are not out in this school, so they are not out in here — not face down on the desk, not in your lap, not in your sleeve. Away means away. Your laptop is the tool for this class and it is the only screen you need. If something real is going on at home, come tell me and we will deal with it together — that conversation happens with me, not with a phone under the desk.",
         },
         {
           label: "Se puede repetir",
@@ -308,7 +308,9 @@ The ten phrases are not a quiz. Nobody memorizes them today. They exist so that 
 
 const DAY_TWO_NOTE = `The grade slide is derived from the real grading engine (lib/grading-report.ts): 70% quality, 30% completion, proficiency tracked separately. If you change the weights in the code, change them here — this slide is the promise students will hold you to in October.
 
-Norms are a starter set built around how this course actually works, not a generic list. Cut freely. The two worth keeping if you cut everything else are "Sin burlas" (the class has students from these cultures in it) and "Se puede repetir" (retakes are what make the proficiency score honest).
+Norms are a starter set built around how this course actually works, not a generic list. Cut freely. The two worth keeping if you cut everything else are "Sin burlas" — deliberately written wider than language, because a room where you can be mocked for anything is not a room where you will risk a sentence in a language you are bad at — and "Se puede repetir", since retakes are what make the proficiency score honest.
+
+"Sin teléfonos" states the school-wide ban rather than a classroom preference, so it should match whatever the office says this year. If the policy changes, change this line.
 
 The class-code row reads "on the board" — write the period's code up before they log in. Budget the full block here; logins always take longer than the estimate, and it is better to end Day 2 with everyone in the app than to rush the norms.`;
 
