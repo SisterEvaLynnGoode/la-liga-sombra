@@ -797,5 +797,18 @@
   "model": "recraft_v4_1",
   "sourcePrompt": "Graphic novel character portrait. Black ink linework over loose watercolor washes, visible brush texture, rough deckled painted edges. Tight head-and-chest crop, subject facing the viewer, dramatic low-key side lighting, deep shadows, warm muted palette. Behind them, loosely inked: the Maya farming village of Joya de Cerén in the year 600 — thatched adobe houses, a cornfield, a smoking volcano on ",
   "version": "1537121f"
+ },
+ {
+  "characterId": "unit-13-sakol",
+  "localPath": "images/characters/unit-13-sakol.png",
+  "publicUrl": "/images/characters/unit-13-sakol.png",
+  "higgsfieldJobId": "f8ce9b3b-9dd9-4b45-ac55-8d5ff68969ae",
+  "higgsfieldUrl": "https://d8j0ntlcm91z4.cloudfront.net/user_3DQG5ve4hcMymLqHAOYWqsoLTCo/hf_20260801_212046_f8ce9b3b-9dd9-4b45-ac55-8d5ff68969ae.png",
+  "timestamp": "2026-08-01T21:20:00Z",
+  "status": "approved",
+  "creditsUsed": 1.25,
+  "model": "recraft_v4_1@1k",
+  "sourcePrompt": "Graphic novel character portrait. Black ink linework over loose watercolor washes, visible brush texture, rough deckled painted edges. Tight head-and-chest crop, subject facing the viewer, dramatic low-key side lighting, deep shadows, warm muted palette. Behind them, loosely inked: the Maya farming village of Joya de Cerén in the year 600 — thatched adobe houses, a cornfield, a smoking volcano on ",
+  "version": "0148dbae"
  }
 ]

@@ -739,7 +739,8 @@
           "realName": "Sak Ol",
           "age": 29,
           "description": "Duerme de día porque cuida el pueblo de noche — igual que el ladrón. Pero puede moler el maíz sin problema, y sirve comida a los vecinos por la tarde cuando despierta. Todos en el pueblo lo conocen.",
-          "imageSeed": 22
+          "imageSeed": 22,
+          "imageUrl": "/images/characters/unit-13-sakol.png"
         },
         {
           "id": "nail",
