@@ -9,6 +9,12 @@
 
 import fs from "fs";
 import path from "path";
+// Static import, NOT a filesystem read of public/. Reading public/ with a
+// dynamic path makes Next's dependency tracer bundle the whole directory into
+// the serverless function — 140 MB of portraits, which blew the 250 MB Vercel
+// function limit and failed the deploy outright. The manifest already records
+// every portrait that exists, so ask it instead of asking the disk.
+import manifestJson from "../../public/images/characters/manifest.json";
 
 export interface GalleryCharacter {
   slug: string;
@@ -31,7 +37,11 @@ export interface GalleryCase {
 }
 
 const CONTENT = path.join(process.cwd(), "content");
-const PUBLIC = path.join(process.cwd(), "public");
+
+/** Public URLs of every portrait the manifest knows about. */
+const PORTRAITS = new Set(
+  (manifestJson as Array<{ publicUrl?: string }>).map((e) => e.publicUrl).filter(Boolean) as string[],
+);
 
 function readJson(p: string): Record<string, unknown> | null {
   try { return JSON.parse(fs.readFileSync(p, "utf-8")) as Record<string, unknown>; }
@@ -102,7 +112,7 @@ function toCharacter(
   caseBase: string, id: string, name: string, realName?: string,
   age?: number, role?: string, imageUrl?: string,
 ): GalleryCharacter {
-  const present = Boolean(imageUrl) && fs.existsSync(path.join(PUBLIC, imageUrl!.replace(/^\//, "")));
+  const present = Boolean(imageUrl) && PORTRAITS.has(imageUrl!);
   let borrowedFrom: string | undefined;
   if (imageUrl) {
     const f = path.basename(imageUrl, ".png");
