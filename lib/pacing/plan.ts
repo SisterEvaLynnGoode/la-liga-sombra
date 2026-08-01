@@ -314,7 +314,6 @@ export const SEMESTER: PacingWeek[] = [
       { id: "w27-t2", label: "Play Operación Reloj de Arena to the Desenlace" },
       { id: "w27-t3", label: "Class debrief: what does El Cronista actually want?" },
     ],
-    status: "planned",
   },
   {
     week: 28, semester: 2, arc: 5, title: "Unit 16 · Uruguay", type: "unit", unitNumber: 16,

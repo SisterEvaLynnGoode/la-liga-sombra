@@ -3,21 +3,14 @@ import { getStudentSession } from "@/lib/auth/session";
 import { createClient } from "@/lib/supabase/server";
 import type { BadgeType } from "@/lib/types/database";
 import type { BossEnding, BossDifficulty, EthicalChoiceKey } from "@/lib/types/boss";
+import { loadBossContent } from "@/lib/boss/content";
 
-const BOSS_UNLOCKS_UNIT: Record<string, number> = {
-  "unit-5-eclipse": 6,
-};
-
+// Difficulty badges are the same three for every boss — they describe how the
+// student played, not which boss it was.
 const DIFFICULTY_BADGE: Record<BossDifficulty, BadgeType> = {
   easy:   "agente_cuidadoso",
   normal: "agente_estandar",
   hard:   "agente_elite_boss",
-};
-
-const ENDING_BADGE: Record<EthicalChoiceKey, BadgeType> = {
-  A: "diplomatico",
-  B: "cazador_implacable",
-  C: "maestro_negociador_boss",
 };
 
 interface Params { params: { bossId: string } }
@@ -36,7 +29,13 @@ export async function POST(request: NextRequest, { params }: Params) {
   };
 
   const { difficulty, ethicalChoice, finalEnding, baseScore, hadPartner } = body;
-  const nextUnit = BOSS_UNLOCKS_UNIT[params.bossId];
+
+  // Unlock target and ending badge are the boss's own, read from its content
+  // file rather than from a second copy kept here.
+  const content = loadBossContent(params.bossId);
+  if (!content) return NextResponse.json({ error: "Unknown boss" }, { status: 400 });
+  const nextUnit = content.nextUnit;
+
   const supabase = createClient();
 
   const pointsMultiplier = difficulty === "hard" ? 2.0 : difficulty === "normal" ? 1.5 : 1.0;
@@ -80,9 +79,10 @@ export async function POST(request: NextRequest, { params }: Params) {
     }
   }
 
-  await award("operacion_eclipse_completada");
+  if (content.completionBadge) await award(content.completionBadge);
   await award(DIFFICULTY_BADGE[difficulty]);
-  await award(ENDING_BADGE[ethicalChoice]);
+  const endingBadge = content.endings[ethicalChoice]?.badge;
+  if (endingBadge) await award(endingBadge);
 
   // Record points as an attempt
   if (proxyUnitId) {

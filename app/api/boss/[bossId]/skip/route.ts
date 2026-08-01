@@ -1,11 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getStudentSession } from "@/lib/auth/session";
 import { createClient } from "@/lib/supabase/server";
-
-// Which unit to unlock when each boss is skipped or completed
-const BOSS_UNLOCKS_UNIT: Record<string, number> = {
-  "unit-5-eclipse": 6,
-};
+import { loadBossContent } from "@/lib/boss/content";
 
 interface Params { params: { bossId: string } }
 
@@ -14,8 +10,10 @@ export async function POST(_req: NextRequest, { params }: Params) {
   const session = await getStudentSession();
   if (!session) return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
 
-  const nextUnit = BOSS_UNLOCKS_UNIT[params.bossId];
-  if (!nextUnit) return NextResponse.json({ error: "Unknown boss" }, { status: 400 });
+  // Which unit this boss unlocks comes from the boss's own content file.
+  const content = loadBossContent(params.bossId);
+  if (!content) return NextResponse.json({ error: "Unknown boss" }, { status: 400 });
+  const nextUnit = content.nextUnit;
 
   const supabase = createClient();
 

@@ -25,7 +25,10 @@ function GlossaryPassage({ passage, glossary = [] }: { passage: string; glossary
   const tokens = passage.split(/(\s+)/);
 
   return (
-    <p className="font-typewriter text-sm text-[#c4a882] leading-relaxed">
+    // whitespace-pre-line: every passage in the game is written with blank lines
+    // between paragraphs (letters, notebook pages, reports). Default white-space
+    // collapsed them all into one block of text.
+    <p className="font-typewriter text-sm text-[#c4a882] leading-relaxed whitespace-pre-line">
       {tokens.map((token, i) => {
         const bare = token.replace(/[¿?¡!.,;:"""''()]/g, "").toLowerCase();
         const translation = glossaryMap.get(bare);

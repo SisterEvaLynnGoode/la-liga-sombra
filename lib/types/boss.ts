@@ -4,10 +4,15 @@
  */
 
 import type { ReadingQuestion, GlossaryEntry } from "@/lib/games/types";
+import type { BadgeType } from "@/lib/types/database";
 
 export type BossDifficulty = "easy" | "normal" | "hard";
 export type EthicalChoiceKey = "A" | "B" | "C";
-export type BossEnding = "pacto_silencioso" | "cazador" | "maestro_negociador";
+export type BossEnding =
+  // Operación Eclipse
+  | "pacto_silencioso" | "cazador" | "maestro_negociador"
+  // Operación Reloj de Arena
+  | "trato_del_reloj" | "la_detencion" | "el_acuerdo";
 export type BossPhase =
   | "briefing"
   | "stage1" | "stage2" | "stage3" | "stage4"
@@ -90,7 +95,9 @@ export interface BossInterrogationStage {
   country: string;
   title: string;
   clueReward: string;
-  character: { name: string; role: string; imageUrl: string; description: string };
+  // imageUrl is optional: Semester 2 characters have no portrait art yet, and
+  // CharacterPortrait already falls back to initials when it is absent.
+  character: { name: string; role: string; imageUrl?: string; description: string };
   questionBank: BossInterrogationQuestion[];
   requiredInfo: string[];
   maxQuestions: number;
@@ -169,7 +176,7 @@ export interface BossEthicalChoice {
 export interface BossEndingDef {
   id: BossEnding;
   title: string;
-  badge: string;
+  badge: BadgeType;
   description: string[];
   finalClue: string;
 }
@@ -187,6 +194,11 @@ export interface BossContent {
   basePoints: number;
   pointsMultiplier: { easy: number; normal: number; hard: number };
   collaborationBonus: number;
+  /**
+   * Badge awarded for finishing this boss at all, whatever the ending. Per-boss,
+   * so the route no longer hands every boss the Eclipse badge.
+   */
+  completionBadge?: BadgeType;
   stages: BossStageContent[];
   /** What the chief says on the briefing screen. Was hardcoded to Eclipse. */
   briefingLine?: string;

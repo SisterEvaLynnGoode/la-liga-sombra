@@ -24,7 +24,8 @@ export type BadgeType =
   | "racha_30" | "primera_produccion" | "cold_case_master"
   | "operacion_eclipse_completada"
   | "diplomatico" | "cazador_implacable" | "maestro_negociador_boss"
-  | "agente_elite_boss" | "agente_estandar" | "agente_cuidadoso";
+  | "agente_elite_boss" | "agente_estandar" | "agente_cuidadoso"
+  | "operacion_reloj_completada" | "guardian_del_tiempo";
 
 // Supabase v2 requires Relationships and CompositeTypes for correct type inference
 export interface Database {

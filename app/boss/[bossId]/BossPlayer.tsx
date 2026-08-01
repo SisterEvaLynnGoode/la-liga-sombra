@@ -316,7 +316,7 @@ export default function BossPlayer({ content, initialState, displayName }: Props
             <div className="border border-[rgba(201,147,58,0.2)] bg-[#1a1614] p-5 flex gap-4">
               <div className="w-14 h-14 shrink-0 overflow-hidden rounded-full border border-[rgba(201,147,58,0.3)]">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
-                <img src="https://i.pravatar.cc/300?img=60" alt="Chief" className="w-full h-full object-cover grayscale" />
+                <img src="/images/characters/chief-ramirez.png" alt="Jefa Ramírez" className="w-full h-full object-cover grayscale" />
               </div>
               <div>
                 <p className="font-typewriter text-[10px] uppercase text-[#8b7355] mb-1">Jefa Ramírez</p>

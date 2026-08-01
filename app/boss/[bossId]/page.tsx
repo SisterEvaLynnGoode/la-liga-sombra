@@ -1,15 +1,9 @@
 import { redirect } from "next/navigation";
 import { getStudentSession } from "@/lib/auth/session";
 import { createClient } from "@/lib/supabase/server";
-import type { BossContent, BossState } from "@/lib/types/boss";
+import type { BossState } from "@/lib/types/boss";
 import BossPlayer from "./BossPlayer";
-
-function loadBossContent(bossId: string): BossContent | null {
-  try {
-    // eslint-disable-next-line @typescript-eslint/no-require-imports
-    return require(`@/content/bosses/${bossId}.json`) as BossContent;
-  } catch { return null; }
-}
+import { loadBossContent } from "@/lib/boss/content";
 
 interface PageProps { params: { bossId: string } }
 

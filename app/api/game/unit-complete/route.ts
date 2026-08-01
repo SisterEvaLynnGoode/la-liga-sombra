@@ -39,7 +39,8 @@ export async function POST(request: NextRequest) {
   // Boss-gated units: instead of auto-unlocking the next unit, create a boss_progress
   // entry. The next unit only unlocks after the boss is completed or skipped.
   const BOSS_AFTER_UNIT: Record<number, string> = {
-    5: "unit-5-eclipse",
+    5:  "unit-5-eclipse",
+    15: "unit-15-reloj-arena",
   };
 
   const bossId = BOSS_AFTER_UNIT[unitNumber];

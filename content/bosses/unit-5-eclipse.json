@@ -7,9 +7,13 @@
   "nextUnit": 6,
   "totalStages": 7,
   "basePoints": 500,
-  "pointsMultiplier": { "easy": 1.0, "normal": 1.5, "hard": 2.0 },
+  "pointsMultiplier": {
+    "easy": 1.0,
+    "normal": 1.5,
+    "hard": 2.0
+  },
   "collaborationBonus": 100,
-
+  "completionBadge": "operacion_eclipse_completada",
   "stages": [
     {
       "type": "readingComp",
@@ -18,37 +22,203 @@
       "clueReward": "El contacto de El Tejedor en Puerto Rico se llama Ricardo. Es joven, alto, con pelo rizado y oscuro, y es de la República Dominicana.",
       "passage": "Querida señora García,\n\nBuenos días. Me llamo Juan. Soy de Buenos Aires, Argentina. Tengo treinta años.\n\nMi hermano tiene veinticinco años y trabaja en tecnología. Mi compañero de trabajo tiene diecinueve años.\n\nQuiero visitar el museo de Guadalajara el martes a las tres de la tarde.\n\nMi contacto en San Juan se llama Ricardo. Es alto y tiene pelo rizado y oscuro. Es de la República Dominicana. Tiene veintinueve años.\n\nEl paquete está listo. Las computadoras portátiles, los celulares, y las tabletas están en la oficina principal.\n\nPor favor, confirma con Ricardo. Es muy urgente.\n\nSaludos,\nJ.",
       "glossary": [
-        { "word": "contacto",    "translation": "contact / informant" },
-        { "word": "paquete",     "translation": "package" },
-        { "word": "urgente",     "translation": "urgent" },
-        { "word": "confirma",    "translation": "confirm" },
-        { "word": "rizado",      "translation": "curly" }
+        {
+          "word": "contacto",
+          "translation": "contact / informant"
+        },
+        {
+          "word": "paquete",
+          "translation": "package"
+        },
+        {
+          "word": "urgente",
+          "translation": "urgent"
+        },
+        {
+          "word": "confirma",
+          "translation": "confirm"
+        },
+        {
+          "word": "rizado",
+          "translation": "curly"
+        }
       ],
       "questions": {
         "easy": [
-          { "id": "e1", "text": "¿Cómo se llama el autor de la carta?", "type": "multiple_choice", "options": ["Juan", "Pablo", "Miguel", "Carlos"], "correctIndex": 0 },
-          { "id": "e2", "text": "¿De dónde es el autor?", "type": "multiple_choice", "options": ["Buenos Aires", "Guadalajara", "Madrid", "San Juan"], "correctIndex": 0 },
-          { "id": "e3", "text": "¿Cuántos años tiene el hermano del autor?", "type": "multiple_choice", "options": ["veinticinco", "treinta", "diecinueve", "veintinueve"], "correctIndex": 0 },
-          { "id": "e4", "text": "¿Cómo se llama el contacto en San Juan?", "type": "multiple_choice", "options": ["Ricardo", "Roberto", "Rodrigo", "Rafael"], "correctIndex": 0 }
+          {
+            "id": "e1",
+            "text": "¿Cómo se llama el autor de la carta?",
+            "type": "multiple_choice",
+            "options": [
+              "Juan",
+              "Pablo",
+              "Miguel",
+              "Carlos"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "id": "e2",
+            "text": "¿De dónde es el autor?",
+            "type": "multiple_choice",
+            "options": [
+              "Buenos Aires",
+              "Guadalajara",
+              "Madrid",
+              "San Juan"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "id": "e3",
+            "text": "¿Cuántos años tiene el hermano del autor?",
+            "type": "multiple_choice",
+            "options": [
+              "veinticinco",
+              "treinta",
+              "diecinueve",
+              "veintinueve"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "id": "e4",
+            "text": "¿Cómo se llama el contacto en San Juan?",
+            "type": "multiple_choice",
+            "options": [
+              "Ricardo",
+              "Roberto",
+              "Rodrigo",
+              "Rafael"
+            ],
+            "correctIndex": 0
+          }
         ],
         "normal": [
-          { "id": "n1", "text": "¿Cómo se llama el autor de la carta?", "type": "multiple_choice", "options": ["Juan", "Pablo", "Miguel", "Carlos"], "correctIndex": 0 },
-          { "id": "n2", "text": "¿De dónde es el autor?", "type": "multiple_choice", "options": ["Buenos Aires", "Guadalajara", "Madrid", "San Juan"], "correctIndex": 0 },
-          { "id": "n3", "text": "¿Cuántos años tiene el hermano del autor?", "type": "multiple_choice", "options": ["veinticinco", "treinta", "diecinueve", "veintinueve"], "correctIndex": 0 },
-          { "id": "n4", "text": "¿Cómo es físicamente el contacto Ricardo?", "type": "multiple_choice", "options": ["Alto y pelo rizado oscuro", "Bajo y pelo liso rubio", "Mediano y pelo corto castaño", "Alto y pelo liso negro"], "correctIndex": 0 },
-          { "id": "n5", "text": "¿Dónde está el 'paquete' según la carta?", "type": "short_answer", "acceptableAnswers": ["en la oficina", "en la oficina principal", "oficina", "oficina principal"] }
+          {
+            "id": "n1",
+            "text": "¿Cómo se llama el autor de la carta?",
+            "type": "multiple_choice",
+            "options": [
+              "Juan",
+              "Pablo",
+              "Miguel",
+              "Carlos"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "id": "n2",
+            "text": "¿De dónde es el autor?",
+            "type": "multiple_choice",
+            "options": [
+              "Buenos Aires",
+              "Guadalajara",
+              "Madrid",
+              "San Juan"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "id": "n3",
+            "text": "¿Cuántos años tiene el hermano del autor?",
+            "type": "multiple_choice",
+            "options": [
+              "veinticinco",
+              "treinta",
+              "diecinueve",
+              "veintinueve"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "id": "n4",
+            "text": "¿Cómo es físicamente el contacto Ricardo?",
+            "type": "multiple_choice",
+            "options": [
+              "Alto y pelo rizado oscuro",
+              "Bajo y pelo liso rubio",
+              "Mediano y pelo corto castaño",
+              "Alto y pelo liso negro"
+            ],
+            "correctIndex": 0
+          },
+          {
+            "id": "n5",
+            "text": "¿Dónde está el 'paquete' según la carta?",
+            "type": "short_answer",
+            "acceptableAnswers": [
+              "en la oficina",
+              "en la oficina principal",
+              "oficina",
+              "oficina principal"
+            ]
+          }
         ],
         "hard": [
-          { "id": "h1", "text": "¿Cómo se llama el autor de la carta?", "type": "short_answer", "acceptableAnswers": ["Juan", "juan"] },
-          { "id": "h2", "text": "¿De dónde es el autor?", "type": "short_answer", "acceptableAnswers": ["Buenos Aires", "de Buenos Aires", "argentina", "Argentina"] },
-          { "id": "h3", "text": "¿Cuántos años tiene el hermano del autor?", "type": "short_answer", "acceptableAnswers": ["25", "veinticinco"] },
-          { "id": "h4", "text": "¿Cómo se llama el contacto en San Juan y de dónde es?", "type": "short_answer", "acceptableAnswers": ["Ricardo, República Dominicana", "Ricardo de la República Dominicana", "Ricardo"] },
-          { "id": "h5", "text": "¿Dónde está el 'paquete'?", "type": "short_answer", "acceptableAnswers": ["en la oficina", "oficina", "oficina principal"] },
-          { "id": "h6", "text": "¿A qué hora quiere visitar el museo el autor?", "type": "short_answer", "acceptableAnswers": ["a las tres", "3:00", "tres de la tarde", "las tres de la tarde"] }
+          {
+            "id": "h1",
+            "text": "¿Cómo se llama el autor de la carta?",
+            "type": "short_answer",
+            "acceptableAnswers": [
+              "Juan",
+              "juan"
+            ]
+          },
+          {
+            "id": "h2",
+            "text": "¿De dónde es el autor?",
+            "type": "short_answer",
+            "acceptableAnswers": [
+              "Buenos Aires",
+              "de Buenos Aires",
+              "argentina",
+              "Argentina"
+            ]
+          },
+          {
+            "id": "h3",
+            "text": "¿Cuántos años tiene el hermano del autor?",
+            "type": "short_answer",
+            "acceptableAnswers": [
+              "25",
+              "veinticinco"
+            ]
+          },
+          {
+            "id": "h4",
+            "text": "¿Cómo se llama el contacto en San Juan y de dónde es?",
+            "type": "short_answer",
+            "acceptableAnswers": [
+              "Ricardo, República Dominicana",
+              "Ricardo de la República Dominicana",
+              "Ricardo"
+            ]
+          },
+          {
+            "id": "h5",
+            "text": "¿Dónde está el 'paquete'?",
+            "type": "short_answer",
+            "acceptableAnswers": [
+              "en la oficina",
+              "oficina",
+              "oficina principal"
+            ]
+          },
+          {
+            "id": "h6",
+            "text": "¿A qué hora quiere visitar el museo el autor?",
+            "type": "short_answer",
+            "acceptableAnswers": [
+              "a las tres",
+              "3:00",
+              "tres de la tarde",
+              "las tres de la tarde"
+            ]
+          }
         ]
       }
     },
-
     {
       "type": "lineup",
       "country": "Puerto Rico",
@@ -58,46 +228,236 @@
       "hint": "El contacto es un hombre joven, alto, con pelo rizado y oscuro, de la República Dominicana.",
       "suspects": {
         "easy": [
-          { "id": "el-genio", "name": "El Genio", "realName": "Ricardo Montoya Díaz", "age": 29, "description": "Es un hombre joven y alto. Tiene pelo rizado y muy oscuro. Es de la República Dominicana. Tiene veintinueve años.", "imageSeed": 22, "imageUrl": "/images/characters/el-genio.png" },
-          { "id": "la-arana", "name": "La Araña", "realName": "Carmen Vidal López", "age": 35, "description": "Es una mujer de treinta y cinco años de México. Es de mediana estatura con pelo corto y oscuro.", "imageSeed": 45, "imageUrl": "/images/characters/unit-08-vendor-maria.png" },
-          { "id": "el-contador", "name": "El Contador", "realName": "Ernesto Paz Ríos", "age": 55, "description": "Es un hombre mayor de cincuenta y cinco años de Venezuela. Es calvo y lleva lentes redondos.", "imageSeed": 70, "imageUrl": "/images/characters/unit-08-don-aurelio.png" },
-          { "id": "el-oso", "name": "El Oso", "realName": "Marco Fuentes Silva", "age": 40, "description": "Es un hombre grande y fuerte de cuarenta años de Colombia. Tiene pelo corto y oscuro y una barba gruesa.", "imageSeed": 55, "imageUrl": "/images/characters/unit-06-jefe-cocina.png" }
+          {
+            "id": "el-genio",
+            "name": "El Genio",
+            "realName": "Ricardo Montoya Díaz",
+            "age": 29,
+            "description": "Es un hombre joven y alto. Tiene pelo rizado y muy oscuro. Es de la República Dominicana. Tiene veintinueve años.",
+            "imageSeed": 22,
+            "imageUrl": "/images/characters/el-genio.png"
+          },
+          {
+            "id": "la-arana",
+            "name": "La Araña",
+            "realName": "Carmen Vidal López",
+            "age": 35,
+            "description": "Es una mujer de treinta y cinco años de México. Es de mediana estatura con pelo corto y oscuro.",
+            "imageSeed": 45,
+            "imageUrl": "/images/characters/unit-08-vendor-maria.png"
+          },
+          {
+            "id": "el-contador",
+            "name": "El Contador",
+            "realName": "Ernesto Paz Ríos",
+            "age": 55,
+            "description": "Es un hombre mayor de cincuenta y cinco años de Venezuela. Es calvo y lleva lentes redondos.",
+            "imageSeed": 70,
+            "imageUrl": "/images/characters/unit-08-don-aurelio.png"
+          },
+          {
+            "id": "el-oso",
+            "name": "El Oso",
+            "realName": "Marco Fuentes Silva",
+            "age": 40,
+            "description": "Es un hombre grande y fuerte de cuarenta años de Colombia. Tiene pelo corto y oscuro y una barba gruesa.",
+            "imageSeed": 55,
+            "imageUrl": "/images/characters/unit-06-jefe-cocina.png"
+          }
         ],
         "normal": [
-          { "id": "el-genio", "name": "El Genio", "realName": "Ricardo Montoya Díaz", "age": 29, "description": "Es un hombre joven y alto. Tiene pelo rizado y muy oscuro. Es de la República Dominicana. Tiene veintinueve años.", "imageSeed": 22, "imageUrl": "/images/characters/el-genio.png" },
-          { "id": "la-arana", "name": "La Araña", "realName": "Carmen Vidal López", "age": 35, "description": "Es una mujer de treinta y cinco años de México. Es de mediana estatura con pelo corto y oscuro.", "imageSeed": 45, "imageUrl": "/images/characters/unit-08-vendor-maria.png" },
-          { "id": "el-contador", "name": "El Contador", "realName": "Ernesto Paz Ríos", "age": 55, "description": "Es un hombre mayor de cincuenta y cinco años de Venezuela. Es calvo y lleva lentes redondos.", "imageSeed": 70, "imageUrl": "/images/characters/unit-08-don-aurelio.png" },
-          { "id": "la-sombra", "name": "La Sombra", "realName": "Beatriz Solano Ruiz", "age": 28, "description": "Es una mujer joven y alta de España. Tiene pelo largo y rubio y ojos azules. Tiene veintiocho años.", "imageSeed": 32, "imageUrl": "/images/characters/unit-03-la-sombra.png" },
-          { "id": "el-oso", "name": "El Oso", "realName": "Marco Fuentes Silva", "age": 40, "description": "Es un hombre grande y fuerte de cuarenta años de Colombia. Tiene pelo corto y oscuro y una barba gruesa.", "imageSeed": 55, "imageUrl": "/images/characters/unit-06-jefe-cocina.png" },
-          { "id": "el-rayo", "name": "El Rayo", "realName": "Alejandro Cruz Mendoza", "age": 30, "description": "Es un hombre delgado de treinta años de Argentina. Tiene pelo castaño ondulado y lleva lentes de moda.", "imageSeed": 38, "imageUrl": "/images/characters/unit-05-fantasma-digital.png" }
+          {
+            "id": "el-genio",
+            "name": "El Genio",
+            "realName": "Ricardo Montoya Díaz",
+            "age": 29,
+            "description": "Es un hombre joven y alto. Tiene pelo rizado y muy oscuro. Es de la República Dominicana. Tiene veintinueve años.",
+            "imageSeed": 22,
+            "imageUrl": "/images/characters/el-genio.png"
+          },
+          {
+            "id": "la-arana",
+            "name": "La Araña",
+            "realName": "Carmen Vidal López",
+            "age": 35,
+            "description": "Es una mujer de treinta y cinco años de México. Es de mediana estatura con pelo corto y oscuro.",
+            "imageSeed": 45,
+            "imageUrl": "/images/characters/unit-08-vendor-maria.png"
+          },
+          {
+            "id": "el-contador",
+            "name": "El Contador",
+            "realName": "Ernesto Paz Ríos",
+            "age": 55,
+            "description": "Es un hombre mayor de cincuenta y cinco años de Venezuela. Es calvo y lleva lentes redondos.",
+            "imageSeed": 70,
+            "imageUrl": "/images/characters/unit-08-don-aurelio.png"
+          },
+          {
+            "id": "la-sombra",
+            "name": "La Sombra",
+            "realName": "Beatriz Solano Ruiz",
+            "age": 28,
+            "description": "Es una mujer joven y alta de España. Tiene pelo largo y rubio y ojos azules. Tiene veintiocho años.",
+            "imageSeed": 32,
+            "imageUrl": "/images/characters/unit-03-la-sombra.png"
+          },
+          {
+            "id": "el-oso",
+            "name": "El Oso",
+            "realName": "Marco Fuentes Silva",
+            "age": 40,
+            "description": "Es un hombre grande y fuerte de cuarenta años de Colombia. Tiene pelo corto y oscuro y una barba gruesa.",
+            "imageSeed": 55,
+            "imageUrl": "/images/characters/unit-06-jefe-cocina.png"
+          },
+          {
+            "id": "el-rayo",
+            "name": "El Rayo",
+            "realName": "Alejandro Cruz Mendoza",
+            "age": 30,
+            "description": "Es un hombre delgado de treinta años de Argentina. Tiene pelo castaño ondulado y lleva lentes de moda.",
+            "imageSeed": 38,
+            "imageUrl": "/images/characters/unit-05-fantasma-digital.png"
+          }
         ],
         "hard": [
-          { "id": "el-genio", "name": "El Genio", "realName": "Ricardo Montoya Díaz", "age": 29, "description": "Es un hombre joven y alto. Tiene pelo rizado y muy oscuro. Es de la República Dominicana. Tiene veintinueve años.", "imageSeed": 22, "imageUrl": "/images/characters/el-genio.png" },
-          { "id": "la-arana", "name": "La Araña", "realName": "Carmen Vidal López", "age": 35, "description": "Es una mujer de treinta y cinco años de México. Es de mediana estatura con pelo corto y oscuro.", "imageSeed": 45, "imageUrl": "/images/characters/unit-08-vendor-maria.png" },
-          { "id": "el-contador", "name": "El Contador", "realName": "Ernesto Paz Ríos", "age": 55, "description": "Es un hombre mayor de cincuenta y cinco años de Venezuela. Es calvo y lleva lentes redondos.", "imageSeed": 70, "imageUrl": "/images/characters/unit-08-don-aurelio.png" },
-          { "id": "la-sombra", "name": "La Sombra", "realName": "Beatriz Solano Ruiz", "age": 28, "description": "Es una mujer joven y alta de España. Tiene pelo largo y rubio y ojos azules. Tiene veintiocho años.", "imageSeed": 32, "imageUrl": "/images/characters/unit-03-la-sombra.png" },
-          { "id": "el-oso", "name": "El Oso", "realName": "Marco Fuentes Silva", "age": 40, "description": "Es un hombre grande y fuerte de cuarenta años de Colombia. Tiene pelo corto y oscuro y una barba gruesa.", "imageSeed": 55, "imageUrl": "/images/characters/unit-06-jefe-cocina.png" },
-          { "id": "el-rayo", "name": "El Rayo", "realName": "Alejandro Cruz Mendoza", "age": 30, "description": "Es un hombre delgado de treinta años de Argentina. Tiene pelo castaño ondulado y lleva lentes de moda.", "imageSeed": 38, "imageUrl": "/images/characters/unit-05-fantasma-digital.png" },
-          { "id": "el-musico", "name": "El Músico", "realName": "Carlos Tejada Herrera", "age": 26, "description": "Es un hombre joven de la República Dominicana. Tiene pelo rizado oscuro pero es de mediana estatura. Tiene veintiséis años.", "imageSeed": 15, "imageUrl": "/images/characters/unit-07-guitarrista.png" },
-          { "id": "el-artista", "name": "El Artista", "realName": "Daniel Reyes Ortiz", "age": 31, "description": "Es un hombre alto de la República Dominicana. Tiene pelo rizado oscuro y una barba corta. Tiene treinta y un años.", "imageSeed": 28, "imageUrl": "/images/characters/unit-07-cantante.png" }
+          {
+            "id": "el-genio",
+            "name": "El Genio",
+            "realName": "Ricardo Montoya Díaz",
+            "age": 29,
+            "description": "Es un hombre joven y alto. Tiene pelo rizado y muy oscuro. Es de la República Dominicana. Tiene veintinueve años.",
+            "imageSeed": 22,
+            "imageUrl": "/images/characters/el-genio.png"
+          },
+          {
+            "id": "la-arana",
+            "name": "La Araña",
+            "realName": "Carmen Vidal López",
+            "age": 35,
+            "description": "Es una mujer de treinta y cinco años de México. Es de mediana estatura con pelo corto y oscuro.",
+            "imageSeed": 45,
+            "imageUrl": "/images/characters/unit-08-vendor-maria.png"
+          },
+          {
+            "id": "el-contador",
+            "name": "El Contador",
+            "realName": "Ernesto Paz Ríos",
+            "age": 55,
+            "description": "Es un hombre mayor de cincuenta y cinco años de Venezuela. Es calvo y lleva lentes redondos.",
+            "imageSeed": 70,
+            "imageUrl": "/images/characters/unit-08-don-aurelio.png"
+          },
+          {
+            "id": "la-sombra",
+            "name": "La Sombra",
+            "realName": "Beatriz Solano Ruiz",
+            "age": 28,
+            "description": "Es una mujer joven y alta de España. Tiene pelo largo y rubio y ojos azules. Tiene veintiocho años.",
+            "imageSeed": 32,
+            "imageUrl": "/images/characters/unit-03-la-sombra.png"
+          },
+          {
+            "id": "el-oso",
+            "name": "El Oso",
+            "realName": "Marco Fuentes Silva",
+            "age": 40,
+            "description": "Es un hombre grande y fuerte de cuarenta años de Colombia. Tiene pelo corto y oscuro y una barba gruesa.",
+            "imageSeed": 55,
+            "imageUrl": "/images/characters/unit-06-jefe-cocina.png"
+          },
+          {
+            "id": "el-rayo",
+            "name": "El Rayo",
+            "realName": "Alejandro Cruz Mendoza",
+            "age": 30,
+            "description": "Es un hombre delgado de treinta años de Argentina. Tiene pelo castaño ondulado y lleva lentes de moda.",
+            "imageSeed": 38,
+            "imageUrl": "/images/characters/unit-05-fantasma-digital.png"
+          },
+          {
+            "id": "el-musico",
+            "name": "El Músico",
+            "realName": "Carlos Tejada Herrera",
+            "age": 26,
+            "description": "Es un hombre joven de la República Dominicana. Tiene pelo rizado oscuro pero es de mediana estatura. Tiene veintiséis años.",
+            "imageSeed": 15,
+            "imageUrl": "/images/characters/unit-07-guitarrista.png"
+          },
+          {
+            "id": "el-artista",
+            "name": "El Artista",
+            "realName": "Daniel Reyes Ortiz",
+            "age": 31,
+            "description": "Es un hombre alto de la República Dominicana. Tiene pelo rizado oscuro y una barba corta. Tiene treinta y un años.",
+            "imageSeed": 28,
+            "imageUrl": "/images/characters/unit-07-cantante.png"
+          }
         ]
       }
     },
-
     {
       "type": "chaseMap",
       "country": "España",
       "title": "La Persecución en Madrid",
       "clueReward": "El Genio fue visto en el Aeropuerto de Barajas comprando un billete a San José, Costa Rica. El Tejedor tiene familia allí.",
       "locations": [
-        { "id": "sol",       "name": "La Puerta del Sol",       "coordinates": { "x": 42, "y": 55 } },
-        { "id": "prado",     "name": "El Museo del Prado",      "coordinates": { "x": 52, "y": 62 } },
-        { "id": "mayor",     "name": "La Plaza Mayor",          "coordinates": { "x": 38, "y": 58 } },
-        { "id": "atocha",    "name": "La Estación de Atocha",   "coordinates": { "x": 50, "y": 70 } },
-        { "id": "salamanca", "name": "El Barrio de Salamanca",  "coordinates": { "x": 62, "y": 48 } },
-        { "id": "barajas",   "name": "El Aeropuerto de Barajas","coordinates": { "x": 78, "y": 22 } }
+        {
+          "id": "sol",
+          "name": "La Puerta del Sol",
+          "coordinates": {
+            "x": 42,
+            "y": 55
+          }
+        },
+        {
+          "id": "prado",
+          "name": "El Museo del Prado",
+          "coordinates": {
+            "x": 52,
+            "y": 62
+          }
+        },
+        {
+          "id": "mayor",
+          "name": "La Plaza Mayor",
+          "coordinates": {
+            "x": 38,
+            "y": 58
+          }
+        },
+        {
+          "id": "atocha",
+          "name": "La Estación de Atocha",
+          "coordinates": {
+            "x": 50,
+            "y": 70
+          }
+        },
+        {
+          "id": "salamanca",
+          "name": "El Barrio de Salamanca",
+          "coordinates": {
+            "x": 62,
+            "y": 48
+          }
+        },
+        {
+          "id": "barajas",
+          "name": "El Aeropuerto de Barajas",
+          "coordinates": {
+            "x": 78,
+            "y": 22
+          }
+        }
       ],
-      "correctRoute": ["sol", "prado", "atocha", "barajas"],
+      "correctRoute": [
+        "sol",
+        "prado",
+        "atocha",
+        "barajas"
+      ],
       "clues": [
         "El Genio tomó el metro desde La Puerta del Sol — punto de inicio.",
         "Lo vieron en El Museo del Prado consultando mapas de Costa Rica.",
@@ -106,7 +466,6 @@
       ],
       "wrongPenalty": 15
     },
-
     {
       "type": "interrogation",
       "country": "Costa Rica",
@@ -119,19 +478,86 @@
         "description": "Elena es la hermana menor de El Tejedor. Está muy nerviosa y asustada. Sabe dónde está su hermano pero tiene miedo de hablar. Parece estar llorando."
       },
       "questionBank": [
-        { "id": "q1", "spanish": "¿Dónde está tu hermano ahora?",          "english": "Where is your brother now?",         "response": "No sé. No sé nada.",                                                            "responseEnglish": "I don't know. I don't know anything.",    "infoRevealed": null,             "isUseful": false },
-        { "id": "q2", "spanish": "¿Cuándo hablaste con él por última vez?", "english": "When did you last speak with him?",   "response": "Hace dos semanas. Está bien.",                                               "responseEnglish": "Two weeks ago. He's fine.",                 "infoRevealed": "Último contacto: hace dos semanas.", "isUseful": true },
-        { "id": "q3", "spanish": "¿Está enfermo tu hermano?",              "english": "Is your brother sick?",              "response": "Sí... tiene problemas de corazón. Por eso no puede ir a la prisión.",           "responseEnglish": "Yes... he has heart problems. That's why he can't go to prison.", "infoRevealed": "El Tejedor tiene problemas de corazón.", "isUseful": true },
-        { "id": "q4", "spanish": "¿Trabaja en Buenos Aires?",              "english": "Does he work in Buenos Aires?",      "response": "No quiero decir nada más.",                                                  "responseEnglish": "I don't want to say anything else.",       "infoRevealed": null, "isUseful": false },
-        { "id": "q5", "spanish": "¿Tiene una oficina en el Barrio de Palermo?", "english": "Does he have an office in Palermo?", "response": "...¿Cómo sabe usted eso? Sí. En Palermo. Pero por favor...",              "responseEnglish": "How do you know that? Yes. In Palermo. But please...", "infoRevealed": "Dirección: Barrio de Palermo, Buenos Aires.", "isUseful": true },
-        { "id": "q6", "spanish": "¿Cuándo llega él a Buenos Aires?",       "english": "When does he arrive in Buenos Aires?","response": "El quince de este mes. Pero está muy enfermo. Por favor, es mi hermano.",      "responseEnglish": "The 15th of this month. But he's very sick. Please, he's my brother.", "infoRevealed": "Llega el quince del mes.", "isUseful": true },
-        { "id": "q7", "spanish": "¿Por qué trabaja para El Coleccionista?","english": "Why does he work for El Coleccionista?","response": "Le debemos dinero. Mucho dinero. No teníamos otra opción.",                 "responseEnglish": "We owe money. A lot. We had no other choice.",       "infoRevealed": "Trabaja para El Coleccionista por deudas.", "isUseful": true },
-        { "id": "q8", "spanish": "¿Quién más sabe dónde está?",           "english": "Who else knows where he is?",        "response": "Solo yo. Y El Coleccionista. Nadie más.",                                    "responseEnglish": "Only me. And El Coleccionista. No one else.", "infoRevealed": "Solo Elena y El Coleccionista saben.", "isUseful": true }
+        {
+          "id": "q1",
+          "spanish": "¿Dónde está tu hermano ahora?",
+          "english": "Where is your brother now?",
+          "response": "No sé. No sé nada.",
+          "responseEnglish": "I don't know. I don't know anything.",
+          "infoRevealed": null,
+          "isUseful": false
+        },
+        {
+          "id": "q2",
+          "spanish": "¿Cuándo hablaste con él por última vez?",
+          "english": "When did you last speak with him?",
+          "response": "Hace dos semanas. Está bien.",
+          "responseEnglish": "Two weeks ago. He's fine.",
+          "infoRevealed": "Último contacto: hace dos semanas.",
+          "isUseful": true
+        },
+        {
+          "id": "q3",
+          "spanish": "¿Está enfermo tu hermano?",
+          "english": "Is your brother sick?",
+          "response": "Sí... tiene problemas de corazón. Por eso no puede ir a la prisión.",
+          "responseEnglish": "Yes... he has heart problems. That's why he can't go to prison.",
+          "infoRevealed": "El Tejedor tiene problemas de corazón.",
+          "isUseful": true
+        },
+        {
+          "id": "q4",
+          "spanish": "¿Trabaja en Buenos Aires?",
+          "english": "Does he work in Buenos Aires?",
+          "response": "No quiero decir nada más.",
+          "responseEnglish": "I don't want to say anything else.",
+          "infoRevealed": null,
+          "isUseful": false
+        },
+        {
+          "id": "q5",
+          "spanish": "¿Tiene una oficina en el Barrio de Palermo?",
+          "english": "Does he have an office in Palermo?",
+          "response": "...¿Cómo sabe usted eso? Sí. En Palermo. Pero por favor...",
+          "responseEnglish": "How do you know that? Yes. In Palermo. But please...",
+          "infoRevealed": "Dirección: Barrio de Palermo, Buenos Aires.",
+          "isUseful": true
+        },
+        {
+          "id": "q6",
+          "spanish": "¿Cuándo llega él a Buenos Aires?",
+          "english": "When does he arrive in Buenos Aires?",
+          "response": "El quince de este mes. Pero está muy enfermo. Por favor, es mi hermano.",
+          "responseEnglish": "The 15th of this month. But he's very sick. Please, he's my brother.",
+          "infoRevealed": "Llega el quince del mes.",
+          "isUseful": true
+        },
+        {
+          "id": "q7",
+          "spanish": "¿Por qué trabaja para El Coleccionista?",
+          "english": "Why does he work for El Coleccionista?",
+          "response": "Le debemos dinero. Mucho dinero. No teníamos otra opción.",
+          "responseEnglish": "We owe money. A lot. We had no other choice.",
+          "infoRevealed": "Trabaja para El Coleccionista por deudas.",
+          "isUseful": true
+        },
+        {
+          "id": "q8",
+          "spanish": "¿Quién más sabe dónde está?",
+          "english": "Who else knows where he is?",
+          "response": "Solo yo. Y El Coleccionista. Nadie más.",
+          "responseEnglish": "Only me. And El Coleccionista. No one else.",
+          "infoRevealed": "Solo Elena y El Coleccionista saben.",
+          "isUseful": true
+        }
       ],
-      "requiredInfo": ["El Tejedor tiene problemas de corazón.", "Dirección: Barrio de Palermo, Buenos Aires.", "Llega el quince del mes."],
+      "requiredInfo": [
+        "El Tejedor tiene problemas de corazón.",
+        "Dirección: Barrio de Palermo, Buenos Aires.",
+        "Llega el quince del mes."
+      ],
       "maxQuestions": 6
     },
-
     {
       "type": "listeningComp",
       "country": "Argentina",
@@ -144,14 +570,53 @@
       "codeAnswer": "74",
       "codeHint": "Suma los tres números que El Tejedor menciona: veinticinco + treinta + diecinueve = ___",
       "questions": [
-        { "question": "¿Cuándo quiere El Coleccionista los datos?", "options": ["el veinte de abril", "el quince de marzo", "el doce de mayo", "el treinta de abril"], "correctIndex": 0, "explanationEs": "El Tejedor dice: 'El Coleccionista quiere los datos antes del veinte de abril.'" },
-        { "question": "¿Cuándo llega la hermana de El Tejedor a Buenos Aires?", "options": ["el quince", "el veinte", "el doce", "el treinta"], "correctIndex": 0, "explanationEs": "Dice: 'Mi hermana viene a Buenos Aires el quince.'" },
-        { "question": "¿Cuántos años tiene la primera víctima mencionada?", "options": ["25", "30", "19", "74"], "correctIndex": 0, "explanationEs": "Los tres números son: veinticinco (25), treinta (30), diecinueve (19)." },
-        { "question": "¿Qué es el código según El Tejedor?", "options": ["La suma de los años de sus tres víctimas", "Una fecha importante", "El nombre de El Coleccionista", "Un número de teléfono"], "correctIndex": 0, "explanationEs": "El Tejedor dice: 'El código es la suma de los años de mis tres víctimas.'" }
+        {
+          "question": "¿Cuándo quiere El Coleccionista los datos?",
+          "options": [
+            "el veinte de abril",
+            "el quince de marzo",
+            "el doce de mayo",
+            "el treinta de abril"
+          ],
+          "correctIndex": 0,
+          "explanationEs": "El Tejedor dice: 'El Coleccionista quiere los datos antes del veinte de abril.'"
+        },
+        {
+          "question": "¿Cuándo llega la hermana de El Tejedor a Buenos Aires?",
+          "options": [
+            "el quince",
+            "el veinte",
+            "el doce",
+            "el treinta"
+          ],
+          "correctIndex": 0,
+          "explanationEs": "Dice: 'Mi hermana viene a Buenos Aires el quince.'"
+        },
+        {
+          "question": "¿Cuántos años tiene la primera víctima mencionada?",
+          "options": [
+            "25",
+            "30",
+            "19",
+            "74"
+          ],
+          "correctIndex": 0,
+          "explanationEs": "Los tres números son: veinticinco (25), treinta (30), diecinueve (19)."
+        },
+        {
+          "question": "¿Qué es el código según El Tejedor?",
+          "options": [
+            "La suma de los años de sus tres víctimas",
+            "Una fecha importante",
+            "El nombre de El Coleccionista",
+            "Un número de teléfono"
+          ],
+          "correctIndex": 0,
+          "explanationEs": "El Tejedor dice: 'El código es la suma de los años de mis tres víctimas.'"
+        }
       ]
     }
   ],
-
   "ethicalChoice": {
     "context": "Durante el interrogatorio, Elena Tejedor se rompe emocionalmente. Las lágrimas corren por su cara mientras te dice algo inesperado.",
     "speakerName": "Elena Tejedor",
@@ -180,11 +645,21 @@
         "description": "Ofreces un trato: protección médica para El Tejedor a cambio de cooperación total. Debes construir una oración en español.",
         "effect": "Si tu español es correcto, obtienes la captura Y la cooperación de Elena.",
         "requiresSentence": true,
-        "requiredWords": ["ofrezco", "si", "coopera", "acuerdo", "protejo", "ayudo", "negocio", "trato", "prometo", "garantizo"]
+        "requiredWords": [
+          "ofrezco",
+          "si",
+          "coopera",
+          "acuerdo",
+          "protejo",
+          "ayudo",
+          "negocio",
+          "trato",
+          "prometo",
+          "garantizo"
+        ]
       }
     ]
   },
-
   "endings": {
     "A": {
       "id": "pacto_silencioso",

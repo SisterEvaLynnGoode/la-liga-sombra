@@ -1,0 +1,445 @@
+{
+  "id": "unit-15-reloj-arena",
+  "title": "Operación Reloj de Arena",
+  "subtitle": "Misión Especial — El Cronista",
+  "description": "Cinco casos, cinco épocas, un solo ladrón. El Cronista está acorralado en su propia máquina, pero la máquina no se apaga: se rompe. Cruza mil trescientos años — de Copán en el año 750 a La Habana de 1954 — para alcanzarlo antes de que desaparezca otra vez.",
+  "unlockAfterUnit": 15,
+  "nextUnit": 16,
+  "totalStages": 7,
+  "basePoints": 500,
+  "pointsMultiplier": { "easy": 1.0, "normal": 1.5, "hard": 2.0 },
+  "collaborationBonus": 100,
+  "completionBadge": "operacion_reloj_completada",
+  "briefingLine": "Agente, esto no es un caso más. Es los cinco a la vez. La máquina de El Cronista está rota y te va a llevar por todas las épocas que él robó, una por una, sin parar. Todo lo que aprendiste este semestre lo vas a necesitar hoy. ¿Cómo prefieres entrar?",
+  "ethicalChoiceAfterStage": 3,
+
+  "stages": [
+    {
+      "type": "readingComp",
+      "country": "Copán, 750",
+      "title": "La Libreta del Cronista",
+      "clueReward": "La libreta dice adónde va después de Copán: a Tikal, al año setecientos, por una máscara de jade. En Tikal El Cronista finge ser astrónomo — y un astrónomo verdadero habla de dos maneras: dice quién ES y dice cómo ESTÁ.",
+      "passage": "LIBRETA DE VIAJE — página uno\n\nHoy llego a Copán. La ciudad vive. No es una ruina: es una ciudad.\n\nLos escribas trabajan en la plaza. Tallan la piedra y escriben con glifos. Un escriba joven dibuja un glifo nuevo en el altar.\n\nYo observo. Siempre observo primero. Subo la escalera del templo y veo toda la ciudad desde arriba. El rey recibe a los sacerdotes hoy.\n\nAprendo rápido. Leo los glifos de la estela y descubro el nombre del rey.\n\nAhora voy a Tikal, año setecientos. Allí un astrónomo lleva una máscara de jade. La máscara es pequeña, verde, perfecta.\n\nNadie me ve. Nadie me busca. Vivo entre ellos y no existo.",
+      "glossary": [
+        { "word": "la libreta", "translation": "notebook" },
+        { "word": "la estela", "translation": "carved stone monument (stela)" },
+        { "word": "el glifo", "translation": "glyph" },
+        { "word": "el escriba", "translation": "scribe" },
+        { "word": "tallar", "translation": "to carve" },
+        { "word": "el altar", "translation": "altar" }
+      ],
+      "questions": {
+        "easy": [
+          {
+            "id": "e1",
+            "text": "¿Dónde está El Cronista hoy?",
+            "type": "multiple_choice",
+            "options": ["En Copán", "En Tikal", "En León", "En La Habana"],
+            "correctIndex": 0,
+            "explanationEs": "La primera línea lo dice: «Hoy llego a Copán».",
+            "explanationEn": "The first line says it: \"Hoy llego a Copán.\""
+          },
+          {
+            "id": "e2",
+            "text": "¿Qué hacen los escribas en la plaza?",
+            "type": "multiple_choice",
+            "options": ["Tallan la piedra y escriben glifos", "Comen y duermen", "Venden jade", "Corren por la selva"],
+            "correctIndex": 0,
+            "explanationEs": "«Tallan la piedra y escriben con glifos» — trabajan con la piedra.",
+            "explanationEn": "\"Tallan la piedra y escriben con glifos\" — they work the stone."
+          },
+          {
+            "id": "e3",
+            "text": "¿Qué ve El Cronista desde la escalera del templo?",
+            "type": "multiple_choice",
+            "options": ["Toda la ciudad", "El mar", "Otra pirámide", "Al rey"],
+            "correctIndex": 0,
+            "explanationEs": "«Subo la escalera del templo y veo toda la ciudad desde arriba».",
+            "explanationEn": "\"Subo la escalera del templo y veo toda la ciudad desde arriba.\""
+          }
+        ],
+        "normal": [
+          {
+            "id": "n1",
+            "text": "¿Adónde va El Cronista después de Copán?",
+            "type": "multiple_choice",
+            "options": ["A Tikal, al año 700", "A León, al año 1907", "A La Habana, al año 1954", "A Joya de Cerén, al año 600"],
+            "correctIndex": 0,
+            "explanationEs": "«Ahora voy a Tikal, año setecientos».",
+            "explanationEn": "\"Ahora voy a Tikal, año setecientos.\""
+          },
+          {
+            "id": "n2",
+            "text": "¿Qué lleva el astrónomo de Tikal?",
+            "type": "multiple_choice",
+            "options": ["Una máscara de jade", "Una estela de piedra", "Un glifo del rey", "Un tesoro del altar"],
+            "correctIndex": 0,
+            "explanationEs": "«Un astrónomo lleva una máscara de jade».",
+            "explanationEn": "\"Un astrónomo lleva una máscara de jade.\""
+          },
+          {
+            "id": "n3",
+            "text": "Según la libreta, ¿qué hace El Cronista siempre primero?",
+            "type": "multiple_choice",
+            "options": ["Observa", "Excava", "Vende", "Corre"],
+            "correctIndex": 0,
+            "explanationEs": "«Yo observo. Siempre observo primero». Por eso nadie lo descubre rápido.",
+            "explanationEn": "\"Yo observo. Siempre observo primero.\" That's why nobody spots him quickly."
+          },
+          {
+            "id": "n4",
+            "text": "¿Qué descubre El Cronista cuando lee la estela?",
+            "type": "multiple_choice",
+            "options": ["El nombre del rey", "El nombre del escriba", "Dónde está el jade", "La fecha de la ceremonia"],
+            "correctIndex": 0,
+            "explanationEs": "«Leo los glifos de la estela y descubro el nombre del rey».",
+            "explanationEn": "\"Leo los glifos de la estela y descubro el nombre del rey.\""
+          }
+        ],
+        "hard": [
+          {
+            "id": "h1",
+            "text": "«Vivo entre ellos y no existo». ¿Qué quiere decir El Cronista?",
+            "type": "multiple_choice",
+            "options": [
+              "Está en la ciudad pero nadie sabe quién es",
+              "Está muy enfermo",
+              "No le gusta la ciudad",
+              "Vive solo en la selva"
+            ],
+            "correctIndex": 0,
+            "explanationEs": "Lo explica en la línea anterior: «Nadie me ve. Nadie me busca».",
+            "explanationEn": "The line before explains it: \"Nadie me ve. Nadie me busca.\""
+          },
+          {
+            "id": "h2",
+            "text": "El Cronista escribe «llego», «observo», «subo» — todo en presente. ¿Por qué?",
+            "type": "multiple_choice",
+            "options": [
+              "Porque escribe mientras vive el momento",
+              "Porque escribe muchos años después",
+              "Porque el maya no tiene pasado",
+              "Porque escribe sobre el futuro"
+            ],
+            "correctIndex": 0,
+            "explanationEs": "Es el presente histórico: estás en el año 750 y lo cuentas como si pasara ahora.",
+            "explanationEn": "Historical present: you stand in the year 750 and narrate it as happening now."
+          },
+          {
+            "id": "h3",
+            "text": "¿Qué NO hace El Cronista en Copán, según la libreta?",
+            "type": "multiple_choice",
+            "options": ["Trabajar con los escribas", "Subir el templo", "Leer los glifos", "Observar la ciudad"],
+            "correctIndex": 0,
+            "explanationEs": "Los escribas trabajan; él solo mira, lee y sube. Nunca trabaja con ellos.",
+            "explanationEn": "The scribes work; he only watches, reads and climbs. He never works alongside them."
+          },
+          {
+            "id": "h4",
+            "text": "¿Cómo describe la máscara de Tikal?",
+            "type": "multiple_choice",
+            "options": ["Pequeña, verde y perfecta", "Grande y de piedra", "Vieja y rota", "De oro y jade"],
+            "correctIndex": 0,
+            "explanationEs": "«La máscara es pequeña, verde, perfecta» — usa SER porque describe cómo ES.",
+            "explanationEn": "\"La máscara es pequeña, verde, perfecta\" — SER, because it describes what it IS."
+          }
+        ]
+      }
+    },
+
+    {
+      "type": "swipeSort",
+      "country": "Tikal, 700",
+      "title": "El Falso Astrónomo",
+      "clueReward": "El impostor cae en la plaza de Tikal: dice quién ES pero no sabe decir cómo ESTÁ el cielo esta noche. Antes de desaparecer deja caer un pedazo de barro pintado — de Joya de Cerén, año seiscientos.",
+      "prompt": "¿SER o ESTAR? Decide rápido: el astrónomo verdadero contesta sin pensar.",
+      "leftLabel": "SER",
+      "leftHint": "identidad y características",
+      "rightLabel": "ESTAR",
+      "rightHint": "lugar y estado",
+      "items": [
+        { "text": "El astrónomo ___ alto y moreno.", "category": "left", "explanation": "una característica física — SER" },
+        { "text": "La máscara de jade ___ dentro del templo.", "category": "right", "explanation": "lugar — ESTAR" },
+        { "text": "El forastero ___ nervioso esta noche.", "category": "right", "explanation": "un estado de ahora — ESTAR" },
+        { "text": "La ceiba ___ un árbol sagrado.", "category": "left", "explanation": "identidad: qué es — SER" },
+        { "text": "Nosotros ___ cerca de la pirámide.", "category": "right", "explanation": "lugar — ESTAR" },
+        { "text": "El jade ___ verde.", "category": "left", "explanation": "característica permanente — SER" },
+        { "text": "Los monos ___ en los árboles.", "category": "right", "explanation": "lugar — ESTAR" },
+        { "text": "Tikal ___ una ciudad antigua.", "category": "left", "explanation": "identidad: qué es — SER" },
+        { "text": "El forastero ___ confundido cuando mira el cielo.", "category": "right", "explanation": "un estado de ahora — ESTAR. Un astrónomo verdadero no está confundido con las estrellas." },
+        { "text": "El quetzal ___ un pájaro de la selva.", "category": "left", "explanation": "identidad: qué es — SER" },
+        { "text": "La plaza ___ lejos del templo.", "category": "right", "explanation": "lugar — ESTAR" },
+        { "text": "Yo ___ agente de la agencia.", "category": "left", "explanation": "identidad: quién soy — SER" },
+        { "text": "El sacerdote ___ cansado después de la ceremonia.", "category": "right", "explanation": "un estado de ahora — ESTAR" },
+        { "text": "La luna ___ muy grande esta noche.", "category": "right", "explanation": "cómo se ve ahora, no cómo es siempre — ESTAR" },
+        { "text": "El escriba ___ inteligente y tranquilo.", "category": "left", "explanation": "cómo es la persona — SER" },
+        { "text": "El jaguar ___ dentro de la selva.", "category": "right", "explanation": "lugar — ESTAR" }
+      ]
+    },
+
+    {
+      "type": "sentenceBuilder",
+      "country": "Joya de Cerén, 600",
+      "title": "El Pueblo Bajo la Ceniza",
+      "clueReward": "Los vecinos de Joya de Cerén lo recuerdan bien: el forastero duerme de día y nunca sirve comida a nadie. Una vecina oye lo que dice antes de irse — habla de un poeta, de una ciudad con catedral, y del año mil novecientos siete.",
+      "sentences": [
+        {
+          "sentence": "El forastero duerme de día",
+          "translation": "The stranger sleeps during the day. (dormir: o→ue)"
+        },
+        {
+          "sentence": "Nosotros dormimos de noche",
+          "translation": "We sleep at night. (dormir — but NOSOTROS does not change: dormimos, not duermimos)"
+        },
+        {
+          "sentence": "Él no puede moler el maíz",
+          "translation": "He can't grind the corn. (poder: o→ue)"
+        },
+        {
+          "sentence": "Nosotros servimos comida a los vecinos",
+          "translation": "We serve food to the neighbors. (servir — NOSOTROS does not change: servimos, not sirvimos)"
+        },
+        {
+          "sentence": "Yo quiero hablar con la vecina",
+          "translation": "I want to speak with the neighbor. (querer: e→ie)"
+        },
+        {
+          "sentence": "La familia vuelve de la milpa por la tarde",
+          "translation": "The family returns from the cornfield in the afternoon. (volver: o→ue)"
+        },
+        {
+          "sentence": "Nosotros empezamos la búsqueda ahora",
+          "translation": "We begin the search now. (empezar — NOSOTROS does not change: empezamos, not empiezamos)"
+        },
+        {
+          "sentence": "El agente pide ayuda a la vecina",
+          "translation": "The agent asks the neighbor for help. (pedir: e→i)"
+        }
+      ]
+    },
+
+    {
+      "type": "interrogation",
+      "country": "León, 1907",
+      "title": "El Archivista de la Catedral",
+      "clueReward": "Don Efraín te da la hora, el reloj silencioso y el destino: un disco de La Habana, año mil novecientos cincuenta y cuatro. Es la última pieza de la lista — y la única que El Cronista todavía no tiene.",
+      "character": {
+        "name": "Don Efraín Mayorga",
+        "role": "archivista de la biblioteca de León",
+        "description": "Cuida los libros viejos de León desde hace treinta años. Le encanta la poesía de Darío y se sabe los versos de memoria. Está preocupado: alguien entra al archivo de noche, y no es un lector."
+      },
+      "questionBank": [
+        {
+          "id": "q1",
+          "spanish": "¿Le gusta a usted la poesía de Darío?",
+          "english": "Do you like Darío's poetry?",
+          "response": "¿Gustarme? Me encanta. Me sé los versos de memoria, joven. Pero usted no viene por poesía.",
+          "responseEnglish": "Like it? I love it. I know the verses by heart, young one. But you're not here for poetry.",
+          "infoRevealed": null,
+          "isUseful": false
+        },
+        {
+          "id": "q2",
+          "spanish": "¿A qué hora vuelve el forastero al archivo?",
+          "english": "What time does the stranger come back to the archive?",
+          "response": "A las once de la noche, siempre. Cuando la biblioteca está cerrada y la plaza está vacía.",
+          "responseEnglish": "At eleven at night, always. When the library is closed and the plaza is empty.",
+          "infoRevealed": "El Cronista vuelve al archivo a las once de la noche.",
+          "isUseful": true
+        },
+        {
+          "id": "q3",
+          "spanish": "¿Le interesa a usted la catedral?",
+          "english": "Are you interested in the cathedral?",
+          "response": "Me interesa mucho, pero eso no le ayuda a usted. Los leones de piedra no roban manuscritos.",
+          "responseEnglish": "It interests me a great deal, but that doesn't help you. Stone lions don't steal manuscripts.",
+          "infoRevealed": null,
+          "isUseful": false
+        },
+        {
+          "id": "q4",
+          "spanish": "¿Le molesta a usted algo de ese hombre?",
+          "english": "Does something about that man bother you?",
+          "response": "Su reloj. Todos los relojes de León hacen tic-tac. El suyo no hace ningún ruido. Ninguno.",
+          "responseEnglish": "His watch. Every watch in León ticks. His makes no sound at all. None.",
+          "infoRevealed": "El Cronista lleva un reloj que no hace ningún ruido.",
+          "isUseful": true
+        },
+        {
+          "id": "q5",
+          "spanish": "¿Le gusta a usted su trabajo aquí?",
+          "english": "Do you like your work here?",
+          "response": "Treinta años entre papel y tinta. Sí, me gusta. Pero ahora me da miedo cerrar de noche.",
+          "responseEnglish": "Thirty years among paper and ink. Yes, I like it. But now I'm afraid to lock up at night.",
+          "infoRevealed": null,
+          "isUseful": false
+        },
+        {
+          "id": "q6",
+          "spanish": "¿Qué más le interesa al forastero?",
+          "english": "What else is the stranger interested in?",
+          "response": "Cuba. Me pregunta por Cuba, por la música. Le interesa un disco de La Habana, del año mil novecientos cincuenta y cuatro.",
+          "responseEnglish": "Cuba. He asks me about Cuba, about the music. He's interested in a record from Havana, from 1954.",
+          "infoRevealed": "A El Cronista le interesa un disco de La Habana de 1954.",
+          "isUseful": true
+        },
+        {
+          "id": "q7",
+          "spanish": "¿Les gusta a los estudiantes venir a la biblioteca?",
+          "english": "Do the students like coming to the library?",
+          "response": "Les encanta. Vienen por la tarde, hacen ruido, leen a Darío en voz alta. Ninguno viene a las once de la noche.",
+          "responseEnglish": "They love it. They come in the afternoon, make noise, read Darío out loud. Not one of them comes at eleven at night.",
+          "infoRevealed": null,
+          "isUseful": false
+        },
+        {
+          "id": "q8",
+          "spanish": "¿Le importa a usted el manuscrito o el poeta?",
+          "english": "Does the manuscript matter to you, or the poet?",
+          "response": "El poeta. A ese hombre le importa el papel; a mí me importan las palabras. Ahí está la diferencia entre él y yo.",
+          "responseEnglish": "The poet. That man cares about the paper; I care about the words. That's the difference between him and me.",
+          "infoRevealed": null,
+          "isUseful": false
+        }
+      ],
+      "requiredInfo": [
+        "El Cronista vuelve al archivo a las once de la noche.",
+        "El Cronista lleva un reloj que no hace ningún ruido.",
+        "A El Cronista le interesa un disco de La Habana de 1954."
+      ],
+      "maxQuestions": 6
+    },
+
+    {
+      "type": "listeningComp",
+      "country": "La Habana, 1954",
+      "title": "La Llamada del Estudio",
+      "clueReward": "El código abre la puerta del estudio del Vedado. Adentro, el disco maestro todavía está en la mesa — y El Cronista está a tres pasos de él.",
+      "audioUrl": "/audio/boss-reloj-arena/llamada-estudio.mp3",
+      "transcript": "Oye, escúchame bien. El disco maestro no está en el estudio esta noche. Se lo llevo a Celia, en el malecón. Ella me lo pide desde el lunes, y yo se lo llevo hoy. No se lo digas a nadie, ¿me entiendes? A nadie. La caja de la puerta tiene tres números: primero doce, después treinta, y al final ocho. Súmalos. Ese es el código del estudio. Si alguien pregunta, tú no sabes nada.",
+      "translation": "Hey, listen to me carefully. The master record isn't in the studio tonight. I'm taking it to Celia, at the malecón. She's been asking me for it since Monday, and I'm taking it to her today. Don't tell anyone, understand? Nobody. The door box has three numbers: first twelve, then thirty, and last eight. Add them up. That's the studio code. If anyone asks, you know nothing.",
+      "questions": [
+        {
+          "question": "¿Dónde está el disco maestro esta noche?",
+          "options": [
+            "No está en el estudio: se lo lleva a Celia",
+            "Está en el estudio, en la mesa",
+            "Está en la radio",
+            "Celia se lo devuelve al ingeniero"
+          ],
+          "correctIndex": 0,
+          "explanationEs": "«El disco maestro no está en el estudio esta noche. Se lo llevo a Celia»."
+        },
+        {
+          "question": "«Ella me lo pide desde el lunes». ¿Qué significa «me lo»?",
+          "options": [
+            "me = a mí; lo = el disco",
+            "me = a mí; lo = el estudio",
+            "me = a Celia; lo = la cinta",
+            "me = a nosotros; lo = el código"
+          ],
+          "correctIndex": 0,
+          "explanationEs": "Primero la persona (me = a mí), después la cosa (lo = el disco masculino)."
+        },
+        {
+          "question": "¿Dónde le da el disco a Celia?",
+          "options": ["En el malecón", "En el estudio", "En la calle del piano", "En la radio"],
+          "correctIndex": 0,
+          "explanationEs": "«Se lo llevo a Celia, en el malecón»."
+        },
+        {
+          "question": "¿A quién puede decírselo?",
+          "options": ["A nadie", "Solo a Celia", "Solo al ingeniero", "A todo el estudio"],
+          "correctIndex": 0,
+          "explanationEs": "«No se lo digas a nadie, ¿me entiendes? A nadie»."
+        }
+      ],
+      "maxReplays": 2,
+      "codeAnswer": "50",
+      "codeHint": "Suma los tres números de la caja de la puerta: doce + treinta + ocho = ___"
+    }
+  ],
+
+  "ethicalChoice": {
+    "context": "En el archivo de León, a las once de la noche, El Cronista te está esperando. No corre. No se esconde. Tiene la máquina en la mano — un reloj de arena de metal, pequeño, sin ruido — y te habla en español, muy tranquilo.",
+    "speakerName": "El Cronista",
+    "speakerLine": "Tú y yo somos iguales, agente. Yo no destruyo nada. Yo miro. Estoy en Copán cuando la ciudad vive, no cuando es una ruina. Estoy en La Habana la noche que nace el mambo. ¿Quieres verlo con tus propios ojos? Toma la máquina. Vamos juntos a mil novecientos cincuenta y cuatro, y después tú vuelves a tu casa. Nadie lo sabe. Nadie te busca.",
+    "options": [
+      {
+        "key": "A",
+        "emoji": "⏳",
+        "title": "Tomar la máquina",
+        "description": "Aceptas la oferta. Viajas a La Habana de 1954 con el reloj de arena en tu mano — y con El Cronista a tu lado.",
+        "effect": "Ves nacer el mambo con tus propios ojos. Pero viajas con él, no contra él, y al final El Cronista se va a otra época.",
+        "requiresSentence": false
+      },
+      {
+        "key": "B",
+        "emoji": "⚖️",
+        "title": "Rechazar y detenerlo",
+        "description": "Dices que no. Le quitas el reloj de arena ahí mismo, en el archivo, y lo detienes antes de que llegue a La Habana.",
+        "effect": "El Cronista es detenido esta noche. Pero no habla, y las cinco piezas que ya robó siguen perdidas.",
+        "requiresSentence": false
+      },
+      {
+        "key": "C",
+        "emoji": "🤝",
+        "title": "Negociar en español",
+        "description": "No aceptas la máquina y no lo detienes todavía. Le ofreces un trato en español: él devuelve las cinco piezas a su época, y tú hablas por él ante la agencia. Escribe tu oferta en español.",
+        "effect": "Si tu español es correcto, recuperas las cinco piezas Y detienes a El Cronista.",
+        "requiresSentence": true,
+        "requiredWords": [
+          "devuelve",
+          "devuelves",
+          "trato",
+          "acuerdo",
+          "ofrezco",
+          "negocio",
+          "prometo",
+          "cambio",
+          "ayudo",
+          "hablo"
+        ]
+      }
+    ]
+  },
+
+  "endings": {
+    "A": {
+      "id": "trato_del_reloj",
+      "title": "El Trato del Reloj",
+      "badge": "guardian_del_tiempo",
+      "description": [
+        "La Habana, 1954. Estás en el estudio del Vedado la noche que graban el mambo, con el reloj de arena caliente en la mano.",
+        "Es todo lo que él prometió. La trompeta, la clave, la ventana abierta al malecón. Nadie te ve. Nadie te busca. Entiendes por qué El Cronista no puede parar.",
+        "Cuando la canción termina, él ya no está. Y el disco maestro tampoco.",
+        "La Jefa Ramírez te espera en la oficina con una sola pregunta: «¿Qué viste, agente?»"
+      ],
+      "finalClue": "En el estudio vacío queda una página de la libreta con cinco nombres más y cinco años. El primero dice: Montevideo, 1930."
+    },
+    "B": {
+      "id": "la_detencion",
+      "title": "La Detención",
+      "badge": "cazador_implacable",
+      "description": [
+        "El reloj de arena se apaga en tu mano. Sin máquina, El Cronista es solo un hombre en una biblioteca de León a las once de la noche.",
+        "No dice nada durante el interrogatorio. Ni una palabra, ni en español ni en ninguna otra lengua.",
+        "El disco maestro de La Habana se salva: nunca llega a 1954 para robarlo.",
+        "La Jefa Ramírez te felicita: «Tienes al hombre, agente. Buen trabajo. Pero el glifo, la máscara, la vasija y el manuscrito siguen perdidos»."
+      ],
+      "finalClue": "La máquina guarda una lista de destinos. El siguiente estaba programado para Montevideo, 1930 — y alguien más tiene la coordenada."
+    },
+    "C": {
+      "id": "el_acuerdo",
+      "title": "El Acuerdo",
+      "badge": "maestro_negociador_boss",
+      "description": [
+        "Tu español fue suficientemente claro. El Cronista te escucha hasta el final, y por primera vez no contesta con una broma.",
+        "Una por una, las cinco piezas vuelven a su época: el glifo a Copán, la máscara a Tikal, la vasija a Joya de Cerén, el manuscrito a León, el disco a La Habana.",
+        "Después entrega el reloj de arena y camina contigo sin resistencia.",
+        "La Jefa Ramírez no lo puede creer: «Las cinco piezas Y el ladrón. En español. Eso es trabajo de élite, agente»."
+      ],
+      "finalClue": "El Cronista habla porque tú hablaste primero: «Yo no compro nada. Alguien me paga por cada pieza. El próximo encargo es Montevideo, 1930 — y si yo no voy, va otro»."
+    }
+  }
+}

@@ -42,6 +42,17 @@ const BADGE_META: Record<string, { emoji: string; labelEs: string }> = {
   racha_30:            { emoji: "🔥", labelEs: "Racha de 30 días"        },
   primera_produccion:  { emoji: "✍️", labelEs: "Primera Producción"      },
   cold_case_master:    { emoji: "🧊", labelEs: "Maestro de Casos Fríos"  },
+  // Boss badges. Without these the locker printed the raw enum name — a student
+  // who beat Eclipse saw "maestro_negociador_boss" on the shelf.
+  operacion_eclipse_completada: { emoji: "🌘", labelEs: "Operación Eclipse"       },
+  operacion_reloj_completada:   { emoji: "⏳", labelEs: "Operación Reloj de Arena" },
+  diplomatico:         { emoji: "🕊️", labelEs: "Diplomático"              },
+  cazador_implacable:  { emoji: "⚖️", labelEs: "Cazador Implacable"       },
+  maestro_negociador_boss: { emoji: "🤝", labelEs: "Maestro Negociador"   },
+  guardian_del_tiempo: { emoji: "🕰️", labelEs: "Guardián del Tiempo"      },
+  agente_elite_boss:   { emoji: "🥇", labelEs: "Agente de Élite"          },
+  agente_estandar:     { emoji: "🥈", labelEs: "Agente Estándar"          },
+  agente_cuidadoso:    { emoji: "🥉", labelEs: "Agente Cuidadoso"         },
 };
 
 type DrillState = "idle" | "drilling" | "done";
