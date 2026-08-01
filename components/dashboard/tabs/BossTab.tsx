@@ -27,6 +27,7 @@ interface BossResponse { bosses: BossData[] }
 // experience them in-game. The dashboard wraps them with English descriptive UI.
 const BOSS_NAMES: Record<string, string> = {
   "unit-5-eclipse":      "Operación Eclipse (Unit 5)",
+  "unit-8-medianoche":   "Operación Medianoche (Unit 8)",
   "unit-15-reloj-arena": "Operación Reloj de Arena (Unit 15)",
 };
 

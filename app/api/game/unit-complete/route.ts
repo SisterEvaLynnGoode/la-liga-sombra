@@ -40,6 +40,7 @@ export async function POST(request: NextRequest) {
   // entry. The next unit only unlocks after the boss is completed or skipped.
   const BOSS_AFTER_UNIT: Record<number, string> = {
     5:  "unit-5-eclipse",
+    8:  "unit-8-medianoche",
     15: "unit-15-reloj-arena",
   };
 

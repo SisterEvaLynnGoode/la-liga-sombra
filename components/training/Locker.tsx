@@ -50,6 +50,8 @@ const BADGE_META: Record<string, { emoji: string; labelEs: string }> = {
   cazador_implacable:  { emoji: "⚖️", labelEs: "Cazador Implacable"       },
   maestro_negociador_boss: { emoji: "🤝", labelEs: "Maestro Negociador"   },
   guardian_del_tiempo: { emoji: "🕰️", labelEs: "Guardián del Tiempo"      },
+  operacion_medianoche_completada: { emoji: "🌙", labelEs: "Operación Medianoche" },
+  protector_de_fuentes:{ emoji: "🛡️", labelEs: "Protector de Fuentes"     },
   agente_elite_boss:   { emoji: "🥇", labelEs: "Agente de Élite"          },
   agente_estandar:     { emoji: "🥈", labelEs: "Agente Estándar"          },
   agente_cuidadoso:    { emoji: "🥉", labelEs: "Agente Cuidadoso"         },

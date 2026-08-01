@@ -18,6 +18,7 @@ const COLD_CASE_UNITS = new Set([1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
 // Boss definitions: { afterUnit → boss metadata }
 const BOSS_AFTER_UNIT: Record<number, { id: string; title: string; subtitle: string }> = {
   5:  { id: "unit-5-eclipse",      title: "Operación Eclipse",       subtitle: "Misión Especial — La Liga Sombra" },
+  8:  { id: "unit-8-medianoche",   title: "Operación Medianoche",     subtitle: "Misión Especial — El Topo" },
   15: { id: "unit-15-reloj-arena", title: "Operación Reloj de Arena", subtitle: "Misión Especial — El Cronista" },
 };
 

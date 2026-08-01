@@ -1,0 +1,474 @@
+{
+  "id": "unit-8-medianoche",
+  "title": "Operación Medianoche",
+  "subtitle": "Misión Especial — El Topo",
+  "description": "Donato Huanca está detenido en Cusco, y a las siete de la tarde dice una sola frase útil: a medianoche alguien va a recoger todo. Tienes cinco horas para reconstruir la noche de ayer — hora por hora, en pretérito — y para descubrir por qué el ladrón siempre supo qué pieza estaba sin vigilancia.",
+  "unlockAfterUnit": 8,
+  "nextUnit": 9,
+  "totalStages": 7,
+  "basePoints": 500,
+  "pointsMultiplier": { "easy": 1.0, "normal": 1.5, "hard": 2.0 },
+  "collaborationBonus": 100,
+  "completionBadge": "operacion_medianoche_completada",
+  "briefingLine": "Agente, el hombre que detuviste en Cusco no es el jefe. Es el comprador. Y esta noche, a las doce, alguien va a recoger todo lo que se llevó — la receta de Cartagena, el dinero de Viña, las figurillas del mercado. Ya no preguntamos qué está pasando. Preguntamos qué PASÓ. Todo en pretérito, agente. ¿Cómo prefieres entrar?",
+  "ethicalChoiceAfterStage": 3,
+
+  "stages": [
+    {
+      "type": "readingComp",
+      "country": "19:20 · Cartagena",
+      "title": "La Declaración de la Chef",
+      "clueReward": "El hombre de la camioneta dejó un papel con un número de puesto del Mercado de San Pedro — y alguien lo llamó para decirle una sola palabra: medianoche. La camioneta salió hacia el sur. La siguiente parada de la noche fue el festival de Viña del Mar.",
+      "passage": "DECLARACIÓN DE TESTIGO\nChef Valentina Cruz · Cartagena, Colombia\n\nAnoche trabajé hasta muy tarde. A las nueve limpié la cocina y guardé las especias.\n\nA las diez llegó un hombre con una camioneta blanca. No entró por la puerta principal. Entró por la cocina.\n\nHabló muy poco. Me preguntó por la receta del ajiaco. Yo le expliqué que la receta no está escrita — está en mi cabeza. Él no aceptó mi respuesta.\n\nEl hombre estuvo aquí veinte minutos. Miró todo: las ollas, los papeles, el menú. Después tomó una foto de mi cuaderno y caminó a la camioneta.\n\nAntes de subir, alguien lo llamó por teléfono. Escuché una sola palabra: «medianoche».\n\nLa camioneta no llevó nada de mi cocina. Pero el hombre dejó algo en la mesa: un papel con un número de puesto del Mercado de San Pedro, en Cusco.",
+      "glossary": [
+        { "word": "la declaración", "translation": "witness statement" },
+        { "word": "la camioneta", "translation": "van / pickup truck" },
+        { "word": "el cuaderno", "translation": "notebook" },
+        { "word": "la olla", "translation": "cooking pot" },
+        { "word": "anoche", "translation": "last night" }
+      ],
+      "questions": {
+        "easy": [
+          {
+            "id": "e1",
+            "text": "¿A qué hora llegó el hombre de la camioneta?",
+            "type": "multiple_choice",
+            "options": ["A las diez", "A las nueve", "A las doce", "A las siete"],
+            "correctIndex": 0,
+            "explanationEs": "«A las diez llegó un hombre con una camioneta blanca».",
+            "explanationEn": "\"A las diez llegó un hombre con una camioneta blanca.\""
+          },
+          {
+            "id": "e2",
+            "text": "¿Por dónde entró el hombre?",
+            "type": "multiple_choice",
+            "options": ["Por la cocina", "Por la puerta principal", "Por la ventana", "Por el mercado"],
+            "correctIndex": 0,
+            "explanationEs": "«No entró por la puerta principal. Entró por la cocina».",
+            "explanationEn": "\"No entró por la puerta principal. Entró por la cocina.\""
+          },
+          {
+            "id": "e3",
+            "text": "¿Qué palabra escuchó la chef por teléfono?",
+            "type": "multiple_choice",
+            "options": ["Medianoche", "Mercado", "Camioneta", "Receta"],
+            "correctIndex": 0,
+            "explanationEs": "«Escuché una sola palabra: medianoche».",
+            "explanationEn": "\"Escuché una sola palabra: medianoche.\""
+          }
+        ],
+        "normal": [
+          {
+            "id": "n1",
+            "text": "¿Qué hizo la chef a las nueve?",
+            "type": "multiple_choice",
+            "options": [
+              "Limpió la cocina y guardó las especias",
+              "Cocinó el ajiaco",
+              "Habló con el hombre",
+              "Cerró el restaurante y volvió a casa"
+            ],
+            "correctIndex": 0,
+            "explanationEs": "«A las nueve limpié la cocina y guardé las especias» — limpié y guardé son pretérito.",
+            "explanationEn": "\"A las nueve limpié la cocina y guardé las especias\" — both preterite."
+          },
+          {
+            "id": "n2",
+            "text": "¿Por qué el hombre no consiguió la receta?",
+            "type": "multiple_choice",
+            "options": [
+              "Porque la receta no está escrita",
+              "Porque la chef la guardó en el banco",
+              "Porque la policía llegó primero",
+              "Porque la chef la quemó"
+            ],
+            "correctIndex": 0,
+            "explanationEs": "«La receta no está escrita — está en mi cabeza».",
+            "explanationEn": "\"La receta no está escrita — está en mi cabeza.\""
+          },
+          {
+            "id": "n3",
+            "text": "¿Cuánto tiempo estuvo el hombre en la cocina?",
+            "type": "multiple_choice",
+            "options": ["Veinte minutos", "Diez minutos", "Una hora", "Toda la noche"],
+            "correctIndex": 0,
+            "explanationEs": "«El hombre estuvo aquí veinte minutos» — estuvo es el pretérito de estar.",
+            "explanationEn": "\"El hombre estuvo aquí veinte minutos\" — estuvo is the preterite of estar."
+          },
+          {
+            "id": "n4",
+            "text": "¿Qué dejó el hombre en la mesa?",
+            "type": "multiple_choice",
+            "options": [
+              "Un papel con un número de puesto",
+              "Una foto del cuaderno",
+              "Dinero para la receta",
+              "El menú del restaurante"
+            ],
+            "correctIndex": 0,
+            "explanationEs": "«Dejó algo en la mesa: un papel con un número de puesto del Mercado de San Pedro».",
+            "explanationEn": "\"Dejó algo en la mesa: un papel con un número de puesto del Mercado de San Pedro.\""
+          }
+        ],
+        "hard": [
+          {
+            "id": "h1",
+            "text": "La chef dice «tomó una foto de mi cuaderno». ¿Por qué es importante?",
+            "type": "multiple_choice",
+            "options": [
+              "Porque se llevó la receta sin llevarse nada",
+              "Porque el cuaderno era muy caro",
+              "Porque la foto salió mal",
+              "Porque el cuaderno no era de ella"
+            ],
+            "correctIndex": 0,
+            "explanationEs": "No robó ningún objeto — copió la información. Por eso «la camioneta no llevó nada de mi cocina».",
+            "explanationEn": "He stole no object — he copied the information. That's why \"la camioneta no llevó nada de mi cocina.\""
+          },
+          {
+            "id": "h2",
+            "text": "Toda la declaración está en pretérito. ¿Por qué?",
+            "type": "multiple_choice",
+            "options": [
+              "Porque cuenta lo que pasó anoche, ya terminado",
+              "Porque está pasando ahora mismo",
+              "Porque va a pasar mañana",
+              "Porque es una costumbre que se repite"
+            ],
+            "correctIndex": 0,
+            "explanationEs": "El pretérito cuenta acciones terminadas. Anoche terminó; por eso llegó, entró, habló, miró.",
+            "explanationEn": "The preterite reports finished actions. Last night is over — hence llegó, entró, habló, miró."
+          },
+          {
+            "id": "h3",
+            "text": "¿Quién llamó a quién por teléfono?",
+            "type": "multiple_choice",
+            "options": [
+              "Alguien llamó al hombre de la camioneta",
+              "El hombre llamó a la chef",
+              "La chef llamó a la policía",
+              "El hombre llamó al mercado de Cusco"
+            ],
+            "correctIndex": 0,
+            "explanationEs": "«Alguien lo llamó por teléfono» — lo = al hombre. Él recibió la llamada, no la hizo.",
+            "explanationEn": "\"Alguien lo llamó\" — lo = the man. He received the call; he did not make it."
+          },
+          {
+            "id": "h4",
+            "text": "¿Qué dice el papel del hombre sobre la noche de anoche?",
+            "type": "multiple_choice",
+            "options": [
+              "Que Cartagena y Cusco son partes del mismo plan",
+              "Que el hombre compró algo en Cusco",
+              "Que la chef trabajó en Cusco",
+              "Que la camioneta vino de Cusco"
+            ],
+            "correctIndex": 0,
+            "explanationEs": "Un hombre en Cartagena con el número de un puesto de Cusco conecta los dos casos en una sola noche.",
+            "explanationEn": "A man in Cartagena carrying a Cusco stall number ties the two cases into one night."
+          }
+        ]
+      }
+    },
+
+    {
+      "type": "swipeSort",
+      "country": "20:45 · Viña del Mar",
+      "title": "Anoche y Ahora",
+      "clueReward": "Separaste lo que pasó anoche de lo que está pasando ahora, y el festival soltó su secreto: al técnico le pagaron para apagar las luces exactamente cuando llegó la camioneta. El sabotaje no fue el robo — fue la distracción. El dinero salió de una cuenta de Cusco.",
+      "prompt": "¿ANOCHE o AHORA? Los testigos mezclan las dos cosas. Sepáralas — el pretérito cuenta lo terminado, el presente cuenta lo que ves.",
+      "leftLabel": "ANOCHE",
+      "leftHint": "pretérito — ya terminó",
+      "rightLabel": "AHORA",
+      "rightHint": "presente — está pasando",
+      "items": [
+        { "text": "El técnico apagó las luces del escenario.", "category": "left", "explanation": "apagó — pretérito, terminado" },
+        { "text": "El técnico está apagando las luces del escenario.", "category": "right", "explanation": "está apagando — presente progresivo, ahora mismo" },
+        { "text": "La cantante llegó al festival a las nueve.", "category": "left", "explanation": "llegó — pretérito" },
+        { "text": "La cantante está cantando en el escenario.", "category": "right", "explanation": "está cantando — ahora" },
+        { "text": "Los turistas compraron entradas para el concierto.", "category": "left", "explanation": "compraron — pretérito" },
+        { "text": "Los turistas buscan sus asientos.", "category": "right", "explanation": "buscan — presente" },
+        { "text": "El periodista habló con el jugador después del partido.", "category": "left", "explanation": "habló — pretérito" },
+        { "text": "El periodista está hablando con el guitarrista.", "category": "right", "explanation": "está hablando — ahora" },
+        { "text": "Alguien le dio dinero al técnico.", "category": "left", "explanation": "dio — pretérito de dar" },
+        { "text": "Nadie encuentra al técnico esta noche.", "category": "right", "explanation": "encuentra — presente" },
+        { "text": "La camioneta blanca estuvo detrás del teatro.", "category": "left", "explanation": "estuvo — pretérito de estar" },
+        { "text": "La camioneta blanca está detrás del teatro.", "category": "right", "explanation": "está — presente" },
+        { "text": "El bailarín olvidó su chaqueta en el camerino.", "category": "left", "explanation": "olvidó — pretérito" },
+        { "text": "El bailarín está buscando su chaqueta.", "category": "right", "explanation": "está buscando — ahora" },
+        { "text": "Nosotros trabajamos toda la noche de ayer.", "category": "left", "explanation": "Con «de ayer» es pretérito. Cuidado: en -AR, nosotros se escribe igual en presente y en pretérito — la pista es el tiempo, no la palabra." },
+        { "text": "El artista pintó el cartel del festival.", "category": "left", "explanation": "pintó — pretérito" }
+      ]
+    },
+
+    {
+      "type": "sentenceBuilder",
+      "country": "22:10 · Cusco",
+      "title": "La Hora Exacta",
+      "clueReward": "Con la hora de cada persona en orden, el mercado deja de ser confuso: alguien llegó antes que todos, pagó en efectivo y se fue antes de las ocho. Ese alguien no vino a comprar. Vino a confirmar que las figurillas estaban ahí — y sabía exactamente en qué puesto mirar. Nadie de fuera sabe eso. A las once y cuarto te llama una analista desde la oficina de La Liga Sombra y te pide que subas solo.",
+      "sentences": [
+        {
+          "sentence": "El coleccionista llegó antes que los otros",
+          "translation": "The collector arrived before the others. (llegar → llegó, preterite)"
+        },
+        {
+          "sentence": "Don Aurelio limpió su puesto a las siete",
+          "translation": "Don Aurelio cleaned his stall at seven. (limpiar → limpió)"
+        },
+        {
+          "sentence": "Le dio dinero a la vendedora",
+          "translation": "He gave money to the vendor. (dar → dio; le = to her)"
+        },
+        {
+          "sentence": "Ella no le dio las figurillas",
+          "translation": "She did not give him the figurines. (le = to him)"
+        },
+        {
+          "sentence": "El turista estuvo en el mercado más tarde que el coleccionista",
+          "translation": "The tourist was at the market later than the collector. (estar → estuvo; más… que)"
+        },
+        {
+          "sentence": "Nosotros buscamos la camioneta blanca toda la noche",
+          "translation": "We looked for the white van all night. (buscar — nosotros is spelled the same in present and preterite)"
+        },
+        {
+          "sentence": "Alguien guardó las figurillas en una caja",
+          "translation": "Someone put the figurines away in a box. (guardar → guardó)"
+        },
+        {
+          "sentence": "El ladrón dejó el catálogo en el puesto",
+          "translation": "The thief left the catalogue behind at the stall. (dejar → dejó)"
+        }
+      ]
+    },
+
+    {
+      "type": "interrogation",
+      "country": "23:15 · Oficina de La Liga Sombra",
+      "title": "La Analista",
+      "clueReward": "Nadia te da lo que nadie más tiene: el almacén nueve del puerto, la puerta del lado del agua, las doce en punto — y un nombre que no querías oír. Los tres expedientes se abrieron la misma noche, desde dentro, con una sola firma.",
+      "character": {
+        "name": "Nadia Ferrer Solano",
+        "role": "analista de expedientes, La Liga Sombra",
+        "description": "Lleva seis años leyendo los expedientes de la agencia. Te llamó a las once y cuarto de la noche, desde una oficina apagada, y te pidió que vinieras solo. Tiene una carpeta en la mano y no la suelta."
+      },
+      "questionBank": [
+        {
+          "id": "q1",
+          "spanish": "¿Por qué me llamaste a esta hora?",
+          "english": "Why did you call me at this hour?",
+          "response": "Porque a las nueve de la mañana esta carpeta ya no va a existir. Escúchame rápido.",
+          "responseEnglish": "Because by nine in the morning this folder will not exist. Listen to me fast.",
+          "infoRevealed": null,
+          "isUseful": false
+        },
+        {
+          "id": "q2",
+          "spanish": "¿Quién abrió los expedientes de los tres casos?",
+          "english": "Who opened the case files for the three cases?",
+          "response": "Alguien de aquí. Los tres expedientes — Cartagena, Viña, Cusco — se abrieron la misma noche, desde dentro del edificio.",
+          "responseEnglish": "Someone from here. All three files — Cartagena, Viña, Cusco — were opened the same night, from inside the building.",
+          "infoRevealed": "Los tres expedientes se abrieron la misma noche, desde dentro de la agencia.",
+          "isUseful": true
+        },
+        {
+          "id": "q3",
+          "spanish": "¿Trabajaste anoche en la oficina?",
+          "english": "Did you work in the office last night?",
+          "response": "Trabajo todas las noches. Por eso vi lo que vi. Nadie mira a la analista.",
+          "responseEnglish": "I work every night. That's how I saw what I saw. Nobody looks at the analyst.",
+          "infoRevealed": null,
+          "isUseful": false
+        },
+        {
+          "id": "q4",
+          "spanish": "¿Dónde es la entrega de medianoche?",
+          "english": "Where is the midnight handoff?",
+          "response": "En el puerto. Almacén nueve, la puerta del lado del agua. A las doce en punto.",
+          "responseEnglish": "At the port. Warehouse nine, the door on the water side. Twelve o'clock sharp.",
+          "infoRevealed": "La entrega es en el almacén nueve del puerto, a las doce.",
+          "isUseful": true
+        },
+        {
+          "id": "q5",
+          "spanish": "¿Le hablaste de esto a la Jefa Ramírez?",
+          "english": "Did you talk to Chief Ramírez about this?",
+          "response": "No. Y no porque sospeche de ella. Porque el que firmó está por encima de mí y ella va a tener que preguntarle a él.",
+          "responseEnglish": "No. Not because I suspect her. Because the person who signed is above me, and she would have to ask him.",
+          "infoRevealed": null,
+          "isUseful": false
+        },
+        {
+          "id": "q6",
+          "spanish": "¿Quién firmó la salida de los expedientes?",
+          "english": "Who signed the files out?",
+          "response": "El subdirector Óscar Villalba. Su firma está en los tres. Yo la miré diez veces porque no quería creerlo.",
+          "responseEnglish": "Deputy Director Óscar Villalba. His signature is on all three. I looked at it ten times because I didn't want to believe it.",
+          "infoRevealed": "El subdirector Óscar Villalba firmó la salida de los tres expedientes.",
+          "isUseful": true
+        },
+        {
+          "id": "q7",
+          "spanish": "¿Cómo conseguiste esta carpeta?",
+          "english": "How did you get this folder?",
+          "response": "Entré en un sistema que no me corresponde y copié archivos que no son míos. Sí. Ya sé lo que eso significa para mí.",
+          "responseEnglish": "I got into a system I have no business in and copied files that aren't mine. Yes. I know what that means for me.",
+          "infoRevealed": null,
+          "isUseful": false
+        },
+        {
+          "id": "q8",
+          "spanish": "¿Qué necesitas de mí?",
+          "english": "What do you need from me?",
+          "response": "Todavía no lo sé. Primero mira la carpeta. Después hablamos de mí — si queda tiempo.",
+          "responseEnglish": "I don't know yet. Look at the folder first. We'll talk about me after — if there's time.",
+          "infoRevealed": null,
+          "isUseful": false
+        }
+      ],
+      "requiredInfo": [
+        "Los tres expedientes se abrieron la misma noche, desde dentro de la agencia.",
+        "La entrega es en el almacén nueve del puerto, a las doce.",
+        "El subdirector Óscar Villalba firmó la salida de los tres expedientes."
+      ],
+      "maxQuestions": 6
+    },
+
+    {
+      "type": "listeningComp",
+      "country": "23:55 · Almacén Nueve",
+      "title": "La Llamada de las Doce",
+      "clueReward": "La caja se abre y adentro está todo: la foto del cuaderno de Valentina, el recibo del técnico de Viña, y las figurillas de Don Aurelio envueltas en papel de periódico. Son las doce en punto.",
+      "audioUrl": "/audio/boss-medianoche/llamada-almacen.mp3",
+      "transcript": "Escúchame. Ya guardé todo en la caja del almacén nueve. No hablé con nadie, no llamé a nadie. Anoche los tres llegaron y anoche los tres se fueron, y nadie miró dos veces. La combinación de la caja son las tres horas de anoche: el primero llegó a las nueve, el segundo llegó a las diez, y el último llegó a las cinco. Súmalas y vas a ver la hora que importa. A las doce estoy ahí. Si no llego a las doce, no llegué nunca.",
+      "translation": "Listen to me. I've already put everything in the box in warehouse nine. I didn't talk to anyone, I didn't call anyone. Last night the three of them arrived and last night the three of them left, and nobody looked twice. The box combination is the three times from last night: the first arrived at nine, the second arrived at ten, and the last arrived at five. Add them up and you'll see the hour that matters. I'll be there at twelve. If I don't get there by twelve, I never got there.",
+      "questions": [
+        {
+          "question": "¿Dónde guardó todo?",
+          "options": [
+            "En la caja del almacén nueve",
+            "En la camioneta blanca",
+            "En el puesto del mercado",
+            "En la oficina de la agencia"
+          ],
+          "correctIndex": 0,
+          "explanationEs": "«Ya guardé todo en la caja del almacén nueve» — guardé es pretérito."
+        },
+        {
+          "question": "«No hablé con nadie, no llamé a nadie.» ¿Qué tiempo verbal usa?",
+          "options": [
+            "El pretérito — habla de algo terminado",
+            "El presente — habla de ahora",
+            "El presente progresivo",
+            "El futuro"
+          ],
+          "correctIndex": 0,
+          "explanationEs": "hablé y llamé llevan la terminación -é del pretérito de yo."
+        },
+        {
+          "question": "¿A qué hora llegó el segundo?",
+          "options": ["A las diez", "A las nueve", "A las cinco", "A las doce"],
+          "correctIndex": 0,
+          "explanationEs": "«El segundo llegó a las diez»."
+        },
+        {
+          "question": "«Si no llego a las doce, no llegué nunca.» ¿Qué quiere decir?",
+          "options": [
+            "Que si falla, va a desaparecer",
+            "Que siempre llega tarde",
+            "Que no sabe la hora",
+            "Que ya llegó antes"
+          ],
+          "correctIndex": 0,
+          "explanationEs": "Es una amenaza sobre sí mismo: o está a las doce, o se va para siempre."
+        }
+      ],
+      "maxReplays": 2,
+      "codeAnswer": "24",
+      "codeHint": "Suma las tres horas que menciona: nueve + diez + cinco = ___. En reloj de veinticuatro horas, ese número tiene nombre."
+    }
+  ],
+
+  "ethicalChoice": {
+    "context": "Son las once y media. La oficina está apagada y Nadia Ferrer no ha soltado la carpeta en veinte minutos. Tienes la firma de Óscar Villalba en tres expedientes — pero para usarla en un informe tienes que decir de dónde salió.",
+    "speakerName": "Nadia Ferrer Solano",
+    "speakerLine": "Yo entré donde no debía entrar. Copié archivos que no son míos. Si escribes mi nombre en ese informe, Villalba cae — y yo caigo con él. Seis años aquí y salgo por la puerta de atrás el mismo día que él. Tú decides, agente. Yo ya decidí cuando te llamé.",
+    "options": [
+      {
+        "key": "A",
+        "emoji": "⚖️",
+        "title": "Nombrarla en el informe",
+        "description": "Escribes de dónde salió la carpeta. Con la fuente identificada, la firma de Villalba es prueba y el caso se sostiene entero.",
+        "effect": "Villalba cae con todo el peso del expediente. Nadia también: pierde el trabajo y enfrenta cargos por entrar en el sistema.",
+        "requiresSentence": false
+      },
+      {
+        "key": "B",
+        "emoji": "🕊️",
+        "title": "Proteger a tu fuente",
+        "description": "Dejas su nombre fuera del informe. Sin fuente, la firma es un papel que nadie puede explicar de dónde salió.",
+        "effect": "Nadia queda a salvo y sigue dentro de la agencia. Villalba queda suspendido, sin cargos — y también sigue dentro.",
+        "requiresSentence": false
+      },
+      {
+        "key": "C",
+        "emoji": "🤝",
+        "title": "Negociar en español",
+        "description": "Ni la nombras ni la escondes: llamas a la fiscalía a medianoche y propones un trato — ella declara como testigo protegida a cambio de inmunidad. Escribe tu oferta en español.",
+        "effect": "Si tu español convence, tienes el testimonio Y la fuente protegida.",
+        "requiresSentence": true,
+        "requiredWords": [
+          "inmunidad",
+          "protejo",
+          "protección",
+          "testigo",
+          "acuerdo",
+          "trato",
+          "ofrezco",
+          "prometo",
+          "garantizo",
+          "cambio"
+        ]
+      }
+    ]
+  },
+
+  "endings": {
+    "A": {
+      "id": "expediente_completo",
+      "title": "El Expediente Completo",
+      "badge": "cazador_implacable",
+      "description": [
+        "A las doce en punto, Óscar Villalba abrió la puerta del almacén nueve con su propia llave. Llevaba veintidós años en la agencia y no corrió.",
+        "Tu informe se sostiene solo: la firma, los horarios, la caja. Nadie va a poder discutirlo en un tribunal.",
+        "Nadia Ferrer entregó su credencial el jueves. No te miró al salir, y no te pidió nada — ella ya sabía lo que iba a pasar cuando marcó tu número.",
+        "La Jefa Ramírez leyó el informe dos veces: «Es un buen expediente, agente. Es el mejor que he leído este año. Espero que puedas dormir con él»."
+      ],
+      "finalClue": "En la caja de Villalba había una segunda lista, escrita a mano, con dos ciudades y ninguna fecha: Santo Domingo. Quito."
+    },
+    "B": {
+      "id": "fuente_protegida",
+      "title": "La Fuente Protegida",
+      "badge": "protector_de_fuentes",
+      "description": [
+        "Escribiste el informe sin ella. La firma de Villalba aparece, pero sin nadie que explique cómo llegó a tus manos, y un abogado la desmontó en once minutos.",
+        "Villalba quedó suspendido con sueldo. Nadie usó la palabra topo en ningún documento oficial.",
+        "Nadia sigue en su escritorio del tercer piso, leyendo expedientes a las once de la noche. Te saluda con la cabeza cuando pasas. Todavía tienes una fuente dentro.",
+        "La Jefa Ramírez cerró la carpeta despacio: «Lo dejaste ir, agente. Espero que sepas lo que compraste con eso»."
+      ],
+      "finalClue": "Tres días después, Nadia te dejó una nota de una línea sobre el teclado: «Volvió a firmar. Santo Domingo, y después Quito»."
+    },
+    "C": {
+      "id": "la_inmunidad",
+      "title": "La Inmunidad",
+      "badge": "maestro_negociador_boss",
+      "description": [
+        "Tu español aguantó la llamada. A las doce menos cuarto, la fiscalía aceptó el trato: Nadia declara como testigo protegida y no enfrenta cargos por lo que copió.",
+        "A las doce en punto, Villalba abrió la puerta del almacén con su propia llave y encontró a cuatro agentes esperando.",
+        "El expediente se sostiene, y la persona que lo hizo posible sigue teniendo trabajo. Las dos cosas a la vez, porque las pediste bien y las pediste en español.",
+        "La Jefa Ramírez tardó en hablar: «Yo no habría conseguido las dos. Enséñame cómo se lo dijiste»."
+      ],
+      "finalClue": "Villalba habló para reducir su condena: «Yo solo abría expedientes. Los encargos venían de fuera, y la lista no se acaba conmigo. Los dos próximos son Santo Domingo y Quito»."
+    }
+  }
+}

@@ -12,7 +12,9 @@ export type BossEnding =
   // Operación Eclipse
   | "pacto_silencioso" | "cazador" | "maestro_negociador"
   // Operación Reloj de Arena
-  | "trato_del_reloj" | "la_detencion" | "el_acuerdo";
+  | "trato_del_reloj" | "la_detencion" | "el_acuerdo"
+  // Operación Medianoche
+  | "expediente_completo" | "fuente_protegida" | "la_inmunidad";
 export type BossPhase =
   | "briefing"
   | "stage1" | "stage2" | "stage3" | "stage4"

@@ -206,9 +206,21 @@ export const SEMESTER: PacingWeek[] = [
     tasks: unitTasks(8), link: WORKSHEETS,
   },
   {
-    week: 15, semester: 1, arc: 3, title: "Unit 9 · República Dominicana", type: "unit", unitNumber: 9,
-    summary: "Caso IX (El Taíno Robado). Body, health, the verb doler. Culture: Taíno heritage + health poster.",
-    tasks: unitTasks(9), link: WORKSHEETS,
+    week: 15, semester: 1, arc: 3, title: "Unit 9 · República Dominicana + Operación Medianoche", type: "unit", unitNumber: 9,
+    summary:
+      "Caso IX (El Taíno Robado) on the short days, and the Units 6–8 boss on the long ones. Medianoche has to run the week AFTER Unit 8 while the preterite is still new — that is the whole point of it — so it takes the two block days and Caso IX runs lean around it.",
+    tasks: [
+      // Work items 2 and 3 are the two 80-minute blocks under blockFull, and both
+      // fall inside the single block under blockAB — so the boss lands on long
+      // periods in every schedule. Five task ids either way: the Pacing tab
+      // persists check-off by id, so the count must not change.
+      { id: "w15-t1", workItem: 0, label: "Briefing: story deck → vocab deck → open Caso IX" },
+      { id: "w15-t2", workItem: 1, label: "Field: play Caso IX through the arrest" },
+      { id: "w15-t3", workItem: 2, label: "Medianoche I: difficulty + Solo/Compañero, play to the analyst" },
+      { id: "w15-t4", workItem: 3, label: "Medianoche II: the decision, the warehouse, then debrief the choice" },
+      { id: "w15-t5", workItem: 4, label: "HQ + Culture for Caso IX: files on paper, Pasaporte page" },
+    ],
+    link: WORKSHEETS,
   },
   {
     week: 16, semester: 1, arc: 3, title: "Unit 10 · Ecuador + Capstone research", type: "unit", unitNumber: 10,

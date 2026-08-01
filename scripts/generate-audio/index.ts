@@ -16,6 +16,7 @@ import { unit14Scripts } from "./scripts/unit-14.js";
 import { unit15Scripts } from "./scripts/unit-15.js";
 import { unit01ColdScripts } from "./scripts/unit-01-cold.js";
 import { bossEclipseScripts } from "./scripts/boss-eclipse.js";
+import { bossMedianocheScripts } from "./scripts/boss-medianoche.js";
 import { bossRelojArenaScripts } from "./scripts/boss-reloj-arena.js";
 
 // ─── Audio script registry ────────────────────────────────────────────────────
@@ -44,5 +45,6 @@ export const scripts: AudioScript[] = [
   ...unit01ColdScripts,
   // ── Boss Fights ─────────────────────────────────────────────────────────────
   ...bossEclipseScripts,
+  ...bossMedianocheScripts,
   ...bossRelojArenaScripts,
 ];
