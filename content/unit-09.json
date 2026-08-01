@@ -622,7 +622,7 @@
           "age": 34,
           "description": "Tiene treinta y cuatro años y el pelo oscuro y suelto. Lleva un pañuelo rojo de seda con una mariposa bordada. Dijo que le dolía el estómago, pero comió un sándwich grande en la sala de espera. La doctora la examinó: no tenía fiebre ni ningún síntoma real. Se sentó cerca de la vitrina del Taíno y salió caminando rápido, sin ningún dolor. Es más alta que la enfermera.",
           "imageSeed": 41,
-          "imageUrl": "/images/characters/unit-05-ingeniera.png"
+          "imageUrl": "/images/characters/unit-09-mariposa-roja.png"
         },
         {
           "id": "senor_reyes",
@@ -631,7 +631,7 @@
           "age": 68,
           "description": "Tiene sesenta y ocho años. Es un hombre mayor con dolor de espalda real — caminaba muy despacio y no podía moverse rápido. Llegó a las nueve para su cita. La doctora confirma que de verdad le dolía la espalda. No pudo acercarse a la vitrina porque apenas podía caminar.",
           "imageSeed": 60,
-          "imageUrl": "/images/characters/unit-05-consultor.png"
+          "imageUrl": "/images/characters/unit-09-senor-reyes.png"
         },
         {
           "id": "enfermera_clara",
@@ -640,7 +640,7 @@
           "age": 29,
           "description": "Tiene veintinueve años. Es la enfermera nueva de la clínica. Estuvo en la recepción toda la mañana y atendió a cada paciente. Muchos testigos la vieron en su puesto. Ella ayudó a la doctora con las recetas y nunca se acercó sola a la vitrina del Taíno.",
           "imageSeed": 29,
-          "imageUrl": "/images/characters/unit-04-tia-generosa.png"
+          "imageUrl": "/images/characters/unit-09-enfermera-clara.png"
         },
         {
           "id": "joven_pablo",
@@ -649,7 +649,7 @@
           "age": 22,
           "description": "Tiene veintidós años. Llegó con un dolor de dientes real — tenía la cara hinchada y no podía comer nada. La doctora le escribió una receta y un dentista lo confirma. Estaba demasiado enfermo para robar nada y salió directo al dentista.",
           "imageSeed": 22,
-          "imageUrl": "/images/characters/unit-08-turista.png"
+          "imageUrl": "/images/characters/unit-09-joven-pablo.png"
         }
       ]
     }

@@ -648,7 +648,8 @@
           "realName": "El Cronista",
           "age": 35,
           "description": "Llega a Copán de noche, nunca de día. Tiene las manos pálidas y limpias: no talla piedra ni escribe glifos. Lleva sandalias extrañas que nadie reconoce y camina sin ruido. Observa la estela del rey todas las noches y no trabaja con nadie.",
-          "imageSeed": 35
+          "imageSeed": 35,
+          "imageUrl": "/images/characters/unit-11-cronista.png"
         },
         {
           "id": "yax",
@@ -656,7 +657,8 @@
           "realName": "Yax Balam",
           "age": 40,
           "description": "Talla la piedra todos los días bajo el sol. Tiene las manos oscuras y llenas de polvo de piedra. Lleva un cincel y sandalias de cuero como todos en Copán. Trabaja de día, no de noche.",
-          "imageSeed": 40
+          "imageSeed": 40,
+          "imageUrl": "/images/characters/unit-11-yax.png"
         },
         {
           "id": "kanchan",
@@ -664,7 +666,8 @@
           "realName": "K'an Chan",
           "age": 50,
           "description": "Escribe glifos en las estelas cada mañana. Tiene pintura roja en las manos. Vive cerca del templo y trabaja siempre con la luz del sol. Todos en Copán lo conocen y lo respetan.",
-          "imageSeed": 50
+          "imageSeed": 50,
+          "imageUrl": "/images/characters/unit-11-kanchan.png"
         },
         {
           "id": "ixmut",
@@ -672,7 +675,8 @@
           "realName": "Ix Mut",
           "age": 30,
           "description": "Vende jade y plumas de quetzal en el mercado. Viaja mucho y tiene la piel morena del sol. Trabaja de día y habla con todos. Lleva sandalias de cuero típicas de Copán.",
-          "imageSeed": 25
+          "imageSeed": 25,
+          "imageUrl": "/images/characters/unit-11-ixmut.png"
         }
       ]
     }

@@ -588,7 +588,7 @@
           "age": 47,
           "description": "Tiene cuarenta y siete años y es el más alto de todos. Lleva un abrigo oscuro con un bolsillo interior enorme — del tamaño de una caja de sombrero. No registró ningún proyecto en la Expo. Cuando le preguntaron por su invento, solo dijo: 'Pronto voy a hacerme rico.' No habló de ninguna carrera ni meta. Se quedó junto a la vitrina toda la mañana y desapareció cuando desapareció el sombrero.",
           "imageSeed": 47,
-          "imageUrl": "/images/characters/unit-07-tecnico-oscuro.png"
+          "imageUrl": "/images/characters/unit-10-el-maestro.png"
         },
         {
           "id": "sofia_programadora",
@@ -597,7 +597,7 @@
           "age": 24,
           "description": "Tiene veinticuatro años. Es programadora. Registró su proyecto: una aplicación de inteligencia artificial para los hospitales. Dijo: 'El año que viene voy a estudiar más programación.' Estuvo en su mesa de presentación toda la mañana, frente a muchos testigos, mostrando su pantalla.",
           "imageSeed": 24,
-          "imageUrl": "/images/characters/unit-05-programadora.png"
+          "imageUrl": "/images/characters/unit-10-sofia-programadora.png"
         },
         {
           "id": "daniel_estudiante",
@@ -606,7 +606,7 @@
           "age": 19,
           "description": "Tiene diecinueve años. Es estudiante de ingeniería. Presentó un robot pequeño que limpia los ríos de los Andes. Dijo: 'Cuando termine la universidad, seré ingeniero ambiental.' Su robot estaba encendido y necesitaba su atención constante — nunca dejó su mesa.",
           "imageSeed": 19,
-          "imageUrl": "/images/characters/unit-03-carlos-metroista.png"
+          "imageUrl": "/images/characters/unit-10-daniel-estudiante.png"
         },
         {
           "id": "lucia_empresaria",
@@ -615,7 +615,7 @@
           "age": 38,
           "description": "Tiene treinta y ocho años. Es empresaria. Su compañía presentó una pantalla solar. Dijo: 'Trabajaré con científicos de Quito; es mi sueño desde niña.' Dio una entrevista a un periodista durante toda la hora del robo, así que no pudo acercarse a la vitrina.",
           "imageSeed": 38,
-          "imageUrl": "/images/characters/unit-04-hija-seria.png"
+          "imageUrl": "/images/characters/unit-10-lucia-empresaria.png"
         }
       ]
     }

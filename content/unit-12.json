@@ -700,7 +700,8 @@
           "realName": "El Cronista",
           "age": 30,
           "description": "Es alto y moreno, y es un forastero. De noche está cerca del Templo IV. Finge ser astrónomo, pero está nervioso y confundido cuando mira el cielo — no conoce los nombres de las estrellas. Lleva la máscara de jade escondida en una bolsa.",
-          "imageSeed": 32
+          "imageSeed": 32,
+          "imageUrl": "/images/characters/unit-12-cronista.png"
         },
         {
           "id": "yaxkin",
@@ -708,7 +709,8 @@
           "realName": "Yax K'in",
           "age": 55,
           "description": "Es alto y moreno, como el ladrón, pero es un astrónomo verdadero de Tikal. Cada noche está en lo alto del templo, tranquilo y atento. Conoce todos los nombres de las estrellas y de la luna. Nunca está nervioso con el cielo.",
-          "imageSeed": 45
+          "imageSeed": 45,
+          "imageUrl": "/images/characters/unit-12-yaxkin.png"
         },
         {
           "id": "balam",
@@ -716,7 +718,8 @@
           "realName": "Balam Xoc",
           "age": 26,
           "description": "Es bajo y moreno — no alto. Es guardián de la Gran Plaza y es muy fuerte. De noche está cerca de la plaza, no del Templo IV. Está tranquilo y contento con su trabajo.",
-          "imageSeed": 20
+          "imageSeed": 20,
+          "imageUrl": "/images/characters/unit-12-balam.png"
         },
         {
           "id": "kaban",
@@ -724,7 +727,8 @@
           "realName": "K'aban Chan",
           "age": 38,
           "description": "Es alto y moreno, pero de noche está lejos, en el Templo I, no cerca del Templo IV. Es sacerdote y está tranquilo. Conoce el cielo y las estrellas muy bien.",
-          "imageSeed": 52
+          "imageSeed": 52,
+          "imageUrl": "/images/characters/unit-12-kaban.png"
         }
       ]
     }
