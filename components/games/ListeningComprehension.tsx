@@ -44,9 +44,21 @@ type Phase =
   | "resultPass";  // all answered, passed (or no passingScore)
 
 // ── Flag helper (fire-and-forget, never crashes game) ─────────────────────────
+/**
+ * How long the audio gets to load before we call it broken.
+ *
+ * Was 5s, which is a LAN number, not a classroom number. Clips run to ~660 KB
+ * and a class of thirty hits one access point at the same moment; 5 seconds
+ * declared perfectly good audio dead often enough that the failure path became
+ * a normal part of the lesson. 20s is long enough to ride out a congested
+ * period and still short enough that genuinely missing audio doesn't strand
+ * anyone staring at a spinner.
+ */
+const AUDIO_LOAD_TIMEOUT_MS = 20_000;
+
 async function fireListeningFlag(
   unitId: string | undefined,
-  flag: "needs_support" | "transcript_revealed" | "listening_skipped"
+  flag: "needs_support" | "transcript_revealed" | "listening_skipped" | "audio_load_failed"
 ) {
   if (!unitId) return;
   try {
@@ -119,10 +131,10 @@ export default function ListeningComprehension({
     const audio = audioRef.current;
     if (!audio) return;
 
-    // 5-second load timeout — if canplaythrough hasn't fired, show error
+    // If canplaythrough hasn't fired by now, treat the audio as unavailable.
     const timer = setTimeout(() => {
       if (phase === "loading") setPhase("loadError");
-    }, 5000);
+    }, AUDIO_LOAD_TIMEOUT_MS);
     setLoadErrorTimer(timer);
 
     const onCanPlay = () => {
@@ -297,9 +309,8 @@ export default function ListeningComprehension({
     if (!audio) return;
     setPhase("loading");
     audio.load();
-    // Reset the 5s timer
     if (loadErrorTimer) clearTimeout(loadErrorTimer);
-    const timer = setTimeout(() => setPhase("loadError"), 5000);
+    const timer = setTimeout(() => setPhase("loadError"), AUDIO_LOAD_TIMEOUT_MS);
     setLoadErrorTimer(timer);
   }
 
@@ -353,10 +364,18 @@ export default function ListeningComprehension({
               {transcript && (
                 <button
                   onClick={() => {
-                    // Reveal transcript + unlock questions so the student can proceed without audio.
+                    // Reveal transcript + unlock questions so the student can
+                    // proceed without audio.
+                    //
+                    // Deliberately NOT flagged as transcript_revealed. That flag
+                    // feeds the mastery ledger and the family-facing narrative,
+                    // and this branch is only reachable when the audio failed to
+                    // load — a network fact, not a fact about this student's
+                    // listening. Flagging it lets a bad wifi day get written down
+                    // as a child needing listening support.
                     setShowTranscriptEarly(true);
                     setPhase("answering");
-                    fireListeningFlag(unitId, "transcript_revealed");
+                    fireListeningFlag(unitId, "audio_load_failed");
                   }}
                   className="font-typewriter text-xs px-4 py-2 border border-[rgba(201,147,58,0.4)] text-[#c9933a] hover:bg-[rgba(201,147,58,0.08)] transition-colors"
                 >

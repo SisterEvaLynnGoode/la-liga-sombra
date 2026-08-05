@@ -290,7 +290,7 @@
         "¡Atención! En Argentina las fechas se escriben así: 15/03/2024 significa el quince de marzo. ¡No confundas el día con el mes!",
         "El portero lo ve pero no lo reconoce. Tu trabajo es identificarlo. ¡Mucha suerte, agente!"
       ],
-      "chiefImageUrl": "/images/characters/chief-ramirez.png"
+      "chiefImageUrl": "/images/characters/chief-ramirez.webp"
     },
     {
       "type": "vocabMatch",
@@ -709,7 +709,7 @@
           "age": 28,
           "description": "Tiene veintiocho años y tiene cabello oscuro. Viene al edificio siempre después de las once de la noche — lo ven el 15/03, el 18/03, el 22/03 y el 01/04. Tiene una mochila negra grande. La computadora portátil y el disco duro los lleva consigo siempre. Tiene mucha prisa cuando sale. Su mochila negra tiene una pegatina del equipo de fútbol local.",
           "imageSeed": 30,
-          "imageUrl": "/images/characters/unit-05-fantasma-digital.png"
+          "imageUrl": "/images/characters/unit-05-fantasma-digital.webp"
         },
         {
           "id": "valentina",
@@ -718,7 +718,7 @@
           "age": 31,
           "description": "Tiene treinta y un años. Viene al edificio el 15 de marzo a las nueve de la mañana — no de noche. La ven entrar con una tableta y una carpeta azul. Tiene los auriculares en la bolsa. No tiene prisa — trabaja todo el día en el Edificio Omega. No lleva mochila.",
           "imageSeed": 30,
-          "imageUrl": "/images/characters/unit-05-ingeniera.png"
+          "imageUrl": "/images/characters/unit-05-ingeniera.webp"
         },
         {
           "id": "marcos",
@@ -727,7 +727,7 @@
           "age": 45,
           "description": "Tiene cuarenta y cinco años y tiene cabello canoso — no oscuro. Viene al edificio el 18 de marzo después de las diez de la noche. Lo ven con una mochila negra y una computadora portátil. Tiene prisa cuando sale del edificio. Su mochila negra no tiene ninguna pegatina.",
           "imageSeed": 50,
-          "imageUrl": "/images/characters/unit-05-consultor.png"
+          "imageUrl": "/images/characters/unit-05-consultor.webp"
         },
         {
           "id": "carolina",
@@ -736,7 +736,7 @@
           "age": 27,
           "description": "Tiene veintisiete años y tiene cabello oscuro. Viene al edificio el 22 de marzo a la medianoche. La ven entrar con una mochila azul — no negra. Los audífonos los tiene en el cuello. Tiene mucha prisa cuando sale. Su mochila azul no tiene pegatinas.",
           "imageSeed": 25,
-          "imageUrl": "/images/characters/unit-05-programadora.png"
+          "imageUrl": "/images/characters/unit-05-programadora.webp"
         }
       ]
     }

@@ -278,7 +278,7 @@
         "Tu mejor pista: El Cronista no sabe vivir en el pueblo. Duerme de día, no puede moler el maíz, y nunca sirve comida a los vecinos.",
         "Observa la vida diaria y descúbrelo antes de que empiece la noche. ¡Suerte, agente!"
       ],
-      "chiefImageUrl": "/images/characters/chief-ramirez.png"
+      "chiefImageUrl": "/images/characters/chief-ramirez.webp"
     },
     {
       "type": "vocabMatch",
@@ -722,7 +722,7 @@
           "age": 33,
           "description": "Duerme de día y trabaja de noche. No puede moler el maíz porque sus manos no conocen el metate. Nunca sirve comida a los vecinos: prefiere comer solo, siempre solo. Quiere la vasija pintada.",
           "imageSeed": 34,
-          "imageUrl": "/images/characters/unit-13-cronista.png"
+          "imageUrl": "/images/characters/unit-13-cronista.webp"
         },
         {
           "id": "kanek",
@@ -731,7 +731,7 @@
           "age": 41,
           "description": "Duerme de noche y vuelve de la milpa por la tarde, como todos. Puede moler el maíz muy rápido: sus manos conocen bien el metate. Sirve comida a los vecinos cada día y almuerza con su familia en el jardín.",
           "imageSeed": 44,
-          "imageUrl": "/images/characters/unit-13-kanek.png"
+          "imageUrl": "/images/characters/unit-13-kanek.webp"
         },
         {
           "id": "sakol",
@@ -740,7 +740,7 @@
           "age": 29,
           "description": "Duerme de día porque cuida el pueblo de noche — igual que el ladrón. Pero puede moler el maíz sin problema, y sirve comida a los vecinos por la tarde cuando despierta. Todos en el pueblo lo conocen.",
           "imageSeed": 22,
-          "imageUrl": "/images/characters/unit-13-sakol.png"
+          "imageUrl": "/images/characters/unit-13-sakol.webp"
         },
         {
           "id": "nail",
@@ -749,7 +749,7 @@
           "age": 37,
           "description": "No puede moler el maíz porque sus manos trabajan el barro, no el metate — igual que el ladrón. Pero duerme de noche como todos, y sirve comida a los vecinos con sus propias vasijas.",
           "imageSeed": 27,
-          "imageUrl": "/images/characters/unit-13-nail.png"
+          "imageUrl": "/images/characters/unit-13-nail.webp"
         }
       ]
     }

@@ -12,6 +12,10 @@ const FLAG_LABELS: Record<string, { en: string; urgency: number }> = {
   listening_skipped:              { en: "Skipped Listening Comprehension",  urgency: 3 },
   stage_skipped:                  { en: "Skipped a game stage",             urgency: 5 },
   transcript_revealed:            { en: "Revealed transcript early",        urgency: 4 },
+  // Infrastructure, not the student: the clip failed to load and they read the
+  // transcript to keep going. Listed so it is visible and fixable, but it says
+  // nothing about their listening and must not be read as if it did.
+  audio_load_failed:              { en: "Audio failed to load (network/asset)", urgency: 5 },
   repeated_failure:               { en: "Repeated failure",                 urgency: 2 },
   image_mismatch_reported:        { en: "Reported image mismatch",          urgency: 4 },
   mastery_up:                     { en: "Leveled up in mastery 🎉",         urgency: 4 },

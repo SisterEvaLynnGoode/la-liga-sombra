@@ -318,7 +318,7 @@
         "Los testigos recuerdan quién llegó cuándo, qué le dijo a quién, y quién tomó las figurillas. Hay comparaciones también — 'más alto que', 'tan grande como'.",
         "El Mercado de San Pedro existe desde la época colonial. Sus figurillas son parte del patrimonio inca de Cusco. ¡Encuéntralas, agente!"
       ],
-      "chiefImageUrl": "/images/characters/chief-ramirez.png"
+      "chiefImageUrl": "/images/characters/chief-ramirez.webp"
     },
     {
       "type": "vocabMatch",
@@ -686,7 +686,7 @@
           "age": 55,
           "description": "Tiene cincuenta y cinco años. Llegó al mercado antes de las ocho de la mañana — más temprano que cualquier comprador normal. Dijo que acababa de llegar de Lima, pero el tren de Lima llega a las seis. Le ofreció mucho dinero a Don Aurelio, pero Don Aurelio no le vendió nada. Después esperó cerca del puesto — no salió del mercado. Es el más alto de todos los sospechosos. Lleva un catálogo de antigüedades en el bolsillo, con una figurilla marcada en círculo rojo.",
           "imageSeed": 55,
-          "imageUrl": "/images/characters/unit-08-coleccionista-local.png"
+          "imageUrl": "/images/characters/unit-08-coleccionista-local.webp"
         },
         {
           "id": "senora_mamani",
@@ -695,7 +695,7 @@
           "age": 48,
           "description": "Tiene cuarenta y ocho años. Llegó al mercado a las siete de la mañana con sus textiles de alpaca. Estuvo en su puesto todo el día — sus clientes la vieron allá toda la mañana. Le vendió un tejido andino a una turista italiana. Es menos sospechosa que los demás porque nunca salió de su sección del mercado. No lleva ningún catálogo.",
           "imageSeed": 48,
-          "imageUrl": "/images/characters/unit-08-vendedora.png"
+          "imageUrl": "/images/characters/unit-08-vendedora.webp"
         },
         {
           "id": "javier_torres",
@@ -704,7 +704,7 @@
           "age": 28,
           "description": "Tiene veintiocho años. Acabó de llegar de Machu Picchu esa misma mañana — el recibo del bus turístico lo confirma. Llegó al mercado a las diez, después de que desaparecieron las figurillas. Le sacó fotos a muchos puestos del mercado. Es tan alto como Don Donato Huanca, pero llegó mucho más tarde. No lleva ningún catálogo.",
           "imageSeed": 23,
-          "imageUrl": "/images/characters/unit-08-turista.png"
+          "imageUrl": "/images/characters/unit-08-turista.webp"
         },
         {
           "id": "carmen_quispe",
@@ -713,7 +713,7 @@
           "age": 21,
           "description": "Tiene veintiún años. Es estudiante en la Universidad San Antonio Abad del Cusco. Llegó al mercado a las nueve para comprar quinoa y frijoles para su familia. Doña Rosa le vendió quinoa y la recuerda bien. Estuvo en el mercado menos de veinte minutos. Es la menor de los sospechosos. No lleva ningún catálogo.",
           "imageSeed": 19,
-          "imageUrl": "/images/characters/unit-08-estudiante-quispe.png"
+          "imageUrl": "/images/characters/unit-08-estudiante-quispe.webp"
         }
       ]
     }

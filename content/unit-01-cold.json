@@ -84,7 +84,7 @@
         "Todos los testigos del museo solo hablan español. El caso es más difícil. Tienes menos tiempo.",
         "¿Estás listo para tu misión más difícil? El caso está abierto. No failles, agente."
       ],
-      "chiefImageUrl": "/images/characters/chief-ramirez.png"
+      "chiefImageUrl": "/images/characters/chief-ramirez.webp"
     },
     {
       "type": "vocabMatch",
@@ -361,7 +361,7 @@
           "age": 45,
           "description": "Es una mujer alta y elegante. Tiene cuarenta y cinco años y pelo negro muy largo. Siempre lleva ropa negra y formal. Tiene un estuche de música negro y muy grande. Habla muy rápido y con mucha confianza. Tiene un tatuaje de una nota musical en la muñeca derecha.",
           "imageSeed": 52,
-          "imageUrl": "/images/characters/unit-01-cold-trompetista.png"
+          "imageUrl": "/images/characters/unit-01-cold-trompetista.webp"
         },
         {
           "id": "el-fotografo",
@@ -370,7 +370,7 @@
           "age": 30,
           "description": "Es un hombre joven y bajo, con barba corta. Tiene treinta años y es turista de Ciudad de México. Siempre lleva una cámara grande. Es muy curioso y habla despacio. No tiene ningún tatuaje.",
           "imageSeed": 33,
-          "imageUrl": "/images/characters/unit-01-cold-fotografo.png"
+          "imageUrl": "/images/characters/unit-01-cold-fotografo.webp"
         },
         {
           "id": "la-estudiante",
@@ -379,7 +379,7 @@
           "age": 19,
           "description": "Es una chica joven y nerviosa. Tiene diecinueve años y estudia en el conservatorio. Tiene pelo corto y castaño. Lleva libros de música y una mochila pequeña. No tiene ningún tatuaje.",
           "imageSeed": 28,
-          "imageUrl": "/images/characters/unit-01-cold-estudiante.png"
+          "imageUrl": "/images/characters/unit-01-cold-estudiante.webp"
         },
         {
           "id": "el-guia",
@@ -388,7 +388,7 @@
           "age": 55,
           "description": "Es un hombre delgado de cincuenta y cinco años con lentes redondos. Trabaja en el museo hace veinte años y conoce cada instrumento perfectamente. Habla muy bien de la historia del mariachi. No tiene ningún tatuaje.",
           "imageSeed": 54,
-          "imageUrl": "/images/characters/unit-01-cold-guia.png"
+          "imageUrl": "/images/characters/unit-01-cold-guia.webp"
         },
         {
           "id": "el-conservador",
@@ -397,7 +397,7 @@
           "age": 40,
           "description": "Es un hombre alto y serio de cuarenta años. Tiene acceso a todas las salas del museo. Habló con una mujer sobre la trompeta esa tarde, pero dice que no autorizó ninguna remoción. No tiene ningún tatuaje.",
           "imageSeed": 41,
-          "imageUrl": "/images/characters/unit-01-cold-conservador.png"
+          "imageUrl": "/images/characters/unit-01-cold-conservador.webp"
         }
       ]
     }

@@ -15,14 +15,14 @@ import Image from "next/image";
 
 // ── Real criminals from the game files ────────────────────────────────────────
 const CRIMINALS = [
-  { img: "/images/characters/unit-01-camaleon.png",          name: "El Camaleón",         crime: "Robo de la Guitarra del Sol",   país: "México",          flag: "🇲🇽", caso: "I" },
-  { img: "/images/characters/unit-02-tecladista.png",        name: "El Tecladista",       crime: "Hackeo de la Escuela Central",  país: "Puerto Rico",     flag: "🇵🇷", caso: "II" },
-  { img: "/images/characters/unit-03-la-sombra.png",         name: "La Sombra",           crime: "Robo en el Museo del Prado",    país: "España",          flag: "🇪🇸", caso: "III" },
-  { img: "/images/characters/unit-04-heredero.png",          name: "El Heredero",         crime: "El Collar de Esmeraldas",       país: "Costa Rica",      flag: "🇨🇷", caso: "IV" },
-  { img: "/images/characters/unit-05-fantasma-digital.png",  name: "El Fantasma Digital", crime: "Ciberataque en Buenos Aires",   país: "Argentina",       flag: "🇦🇷", caso: "V" },
-  { img: "/images/characters/unit-06-cocinero-secreto.png",  name: "El Cocinero Secreto", crime: "La Receta Familiar robada",     país: "Colombia",        flag: "🇨🇴", caso: "VI" },
-  { img: "/images/characters/unit-07-tecnico-oscuro.png",    name: "El Técnico Oscuro",   crime: "Sabotaje del Festival",         país: "Chile",           flag: "🇨🇱", caso: "VII" },
-  { img: "/images/characters/unit-08-coleccionista-local.png", name: "El Coleccionista",  crime: "El Tesoro Inca desaparecido",   país: "Perú",            flag: "🇵🇪", caso: "VIII" },
+  { img: "/images/characters/unit-01-camaleon.webp",          name: "El Camaleón",         crime: "Robo de la Guitarra del Sol",   país: "México",          flag: "🇲🇽", caso: "I" },
+  { img: "/images/characters/unit-02-tecladista.webp",        name: "El Tecladista",       crime: "Hackeo de la Escuela Central",  país: "Puerto Rico",     flag: "🇵🇷", caso: "II" },
+  { img: "/images/characters/unit-03-la-sombra.webp",         name: "La Sombra",           crime: "Robo en el Museo del Prado",    país: "España",          flag: "🇪🇸", caso: "III" },
+  { img: "/images/characters/unit-04-heredero.webp",          name: "El Heredero",         crime: "El Collar de Esmeraldas",       país: "Costa Rica",      flag: "🇨🇷", caso: "IV" },
+  { img: "/images/characters/unit-05-fantasma-digital.webp",  name: "El Fantasma Digital", crime: "Ciberataque en Buenos Aires",   país: "Argentina",       flag: "🇦🇷", caso: "V" },
+  { img: "/images/characters/unit-06-cocinero-secreto.webp",  name: "El Cocinero Secreto", crime: "La Receta Familiar robada",     país: "Colombia",        flag: "🇨🇴", caso: "VI" },
+  { img: "/images/characters/unit-07-tecnico-oscuro.webp",    name: "El Técnico Oscuro",   crime: "Sabotaje del Festival",         país: "Chile",           flag: "🇨🇱", caso: "VII" },
+  { img: "/images/characters/unit-08-coleccionista-local.webp", name: "El Coleccionista",  crime: "El Tesoro Inca desaparecido",   país: "Perú",            flag: "🇵🇪", caso: "VIII" },
 ];
 
 const COUNTRIES = ["🇲🇽","🇵🇷","🇪🇸","🇨🇷","🇦🇷","🇨🇴","🇨🇱","🇵🇪","🇩🇴","🇪🇨"];

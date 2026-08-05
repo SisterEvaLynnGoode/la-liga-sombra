@@ -268,7 +268,7 @@
         "Para identificarlo necesitas dominar el verbo 'ser' y los adjetivos descriptivos.",
         "Habla con los testigos, lee las pistas, y busca al sospechoso en el anuario. ¡Buena suerte!"
       ],
-      "chiefImageUrl": "/images/characters/chief-ramirez.png"
+      "chiefImageUrl": "/images/characters/chief-ramirez.webp"
     },
     {
       "type": "vocabMatch",
@@ -587,7 +587,7 @@
           "age": 17,
           "description": "Es un muchacho alto y moreno. Tiene diecisiete años y es muy serio. Usa la computadora todos los días en el laboratorio de informática. Es de la República Dominicana. Nunca se quita los auriculares — los lleva puestos incluso durante las clases.",
           "imageSeed": 15,
-          "imageUrl": "/images/characters/unit-02-tecladista.png"
+          "imageUrl": "/images/characters/unit-02-tecladista.webp"
         },
         {
           "id": "isabella",
@@ -596,7 +596,7 @@
           "age": 16,
           "description": "Es una muchacha alta y morena. Es muy simpática y trabajadora. Estudia mucho en la biblioteca todos los días después de clases. Es de San Juan, Puerto Rico. No usa auriculares nunca.",
           "imageSeed": 35,
-          "imageUrl": "/images/characters/unit-02-estudiosa.png"
+          "imageUrl": "/images/characters/unit-02-estudiosa.webp"
         },
         {
           "id": "alejandro",
@@ -605,7 +605,7 @@
           "age": 16,
           "description": "Es un muchacho bajo y rubio. Es muy gracioso y simpático. Le gusta mucho el fútbol y escucha música en clase. Es de Bayamón, Puerto Rico. No usa auriculares en clase.",
           "imageSeed": 64,
-          "imageUrl": "/images/characters/unit-02-gracioso.png"
+          "imageUrl": "/images/characters/unit-02-gracioso.webp"
         },
         {
           "id": "carlos",
@@ -614,7 +614,7 @@
           "age": 18,
           "description": "Es un muchacho alto y moreno, pero es muy tímido. Tiene dieciocho años. Escucha música en su teléfono, sin auriculares, y trabaja en la cafetería. Es de Ponce, Puerto Rico.",
           "imageSeed": 48,
-          "imageUrl": "/images/characters/unit-02-tranquilo.png"
+          "imageUrl": "/images/characters/unit-02-tranquilo.webp"
         }
       ]
     }

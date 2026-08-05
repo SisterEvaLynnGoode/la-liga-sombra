@@ -22,7 +22,7 @@ type Feedback = "correct" | "wrong" | null;
 
 // ── Chief config ───────────────────────────────────────────────────────────────
 
-const CHIEF_IMG   = "/images/characters/chief-ramirez.png";
+const CHIEF_IMG   = "/images/characters/chief-ramirez.webp";
 const CHIEF_NAME  = "El Jefe Ramírez";
 const INTRO_TEXT  = "Recluta, antes de tu misión hoy, repasemos lo esencial.";
 const OUTRO_PASS  = "Excelente trabajo. Continúa con tu misión, agente.";

@@ -12,6 +12,9 @@ const FLAG_MAP: Record<string, string> = {
   needs_support:       "needs_listening_support",
   transcript_revealed: "transcript_revealed",
   listening_skipped:   "listening_skipped",
+  // Not a student signal: the audio never arrived. Kept distinct from
+  // transcript_revealed so a bad network day is never read as a listening need.
+  audio_load_failed:   "audio_load_failed",
 };
 
 export async function POST(request: NextRequest) {

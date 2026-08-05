@@ -235,7 +235,7 @@
             "age": 29,
             "description": "Es un hombre joven y alto. Tiene pelo rizado y muy oscuro. Es de la República Dominicana. Tiene veintinueve años.",
             "imageSeed": 22,
-            "imageUrl": "/images/characters/el-genio.png"
+            "imageUrl": "/images/characters/el-genio.webp"
           },
           {
             "id": "la-arana",
@@ -244,7 +244,7 @@
             "age": 35,
             "description": "Es una mujer de treinta y cinco años de México. Es de mediana estatura con pelo corto y oscuro.",
             "imageSeed": 45,
-            "imageUrl": "/images/characters/unit-08-vendor-maria.png"
+            "imageUrl": "/images/characters/unit-08-vendor-maria.webp"
           },
           {
             "id": "el-contador",
@@ -253,7 +253,7 @@
             "age": 55,
             "description": "Es un hombre mayor de cincuenta y cinco años de Venezuela. Es calvo y lleva lentes redondos.",
             "imageSeed": 70,
-            "imageUrl": "/images/characters/unit-08-don-aurelio.png"
+            "imageUrl": "/images/characters/unit-08-don-aurelio.webp"
           },
           {
             "id": "el-oso",
@@ -262,7 +262,7 @@
             "age": 40,
             "description": "Es un hombre grande y fuerte de cuarenta años de Colombia. Tiene pelo corto y oscuro y una barba gruesa.",
             "imageSeed": 55,
-            "imageUrl": "/images/characters/unit-06-jefe-cocina.png"
+            "imageUrl": "/images/characters/unit-06-jefe-cocina.webp"
           }
         ],
         "normal": [
@@ -273,7 +273,7 @@
             "age": 29,
             "description": "Es un hombre joven y alto. Tiene pelo rizado y muy oscuro. Es de la República Dominicana. Tiene veintinueve años.",
             "imageSeed": 22,
-            "imageUrl": "/images/characters/el-genio.png"
+            "imageUrl": "/images/characters/el-genio.webp"
           },
           {
             "id": "la-arana",
@@ -282,7 +282,7 @@
             "age": 35,
             "description": "Es una mujer de treinta y cinco años de México. Es de mediana estatura con pelo corto y oscuro.",
             "imageSeed": 45,
-            "imageUrl": "/images/characters/unit-08-vendor-maria.png"
+            "imageUrl": "/images/characters/unit-08-vendor-maria.webp"
           },
           {
             "id": "el-contador",
@@ -291,7 +291,7 @@
             "age": 55,
             "description": "Es un hombre mayor de cincuenta y cinco años de Venezuela. Es calvo y lleva lentes redondos.",
             "imageSeed": 70,
-            "imageUrl": "/images/characters/unit-08-don-aurelio.png"
+            "imageUrl": "/images/characters/unit-08-don-aurelio.webp"
           },
           {
             "id": "la-sombra",
@@ -300,7 +300,7 @@
             "age": 28,
             "description": "Es una mujer joven y alta de España. Tiene pelo largo y rubio y ojos azules. Tiene veintiocho años.",
             "imageSeed": 32,
-            "imageUrl": "/images/characters/unit-03-la-sombra.png"
+            "imageUrl": "/images/characters/unit-03-la-sombra.webp"
           },
           {
             "id": "el-oso",
@@ -309,7 +309,7 @@
             "age": 40,
             "description": "Es un hombre grande y fuerte de cuarenta años de Colombia. Tiene pelo corto y oscuro y una barba gruesa.",
             "imageSeed": 55,
-            "imageUrl": "/images/characters/unit-06-jefe-cocina.png"
+            "imageUrl": "/images/characters/unit-06-jefe-cocina.webp"
           },
           {
             "id": "el-rayo",
@@ -318,7 +318,7 @@
             "age": 30,
             "description": "Es un hombre delgado de treinta años de Argentina. Tiene pelo castaño ondulado y lleva lentes de moda.",
             "imageSeed": 38,
-            "imageUrl": "/images/characters/unit-05-fantasma-digital.png"
+            "imageUrl": "/images/characters/unit-05-fantasma-digital.webp"
           }
         ],
         "hard": [
@@ -329,7 +329,7 @@
             "age": 29,
             "description": "Es un hombre joven y alto. Tiene pelo rizado y muy oscuro. Es de la República Dominicana. Tiene veintinueve años.",
             "imageSeed": 22,
-            "imageUrl": "/images/characters/el-genio.png"
+            "imageUrl": "/images/characters/el-genio.webp"
           },
           {
             "id": "la-arana",
@@ -338,7 +338,7 @@
             "age": 35,
             "description": "Es una mujer de treinta y cinco años de México. Es de mediana estatura con pelo corto y oscuro.",
             "imageSeed": 45,
-            "imageUrl": "/images/characters/unit-08-vendor-maria.png"
+            "imageUrl": "/images/characters/unit-08-vendor-maria.webp"
           },
           {
             "id": "el-contador",
@@ -347,7 +347,7 @@
             "age": 55,
             "description": "Es un hombre mayor de cincuenta y cinco años de Venezuela. Es calvo y lleva lentes redondos.",
             "imageSeed": 70,
-            "imageUrl": "/images/characters/unit-08-don-aurelio.png"
+            "imageUrl": "/images/characters/unit-08-don-aurelio.webp"
           },
           {
             "id": "la-sombra",
@@ -356,7 +356,7 @@
             "age": 28,
             "description": "Es una mujer joven y alta de España. Tiene pelo largo y rubio y ojos azules. Tiene veintiocho años.",
             "imageSeed": 32,
-            "imageUrl": "/images/characters/unit-03-la-sombra.png"
+            "imageUrl": "/images/characters/unit-03-la-sombra.webp"
           },
           {
             "id": "el-oso",
@@ -365,7 +365,7 @@
             "age": 40,
             "description": "Es un hombre grande y fuerte de cuarenta años de Colombia. Tiene pelo corto y oscuro y una barba gruesa.",
             "imageSeed": 55,
-            "imageUrl": "/images/characters/unit-06-jefe-cocina.png"
+            "imageUrl": "/images/characters/unit-06-jefe-cocina.webp"
           },
           {
             "id": "el-rayo",
@@ -374,7 +374,7 @@
             "age": 30,
             "description": "Es un hombre delgado de treinta años de Argentina. Tiene pelo castaño ondulado y lleva lentes de moda.",
             "imageSeed": 38,
-            "imageUrl": "/images/characters/unit-05-fantasma-digital.png"
+            "imageUrl": "/images/characters/unit-05-fantasma-digital.webp"
           },
           {
             "id": "el-musico",
@@ -383,7 +383,7 @@
             "age": 26,
             "description": "Es un hombre joven de la República Dominicana. Tiene pelo rizado oscuro pero es de mediana estatura. Tiene veintiséis años.",
             "imageSeed": 15,
-            "imageUrl": "/images/characters/unit-07-guitarrista.png"
+            "imageUrl": "/images/characters/unit-07-guitarrista.webp"
           },
           {
             "id": "el-artista",
@@ -392,7 +392,7 @@
             "age": 31,
             "description": "Es un hombre alto de la República Dominicana. Tiene pelo rizado oscuro y una barba corta. Tiene treinta y un años.",
             "imageSeed": 28,
-            "imageUrl": "/images/characters/unit-07-cantante.png"
+            "imageUrl": "/images/characters/unit-07-cantante.webp"
           }
         ]
       }
@@ -474,7 +474,7 @@
       "character": {
         "name": "Elena Tejedor Soto",
         "role": "la hermana de El Tejedor",
-        "imageUrl": "/images/characters/unit-04-hija-seria.png",
+        "imageUrl": "/images/characters/unit-04-hija-seria.webp",
         "description": "Elena es la hermana menor de El Tejedor. Está muy nerviosa y asustada. Sabe dónde está su hermano pero tiene miedo de hablar. Parece estar llorando."
       },
       "questionBank": [

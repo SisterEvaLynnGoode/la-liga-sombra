@@ -108,7 +108,7 @@
         "Tu misión: habla con los testigos, analiza la evidencia, e identifica al ladrón antes de que escape.",
         "¿Estás listo para tu primera misión? El caso está abierto. ¡Buena suerte, agente!"
       ],
-      "chiefImageUrl": "/images/characters/chief-ramirez.png"
+      "chiefImageUrl": "/images/characters/chief-ramirez.webp"
     },
     {
       "type": "vocabMatch",
@@ -386,7 +386,7 @@
           "age": 34,
           "description": "Es un hombre alto y delgado. Tiene bigote negro. Siempre lleva un sombrero negro y elegante. Es de Guadalajara y habla muy, muy rápido. Escribe y toca la guitarra con la mano izquierda.",
           "imageSeed": 48,
-          "imageUrl": "/images/characters/unit-01-camaleon.png"
+          "imageUrl": "/images/characters/unit-01-camaleon.webp"
         },
         {
           "id": "serpiente",
@@ -395,7 +395,7 @@
           "age": 28,
           "description": "Es una mujer joven y muy elegante. Tiene pelo largo y negro. Es de Ciudad de México. Habla despacio y con mucha calma. No lleva sombrero. Escribe con la mano derecha.",
           "imageSeed": 25,
-          "imageUrl": "/images/characters/unit-01-serpiente.png"
+          "imageUrl": "/images/characters/unit-01-serpiente.webp"
         },
         {
           "id": "toro",
@@ -404,7 +404,7 @@
           "age": 50,
           "description": "Es un hombre bajo y muy fuerte. Tiene cincuenta años y no tiene bigote. Es de Monterrey. Es tranquilo y habla poco. Escribe con la mano derecha.",
           "imageSeed": 57,
-          "imageUrl": "/images/characters/unit-01-toro.png"
+          "imageUrl": "/images/characters/unit-01-toro.webp"
         },
         {
           "id": "pajaro",
@@ -413,7 +413,7 @@
           "age": 22,
           "description": "Es un hombre joven y alto pero sin bigote. Tiene veintidós años. Es de Cancún. Habla inglés y español perfectamente. No lleva sombrero. Escribe con la mano derecha.",
           "imageSeed": 44,
-          "imageUrl": "/images/characters/unit-01-pajaro.png"
+          "imageUrl": "/images/characters/unit-01-pajaro.webp"
         }
       ]
     }

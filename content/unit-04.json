@@ -275,7 +275,7 @@
         "Tu misión: interroga a cada familiar. Usa ser para describir quiénes son, y estar para descubrir dónde están y cómo se sienten.",
         "El culpable tiene una coartada inconsistente — sus declaraciones con estar no concuerdan. ¡Encuentra al ladrón, agente!"
       ],
-      "chiefImageUrl": "/images/characters/chief-ramirez.png"
+      "chiefImageUrl": "/images/characters/chief-ramirez.webp"
     },
     {
       "type": "vocabMatch",
@@ -513,7 +513,7 @@
       "character": {
         "name": "Tía Elena",
         "role": "la tía (esposa de Carlos)",
-        "imageUrl": "/images/characters/unit-04-tia-elena-interrogation.png",
+        "imageUrl": "/images/characters/unit-04-tia-elena-interrogation.webp",
         "description": "Es la esposa de Carlos, el hijo de la abuela. Tiene cuarenta y cinco años. Es simpática y generosa. Hoy está muy preocupada por el collar."
       },
       "maxQuestions": 5,
@@ -604,7 +604,7 @@
       "character": {
         "name": "Primo Diego",
         "role": "el primo",
-        "imageUrl": "/images/characters/unit-04-primo-activo.png",
+        "imageUrl": "/images/characters/unit-04-primo-activo.webp",
         "description": "Es el primo de Marco. Tiene veintidós años. Es activo y alegre — le gusta estar al aire libre en las montañas de Costa Rica."
       },
       "maxQuestions": 5,
@@ -696,7 +696,7 @@
       "character": {
         "name": "Nieto Marco",
         "role": "el nieto (sospechoso principal)",
-        "imageUrl": "/images/characters/unit-04-heredero.png",
+        "imageUrl": "/images/characters/unit-04-heredero.webp",
         "description": "Es el nieto de la abuela Carmen. Tiene diecinueve años. Durante la interrogación está claramente nervioso aunque dice que está tranquilo."
       },
       "maxQuestions": 5,
@@ -820,7 +820,7 @@
           "age": 19,
           "description": "Es el nieto de la abuela Carmen. Tiene diecinueve años. Durante la interrogación dice que está en su habitación toda la mañana, pero está nervioso y sus respuestas son inconsistentes. Conoce bien la habitación de la abuela y tiene acceso directo. Tiene polvo de pintura amarilla en la manga derecha de su camisa.",
           "imageSeed": 15,
-          "imageUrl": "/images/characters/unit-04-heredero.png"
+          "imageUrl": "/images/characters/unit-04-heredero.webp"
         },
         {
           "id": "elena",
@@ -829,7 +829,7 @@
           "age": 45,
           "description": "Es la esposa de Carlos, el hijo de la abuela. Tiene cuarenta y cinco años. Está en el mercado central de San José toda la mañana — tiene los recibos como prueba. Está preocupada pero no es sospechosa. No tiene pintura en la ropa.",
           "imageSeed": 35,
-          "imageUrl": "/images/characters/unit-04-tia-generosa.png"
+          "imageUrl": "/images/characters/unit-04-tia-generosa.webp"
         },
         {
           "id": "diego",
@@ -838,7 +838,7 @@
           "age": 22,
           "description": "Es el primo de Marco. Tiene veintidós años. Está en la finca de café con el tío Carlos toda la mañana — tiene coartada perfecta. Está cansado del trabajo pero está tranquilo y no es sospechoso. No tiene pintura en la ropa.",
           "imageSeed": 25,
-          "imageUrl": "/images/characters/unit-04-primo-activo.png"
+          "imageUrl": "/images/characters/unit-04-primo-activo.webp"
         },
         {
           "id": "ana_lucia",
@@ -847,7 +847,7 @@
           "age": 48,
           "description": "Es la hija de la abuela Carmen y la madre de Marco. Tiene cuarenta y ocho años. Está en San José en una reunión de negocios toda la mañana. Es muy seria y está muy preocupada por el collar de su madre. No tiene pintura en la ropa.",
           "imageSeed": 40,
-          "imageUrl": "/images/characters/unit-04-hija-seria.png"
+          "imageUrl": "/images/characters/unit-04-hija-seria.webp"
         }
       ]
     }

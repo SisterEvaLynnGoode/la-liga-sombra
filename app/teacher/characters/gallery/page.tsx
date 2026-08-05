@@ -1,5 +1,6 @@
 import { redirect } from "next/navigation";
 import Link from "next/link";
+import Image from "next/image";
 import { getTeacherSession } from "@/lib/auth/session";
 import { buildGallery } from "@/lib/characters/gallery";
 
@@ -57,8 +58,19 @@ export default async function CharacterGalleryPage() {
                 <figure key={ch.slug} className="card">
                   <div className="relative border border-[rgba(201,147,58,0.25)] bg-[#16130f] aspect-[896/1216] overflow-hidden print:border-black">
                     {ch.present ? (
-                      // eslint-disable-next-line @next/next/no-img-element
-                      <img src={ch.imageUrl!} alt={ch.name} className="w-full h-full object-cover" />
+                      // next/image, NOT a raw <img>. This page shows every
+                      // portrait at once and printing forces them all to load,
+                      // so raw tags meant ~140 MB of source PNGs on one page —
+                      // on the exact page built for a Chromebook to print from.
+                      // `sizes` keeps the served file at card width, not source width.
+                      <Image
+                        src={ch.imageUrl!}
+                        alt={ch.name}
+                        fill
+                        sizes="(max-width: 768px) 45vw, (max-width: 1024px) 30vw, 220px"
+                        className="object-cover"
+                        loading="lazy"
+                      />
                     ) : (
                       <div className="w-full h-full flex items-center justify-center">
                         <span className="font-typewriter text-[10px] tracking-[0.2em] uppercase text-[#4a3a2a] text-center px-3">

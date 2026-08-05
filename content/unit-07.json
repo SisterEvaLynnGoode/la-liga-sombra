@@ -304,7 +304,7 @@
         "¡Atención! Chile es el país de Pablo Neruda, el Desierto de Atacama y la Patagonia. Viña del Mar está en la costa del Pacífico — hace sol hoy, pero el viento del Pacífico es fuerte.",
         "Las cámaras están rotando. El tiempo corre. ¡Encuentra al técnico oscuro antes de que escape por la puerta trasera, agente!"
       ],
-      "chiefImageUrl": "/images/characters/chief-ramirez.png"
+      "chiefImageUrl": "/images/characters/chief-ramirez.webp"
     },
     {
       "type": "vocabMatch",
@@ -626,7 +626,7 @@
           "age": 26,
           "description": "Es el primer sospechoso de la lista. Tiene veintiséis años. Es técnico de sonido del festival. La cámara lo capta saliendo por la puerta trasera con una bolsa negra grande — llevando uniforme negro, no azul. Está escribiendo mensajes en el celular mientras sale. Lleva un micrófono de marca desconocida que no figura en el inventario del festival.",
           "imageSeed": 28,
-          "imageUrl": "/images/characters/unit-07-tecnico-oscuro.png"
+          "imageUrl": "/images/characters/unit-07-tecnico-oscuro.webp"
         },
         {
           "id": "valentina",
@@ -635,7 +635,7 @@
           "age": 24,
           "description": "Es la segunda sospechosa. Tiene veinticuatro años. Es cantante profesional y artista principal del festival. Está cantando en el escenario principal durante todo el evento — miles de personas la están viendo en ese momento. Todo su equipo está registrado en el inventario del festival.",
           "imageSeed": 24,
-          "imageUrl": "/images/characters/unit-07-cantante.png"
+          "imageUrl": "/images/characters/unit-07-cantante.webp"
         },
         {
           "id": "alejandro",
@@ -644,7 +644,7 @@
           "age": 29,
           "description": "Es el tercer sospechoso. Tiene veintinueve años. Es guitarrista de la banda principal. Está tocando su guitarra en el escenario cuando ocurre el sabotaje. Está llevando uniforme azul del festival — igual que los demás técnicos honestos. Todo su equipo está registrado en el inventario del festival.",
           "imageSeed": 32,
-          "imageUrl": "/images/characters/unit-07-guitarrista.png"
+          "imageUrl": "/images/characters/unit-07-guitarrista.webp"
         },
         {
           "id": "mariajose",
@@ -653,7 +653,7 @@
           "age": 31,
           "description": "Es la cuarta sospechosa. Tiene treinta y un años. Es periodista del canal de televisión. Está grabando el concierto con su cámara profesional, frente al escenario principal. La cámara de seguridad la muestra allí durante todo el evento. Todo su equipo está registrado en el inventario del festival.",
           "imageSeed": 36,
-          "imageUrl": "/images/characters/unit-07-periodista.png"
+          "imageUrl": "/images/characters/unit-07-periodista.webp"
         }
       ]
     }
