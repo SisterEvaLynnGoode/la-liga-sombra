@@ -2,14 +2,18 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import type { WeekOnePage, WeekOneBlock, KeySection } from "@/lib/worksheets/week-one";
+import type { WeekOnePage, WeekOneBlock, KeySection } from "@/lib/worksheets/paper";
 
 interface Props {
   pages: WeekOnePage[];
   key_: KeySection[];
+  /** Shown in the toolbar, e.g. "Semana 1". */
+  title: string;
+  /** One line under the toolbar explaining how to print it. */
+  blurb: string;
 }
 
-export default function WeekOneClient({ pages, key_ }: Props) {
+export default function PaperPacketClient({ pages, key_, title, blurb }: Props) {
   const [includeKey, setIncludeKey] = useState(false);
 
   return (
@@ -20,7 +24,7 @@ export default function WeekOneClient({ pages, key_ }: Props) {
         <Link href="/teacher/worksheets" className="font-typewriter text-[10px] tracking-[0.2em] uppercase text-[#8b7355] hover:text-[#c9933a]">
           ← Worksheets
         </Link>
-        <h1 className="font-display text-lg font-bold text-[#f5e6c8]">Semana 1 — paper packet</h1>
+        <h1 className="font-display text-lg font-bold text-[#f5e6c8]">{title} — paper packet</h1>
         <span className="font-typewriter text-[10px] text-[#8b7355]">
           {pages.length} student pages · no devices required
         </span>
@@ -42,8 +46,7 @@ export default function WeekOneClient({ pages, key_ }: Props) {
       </div>
 
       <p className="print:hidden text-center font-typewriter text-[10px] text-[#4a3a2a] py-2 px-4 max-w-[52rem] mx-auto leading-relaxed">
-        Five student pages, one per day, for a week with no computers. Print single-sided so the drawing
-        pages have a clean back. The answer key is off by default so you don&apos;t hand it out by accident.
+        {blurb}
       </p>
 
       <div className="ws-root mx-auto my-6 max-w-[820px] bg-white text-black px-10 py-10 print:my-0 print:max-w-none print:px-0 print:py-0">
@@ -185,6 +188,46 @@ function Block({ b }: { b: WeekOneBlock }) {
         </div>
       );
 
+    case "grid":
+      return (
+        <div className="border-2 border-black p-2 mb-3">
+          <p className="text-[10px] tracking-[0.25em] uppercase mb-2">{b.title}</p>
+          <div className="grid gap-x-4 gap-y-1" style={{ gridTemplateColumns: `repeat(${b.columns}, minmax(0,1fr))` }}>
+            {b.pairs.map((p) => (
+              <p key={p.spanish} className="text-[11px]">
+                <span className="font-bold">{p.spanish}</span> {p.english}
+              </p>
+            ))}
+          </div>
+        </div>
+      );
+
+    case "labelScene":
+      return (
+        <div className="mb-3">
+          <SectionHead title={b.title} instructions={b.instructions} />
+          {b.wordBank && (
+            <div className="border border-black px-2 py-1 mb-2">
+              <span className="text-[9px] tracking-[0.2em] uppercase mr-2">Banco de palabras</span>
+              <span className="text-[11px]">{b.wordBank.join(" · ")}</span>
+            </div>
+          )}
+          <div className="flex gap-4">
+            <div className="border-2 border-black flex-1 h-[200px] flex items-end justify-center">
+              <span className="text-[9px] tracking-[0.2em] uppercase mb-1">{b.sceneHint}</span>
+            </div>
+            <div className="w-[38%] shrink-0 pt-1">
+              {Array.from({ length: b.labels }).map((_, i) => (
+                <div key={i} className="flex items-end gap-1 mb-2">
+                  <span className="text-[11px] w-4">{i + 1}.</span>
+                  <span className="border-b border-black flex-1 h-4" />
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+      );
+
     case "persona":
       return (
         <div className="mb-3">
@@ -226,7 +269,7 @@ function AnswerKey({ sections }: { sections: KeySection[] }) {
     <section className="ws-page">
       <header className="border-b-2 border-black pb-1.5 mb-3">
         <p className="text-[10px] tracking-[0.3em] uppercase">Solo para el profesor</p>
-        <h2 className="text-2xl font-bold">Clave — Semana 1</h2>
+        <h2 className="text-2xl font-bold">Clave</h2>
         <p className="text-[11px] italic">Do not photocopy this page for students.</p>
       </header>
       {sections.map((s, i) => (

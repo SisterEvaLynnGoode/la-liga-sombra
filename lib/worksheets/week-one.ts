@@ -19,42 +19,11 @@
 
 import { SURVIVAL_PHRASES } from "@/lib/decks/intro";
 
-export interface MatchPair {
-  spanish: string;
-  english: string;
-}
+export type {
+  MatchPair, ScenarioItem, CommandItem, WeekOneBlock, WeekOnePage, KeySection,
+} from "@/lib/worksheets/paper";
 
-export interface ScenarioItem {
-  /** The situation, in English — students are three days into Spanish 1. */
-  situation: string;
-  /** The phrase we expect. Used to build the key. */
-  answer: string;
-}
-
-export interface CommandItem {
-  spanish: string;
-  english: string;
-}
-
-export type WeekOneBlock =
-  | { kind: "instructions"; text: string }
-  | { kind: "refBox"; title: string; pairs: MatchPair[] }
-  | { kind: "match"; title: string; instructions: string; pairs: MatchPair[] }
-  | { kind: "scenarios"; title: string; instructions: string; items: ScenarioItem[] }
-  | { kind: "writeLines"; title: string; instructions: string; prompts: string[]; lines: number }
-  | { kind: "drawGrid"; title: string; instructions: string; items: CommandItem[] }
-  | { kind: "badge"; title: string; instructions: string; fields: string[] }
-  | { kind: "persona"; title: string; instructions: string; frame: string[]; options: MatchPair[] };
-
-export interface WeekOnePage {
-  id: string;
-  day: string;
-  title: string;
-  subtitle: string;
-  blocks: WeekOneBlock[];
-  /** Printed small at the foot of the page. */
-  footer?: string;
-}
+import type { MatchPair, CommandItem, WeekOnePage } from "@/lib/worksheets/paper";
 
 // ── Vocabulary, kept small on purpose ────────────────────────────────────────
 
@@ -286,36 +255,10 @@ export const WEEK_ONE_PAGES: WeekOnePage[] = [
         lines: 2,
       },
     ],
-    footer: "Bienvenidos a La Liga Sombra. El lunes empieza el Caso I — México.",
+    // Deliberately does NOT promise Caso 1. The paper weeks run before the game
+    // and must stand on their own — announcing a case the class cannot open yet
+    // because there are no Chromebooks is a promise made to be broken.
+    footer: "Bienvenidos a La Liga Sombra. Guarda tu expediente — tu placa y tu agente son tuyos todo el año.",
   },
 ];
 
-/** Everything that has a correct answer, collected for the teacher key. */
-export interface KeySection {
-  page: string;
-  title: string;
-  answers: string[];
-}
-
-export function buildAnswerKey(): KeySection[] {
-  const out: KeySection[] = [];
-  for (const page of WEEK_ONE_PAGES) {
-    for (const b of page.blocks) {
-      if (b.kind === "scenarios") {
-        out.push({
-          page: `${page.day} · ${page.title}`,
-          title: b.title,
-          answers: b.items.map((it, i) => `${i + 1}. ${it.answer}`),
-        });
-      }
-      if (b.kind === "match") {
-        out.push({
-          page: `${page.day} · ${page.title}`,
-          title: b.title,
-          answers: b.pairs.map((p) => `${p.spanish} — ${p.english}`),
-        });
-      }
-    }
-  }
-  return out;
-}
