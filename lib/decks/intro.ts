@@ -56,6 +56,27 @@ export const TEACHER_PROFILE = {
   classCode: "En la pizarra · on the board",
 };
 
+/**
+ * The ten survival phrases, shared.
+ *
+ * Week 1 is taught on paper (lib/worksheets/week-one.ts) and on the projector
+ * (this deck). They must be the same ten phrases in the same wording, or a
+ * student who learns "otra vez, por favor" from a worksheet meets a different
+ * phrase on screen the same afternoon. One list, two surfaces.
+ */
+export const SURVIVAL_PHRASES: Array<{ spanish: string; english: string; note?: string }> = [
+        { spanish: "Hola / Buenos días", english: "Hi / Good morning", note: "How class starts. Every day." },
+        { spanish: "Me llamo…", english: "My name is…", note: "Literally 'I call myself.'" },
+        { spanish: "No entiendo", english: "I don't understand", note: "The single most useful thing you will say this year." },
+        { spanish: "¿Cómo se dice…?", english: "How do you say…?", note: "Point at the thing. It works." },
+        { spanish: "¿Qué significa…?", english: "What does … mean?", note: "The other half of the same tool." },
+        { spanish: "Otra vez, por favor", english: "Again, please", note: "Ask for the repeat. Always ask for the repeat." },
+        { spanish: "Más despacio", english: "Slower", note: "You are allowed to slow anyone down, including me." },
+        { spanish: "¿Puedo ir al baño?", english: "May I go to the bathroom?", note: "Yes, in Spanish. Yes, really." },
+        { spanish: "Tengo una pregunta", english: "I have a question", note: "Interrupt me with this one." },
+        { spanish: "No sé — todavía", english: "I don't know — yet", note: "The 'todavía' is the whole point." },
+      ];
+
 /** Day 1 — the premise, you, and their first ten words. */
 function dayOneSlides(): StorySlide[] {
   return [
@@ -142,18 +163,7 @@ function dayOneSlides(): StorySlide[] {
       headline: "Ten phrases you will use all year",
       situation:
         "You do not need much Spanish to survive day one. You need enough to tell me you are lost, and enough to ask for a word you do not have. Everything else can wait.",
-      entries: [
-        { spanish: "Hola / Buenos días", english: "Hi / Good morning", note: "How class starts. Every day." },
-        { spanish: "Me llamo…", english: "My name is…", note: "Literally 'I call myself.'" },
-        { spanish: "No entiendo", english: "I don't understand", note: "The single most useful thing you will say this year." },
-        { spanish: "¿Cómo se dice…?", english: "How do you say…?", note: "Point at the thing. It works." },
-        { spanish: "¿Qué significa…?", english: "What does … mean?", note: "The other half of the same tool." },
-        { spanish: "Otra vez, por favor", english: "Again, please", note: "Ask for the repeat. Always ask for the repeat." },
-        { spanish: "Más despacio", english: "Slower", note: "You are allowed to slow anyone down, including me." },
-        { spanish: "¿Puedo ir al baño?", english: "May I go to the bathroom?", note: "Yes, in Spanish. Yes, really." },
-        { spanish: "Tengo una pregunta", english: "I have a question", note: "Interrupt me with this one." },
-        { spanish: "No sé — todavía", english: "I don't know — yet", note: "The 'todavía' is the whole point." },
-      ],
+      entries: SURVIVAL_PHRASES,
       production: {
         instruction:
           "Turn to the person next to you. Say your name in Spanish, then say the one phrase on this list you think you will need most this year. You will both be bad at this. That is today's goal.",

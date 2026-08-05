@@ -90,6 +90,13 @@ export default function WorksheetsClient({ packets }: Props) {
               </button>
             ))}
           </div>
+          <a
+            href="/teacher/worksheets/semana-1"
+            className="px-4 py-2 font-typewriter text-[10px] tracking-[0.2em] uppercase border border-[rgba(201,147,58,0.35)] text-[#e8b455] hover:bg-[rgba(201,147,58,0.12)] transition-colors"
+            title="Five printable pages for a week with no devices"
+          >
+            📄 Semana 1 (no devices)
+          </a>
           <button
             onClick={() => window.print()}
             className="clip-skew px-5 py-2 font-typewriter text-[10px] tracking-[0.2em] uppercase bg-[#8b1a1a] text-[#f5e6c8] border border-[#c0392b] hover:bg-[#c0392b] transition-colors"
