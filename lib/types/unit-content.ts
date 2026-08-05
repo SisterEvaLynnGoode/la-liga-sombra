@@ -146,7 +146,13 @@ export interface SentenceBuilderStageData {
 }
 
 export interface StakeoutScene {
-  imageUrl: string;
+  /**
+   * Optional. Stakeout scenes render a locally-drawn camera panel when this is
+   * absent — the answer lives in `currentAction`, not in the picture, and an
+   * external image host is a dependency a school content filter will happily
+   * break in the middle of a 90-second timer.
+   */
+  imageUrl?: string;
   description: string;    // camera / location label
   currentAction: string;  // Spanish present-progressive caption
   isTarget: boolean;

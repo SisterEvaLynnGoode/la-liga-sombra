@@ -58,18 +58,43 @@ function SceneCard({
         }
       `}
     >
-      {/* Camera feed image */}
+      {/* Camera feed.
+          Drawn locally on purpose. These panels used to load random photos from
+          picsum.photos — an external host, inside a gated stage, behind a
+          90-second clock. On a filtered school network that is eight broken
+          image icons and a running timer. The photos were also random, so they
+          never depicted the action anyway: the answer is, and always was, in
+          `currentAction` below. */}
       <div className="relative bg-[#050403]">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img
-          src={scene.imageUrl}
-          alt={scene.description}
-          className="w-full object-cover"
-          style={{
-            height: 150,
-            filter: "grayscale(30%) contrast(110%) brightness(0.85)",
-          }}
-        />
+        {scene.imageUrl ? (
+          // eslint-disable-next-line @next/next/no-img-element
+          <img
+            src={scene.imageUrl}
+            alt={scene.description}
+            className="w-full object-cover"
+            style={{ height: 150, filter: "grayscale(30%) contrast(110%) brightness(0.85)" }}
+          />
+        ) : (
+          <div
+            className="w-full flex flex-col items-center justify-center gap-1 bg-[#0a0806]"
+            style={{
+              height: 150,
+              backgroundImage:
+                "radial-gradient(circle at 50% 40%, rgba(201,147,58,0.10) 0%, transparent 60%)",
+            }}
+            aria-hidden
+          >
+            <span className="font-typewriter text-[9px] tracking-[0.35em] uppercase text-[#4a3a2a]">
+              Cámara en vivo
+            </span>
+            <span className="font-display text-[15px] text-[#8b7355] px-3 text-center leading-tight">
+              {scene.description}
+            </span>
+            <span className="font-typewriter text-[8px] tracking-[0.3em] uppercase text-[#3a3028]">
+              ● REC
+            </span>
+          </div>
+        )}
 
         {/* Surveillance overlay: scanlines */}
         <div

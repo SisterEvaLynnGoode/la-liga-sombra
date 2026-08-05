@@ -232,7 +232,14 @@ export const SentenceBuilderStageSchema = z.object({
 // ─── Live Stakeout ────────────────────────────────────────────────────────────
 
 export const StakeoutSceneSchema = z.object({
-  imageUrl: z.string().min(1),
+  /**
+   * Optional. Scenes render a locally-drawn camera panel when absent. Made
+   * optional because the only case using this stage pointed at picsum.photos —
+   * an external host inside a timed, gated stage, which a school content filter
+   * turns into broken icons while the clock runs. Local by default now; a real
+   * hosted-under-/public image is still allowed.
+   */
+  imageUrl: z.string().min(1).optional(),
   description: z.string().min(1),   // camera/location label
   currentAction: z.string().min(1), // Spanish present-progressive caption
   isTarget: z.boolean(),

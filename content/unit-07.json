@@ -565,49 +565,41 @@
       "timeLimit": 90,
       "scenes": [
         {
-          "imageUrl": "https://picsum.photos/400/300?random=71",
           "description": "Escenario principal",
           "currentAction": "La cantante está cantando en el escenario principal",
           "isTarget": false
         },
         {
-          "imageUrl": "https://picsum.photos/400/300?random=72",
           "description": "Área del público",
           "currentAction": "Los bailarines están bailando cerca del público",
           "isTarget": false
         },
         {
-          "imageUrl": "https://picsum.photos/400/300?random=73",
           "description": "Zona de prensa",
           "currentAction": "El periodista está grabando el concierto con su cámara",
           "isTarget": false
         },
         {
-          "imageUrl": "https://picsum.photos/400/300?random=74",
           "description": "Puerta trasera — CAM 4",
           "currentAction": "El técnico está saliendo con una bolsa negra — uniforme negro",
           "isTarget": true
         },
         {
-          "imageUrl": "https://picsum.photos/400/300?random=75",
           "description": "Parque lateral",
           "currentAction": "Los turistas están tomando fotos del festival y la playa",
           "isTarget": false
         },
         {
-          "imageUrl": "https://picsum.photos/400/300?random=76",
           "description": "Backstage norte",
           "currentAction": "Los músicos están poniendo los instrumentos en el escenario",
           "isTarget": false
         },
         {
-          "imageUrl": "https://picsum.photos/400/300?random=77",
           "description": "Camerinos",
           "currentAction": "Los artistas están preparándose para el próximo concierto",
           "isTarget": false
         },
         {
-          "imageUrl": "https://picsum.photos/400/300?random=78",
           "description": "Plaza exterior",
           "currentAction": "Una jugadora está corriendo cerca del estadio del festival",
           "isTarget": false
