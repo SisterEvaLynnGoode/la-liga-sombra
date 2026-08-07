@@ -35,7 +35,15 @@ export type WeekOneBlock =
   /** Compact multi-column reference — numbers, where a 2-column box runs too tall. */
   | { kind: "grid"; title: string; columns: number; pairs: MatchPair[] }
   /** A drawing area with numbered label lines beside it. */
-  | { kind: "labelScene"; title: string; instructions: string; sceneHint: string; labels: number; wordBank?: string[] };
+  | { kind: "labelScene"; title: string; instructions: string; sceneHint: string; labels: number; wordBank?: string[] }
+  /** Puzzle generated from the day's own word list. ~10 minutes, silent. */
+  | { kind: "wordSearch"; title: string; instructions: string; words: string[]; size?: number; seed?: number }
+  /** Ask classmates and record. The speaking activity — ~12-15 minutes, loud. */
+  | { kind: "survey"; title: string; instructions: string; question: string; columns: string[]; rows: number }
+  /** A whole-class game run from the front. No writing; fills the tail of a block period. */
+  | { kind: "gameBox"; title: string; spanishName: string; minutes: number; steps: string[] }
+  /** Empty boxes for students to fill — lotería cards, sketch space. */
+  | { kind: "blankGrid"; title: string; instructions: string; rows: number; cols: number };
 
 export interface WeekOnePage {
   id: string;

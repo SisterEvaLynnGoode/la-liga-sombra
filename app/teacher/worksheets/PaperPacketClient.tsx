@@ -3,6 +3,7 @@
 import { useState } from "react";
 import Link from "next/link";
 import type { WeekOnePage, WeekOneBlock, KeySection } from "@/lib/worksheets/paper";
+import { buildWordSearch } from "@/lib/worksheets/wordsearch";
 
 interface Props {
   pages: WeekOnePage[];
@@ -15,6 +16,11 @@ interface Props {
 
 export default function PaperPacketClient({ pages, key_, title, blurb }: Props) {
   const [includeKey, setIncludeKey] = useState(false);
+  // One sheet per day is right when you hand out a page each morning. Flowing
+  // is right when you staple the fortnight into one packet: with every day now
+  // carrying a survey or a game, most days run ~110% of a sheet, so a forced
+  // break per day spends a second sheet to hold about an inch of content.
+  const [flow, setFlow] = useState(false);
 
   return (
     <div className="min-h-screen bg-[#0d0b0a]">
@@ -37,6 +43,13 @@ export default function PaperPacketClient({ pages, key_, title, blurb }: Props) 
           />
           Include answer key
         </label>
+        <label
+          className="flex items-center gap-2 font-typewriter text-[10px] tracking-[0.15em] uppercase text-[#8b7355] cursor-pointer"
+          title="Off: every day starts a new sheet. On: pages flow together and use noticeably less paper."
+        >
+          <input type="checkbox" checked={flow} onChange={(e) => setFlow(e.target.checked)} className="accent-[#c9933a]" />
+          Flow pages (less paper)
+        </label>
         <button
           onClick={() => window.print()}
           className="ml-auto clip-skew px-4 py-1.5 font-typewriter text-[10px] tracking-[0.2em] uppercase bg-[rgba(201,147,58,0.12)] text-[#e8b455] border border-[rgba(201,147,58,0.35)] hover:bg-[rgba(201,147,58,0.22)]"
@@ -49,7 +62,7 @@ export default function PaperPacketClient({ pages, key_, title, blurb }: Props) 
         {blurb}
       </p>
 
-      <div className="ws-root mx-auto my-6 max-w-[820px] bg-white text-black px-10 py-10 print:my-0 print:max-w-none print:px-0 print:py-0">
+      <div className={`ws-root ${flow ? "ws-flow" : ""} mx-auto my-6 max-w-[820px] bg-white text-black px-10 py-10 print:my-0 print:max-w-none print:px-0 print:py-0`}>
         {pages.map((p) => (
           <PageBlock key={p.id} page={p} />
         ))}
@@ -188,6 +201,94 @@ function Block({ b }: { b: WeekOneBlock }) {
         </div>
       );
 
+    case "wordSearch": {
+      // Deterministic, so server and client render the same grid (no hydration
+      // mismatch) and a re-print for an absent student matches the originals.
+      const ws = buildWordSearch(b.words, b.size ?? 12, b.seed ?? 42);
+      return (
+        <div className="mb-3">
+          <SectionHead title={b.title} instructions={b.instructions} />
+          <div className="flex gap-4">
+            <table className="border-collapse">
+              <tbody>
+                {ws.grid.map((row, r) => (
+                  <tr key={r}>
+                    {row.map((ch, c) => (
+                      <td key={c} className="border border-black w-[19px] h-[19px] text-center text-[11px] leading-none align-middle">
+                        {ch}
+                      </td>
+                    ))}
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+            <div className="flex-1">
+              <p className="text-[9px] tracking-[0.2em] uppercase mb-1">Encuentra / Find</p>
+              <div className="grid grid-cols-2 gap-x-3">
+                {ws.words.map((w) => (
+                  <p key={w} className="text-[11px]">☐ {w}</p>
+                ))}
+              </div>
+              <p className="text-[9px] italic mt-2">Los acentos no aparecen en la cuadrícula.</p>
+            </div>
+          </div>
+        </div>
+      );
+    }
+
+    case "survey":
+      return (
+        <div className="mb-3">
+          <SectionHead title={b.title} instructions={b.instructions} />
+          <p className="text-[13px] font-bold mb-1.5">«{b.question}»</p>
+          <table className="w-full border-collapse">
+            <tbody>
+              <tr>
+                {b.columns.map((c) => (
+                  <th key={c} className="border border-black text-[10px] tracking-[0.15em] uppercase py-0.5 px-1 text-left">
+                    {c}
+                  </th>
+                ))}
+              </tr>
+              {Array.from({ length: b.rows }).map((_, r) => (
+                <tr key={r}>
+                  {b.columns.map((c) => (
+                    <td key={c} className="border border-black h-[26px]" />
+                  ))}
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      );
+
+    case "gameBox":
+      return (
+        <div className="border-2 border-black p-2.5 mb-3">
+          <div className="flex items-baseline justify-between gap-3 mb-1">
+            <p className="text-[12px] font-bold">{b.title} · <span className="italic">{b.spanishName}</span></p>
+            <span className="text-[9px] tracking-[0.2em] uppercase shrink-0">{b.minutes} min</span>
+          </div>
+          <ol className="list-decimal ml-4">
+            {b.steps.map((st) => (
+              <p key={st} className="text-[11px] leading-snug mb-0.5 list-item">{st}</p>
+            ))}
+          </ol>
+        </div>
+      );
+
+    case "blankGrid":
+      return (
+        <div className="mb-3">
+          <SectionHead title={b.title} instructions={b.instructions} />
+          <div className="grid gap-1.5" style={{ gridTemplateColumns: `repeat(${b.cols}, minmax(0,1fr))`, maxWidth: b.cols * 74 }}>
+            {Array.from({ length: b.rows * b.cols }).map((_, i) => (
+              <div key={i} className="border-2 border-black h-[46px]" />
+            ))}
+          </div>
+        </div>
+      );
+
     case "grid":
       return (
         <div className="border-2 border-black p-2 mb-3">
@@ -306,6 +407,11 @@ const printCss = `
     .ws-root { box-shadow: none !important; }
     .ws-page { break-after: page; }
     .ws-page:last-child { break-after: auto; }
+    /* Flow mode: no forced break per day. Days still cannot be split across a
+       sheet mid-exercise — break-inside on the blocks keeps activities whole. */
+    .ws-flow .ws-page { break-after: auto; }
+    .ws-flow .ws-page > * { break-inside: avoid; }
+    .ws-flow .ws-page > header { break-after: avoid; }
     .ws-root, .ws-root * {
       color: #000 !important;
       background: transparent !important;
