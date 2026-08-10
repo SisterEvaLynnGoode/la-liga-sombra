@@ -184,13 +184,13 @@ function dayOneSlides(): StorySlide[] {
 
     {
       kind: "storyCloser",
-      text: "Tomorrow you get your badge, the rules of the agency, and your first case. Bring your charged laptop and the phrase you practiced today.",
+      text: "Tomorrow you get your badge, the rules of the agency, and the first Spanish you will actually use in this room. Bring a pencil — everything for now is on paper.",
       caseTitle: "Expediente 000 · Reclutamiento",
     },
   ];
 }
 
-/** Day 2 — norms, how the grade actually works, logins, and into Caso 1. */
+/** Day 2 — norms, how the grade actually works, and how the class runs on paper. */
 function dayTwoSlides(): StorySlide[] {
   return [
     {
@@ -225,7 +225,7 @@ function dayTwoSlides(): StorySlide[] {
         },
         {
           label: "Sin teléfonos",
-          text: "Phones are not out in this school, so they are not out in here — not face down on the desk, not in your lap, not in your sleeve. Away means away. Your laptop is the tool for this class and it is the only screen you need. If something real is going on at home, come tell me and we will deal with it together — that conversation happens with me, not with a phone under the desk.",
+          text: "Phones are not out in this school, so they are not out in here — not face down on the desk, not in your lap, not in your sleeve. Away means away. Right now the tools for this class are a pencil and your own voice; when the computers arrive, a school laptop joins them and it is the only screen you need. If something real is going on at home, come tell me and we will deal with it together — that conversation happens with me, not with a phone under the desk.",
         },
         {
           label: "Se puede repetir",
@@ -273,17 +273,19 @@ function dayTwoSlides(): StorySlide[] {
 
     {
       kind: "storyBeat",
-      eyebrow: "Tu Cuenta · Getting In",
-      headline: "Log in now — this is where the cases live",
+      eyebrow: "Cómo Funciona · How This Runs",
+      headline: "Everything starts on paper",
       body: [
-        "Open the site, type the class code from the board, and pick your agent name. You get a PIN. Write it somewhere that is not a piece of paper you will lose by Thursday.",
-        "Inside you will find the mission board with your cases, your expediente with the evidence you have collected, and your own progress — which you can see any time, without asking me.",
-        "If you ever lose your PIN, that is a two-minute fix. Tell me. It is not a reason to fall behind a week.",
+        "There is a version of this class that lives on a computer — the cases, the suspects, the twenty countries. You saw it yesterday. You will get it. You are not getting it this week, because the school does not have the machines for us yet.",
+        "So we start where every investigation actually starts: on paper, out loud, with each other. Every page you fill in these first weeks is the same Spanish you would be doing on a screen. None of it is a warm-up and none of it is filler.",
+        "Keep every page. Your expediente, your badge, your agent — those are yours from today, and the day the computers arrive you will already know who you are when you open the first case.",
       ],
+      pull: "The Spanish is real whether the screen is there or not.",
       facts: [
-        { label: "Código de clase", value: TEACHER_PROFILE.classCode },
-        { label: "Tu PIN", value: "You choose it. Do not lose it." },
-        { label: "Dónde", value: "la-liga-sombra.vercel.app" },
+        { label: "Ahora", value: "Papel, voz y lápiz" },
+        { label: "Después", value: "El juego, cuando lleguen las computadoras" },
+        { label: "Lo que traes", value: "Un lápiz y tu expediente" },
+        { label: "Lo que guardas", value: "Todas las páginas — son tu archivo" },
       ],
       real: true,
     },
@@ -300,7 +302,7 @@ function dayTwoSlides(): StorySlide[] {
 
     {
       kind: "storyCloser",
-      text: "Bienvenidos a La Liga Sombra. Your first case is a stolen guitar in Mexico, and the museum opens in three minutes.",
+      text: "Bienvenidos a La Liga Sombra. Your training starts now, on paper, in this room. The cases open the day the computers do — and you will already be ready for them.",
       caseTitle: "Expediente 000 · Protocolo",
     },
   ];
@@ -322,7 +324,9 @@ Norms are a starter set built around how this course actually works, not a gener
 
 "Sin teléfonos" states the school-wide ban rather than a classroom preference, so it should match whatever the office says this year. If the policy changes, change this line.
 
-The class-code row reads "on the board" — write the period's code up before they log in. Budget the full block here; logins always take longer than the estimate, and it is better to end Day 2 with everyone in the app than to rush the norms.`;
+The "Cómo Funciona" slide replaces what used to be a login walkthrough. It is worth saying out loud rather than skipping: students who were shown a video game on Day 1 and then handed a worksheet on Day 3 will decide, quietly, that the game was a bait-and-switch. Naming the reason — the machines are not here yet — and promising the paper is the same Spanish is what keeps the first two weeks from feeling like a consolation prize.
+
+Do not give a date for the computers unless you actually have one. "When they arrive" survives being wrong; "next Monday" does not.`;
 
 function toDeck(
   unitNumber: number,
@@ -360,6 +364,6 @@ function toDeck(
 export function buildIntroDecks(): StoryDeck[] {
   return [
     toDeck(0, "Día 1 · Bienvenida y reclutamiento", "Expediente 000 · Reclutamiento", "Día 1", dayOneSlides(), DAY_ONE_NOTE),
-    toDeck(0.5, "Día 2 · Normas, nota y primer caso", "Expediente 000 · Protocolo", "Día 2", dayTwoSlides(), DAY_TWO_NOTE),
+    toDeck(0.5, "Día 2 · Normas, nota y protocolo", "Expediente 000 · Protocolo", "Día 2", dayTwoSlides(), DAY_TWO_NOTE),
   ];
 }

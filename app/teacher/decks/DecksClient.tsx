@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import type { Deck, DeckSlide } from "@/lib/decks/build";
 import type { StoryDeck, StorySlide } from "@/lib/decks/story-build";
 
@@ -16,6 +16,38 @@ export default function DecksClient({ decks, stories }: Props) {
   const [active, setActive] = useState(decks[decks.length - 1]?.meta.unitNumber ?? 1);
   const [storyActive, setStoryActive] = useState(stories[0]?.meta.unitNumber ?? 1);
   const [coreOnly, setCoreOnly] = useState(false);
+  // Present mode. Without it a deck is one long scroll of slides that range from
+  // 320px to 1230px tall against a ~700px viewport, so projecting means
+  // free-scrolling and guessing where a slide starts. One slide per screen,
+  // arrow keys to advance.
+  const [present, setPresent] = useState(false);
+  const rootRef = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!present) return;
+    document.documentElement.classList.add("deck-presenting");
+    const go = (dir: 1 | -1) => {
+      const nodes = Array.from(rootRef.current?.querySelectorAll("section") ?? []);
+      const top = window.scrollY;
+      // The slide whose top is nearest the current scroll position, then step.
+      let idx = 0;
+      nodes.forEach((n, i) => {
+        if (n.getBoundingClientRect().top + top <= top + 8) idx = i;
+      });
+      const next = nodes[Math.min(nodes.length - 1, Math.max(0, idx + dir))];
+      next?.scrollIntoView({ behavior: "smooth", block: "start" });
+    };
+    const onKey = (e: KeyboardEvent) => {
+      if (["ArrowDown", "ArrowRight", "PageDown", " "].includes(e.key)) { e.preventDefault(); go(1); }
+      if (["ArrowUp", "ArrowLeft", "PageUp"].includes(e.key)) { e.preventDefault(); go(-1); }
+      if (e.key === "Escape") setPresent(false);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => {
+      window.removeEventListener("keydown", onKey);
+      document.documentElement.classList.remove("deck-presenting");
+    };
+  }, [present]);
 
   const deck = decks.find((d) => d.meta.unitNumber === active) ?? decks[0];
   const story = stories.find((s) => s.meta.unitNumber === storyActive) ?? stories[0];
@@ -38,7 +70,7 @@ export default function DecksClient({ decks, stories }: Props) {
 
   return (
     <div className="min-h-screen bg-[#0d0b0a]">
-      <style dangerouslySetInnerHTML={{ __html: printCss }} />
+      <style dangerouslySetInnerHTML={{ __html: printCss + presentCss }} />
 
       {/* Toolbar — hidden when printing */}
       <div className="print:hidden sticky top-0 z-20 border-b border-[rgba(201,147,58,0.2)] bg-[#110f0d] px-6 py-3 flex items-center justify-between gap-4 flex-wrap">
@@ -77,6 +109,17 @@ export default function DecksClient({ decks, stories }: Props) {
                   </option>
                 ))}
               </select>
+              <button
+                onClick={() => setPresent((v) => !v)}
+                className={`px-3 py-1.5 font-typewriter text-[10px] tracking-[0.2em] uppercase border transition-colors ${
+                  present
+                    ? "bg-[rgba(201,147,58,0.2)] text-[#e8b455] border-[#c9933a]"
+                    : "text-[#8b7355] border-[rgba(201,147,58,0.3)] hover:text-[#c9933a]"
+                }`}
+                title="One slide per screen. Arrow keys or space to advance, Esc to exit."
+              >
+                ▶ Present
+              </button>
               <button
                 onClick={() => setCoreOnly((v) => !v)}
                 className={`px-3 py-1.5 font-typewriter text-[10px] tracking-[0.2em] uppercase border transition-colors ${
@@ -123,7 +166,7 @@ export default function DecksClient({ decks, stories }: Props) {
 
       <p className="print:hidden text-center font-typewriter text-[10px] text-[#4a3a2a] py-2 px-4 max-w-[70rem] mx-auto">
         {showStory
-          ? "Project this BEFORE students open the case. The ESTO ES REAL stamp marks verifiable facts; everything else is invented for the case."
+          ? "Project this before the case — or, in the paper weeks, on its own. The ESTO ES REAL stamp marks verifiable facts; everything else is invented for the case."
           : "Project this page in class, or use “Print / Save PDF” (landscape, one slide per page). Everything is generated from the case file — nothing to edit by hand."}
       </p>
 
@@ -140,7 +183,10 @@ export default function DecksClient({ decks, stories }: Props) {
         </div>
       )}
 
-      <div className="deck-root mx-auto max-w-[1100px] px-4 pb-16 print:px-0 print:pb-0 print:max-w-none">
+      <div
+        ref={rootRef}
+        className={`deck-root mx-auto max-w-[1100px] px-4 pb-16 print:px-0 print:pb-0 print:max-w-none ${present ? "deck-present" : ""}`}
+      >
         {slides.map((slide, i) => (
           <Slide key={`${mode}-${i}`} slide={slide} number={i + 1} total={slides.length} />
         ))}
@@ -501,6 +547,25 @@ function SlideBody({ slide }: { slide: DeckSlide }) {
 
 // Landscape, one slide per page, colours preserved (this deck is projected//
 // printed in colour, unlike the black-and-white worksheet packets).
+const presentCss = `
+  /* One slide per screen, snapped, so advancing is a keypress and never a guess.
+     The snap container must be the element that actually scrolls. .deck-root has
+     overflow: visible and never scrolls — the document does — so putting
+     scroll-snap-type on the inner div silently does nothing. */
+  html.deck-presenting { scroll-snap-type: y mandatory; }
+  .deck-present > section {
+    min-height: 100vh;
+    scroll-snap-align: start;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 0;
+  }
+  /* A slide taller than the screen still scrolls rather than clipping — better a
+     scroll than a headline cut in half in front of a class. */
+  .deck-present > section { overflow-y: auto; }
+`;
+
 const printCss = `
   @media print {
     @page { size: landscape; margin: 0; }
