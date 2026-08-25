@@ -19,7 +19,6 @@ export default async function SyllabusHandoutPage() {
   const deck = buildSyllabusDeck();
   const beats = deck.slides.filter((s): s is Extract<StorySlide, { kind: "storyBeat" }> => s.kind === "storyBeat");
   const norms = deck.slides.find((s) => s.kind === "storyExpect") as Extract<StorySlide, { kind: "storyExpect" }> | undefined;
-  const faq = deck.slides.find((s) => s.kind === "storyDiscuss") as Extract<StorySlide, { kind: "storyDiscuss" }> | undefined;
   const codeBeat = beats.find((b) => b.eyebrow.startsWith("En Casa"));
 
   return (
@@ -50,9 +49,9 @@ export default async function SyllabusHandoutPage() {
           </header>
 
           {beats
-            .filter((b) => !b.eyebrow.startsWith("En Casa") && !b.eyebrow.startsWith("Cómo Ayudar"))
+            .filter((b) => !b.eyebrow.startsWith("En Casa") && !b.eyebrow.startsWith("Cómo Ayudar") && !b.eyebrow.startsWith("Ahora Mismo"))
             .map((b) => (
-              <div key={b.eyebrow} className="mb-2">
+              <div key={b.eyebrow} className="mb-1.5">
                 <p className="text-[9px] tracking-[0.25em] uppercase">{b.eyebrow}</p>
                 <h3 className="text-[15px] font-bold leading-tight mb-1">{b.headline}</h3>
                 {b.body.map((p) => (
@@ -110,9 +109,9 @@ export default async function SyllabusHandoutPage() {
           )}
 
           {beats
-            .filter((b) => b.eyebrow.startsWith("Cómo Ayudar"))
+            .filter((b) => b.eyebrow.startsWith("Cómo Ayudar") || b.eyebrow.startsWith("Ahora Mismo"))
             .map((b) => (
-              <div key={b.eyebrow} className="mb-2">
+              <div key={b.eyebrow} className="mb-1.5">
                 <p className="text-[9px] tracking-[0.25em] uppercase">{b.eyebrow}</p>
                 <h3 className="text-[15px] font-bold leading-tight mb-1">{b.headline}</h3>
                 {b.body.map((p) => (
@@ -121,14 +120,6 @@ export default async function SyllabusHandoutPage() {
               </div>
             ))}
 
-          {faq && (
-            <div className="mb-2">
-              <h3 className="text-[13px] font-bold mb-1">{faq.prompt}</h3>
-              {faq.followups.map((f) => (
-                <p key={f.slice(0, 20)} className="text-[11px] leading-snug mb-1">{f}</p>
-              ))}
-            </div>
-          )}
 
           <p className="mt-3 pt-2 border-t border-black text-[10px] italic">
             {deck.slides[deck.slides.length - 1].kind === "storyCloser"

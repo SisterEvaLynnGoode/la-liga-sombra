@@ -49,7 +49,7 @@ function slides(): StorySlide[] {
       body: [
         "Your student has joined a fictional agency that recovers stolen cultural treasures — a two-hundred-year-old guitar in Mexico, a jade mask in Guatemala, the only recording of a song in Cuba. Each case is set in a different Spanish-speaking country.",
         "To solve one they have to read a witness statement, listen to a phone call, question a suspect and justify an arrest — all in Spanish. The Spanish is not homework attached to a story. It is the only way through it.",
-        "The agency and the thief are invented. The countries, cities, history, music and food are not, and every screen is stamped either ESTO ES REAL or FICCIÓN DEL CASO so your student always knows which is which.",
+        "The agency and the thief are invented. The countries, history, music and food are not — and every screen is stamped ESTO ES REAL or FICCIÓN DEL CASO so students always know which they are looking at.",
       ],
       pull: "Twenty countries. Twenty cases. One year.",
       real: true,
@@ -69,10 +69,10 @@ function slides(): StorySlide[] {
       eyebrow: "El Año · The Year",
       headline: "Where the year goes",
       body: [
-        "The year runs in six six-week arcs. Semester one is present-day: greetings and introductions, then daily life and description, then culture and plans for the future. Semester two is a time-travel arc — the same countries, earlier centuries — which keeps grammar under constant review while the settings change.",
+        "The year runs in six six-week arcs — semester one in the present day, semester two travelling back through the same countries to earlier centuries, which keeps everything already learned under constant review while the settings change.",
         "By June the target is Intermediate Low to Mid: your student can introduce themselves, describe people and places, ask and answer real questions, say what happened, and hold a short conversation with a stranger.",
       ],
-      facts: ARCS.map((a) => ({ label: a.weeks + " · " + a.title, value: a.band })),
+      facts: ARCS.map((a) => ({ label: a.weeks, value: a.family })),
       real: true,
     },
 

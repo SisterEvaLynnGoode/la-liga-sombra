@@ -57,17 +57,30 @@ export interface Arc {
   title: string;
   weeks: string;
   band: string;
+  /**
+   * Parent-facing description: what a student can DO by the end of the arc,
+   * and where the cases go. The `title` above is grammar shorthand for
+   * planning — "Pronouns & the pursuit" is precise for a teacher and means
+   * nothing to a family reading a syllabus.
+   */
+  family: string;
 }
 
 export const ARCS: Arc[] = [
   // ── Semester 1 · present day ────────────────────────────────────────────
-  { n: 1, semester: 1, title: "Foundations", weeks: "Weeks 1–6", band: "Novice Low → Mid" },
-  { n: 2, semester: 1, title: "Daily life & description", weeks: "Weeks 7–12", band: "Novice Mid → High" },
-  { n: 3, semester: 1, title: "Culture & future", weeks: "Weeks 13–18", band: "Novice High → Intermediate Low" },
+  { n: 1, semester: 1, title: "Foundations", weeks: "Weeks 1–6", band: "Novice Low → Mid",
+    family: "Greet people, introduce yourself, count, and describe a school day. México, Puerto Rico, España." },
+  { n: 2, semester: 1, title: "Daily life & description", weeks: "Weeks 7–12", band: "Novice Mid → High",
+    family: "Describe people, family and food, and ask real questions. Costa Rica, Argentina, Colombia." },
+  { n: 3, semester: 1, title: "Culture & future", weeks: "Weeks 13–18", band: "Novice High → Intermediate Low",
+    family: "Talk about celebrations, careers and plans — then design and present an original case. Chile, Perú, Ecuador." },
   // ── Semester 2 · the time-travel arc ────────────────────────────────────
-  { n: 4, semester: 2, title: "Through time · present-tense consolidation", weeks: "Weeks 19–24", band: "Novice High → Intermediate Low" },
-  { n: 5, semester: 2, title: "Pronouns & the pursuit", weeks: "Weeks 25–30", band: "Intermediate Low" },
-  { n: 6, semester: 2, title: "Into the past tense · the confrontation", weeks: "Weeks 31–36", band: "Intermediate Low → Mid" },
+  { n: 4, semester: 2, title: "Through time · present-tense consolidation", weeks: "Weeks 19–24", band: "Novice High → Intermediate Low",
+    family: "The time machine opens: describe the Maya cities of Copán, Tikal and Joya de Cerén as if standing in them." },
+  { n: 5, semester: 2, title: "Pronouns & the pursuit", weeks: "Weeks 25–30", band: "Intermediate Low",
+    family: "Say what you like, describe a daily routine, and give a two-minute briefing from notes. Rubén Darío's Nicaragua, 1954 Havana, and the first World Cup in Montevideo." },
+  { n: 6, semester: 2, title: "Into the past tense · the confrontation", weeks: "Weeks 31–36", band: "Intermediate Low → Mid",
+    family: "Tell what happened — the past tense — and defend a conclusion out loud. Panamá, Paraguay, Venezuela, Bolivia." },
 ];
 
 export const SEMESTERS: Array<{ n: Semester; title: string; weeks: string; blurb: string }> = [
