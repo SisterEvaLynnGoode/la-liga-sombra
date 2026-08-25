@@ -45,6 +45,27 @@ export const TEACHER_PROFILE = {
     { label: "Pregúntame sobre", value: "El Camino de Santiago, o la historia queer" },
   ] as StoryFact[],
 
+  /**
+   * The bio for FAMILY-facing material (back-to-school night), which is a
+   * different audience and a different room. Kept separate rather than
+   * trimming `bio` above, because the student Day 1 version is a deliberate
+   * choice and should not change when the parent one does.
+   */
+  familyBio: [
+    "My name is Tommy Martin-Edwards, and your student calls me Mr. Tommy. I did not grow up speaking Spanish. I learned it in a classroom, exactly the way your student is about to, and then I went and got a degree in teaching it. Everything I can do in this language, I got by doing the thing I am going to ask them to do.",
+    "Then I went and used it. I have spent time in Mexico and in Spain speaking Spanish every day, and I walked the Camino de Santiago across northern Spain on foot. That is the point where a language stops being a school subject — when it is the only way to ask a stranger where you are sleeping tonight.",
+    "This is my fifteenth year teaching. I have taught Spanish, Chinese and Technology, and served as an assistant principal, which means I have read a lot of syllabi and I know which parts you actually want: how grades work, what your student will be able to do, and how to help. Those are on the next pages.",
+  ],
+
+  /** Sidebar rows for the family syllabus. */
+  familyFacts: [
+    { label: "Cómo llamarme", value: "Mr. Tommy (they/them)" },
+    { label: "Enseñando desde", value: "2010–2011" },
+    { label: "También he enseñado", value: "Español, chino, tecnología — y fui subdirector" },
+    { label: "Países que conozco", value: "España, México, Canadá, Francia, Bélgica, China" },
+    { label: "Pregúntame sobre", value: "El Camino de Santiago" },
+  ] as StoryFact[],
+
   /** Why this class is a video game — its own slide, because it earns one. */
   whyTheGame: [
     "This class is a video game because I built it. I am an amateur coder, and I made La Liga Sombra myself — the cases, the suspects, the countries, all of it.",

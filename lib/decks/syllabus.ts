@@ -59,8 +59,8 @@ function slides(): StorySlide[] {
       kind: "storyBeat",
       eyebrow: "Su Profe · Your Teacher",
       headline: TEACHER_PROFILE.name,
-      body: TEACHER_PROFILE.bio,
-      facts: TEACHER_PROFILE.facts,
+      body: TEACHER_PROFILE.familyBio,
+      facts: TEACHER_PROFILE.familyFacts,
       real: true,
     },
 
