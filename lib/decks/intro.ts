@@ -190,23 +190,12 @@ function dayOneSlides(): StorySlide[] {
   ];
 }
 
-/** Day 2 — norms, how the grade actually works, and how the class runs on paper. */
-function dayTwoSlides(): StorySlide[] {
-  return [
-    {
-      kind: "storyCover",
-      unitNumber: 0,
-      caseTitle: "Expediente 000 · Protocolo",
-      country: "La Liga Sombra",
-      city: "Día 2",
-      hook: "Every agency has rules. Here are ours, what they are for, and how you actually earn a grade in this room.",
-    },
-
-    {
-      kind: "storyExpect",
-      eyebrow: "Las Normas",
-      headline: "Normas de la Agencia · How this room works",
-      items: [
+/**
+ * The room's rules, shared. Quoted verbatim by the family syllabus so parents
+ * read the same six norms their student was given on day two — not a softened
+ * paraphrase written for adults.
+ */
+export const CLASS_NORMS: Array<{ label: string; text: string }> = [
         {
           label: "Se habla",
           text: "You will speak Spanish badly, out loud, in front of people, starting today. That is the job — not the part where you failed at the job. A class where nobody risks a wrong sentence is a class where nobody learns to talk.",
@@ -231,7 +220,25 @@ function dayTwoSlides(): StorySlide[] {
           label: "Se puede repetir",
           text: "Almost everything here can be done again for full credit. A bad score on a case is information, not a sentence. What cannot be fixed is work you never turned in at all.",
         },
-      ],
+      ];
+
+/** Day 2 — norms, how the grade actually works, and how the class runs on paper. */
+function dayTwoSlides(): StorySlide[] {
+  return [
+    {
+      kind: "storyCover",
+      unitNumber: 0,
+      caseTitle: "Expediente 000 · Protocolo",
+      country: "La Liga Sombra",
+      city: "Día 2",
+      hook: "Every agency has rules. Here are ours, what they are for, and how you actually earn a grade in this room.",
+    },
+
+    {
+      kind: "storyExpect",
+      eyebrow: "Las Normas",
+      headline: "Normas de la Agencia · How this room works",
+      items: CLASS_NORMS,
     },
 
     {

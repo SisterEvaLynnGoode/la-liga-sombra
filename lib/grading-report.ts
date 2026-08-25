@@ -79,6 +79,13 @@ type SkillKey = keyof typeof SKILL_LABEL;
  * pushes past 100, and `casesAssigned` is clamped to at least casesSolved so a
  * student who has run ahead of the class is never punished for it.
  */
+/**
+ * The gradebook split, exported so anything that TELLS a family how grades work
+ * reads the same numbers the gradebook uses. A syllabus that says 70/30 while
+ * the code does something else is a promise broken in writing.
+ */
+export const GRADE_WEIGHTS = { quality: 0.7, completion: 0.3 } as const;
+
 export function computeCourseGrade(grade: StudentGrade, casesAssignedRaw: number): CourseGrade {
   const casesAssigned = Math.max(1, casesAssignedRaw, grade.casesSolved);
 
@@ -89,7 +96,7 @@ export function computeCourseGrade(grade: StudentGrade, casesAssignedRaw: number
   const quality = present.length ? present.reduce((t, s) => t + s.score, 0) / present.length : 0;
   const completion = Math.min(1, grade.casesSolved / casesAssigned);
 
-  const pct = Math.round((quality * 0.7 + completion * 0.3) * 100);
+  const pct = Math.round((quality * GRADE_WEIGHTS.quality + completion * GRADE_WEIGHTS.completion) * 100);
 
   return {
     pct,

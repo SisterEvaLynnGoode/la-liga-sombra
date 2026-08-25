@@ -109,6 +109,13 @@ export default function DecksClient({ decks, stories }: Props) {
                   </option>
                 ))}
               </select>
+              <a
+                href="/teacher/syllabus"
+                className="px-3 py-1.5 font-typewriter text-[10px] tracking-[0.2em] uppercase border border-[rgba(201,147,58,0.3)] text-[#8b7355] hover:text-[#c9933a] transition-colors"
+                title="The family syllabus as a two-page portrait handout"
+              >
+                📄 Family handout
+              </a>
               <button
                 onClick={() => setPresent((v) => !v)}
                 className={`px-3 py-1.5 font-typewriter text-[10px] tracking-[0.2em] uppercase border transition-colors ${

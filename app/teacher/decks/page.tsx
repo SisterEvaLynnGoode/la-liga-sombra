@@ -5,6 +5,7 @@ import { buildDeck, type Deck } from "@/lib/decks/build";
 import { buildStoryDeck, type StoryDeck } from "@/lib/decks/story-build";
 import { getCaseStory } from "@/lib/decks/stories";
 import { buildIntroDecks } from "@/lib/decks/intro";
+import { buildSyllabusDeck } from "@/lib/decks/syllabus";
 import { getGrammarLesson } from "@/lib/worksheets/grammar";
 import type { UnitContent } from "@/lib/types/unit-content";
 import DecksClient from "./DecksClient";
@@ -27,7 +28,8 @@ export default async function DecksPage() {
   // Pre-build every deck server-side so switching units and printing need no fetch.
   const decks: Deck[] = [];
   // Orientation first: the Story tab opens on the first day of the year, not on Caso 1.
-  const stories: StoryDeck[] = buildIntroDecks();
+  // Orientation first, then the family syllabus, then the cases.
+  const stories: StoryDeck[] = [...buildIntroDecks(), buildSyllabusDeck()];
 
   for (const unit of UNITS) {
     const content = getUnitContent(unit.number);
