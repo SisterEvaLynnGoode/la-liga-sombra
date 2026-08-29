@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useRef } from "react";
+import { playSpanishAudio } from "@/lib/games/speak";
 import type { DefinicionesQuestion } from "@/lib/personalized-drills";
 
 interface Props {
@@ -16,7 +17,6 @@ export default function Definiciones({ questions, onComplete }: Props) {
   const [feedback, setFeedback] = useState<Feedback>(null);
   const [done, setDone]         = useState(false);
   const startRef = useRef(Date.now());
-  const audioRef = useRef<HTMLAudioElement | null>(null);
 
   const q = questions[index];
 
@@ -42,11 +42,15 @@ export default function Definiciones({ questions, onComplete }: Props) {
     }, correct ? 500 : 1200);
   }
 
+  /**
+   * The per-word mp3s referenced by unit content were never generated — all 887
+   * of them 404. This used to be a raw audio.play().catch(() => {}), so the
+   * speaker button did nothing at all and said nothing about why. Route it
+   * through the same fallback the Daily Briefing and Stakeout already use:
+   * try the file, then speak it with the browser's Spanish voice.
+   */
   function playAudio() {
-    if (q.audio && audioRef.current) {
-      audioRef.current.currentTime = 0;
-      audioRef.current.play().catch(() => {});
-    }
+    void playSpanishAudio(q.audio, q.spanish);
   }
 
   if (done) return null; // parent handles done state
@@ -66,12 +70,6 @@ export default function Definiciones({ questions, onComplete }: Props) {
         </div>
       </div>
 
-      {/* Audio */}
-      {q.audio && (
-        // eslint-disable-next-line jsx-a11y/media-has-caption
-        <audio ref={audioRef} src={q.audio} preload="auto" />
-      )}
-
       {/* Prompt */}
       <div
         className={`border-2 p-8 text-center transition-all ${
@@ -89,9 +87,7 @@ export default function Definiciones({ questions, onComplete }: Props) {
         >
           {q.spanish}
         </button>
-        {q.audio && (
-          <p className="font-typewriter text-[9px] text-[#4a3a2a] mt-2">Toca para escuchar ▶</p>
-        )}
+        <p className="font-typewriter text-[9px] text-[#4a3a2a] mt-2">Toca para escuchar ▶</p>
       </div>
 
       {/* Options */}
