@@ -39,6 +39,8 @@ export interface Database {
           teacher_name: string;
           period_name: string;
           teacher_id: string | null;
+          /** Highest case counted for the completion half of the grade; null = not counted. */
+          graded_through: number | null;
           created_at: string;
         };
         Insert: {
@@ -47,6 +49,7 @@ export interface Database {
           teacher_name: string;
           period_name: string;
           teacher_id?: string | null;
+          graded_through?: number | null;
           created_at?: string;
         };
         Update: {
@@ -55,6 +58,7 @@ export interface Database {
           teacher_name?: string;
           period_name?: string;
           teacher_id?: string | null;
+          graded_through?: number | null;
           created_at?: string;
         };
         Relationships: [];

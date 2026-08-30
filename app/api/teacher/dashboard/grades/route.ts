@@ -16,6 +16,10 @@ export async function GET(request: NextRequest) {
   if (isResponse(guard)) return guard;
 
   const supabase = createClient();
+  const { data: classData } = await supabase
+    .from("classes").select("graded_through").eq("id", classId).limit(1);
+  const gradedThrough = (classData as Array<{ graded_through: number | null }> | null)?.[0]?.graded_through ?? null;
+
   const { data: studentsData } = await supabase
     .from("students").select("id, display_name, sis_id").eq("class_id", classId);
   const students = (studentsData ?? []) as Array<{ id: string; display_name: string; sis_id: string | null }>;
@@ -53,16 +57,22 @@ export async function GET(request: NextRequest) {
   }
 
   /**
-   * "Cases assigned so far" = the furthest any student in this class has got.
-   * Using each student's own unlocked count would be circular (unlocking is
-   * progress-driven, so it would always sit one ahead of what they finished);
-   * the class's leading edge is the closest available proxy for what the
-   * teacher has actually taken them through.
+   * How many cases count for the COMPLETION half of the grade.
+   *
+   * This used to be "the furthest any student in this class has got", which
+   * meant the denominator grew the moment the fastest student finished a case
+   * — and every other student's grade dropped, retroactively, for work that had
+   * not been assigned to them yet. A student doing exactly what was asked would
+   * watch their grade fall because somebody else worked ahead over the weekend.
+   *
+   * The teacher now decides when work is due, per class (`graded_through`).
+   * Until they set it, completion is not counted at all and the course grade is
+   * pure quality of the work actually done — which can never punish a student
+   * for a case nobody assigned. `completionCounted` is returned so the UI can
+   * say plainly which of the two is in effect rather than leaving the teacher to
+   * guess why the number looks the way it does.
    */
-  const casesAssigned = Math.max(
-    1,
-    ...ids.map((id) => grades.get(id)?.casesSolved ?? 0)
-  );
+  const completionCounted = gradedThrough !== null && gradedThrough > 0;
 
   const rows = students.map((s) => {
     const grd = grades.get(s.id);
@@ -70,6 +80,10 @@ export async function GET(request: NextRequest) {
 
     const seen = lastSeen.get(s.id);
     const daysSinceActive = seen ? Math.floor((Date.now() - seen) / DAY) : null;
+
+    // Not counting completion => denominator is their own solved count, so the
+    // completion term is 1 and the grade is quality alone.
+    const casesAssigned = completionCounted ? gradedThrough! : Math.max(1, grd?.casesSolved ?? 0);
 
     const report = grd
       ? buildStudentReport({
@@ -96,6 +110,7 @@ export async function GET(request: NextRequest) {
       // Gradebook-style grade + parent narrative.
       gradePct: report?.courseGrade.pct ?? 0,
       gradeLetter: report?.courseGrade.letter ?? "—",
+      casesAssigned: report?.courseGrade.casesAssigned ?? casesAssigned,
       provisional: report?.courseGrade.provisional ?? true,
       narrative: report?.narrative ?? "",
       teacherNote: report?.teacherNote ?? "",
@@ -103,11 +118,44 @@ export async function GET(request: NextRequest) {
     };
   }).sort((a, b) => b.gradePct - a.gradePct || a.displayName.localeCompare(b.displayName));
 
-  return NextResponse.json({ rows, casesAssigned });
+  return NextResponse.json({
+    rows,
+    gradedThrough,
+    completionCounted,
+    // Where the class actually is, so the "graded through" control can suggest a
+    // sensible value without silently applying one.
+    classFurthest: Math.max(0, ...ids.map((id) => grades.get(id)?.casesSolved ?? 0)),
+  });
 }
 
 export async function PATCH(request: NextRequest) {
-  const { studentId, sisId } = await request.json() as { studentId?: string; sisId?: string };
+  const body = await request.json() as { studentId?: string; sisId?: string; classId?: string; gradedThrough?: number | null };
+
+  // Setting how far the class is graded through — a class-level setting, so it
+  // is guarded by class ownership, not by a student.
+  if (Object.prototype.hasOwnProperty.call(body, "gradedThrough")) {
+    const classGuard = await guardClass(body.classId ?? null);
+    if (isResponse(classGuard)) return classGuard;
+
+    const raw = body.gradedThrough;
+    // null clears it (stop counting completion). Anything else must be a whole
+    // number in range; a bad value is rejected rather than coerced, because
+    // silently writing 0 would zero the completion half of everyone's grade.
+    let value: number | null = null;
+    if (raw !== null && raw !== undefined) {
+      if (typeof raw !== "number" || !Number.isInteger(raw) || raw < 0 || raw > 40) {
+        return NextResponse.json({ error: "gradedThrough must be a whole number 0-40, or null" }, { status: 400 });
+      }
+      value = raw;
+    }
+
+    const supabase = createClient();
+    const { error } = await supabase.from("classes").update({ graded_through: value }).eq("id", body.classId!);
+    if (error) return NextResponse.json({ error: "DB error" }, { status: 500 });
+    return NextResponse.json({ ok: true, gradedThrough: value });
+  }
+
+  const { studentId, sisId } = body;
   const guard = await guardStudent(studentId ?? null);
   if (isResponse(guard)) return guard;
 

@@ -3,6 +3,7 @@
 import { Fragment, useState } from "react";
 import { useClassData } from "@/lib/hooks/useClassData";
 import { TabHeader, Loading } from "./OverviewTab";
+import GradebookMatrix from "./GradebookMatrix";
 
 interface GradeRow {
   studentId: string;
@@ -21,8 +22,23 @@ interface GradeRow {
   narrative: string;
   teacherNote: string;
   daysSinceActive: number | null;
+  casesAssigned: number;
 }
-interface GradesData { rows: GradeRow[]; casesAssigned: number }
+interface GradesData {
+  rows: GradeRow[];
+  /** Highest case counted for completion; null = completion not counted yet. */
+  gradedThrough: number | null;
+  completionCounted: boolean;
+  /** Furthest any student has actually got — the suggestion, not the setting. */
+  classFurthest: number;
+}
+
+type View = "summary" | "cases" | "weeks";
+const VIEWS: Array<{ id: View; label: string }> = [
+  { id: "summary", label: "Summary" },
+  { id: "cases",   label: "By case" },
+  { id: "weeks",   label: "By week" },
+];
 
 // ACTFL band → chip color (index 0..3)
 const BAND_STYLE = [
@@ -43,6 +59,27 @@ export default function GradesTab({ classId }: { classId: string }) {
   const [savingSis, setSavingSis] = useState(false);
   const [openRow, setOpenRow] = useState<string | null>(null);
   const [copied, setCopied] = useState<string | null>(null);
+  const [view, setView] = useState<View>("summary");
+  const [gtDraft, setGtDraft] = useState("");
+  const [gtEditing, setGtEditing] = useState(false);
+  const [savingGt, setSavingGt] = useState(false);
+
+  /**
+   * Move the completion denominator. This is the control that stops new work
+   * from retroactively lowering finished grades: nothing counts as missing
+   * until the teacher says it is due.
+   */
+  async function saveGradedThrough(value: number | null) {
+    setSavingGt(true);
+    await fetch("/api/teacher/dashboard/grades", {
+      method: "PATCH",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ classId, gradedThrough: value }),
+    }).catch(() => {});
+    setSavingGt(false);
+    setGtEditing(false);
+    refetch();
+  }
 
   async function copyNarrative(r: GradeRow) {
     try {
@@ -70,7 +107,9 @@ export default function GradesTab({ classId }: { classId: string }) {
 
   if (loading && !data) return <Loading />;
   const rows = data?.rows ?? [];
-  const casesAssigned = data?.casesAssigned ?? 1;
+  const gradedThrough = data?.gradedThrough ?? null;
+  const completionCounted = data?.completionCounted ?? false;
+  const classFurthest = data?.classFurthest ?? 0;
 
   // Band distribution for the summary strip
   const dist = [0, 0, 0, 0];
@@ -81,13 +120,106 @@ export default function GradesTab({ classId }: { classId: string }) {
     <div className="space-y-4">
       <TabHeader title="Grades" lastUpdated={lastUpdated} onRefresh={refetch} />
 
+      {/* View switcher — the same gradebook, asked three different ways. */}
+      <div className="flex gap-0 border-b border-[rgba(201,147,58,0.15)]">
+        {VIEWS.map((v) => (
+          <button
+            key={v.id}
+            onClick={() => setView(v.id)}
+            className={`px-4 py-2 font-typewriter text-[10px] tracking-[0.2em] uppercase border-b-2 -mb-px transition-colors ${
+              view === v.id
+                ? "border-[#c9933a] text-[#e8b455]"
+                : "border-transparent text-[#8b7355] hover:text-[#c4a882]"
+            }`}
+          >
+            {v.label}
+          </button>
+        ))}
+      </div>
+
+      {/* ── How completion is being counted ──────────────────────────────
+          The fix for grades sliding backwards every time the class moves on.
+          Shown in every view because it changes what the Summary number means. */}
+      <div className="border border-[rgba(201,147,58,0.15)] bg-[rgba(201,147,58,0.04)] px-4 py-3 space-y-2">
+        <div className="flex flex-wrap items-center gap-2">
+          <span className="font-typewriter text-[9px] tracking-[0.25em] uppercase text-[#8b7355]">
+            Completion counted through
+          </span>
+          {gtEditing ? (
+            <div className="flex items-center gap-1">
+              <input
+                value={gtDraft}
+                onChange={(e) => setGtDraft(e.target.value.replace(/[^0-9]/g, "").slice(0, 2))}
+                placeholder={String(classFurthest || 1)}
+                className="w-16 bg-[#0d0b0a] border border-[rgba(201,147,58,0.3)] focus:border-[#c9933a] focus:outline-none px-2 py-1 font-typewriter text-[11px] text-[#f5e6c8]"
+                autoFocus
+              />
+              <button
+                disabled={savingGt || gtDraft === ""}
+                onClick={() => saveGradedThrough(Number(gtDraft))}
+                className="font-typewriter text-[10px] text-[#5a9e6f] px-1 disabled:text-[#4a3a2a]"
+              >
+                ✓ save
+              </button>
+              <button onClick={() => setGtEditing(false)} className="font-typewriter text-[10px] text-[#8b7355] px-1">✕</button>
+            </div>
+          ) : (
+            <>
+              <span className="font-typewriter text-[12px] text-[#e8b455]">
+                {completionCounted ? `Caso ${gradedThrough}` : "not counted yet"}
+              </span>
+              <button
+                onClick={() => { setGtEditing(true); setGtDraft(gradedThrough ? String(gradedThrough) : String(classFurthest || 1)); }}
+                className="font-typewriter text-[10px] tracking-[0.2em] uppercase px-2 py-1 border border-[rgba(201,147,58,0.3)] text-[#c9933a] hover:border-[#c9933a] hover:text-[#e8b455] transition-colors"
+              >
+                change
+              </button>
+              {completionCounted && (
+                <button
+                  disabled={savingGt}
+                  onClick={() => saveGradedThrough(null)}
+                  className="font-typewriter text-[10px] text-[#8b7355] hover:text-[#c0392b] transition-colors"
+                >
+                  stop counting
+                </button>
+              )}
+            </>
+          )}
+        </div>
+        <p className="font-typewriter text-[10px] text-[#8b7355] leading-relaxed">
+          {completionCounted ? (
+            <>
+              Cases 1–{gradedThrough} count as due, so an unfinished one lowers the completion half of the grade.
+              Nothing past Caso {gradedThrough} counts yet — grades will not move on their own when the class starts a
+              new case. Advance this when the next case is actually due.
+              {classFurthest > (gradedThrough ?? 0) && (
+                <> The furthest anyone has got is Caso {classFurthest}.</>
+              )}
+            </>
+          ) : (
+            <>
+              Completion is not being counted, so the grade is <span className="text-[#c4a882]">quality of the work
+              actually done</span> and no student is marked down for a case nobody assigned. Set this when you want
+              unfinished cases to start counting — that is the point at which the 70/30 split in the family syllabus
+              takes effect.
+              {classFurthest > 0 && <> The furthest anyone has got is Caso {classFurthest}.</>}
+            </>
+          )}
+        </p>
+      </div>
+
+      {view !== "summary" && <GradebookMatrix classId={classId} mode={view} />}
+
+      {view === "summary" && (
       <div className="border border-[rgba(201,147,58,0.15)] bg-[rgba(201,147,58,0.04)] px-4 py-3">
         <p className="font-typewriter text-[10px] text-[#8b7355] leading-relaxed">
           Two numbers, on purpose. <span className="text-[#c4a882]">Grade</span> is gradebook-style — quality of work done (70%) and completion of what has been assigned (30%) — and is the one safe to share with families. <span className="text-[#c4a882]">ACTFL Level</span> is the standards-based proficiency band, which rises slowly by design; a student can be on track and still sit at Novice Mid. Students climb by replaying to improve, so grades reflect their current best. Open <span className="text-[#c4a882]">report</span> for a parent-ready note.
         </p>
       </div>
 
-      {/* Band distribution + export */}
+      )}
+
+      {view === "summary" && (
       <div className="flex flex-wrap items-center justify-between gap-3">
         <div className="flex flex-wrap gap-2">
           {BAND_NAMES.map((name, i) => (
@@ -108,14 +240,16 @@ export default function GradesTab({ classId }: { classId: string }) {
         </div>
       </div>
 
-      {rows.length === 0 && (
+      )}
+
+      {view === "summary" && rows.length === 0 && (
         <div className="h-40 flex items-center justify-center border border-[rgba(201,147,58,0.12)]">
           <p className="font-typewriter text-xs text-[#4a3a2a]">No students yet.</p>
         </div>
       )}
 
       {/* Gradebook */}
-      {rows.length > 0 && (
+      {view === "summary" && rows.length > 0 && (
         <div className="overflow-x-auto border border-[rgba(201,147,58,0.12)]">
           <table className="w-full min-w-[640px] border-collapse">
             <thead>
@@ -158,7 +292,7 @@ export default function GradesTab({ classId }: { classId: string }) {
                       )}
                     </td>
                   ))}
-                  <td className="px-3 py-2.5 font-typewriter text-xs text-[#c4a882] tabular-nums">{r.casesSolved}/{casesAssigned}</td>
+                  <td className="px-3 py-2.5 font-typewriter text-xs text-[#c4a882] tabular-nums">{r.casesSolved}{completionCounted ? `/${r.casesAssigned}` : ""}</td>
                   <td className="px-3 py-2.5">
                     {editing === r.studentId ? (
                       <div className="flex items-center gap-1">

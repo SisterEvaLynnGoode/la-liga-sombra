@@ -70,15 +70,23 @@ export async function GET(request: NextRequest) {
     }
   } else if (type === "grades" || type === "grades-aeries") {
     const grades = await computeClassGrades(ids, supabase);
-    // Same definition the Grades tab uses: how far the class has actually got.
-    const casesAssigned = Math.max(1, ...ids.map((id) => grades.get(id)?.casesSolved ?? 0));
+    // Same definition the Grades tab uses — the teacher's `graded_through`, or
+    // no completion penalty at all when they have not set one. This CSV goes
+    // into the district gradebook, so it must not be able to disagree with the
+    // number they were looking at on screen when they exported it.
+    const { data: classRow } = await supabase
+      .from("classes").select("graded_through").eq("id", classId).limit(1);
+    const gradedThrough = (classRow as Array<{ graded_through: number | null }> | null)?.[0]?.graded_through ?? null;
+    const completionCounted = gradedThrough !== null && gradedThrough > 0;
+    const assignedFor = (sid: string) =>
+      completionCounted ? gradedThrough! : Math.max(1, grades.get(sid)?.casesSolved ?? 0);
     const reportFor = (sid: string, name: string) => {
       const g = grades.get(sid);
       if (!g) return null;
       return buildStudentReport({
         firstName: (name ?? "").trim().split(/\s+/)[0] || "This student",
         grade: g,
-        casesAssigned,
+        casesAssigned: assignedFor(sid),
       });
     };
     if (type === "grades-aeries") {
@@ -116,7 +124,7 @@ export async function GET(request: NextRequest) {
           grammar_band: g?.skills.grammar.band ?? "Novice Low",
           communication_band: g?.skills.communication.band ?? "Novice Low",
           cases_solved: g?.casesSolved ?? 0,
-          cases_assigned: casesAssigned,
+          cases_assigned: assignedFor(s.id),
           family_note: reportFor(s.id, s.display_name)?.narrative ?? "",
         };
       });
