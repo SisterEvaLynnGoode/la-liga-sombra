@@ -427,7 +427,8 @@
           "realName": "Klaus Weber Montt",
           "age": 55,
           "description": "Es un hombre alto y extranjero de cincuenta y cinco años. Colecciona textiles antiguos. Visitó la cooperativa tres veces, ofreció mil soles y pagó todo con billetes nuevos. Usa botas europeas talla 44.",
-          "imageSeed": 18
+          "imageSeed": 18,
+          "imageUrl": "/images/characters/unit-08-cold-el-anticuario.webp"
         },
         {
           "id": "el-mochilero",
@@ -435,7 +436,8 @@
           "realName": "Jonas Berg Olsen",
           "age": 24,
           "description": "Es un turista alto de veinticuatro años con botas europeas talla 45. Llegó a Cusco ayer por la tarde y durmió en el hostal — el recepcionista lo confirmó.",
-          "imageSeed": 21
+          "imageSeed": 21,
+          "imageUrl": "/images/characters/unit-08-cold-el-mochilero.webp"
         },
         {
           "id": "el-comerciante",
@@ -443,7 +445,8 @@
           "realName": "Faustino Huamán Ríos",
           "age": 47,
           "description": "Es un comerciante del mercado de San Pedro, de cuarenta y siete años. Vende mantas modernas y conoce a la abuela Julia hace años. Calza talla 40.",
-          "imageSeed": 16
+          "imageSeed": 16,
+          "imageUrl": "/images/characters/unit-08-cold-el-comerciante.webp"
         },
         {
           "id": "la-coleccionista",
@@ -451,7 +454,8 @@
           "realName": "Ingrid Solberg Paz",
           "age": 60,
           "description": "Es una coleccionista extranjera de sesenta años. Compró tres mantas la semana pasada — pagó bien y con recibo. Anoche cenó con el alcalde, frente a veinte personas.",
-          "imageSeed": 53
+          "imageSeed": 53,
+          "imageUrl": "/images/characters/unit-08-cold-la-coleccionista.webp"
         },
         {
           "id": "el-guia-cusco",
@@ -459,7 +463,8 @@
           "realName": "Percy Condori Mamani",
           "age": 31,
           "description": "Es un guía turístico de treinta y un años. Lleva grupos a la cooperativa cada semana. Anoche guió el tour nocturno de la ciudad hasta las dos.",
-          "imageSeed": 2
+          "imageSeed": 2,
+          "imageUrl": "/images/characters/unit-08-cold-el-guia-cusco.webp"
         }
       ]
     }

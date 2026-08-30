@@ -433,7 +433,8 @@
           "realName": "Óscar Peña Molina",
           "age": 45,
           "description": "Es un hombre bajo de cuarenta y cinco años con sombrero y mapa. Trabaja con grupos grandes de turistas — ayer guió a treinta personas por el Prado.",
-          "imageSeed": 7
+          "imageSeed": 7,
+          "imageUrl": "/images/characters/unit-03-cold-el-guia-turistico.webp"
         },
         {
           "id": "la-jubilada",

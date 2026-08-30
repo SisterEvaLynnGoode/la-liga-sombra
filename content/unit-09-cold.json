@@ -401,7 +401,8 @@
           "realName": "'Dr. Peralta' — identidad falsa",
           "age": 39,
           "description": "Es un hombre de treinta y nueve años con bata blanca nueva. No sabe usar el aparato de presión. Le 'dolía' la cabeza tres veces, pero rechazó la pastilla y caminaba rapidísimo.",
-          "imageSeed": 23
+          "imageSeed": 23,
+          "imageUrl": "/images/characters/unit-09-cold-el-farmaceutico.webp"
         },
         {
           "id": "el-doctor",
@@ -409,7 +410,8 @@
           "realName": "Dr. Samuel Batista Cruz",
           "age": 51,
           "description": "Es el doctor de la clínica, de cincuenta y un años. Atendió cuarenta pacientes en la feria y ofreció la pastilla al 'farmacéutico'. Todos lo conocen hace años.",
-          "imageSeed": 4
+          "imageSeed": 4,
+          "imageUrl": "/images/characters/unit-09-cold-el-doctor.webp"
         },
         {
           "id": "la-voluntaria",
@@ -417,7 +419,8 @@
           "realName": "Karina Rosario Peña",
           "age": 20,
           "description": "Es una estudiante de enfermería de veinte años, voluntaria oficial (está en la lista). Le dolían los pies de estar parada, pero no salió del puesto de vacunas.",
-          "imageSeed": 27
+          "imageSeed": 27,
+          "imageUrl": "/images/characters/unit-09-cold-la-voluntaria.webp"
         },
         {
           "id": "el-paciente",
@@ -425,7 +428,8 @@
           "realName": "Don Aurelio Guzmán",
           "age": 73,
           "description": "Es un paciente de setenta y tres años. Le duele la espalda y las rodillas — de verdad. Esperó su turno sentado toda la mañana, al lado de la enfermera.",
-          "imageSeed": 46
+          "imageSeed": 46,
+          "imageUrl": "/images/characters/unit-09-cold-el-paciente.webp"
         },
         {
           "id": "la-organizadora",
@@ -433,7 +437,8 @@
           "realName": "Miriam Tavares Luna",
           "age": 44,
           "description": "Es la organizadora de la subasta, de cuarenta y cuatro años. Puso el collar en la vitrina a las 8:00 y estuvo recibiendo donaciones en la entrada, lejos de la vitrina.",
-          "imageSeed": 32
+          "imageSeed": 32,
+          "imageUrl": "/images/characters/unit-09-cold-la-organizadora.webp"
         }
       ]
     }

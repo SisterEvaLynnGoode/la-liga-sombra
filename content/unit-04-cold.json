@@ -397,7 +397,8 @@
           "realName": "'Marcela' — nombre real desconocido",
           "age": 33,
           "description": "Es una mujer de treinta y tres años, delgada y elegante. Dice ser de Puntarenas. Está nerviosa toda la noche, no conoce al perro de la familia y su carro es de San José.",
-          "imageSeed": 26
+          "imageSeed": 26,
+          "imageUrl": "/images/characters/unit-04-cold-la-prima-perdida.webp"
         },
         {
           "id": "la-sobrina",
@@ -405,7 +406,8 @@
           "realName": "Gabriela Solano Mora",
           "age": 24,
           "description": "Es una chica de veinticuatro años, normalmente tranquila pero hoy está nerviosa — ¡porque su novio viene a conocer a la familia! Conoce a Firulais desde niña.",
-          "imageSeed": 19
+          "imageSeed": 19,
+          "imageUrl": "/images/characters/unit-04-cold-la-sobrina.webp"
         },
         {
           "id": "el-primo",
@@ -413,7 +415,8 @@
           "realName": "Diego Solano Vargas",
           "age": 29,
           "description": "Es un hombre alegre de veintinueve años. Estuvo en la mesa toda la cena contando chistes. Él vio a 'Marcela' en el pasillo.",
-          "imageSeed": 3
+          "imageSeed": 3,
+          "imageUrl": "/images/characters/unit-04-cold-el-primo.webp"
         },
         {
           "id": "la-vecina",
@@ -421,7 +424,8 @@
           "realName": "Doña Rosario Quesada",
           "age": 58,
           "description": "Es la vecina de la finca, de cincuenta y ocho años. Trajo un pastel de café. Conoce a la familia hace veinte años y conoce muy bien a Firulais.",
-          "imageSeed": 47
+          "imageSeed": 47,
+          "imageUrl": "/images/characters/unit-04-cold-la-vecina.webp"
         },
         {
           "id": "el-fotografo-familia",
@@ -429,7 +433,8 @@
           "realName": "Tomás Brenes Rojas",
           "age": 41,
           "description": "Es el fotógrafo contratado, de cuarenta y un años. Estuvo preparando las luces para la foto familiar en el jardín toda la noche.",
-          "imageSeed": 10
+          "imageSeed": 10,
+          "imageUrl": "/images/characters/unit-04-cold-el-fotografo-familia.webp"
         }
       ]
     }

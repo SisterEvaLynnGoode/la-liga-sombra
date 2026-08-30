@@ -426,7 +426,8 @@
           "realName": "'Sra. Paladar' — nombre falso",
           "age": 48,
           "description": "Es una mujer elegante de cuarenta y ocho años. Conoce cada especia y cada receta. Prefiere este ají picante, no ese dulce. Su bolso siempre es grande.",
-          "imageSeed": 37
+          "imageSeed": 37,
+          "imageUrl": "/images/characters/unit-06-cold-la-critica.webp"
         },
         {
           "id": "el-mesero",
@@ -434,7 +435,8 @@
           "realName": "Andrés Cabrera Luna",
           "age": 26,
           "description": "Es un mesero de veintiséis años, rápido y amable. Sirvió las mesas 10, 11 y 12 toda la noche. No conoce el ají de la abuela Rosa.",
-          "imageSeed": 6
+          "imageSeed": 6,
+          "imageUrl": "/images/characters/unit-06-cold-el-mesero.webp"
         },
         {
           "id": "la-graduada",
@@ -442,7 +444,8 @@
           "realName": "Luisa Mendoza Prieto",
           "age": 23,
           "description": "Es una estudiante de veintitrés años que se graduó anoche. Estuvo en el escenario durante todo el brindis, delante de doscientas personas.",
-          "imageSeed": 31
+          "imageSeed": 31,
+          "imageUrl": "/images/characters/unit-06-cold-la-graduada.webp"
         },
         {
           "id": "el-proveedor",
@@ -450,7 +453,8 @@
           "realName": "Ramón Castillo Duarte",
           "age": 52,
           "description": "Es el proveedor de especias de la escuela, de cincuenta y dos años. Conoce muchas recetas, pero anoche entregaba especias en Barranquilla.",
-          "imageSeed": 12
+          "imageSeed": 12,
+          "imageUrl": "/images/characters/unit-06-cold-el-proveedor.webp"
         },
         {
           "id": "la-abuela-rosa",
@@ -458,7 +462,8 @@
           "realName": "Rosa Herrera de Díaz",
           "age": 79,
           "description": "Es la abuela de setenta y nueve años, autora de las recetas. El libro es SU tesoro — estuvo en la mesa de honor toda la noche, feliz y orgullosa.",
-          "imageSeed": 49
+          "imageSeed": 49,
+          "imageUrl": "/images/characters/unit-06-cold-la-abuela-rosa.webp"
         }
       ]
     }

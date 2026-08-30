@@ -417,7 +417,8 @@
           "realName": "Renata Fuentes Alba",
           "age": 36,
           "description": "Es una cantante de treinta y seis años con voz grave y máscara plateada. Canta en el segundo turno y su camerino es el tercero. Anoche llevaba impermeable… sin lluvia.",
-          "imageSeed": 42
+          "imageSeed": 42,
+          "imageUrl": "/images/characters/unit-07-cold-la-cantante-enmascarada.webp"
         },
         {
           "id": "el-bajista",
@@ -425,7 +426,8 @@
           "realName": "Cristóbal Rojas Pinto",
           "age": 33,
           "description": "Es un músico de treinta y tres años con voz grave. Toca en el quinto turno y su camerino es el primero, al otro lado del teatro. Estuvo afinando su bajo con Nico.",
-          "imageSeed": 9
+          "imageSeed": 9,
+          "imageUrl": "/images/characters/unit-07-cold-el-bajista.webp"
         },
         {
           "id": "la-bailarina",
@@ -433,7 +435,8 @@
           "realName": "Josefa Aravena Cruz",
           "age": 27,
           "description": "Es una bailarina de veintisiete años con máscara dorada, no plateada. Baila en el cuarto turno y ensayó su coreografía en el escenario hasta las 22:30 — todos la vieron.",
-          "imageSeed": 35
+          "imageSeed": 35,
+          "imageUrl": "/images/characters/unit-07-cold-la-bailarina.webp"
         },
         {
           "id": "el-presentador",
@@ -441,7 +444,8 @@
           "realName": "Rodrigo Salas Bravo",
           "age": 50,
           "description": "Es el presentador del festival, de cincuenta años. No lleva máscara y estuvo grabando promociones frente a las cámaras de 21:30 a 22:30.",
-          "imageSeed": 14
+          "imageSeed": 14,
+          "imageUrl": "/images/characters/unit-07-cold-el-presentador.webp"
         },
         {
           "id": "la-vestuarista",
@@ -449,7 +453,8 @@
           "realName": "Amanda Leiva Soto",
           "age": 45,
           "description": "Es la vestuarista de cuarenta y cinco años. Lleva ropa de todos los artistas a la lavandería… pero siempre antes de las 21:00, cuando cierra.",
-          "imageSeed": 50
+          "imageSeed": 50,
+          "imageUrl": "/images/characters/unit-07-cold-la-vestuarista.webp"
         }
       ]
     }

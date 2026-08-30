@@ -418,7 +418,8 @@
           "realName": "Rosa Jiménez Cruz",
           "age": 28,
           "description": "Es una mujer baja y rubia de veintiocho años. Es tímida y trabajadora. Escribe con la mano izquierda, pero estaba en la oficina toda la mañana.",
-          "imageSeed": 30
+          "imageSeed": 30,
+          "imageUrl": "/images/characters/unit-02-cold-la-secretaria.webp"
         },
         {
           "id": "el-inspector",

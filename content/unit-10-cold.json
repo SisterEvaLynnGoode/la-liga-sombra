@@ -377,7 +377,8 @@
           "realName": "'Sra. Ventura' — identidad falsa",
           "age": 46,
           "description": "Es una mujer elegante de cuarenta y seis años con maletín de cuero. Promete millones en futuro: 'invertiré, firmaremos, traeré abogados'. Su tarjeta es de una empresa que no existe.",
-          "imageSeed": 38
+          "imageSeed": 38,
+          "imageUrl": "/images/characters/unit-10-cold-la-inversora.webp"
         },
         {
           "id": "el-juez",
@@ -385,7 +386,8 @@
           "realName": "Ing. Aurelio Paz Montúfar",
           "age": 58,
           "description": "Es el juez principal de la Expo, de cincuenta y ocho años. Evaluó veinte proyectos y entregó el premio en el escenario, frente a todos, hasta las 21:30.",
-          "imageSeed": 20
+          "imageSeed": 20,
+          "imageUrl": "/images/characters/unit-10-cold-el-juez.webp"
         },
         {
           "id": "la-rival",
@@ -393,7 +395,8 @@
           "realName": "Daniela Chávez Toro",
           "age": 19,
           "description": "Es la capitana del equipo rival, de diecinueve años. Su equipo quedó segundo. Estaba triste, pero celebró con su equipo en la cafetería toda la noche.",
-          "imageSeed": 40
+          "imageSeed": 40,
+          "imageUrl": "/images/characters/unit-10-cold-la-rival.webp"
         },
         {
           "id": "el-periodista-expo",
@@ -401,7 +404,8 @@
           "realName": "Galo Sandoval Ruiz",
           "age": 36,
           "description": "Es un periodista de ciencia de treinta y seis años. Fotografió TODOS los stands para su artículo — con permiso y credencial real de prensa.",
-          "imageSeed": 1
+          "imageSeed": 1,
+          "imageUrl": "/images/characters/unit-10-cold-el-periodista-expo.webp"
         },
         {
           "id": "el-profesor",
@@ -409,7 +413,8 @@
           "realName": "Dr. Wilson Cárdenas Vela",
           "age": 49,
           "description": "Es el profesor mentor del equipo, de cuarenta y nueve años. Guardó una copia digital del plano en su computadora — por eso el equipo todavía tiene esperanza.",
-          "imageSeed": 45
+          "imageSeed": 45,
+          "imageUrl": "/images/characters/unit-10-cold-el-profesor.webp"
         }
       ]
     }

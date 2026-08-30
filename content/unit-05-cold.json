@@ -406,7 +406,8 @@
           "realName": "'Valeria Núñez' — identidad falsa",
           "age": 40,
           "description": "Es una mujer de cuarenta años, segura y muy inteligente. Sabe todo sobre teléfonos y códigos. Dice tener treinta años de experiencia — los números no funcionan.",
-          "imageSeed": 34
+          "imageSeed": 34,
+          "imageUrl": "/images/characters/unit-05-cold-la-ingeniera-fantasma.webp"
         },
         {
           "id": "la-disenadora",
@@ -414,7 +415,8 @@
           "realName": "Camila Ferreyra Paz",
           "age": 29,
           "description": "Es una diseñadora de veintinueve años del stand vecino. Tiene credencial real número 2847. Estuvo presentando su aplicación toda la tarde.",
-          "imageSeed": 24
+          "imageSeed": 24,
+          "imageUrl": "/images/characters/unit-05-cold-la-disenadora.webp"
         },
         {
           "id": "el-tecnico-expo",
@@ -422,7 +424,8 @@
           "realName": "Martín Ocampo Silva",
           "age": 35,
           "description": "Es el técnico de mantenimiento de treinta y cinco años. Tiene el código del depósito, pero las cámaras lo muestran arreglando luces en el otro pabellón.",
-          "imageSeed": 5
+          "imageSeed": 5,
+          "imageUrl": "/images/characters/unit-05-cold-el-tecnico-expo.webp"
         },
         {
           "id": "el-periodista",
@@ -430,7 +433,8 @@
           "realName": "Bruno Aguirre Costa",
           "age": 44,
           "description": "Es un periodista de tecnología de cuarenta y cuatro años. Hace muchas preguntas sobre precios y fechas, pero su credencial de prensa es real y verificada.",
-          "imageSeed": 17
+          "imageSeed": 17,
+          "imageUrl": "/images/characters/unit-05-cold-el-periodista.webp"
         },
         {
           "id": "la-estudiante-ing",
@@ -438,7 +442,8 @@
           "realName": "Sofía Bianchi Vera",
           "age": 21,
           "description": "Es una estudiante de ingeniería de veintiún años. Visitó el stand tres veces porque quiere trabajar en OMEGA. Su mochila es demasiado pequeña para el prototipo.",
-          "imageSeed": 39
+          "imageSeed": 39,
+          "imageUrl": "/images/characters/unit-05-cold-la-estudiante-ing.webp"
         }
       ]
     }
