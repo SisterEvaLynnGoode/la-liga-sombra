@@ -109,6 +109,15 @@ export const WEEK_ONE_PAGES: WeekOnePage[] = [
         lines: 2,
       },
       {
+        kind: "partnerTalk",
+        title: "Habla con un compañero / Partner talk",
+        instructions:
+          "Stand up, find a partner, and run the script exactly as written. Then swap roles. You are not inventing anything — read the frame and fill the blank.",
+        frames: ["Hola. Me llamo ______ . ¿Y tú?", "Hola, ______ . Me llamo ______ .", "Mucho gusto.", "Mucho gusto."],
+        rounds: 3,
+        evidencePrompt: "After each partner, write their exact words — the name they actually said, spelled the way they say it.",
+      },
+      {
         kind: "survey",
         title: "Reclutamiento / Recruiting",
         instructions:
@@ -153,6 +162,23 @@ export const WEEK_ONE_PAGES: WeekOnePage[] = [
           "Write a three-line conversation between two agents meeting for the first time. Use only what is in the reference box plus “me llamo…”. Spanish only.",
         prompts: ["— ", "— ", "— "],
         lines: 1,
+      },
+      {
+        kind: "citeEvidence",
+        title: "C. Busca la prueba / Find the proof",
+        instructions:
+          "Read the note. Answer each question, then copy the exact Spanish words from the note that prove your answer. Copying the right words IS the skill.",
+        passage: [
+          "Buenos días, agente.",
+          "Me llamo Elena. Soy la guardia de la noche.",
+          "Trabajo aquí de las nueve de la noche a las seis de la mañana.",
+          "Adiós y buena suerte.",
+        ],
+        questions: [
+          { q: "¿Cómo se llama la guardia?", answer: "Elena", evidence: "Me llamo Elena" },
+          { q: "¿Trabaja de día o de noche?", answer: "De noche", evidence: "Soy la guardia de la noche" },
+          { q: "¿Qué dice al final — «hola» o «adiós»?", answer: "Adiós", evidence: "Adiós y buena suerte" },
+        ],
       },
       {
         kind: "wordSearch",
@@ -202,6 +228,20 @@ export const WEEK_ONE_PAGES: WeekOnePage[] = [
         lines: 2,
       },
       {
+        kind: "partnerTalk",
+        title: "B. Habla con un compañero",
+        instructions:
+          "Partner A says a sentence in Spanish, fast and quietly, on purpose. Partner B must use a survival phrase to get it repeated. Then swap. Nobody is allowed to say «what?» in English.",
+        frames: [
+          "(dice algo rápido en español)",
+          "Más despacio, por favor.",
+          "(lo repite despacio)",
+          "Otra vez, por favor. / Gracias, ya entiendo.",
+        ],
+        rounds: 3,
+        evidencePrompt: "Write the phrase your partner used on you — their exact words, not what you would have said.",
+      },
+      {
         kind: "survey",
         title: "C. La encuesta",
         instructions:
@@ -241,6 +281,23 @@ export const WEEK_ONE_PAGES: WeekOnePage[] = [
           { situation: "The hallway is noisy and the door is open.", answer: "Cierra la puerta" },
           { situation: "A phone is out during instruction.", answer: "Guarda el teléfono" },
           { situation: "You want the class to say a word again after you.", answer: "Repite, por favor" },
+        ],
+      },
+      {
+        kind: "citeEvidence",
+        title: "B. Busca la prueba / Find the proof",
+        instructions:
+          "Read what the teacher said to the class. Answer, then copy the exact Spanish words that prove it.",
+        passage: [
+          "Buenos días. Saca un lápiz y abre el libro.",
+          "Ahora escucha. No escribas todavía.",
+          "Mira la pizarra y repite, por favor.",
+          "Guarda el teléfono. Gracias.",
+        ],
+        questions: [
+          { q: "¿Qué debe sacar el estudiante?", answer: "Un lápiz", evidence: "Saca un lápiz" },
+          { q: "¿Debe escribir inmediatamente?", answer: "No", evidence: "No escribas todavía" },
+          { q: "¿Adónde debe mirar?", answer: "A la pizarra", evidence: "Mira la pizarra" },
         ],
       },
       {
@@ -291,6 +348,20 @@ export const WEEK_ONE_PAGES: WeekOnePage[] = [
           "In English: describe one object in your house that could not be replaced if it disappeared. Not the most expensive one — the one that would actually hurt to lose. This is the question the whole year is built on.",
         prompts: ["The object:", "Who it really belongs to:", "Why it would hurt to lose it:"],
         lines: 2,
+      },
+      {
+        kind: "partnerTalk",
+        title: "Presenta tu agente / Introduce your agent",
+        instructions:
+          "Introduce your detective to three classmates using the frame. Say it out loud — reading it silently does not count.",
+        frames: [
+          "Me llamo ______ . Mi especialidad es ______ .",
+          "Mucho gusto. Me llamo ______ . Mi especialidad es ______ .",
+          "¿Cómo se dice tu especialidad en español?",
+          "Se dice ______ .",
+        ],
+        rounds: 3,
+        evidencePrompt: "Write each partner's agent name AND their specialty, in Spanish, exactly as they said it.",
       },
       {
         kind: "gameBox",

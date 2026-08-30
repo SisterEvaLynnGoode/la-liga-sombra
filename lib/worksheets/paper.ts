@@ -43,7 +43,38 @@ export type WeekOneBlock =
   /** A whole-class game run from the front. No writing; fills the tail of a block period. */
   | { kind: "gameBox"; title: string; spanishName: string; minutes: number; steps: string[] }
   /** Empty boxes for students to fill — lotería cards, sketch space. */
-  | { kind: "blankGrid"; title: string; instructions: string; rows: number; cols: number };
+  | { kind: "blankGrid"; title: string; instructions: string; rows: number; cols: number }
+  /**
+   * Structured partner talk. Two school-wide goals live here: students TALK,
+   * and they cite what they heard rather than summarising it. Each turn gives
+   * a sentence frame to say and a line to write down the partner's actual
+   * words — the citation is the point, so the frames are printed, not implied.
+   */
+  | {
+      kind: "partnerTalk";
+      title: string;
+      instructions: string;
+      /** What each speaker says, in order. Printed as a script to follow. */
+      frames: string[];
+      /** How many partners they run it with. */
+      rounds: number;
+      /** The evidence line: what they must write down from the partner. */
+      evidencePrompt: string;
+    }
+  /**
+   * Cite-the-text. Students answer FROM a short Spanish passage and must copy
+   * the words that prove it — the second school-wide goal, on paper, in the
+   * target language.
+   */
+  | {
+      kind: "citeEvidence";
+      title: string;
+      instructions: string;
+      /** Short Spanish passage, numbered by line so students can point at one. */
+      passage: string[];
+      /** Each question gets an answer line AND an evidence line. */
+      questions: Array<{ q: string; answer: string; evidence: string }>;
+    };
 
 export interface WeekOnePage {
   id: string;
@@ -74,6 +105,13 @@ export function buildAnswerKey(pages: WeekOnePage[]): KeySection[] {
           page: `${page.day} · ${page.title}`,
           title: b.title,
           answers: b.items.map((it, i) => `${i + 1}. ${it.answer}`),
+        });
+      }
+      if (b.kind === "citeEvidence") {
+        out.push({
+          page: `${page.day} · ${page.title}`,
+          title: b.title,
+          answers: b.questions.map((q, i) => `${i + 1}. ${q.answer}  ←  «${q.evidence}»`),
         });
       }
       if (b.kind === "match") {

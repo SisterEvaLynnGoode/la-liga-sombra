@@ -391,7 +391,8 @@
           "realName": "Carmen Delgado Ruiz",
           "age": 35,
           "description": "Es una mujer alta y morena de treinta y cinco años. Es seria y muy organizada. Lleva una chaqueta azul y gafas de sol. Escribe con la mano izquierda.",
-          "imageSeed": 22
+          "imageSeed": 22,
+          "imageUrl": "/images/characters/unit-02-cold-la-directora-falsa.webp"
         },
         {
           "id": "la-profesora",
@@ -399,7 +400,8 @@
           "realName": "Ana Beltrán Soto",
           "age": 35,
           "description": "Es una mujer alta y morena de treinta y cinco años. Es simpática y habla mucho. Lleva una chaqueta azul, pero escribe con la mano derecha y no usa gafas.",
-          "imageSeed": 25
+          "imageSeed": 25,
+          "imageUrl": "/images/characters/unit-02-cold-la-profesora.webp"
         },
         {
           "id": "el-entrenador",
@@ -407,7 +409,8 @@
           "realName": "Luis Vega Marín",
           "age": 42,
           "description": "Es un hombre alto y fuerte de cuarenta y dos años. Lleva una bolsa deportiva todos los días porque es el entrenador de baloncesto de la escuela.",
-          "imageSeed": 13
+          "imageSeed": 13,
+          "imageUrl": "/images/characters/unit-02-cold-el-entrenador.webp"
         },
         {
           "id": "la-secretaria",
@@ -423,7 +426,8 @@
           "realName": "Pedro Casals Rivera",
           "age": 50,
           "description": "Es un hombre delgado de cincuenta años con gafas de sol. Visita escuelas para el gobierno, pero ayer visitó otra escuela en Ponce.",
-          "imageSeed": 8
+          "imageSeed": 8,
+          "imageUrl": "/images/characters/unit-02-cold-el-inspector.webp"
         }
       ]
     }

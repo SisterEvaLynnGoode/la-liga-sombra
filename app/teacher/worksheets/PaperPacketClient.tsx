@@ -289,6 +289,56 @@ function Block({ b }: { b: WeekOneBlock }) {
         </div>
       );
 
+    case "partnerTalk":
+      return (
+        <div className="mb-3">
+          <SectionHead title={b.title} instructions={b.instructions} />
+          <div className="border-2 border-black p-2 mb-2">
+            <p className="text-[9px] tracking-[0.25em] uppercase mb-1">El guion / The script</p>
+            {b.frames.map((f, i) => (
+              <p key={f} className="text-[12px] leading-snug mb-0.5">
+                <span className="font-bold">{i % 2 === 0 ? "A" : "B"}:</span> {f}
+              </p>
+            ))}
+          </div>
+          <p className="text-[10px] italic mb-1">{b.evidencePrompt}</p>
+          {Array.from({ length: b.rounds }).map((_, i) => (
+            <div key={i} className="grid grid-cols-[6.5rem_1fr] gap-2 items-end mb-1.5">
+              <span className="text-[10px] tracking-[0.1em] uppercase">Compañero/a {i + 1}</span>
+              <span className="border-b border-black h-5" />
+            </div>
+          ))}
+        </div>
+      );
+
+    case "citeEvidence":
+      return (
+        <div className="mb-3">
+          <SectionHead title={b.title} instructions={b.instructions} />
+          <div className="border-2 border-black p-2 mb-2">
+            {b.passage.map((line, i) => (
+              <p key={line} className="text-[12px] leading-snug">
+                <span className="text-[9px] mr-1.5">{i + 1}</span>{line}
+              </p>
+            ))}
+          </div>
+          {b.questions.map((q, i) => (
+            <div key={q.q} className="mb-2">
+              <p className="text-[12px]">{i + 1}. {q.q}</p>
+              <div className="grid grid-cols-[3.6rem_1fr] gap-2 items-end mt-0.5">
+                <span className="text-[9px] tracking-[0.1em] uppercase">Respuesta</span>
+                <span className="border-b border-black h-4" />
+              </div>
+              <div className="grid grid-cols-[3.6rem_1fr] gap-2 items-end mt-1">
+                <span className="text-[9px] tracking-[0.1em] uppercase">Prueba</span>
+                <span className="border-b border-black h-4" />
+              </div>
+            </div>
+          ))}
+          <p className="text-[9px] italic">«Prueba» = copy the exact words from the text that prove your answer.</p>
+        </div>
+      );
+
     case "grid":
       return (
         <div className="border-2 border-black p-2 mb-3">

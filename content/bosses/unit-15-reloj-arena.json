@@ -7,12 +7,15 @@
   "nextUnit": 16,
   "totalStages": 7,
   "basePoints": 500,
-  "pointsMultiplier": { "easy": 1.0, "normal": 1.5, "hard": 2.0 },
+  "pointsMultiplier": {
+    "easy": 1.0,
+    "normal": 1.5,
+    "hard": 2.0
+  },
   "collaborationBonus": 100,
   "completionBadge": "operacion_reloj_completada",
   "briefingLine": "Agente, esto no es un caso más. Es los cinco a la vez. La máquina de El Cronista está rota y te va a llevar por todas las épocas que él robó, una por una, sin parar. Todo lo que aprendiste este semestre lo vas a necesitar hoy. ¿Cómo prefieres entrar?",
   "ethicalChoiceAfterStage": 3,
-
   "stages": [
     {
       "type": "readingComp",
@@ -21,12 +24,30 @@
       "clueReward": "La libreta dice adónde va después de Copán: a Tikal, al año setecientos, por una máscara de jade. En Tikal El Cronista finge ser astrónomo — y un astrónomo verdadero habla de dos maneras: dice quién ES y dice cómo ESTÁ.",
       "passage": "LIBRETA DE VIAJE — página uno\n\nHoy llego a Copán. La ciudad vive. No es una ruina: es una ciudad.\n\nLos escribas trabajan en la plaza. Tallan la piedra y escriben con glifos. Un escriba joven dibuja un glifo nuevo en el altar.\n\nYo observo. Siempre observo primero. Subo la escalera del templo y veo toda la ciudad desde arriba. El rey recibe a los sacerdotes hoy.\n\nAprendo rápido. Leo los glifos de la estela y descubro el nombre del rey.\n\nAhora voy a Tikal, año setecientos. Allí un astrónomo lleva una máscara de jade. La máscara es pequeña, verde, perfecta.\n\nNadie me ve. Nadie me busca. Vivo entre ellos y no existo.",
       "glossary": [
-        { "word": "la libreta", "translation": "notebook" },
-        { "word": "la estela", "translation": "carved stone monument (stela)" },
-        { "word": "el glifo", "translation": "glyph" },
-        { "word": "el escriba", "translation": "scribe" },
-        { "word": "tallar", "translation": "to carve" },
-        { "word": "el altar", "translation": "altar" }
+        {
+          "word": "la libreta",
+          "translation": "notebook"
+        },
+        {
+          "word": "la estela",
+          "translation": "carved stone monument (stela)"
+        },
+        {
+          "word": "el glifo",
+          "translation": "glyph"
+        },
+        {
+          "word": "el escriba",
+          "translation": "scribe"
+        },
+        {
+          "word": "tallar",
+          "translation": "to carve"
+        },
+        {
+          "word": "el altar",
+          "translation": "altar"
+        }
       ],
       "questions": {
         "easy": [
@@ -34,7 +55,12 @@
             "id": "e1",
             "text": "¿Dónde está El Cronista hoy?",
             "type": "multiple_choice",
-            "options": ["En Copán", "En Tikal", "En León", "En La Habana"],
+            "options": [
+              "En Copán",
+              "En Tikal",
+              "En León",
+              "En La Habana"
+            ],
             "correctIndex": 0,
             "explanationEs": "La primera línea lo dice: «Hoy llego a Copán».",
             "explanationEn": "The first line says it: \"Hoy llego a Copán.\""
@@ -43,7 +69,12 @@
             "id": "e2",
             "text": "¿Qué hacen los escribas en la plaza?",
             "type": "multiple_choice",
-            "options": ["Tallan la piedra y escriben glifos", "Comen y duermen", "Venden jade", "Corren por la selva"],
+            "options": [
+              "Tallan la piedra y escriben glifos",
+              "Comen y duermen",
+              "Venden jade",
+              "Corren por la selva"
+            ],
             "correctIndex": 0,
             "explanationEs": "«Tallan la piedra y escriben con glifos» — trabajan con la piedra.",
             "explanationEn": "\"Tallan la piedra y escriben con glifos\" — they work the stone."
@@ -52,7 +83,12 @@
             "id": "e3",
             "text": "¿Qué ve El Cronista desde la escalera del templo?",
             "type": "multiple_choice",
-            "options": ["Toda la ciudad", "El mar", "Otra pirámide", "Al rey"],
+            "options": [
+              "Toda la ciudad",
+              "El mar",
+              "Otra pirámide",
+              "Al rey"
+            ],
             "correctIndex": 0,
             "explanationEs": "«Subo la escalera del templo y veo toda la ciudad desde arriba».",
             "explanationEn": "\"Subo la escalera del templo y veo toda la ciudad desde arriba.\""
@@ -63,7 +99,12 @@
             "id": "n1",
             "text": "¿Adónde va El Cronista después de Copán?",
             "type": "multiple_choice",
-            "options": ["A Tikal, al año 700", "A León, al año 1907", "A La Habana, al año 1954", "A Joya de Cerén, al año 600"],
+            "options": [
+              "A Tikal, al año 700",
+              "A León, al año 1907",
+              "A La Habana, al año 1954",
+              "A Joya de Cerén, al año 600"
+            ],
             "correctIndex": 0,
             "explanationEs": "«Ahora voy a Tikal, año setecientos».",
             "explanationEn": "\"Ahora voy a Tikal, año setecientos.\""
@@ -72,7 +113,12 @@
             "id": "n2",
             "text": "¿Qué lleva el astrónomo de Tikal?",
             "type": "multiple_choice",
-            "options": ["Una máscara de jade", "Una estela de piedra", "Un glifo del rey", "Un tesoro del altar"],
+            "options": [
+              "Una máscara de jade",
+              "Una estela de piedra",
+              "Un glifo del rey",
+              "Un tesoro del altar"
+            ],
             "correctIndex": 0,
             "explanationEs": "«Un astrónomo lleva una máscara de jade».",
             "explanationEn": "\"Un astrónomo lleva una máscara de jade.\""
@@ -81,7 +127,12 @@
             "id": "n3",
             "text": "Según la libreta, ¿qué hace El Cronista siempre primero?",
             "type": "multiple_choice",
-            "options": ["Observa", "Excava", "Vende", "Corre"],
+            "options": [
+              "Observa",
+              "Excava",
+              "Vende",
+              "Corre"
+            ],
             "correctIndex": 0,
             "explanationEs": "«Yo observo. Siempre observo primero». Por eso nadie lo descubre rápido.",
             "explanationEn": "\"Yo observo. Siempre observo primero.\" That's why nobody spots him quickly."
@@ -90,7 +141,12 @@
             "id": "n4",
             "text": "¿Qué descubre El Cronista cuando lee la estela?",
             "type": "multiple_choice",
-            "options": ["El nombre del rey", "El nombre del escriba", "Dónde está el jade", "La fecha de la ceremonia"],
+            "options": [
+              "El nombre del rey",
+              "El nombre del escriba",
+              "Dónde está el jade",
+              "La fecha de la ceremonia"
+            ],
             "correctIndex": 0,
             "explanationEs": "«Leo los glifos de la estela y descubro el nombre del rey».",
             "explanationEn": "\"Leo los glifos de la estela y descubro el nombre del rey.\""
@@ -129,7 +185,12 @@
             "id": "h3",
             "text": "¿Qué NO hace El Cronista en Copán, según la libreta?",
             "type": "multiple_choice",
-            "options": ["Trabajar con los escribas", "Subir el templo", "Leer los glifos", "Observar la ciudad"],
+            "options": [
+              "Trabajar con los escribas",
+              "Subir el templo",
+              "Leer los glifos",
+              "Observar la ciudad"
+            ],
             "correctIndex": 0,
             "explanationEs": "Los escribas trabajan; él solo mira, lee y sube. Nunca trabaja con ellos.",
             "explanationEn": "The scribes work; he only watches, reads and climbs. He never works alongside them."
@@ -138,7 +199,12 @@
             "id": "h4",
             "text": "¿Cómo describe la máscara de Tikal?",
             "type": "multiple_choice",
-            "options": ["Pequeña, verde y perfecta", "Grande y de piedra", "Vieja y rota", "De oro y jade"],
+            "options": [
+              "Pequeña, verde y perfecta",
+              "Grande y de piedra",
+              "Vieja y rota",
+              "De oro y jade"
+            ],
             "correctIndex": 0,
             "explanationEs": "«La máscara es pequeña, verde, perfecta» — usa SER porque describe cómo ES.",
             "explanationEn": "\"La máscara es pequeña, verde, perfecta\" — SER, because it describes what it IS."
@@ -146,7 +212,6 @@
         ]
       }
     },
-
     {
       "type": "swipeSort",
       "country": "Tikal, 700",
@@ -158,25 +223,88 @@
       "rightLabel": "ESTAR",
       "rightHint": "lugar y estado",
       "items": [
-        { "text": "El astrónomo ___ alto y moreno.", "category": "left", "explanation": "una característica física — SER" },
-        { "text": "La máscara de jade ___ dentro del templo.", "category": "right", "explanation": "lugar — ESTAR" },
-        { "text": "El forastero ___ nervioso esta noche.", "category": "right", "explanation": "un estado de ahora — ESTAR" },
-        { "text": "La ceiba ___ un árbol sagrado.", "category": "left", "explanation": "identidad: qué es — SER" },
-        { "text": "Nosotros ___ cerca de la pirámide.", "category": "right", "explanation": "lugar — ESTAR" },
-        { "text": "El jade ___ verde.", "category": "left", "explanation": "característica permanente — SER" },
-        { "text": "Los monos ___ en los árboles.", "category": "right", "explanation": "lugar — ESTAR" },
-        { "text": "Tikal ___ una ciudad antigua.", "category": "left", "explanation": "identidad: qué es — SER" },
-        { "text": "El forastero ___ confundido cuando mira el cielo.", "category": "right", "explanation": "un estado de ahora — ESTAR. Un astrónomo verdadero no está confundido con las estrellas." },
-        { "text": "El quetzal ___ un pájaro de la selva.", "category": "left", "explanation": "identidad: qué es — SER" },
-        { "text": "La plaza ___ lejos del templo.", "category": "right", "explanation": "lugar — ESTAR" },
-        { "text": "Yo ___ agente de la agencia.", "category": "left", "explanation": "identidad: quién soy — SER" },
-        { "text": "El sacerdote ___ cansado después de la ceremonia.", "category": "right", "explanation": "un estado de ahora — ESTAR" },
-        { "text": "La luna ___ muy grande esta noche.", "category": "right", "explanation": "cómo se ve ahora, no cómo es siempre — ESTAR" },
-        { "text": "El escriba ___ inteligente y tranquilo.", "category": "left", "explanation": "cómo es la persona — SER" },
-        { "text": "El jaguar ___ dentro de la selva.", "category": "right", "explanation": "lugar — ESTAR" }
+        {
+          "text": "El astrónomo ___ alto y moreno.",
+          "category": "left",
+          "explanation": "una característica física — SER"
+        },
+        {
+          "text": "La máscara de jade ___ dentro del templo.",
+          "category": "right",
+          "explanation": "lugar — ESTAR"
+        },
+        {
+          "text": "El forastero ___ nervioso esta noche.",
+          "category": "right",
+          "explanation": "un estado de ahora — ESTAR"
+        },
+        {
+          "text": "La ceiba ___ un árbol sagrado.",
+          "category": "left",
+          "explanation": "identidad: qué es — SER"
+        },
+        {
+          "text": "Nosotros ___ cerca de la pirámide.",
+          "category": "right",
+          "explanation": "lugar — ESTAR"
+        },
+        {
+          "text": "El jade ___ verde.",
+          "category": "left",
+          "explanation": "característica permanente — SER"
+        },
+        {
+          "text": "Los monos ___ en los árboles.",
+          "category": "right",
+          "explanation": "lugar — ESTAR"
+        },
+        {
+          "text": "Tikal ___ una ciudad antigua.",
+          "category": "left",
+          "explanation": "identidad: qué es — SER"
+        },
+        {
+          "text": "El forastero ___ confundido cuando mira el cielo.",
+          "category": "right",
+          "explanation": "un estado de ahora — ESTAR. Un astrónomo verdadero no está confundido con las estrellas."
+        },
+        {
+          "text": "El quetzal ___ un pájaro de la selva.",
+          "category": "left",
+          "explanation": "identidad: qué es — SER"
+        },
+        {
+          "text": "La plaza ___ lejos del templo.",
+          "category": "right",
+          "explanation": "lugar — ESTAR"
+        },
+        {
+          "text": "Yo ___ agente de la agencia.",
+          "category": "left",
+          "explanation": "identidad: quién soy — SER"
+        },
+        {
+          "text": "El sacerdote ___ cansado después de la ceremonia.",
+          "category": "right",
+          "explanation": "un estado de ahora — ESTAR"
+        },
+        {
+          "text": "La luna ___ muy grande esta noche.",
+          "category": "right",
+          "explanation": "cómo se ve ahora, no cómo es siempre — ESTAR"
+        },
+        {
+          "text": "El escriba ___ inteligente y tranquilo.",
+          "category": "left",
+          "explanation": "cómo es la persona — SER"
+        },
+        {
+          "text": "El jaguar ___ dentro de la selva.",
+          "category": "right",
+          "explanation": "lugar — ESTAR"
+        }
       ]
     },
-
     {
       "type": "sentenceBuilder",
       "country": "Joya de Cerén, 600",
@@ -217,7 +345,6 @@
         }
       ]
     },
-
     {
       "type": "interrogation",
       "country": "León, 1907",
@@ -226,7 +353,8 @@
       "character": {
         "name": "Don Efraín Mayorga",
         "role": "archivista de la biblioteca de León",
-        "description": "Cuida los libros viejos de León desde hace treinta años. Le encanta la poesía de Darío y se sabe los versos de memoria. Está preocupado: alguien entra al archivo de noche, y no es un lector."
+        "description": "Cuida los libros viejos de León desde hace treinta años. Le encanta la poesía de Darío y se sabe los versos de memoria. Está preocupado: alguien entra al archivo de noche, y no es un lector.",
+        "imageUrl": "/images/characters/unit-15-reloj-arena-don-efrain-mayorga.webp"
       },
       "questionBank": [
         {
@@ -309,7 +437,6 @@
       ],
       "maxQuestions": 6
     },
-
     {
       "type": "listeningComp",
       "country": "La Habana, 1954",
@@ -343,13 +470,23 @@
         },
         {
           "question": "¿Dónde le da el disco a Celia?",
-          "options": ["En el malecón", "En el estudio", "En la calle del piano", "En la radio"],
+          "options": [
+            "En el malecón",
+            "En el estudio",
+            "En la calle del piano",
+            "En la radio"
+          ],
           "correctIndex": 0,
           "explanationEs": "«Se lo llevo a Celia, en el malecón»."
         },
         {
           "question": "¿A quién puede decírselo?",
-          "options": ["A nadie", "Solo a Celia", "Solo al ingeniero", "A todo el estudio"],
+          "options": [
+            "A nadie",
+            "Solo a Celia",
+            "Solo al ingeniero",
+            "A todo el estudio"
+          ],
           "correctIndex": 0,
           "explanationEs": "«No se lo digas a nadie, ¿me entiendes? A nadie»."
         }
@@ -359,7 +496,6 @@
       "codeHint": "Suma los tres números de la caja de la puerta: doce + treinta + ocho = ___"
     }
   ],
-
   "ethicalChoice": {
     "context": "En el archivo de León, a las once de la noche, El Cronista te está esperando. No corre. No se esconde. Tiene la máquina en la mano — un reloj de arena de metal, pequeño, sin ruido — y te habla en español, muy tranquilo.",
     "speakerName": "El Cronista",
@@ -403,7 +539,6 @@
       }
     ]
   },
-
   "endings": {
     "A": {
       "id": "trato_del_reloj",

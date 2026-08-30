@@ -406,7 +406,8 @@
           "realName": "Julián Herrero Blanco",
           "age": 38,
           "description": "Es un hombre bajo de treinta y ocho años con sombrero de turista. Lleva una cámara vieja que nunca usa y un tubo de carteles. Su mapa tiene la estación de Atocha marcada en rojo.",
-          "imageSeed": 11
+          "imageSeed": 11,
+          "imageUrl": "/images/characters/unit-03-cold-el-turista-eterno.webp"
         },
         {
           "id": "el-estudiante-arte",
@@ -414,7 +415,8 @@
           "realName": "Nico Ferrer Gil",
           "age": 22,
           "description": "Es un chico alto de veintidós años. Lleva un tubo de carteles porque estudia en la academia de arte. Va al Retiro a dibujar cada domingo con sus amigos.",
-          "imageSeed": 15
+          "imageSeed": 15,
+          "imageUrl": "/images/characters/unit-03-cold-el-estudiante-arte.webp"
         },
         {
           "id": "la-fotografa",
@@ -422,7 +424,8 @@
           "realName": "Elena Ríos Campos",
           "age": 31,
           "description": "Es una mujer de treinta y un años con una cámara profesional que usa constantemente. Fotografía los parques de Madrid para una revista de viajes.",
-          "imageSeed": 29
+          "imageSeed": 29,
+          "imageUrl": "/images/characters/unit-03-cold-la-fotografa.webp"
         },
         {
           "id": "el-guia-turistico",
@@ -438,7 +441,8 @@
           "realName": "Pilar Vega Ortiz",
           "age": 67,
           "description": "Es una señora de sesenta y siete años que camina por el Retiro todas las tardes. Conoce al vigilante y siempre saluda a todos.",
-          "imageSeed": 44
+          "imageSeed": 44,
+          "imageUrl": "/images/characters/unit-03-cold-la-jubilada.webp"
         }
       ]
     }

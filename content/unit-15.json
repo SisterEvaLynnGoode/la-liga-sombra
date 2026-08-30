@@ -7,42 +7,258 @@
   "criminalName": "El Cronista",
   "bonusClue": "El Cronista lleva un reloj que no hace ningún ruido. En 1954 todos los relojes hacen tic-tac — el suyo no hace ni un sonido. Ningún otro sospechoso lleva un reloj silencioso.",
   "vocab": [
-    { "spanish": "la música", "english": "music", "audio": "/audio/unit-15/musica.mp3", "section": "La Música", "example": "En esta ciudad la música no está en los teatros: está en la calle." },
-    { "spanish": "el mambo", "english": "mambo", "audio": "/audio/unit-15/mambo.mp3", "section": "La Música", "example": "¿Le gusta el mambo? Lo grabamos esta mañana." },
-    { "spanish": "el disco", "english": "record", "audio": "/audio/unit-15/disco.mp3", "section": "La Música", "example": "En la mesa hay un disco maestro: la única grabación que existe." },
-    { "spanish": "la grabación", "english": "recording", "audio": "/audio/unit-15/grabacion.mp3", "section": "La Música", "example": "Es la única grabación de un mambo nuevo." },
-    { "spanish": "la canción", "english": "song", "audio": "/audio/unit-15/cancion.mp3", "section": "La Música", "example": "Si alguien se lo lleva, la canción desaparece." },
-    { "spanish": "el ritmo", "english": "rhythm", "audio": "/audio/unit-15/ritmo.mp3", "section": "La Música", "example": "La clave es un ritmo de cinco golpes." },
-    { "spanish": "la clave", "english": "clave (the five-beat pattern)", "audio": "/audio/unit-15/clave.mp3", "section": "La Música", "example": "Todos aquí conocen la clave. Los músicos la oyen sin pensar." },
-    { "spanish": "el piano", "english": "piano", "audio": "/audio/unit-15/piano.mp3", "section": "Los Instrumentos", "example": "Hay un piano, una trompeta, un contrabajo y un tres." },
-    { "spanish": "la trompeta", "english": "trumpet", "audio": "/audio/unit-15/trompeta.mp3", "section": "Los Instrumentos", "example": "Hay un piano, una trompeta, un contrabajo y un tres." },
-    { "spanish": "el tres", "english": "tres (Cuban three-course guitar)", "audio": "/audio/unit-15/tres.mp3", "section": "Los Instrumentos", "example": "Hay un piano, una trompeta, un contrabajo y un tres." },
-    { "spanish": "el contrabajo", "english": "double bass", "audio": "/audio/unit-15/contrabajo.mp3", "section": "Los Instrumentos", "example": "Hay un piano, una trompeta, un contrabajo y un tres." },
-    { "spanish": "el tambor", "english": "drum", "audio": "/audio/unit-15/tambor.mp3", "section": "Los Instrumentos", "example": "El tambor marca el ritmo debajo de toda la música." },
-    { "spanish": "las maracas", "english": "maracas", "audio": "/audio/unit-15/maracas.mp3", "section": "Los Instrumentos", "example": "Celia toca las maracas mientras canta." },
-    { "spanish": "me lo / me la", "english": "it to me", "audio": "/audio/unit-15/me-lo.mp3", "section": "Los Pronombres Dobles", "example": "¿Me lo puede prestar?" },
-    { "spanish": "te lo / te la", "english": "it to you", "audio": "/audio/unit-15/te-lo.mp3", "section": "Los Pronombres Dobles", "example": "Te lo presto mañana, no hoy." },
-    { "spanish": "se lo / se la", "english": "it to him / her / them", "audio": "/audio/unit-15/se-lo.mp3", "section": "Los Pronombres Dobles", "example": "Rogelio se lo guarda. Y no se lo da a nadie." },
-    { "spanish": "nos lo / nos la", "english": "it to us", "audio": "/audio/unit-15/nos-lo.mp3", "section": "Los Pronombres Dobles", "example": "El ingeniero nos lo pone para escucharlo una vez." },
-    { "spanish": "se los / se las", "english": "them to him / her / them", "audio": "/audio/unit-15/se-los.mp3", "section": "Los Pronombres Dobles", "example": "Las cintas son suyas: se las devuelvo esta noche." },
-    { "spanish": "el estudio", "english": "studio", "audio": "/audio/unit-15/estudio.mp3", "section": "En el Estudio", "example": "Estoy en un estudio de grabación pequeño." },
-    { "spanish": "el micrófono", "english": "microphone", "audio": "/audio/unit-15/microfono.mp3", "section": "En el Estudio", "example": "Celia canta muy cerca del micrófono." },
-    { "spanish": "el ingeniero", "english": "engineer", "audio": "/audio/unit-15/ingeniero.mp3", "section": "En el Estudio", "example": "El ingeniero se llama Rogelio y cuida las cintas como un padre." },
-    { "spanish": "el músico", "english": "musician", "audio": "/audio/unit-15/musico.mp3", "section": "En el Estudio", "example": "Los músicos oyen la clave sin pensar." },
-    { "spanish": "la cinta", "english": "tape", "audio": "/audio/unit-15/cinta.mp3", "section": "En el Estudio", "example": "El ingeniero cuida las cintas como un padre." },
-    { "spanish": "el ensayo", "english": "rehearsal", "audio": "/audio/unit-15/ensayo.mp3", "section": "En el Estudio", "example": "Celia lo pide para el ensayo de esta noche." },
-    { "spanish": "dar", "english": "to give", "audio": "/audio/unit-15/dar.mp3", "section": "Verbos de Dar y Pedir", "example": "Rogelio no se lo da a nadie." },
-    { "spanish": "pedir", "english": "to ask for", "audio": "/audio/unit-15/pedir.mp3", "section": "Verbos de Dar y Pedir", "example": "Me lo pidió dos veces: el disco, no la música." },
-    { "spanish": "prestar", "english": "to lend", "audio": "/audio/unit-15/prestar.mp3", "section": "Verbos de Dar y Pedir", "example": "¿Me lo puede prestar?" },
-    { "spanish": "llevar", "english": "to take, to carry", "audio": "/audio/unit-15/llevar.mp3", "section": "Verbos de Dar y Pedir", "example": "Cuando nadie miraba, se lo llevó." },
-    { "spanish": "traer", "english": "to bring", "audio": "/audio/unit-15/traer.mp3", "section": "Verbos de Dar y Pedir", "example": "El mensajero trae los discos de la radio cada tarde." },
-    { "spanish": "devolver", "english": "to return, to give back", "audio": "/audio/unit-15/devolver.mp3", "section": "Verbos de Dar y Pedir", "example": "Las cintas son suyas: se las devuelvo esta noche." },
-    { "spanish": "guardar", "english": "to keep, to put away", "audio": "/audio/unit-15/guardar.mp3", "section": "Verbos de Dar y Pedir", "example": "¿Quién se lo guarda? — Rogelio se lo guarda." },
-    { "spanish": "el malecón", "english": "the seawall promenade", "audio": "/audio/unit-15/malecon.mp3", "section": "La Habana", "example": "Por la noche, en el Malecón, la gente baila." },
-    { "spanish": "la radio", "english": "radio", "audio": "/audio/unit-15/radio.mp3", "section": "La Habana", "example": "La radio suena en todas las ventanas." },
-    { "spanish": "el baile", "english": "dance", "audio": "/audio/unit-15/baile.mp3", "section": "La Habana", "example": "En La Habana el baile está en la calle, no en los teatros." },
-    { "spanish": "la calle", "english": "street", "audio": "/audio/unit-15/calle.mp3", "section": "La Habana", "example": "En esta ciudad la música está en la calle." },
-    { "spanish": "la ventana", "english": "window", "audio": "/audio/unit-15/ventana.mp3", "section": "La Habana", "example": "La radio suena en todas las ventanas." }
+    {
+      "spanish": "la música",
+      "english": "music",
+      "audio": "/audio/unit-15/musica.mp3",
+      "section": "La Música",
+      "example": "En esta ciudad la música no está en los teatros: está en la calle."
+    },
+    {
+      "spanish": "el mambo",
+      "english": "mambo",
+      "audio": "/audio/unit-15/mambo.mp3",
+      "section": "La Música",
+      "example": "¿Le gusta el mambo? Lo grabamos esta mañana."
+    },
+    {
+      "spanish": "el disco",
+      "english": "record",
+      "audio": "/audio/unit-15/disco.mp3",
+      "section": "La Música",
+      "example": "En la mesa hay un disco maestro: la única grabación que existe."
+    },
+    {
+      "spanish": "la grabación",
+      "english": "recording",
+      "audio": "/audio/unit-15/grabacion.mp3",
+      "section": "La Música",
+      "example": "Es la única grabación de un mambo nuevo."
+    },
+    {
+      "spanish": "la canción",
+      "english": "song",
+      "audio": "/audio/unit-15/cancion.mp3",
+      "section": "La Música",
+      "example": "Si alguien se lo lleva, la canción desaparece."
+    },
+    {
+      "spanish": "el ritmo",
+      "english": "rhythm",
+      "audio": "/audio/unit-15/ritmo.mp3",
+      "section": "La Música",
+      "example": "La clave es un ritmo de cinco golpes."
+    },
+    {
+      "spanish": "la clave",
+      "english": "clave (the five-beat pattern)",
+      "audio": "/audio/unit-15/clave.mp3",
+      "section": "La Música",
+      "example": "Todos aquí conocen la clave. Los músicos la oyen sin pensar."
+    },
+    {
+      "spanish": "el piano",
+      "english": "piano",
+      "audio": "/audio/unit-15/piano.mp3",
+      "section": "Los Instrumentos",
+      "example": "Hay un piano, una trompeta, un contrabajo y un tres."
+    },
+    {
+      "spanish": "la trompeta",
+      "english": "trumpet",
+      "audio": "/audio/unit-15/trompeta.mp3",
+      "section": "Los Instrumentos",
+      "example": "Hay un piano, una trompeta, un contrabajo y un tres."
+    },
+    {
+      "spanish": "el tres",
+      "english": "tres (Cuban three-course guitar)",
+      "audio": "/audio/unit-15/tres.mp3",
+      "section": "Los Instrumentos",
+      "example": "Hay un piano, una trompeta, un contrabajo y un tres."
+    },
+    {
+      "spanish": "el contrabajo",
+      "english": "double bass",
+      "audio": "/audio/unit-15/contrabajo.mp3",
+      "section": "Los Instrumentos",
+      "example": "Hay un piano, una trompeta, un contrabajo y un tres."
+    },
+    {
+      "spanish": "el tambor",
+      "english": "drum",
+      "audio": "/audio/unit-15/tambor.mp3",
+      "section": "Los Instrumentos",
+      "example": "El tambor marca el ritmo debajo de toda la música."
+    },
+    {
+      "spanish": "las maracas",
+      "english": "maracas",
+      "audio": "/audio/unit-15/maracas.mp3",
+      "section": "Los Instrumentos",
+      "example": "Celia toca las maracas mientras canta."
+    },
+    {
+      "spanish": "me lo / me la",
+      "english": "it to me",
+      "audio": "/audio/unit-15/me-lo.mp3",
+      "section": "Los Pronombres Dobles",
+      "example": "¿Me lo puede prestar?"
+    },
+    {
+      "spanish": "te lo / te la",
+      "english": "it to you",
+      "audio": "/audio/unit-15/te-lo.mp3",
+      "section": "Los Pronombres Dobles",
+      "example": "Te lo presto mañana, no hoy."
+    },
+    {
+      "spanish": "se lo / se la",
+      "english": "it to him / her / them",
+      "audio": "/audio/unit-15/se-lo.mp3",
+      "section": "Los Pronombres Dobles",
+      "example": "Rogelio se lo guarda. Y no se lo da a nadie."
+    },
+    {
+      "spanish": "nos lo / nos la",
+      "english": "it to us",
+      "audio": "/audio/unit-15/nos-lo.mp3",
+      "section": "Los Pronombres Dobles",
+      "example": "El ingeniero nos lo pone para escucharlo una vez."
+    },
+    {
+      "spanish": "se los / se las",
+      "english": "them to him / her / them",
+      "audio": "/audio/unit-15/se-los.mp3",
+      "section": "Los Pronombres Dobles",
+      "example": "Las cintas son suyas: se las devuelvo esta noche."
+    },
+    {
+      "spanish": "el estudio",
+      "english": "studio",
+      "audio": "/audio/unit-15/estudio.mp3",
+      "section": "En el Estudio",
+      "example": "Estoy en un estudio de grabación pequeño."
+    },
+    {
+      "spanish": "el micrófono",
+      "english": "microphone",
+      "audio": "/audio/unit-15/microfono.mp3",
+      "section": "En el Estudio",
+      "example": "Celia canta muy cerca del micrófono."
+    },
+    {
+      "spanish": "el ingeniero",
+      "english": "engineer",
+      "audio": "/audio/unit-15/ingeniero.mp3",
+      "section": "En el Estudio",
+      "example": "El ingeniero se llama Rogelio y cuida las cintas como un padre."
+    },
+    {
+      "spanish": "el músico",
+      "english": "musician",
+      "audio": "/audio/unit-15/musico.mp3",
+      "section": "En el Estudio",
+      "example": "Los músicos oyen la clave sin pensar."
+    },
+    {
+      "spanish": "la cinta",
+      "english": "tape",
+      "audio": "/audio/unit-15/cinta.mp3",
+      "section": "En el Estudio",
+      "example": "El ingeniero cuida las cintas como un padre."
+    },
+    {
+      "spanish": "el ensayo",
+      "english": "rehearsal",
+      "audio": "/audio/unit-15/ensayo.mp3",
+      "section": "En el Estudio",
+      "example": "Celia lo pide para el ensayo de esta noche."
+    },
+    {
+      "spanish": "dar",
+      "english": "to give",
+      "audio": "/audio/unit-15/dar.mp3",
+      "section": "Verbos de Dar y Pedir",
+      "example": "Rogelio no se lo da a nadie."
+    },
+    {
+      "spanish": "pedir",
+      "english": "to ask for",
+      "audio": "/audio/unit-15/pedir.mp3",
+      "section": "Verbos de Dar y Pedir",
+      "example": "Me lo pidió dos veces: el disco, no la música."
+    },
+    {
+      "spanish": "prestar",
+      "english": "to lend",
+      "audio": "/audio/unit-15/prestar.mp3",
+      "section": "Verbos de Dar y Pedir",
+      "example": "¿Me lo puede prestar?"
+    },
+    {
+      "spanish": "llevar",
+      "english": "to take, to carry",
+      "audio": "/audio/unit-15/llevar.mp3",
+      "section": "Verbos de Dar y Pedir",
+      "example": "Cuando nadie miraba, se lo llevó."
+    },
+    {
+      "spanish": "traer",
+      "english": "to bring",
+      "audio": "/audio/unit-15/traer.mp3",
+      "section": "Verbos de Dar y Pedir",
+      "example": "El mensajero trae los discos de la radio cada tarde."
+    },
+    {
+      "spanish": "devolver",
+      "english": "to return, to give back",
+      "audio": "/audio/unit-15/devolver.mp3",
+      "section": "Verbos de Dar y Pedir",
+      "example": "Las cintas son suyas: se las devuelvo esta noche."
+    },
+    {
+      "spanish": "guardar",
+      "english": "to keep, to put away",
+      "audio": "/audio/unit-15/guardar.mp3",
+      "section": "Verbos de Dar y Pedir",
+      "example": "¿Quién se lo guarda? — Rogelio se lo guarda."
+    },
+    {
+      "spanish": "el malecón",
+      "english": "the seawall promenade",
+      "audio": "/audio/unit-15/malecon.mp3",
+      "section": "La Habana",
+      "example": "Por la noche, en el Malecón, la gente baila."
+    },
+    {
+      "spanish": "la radio",
+      "english": "radio",
+      "audio": "/audio/unit-15/radio.mp3",
+      "section": "La Habana",
+      "example": "La radio suena en todas las ventanas."
+    },
+    {
+      "spanish": "el baile",
+      "english": "dance",
+      "audio": "/audio/unit-15/baile.mp3",
+      "section": "La Habana",
+      "example": "En La Habana el baile está en la calle, no en los teatros."
+    },
+    {
+      "spanish": "la calle",
+      "english": "street",
+      "audio": "/audio/unit-15/calle.mp3",
+      "section": "La Habana",
+      "example": "En esta ciudad la música está en la calle."
+    },
+    {
+      "spanish": "la ventana",
+      "english": "window",
+      "audio": "/audio/unit-15/ventana.mp3",
+      "section": "La Habana",
+      "example": "La radio suena en todas las ventanas."
+    }
   ],
   "stages": [
     {
@@ -68,18 +284,54 @@
     {
       "type": "vocabMatch",
       "pairs": [
-        { "spanish": "el mambo", "english": "mambo" },
-        { "spanish": "el disco", "english": "record" },
-        { "spanish": "la grabación", "english": "recording" },
-        { "spanish": "la clave", "english": "clave (five-beat pattern)" },
-        { "spanish": "el estudio", "english": "studio" },
-        { "spanish": "la cinta", "english": "tape" },
-        { "spanish": "el ingeniero", "english": "engineer" },
-        { "spanish": "prestar", "english": "to lend" },
-        { "spanish": "devolver", "english": "to give back" },
-        { "spanish": "guardar", "english": "to keep" },
-        { "spanish": "el malecón", "english": "the seawall promenade" },
-        { "spanish": "el baile", "english": "dance" }
+        {
+          "spanish": "el mambo",
+          "english": "mambo"
+        },
+        {
+          "spanish": "el disco",
+          "english": "record"
+        },
+        {
+          "spanish": "la grabación",
+          "english": "recording"
+        },
+        {
+          "spanish": "la clave",
+          "english": "clave (five-beat pattern)"
+        },
+        {
+          "spanish": "el estudio",
+          "english": "studio"
+        },
+        {
+          "spanish": "la cinta",
+          "english": "tape"
+        },
+        {
+          "spanish": "el ingeniero",
+          "english": "engineer"
+        },
+        {
+          "spanish": "prestar",
+          "english": "to lend"
+        },
+        {
+          "spanish": "devolver",
+          "english": "to give back"
+        },
+        {
+          "spanish": "guardar",
+          "english": "to keep"
+        },
+        {
+          "spanish": "el malecón",
+          "english": "the seawall promenade"
+        },
+        {
+          "spanish": "el baile",
+          "english": "dance"
+        }
       ]
     },
     {
@@ -91,29 +343,92 @@
       "rightLabel": "LA",
       "rightHint": "cosa femenina",
       "items": [
-        { "text": "¿Me das el disco? → ¿Me ___ das?", "category": "left", "explanation": "el disco es masculino → lo" },
-        { "text": "¿Me das la cinta? → ¿Me ___ das?", "category": "right", "explanation": "la cinta es femenina → la" },
-        { "text": "¿Me prestas el tres? → ¿Me ___ prestas?", "category": "left", "explanation": "el tres es masculino → lo" },
-        { "text": "¿Me prestas la trompeta? → ¿Me ___ prestas?", "category": "right", "explanation": "la trompeta es femenina → la" },
-        { "text": "Rogelio guarda la grabación → Rogelio ___ guarda.", "category": "right", "explanation": "la grabación es femenina → la" },
-        { "text": "Rogelio guarda el micrófono → Rogelio ___ guarda.", "category": "left", "explanation": "el micrófono es masculino → lo" },
-        { "text": "Celia canta la canción → Celia ___ canta.", "category": "right", "explanation": "la canción es femenina → la" },
-        { "text": "Celia toca el piano → Celia ___ toca.", "category": "left", "explanation": "el piano es masculino → lo" },
-        { "text": "El músico oye el ritmo → El músico ___ oye.", "category": "left", "explanation": "el ritmo es masculino → lo" },
-        { "text": "El músico oye la clave → El músico ___ oye.", "category": "right", "explanation": "la clave es femenina → la" },
-        { "text": "Nadie mira el reloj → Nadie ___ mira.", "category": "left", "explanation": "el reloj es masculino → lo" },
-        { "text": "Nadie abre la ventana → Nadie ___ abre.", "category": "right", "explanation": "la ventana es femenina → la" }
+        {
+          "text": "¿Me das el disco? → ¿Me ___ das?",
+          "category": "left",
+          "explanation": "el disco es masculino → lo"
+        },
+        {
+          "text": "¿Me das la cinta? → ¿Me ___ das?",
+          "category": "right",
+          "explanation": "la cinta es femenina → la"
+        },
+        {
+          "text": "¿Me prestas el tres? → ¿Me ___ prestas?",
+          "category": "left",
+          "explanation": "el tres es masculino → lo"
+        },
+        {
+          "text": "¿Me prestas la trompeta? → ¿Me ___ prestas?",
+          "category": "right",
+          "explanation": "la trompeta es femenina → la"
+        },
+        {
+          "text": "Rogelio guarda la grabación → Rogelio ___ guarda.",
+          "category": "right",
+          "explanation": "la grabación es femenina → la"
+        },
+        {
+          "text": "Rogelio guarda el micrófono → Rogelio ___ guarda.",
+          "category": "left",
+          "explanation": "el micrófono es masculino → lo"
+        },
+        {
+          "text": "Celia canta la canción → Celia ___ canta.",
+          "category": "right",
+          "explanation": "la canción es femenina → la"
+        },
+        {
+          "text": "Celia toca el piano → Celia ___ toca.",
+          "category": "left",
+          "explanation": "el piano es masculino → lo"
+        },
+        {
+          "text": "El músico oye el ritmo → El músico ___ oye.",
+          "category": "left",
+          "explanation": "el ritmo es masculino → lo"
+        },
+        {
+          "text": "El músico oye la clave → El músico ___ oye.",
+          "category": "right",
+          "explanation": "la clave es femenina → la"
+        },
+        {
+          "text": "Nadie mira el reloj → Nadie ___ mira.",
+          "category": "left",
+          "explanation": "el reloj es masculino → lo"
+        },
+        {
+          "text": "Nadie abre la ventana → Nadie ___ abre.",
+          "category": "right",
+          "explanation": "la ventana es femenina → la"
+        }
       ]
     },
     {
       "type": "sentenceBuilder",
       "clueReward": "El agente practica los dos pronombres juntos. Primero la persona, después la cosa — y le + lo siempre se convierte en se lo.",
       "sentences": [
-        { "sentence": "¿Me lo puede prestar?", "translation": "Can you lend it to me? (me = to me, lo = the record)" },
-        { "sentence": "Rogelio se lo guarda a Celia", "translation": "Rogelio keeps it for Celia. (le + lo → se lo)" },
-        { "sentence": "No se lo da a nadie", "translation": "He doesn't give it to anyone." },
-        { "sentence": "Te la presto mañana", "translation": "I'll lend it to you tomorrow. (la = the tape)" },
-        { "sentence": "Las cintas se las devuelvo esta noche", "translation": "I'll give the tapes back to him tonight. (se las = them to him)" }
+        {
+          "sentence": "¿Me lo puede prestar?",
+          "translation": "Can you lend it to me? (me = to me, lo = the record)"
+        },
+        {
+          "sentence": "Rogelio se lo guarda a Celia",
+          "translation": "Rogelio keeps it for Celia. (le + lo → se lo)"
+        },
+        {
+          "sentence": "No se lo da a nadie",
+          "translation": "He doesn't give it to anyone."
+        },
+        {
+          "sentence": "Te la presto mañana",
+          "translation": "I'll lend it to you tomorrow. (la = the tape)"
+        },
+        {
+          "sentence": "Las cintas se las devuelvo esta noche",
+          "translation": "I'll give the tapes back to him tonight. (se las = them to him)"
+        }
       ]
     },
     {
@@ -121,21 +436,50 @@
       "clueReward": "El ladrón pidió el disco dos veces, no oye la clave, y se lo llevó cuando nadie miraba. Solo un sospechoso hace las tres cosas.",
       "passage": "BITÁCORA TEMPORAL — AGENTE DE LA LIGA SOMBRA\nDestino: La Habana, Cuba. Año 1954.\n\nEstoy en La Habana. En esta ciudad la música no está solo en los teatros: está en la calle. Por la noche, en el Malecón, la gente baila y la radio suena en todas las ventanas.\n\nEstoy en un estudio de grabación pequeño. Hay un piano, una trompeta, un contrabajo y un tres. El ingeniero se llama Rogelio y cuida las cintas como un padre.\n\nEn la mesa hay un disco maestro: la única grabación de un mambo nuevo. Todavía no existe ninguna copia. Si alguien se lo lleva, la canción desaparece.\n\nTodos aquí conocen la clave — ese ritmo de cinco golpes que está debajo de toda la música cubana. Los músicos la oyen sin pensar; la marcan con la mano sin darse cuenta.\n\nPero hay un hombre que no la oye. Escucha el mambo y no mueve el pie. Rogelio dice: «Me lo pidió dos veces — el disco, no la música.» Y cuando nadie miraba, se lo llevó.\n\nMi misión: descubro quién es antes de que salga de La Habana.",
       "glossary": [
-        { "word": "suena", "translation": "plays, sounds (from sonar)" },
-        { "word": "las cintas", "translation": "the tapes" },
-        { "word": "disco maestro", "translation": "master record" },
-        { "word": "golpes", "translation": "beats, strikes" },
-        { "word": "debajo de", "translation": "underneath" },
-        { "word": "sin darse cuenta", "translation": "without realizing it" },
-        { "word": "no mueve el pie", "translation": "doesn't move his foot" },
-        { "word": "cuando nadie miraba", "translation": "when nobody was looking" }
+        {
+          "word": "suena",
+          "translation": "plays, sounds (from sonar)"
+        },
+        {
+          "word": "las cintas",
+          "translation": "the tapes"
+        },
+        {
+          "word": "disco maestro",
+          "translation": "master record"
+        },
+        {
+          "word": "golpes",
+          "translation": "beats, strikes"
+        },
+        {
+          "word": "debajo de",
+          "translation": "underneath"
+        },
+        {
+          "word": "sin darse cuenta",
+          "translation": "without realizing it"
+        },
+        {
+          "word": "no mueve el pie",
+          "translation": "doesn't move his foot"
+        },
+        {
+          "word": "cuando nadie miraba",
+          "translation": "when nobody was looking"
+        }
       ],
       "questions": [
         {
           "id": "r1",
           "text": "¿Por qué es tan importante el disco maestro?",
           "type": "multiple_choice",
-          "options": ["Porque no existe ninguna copia", "Porque es de oro", "Porque es muy viejo", "Porque lo firmó un artista famoso"],
+          "options": [
+            "Porque no existe ninguna copia",
+            "Porque es de oro",
+            "Porque es muy viejo",
+            "Porque lo firmó un artista famoso"
+          ],
           "correctIndex": 0,
           "explanationEs": "'Todavía no existe ninguna copia. Si alguien se lo lleva, la canción desaparece.'",
           "explanationEn": "There is no copy — losing it means losing the song entirely."
@@ -144,7 +488,12 @@
           "id": "r2",
           "text": "¿Qué es la clave?",
           "type": "multiple_choice",
-          "options": ["Un ritmo de cinco golpes", "Un instrumento de metal", "Una canción famosa", "El nombre del estudio"],
+          "options": [
+            "Un ritmo de cinco golpes",
+            "Un instrumento de metal",
+            "Una canción famosa",
+            "El nombre del estudio"
+          ],
           "correctIndex": 0,
           "explanationEs": "'La clave — ese ritmo de cinco golpes que está debajo de toda la música cubana.'",
           "explanationEn": "A five-beat rhythmic pattern underneath Cuban music."
@@ -153,7 +502,12 @@
           "id": "r3",
           "text": "¿Cómo reacciona el forastero cuando escucha el mambo?",
           "type": "multiple_choice",
-          "options": ["No mueve el pie", "Baila muy bien", "Canta con Celia", "Toca las maracas"],
+          "options": [
+            "No mueve el pie",
+            "Baila muy bien",
+            "Canta con Celia",
+            "Toca las maracas"
+          ],
           "correctIndex": 0,
           "explanationEs": "'Escucha el mambo y no mueve el pie.' No oye la clave.",
           "explanationEn": "He doesn't move his foot — he cannot hear the clave."
@@ -162,7 +516,12 @@
           "id": "r4",
           "text": "Según Rogelio, ¿qué le pidió el hombre dos veces?",
           "type": "multiple_choice",
-          "options": ["El disco, no la música", "Un ensayo con Celia", "Una copia de la cinta", "Dinero"],
+          "options": [
+            "El disco, no la música",
+            "Un ensayo con Celia",
+            "Una copia de la cinta",
+            "Dinero"
+          ],
           "correctIndex": 0,
           "explanationEs": "'Me lo pidió dos veces — el disco, no la música.' Me lo = a mí + el disco.",
           "explanationEn": "The record itself, not to hear the song. 'Me lo pidió' = he asked me for it."
@@ -171,7 +530,11 @@
           "id": "r5",
           "text": "Completa con los dos pronombres: 'Rogelio guarda el disco a Celia' → 'Rogelio ____ ____ guarda.'",
           "type": "short_answer",
-          "acceptableAnswers": ["se lo", "se lo guarda", "rogelio se lo guarda"],
+          "acceptableAnswers": [
+            "se lo",
+            "se lo guarda",
+            "rogelio se lo guarda"
+          ],
           "explanationEs": "le + lo nunca se dice: se convierte en SE LO.",
           "explanationEn": "'le + lo' is never allowed in Spanish — it becomes 'se lo'."
         }
@@ -189,35 +552,60 @@
       "questions": [
         {
           "question": "¿Qué pide el hombre al principio?",
-          "options": ["Que le presten el disco", "Que le canten el mambo", "Un ensayo con la banda", "Una copia de la cinta"],
+          "options": [
+            "Que le presten el disco",
+            "Que le canten el mambo",
+            "Un ensayo con la banda",
+            "Una copia de la cinta"
+          ],
           "correctIndex": 0,
           "explanationEs": "'¿Me lo puede prestar?' Me lo = a mí + el disco.",
           "explanationEn": "He asks them to lend it to him."
         },
         {
           "question": "¿Qué le ofrece Celia?",
-          "options": ["Ponérselo allí para escucharlo", "Regalarle el disco", "Venderle una copia", "Llevarlo al Malecón"],
+          "options": [
+            "Ponérselo allí para escucharlo",
+            "Regalarle el disco",
+            "Venderle una copia",
+            "Llevarlo al Malecón"
+          ],
           "correctIndex": 0,
           "explanationEs": "'Se lo puedo poner aquí, si quiere escucharlo.'",
           "explanationEn": "She offers to play it for him there."
         },
         {
           "question": "¿Quiere escuchar la canción?",
-          "options": ["No — dice que quiere llevárselo", "Sí, dos veces", "Sí, pero no tiene tiempo", "Solo en la radio"],
+          "options": [
+            "No — dice que quiere llevárselo",
+            "Sí, dos veces",
+            "Sí, pero no tiene tiempo",
+            "Solo en la radio"
+          ],
           "correctIndex": 0,
           "explanationEs": "'No quiero escucharlo. Quiero llevármelo.' Ahí está la pista.",
           "explanationEn": "He does not want to hear it — he wants to take it. That is the tell."
         },
         {
           "question": "¿Quién guarda el disco maestro?",
-          "options": ["Rogelio", "Celia", "El mensajero", "La radio"],
+          "options": [
+            "Rogelio",
+            "Celia",
+            "El mensajero",
+            "La radio"
+          ],
           "correctIndex": 0,
           "explanationEs": "'Rogelio se lo guarda. Y no se lo da a nadie.'",
           "explanationEn": "Rogelio keeps it and gives it to nobody."
         },
         {
           "question": "¿Por qué está extrañada Celia?",
-          "options": ["Porque él quiere el disco pero no la música", "Porque él no habla español", "Porque él no paga", "Porque él no conoce a Rogelio"],
+          "options": [
+            "Porque él quiere el disco pero no la música",
+            "Porque él no habla español",
+            "Porque él no paga",
+            "Porque él no conoce a Rogelio"
+          ],
           "correctIndex": 0,
           "explanationEs": "'¿Para qué, si no lo va a escuchar?' Nadie quiere un disco sin querer oírlo.",
           "explanationEn": "He wants the object without wanting the song — which makes no sense to her."
@@ -334,7 +722,8 @@
           "realName": "El Cronista",
           "age": 33,
           "description": "Le pidió el disco maestro a Rogelio dos veces. No oye la clave: cuando suena, no la marca con la mano ni mueve el pie. Se lo llevó de la mesa cuando nadie miraba. Lleva un reloj que no hace ningún ruido.",
-          "imageSeed": 34
+          "imageSeed": 34,
+          "imageUrl": "/images/characters/unit-15-cronista.webp"
         },
         {
           "id": "celia",
@@ -342,7 +731,8 @@
           "realName": "Celia Fuentes Aguilar",
           "age": 27,
           "description": "Le pidió el disco maestro a Rogelio, igual que el ladrón — pero lo pidió para el ensayo y él se lo puso allí mismo para escucharlo. Oye la clave perfectamente: la canta y la marca sin pensar. No se llevó nada del estudio. Su reloj hace tic-tac.",
-          "imageSeed": 26
+          "imageSeed": 26,
+          "imageUrl": "/images/characters/unit-15-celia.webp"
         },
         {
           "id": "coleccionista",
@@ -350,7 +740,8 @@
           "realName": "Howard Pike",
           "age": 52,
           "description": "No oye la clave, igual que el ladrón: le encanta el mambo pero no consigue marcarlo con la mano y lo dice riéndose. Pero nunca pidió el disco maestro — compra discos en las tiendas — y no se llevó nada. Su reloj hace tic-tac.",
-          "imageSeed": 55
+          "imageSeed": 55,
+          "imageUrl": "/images/characters/unit-15-coleccionista.webp"
         },
         {
           "id": "mensajero",
@@ -358,7 +749,8 @@
           "realName": "Nicolás Betancourt Ferrer",
           "age": 19,
           "description": "Se llevó un disco del estudio esta tarde cuando nadie miraba, igual que el ladrón — pero era la copia de la radio y llevaba el papel firmado de Rogelio. Oye la clave y baila en el Malecón cada noche. Nunca pidió el disco maestro. Su reloj hace tic-tac.",
-          "imageSeed": 19
+          "imageSeed": 19,
+          "imageUrl": "/images/characters/unit-15-mensajero.webp"
         }
       ]
     }

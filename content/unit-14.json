@@ -7,42 +7,258 @@
   "criminalName": "El Cronista",
   "bonusClue": "El Cronista tiene los dedos manchados de tinta AZUL brillante — una tinta que no existe en 1907. El archivista también tiene los dedos manchados, pero de tinta negra. Mira el color, no la mancha.",
   "vocab": [
-    { "spanish": "el poema", "english": "poem", "audio": "/audio/unit-14/poema.mp3", "section": "La Poesía", "example": "En la biblioteca hay un manuscrito original — un poema escrito a mano." },
-    { "spanish": "el verso", "english": "verse, line of poetry", "audio": "/audio/unit-14/verso.mp3", "section": "La Poesía", "example": "En la plaza, los jóvenes leen versos en voz alta." },
-    { "spanish": "la rima", "english": "rhyme", "audio": "/audio/unit-14/rima.mp3", "section": "La Poesía", "example": "A Amanda le encanta la rima de ese verso." },
-    { "spanish": "el manuscrito", "english": "manuscript", "audio": "/audio/unit-14/manuscrito.mp3", "section": "La Poesía", "example": "¿Cuánto vale ese manuscrito?" },
-    { "spanish": "la tinta", "english": "ink", "audio": "/audio/unit-14/tinta.mp3", "section": "La Poesía", "example": "Me interesa el papel. El papel viejo y la tinta." },
-    { "spanish": "la pluma", "english": "pen, quill", "audio": "/audio/unit-14/pluma.mp3", "section": "La Poesía", "example": "El poeta escribe con una pluma y tinta negra." },
-    { "spanish": "el papel", "english": "paper", "audio": "/audio/unit-14/papel.mp3", "section": "La Poesía", "example": "Le interesa el papel, no las palabras." },
-    { "spanish": "la poesía", "english": "poetry", "audio": "/audio/unit-14/poesia.mp3", "section": "Las Artes", "example": "A la gente de León le encanta la poesía." },
-    { "spanish": "el poeta", "english": "poet", "audio": "/audio/unit-14/poeta.mp3", "section": "Las Artes", "example": "Él es el poeta más famoso de América Latina." },
-    { "spanish": "el libro", "english": "book", "audio": "/audio/unit-14/libro.mp3", "section": "Las Artes", "example": "En la biblioteca hay libros viejos y un manuscrito." },
-    { "spanish": "la biblioteca", "english": "library", "audio": "/audio/unit-14/biblioteca.mp3", "section": "Las Artes", "example": "En la biblioteca hay un manuscrito original." },
-    { "spanish": "la palabra", "english": "word", "audio": "/audio/unit-14/palabra.mp3", "section": "Las Artes", "example": "Pero las palabras son lo importante." },
-    { "spanish": "la música", "english": "music", "audio": "/audio/unit-14/musica.mp3", "section": "Las Artes", "example": "Hoy hay música en la plaza porque la ciudad está de fiesta." },
-    { "spanish": "gustar", "english": "to be pleasing (to like)", "audio": "/audio/unit-14/gustar.mp3", "section": "Gustar y Sus Amigos", "example": "A mí no me gustan los poemas." },
-    { "spanish": "encantar", "english": "to love (something)", "audio": "/audio/unit-14/encantar.mp3", "section": "Gustar y Sus Amigos", "example": "A todos aquí nos encanta la poesía." },
-    { "spanish": "interesar", "english": "to interest", "audio": "/audio/unit-14/interesar.mp3", "section": "Gustar y Sus Amigos", "example": "Me interesa el papel. ¿Qué le interesa a usted?" },
-    { "spanish": "importar", "english": "to matter (to someone)", "audio": "/audio/unit-14/importar.mp3", "section": "Gustar y Sus Amigos", "example": "A un archivista viejo le importan el papel y la tinta." },
-    { "spanish": "molestar", "english": "to bother", "audio": "/audio/unit-14/molestar.mp3", "section": "Gustar y Sus Amigos", "example": "Al forastero le molesta la música de la fiesta." },
-    { "spanish": "me", "english": "to me", "audio": "/audio/unit-14/me.mp3", "section": "Los Pronombres", "example": "A mí no me gustan los poemas." },
-    { "spanish": "te", "english": "to you", "audio": "/audio/unit-14/te.mp3", "section": "Los Pronombres", "example": "¿Te gusta la poesía de Darío?" },
-    { "spanish": "le", "english": "to him / to her / to you (formal)", "audio": "/audio/unit-14/le.mp3", "section": "Los Pronombres", "example": "¿Le gusta la poesía de Rubén Darío?" },
-    { "spanish": "nos", "english": "to us", "audio": "/audio/unit-14/nos.mp3", "section": "Los Pronombres", "example": "A todos aquí nos encanta." },
-    { "spanish": "les", "english": "to them", "audio": "/audio/unit-14/les.mp3", "section": "Los Pronombres", "example": "A los jóvenes de León les gustan los versos del mar." },
-    { "spanish": "feliz", "english": "happy", "audio": "/audio/unit-14/feliz.mp3", "section": "Las Emociones", "example": "La ciudad está feliz porque Darío vuelve a Nicaragua." },
-    { "spanish": "triste", "english": "sad", "audio": "/audio/unit-14/triste.mp3", "section": "Las Emociones", "example": "La princesa está triste — así empieza el poema más famoso." },
-    { "spanish": "orgulloso", "english": "proud", "audio": "/audio/unit-14/orgulloso.mp3", "section": "Las Emociones", "example": "León está orgulloso de su poeta." },
-    { "spanish": "emocionado", "english": "excited", "audio": "/audio/unit-14/emocionado.mp3", "section": "Las Emociones", "example": "Amanda está emocionada: hoy lee sus versos en la plaza." },
-    { "spanish": "aburrido", "english": "bored", "audio": "/audio/unit-14/aburrido.mp3", "section": "Las Emociones", "example": "El forastero escucha los versos y está aburrido." },
-    { "spanish": "sorprendido", "english": "surprised", "audio": "/audio/unit-14/sorprendido.mp3", "section": "Las Emociones", "example": "La poeta está sorprendida: nadie pregunta el precio de un poema." },
-    { "spanish": "nervioso", "english": "nervous", "audio": "/audio/unit-14/nervioso.mp3", "section": "Las Emociones", "example": "El hombre está nervioso cerca de la biblioteca." },
-    { "spanish": "la catedral", "english": "cathedral", "audio": "/audio/unit-14/catedral.mp3", "section": "La Ciudad de León", "example": "En la plaza, delante de la catedral, los jóvenes leen versos." },
-    { "spanish": "la plaza", "english": "square, plaza", "audio": "/audio/unit-14/plaza.mp3", "section": "La Ciudad de León", "example": "Hoy hay música en la plaza porque la ciudad está de fiesta." },
-    { "spanish": "la estatua", "english": "statue", "audio": "/audio/unit-14/estatua.mp3", "section": "La Ciudad de León", "example": "Dentro de la catedral hay una estatua y un león de piedra." },
-    { "spanish": "el león", "english": "lion", "audio": "/audio/unit-14/leon.mp3", "section": "La Ciudad de León", "example": "Dentro de la catedral hay una estatua y un león de piedra." },
-    { "spanish": "la fiesta", "english": "celebration, party", "audio": "/audio/unit-14/fiesta.mp3", "section": "La Ciudad de León", "example": "Hoy la ciudad está de fiesta porque Rubén Darío vuelve." },
-    { "spanish": "la ciudad", "english": "city", "audio": "/audio/unit-14/ciudad.mp3", "section": "La Ciudad de León", "example": "Estoy en León. Hoy la ciudad está de fiesta." }
+    {
+      "spanish": "el poema",
+      "english": "poem",
+      "audio": "/audio/unit-14/poema.mp3",
+      "section": "La Poesía",
+      "example": "En la biblioteca hay un manuscrito original — un poema escrito a mano."
+    },
+    {
+      "spanish": "el verso",
+      "english": "verse, line of poetry",
+      "audio": "/audio/unit-14/verso.mp3",
+      "section": "La Poesía",
+      "example": "En la plaza, los jóvenes leen versos en voz alta."
+    },
+    {
+      "spanish": "la rima",
+      "english": "rhyme",
+      "audio": "/audio/unit-14/rima.mp3",
+      "section": "La Poesía",
+      "example": "A Amanda le encanta la rima de ese verso."
+    },
+    {
+      "spanish": "el manuscrito",
+      "english": "manuscript",
+      "audio": "/audio/unit-14/manuscrito.mp3",
+      "section": "La Poesía",
+      "example": "¿Cuánto vale ese manuscrito?"
+    },
+    {
+      "spanish": "la tinta",
+      "english": "ink",
+      "audio": "/audio/unit-14/tinta.mp3",
+      "section": "La Poesía",
+      "example": "Me interesa el papel. El papel viejo y la tinta."
+    },
+    {
+      "spanish": "la pluma",
+      "english": "pen, quill",
+      "audio": "/audio/unit-14/pluma.mp3",
+      "section": "La Poesía",
+      "example": "El poeta escribe con una pluma y tinta negra."
+    },
+    {
+      "spanish": "el papel",
+      "english": "paper",
+      "audio": "/audio/unit-14/papel.mp3",
+      "section": "La Poesía",
+      "example": "Le interesa el papel, no las palabras."
+    },
+    {
+      "spanish": "la poesía",
+      "english": "poetry",
+      "audio": "/audio/unit-14/poesia.mp3",
+      "section": "Las Artes",
+      "example": "A la gente de León le encanta la poesía."
+    },
+    {
+      "spanish": "el poeta",
+      "english": "poet",
+      "audio": "/audio/unit-14/poeta.mp3",
+      "section": "Las Artes",
+      "example": "Él es el poeta más famoso de América Latina."
+    },
+    {
+      "spanish": "el libro",
+      "english": "book",
+      "audio": "/audio/unit-14/libro.mp3",
+      "section": "Las Artes",
+      "example": "En la biblioteca hay libros viejos y un manuscrito."
+    },
+    {
+      "spanish": "la biblioteca",
+      "english": "library",
+      "audio": "/audio/unit-14/biblioteca.mp3",
+      "section": "Las Artes",
+      "example": "En la biblioteca hay un manuscrito original."
+    },
+    {
+      "spanish": "la palabra",
+      "english": "word",
+      "audio": "/audio/unit-14/palabra.mp3",
+      "section": "Las Artes",
+      "example": "Pero las palabras son lo importante."
+    },
+    {
+      "spanish": "la música",
+      "english": "music",
+      "audio": "/audio/unit-14/musica.mp3",
+      "section": "Las Artes",
+      "example": "Hoy hay música en la plaza porque la ciudad está de fiesta."
+    },
+    {
+      "spanish": "gustar",
+      "english": "to be pleasing (to like)",
+      "audio": "/audio/unit-14/gustar.mp3",
+      "section": "Gustar y Sus Amigos",
+      "example": "A mí no me gustan los poemas."
+    },
+    {
+      "spanish": "encantar",
+      "english": "to love (something)",
+      "audio": "/audio/unit-14/encantar.mp3",
+      "section": "Gustar y Sus Amigos",
+      "example": "A todos aquí nos encanta la poesía."
+    },
+    {
+      "spanish": "interesar",
+      "english": "to interest",
+      "audio": "/audio/unit-14/interesar.mp3",
+      "section": "Gustar y Sus Amigos",
+      "example": "Me interesa el papel. ¿Qué le interesa a usted?"
+    },
+    {
+      "spanish": "importar",
+      "english": "to matter (to someone)",
+      "audio": "/audio/unit-14/importar.mp3",
+      "section": "Gustar y Sus Amigos",
+      "example": "A un archivista viejo le importan el papel y la tinta."
+    },
+    {
+      "spanish": "molestar",
+      "english": "to bother",
+      "audio": "/audio/unit-14/molestar.mp3",
+      "section": "Gustar y Sus Amigos",
+      "example": "Al forastero le molesta la música de la fiesta."
+    },
+    {
+      "spanish": "me",
+      "english": "to me",
+      "audio": "/audio/unit-14/me.mp3",
+      "section": "Los Pronombres",
+      "example": "A mí no me gustan los poemas."
+    },
+    {
+      "spanish": "te",
+      "english": "to you",
+      "audio": "/audio/unit-14/te.mp3",
+      "section": "Los Pronombres",
+      "example": "¿Te gusta la poesía de Darío?"
+    },
+    {
+      "spanish": "le",
+      "english": "to him / to her / to you (formal)",
+      "audio": "/audio/unit-14/le.mp3",
+      "section": "Los Pronombres",
+      "example": "¿Le gusta la poesía de Rubén Darío?"
+    },
+    {
+      "spanish": "nos",
+      "english": "to us",
+      "audio": "/audio/unit-14/nos.mp3",
+      "section": "Los Pronombres",
+      "example": "A todos aquí nos encanta."
+    },
+    {
+      "spanish": "les",
+      "english": "to them",
+      "audio": "/audio/unit-14/les.mp3",
+      "section": "Los Pronombres",
+      "example": "A los jóvenes de León les gustan los versos del mar."
+    },
+    {
+      "spanish": "feliz",
+      "english": "happy",
+      "audio": "/audio/unit-14/feliz.mp3",
+      "section": "Las Emociones",
+      "example": "La ciudad está feliz porque Darío vuelve a Nicaragua."
+    },
+    {
+      "spanish": "triste",
+      "english": "sad",
+      "audio": "/audio/unit-14/triste.mp3",
+      "section": "Las Emociones",
+      "example": "La princesa está triste — así empieza el poema más famoso."
+    },
+    {
+      "spanish": "orgulloso",
+      "english": "proud",
+      "audio": "/audio/unit-14/orgulloso.mp3",
+      "section": "Las Emociones",
+      "example": "León está orgulloso de su poeta."
+    },
+    {
+      "spanish": "emocionado",
+      "english": "excited",
+      "audio": "/audio/unit-14/emocionado.mp3",
+      "section": "Las Emociones",
+      "example": "Amanda está emocionada: hoy lee sus versos en la plaza."
+    },
+    {
+      "spanish": "aburrido",
+      "english": "bored",
+      "audio": "/audio/unit-14/aburrido.mp3",
+      "section": "Las Emociones",
+      "example": "El forastero escucha los versos y está aburrido."
+    },
+    {
+      "spanish": "sorprendido",
+      "english": "surprised",
+      "audio": "/audio/unit-14/sorprendido.mp3",
+      "section": "Las Emociones",
+      "example": "La poeta está sorprendida: nadie pregunta el precio de un poema."
+    },
+    {
+      "spanish": "nervioso",
+      "english": "nervous",
+      "audio": "/audio/unit-14/nervioso.mp3",
+      "section": "Las Emociones",
+      "example": "El hombre está nervioso cerca de la biblioteca."
+    },
+    {
+      "spanish": "la catedral",
+      "english": "cathedral",
+      "audio": "/audio/unit-14/catedral.mp3",
+      "section": "La Ciudad de León",
+      "example": "En la plaza, delante de la catedral, los jóvenes leen versos."
+    },
+    {
+      "spanish": "la plaza",
+      "english": "square, plaza",
+      "audio": "/audio/unit-14/plaza.mp3",
+      "section": "La Ciudad de León",
+      "example": "Hoy hay música en la plaza porque la ciudad está de fiesta."
+    },
+    {
+      "spanish": "la estatua",
+      "english": "statue",
+      "audio": "/audio/unit-14/estatua.mp3",
+      "section": "La Ciudad de León",
+      "example": "Dentro de la catedral hay una estatua y un león de piedra."
+    },
+    {
+      "spanish": "el león",
+      "english": "lion",
+      "audio": "/audio/unit-14/leon.mp3",
+      "section": "La Ciudad de León",
+      "example": "Dentro de la catedral hay una estatua y un león de piedra."
+    },
+    {
+      "spanish": "la fiesta",
+      "english": "celebration, party",
+      "audio": "/audio/unit-14/fiesta.mp3",
+      "section": "La Ciudad de León",
+      "example": "Hoy la ciudad está de fiesta porque Rubén Darío vuelve."
+    },
+    {
+      "spanish": "la ciudad",
+      "english": "city",
+      "audio": "/audio/unit-14/ciudad.mp3",
+      "section": "La Ciudad de León",
+      "example": "Estoy en León. Hoy la ciudad está de fiesta."
+    }
   ],
   "stages": [
     {
@@ -68,18 +284,54 @@
     {
       "type": "vocabMatch",
       "pairs": [
-        { "spanish": "el poema", "english": "poem" },
-        { "spanish": "el verso", "english": "verse" },
-        { "spanish": "el manuscrito", "english": "manuscript" },
-        { "spanish": "la tinta", "english": "ink" },
-        { "spanish": "el papel", "english": "paper" },
-        { "spanish": "la poesía", "english": "poetry" },
-        { "spanish": "el poeta", "english": "poet" },
-        { "spanish": "la biblioteca", "english": "library" },
-        { "spanish": "gustar", "english": "to be pleasing (to like)" },
-        { "spanish": "encantar", "english": "to love (something)" },
-        { "spanish": "la catedral", "english": "cathedral" },
-        { "spanish": "la fiesta", "english": "celebration" }
+        {
+          "spanish": "el poema",
+          "english": "poem"
+        },
+        {
+          "spanish": "el verso",
+          "english": "verse"
+        },
+        {
+          "spanish": "el manuscrito",
+          "english": "manuscript"
+        },
+        {
+          "spanish": "la tinta",
+          "english": "ink"
+        },
+        {
+          "spanish": "el papel",
+          "english": "paper"
+        },
+        {
+          "spanish": "la poesía",
+          "english": "poetry"
+        },
+        {
+          "spanish": "el poeta",
+          "english": "poet"
+        },
+        {
+          "spanish": "la biblioteca",
+          "english": "library"
+        },
+        {
+          "spanish": "gustar",
+          "english": "to be pleasing (to like)"
+        },
+        {
+          "spanish": "encantar",
+          "english": "to love (something)"
+        },
+        {
+          "spanish": "la catedral",
+          "english": "cathedral"
+        },
+        {
+          "spanish": "la fiesta",
+          "english": "celebration"
+        }
       ]
     },
     {
@@ -91,29 +343,92 @@
       "rightLabel": "GUSTAN",
       "rightHint": "varias cosas (plural)",
       "items": [
-        { "text": "Me ____ el poema.", "category": "left", "explanation": "un poema = singular → gusta" },
-        { "text": "Me ____ los poemas.", "category": "right", "explanation": "varios poemas = plural → gustan" },
-        { "text": "Le ____ la poesía.", "category": "left", "explanation": "la poesía = singular → gusta" },
-        { "text": "Le ____ las palabras.", "category": "right", "explanation": "varias palabras = plural → gustan" },
-        { "text": "Nos ____ la fiesta.", "category": "left", "explanation": "una fiesta = singular → gusta" },
-        { "text": "Nos ____ los versos.", "category": "right", "explanation": "varios versos = plural → gustan" },
-        { "text": "Te ____ el libro.", "category": "left", "explanation": "un libro = singular → gusta" },
-        { "text": "Te ____ los libros.", "category": "right", "explanation": "varios libros = plural → gustan" },
-        { "text": "Les ____ la música.", "category": "left", "explanation": "la música = singular → gusta" },
-        { "text": "Les ____ las rimas.", "category": "right", "explanation": "varias rimas = plural → gustan" },
-        { "text": "Me ____ el manuscrito.", "category": "left", "explanation": "un manuscrito = singular → gusta" },
-        { "text": "Me ____ las plumas.", "category": "right", "explanation": "varias plumas = plural → gustan" }
+        {
+          "text": "Me ____ el poema.",
+          "category": "left",
+          "explanation": "un poema = singular → gusta"
+        },
+        {
+          "text": "Me ____ los poemas.",
+          "category": "right",
+          "explanation": "varios poemas = plural → gustan"
+        },
+        {
+          "text": "Le ____ la poesía.",
+          "category": "left",
+          "explanation": "la poesía = singular → gusta"
+        },
+        {
+          "text": "Le ____ las palabras.",
+          "category": "right",
+          "explanation": "varias palabras = plural → gustan"
+        },
+        {
+          "text": "Nos ____ la fiesta.",
+          "category": "left",
+          "explanation": "una fiesta = singular → gusta"
+        },
+        {
+          "text": "Nos ____ los versos.",
+          "category": "right",
+          "explanation": "varios versos = plural → gustan"
+        },
+        {
+          "text": "Te ____ el libro.",
+          "category": "left",
+          "explanation": "un libro = singular → gusta"
+        },
+        {
+          "text": "Te ____ los libros.",
+          "category": "right",
+          "explanation": "varios libros = plural → gustan"
+        },
+        {
+          "text": "Les ____ la música.",
+          "category": "left",
+          "explanation": "la música = singular → gusta"
+        },
+        {
+          "text": "Les ____ las rimas.",
+          "category": "right",
+          "explanation": "varias rimas = plural → gustan"
+        },
+        {
+          "text": "Me ____ el manuscrito.",
+          "category": "left",
+          "explanation": "un manuscrito = singular → gusta"
+        },
+        {
+          "text": "Me ____ las plumas.",
+          "category": "right",
+          "explanation": "varias plumas = plural → gustan"
+        }
       ]
     },
     {
       "type": "sentenceBuilder",
       "clueReward": "El agente practica los verbos del corazón. En León, a la gente le encanta la poesía — y al forastero le interesa otra cosa.",
       "sentences": [
-        { "sentence": "A mí me gusta la poesía", "translation": "I like poetry. (Literally: poetry is pleasing to me.)" },
-        { "sentence": "A todos nos encanta el poema", "translation": "We all love the poem. (One poem → encanta.)" },
-        { "sentence": "A ella le gustan los versos del mar", "translation": "She likes the sea verses. (Plural things → gustan.)" },
-        { "sentence": "Al forastero le interesa el papel", "translation": "The paper interests the stranger. (What matters to him is the paper.)" },
-        { "sentence": "A los jóvenes les importan las palabras", "translation": "The words matter to the young people. (Plural → importan.)" }
+        {
+          "sentence": "A mí me gusta la poesía",
+          "translation": "I like poetry. (Literally: poetry is pleasing to me.)"
+        },
+        {
+          "sentence": "A todos nos encanta el poema",
+          "translation": "We all love the poem. (One poem → encanta.)"
+        },
+        {
+          "sentence": "A ella le gustan los versos del mar",
+          "translation": "She likes the sea verses. (Plural things → gustan.)"
+        },
+        {
+          "sentence": "Al forastero le interesa el papel",
+          "translation": "The paper interests the stranger. (What matters to him is the paper.)"
+        },
+        {
+          "sentence": "A los jóvenes les importan las palabras",
+          "translation": "The words matter to the young people. (Plural → importan.)"
+        }
       ]
     },
     {
@@ -121,21 +436,50 @@
       "clueReward": "Al ladrón no le gusta la poesía, le interesa el papel y no las palabras, y pregunta cuánto vale el manuscrito. Solo un sospechoso hace las tres cosas.",
       "passage": "BITÁCORA TEMPORAL — AGENTE DE LA LIGA SOMBRA\nDestino: León, Nicaragua. Año 1907.\n\nEstoy en León. Hoy la ciudad está de fiesta porque Rubén Darío vuelve a Nicaragua. Él es el poeta más famoso de América Latina y aquí todos lo conocen. León está orgulloso de su poeta.\n\nA la gente de León le encanta la poesía. En la plaza, delante de la catedral, los jóvenes leen versos en voz alta. A una joven poeta le gustan los versos del mar; está emocionada porque hoy lee los suyos. A un archivista viejo le importan el papel y la tinta: dice que el papel viejo necesita cuidado, y tiene los dedos manchados de tinta negra.\n\nEn la biblioteca hay un manuscrito original — un poema escrito a mano, con la tinta todavía oscura. Es el tesoro de la ciudad.\n\nPero hay un hombre que no es de aquí. Escucha los versos y está aburrido. No le gusta la poesía. Le interesa el papel, no las palabras. Y pregunta una cosa que nadie pregunta aquí: ¿cuánto vale?\n\nMi misión: encuentro al forastero antes de la noche de la fiesta.",
       "glossary": [
-        { "word": "de fiesta", "translation": "celebrating" },
-        { "word": "vuelve", "translation": "returns (from volver)" },
-        { "word": "en voz alta", "translation": "out loud" },
-        { "word": "los suyos", "translation": "her own (ones)" },
-        { "word": "cuidado", "translation": "care" },
-        { "word": "manchados", "translation": "stained" },
-        { "word": "escrito a mano", "translation": "handwritten" },
-        { "word": "vale", "translation": "it is worth (from valer)" }
+        {
+          "word": "de fiesta",
+          "translation": "celebrating"
+        },
+        {
+          "word": "vuelve",
+          "translation": "returns (from volver)"
+        },
+        {
+          "word": "en voz alta",
+          "translation": "out loud"
+        },
+        {
+          "word": "los suyos",
+          "translation": "her own (ones)"
+        },
+        {
+          "word": "cuidado",
+          "translation": "care"
+        },
+        {
+          "word": "manchados",
+          "translation": "stained"
+        },
+        {
+          "word": "escrito a mano",
+          "translation": "handwritten"
+        },
+        {
+          "word": "vale",
+          "translation": "it is worth (from valer)"
+        }
       ],
       "questions": [
         {
           "id": "r1",
           "text": "¿Por qué está de fiesta la ciudad de León?",
           "type": "multiple_choice",
-          "options": ["Porque Rubén Darío vuelve a Nicaragua", "Porque hay un manuscrito nuevo", "Porque abren la biblioteca", "Porque llega un forastero"],
+          "options": [
+            "Porque Rubén Darío vuelve a Nicaragua",
+            "Porque hay un manuscrito nuevo",
+            "Porque abren la biblioteca",
+            "Porque llega un forastero"
+          ],
           "correctIndex": 0,
           "explanationEs": "'Hoy la ciudad está de fiesta porque Rubén Darío vuelve a Nicaragua.'",
           "explanationEn": "Darío is returning to Nicaragua and the whole city turns out."
@@ -144,7 +488,12 @@
           "id": "r2",
           "text": "¿Qué le importa al archivista viejo?",
           "type": "multiple_choice",
-          "options": ["El papel y la tinta", "El precio del manuscrito", "La música de la fiesta", "Los versos del mar"],
+          "options": [
+            "El papel y la tinta",
+            "El precio del manuscrito",
+            "La música de la fiesta",
+            "Los versos del mar"
+          ],
           "correctIndex": 0,
           "explanationEs": "'A un archivista viejo le importan el papel y la tinta.' Fíjate: importan, porque son DOS cosas.",
           "explanationEn": "Paper and ink — note 'importan', plural, because two things matter to him."
@@ -153,7 +502,12 @@
           "id": "r3",
           "text": "¿Cómo está el forastero cuando escucha los versos?",
           "type": "multiple_choice",
-          "options": ["Aburrido", "Emocionado", "Orgulloso", "Triste"],
+          "options": [
+            "Aburrido",
+            "Emocionado",
+            "Orgulloso",
+            "Triste"
+          ],
           "correctIndex": 0,
           "explanationEs": "'Escucha los versos y está aburrido. No le gusta la poesía.'",
           "explanationEn": "He is bored — the poetry does nothing for him."
@@ -162,7 +516,12 @@
           "id": "r4",
           "text": "¿Qué pregunta hace el forastero que nadie más hace?",
           "type": "multiple_choice",
-          "options": ["¿Cuánto vale?", "¿Quién es el poeta?", "¿Dónde está la catedral?", "¿Cuándo es la fiesta?"],
+          "options": [
+            "¿Cuánto vale?",
+            "¿Quién es el poeta?",
+            "¿Dónde está la catedral?",
+            "¿Cuándo es la fiesta?"
+          ],
           "correctIndex": 0,
           "explanationEs": "'Pregunta una cosa que nadie pregunta aquí: ¿cuánto vale?'",
           "explanationEn": "He asks what it is worth — a question nobody else there thinks to ask."
@@ -171,7 +530,11 @@
           "id": "r5",
           "text": "Completa: 'A la gente de León ____ encanta la poesía.' (¿qué pronombre?)",
           "type": "short_answer",
-          "acceptableAnswers": ["le", "le encanta", "a la gente de león le encanta la poesía"],
+          "acceptableAnswers": [
+            "le",
+            "le encanta",
+            "a la gente de león le encanta la poesía"
+          ],
           "explanationEs": "La gente = una sola cosa (singular) → le encanta.",
           "explanationEn": "'La gente' is singular in Spanish, so it takes 'le'."
         }
@@ -189,35 +552,60 @@
       "questions": [
         {
           "question": "¿Le gusta la poesía al hombre?",
-          "options": ["No, no le gustan los poemas", "Sí, le encanta", "Solo los versos del mar", "Solo la música"],
+          "options": [
+            "No, no le gustan los poemas",
+            "Sí, le encanta",
+            "Solo los versos del mar",
+            "Solo la música"
+          ],
           "correctIndex": 0,
           "explanationEs": "'A mí no me gustan los poemas.' Plural → gustan.",
           "explanationEn": "He says the poems do not please him."
         },
         {
           "question": "¿Qué le interesa a él?",
-          "options": ["El papel viejo y la tinta", "Las palabras", "La fiesta", "La catedral"],
+          "options": [
+            "El papel viejo y la tinta",
+            "Las palabras",
+            "La fiesta",
+            "La catedral"
+          ],
           "correctIndex": 0,
           "explanationEs": "'Me interesa el papel. El papel viejo y la tinta.'",
           "explanationEn": "Old paper and ink — the object, not the poem."
         },
         {
           "question": "¿Qué dice la poeta sobre la gente de León?",
-          "options": ["A todos nos encanta la poesía", "A nadie le gusta la poesía", "Les molesta la fiesta", "Les interesa el dinero"],
+          "options": [
+            "A todos nos encanta la poesía",
+            "A nadie le gusta la poesía",
+            "Les molesta la fiesta",
+            "Les interesa el dinero"
+          ],
           "correctIndex": 0,
           "explanationEs": "'A todos aquí nos encanta.' Nos = a nosotros.",
           "explanationEn": "'Everyone here loves it' — nos encanta."
         },
         {
           "question": "¿Cuál es la última pregunta del hombre?",
-          "options": ["¿Cuánto vale ese manuscrito?", "¿Dónde está la biblioteca?", "¿Quién escribió el poema?", "¿Cuándo termina la fiesta?"],
+          "options": [
+            "¿Cuánto vale ese manuscrito?",
+            "¿Dónde está la biblioteca?",
+            "¿Quién escribió el poema?",
+            "¿Cuándo termina la fiesta?"
+          ],
           "correctIndex": 0,
           "explanationEs": "'Dígame una cosa: ¿cuánto vale ese manuscrito?'",
           "explanationEn": "He asks what the manuscript is worth."
         },
         {
           "question": "¿Por qué está sorprendida la poeta?",
-          "options": ["Porque nadie pregunta el precio de un poema aquí", "Porque el hombre es poeta", "Porque no hay música", "Porque el manuscrito no existe"],
+          "options": [
+            "Porque nadie pregunta el precio de un poema aquí",
+            "Porque el hombre es poeta",
+            "Porque no hay música",
+            "Porque el manuscrito no existe"
+          ],
           "correctIndex": 0,
           "explanationEs": "'No sé. Nadie pregunta eso aquí.'",
           "explanationEn": "Nobody in León asks what a poem costs."
@@ -334,7 +722,8 @@
           "realName": "El Cronista",
           "age": 33,
           "description": "No le gusta la poesía: escucha los versos y está aburrido. Le interesa el papel viejo y la tinta, no las palabras. Pregunta cuánto vale el manuscrito. Tiene los dedos manchados de tinta azul brillante.",
-          "imageSeed": 34
+          "imageSeed": 34,
+          "imageUrl": "/images/characters/unit-14-cronista.webp"
         },
         {
           "id": "archivista",
@@ -342,7 +731,8 @@
           "realName": "Don Efraín Mayorga",
           "age": 61,
           "description": "Le interesan mucho el papel y la tinta — cuida los libros viejos de la biblioteca desde hace treinta años, igual que el ladrón. Pero le encanta la poesía y recita a Darío de memoria, y nunca pregunta precios. Tiene los dedos manchados de tinta negra.",
-          "imageSeed": 51
+          "imageSeed": 51,
+          "imageUrl": "/images/characters/unit-14-archivista.webp"
         },
         {
           "id": "periodista",
@@ -350,7 +740,8 @@
           "realName": "Rosalía Icaza Vega",
           "age": 34,
           "description": "Pregunta cuánto vale el manuscrito, igual que el ladrón — pero lo pregunta para su artículo del periódico. Le encanta la poesía de Darío y sabe los nombres de todos sus libros. No le interesa el papel: le interesan las palabras. No tiene tinta en los dedos.",
-          "imageSeed": 29
+          "imageSeed": 29,
+          "imageUrl": "/images/characters/unit-14-periodista.webp"
         },
         {
           "id": "comerciante",
@@ -358,7 +749,8 @@
           "realName": "Tomás Barrios Leal",
           "age": 45,
           "description": "No le gusta la poesía, igual que el ladrón: está en la plaza solo por la fiesta y la música. Pero no le interesa el papel en absoluto y nunca pregunta por el manuscrito — ni sabe que existe. No tiene tinta en los dedos.",
-          "imageSeed": 47
+          "imageSeed": 47,
+          "imageUrl": "/images/characters/unit-14-comerciante.webp"
         }
       ]
     }

@@ -7,12 +7,15 @@
   "nextUnit": 9,
   "totalStages": 7,
   "basePoints": 500,
-  "pointsMultiplier": { "easy": 1.0, "normal": 1.5, "hard": 2.0 },
+  "pointsMultiplier": {
+    "easy": 1.0,
+    "normal": 1.5,
+    "hard": 2.0
+  },
   "collaborationBonus": 100,
   "completionBadge": "operacion_medianoche_completada",
   "briefingLine": "Agente, el hombre que detuviste en Cusco no es el jefe. Es el comprador. Y esta noche, a las doce, alguien va a recoger todo lo que se llevó — la receta de Cartagena, el dinero de Viña, las figurillas del mercado. Ya no preguntamos qué está pasando. Preguntamos qué PASÓ. Todo en pretérito, agente. ¿Cómo prefieres entrar?",
   "ethicalChoiceAfterStage": 3,
-
   "stages": [
     {
       "type": "readingComp",
@@ -21,11 +24,26 @@
       "clueReward": "El hombre de la camioneta dejó un papel con un número de puesto del Mercado de San Pedro — y alguien lo llamó para decirle una sola palabra: medianoche. La camioneta salió hacia el sur. La siguiente parada de la noche fue el festival de Viña del Mar.",
       "passage": "DECLARACIÓN DE TESTIGO\nChef Valentina Cruz · Cartagena, Colombia\n\nAnoche trabajé hasta muy tarde. A las nueve limpié la cocina y guardé las especias.\n\nA las diez llegó un hombre con una camioneta blanca. No entró por la puerta principal. Entró por la cocina.\n\nHabló muy poco. Me preguntó por la receta del ajiaco. Yo le expliqué que la receta no está escrita — está en mi cabeza. Él no aceptó mi respuesta.\n\nEl hombre estuvo aquí veinte minutos. Miró todo: las ollas, los papeles, el menú. Después tomó una foto de mi cuaderno y caminó a la camioneta.\n\nAntes de subir, alguien lo llamó por teléfono. Escuché una sola palabra: «medianoche».\n\nLa camioneta no llevó nada de mi cocina. Pero el hombre dejó algo en la mesa: un papel con un número de puesto del Mercado de San Pedro, en Cusco.",
       "glossary": [
-        { "word": "la declaración", "translation": "witness statement" },
-        { "word": "la camioneta", "translation": "van / pickup truck" },
-        { "word": "el cuaderno", "translation": "notebook" },
-        { "word": "la olla", "translation": "cooking pot" },
-        { "word": "anoche", "translation": "last night" }
+        {
+          "word": "la declaración",
+          "translation": "witness statement"
+        },
+        {
+          "word": "la camioneta",
+          "translation": "van / pickup truck"
+        },
+        {
+          "word": "el cuaderno",
+          "translation": "notebook"
+        },
+        {
+          "word": "la olla",
+          "translation": "cooking pot"
+        },
+        {
+          "word": "anoche",
+          "translation": "last night"
+        }
       ],
       "questions": {
         "easy": [
@@ -33,7 +51,12 @@
             "id": "e1",
             "text": "¿A qué hora llegó el hombre de la camioneta?",
             "type": "multiple_choice",
-            "options": ["A las diez", "A las nueve", "A las doce", "A las siete"],
+            "options": [
+              "A las diez",
+              "A las nueve",
+              "A las doce",
+              "A las siete"
+            ],
             "correctIndex": 0,
             "explanationEs": "«A las diez llegó un hombre con una camioneta blanca».",
             "explanationEn": "\"A las diez llegó un hombre con una camioneta blanca.\""
@@ -42,7 +65,12 @@
             "id": "e2",
             "text": "¿Por dónde entró el hombre?",
             "type": "multiple_choice",
-            "options": ["Por la cocina", "Por la puerta principal", "Por la ventana", "Por el mercado"],
+            "options": [
+              "Por la cocina",
+              "Por la puerta principal",
+              "Por la ventana",
+              "Por el mercado"
+            ],
             "correctIndex": 0,
             "explanationEs": "«No entró por la puerta principal. Entró por la cocina».",
             "explanationEn": "\"No entró por la puerta principal. Entró por la cocina.\""
@@ -51,7 +79,12 @@
             "id": "e3",
             "text": "¿Qué palabra escuchó la chef por teléfono?",
             "type": "multiple_choice",
-            "options": ["Medianoche", "Mercado", "Camioneta", "Receta"],
+            "options": [
+              "Medianoche",
+              "Mercado",
+              "Camioneta",
+              "Receta"
+            ],
             "correctIndex": 0,
             "explanationEs": "«Escuché una sola palabra: medianoche».",
             "explanationEn": "\"Escuché una sola palabra: medianoche.\""
@@ -90,7 +123,12 @@
             "id": "n3",
             "text": "¿Cuánto tiempo estuvo el hombre en la cocina?",
             "type": "multiple_choice",
-            "options": ["Veinte minutos", "Diez minutos", "Una hora", "Toda la noche"],
+            "options": [
+              "Veinte minutos",
+              "Diez minutos",
+              "Una hora",
+              "Toda la noche"
+            ],
             "correctIndex": 0,
             "explanationEs": "«El hombre estuvo aquí veinte minutos» — estuvo es el pretérito de estar.",
             "explanationEn": "\"El hombre estuvo aquí veinte minutos\" — estuvo is the preterite of estar."
@@ -170,7 +208,6 @@
         ]
       }
     },
-
     {
       "type": "swipeSort",
       "country": "20:45 · Viña del Mar",
@@ -182,25 +219,88 @@
       "rightLabel": "AHORA",
       "rightHint": "presente — está pasando",
       "items": [
-        { "text": "El técnico apagó las luces del escenario.", "category": "left", "explanation": "apagó — pretérito, terminado" },
-        { "text": "El técnico está apagando las luces del escenario.", "category": "right", "explanation": "está apagando — presente progresivo, ahora mismo" },
-        { "text": "La cantante llegó al festival a las nueve.", "category": "left", "explanation": "llegó — pretérito" },
-        { "text": "La cantante está cantando en el escenario.", "category": "right", "explanation": "está cantando — ahora" },
-        { "text": "Los turistas compraron entradas para el concierto.", "category": "left", "explanation": "compraron — pretérito" },
-        { "text": "Los turistas buscan sus asientos.", "category": "right", "explanation": "buscan — presente" },
-        { "text": "El periodista habló con el jugador después del partido.", "category": "left", "explanation": "habló — pretérito" },
-        { "text": "El periodista está hablando con el guitarrista.", "category": "right", "explanation": "está hablando — ahora" },
-        { "text": "Alguien le dio dinero al técnico.", "category": "left", "explanation": "dio — pretérito de dar" },
-        { "text": "Nadie encuentra al técnico esta noche.", "category": "right", "explanation": "encuentra — presente" },
-        { "text": "La camioneta blanca estuvo detrás del teatro.", "category": "left", "explanation": "estuvo — pretérito de estar" },
-        { "text": "La camioneta blanca está detrás del teatro.", "category": "right", "explanation": "está — presente" },
-        { "text": "El bailarín olvidó su chaqueta en el camerino.", "category": "left", "explanation": "olvidó — pretérito" },
-        { "text": "El bailarín está buscando su chaqueta.", "category": "right", "explanation": "está buscando — ahora" },
-        { "text": "Nosotros trabajamos toda la noche de ayer.", "category": "left", "explanation": "Con «de ayer» es pretérito. Cuidado: en -AR, nosotros se escribe igual en presente y en pretérito — la pista es el tiempo, no la palabra." },
-        { "text": "El artista pintó el cartel del festival.", "category": "left", "explanation": "pintó — pretérito" }
+        {
+          "text": "El técnico apagó las luces del escenario.",
+          "category": "left",
+          "explanation": "apagó — pretérito, terminado"
+        },
+        {
+          "text": "El técnico está apagando las luces del escenario.",
+          "category": "right",
+          "explanation": "está apagando — presente progresivo, ahora mismo"
+        },
+        {
+          "text": "La cantante llegó al festival a las nueve.",
+          "category": "left",
+          "explanation": "llegó — pretérito"
+        },
+        {
+          "text": "La cantante está cantando en el escenario.",
+          "category": "right",
+          "explanation": "está cantando — ahora"
+        },
+        {
+          "text": "Los turistas compraron entradas para el concierto.",
+          "category": "left",
+          "explanation": "compraron — pretérito"
+        },
+        {
+          "text": "Los turistas buscan sus asientos.",
+          "category": "right",
+          "explanation": "buscan — presente"
+        },
+        {
+          "text": "El periodista habló con el jugador después del partido.",
+          "category": "left",
+          "explanation": "habló — pretérito"
+        },
+        {
+          "text": "El periodista está hablando con el guitarrista.",
+          "category": "right",
+          "explanation": "está hablando — ahora"
+        },
+        {
+          "text": "Alguien le dio dinero al técnico.",
+          "category": "left",
+          "explanation": "dio — pretérito de dar"
+        },
+        {
+          "text": "Nadie encuentra al técnico esta noche.",
+          "category": "right",
+          "explanation": "encuentra — presente"
+        },
+        {
+          "text": "La camioneta blanca estuvo detrás del teatro.",
+          "category": "left",
+          "explanation": "estuvo — pretérito de estar"
+        },
+        {
+          "text": "La camioneta blanca está detrás del teatro.",
+          "category": "right",
+          "explanation": "está — presente"
+        },
+        {
+          "text": "El bailarín olvidó su chaqueta en el camerino.",
+          "category": "left",
+          "explanation": "olvidó — pretérito"
+        },
+        {
+          "text": "El bailarín está buscando su chaqueta.",
+          "category": "right",
+          "explanation": "está buscando — ahora"
+        },
+        {
+          "text": "Nosotros trabajamos toda la noche de ayer.",
+          "category": "left",
+          "explanation": "Con «de ayer» es pretérito. Cuidado: en -AR, nosotros se escribe igual en presente y en pretérito — la pista es el tiempo, no la palabra."
+        },
+        {
+          "text": "El artista pintó el cartel del festival.",
+          "category": "left",
+          "explanation": "pintó — pretérito"
+        }
       ]
     },
-
     {
       "type": "sentenceBuilder",
       "country": "22:10 · Cusco",
@@ -241,7 +341,6 @@
         }
       ]
     },
-
     {
       "type": "interrogation",
       "country": "23:15 · Oficina de La Liga Sombra",
@@ -250,7 +349,8 @@
       "character": {
         "name": "Nadia Ferrer Solano",
         "role": "analista de expedientes, La Liga Sombra",
-        "description": "Lleva seis años leyendo los expedientes de la agencia. Te llamó a las once y cuarto de la noche, desde una oficina apagada, y te pidió que vinieras solo. Tiene una carpeta en la mano y no la suelta."
+        "description": "Lleva seis años leyendo los expedientes de la agencia. Te llamó a las once y cuarto de la noche, desde una oficina apagada, y te pidió que vinieras solo. Tiene una carpeta en la mano y no la suelta.",
+        "imageUrl": "/images/characters/unit-8-medianoche-nadia-ferrer-solano.webp"
       },
       "questionBank": [
         {
@@ -333,7 +433,6 @@
       ],
       "maxQuestions": 6
     },
-
     {
       "type": "listeningComp",
       "country": "23:55 · Almacén Nueve",
@@ -367,7 +466,12 @@
         },
         {
           "question": "¿A qué hora llegó el segundo?",
-          "options": ["A las diez", "A las nueve", "A las cinco", "A las doce"],
+          "options": [
+            "A las diez",
+            "A las nueve",
+            "A las cinco",
+            "A las doce"
+          ],
           "correctIndex": 0,
           "explanationEs": "«El segundo llegó a las diez»."
         },
@@ -388,7 +492,6 @@
       "codeHint": "Suma las tres horas que menciona: nueve + diez + cinco = ___. En reloj de veinticuatro horas, ese número tiene nombre."
     }
   ],
-
   "ethicalChoice": {
     "context": "Son las once y media. La oficina está apagada y Nadia Ferrer no ha soltado la carpeta en veinte minutos. Tienes la firma de Óscar Villalba en tres expedientes — pero para usarla en un informe tienes que decir de dónde salió.",
     "speakerName": "Nadia Ferrer Solano",
@@ -432,7 +535,6 @@
       }
     ]
   },
-
   "endings": {
     "A": {
       "id": "expediente_completo",

@@ -86,6 +86,32 @@ export const WEEK_TWO_PAGES: WeekOnePage[] = [
         labels: 3,
       },
       {
+        kind: "citeEvidence",
+        title: "C. Busca la prueba / Find the proof",
+        instructions:
+          "Read the file. Answer each question, then copy the exact Spanish words that prove your answer.",
+        passage: [
+          "Me llamo Rosa Delgado.",
+          "Soy de Guatemala, pero vivo en Oakland.",
+          "Mi familia es de Guatemala también.",
+          "Tengo diecisiete años.",
+        ],
+        questions: [
+          { q: "¿De dónde es Rosa?", answer: "De Guatemala", evidence: "Soy de Guatemala" },
+          { q: "¿Dónde vive ahora?", answer: "En Oakland", evidence: "vivo en Oakland" },
+          { q: "¿Cuántos años tiene?", answer: "Diecisiete", evidence: "Tengo diecisiete años" },
+        ],
+      },
+      {
+        kind: "partnerTalk",
+        title: "D. Habla con un compañero",
+        instructions:
+          "Ask a partner in Spanish and answer in Spanish. Place names stay as they are — Oakland is Oakland.",
+        frames: ["¿De dónde eres?", "Soy de ______ . ¿Y tú?", "Yo soy de ______ . ¿Y tu familia?", "Mi familia es de ______ ."],
+        rounds: 3,
+        evidencePrompt: "Write each partner's answer in their own words, in Spanish — «Es de ______ ».",
+      },
+      {
         kind: "survey",
         title: "C. La encuesta",
         instructions:
@@ -133,6 +159,15 @@ export const WEEK_TWO_PAGES: WeekOnePage[] = [
           "In Spanish: «Tengo ______ años.» Write your own age, then ask two classmates and write theirs the same way.",
         prompts: ["Yo:", "Compañero/a 1:", "Compañero/a 2:"],
         lines: 1,
+      },
+      {
+        kind: "partnerTalk",
+        title: "Habla con un compañero",
+        instructions:
+          "Ask three classmates their age and their favourite number, in Spanish. Numbers must be SAID, not shown on fingers.",
+        frames: ["¿Cuántos años tienes?", "Tengo ______ años. ¿Y tú?", "¿Cuál es tu número favorito?", "Mi número favorito es ______ ."],
+        rounds: 3,
+        evidencePrompt: "Write each partner's number as a SPANISH WORD, not a digit — that is the whole exercise.",
       },
       {
         kind: "blankGrid",
@@ -185,6 +220,23 @@ export const WEEK_TWO_PAGES: WeekOnePage[] = [
         ],
       },
       {
+        kind: "citeEvidence",
+        title: "C. Busca la prueba / Find the proof",
+        instructions:
+          "Read the report from the classroom. Answer, then copy the exact Spanish words that prove it.",
+        passage: [
+          "En la clase hay veinte sillas y un escritorio grande.",
+          "Hay tres ventanas, pero no hay reloj.",
+          "En mi mochila hay dos libros y un cuaderno rojo.",
+          "No hay lápiz. Necesito un lápiz.",
+        ],
+        questions: [
+          { q: "¿Cuántas sillas hay?", answer: "Veinte", evidence: "hay veinte sillas" },
+          { q: "¿Hay reloj en la clase?", answer: "No", evidence: "no hay reloj" },
+          { q: "¿Qué necesita la persona?", answer: "Un lápiz", evidence: "Necesito un lápiz" },
+        ],
+      },
+      {
         kind: "wordSearch",
         title: "C. Sopa de letras",
         instructions: "Find the ten objects. Across, down and diagonally. Articles are not in the grid.",
@@ -222,6 +274,15 @@ export const WEEK_TWO_PAGES: WeekOnePage[] = [
           "Four sentences in Spanish, each one starting with «Hay». Use a number in at least three of them.",
         prompts: ["Hay ", "Hay ", "Hay ", "Hay ", "Hay "],
         lines: 1,
+      },
+      {
+        kind: "partnerTalk",
+        title: "B. Habla con un compañero",
+        instructions:
+          "Compare backpacks out loud in Spanish. Use «hay» and a number in every answer.",
+        frames: ["¿Qué hay en tu mochila?", "En mi mochila hay ______ . ¿Y en la tuya?", "Hay ______ . ¿Tienes un lápiz?", "Sí, hay ______ . / No, no hay lápiz."],
+        rounds: 3,
+        evidencePrompt: "Write one thing each partner has that you do not — in their words, starting with «Hay».",
       },
       {
         kind: "survey",
@@ -281,6 +342,20 @@ export const WEEK_TWO_PAGES: WeekOnePage[] = [
           "Puedo pedir ayuda en español cuando no entiendo.",
         ],
         lines: 0,
+      },
+      {
+        kind: "partnerTalk",
+        title: "Preséntate / Introduce yourself",
+        instructions:
+          "Two weeks of Spanish in one exchange. Say all four lines to three different classmates, out loud, without reading from your poster if you can manage it.",
+        frames: [
+          "Hola. Me llamo ______ . Soy de ______ .",
+          "Mucho gusto. Tengo ______ años. ¿Y tú?",
+          "Tengo ______ años. En mi mochila hay ______ .",
+          "¡Qué bien! Hasta luego.",
+        ],
+        rounds: 3,
+        evidencePrompt: "For each partner, write one complete Spanish sentence they said — their words, copied exactly.",
       },
       {
         kind: "gameBox",
