@@ -198,7 +198,6 @@
     {
       "type": "cutscene",
       "videoUrl": "/videos/unit-09-cold-intro.mp4",
-      "subtitleUrl": "/videos/unit-09-intro.vtt",
       "chiefName": "Jefa Ramírez",
       "chiefImageSeed": 60,
       "chiefImageUrl": "/images/characters/chief-ramirez.webp",

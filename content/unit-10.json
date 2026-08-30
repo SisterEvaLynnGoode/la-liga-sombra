@@ -236,7 +236,6 @@
     {
       "type": "cutscene",
       "videoUrl": "/videos/unit-10-intro.mp4",
-      "subtitleUrl": "/videos/unit-10-intro.vtt",
       "chiefName": "Jefa Ramírez",
       "chiefImageSeed": 60,
       "chiefImageUrl": "/images/characters/chief-ramirez.webp",

@@ -278,7 +278,6 @@
     {
       "type": "cutscene",
       "videoUrl": "/videos/unit-05-intro.mp4",
-      "subtitleUrl": "/videos/unit-05-intro.vtt",
       "chiefName": "Jefa Ramírez",
       "chiefImageSeed": 60,
       "briefingLines": [

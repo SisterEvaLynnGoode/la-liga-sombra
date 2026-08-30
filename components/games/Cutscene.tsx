@@ -21,7 +21,7 @@ interface Props {
   onComplete: (result: GameResult) => void;
 }
 
-type Phase = "idle" | "playing" | "ended" | "question" | "error";
+type Phase = "idle" | "playing" | "briefing" | "ended" | "question" | "error";
 
 export default function Cutscene({
   videoUrl, subtitleUrl, fallbackImage, chiefName, chiefImageUrl,
@@ -68,10 +68,20 @@ export default function Cutscene({
     startRef.current = Date.now();
   }
 
+  /**
+   * The video is atmosphere; the briefing is instruction.
+   *
+   * Previously the briefing lines rendered ONLY when there was no video or the
+   * video failed. Every case whose video existed therefore skipped them — and
+   * those lines are where the chief explains the unit's grammar ("El pretérito
+   * de los verbos -AR es así: yo llegué, tú llegaste…"). Giving a case a video
+   * silently deleted its instruction. Now the video plays first and the
+   * briefing always follows it.
+   */
   function handleVideoEnd() {
     setElapsed(Math.round((Date.now() - startRef.current) / 1000));
-    if (postQuestion) { setPhase("question"); }
-    else { setPhase("ended"); finish(1, 0); }
+    setPhase(briefingLines.length ? "briefing" : postQuestion ? "question" : "ended");
+    if (!briefingLines.length && !postQuestion) finish(1, 0);
   }
 
   function handleVideoError() { setPhase("error"); }
@@ -88,8 +98,12 @@ export default function Cutscene({
   function handleSkip() {
     videoRef.current?.pause();
     const t = Math.round((Date.now() - startRef.current) / 1000);
-    if (postQuestion) { setPhase("question"); setElapsed(t); }
-    else { finish(1, t); }
+    setElapsed(t);
+    // Skipping the video must not skip the briefing — students who skip are
+    // exactly the ones who most need the grammar explained.
+    if (briefingLines.length) { setPhase("briefing"); return; }
+    if (postQuestion) { setPhase("question"); return; }
+    finish(1, t);
   }
 
   function handleAnswer(i: number) {
@@ -104,8 +118,8 @@ export default function Cutscene({
   }
 
   // Fallback: if video errors, show briefing-lines UI
-  if (phase === "error" || (phase === "idle" && !videoUrl)) {
-    return <FallbackBriefing chiefName={chiefName} chiefImageUrl={chiefImageUrl} briefingLines={briefingLines} fallbackImage={fallbackImage} onComplete={() => finish(1, 0)} />;
+  if (phase === "briefing" || phase === "error" || (phase === "idle" && !videoUrl)) {
+    return <FallbackBriefing chiefName={chiefName} chiefImageUrl={chiefImageUrl} briefingLines={briefingLines} fallbackImage={fallbackImage} onComplete={() => (postQuestion ? setPhase("question") : finish(1, elapsed))} />;
   }
 
   return (

@@ -28,7 +28,6 @@
       "_comment2": "The fallback (no video) shows chiefImageSeed photo + briefingLines as typed text.",
       "type": "cutscene",
       "videoUrl": "/videos/unit-02-intro.mp4",
-      "subtitleUrl": "/videos/unit-02-intro.vtt",
       "fallbackImage": "",
       "chiefName": "Jefe Ramírez",
       "chiefImageSeed": 60,

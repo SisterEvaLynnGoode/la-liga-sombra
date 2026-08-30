@@ -39,3 +39,7 @@ next-env.d.ts
 
 # scroll-world local render artifacts
 scroll-worlds-build/
+
+# local video render intermediates (never deploy these)
+reels/
+scripts/generate-trailer/output/

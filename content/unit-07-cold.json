@@ -213,7 +213,6 @@
     {
       "type": "cutscene",
       "videoUrl": "/videos/unit-07-cold-intro.mp4",
-      "subtitleUrl": "/videos/unit-07-intro.vtt",
       "chiefName": "Jefa Ramírez",
       "chiefImageSeed": 60,
       "briefingLines": [
