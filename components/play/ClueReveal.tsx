@@ -23,7 +23,7 @@ export default function ClueReveal({ clue, clueNumber, unitNumber, onDismiss }: 
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center px-6"
+      className="fixed inset-0 z-50 overflow-y-auto overscroll-contain flex items-center justify-center px-6 py-8"
       style={{ background: "rgba(0,0,0,0.92)" }}
     >
       {/* Background glow */}

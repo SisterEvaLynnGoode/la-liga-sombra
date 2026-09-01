@@ -7,7 +7,7 @@
  * never block progress. Results log to item_events with skill "speaking".
  */
 
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 import { normalizeAnswer } from "@/lib/games/utils";
 import { logItemEvent, flushItemEvents } from "@/lib/events";
 
@@ -51,7 +51,18 @@ function getRecognition(): SpeechRecognitionLike | null {
 type TermState = "idle" | "listening" | "correct" | "close" | "retry";
 
 export default function SpeakPractice({ terms, unitNumber }: Props) {
-  const [supported] = useState(() => getRecognition() !== null);
+  /**
+   * Detected AFTER mount, not in a lazy useState initializer.
+   *
+   * The initializer runs during SSR too, where `window` is undefined, so it
+   * returned false on the server and true in Chrome — a hydration mismatch that
+   * made React throw away and re-render the whole document. It fired on the
+   * CASO RESUELTO screen, which is server-rendered whenever a student reopens a
+   * case they already finished. Starting false on both sides and enabling on
+   * mount keeps the first client render identical to the server's.
+   */
+  const [supported, setSupported] = useState(false);
+  useEffect(() => { setSupported(getRecognition() !== null); }, []);
   const [states, setStates] = useState<Record<number, TermState>>({});
   const [heard, setHeard] = useState<Record<number, string>>({});
   const activeRef = useRef<SpeechRecognitionLike | null>(null);

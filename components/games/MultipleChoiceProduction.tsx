@@ -12,6 +12,7 @@ import { useState, useEffect, useCallback, useRef } from "react";
 import GameShell from "./GameShell";
 import { useAttemptTracker } from "@/lib/hooks/useAttemptTracker";
 import { shuffle, formatTime } from "@/lib/games/utils";
+import { buildOptions } from "@/lib/games/mc-options";
 import type { VocabPair, OnComplete } from "@/lib/games/types";
 import { logItemEvent, flushItemEvents } from "@/lib/events";
 
@@ -36,15 +37,32 @@ function buildCards(vocab: VocabPair[], direction: "en-to-es" | "es-to-en"): MCC
     ? vocab.map((v) => v.spanish)
     : vocab.map((v) => v.english);
 
-  return shuffle(vocab).map((v) => {
+  /**
+   * Other valid answers for the SAME prompt, so they can be kept out of the
+   * distractors. Going en-to-es, "headphones" is both «los audífonos» and «los
+   * auriculares» and "doctor (m/f)" is both «el doctor / la doctora» and «el
+   * médico / la médica»; going es-to-en, «la plaza» has three different glosses.
+   * The old `a !== correct` compared exact strings, so the rival right answer
+   * went on screen as a wrong one.
+   */
+  const byPrompt = new Map<string, string[]>();
+  for (const v of vocab) {
+    const p = (direction === "en-to-es" ? v.english : v.spanish).trim().toLowerCase();
+    const ans = direction === "en-to-es" ? v.spanish : v.english;
+    byPrompt.set(p, [...(byPrompt.get(p) ?? []), ans]);
+  }
+
+  const cards: MCCard[] = [];
+  for (const v of shuffle(vocab)) {
     const prompt   = direction === "en-to-es" ? v.english : v.spanish;
     const correct  = direction === "en-to-es" ? v.spanish : v.english;
-    const distractors = shuffle(allAnswers.filter((a) => a !== correct)).slice(0, 3);
-    const options  = shuffle([correct, ...distractors]);
+    const built = buildOptions(correct, allAnswers, byPrompt.get(prompt.trim().toLowerCase()) ?? []);
+    if (!built) continue;  // no fair question to build here — drop it rather than rig it
     // spanishTerm is always v.spanish regardless of direction, so mastery is never
     // accidentally stored under the English translation (which caused double-counting).
-    return { prompt, correct, options, spanishTerm: v.spanish };
-  });
+    cards.push({ prompt, correct, options: built.options, spanishTerm: v.spanish });
+  }
+  return cards;
 }
 
 type AnswerState = "idle" | "correct" | "wrong";

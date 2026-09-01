@@ -6,6 +6,7 @@
  */
 
 import { shuffle } from "@/lib/games/utils";
+import { buildOptions, reshuffleAuthored } from "@/lib/games/mc-options";
 import type { VocabPair, FlashcardItem } from "@/lib/games/types";
 
 // ── Vocab item with mastery context ───────────────────────────────────────────
@@ -60,17 +61,35 @@ export function buildDefinicionesQuestions(
   const allEng = items.map((i) => i.english);
   const out: DefinicionesQuestion[] = [];
 
+  /**
+   * Every gloss the vocabulary gives for a given Spanish word.
+   *
+   * Fifteen words are glossed more than one way across the units — «la plaza»
+   * is "plaza", "plaza / town square" AND "square, plaza"; «la receta» is both
+   * "the recipe" and "prescription". The old filter was `e !== item.english`,
+   * an exact string compare, so the OTHER correct glosses of the same word
+   * stayed in the distractor pool and were served as wrong answers. This is the
+   * lookup that lets buildOptions rule all of them out at once.
+   */
+  const glossesByTerm = new Map<string, string[]>();
+  for (const i of items) {
+    const key = i.spanish.trim().toLowerCase();
+    const list = glossesByTerm.get(key) ?? [];
+    list.push(i.english);
+    glossesByTerm.set(key, list);
+  }
+
   for (const item of pool) {
     if (out.length >= count) break;
-    const distractors = shuffle(allEng.filter((e) => e !== item.english)).slice(0, 3);
-    if (distractors.length < 3) continue;
-    const opts = shuffle([item.english, ...distractors]);
+    const sameTerm = glossesByTerm.get(item.spanish.trim().toLowerCase()) ?? [];
+    const built = buildOptions(item.english, allEng, sameTerm);
+    if (!built) continue;  // not enough clean distractors — skip, never ship a rigged question
     out.push({
       spanish: item.spanish,
       audio: item.audio,
       answer: item.english,
-      options: opts,
-      correctIndex: opts.indexOf(item.english),
+      options: built.options,
+      correctIndex: built.correctIndex,
       unitNumber: item.unitNumber,
     });
   }
@@ -239,9 +258,18 @@ export function getGrammarConcept(id: string): GrammarConcept | undefined {
   return GRAMMAR_CONCEPTS.find((c) => c.id === id);
 }
 
-/** Return shuffled questions for a concept (up to `count`). */
+/**
+ * Shuffled questions for a concept (up to `count`) — with the OPTIONS shuffled
+ * too.
+ *
+ * Every one of the authored grammar questions above puts its answer at index 0.
+ * Only the question order was being shuffled, so "always pick A" scored 100%
+ * and the drill measured nothing but the student's willingness to click the top
+ * button. Re-ordering per draw keeps the authored answer correct while making
+ * the position uninformative.
+ */
 export function getGrammarDrillQuestions(conceptId: string, count = 8): GrammarQuestion[] {
   const concept = getGrammarConcept(conceptId);
   if (!concept) return [];
-  return shuffle(concept.questions).slice(0, count);
+  return shuffle(concept.questions).slice(0, count).map((q) => reshuffleAuthored(q));
 }

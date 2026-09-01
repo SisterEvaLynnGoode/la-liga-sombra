@@ -363,6 +363,7 @@ export default function UnitPlayer({ content, unitId, unitNumber, classId, agent
         maxScore={1}
         totalTimeSeconds={totalTime}
         speakingTerms={content.vocab.slice(0, 3).map((v) => ({ spanish: v.spanish, english: v.english }))}
+        isCold={isCold}
       />
     );
   }

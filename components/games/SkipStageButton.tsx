@@ -76,7 +76,7 @@ export default function SkipStageButton({ stageName, unitId, onSkip, className =
       {/* ── Confirmation modal ───────────────────────────────────────────── */}
       {showModal && (
         <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-[rgba(0,0,0,0.75)] px-6"
+          className="fixed inset-0 z-50 overflow-y-auto overscroll-contain flex items-center justify-center bg-[rgba(0,0,0,0.75)] px-6 py-8"
           onClick={(e) => { if (e.target === e.currentTarget) setShowModal(false); }}
         >
           <div className="w-full max-w-sm bg-[#1a1614] border border-[rgba(201,147,58,0.3)] p-6 space-y-5 shadow-[0_0_60px_rgba(0,0,0,0.8)]">

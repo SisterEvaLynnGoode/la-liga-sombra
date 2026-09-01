@@ -134,7 +134,7 @@ export default function DailyBriefing({ terms, onComplete }: Props) {
 
   const outer = (children: React.ReactNode) => (
     <div
-      className="fixed inset-0 z-[100] flex flex-col items-center justify-center px-4 py-8"
+      className="fixed inset-0 z-[100] overflow-y-auto overscroll-contain flex flex-col items-center justify-center px-4 py-8"
       style={{
         background: "linear-gradient(160deg, #0a1628 0%, #0d1e3a 50%, #091224 100%)",
       }}

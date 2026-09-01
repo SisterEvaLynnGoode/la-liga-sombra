@@ -21,9 +21,11 @@ interface Props {
   totalTimeSeconds: number;
   /** 2-3 unit vocab terms for optional pronunciation practice (B3). */
   speakingTerms?: Array<{ spanish: string; english: string }>;
+  /** Cold cases are semester-2 replays of a solved case; there is no "next" one. */
+  isCold?: boolean;
 }
 
-export default function BadgeModal({ caseTitle, country, criminalName, unitNumber, score, maxScore, totalTimeSeconds, speakingTerms = [] }: Props) {
+export default function BadgeModal({ caseTitle, country, criminalName, unitNumber, score, maxScore, totalTimeSeconds, speakingTerms = [], isCold = false }: Props) {
   const router = useRouter();
   const mins = Math.floor(totalTimeSeconds / 60);
   const secs = totalTimeSeconds % 60;
@@ -53,6 +55,15 @@ export default function BadgeModal({ caseTitle, country, criminalName, unitNumbe
     }
   }
 
+  // ── Where "next" goes ──────────────────────────────────────────────────────
+  // The gate renders a friendly "Próximamente" panel for a case that has not
+  // shipped, so pointing at the next number is safe even at the end of what is
+  // built. Cold cases are replays of an already-solved case, so they send the
+  // student back to the board instead.
+  const showNext = !isCold;
+  const goNext = () => router.push(`/play/${unitNumber + 1}/gate`);
+  const goMap = () => router.push("/mission-board");
+
   // ── Informe del detective (Workstream B3, Unit 6+) ─────────────────────────
   const showReport = unitNumber >= 6;
   const [reportText, setReportText] = useState("");
@@ -74,7 +85,24 @@ export default function BadgeModal({ caseTitle, country, criminalName, unitNumbe
   }
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center px-6 bg-[#0d0b0a]">
+    /**
+     * SCROLLABLE, and the way out is pinned.
+     *
+     * This was `flex items-center justify-center` with no overflow, on a fixed
+     * full-screen layer. On a 1366x768 Chromebook the panel is ~1150px tall
+     * (badge, stamp, stats, can-do, pronunciation, and the Informe box from
+     * Caso VI on), so it was centred inside 768px: ~190px clipped off the top
+     * and the "Volver al mapa" button sitting ~120px BELOW the bottom of the
+     * screen, on a layer that could not scroll. The button existed and was
+     * physically unreachable — students finished a case and had no way out but
+     * to log back in. It also silently ate the can-do self-assessment, which is
+     * below the fold on the same screens.
+     *
+     * So: the layer scrolls, content starts at the top instead of being centred,
+     * and the continue button is repeated in a bar fixed to the bottom of the
+     * viewport so progression NEVER depends on scrolling to find it.
+     */
+    <div className="fixed inset-0 z-50 overflow-y-auto overscroll-contain flex flex-col items-center px-6 py-10 pb-28 bg-[#0d0b0a]">
       {/* Multiple glow layers */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_50%_40%,rgba(201,147,58,0.2)_0%,transparent_70%)] pointer-events-none" />
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_30%_30%_at_50%_40%,rgba(192,57,43,0.15)_0%,transparent_60%)] pointer-events-none" />
@@ -223,20 +251,49 @@ export default function BadgeModal({ caseTitle, country, criminalName, unitNumbe
           </div>
         )}
 
-        {/* CTA */}
-        <div style={{ animation: "fadeUp 0.5s ease 0.75s both" }}>
-          <button
-            onClick={() => router.push("/mission-board")}
-            className="clip-skew px-10 py-4 font-typewriter text-sm tracking-[0.25em] uppercase bg-[#8b1a1a] text-[#f5e6c8] border border-[#c0392b] hover:bg-[#c0392b] transition-all duration-200 hover:shadow-[0_0_25px_rgba(192,57,43,0.4)]"
-          >
-            Volver al mapa →
-          </button>
-          {nextCountry && (
+        {/* CTA — in-flow copy. The real controls are also in the pinned bar below,
+            so a student who never scrolls this far can still move on. */}
+        <div style={{ animation: "fadeUp 0.5s ease 0.75s both" }} className="mb-4">
+          {showNext ? (
+            <button
+              onClick={goNext}
+              className="clip-skew px-10 py-4 font-typewriter text-sm tracking-[0.25em] uppercase bg-[#8b1a1a] text-[#f5e6c8] border border-[#c0392b] hover:bg-[#c0392b] transition-all duration-200 hover:shadow-[0_0_25px_rgba(192,57,43,0.4)]"
+            >
+              Siguiente caso →
+            </button>
+          ) : (
+            <button
+              onClick={goMap}
+              className="clip-skew px-10 py-4 font-typewriter text-sm tracking-[0.25em] uppercase bg-[#8b1a1a] text-[#f5e6c8] border border-[#c0392b] hover:bg-[#c0392b] transition-all duration-200 hover:shadow-[0_0_25px_rgba(192,57,43,0.4)]"
+            >
+              Volver al mapa →
+            </button>
+          )}
+          {showNext && nextCountry && (
             <p className="font-typewriter text-[10px] text-[#8b7355] mt-3">
               Caso {ROMAN[unitNumber] ?? String(unitNumber + 1)} — {nextCountry} — ahora disponible
             </p>
           )}
         </div>
+      </div>
+
+      {/* Always-reachable exit. Pinned to the viewport, so however tall the panel
+          gets on a small Chromebook screen, the way forward is on screen. */}
+      <div className="fixed bottom-0 left-0 right-0 z-10 border-t border-[rgba(201,147,58,0.25)] bg-[rgba(13,11,10,0.96)] backdrop-blur-sm px-4 py-3 flex items-center justify-center gap-3">
+        <button
+          onClick={goMap}
+          className="font-typewriter text-[11px] tracking-[0.2em] uppercase px-4 py-2.5 border border-[rgba(201,147,58,0.35)] text-[#c9933a] hover:border-[#c9933a] hover:text-[#e8b455] transition-colors"
+        >
+          ← Mapa
+        </button>
+        {showNext && (
+          <button
+            onClick={goNext}
+            className="clip-skew font-typewriter text-[11px] tracking-[0.2em] uppercase px-6 py-2.5 bg-[#8b1a1a] text-[#f5e6c8] border border-[#c0392b] hover:bg-[#c0392b] transition-colors"
+          >
+            Siguiente caso →
+          </button>
+        )}
       </div>
     </div>
   );
