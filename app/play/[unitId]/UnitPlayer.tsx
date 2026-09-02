@@ -472,6 +472,8 @@ export default function UnitPlayer({ content, unitId, unitNumber, classId, agent
             city={stage.city}
             junctions={stage.junctions}
             approachSeconds={stage.approachSeconds}
+            background={stage.background}
+            suspectSprite={stage.suspectSprite}
             unitId={unitId}
             onComplete={handleStageComplete}
           />

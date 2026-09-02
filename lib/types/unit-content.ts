@@ -207,6 +207,8 @@ export interface ChaseSceneStageData {
   suspectName: string;
   city: string;
   approachSeconds?: number;
+  background?: string;
+  suspectSprite?: string;
   junctions: ChaseJunction[];
 }
 

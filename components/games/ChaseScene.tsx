@@ -49,6 +49,9 @@ interface Props {
   city: string;
   junctions: ChaseJunction[];
   approachSeconds?: number;
+  /** Per-city art. Another case ships its own plate and needs no code change. */
+  background?: string;
+  suspectSprite?: string;
   unitId?: string;
   onComplete: OnComplete;
 }
@@ -66,12 +69,10 @@ interface Resolved {
 
 // Noir palette, matched to the rest of the game.
 const INK = "#0d0b0a";
-const GOLD = "#c9933a";
 const GOLD_HI = "#e8b455";
 const CREAM = "#f5e6c8";
 const RED = "#c0392b";
 const GREEN = "#5a9e6f";
-const DIM = "#4a3a2a";
 
 const W = 900;   // logical canvas size; CSS scales it to the container
 const H = 420;
@@ -83,6 +84,8 @@ export default function ChaseScene({
   city,
   junctions,
   approachSeconds = 5,
+  background = "/images/chase/street-madrid.webp",
+  suspectSprite = "/images/chase/suspect.webp",
   unitId,
   onComplete,
 }: Props) {
@@ -127,6 +130,31 @@ export default function ChaseScene({
   useEffect(() => { phaseRef.current = phase; }, [phase]);
 
   const canvasRef = useRef<HTMLCanvasElement>(null);
+
+  /**
+   * The street plate and the suspect sprite.
+   *
+   * Held in refs and drawn only once `complete` — a half-decoded image draws as
+   * nothing, and the loop must not care whether they ever arrive. `assetTick`
+   * exists purely to force one repaint per image so the first frame is not
+   * stuck on the geometric fallback after the art lands.
+   */
+  const bgRef = useRef<HTMLImageElement | null>(null);
+  const spriteRef = useRef<HTMLImageElement | null>(null);
+  const [assetTick, setAssetTick] = useState(0);
+
+  useEffect(() => {
+    const bump = () => setAssetTick((n) => n + 1);
+    const bg = new Image();
+    bg.onload = bump;
+    bg.src = background;
+    bgRef.current = bg;
+
+    const sp = new Image();
+    sp.onload = bump;
+    sp.src = suspectSprite;
+    spriteRef.current = sp;
+  }, [background, suspectSprite]);
 
   const speak = useCallback(() => {
     if (junction) void playSpanishAudio(junction.audio, junction.instruction);
@@ -229,6 +257,8 @@ export default function ChaseScene({
         progress: progressRef.current,
         exits: junction?.exits.map((e) => e.label) ?? [],
         gap,
+        bg: bgRef.current,
+        sprite: spriteRef.current,
       });
     };
 
@@ -251,7 +281,7 @@ export default function ChaseScene({
     paint();                                   // never show an empty canvas
     const id = setInterval(tick, 33);          // ~30 fps
     return () => clearInterval(id);
-  }, [junction, laneCount, approachSeconds, resolveJunction, gap, phase]);
+  }, [junction, laneCount, approachSeconds, resolveJunction, gap, phase, assetTick]);
 
   // ── Briefing ────────────────────────────────────────────────────────────
   if (phase === "briefing") {
@@ -401,8 +431,31 @@ export default function ChaseScene({
 }
 
 // ── Drawing ────────────────────────────────────────────────────────────────
-// Deliberately geometric: lanes, a sign row and two markers. It reads instantly
-// at any size and costs nothing to render on a low-end Chromebook GPU.
+/**
+ * An inked Madrid street plate with the suspect composited over it, and the
+ * junction signs flying out of the vanishing point toward the camera.
+ *
+ * The art is deliberately doing the heavy lifting: teenagers read "cheap" in
+ * about a second, and a lane runner drawn as bare rectangles announces it. The
+ * background and the sprite are generated once, shipped as WebP totalling under
+ * 180 KB, and everything else — the perspective, the sign motion, the lane
+ * highlight — is computed here, so no extra art is needed for another city.
+ *
+ * DEPTH WITHOUT A 3D ENGINE
+ *
+ * Signs start small and tight around the plate's vanishing point and widen and
+ * grow as they approach, so a row of flat rectangles reads as a junction rushing
+ * up the street. The suspect scales with the distance gap: close the gap and he
+ * looms larger, lose ground and he shrinks toward the horizon. It is a cheap
+ * trick and it is the entire reason the scene feels like a chase.
+ *
+ * FALLS BACK TO GEOMETRY
+ *
+ * If either asset fails to load — a bad deploy, a filtered CDN, a Chromebook
+ * that refuses the decode — the scene draws its original flat-colour version
+ * instead of a broken frame. A stage that still plays without its art is worth
+ * more than one that looks right only when everything is perfect.
+ */
 
 interface DrawState {
   scroll: number;
@@ -411,110 +464,157 @@ interface DrawState {
   progress: number;
   exits: string[];
   gap: number;
+  bg: HTMLImageElement | null;
+  sprite: HTMLImageElement | null;
 }
 
-function draw(ctx: CanvasRenderingContext2D, s: DrawState) {
-  const { scroll, laneCount, lane, progress, exits, gap } = s;
+/** Where the street art converges, as a fraction of the canvas. */
+const VP_X = 0.36;
+const VP_Y = 0.34;
 
-  ctx.fillStyle = INK;
+const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
+
+function draw(ctx: CanvasRenderingContext2D, s: DrawState) {
+  const { laneCount, lane, progress, exits, gap, bg, sprite, scroll } = s;
+
+  ctx.clearRect(0, 0, W, H);
+
+  // ── Street plate ──────────────────────────────────────────────────────
+  if (bg && bg.complete && bg.naturalWidth) {
+    // cover-fit so the plate never letterboxes at any canvas size
+    const r = Math.max(W / bg.naturalWidth, H / bg.naturalHeight);
+    const dw = bg.naturalWidth * r;
+    const dh = bg.naturalHeight * r;
+    ctx.drawImage(bg, (W - dw) / 2, (H - dh) / 2, dw, dh);
+  } else {
+    ctx.fillStyle = INK;
+    ctx.fillRect(0, 0, W, H);
+    ctx.fillStyle = "#141110";
+    ctx.fillRect(90, 0, W - 180, H);
+  }
+
+  // Vignette: pushes the eye down the street and keeps sign text legible.
+  const vg = ctx.createRadialGradient(W * VP_X, H * VP_Y, H * 0.1, W * VP_X, H * VP_Y, H * 1.15);
+  vg.addColorStop(0, "rgba(13,11,10,0)");
+  vg.addColorStop(1, "rgba(13,11,10,0.72)");
+  ctx.fillStyle = vg;
   ctx.fillRect(0, 0, W, H);
 
-  const roadX = 90;
-  const roadW = W - roadX * 2;
-  const laneW = roadW / laneCount;
+  const vpx = W * VP_X;
+  const vpy = H * VP_Y;
 
-  // Road bed
-  ctx.fillStyle = "#141110";
-  ctx.fillRect(roadX, 0, roadW, H);
+  // ── The suspect, ahead up the street ──────────────────────────────────
+  // Nearer when the gap is small. The bob is what sells "running".
+  const near = 1 - Math.min(1, gap / 200);            // 0 far … 1 caught
+  const sy = lerp(vpy + 4, H * 0.58, near);
+  const sx = lerp(vpx, W * 0.5, near * 0.55);
+  const bob = Math.sin(scroll * 0.45) * (2 + near * 4);
 
-  // Lane divider dashes, scrolling toward the player to sell forward motion
-  ctx.strokeStyle = "rgba(201,147,58,0.18)";
-  ctx.lineWidth = 2;
-  for (let i = 1; i < laneCount; i++) {
-    const x = roadX + laneW * i;
-    for (let y = -40 + scroll; y < H; y += 40) {
-      ctx.beginPath();
-      ctx.moveTo(x, y);
-      ctx.lineTo(x, y + 20);
-      ctx.stroke();
-    }
+  if (sprite && sprite.complete && sprite.naturalWidth) {
+    const sh = lerp(H * 0.09, H * 0.31, near);
+    const sw = sh * (sprite.naturalWidth / sprite.naturalHeight);
+    // Soft contact shadow so he sits on the road instead of floating.
+    ctx.save();
+    ctx.globalAlpha = 0.38;
+    ctx.fillStyle = "#000";
+    ctx.beginPath();
+    ctx.ellipse(sx, sy + bob, sw * 0.34, sh * 0.055, 0, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.restore();
+    ctx.drawImage(sprite, sx - sw / 2, sy + bob - sh, sw, sh);
+  } else {
+    ctx.fillStyle = RED;
+    const rr = lerp(5, 16, near);
+    ctx.beginPath();
+    ctx.arc(sx, sy + bob - rr * 2, rr, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.fillRect(sx - rr * 0.5, sy + bob - rr, rr, rr * 2);
   }
 
-  // Kerbs
-  ctx.strokeStyle = "rgba(201,147,58,0.35)";
-  ctx.lineWidth = 2;
-  ctx.beginPath();
-  ctx.moveTo(roadX, 0); ctx.lineTo(roadX, H);
-  ctx.moveTo(roadX + roadW, 0); ctx.lineTo(roadX + roadW, H);
-  ctx.stroke();
+  // ── Junction signs, rushing out of the distance ───────────────────────
+  const p = progress;
+  const ease = p * p;                                  // accelerate toward the camera
+  const rowY = lerp(vpy + 10, PLAYER_Y - 6, ease);
+  const rowW = lerp(W * 0.10, W * 0.94, ease);
+  const rowCx = lerp(vpx, W / 2, ease);
+  const scale = lerp(0.22, 1, ease);
+  const cellW = rowW / laneCount;
+  const cellH = 52 * scale;
 
-  // Suspect, running ahead — closer to the top when the gap is small
-  const suspectY = 34 + (gap / 200) * 40;
-  ctx.fillStyle = RED;
-  ctx.beginPath();
-  ctx.arc(roadX + roadW / 2, suspectY, 9, 0, Math.PI * 2);
-  ctx.fill();
-  ctx.fillRect(roadX + roadW / 2 - 4, suspectY + 9, 8, 16);
-
-  // The junction sign row, descending toward the player line
-  const signY = -70 + progress * (PLAYER_Y - 20 + 70);
   for (let i = 0; i < laneCount; i++) {
-    const x = roadX + laneW * i + 6;
-    const w = laneW - 12;
-    const isTarget = i === lane;
-    ctx.fillStyle = isTarget ? "rgba(201,147,58,0.16)" : "rgba(20,17,16,0.9)";
-    ctx.strokeStyle = isTarget ? GOLD_HI : "rgba(201,147,58,0.4)";
-    ctx.lineWidth = isTarget ? 2.5 : 1.5;
-    ctx.fillRect(x, signY, w, 46);
-    ctx.strokeRect(x, signY, w, 46);
+    const cx = rowCx - rowW / 2 + cellW * (i + 0.5);
+    const x = cx - cellW / 2 + 3 * scale;
+    const w = cellW - 6 * scale;
+    const on = i === lane;
 
-    ctx.fillStyle = isTarget ? GOLD_HI : CREAM;
-    ctx.font = "600 15px ui-sans-serif, system-ui, sans-serif";
-    ctx.textAlign = "center";
-    ctx.textBaseline = "middle";
-    fitText(ctx, exits[i] ?? "", x + w / 2, signY + 23, w - 12);
+    ctx.save();
+    ctx.globalAlpha = Math.min(1, 0.25 + ease * 1.4);
+    // Both states keep an opaque dark plate. A translucent gold fill looked
+    // better in isolation and turned to mush the moment a sign crossed the
+    // pool of lamplight on the road — the selection reads from the border and
+    // the text colour instead, which survives any background art.
+    ctx.fillStyle = on ? "rgba(24,18,12,0.88)" : "rgba(13,11,10,0.80)";
+    ctx.strokeStyle = on ? GOLD_HI : "rgba(245,230,200,0.55)";
+    ctx.lineWidth = Math.max(1, (on ? 3 : 1.6) * scale);
+    roundRect(ctx, x, rowY, w, cellH, 4 * scale);
+    ctx.fill();
+    ctx.stroke();
+
+    if (scale > 0.42) {
+      ctx.textAlign = "center";
+      ctx.textBaseline = "middle";
+      ctx.shadowColor = "rgba(0,0,0,0.9)";
+      ctx.shadowBlur = 4 * scale;
+      ctx.fillStyle = on ? GOLD_HI : CREAM;
+      fitText(ctx, exits[i] ?? "", cx, rowY + cellH / 2, w - 10, 16 * scale);
+      ctx.shadowBlur = 0;
+    }
+    ctx.restore();
   }
 
-  // Player marker
-  const px = roadX + laneW * lane + laneW / 2;
+  // ── Your lane, at the bottom edge ─────────────────────────────────────
+  const laneW = (W * 0.94) / laneCount;
+  const px = W / 2 - (W * 0.94) / 2 + laneW * (lane + 0.5);
   ctx.fillStyle = GOLD_HI;
   ctx.beginPath();
-  ctx.arc(px, PLAYER_Y, 11, 0, Math.PI * 2);
+  ctx.moveTo(px, H - 12);
+  ctx.lineTo(px - 13, H - 2);
+  ctx.lineTo(px + 13, H - 2);
+  ctx.closePath();
   ctx.fill();
-  ctx.fillStyle = GOLD;
-  ctx.fillRect(px - 5, PLAYER_Y + 10, 10, 18);
-
-  // The resolve line
-  ctx.strokeStyle = "rgba(201,147,58,0.5)";
-  ctx.setLineDash([6, 6]);
-  ctx.lineWidth = 1.5;
+  ctx.strokeStyle = "rgba(232,180,85,0.45)";
+  ctx.lineWidth = 2;
   ctx.beginPath();
-  ctx.moveTo(roadX, PLAYER_Y - 20);
-  ctx.lineTo(roadX + roadW, PLAYER_Y - 20);
+  ctx.moveTo(px - laneW / 2 + 6, H - 3);
+  ctx.lineTo(px + laneW / 2 - 6, H - 3);
   ctx.stroke();
-  ctx.setLineDash([]);
 
-  // Distance readout
-  ctx.fillStyle = DIM;
-  ctx.font = "500 12px ui-monospace, monospace";
+  // ── Distance readout ──────────────────────────────────────────────────
+  ctx.fillStyle = "rgba(13,11,10,0.6)";
+  ctx.fillRect(8, 8, 128, 20);
+  ctx.fillStyle = gap <= 20 ? GREEN : gap >= 150 ? RED : GOLD_HI;
+  ctx.font = "600 12px ui-monospace, monospace";
   ctx.textAlign = "left";
-  ctx.fillText(`DISTANCIA  ${Math.round(gap)} m`, 12, 22);
+  ctx.textBaseline = "middle";
+  ctx.fillText(`DISTANCIA ${Math.round(gap)} m`, 14, 18);
+}
 
-  // Gap bar — shorter is better, so it drains toward the top as you close in
-  ctx.fillStyle = "rgba(201,147,58,0.15)";
-  ctx.fillRect(12, 34, 14, H - 60);
-  ctx.fillStyle = gap <= 20 ? GREEN : gap >= 150 ? RED : GOLD;
-  const barH = (gap / 200) * (H - 60);
-  ctx.fillRect(12, 34, 14, barH);
+function roundRect(ctx: CanvasRenderingContext2D, x: number, y: number, w: number, h: number, r: number) {
+  const rr = Math.max(0, Math.min(r, w / 2, h / 2));
+  ctx.beginPath();
+  ctx.moveTo(x + rr, y);
+  ctx.arcTo(x + w, y, x + w, y + h, rr);
+  ctx.arcTo(x + w, y + h, x, y + h, rr);
+  ctx.arcTo(x, y + h, x, y, rr);
+  ctx.arcTo(x, y, x + w, y, rr);
+  ctx.closePath();
 }
 
 /** Shrink a label until it fits its sign rather than letting it overflow. */
-function fitText(ctx: CanvasRenderingContext2D, text: string, cx: number, cy: number, maxW: number) {
-  let size = 15;
-  ctx.font = `600 ${size}px ui-sans-serif, system-ui, sans-serif`;
-  while (ctx.measureText(text).width > maxW && size > 9) {
-    size -= 1;
-    ctx.font = `600 ${size}px ui-sans-serif, system-ui, sans-serif`;
-  }
+function fitText(ctx: CanvasRenderingContext2D, text: string, cx: number, cy: number, maxW: number, start = 15) {
+  let size = start;
+  const set = () => { ctx.font = `600 ${size}px ui-sans-serif, system-ui, sans-serif`; };
+  set();
+  while (ctx.measureText(text).width > maxW && size > 7) { size -= 1; set(); }
   ctx.fillText(text, cx, cy);
 }

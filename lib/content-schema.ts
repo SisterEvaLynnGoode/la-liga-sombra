@@ -322,6 +322,10 @@ export const ChaseSceneStageSchema = z.object({
   city: z.string().min(1),
   /** Seconds a junction sign takes to reach the player. Lower = harder. */
   approachSeconds: z.number().min(2).max(12).optional(),
+  /** Street plate for this city. Defaults to the Madrid one. */
+  background: z.string().optional(),
+  /** Cut-out sprite for the fleeing suspect. Defaults to the shared one. */
+  suspectSprite: z.string().optional(),
   junctions: z.array(ChaseJunctionSchema)
     .min(4, "A chase needs at least 4 junctions to be worth loading")
     .max(20),
