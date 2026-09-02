@@ -29,6 +29,31 @@ export interface SentenceBuilderData {
   translation: string;    // shown as a hint
 }
 
+// ── ChaseScene ───────────────────────────────────────────────────────────────
+
+/** One lane at a junction. The label is what the student reads under pressure. */
+export interface ChaseExit {
+  /** Spanish label shown on the lane sign, e.g. «la farmacia». */
+  label: string;
+  /** Exactly one exit per junction is correct. */
+  correct?: boolean;
+}
+
+/**
+ * One junction: an instruction only given in Spanish, and the lanes it picks
+ * between. The instruction is the control input — a student who ignores it is
+ * guessing at 1-in-N, which is the whole point of the mechanic.
+ */
+export interface ChaseJunction {
+  /** Radio instruction, in Spanish. */
+  instruction: string;
+  /** English, revealed only after the junction resolves. */
+  instructionEn?: string;
+  /** Optional recorded line; falls back to browser Spanish speech. */
+  audio?: string;
+  exits: ChaseExit[];
+}
+
 // ── DialogueChoice ───────────────────────────────────────────────────────────
 export interface DialogueOption {
   text: string;

@@ -8,6 +8,7 @@ import type { GameResult } from "@/lib/games/types";
 import CutsceneStage from "@/components/play/CutsceneStage";
 import ClueReveal from "@/components/play/ClueReveal";
 import BadgeModal from "@/components/play/BadgeModal";
+import ChaseScene from "@/components/games/ChaseScene";
 import LineupStage from "@/components/play/LineupStage";
 import BadgeEarned from "@/components/games/BadgeEarned";
 import AlertToast from "@/components/ui/AlertToast";
@@ -61,6 +62,7 @@ const STAGE_LABELS: Record<StageData["type"], string> = {
   timedFlashcards: "Flashcards",
   liveStakeout: "Vigilancia",
   swipeSort: "Clasificar",
+  chaseScene: "A la fuga",
 };
 
 export default function UnitPlayer({ content, unitId, unitNumber, classId, agentName = "", initialStageIndex, isCompleted, stakeoutQuestions, difficulty = "standard" }: Props) {
@@ -459,6 +461,18 @@ export default function UnitPlayer({ content, unitId, unitNumber, classId, agent
             agentName={agentName}
             unitId={unitId}
             productionMode={unitNumber >= 4}
+            onComplete={handleStageComplete}
+          />
+        )}
+
+        {stage?.type === "chaseScene" && (
+          <ChaseScene
+            key={`stage-${currentStage}`}
+            suspectName={stage.suspectName}
+            city={stage.city}
+            junctions={stage.junctions}
+            approachSeconds={stage.approachSeconds}
+            unitId={unitId}
             onComplete={handleStageComplete}
           />
         )}

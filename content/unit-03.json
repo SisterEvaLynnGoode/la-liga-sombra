@@ -698,6 +698,207 @@
           "explanationEn": "'Ir a' + place shows destination."
         }
       ]
+    },
+    {
+      "type": "chaseScene",
+      "clueReward": "La Sombra evita el metro. Siempre va a pie o en taxi — no quiere cámaras.",
+      "suspectName": "La Sombra",
+      "city": "Madrid",
+      "approachSeconds": 5.5,
+      "junctions": [
+        {
+          "instruction": "Va a la farmacia.",
+          "instructionEn": "He's going to the pharmacy.",
+          "exits": [
+            {
+              "label": "la farmacia",
+              "correct": true
+            },
+            {
+              "label": "el banco"
+            }
+          ]
+        },
+        {
+          "instruction": "Ahora va al mercado.",
+          "instructionEn": "Now he's going to the market.",
+          "exits": [
+            {
+              "label": "el hotel"
+            },
+            {
+              "label": "el mercado",
+              "correct": true
+            }
+          ]
+        },
+        {
+          "instruction": "Va a la Puerta del Sol.",
+          "instructionEn": "He's going to Puerta del Sol.",
+          "exits": [
+            {
+              "label": "la Puerta del Sol",
+              "correct": true
+            },
+            {
+              "label": "la Gran Vía"
+            }
+          ]
+        },
+        {
+          "instruction": "Va al Museo del Prado.",
+          "instructionEn": "He's going to the Prado Museum.",
+          "exits": [
+            {
+              "label": "el Parque del Retiro"
+            },
+            {
+              "label": "el Museo del Prado",
+              "correct": true
+            },
+            {
+              "label": "la Estación de Atocha"
+            }
+          ]
+        },
+        {
+          "instruction": "Toma el metro.",
+          "instructionEn": "He's taking the metro.",
+          "exits": [
+            {
+              "label": "el metro",
+              "correct": true
+            },
+            {
+              "label": "el autobús"
+            },
+            {
+              "label": "el taxi"
+            }
+          ]
+        },
+        {
+          "instruction": "Va a la comisaría.",
+          "instructionEn": "He's going to the police station.",
+          "exits": [
+            {
+              "label": "el restaurante"
+            },
+            {
+              "label": "la comisaría",
+              "correct": true
+            },
+            {
+              "label": "la calle"
+            }
+          ]
+        },
+        {
+          "instruction": "NO va al hotel. Va al banco.",
+          "instructionEn": "He is NOT going to the hotel. He's going to the bank.",
+          "exits": [
+            {
+              "label": "el hotel"
+            },
+            {
+              "label": "el banco",
+              "correct": true
+            },
+            {
+              "label": "el mercado"
+            }
+          ]
+        },
+        {
+          "instruction": "No va a pie. Va en taxi.",
+          "instructionEn": "He's not on foot. He's going by taxi.",
+          "exits": [
+            {
+              "label": "a pie"
+            },
+            {
+              "label": "el taxi",
+              "correct": true
+            },
+            {
+              "label": "la bicicleta"
+            }
+          ]
+        },
+        {
+          "instruction": "NO va a la plaza. Va a la Gran Vía.",
+          "instructionEn": "He is NOT going to the plaza. He's going to Gran Vía.",
+          "exits": [
+            {
+              "label": "la plaza"
+            },
+            {
+              "label": "la Gran Vía",
+              "correct": true
+            },
+            {
+              "label": "el Parque del Retiro"
+            }
+          ]
+        },
+        {
+          "instruction": "Corre por la calle hacia la Estación de Atocha.",
+          "instructionEn": "He's running down the street toward Atocha Station.",
+          "exits": [
+            {
+              "label": "la Estación de Atocha",
+              "correct": true
+            },
+            {
+              "label": "el aeropuerto"
+            },
+            {
+              "label": "el Museo del Prado"
+            },
+            {
+              "label": "la Puerta del Sol"
+            }
+          ]
+        },
+        {
+          "instruction": "Va al aeropuerto en autobús.",
+          "instructionEn": "He's going to the airport by bus.",
+          "exits": [
+            {
+              "label": "el tren"
+            },
+            {
+              "label": "el autobús",
+              "correct": true
+            },
+            {
+              "label": "el coche"
+            },
+            {
+              "label": "el metro"
+            }
+          ]
+        },
+        {
+          "instruction": "¡Alto! No va al aeropuerto. Vuelve al Parque del Retiro.",
+          "instructionEn": "Stop! He's not going to the airport. He's going back to Retiro Park.",
+          "exits": [
+            {
+              "label": "el aeropuerto"
+            },
+            {
+              "label": "el Parque del Retiro",
+              "correct": true
+            },
+            {
+              "label": "la Estación de Atocha"
+            },
+            {
+              "label": "la Gran Vía"
+            }
+          ]
+        }
+      ]
     }
   ]
 }

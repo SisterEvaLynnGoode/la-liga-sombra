@@ -198,6 +198,18 @@ export interface SwipeSortStageData {
   items: SwipeSortItem[];
 }
 
+import type { ChaseJunction } from "@/lib/games/types";
+
+/** La Persecución — real-time pursuit steered by Spanish instructions. */
+export interface ChaseSceneStageData {
+  type: "chaseScene";
+  clueReward?: string;
+  suspectName: string;
+  city: string;
+  approachSeconds?: number;
+  junctions: ChaseJunction[];
+}
+
 export type StageData =
   | CutsceneStageData
   | VocabMatchStageData
@@ -210,7 +222,8 @@ export type StageData =
   | InterrogationStageData
   | TimedFlashcardsStageData
   | LiveStakeoutStageData
-  | SwipeSortStageData;
+  | SwipeSortStageData
+  | ChaseSceneStageData;
 
 // ── Academia config ──────────────────────────────────────────────────────────
 

@@ -291,6 +291,42 @@ export const SwipeSortStageSchema = z.object({
   { message: "swipeSort needs at least one card on each side", path: ["items"] }
 );
 
+/**
+ * A real-time pursuit where the Spanish IS the steering.
+ *
+ * Every junction carries an instruction in Spanish and 2-4 labelled lanes;
+ * exactly one lane is correct, enforced below rather than trusted, because a
+ * junction with no correct lane is unwinnable and a junction with two is
+ * unfair, and neither is visible by reading the JSON.
+ */
+export const ChaseExitSchema = z.object({
+  label: z.string().min(1),
+  correct: z.boolean().optional(),
+});
+
+export const ChaseJunctionSchema = z.object({
+  instruction: z.string().min(1),
+  instructionEn: z.string().optional(),
+  audio: z.string().optional(),
+  exits: z.array(ChaseExitSchema).min(2).max(4),
+}).refine(
+  (j) => j.exits.filter((e) => e.correct).length === 1,
+  { message: "Each junction needs exactly one exit marked correct", path: ["exits"] }
+);
+
+export const ChaseSceneStageSchema = z.object({
+  type: z.literal("chaseScene"),
+  clueReward: z.string().optional(),
+  /** Who is being chased — shown running ahead. */
+  suspectName: z.string().min(1),
+  city: z.string().min(1),
+  /** Seconds a junction sign takes to reach the player. Lower = harder. */
+  approachSeconds: z.number().min(2).max(12).optional(),
+  junctions: z.array(ChaseJunctionSchema)
+    .min(4, "A chase needs at least 4 junctions to be worth loading")
+    .max(20),
+});
+
 export const StageSchema = z.discriminatedUnion("type", [
   CutsceneStageSchema,
   VocabMatchStageSchema,
@@ -304,6 +340,7 @@ export const StageSchema = z.discriminatedUnion("type", [
   TimedFlashcardsStageSchema,
   LiveStakeoutStageSchema,
   SwipeSortStageSchema,
+  ChaseSceneStageSchema,
 ]);
 
 // ─── Academia config ──────────────────────────────────────────────────────────
