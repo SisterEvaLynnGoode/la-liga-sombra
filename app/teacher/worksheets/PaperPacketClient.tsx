@@ -368,6 +368,25 @@ function Block({ b }: { b: WeekOneBlock }) {
         </div>
       );
 
+    /** The student's own map of the period. Ticking it is the point. */
+    case "checklist":
+      return (
+        <div className="border-2 border-black p-2 mb-3">
+          <p className="text-[10px] tracking-[0.25em] uppercase mb-0.5">{b.title}</p>
+          <p className="text-[10px] italic mb-1.5">{b.instructions}</p>
+          {b.items.map((it, i) => (
+            <div key={i} className="flex items-start gap-2 mb-1">
+              <span className="border border-black w-3 h-3 shrink-0 mt-[2px]" />
+              <p className="text-[11px] leading-snug flex-1">
+                <span className="font-bold">{it.label}</span>
+                <span className="ml-1">· {it.detail}</span>
+              </p>
+              <span className="text-[10px] tabular-nums shrink-0">~{it.minutes} min</span>
+            </div>
+          ))}
+        </div>
+      );
+
     /** Boxes to fill from clues — never a pre-labelled diagram. */
     case "familyTree":
       return (

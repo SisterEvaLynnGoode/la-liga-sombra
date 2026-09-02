@@ -76,6 +76,18 @@ export type WeekOneBlock =
       /** Hide the English so the same page doubles as a self-quiz. */
       hideEnglish?: boolean;
     }
+  /**
+   * The student's own route through the packet: what to do, roughly how long,
+   * and a box to tick. Printed for STUDENTS, not for an adult — on a day with a
+   * substitute the packet has to be able to run itself, because the realistic
+   * assumption is that the sub hands it out and nothing more.
+   */
+  | {
+      kind: "checklist";
+      title: string;
+      instructions: string;
+      items: Array<{ label: string; minutes: number; detail: string }>;
+    }
   /** Blank family tree. Boxes to fill from Spanish clues, not a labelled diagram. */
   | {
       kind: "familyTree";
