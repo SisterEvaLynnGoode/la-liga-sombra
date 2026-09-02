@@ -513,16 +513,16 @@
       "retryHint": "Pista: Escucha la descripción física, dónde estudia, y de dónde es.",
       "questions": [
         {
-          "question": "¿Cómo es el sospechoso físicamente?",
+          "question": "¿Cómo describe el director al sospechoso?",
           "options": [
-            "Alto y rubio",
-            "Bajo y rubio",
-            "Alto y moreno",
-            "Bajo y moreno"
+            "Es un estudiante alto con pelo moreno",
+            "Es un estudiante bajo con pelo rubio",
+            "Es un profesor alto con pelo moreno",
+            "Es un estudiante alto con pelo rubio"
           ],
-          "correctIndex": 2,
-          "explanationEs": "El director dice 'Es un estudiante alto. Tiene pelo moreno. No es rubio.'",
-          "explanationEn": "The principal says he's tall with dark hair and not blonde."
+          "correctIndex": 0,
+          "explanationEs": "El director dice 'Es un estudiante alto', 'Tiene pelo moreno' y 'No es rubio'.",
+          "explanationEn": "He says student (not teacher), tall, dark hair — and explicitly NOT blonde."
         },
         {
           "question": "¿Dónde estudia mucho?",

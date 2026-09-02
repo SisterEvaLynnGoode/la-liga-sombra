@@ -494,16 +494,16 @@
           "explanationEn": "Grandmother says her grandson is nervous."
         },
         {
-          "question": "¿Quién está mintiendo sobre su ubicación?",
+          "question": "El nieto dice que está en la escuela. ¿La abuela le cree?",
           "options": [
-            "El hijo",
-            "La hija",
-            "El nieto",
-            "La nieta"
+            "No — dice que no es verdad",
+            "Sí, le cree",
+            "Sí, pero está preocupada",
+            "La abuela no habla de eso"
           ],
-          "correctIndex": 2,
-          "explanationEs": "La abuela dice del nieto: 'Dice que está en la escuela, pero no es verdad'.",
-          "explanationEn": "Grandmother says of the grandson: 'He says he's at school, but it's not true.'"
+          "correctIndex": 0,
+          "explanationEs": "La abuela dice: 'Dice que está en la escuela, pero no es verdad'. Escucha el 'pero no'.",
+          "explanationEn": "She says he CLAIMS to be at school, 'but it isn't true'. The word to catch is 'pero no'."
         }
       ]
     },
