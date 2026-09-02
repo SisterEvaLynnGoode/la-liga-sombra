@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import type { WeekOnePage, WeekOneBlock, KeySection } from "@/lib/worksheets/paper";
 import { buildWordSearch } from "@/lib/worksheets/wordsearch";
+import { VocabIcon, hasIcon } from "@/lib/worksheets/icons";
 
 interface Props {
   pages: WeekOnePage[];
@@ -336,6 +337,137 @@ function Block({ b }: { b: WeekOneBlock }) {
             </div>
           ))}
           <p className="text-[9px] italic">«Prueba» = copy the exact words from the text that prove your answer.</p>
+        </div>
+      );
+
+    /**
+     * Illustrated vocabulary. The icon is the definition; the English sits under
+     * it in small type and disappears entirely when the page is being used as a
+     * self-quiz. Words with no icon get a bordered blank instead so the student
+     * can draw their own reminder — an empty box invites that, a missing cell
+     * just looks like the page failed to print.
+     */
+    case "iconGrid":
+      return (
+        <div className="mb-3">
+          <SectionHead title={b.title} instructions={b.instructions ?? ""} />
+          <div
+            className="grid gap-x-2 gap-y-2"
+            style={{ gridTemplateColumns: `repeat(${b.columns}, minmax(0,1fr))` }}
+          >
+            {b.items.map((it) => (
+              <div key={it.spanish} className="border border-black p-1 flex flex-col items-center text-center">
+                <div className="h-[38px] flex items-center justify-center">
+                  {hasIcon(it.spanish) ? <VocabIcon spanish={it.spanish} /> : <span className="text-[8px] italic">dibuja tú</span>}
+                </div>
+                <p className="text-[10px] font-bold leading-tight mt-0.5">{it.spanish}</p>
+                {!b.hideEnglish && <p className="text-[8px] leading-tight">{it.english}</p>}
+              </div>
+            ))}
+          </div>
+        </div>
+      );
+
+    /** Boxes to fill from clues — never a pre-labelled diagram. */
+    case "familyTree":
+      return (
+        <div className="mb-3">
+          <SectionHead title={b.title} instructions={b.instructions} />
+          {b.wordBank && (
+            <p className="text-[10px] border border-black px-2 py-1 mb-2">
+              <span className="tracking-[0.2em] uppercase">Nombres:</span> {b.wordBank.join(" · ")}
+            </p>
+          )}
+          <div className="space-y-2">
+            {b.rows.map((row, ri) => (
+              <div key={ri} className="flex justify-center gap-3">
+                {row.slots.map((slot, si) => (
+                  <div key={si} className="border-2 border-black w-[7.5rem] h-[3.2rem] flex flex-col justify-end p-1">
+                    <span className="text-[8px] italic leading-none">{slot}</span>
+                  </div>
+                ))}
+              </div>
+            ))}
+          </div>
+        </div>
+      );
+
+    /** Draw the emotion. The drawing IS the definition. */
+    case "faceGrid":
+      return (
+        <div className="mb-3">
+          <SectionHead title={b.title} instructions={b.instructions} />
+          <div
+            className="grid gap-x-2 gap-y-2"
+            style={{ gridTemplateColumns: `repeat(${b.columns}, minmax(0,1fr))` }}
+          >
+            {b.words.map((w) => (
+              <div key={w.spanish} className="border border-black">
+                <div className="h-[6.2rem] border-b border-black" />
+                <p className="text-[10px] font-bold leading-tight px-1 pt-0.5 text-center">{w.spanish}</p>
+                <p className="text-[8px] leading-tight px-1 pb-0.5 text-center">{w.english}</p>
+              </div>
+            ))}
+          </div>
+        </div>
+      );
+
+    /** Clues in Spanish, answers deduced. Detective work, not a vocabulary drill. */
+    case "deduction":
+      return (
+        <div className="mb-3">
+          <SectionHead title={b.title} instructions={b.instructions} />
+          <div className="border-2 border-black p-2 mb-2">
+            {b.clues.map((c) => (
+              <p key={c} className="text-[11px] leading-snug mb-0.5">{c}</p>
+            ))}
+          </div>
+          {b.wordBank && (
+            <p className="text-[10px] border border-black px-2 py-1 mb-2">
+              <span className="tracking-[0.2em] uppercase">Banco:</span> {b.wordBank.join(" · ")}
+            </p>
+          )}
+          <ol className="space-y-1.5">
+            {b.questions.map((q, i) => (
+              <li key={i} className="text-[11px] leading-snug">
+                {i + 1}. {q.q}
+                <span className="inline-block border-b border-black min-w-[9rem] ml-1 align-bottom">&nbsp;</span>
+              </li>
+            ))}
+          </ol>
+        </div>
+      );
+
+    /** One line of the journey per row: where to, and how. */
+    case "routePlan":
+      return (
+        <div className="mb-3">
+          <SectionHead title={b.title} instructions={b.instructions} />
+          <p className="text-[11px] border border-black px-2 py-1 mb-2">
+            <span className="tracking-[0.2em] uppercase text-[9px]">Frase:</span> <span className="font-bold">{b.frame}</span>
+          </p>
+          <table className="w-full border-collapse">
+            <thead>
+              <tr>
+                {["#", "Desde · from", "Hasta · to", "Escribe la frase completa"].map((h) => (
+                  <th key={h} className="border border-black text-[9px] tracking-[0.15em] uppercase px-1 py-0.5 text-left">{h}</th>
+                ))}
+              </tr>
+            </thead>
+            <tbody>
+              {b.legs.map((leg, i) => (
+                <tr key={i}>
+                  <td className="border border-black text-[10px] px-1 py-2 w-[1.4rem]">{i + 1}</td>
+                  <td className="border border-black text-[10px] px-1 py-2 w-[8rem]">{leg.from}</td>
+                  <td className="border border-black text-[10px] px-1 py-2 w-[8rem]">
+                    {leg.to}
+                    {leg.hint && <span className="block text-[8px] italic">{leg.hint}</span>}
+                  </td>
+                  <td className="border border-black px-1 py-2" />
+                </tr>
+              ))}
+            </tbody>
+          </table>
         </div>
       );
 

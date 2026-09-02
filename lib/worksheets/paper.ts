@@ -62,6 +62,62 @@ export type WeekOneBlock =
       evidencePrompt: string;
     }
   /**
+   * Illustrated vocabulary. The picture carries the meaning so the English can
+   * be small or absent — a student looking up «el metro» mid-case wants the
+   * icon, not a translation to read. Words with no icon fall back to text, so a
+   * list can mix concrete and abstract without looking broken.
+   */
+  | {
+      kind: "iconGrid";
+      title: string;
+      instructions?: string;
+      columns: number;
+      items: MatchPair[];
+      /** Hide the English so the same page doubles as a self-quiz. */
+      hideEnglish?: boolean;
+    }
+  /** Blank family tree. Boxes to fill from Spanish clues, not a labelled diagram. */
+  | {
+      kind: "familyTree";
+      title: string;
+      instructions: string;
+      /** Rows of slots, top generation first. Label is the relationship prompt. */
+      rows: Array<{ slots: string[] }>;
+      wordBank?: string[];
+    }
+  /** Draw the face. The emotion adjectives are learned by drawing them, not matching them. */
+  | {
+      kind: "faceGrid";
+      title: string;
+      instructions: string;
+      columns: number;
+      words: MatchPair[];
+    }
+  /**
+   * A deduction puzzle: numbered Spanish clues, and a place to write who is who.
+   * This is the sub-day workhorse — it is detective work rather than vocabulary
+   * drill, so it teaches the words without spending the mechanical practice the
+   * HQ packet does later in the same week.
+   */
+  | {
+      kind: "deduction";
+      title: string;
+      instructions: string;
+      clues: string[];
+      /** What the student must name, one line each. */
+      questions: Array<{ q: string; answer: string }>;
+      wordBank?: string[];
+    }
+  /** Route-planning on the illustrated map: ¿Adónde vas? ¿Cómo vas? */
+  | {
+      kind: "routePlan";
+      title: string;
+      instructions: string;
+      /** Each row is one leg the student completes in Spanish. */
+      legs: Array<{ from: string; to: string; hint?: string }>;
+      frame: string;
+    }
+  /**
    * Cite-the-text. Students answer FROM a short Spanish passage and must copy
    * the words that prove it — the second school-wide goal, on paper, in the
    * target language.
@@ -112,6 +168,13 @@ export function buildAnswerKey(pages: WeekOnePage[]): KeySection[] {
           page: `${page.day} · ${page.title}`,
           title: b.title,
           answers: b.questions.map((q, i) => `${i + 1}. ${q.answer}  ←  «${q.evidence}»`),
+        });
+      }
+      if (b.kind === "deduction") {
+        out.push({
+          page: `${page.day} · ${page.title}`,
+          title: b.title,
+          answers: b.questions.map((q, i) => `${i + 1}. ${q.answer}`),
         });
       }
       if (b.kind === "match") {
