@@ -1,0 +1,320 @@
+{
+  "unitNumber": 17,
+  "country": "Panamá",
+  "city": "Ciudad de Panamá",
+  "caseTitle": "Los Planos del Ingeniero",
+  "caseDescription": "El Cronista viaja al Canal de Panamá en 1914, el día antes de la apertura, para robar los planos originales de las esclusas.",
+  "criminalName": "El Cronista",
+  "bonusClue": "El Cronista compara todo con cosas que todavía no existen en 1914. Dice que una esclusa es «más grande que un estadio de fútbol americano moderno». Nadie en 1914 habla así.",
+  "vocab": [
+    { "spanish": "el canal", "english": "the canal", "audio": "/audio/unit-17/canal.mp3", "section": "El Canal", "example": "El canal une dos océanos." },
+    { "spanish": "la esclusa", "english": "the lock (canal)", "audio": "/audio/unit-17/esclusa.mp3", "section": "El Canal", "example": "La esclusa sube el barco como un ascensor de agua." },
+    { "spanish": "el barco", "english": "the ship", "audio": "/audio/unit-17/barco.mp3", "section": "El Canal", "example": "El barco entra en la esclusa muy despacio." },
+    { "spanish": "el océano", "english": "the ocean", "audio": "/audio/unit-17/oceano.mp3", "section": "El Canal", "example": "Un océano está más alto que el otro." },
+    { "spanish": "los planos", "english": "the blueprints", "audio": "/audio/unit-17/planos.mp3", "section": "El Canal", "example": "Los planos originales están en una caja de madera." },
+    { "spanish": "el ingeniero", "english": "the engineer", "audio": "/audio/unit-17/ingeniero.mp3", "section": "El Canal", "example": "El ingeniero jefe no duerme desde hace tres días." },
+    { "spanish": "la máquina", "english": "the machine", "audio": "/audio/unit-17/maquina.mp3", "section": "El Canal", "example": "La máquina más grande pesa noventa toneladas." },
+    { "spanish": "la puerta", "english": "the gate, the door", "audio": "/audio/unit-17/puerta.mp3", "section": "El Canal", "example": "Cada puerta de acero es más alta que una casa." },
+    { "spanish": "el acero", "english": "the steel", "audio": "/audio/unit-17/acero.mp3", "section": "El Canal", "example": "Las puertas son de acero, no de madera." },
+    { "spanish": "el obrero", "english": "the worker", "audio": "/audio/unit-17/obrero.mp3", "section": "El Canal", "example": "Los obreros vinieron de muchos países." },
+    { "spanish": "medir", "english": "to measure", "audio": "/audio/unit-17/medir.mp3", "section": "El Canal", "example": "Mide la puerta dos veces antes de escribir el número." },
+    { "spanish": "pesar", "english": "to weigh", "audio": "/audio/unit-17/pesar.mp3", "section": "El Canal", "example": "¿Cuánto pesa esa puerta?" },
+    { "spanish": "construir", "english": "to build", "audio": "/audio/unit-17/construir.mp3", "section": "El Canal", "example": "Construyeron el canal en diez años." },
+    { "spanish": "abrir", "english": "to open", "audio": "/audio/unit-17/abrir.mp3", "section": "El Canal", "example": "Mañana abren el canal por primera vez." },
+    { "spanish": "el metro", "english": "the metre", "audio": "/audio/unit-17/metro.mp3", "section": "El Canal", "example": "La esclusa mide más de trescientos metros." },
+    { "spanish": "la tonelada", "english": "the ton", "audio": "/audio/unit-17/tonelada.mp3", "section": "El Canal", "example": "Cada puerta pesa cientos de toneladas." },
+
+    { "spanish": "más… que", "english": "more… than", "audio": "/audio/unit-17/mas-que.mp3", "section": "Comparar", "example": "El Atlántico está más bajo que el Pacífico." },
+    { "spanish": "menos… que", "english": "less… than", "audio": "/audio/unit-17/menos-que.mp3", "section": "Comparar", "example": "Esta puerta es menos pesada que aquella." },
+    { "spanish": "tan… como", "english": "as… as", "audio": "/audio/unit-17/tan-como.mp3", "section": "Comparar", "example": "Esta esclusa es tan larga como la otra." },
+    { "spanish": "el más grande", "english": "the biggest", "audio": "/audio/unit-17/el-mas-grande.mp3", "section": "Comparar", "example": "Es la obra más grande del mundo en 1914." },
+    { "spanish": "el mejor", "english": "the best", "audio": "/audio/unit-17/el-mejor.mp3", "section": "Comparar", "example": "Es el mejor ingeniero del proyecto." },
+    { "spanish": "el peor", "english": "the worst", "audio": "/audio/unit-17/el-peor.mp3", "section": "Comparar", "example": "Fue el peor año de la construcción." },
+    { "spanish": "mayor", "english": "bigger, older", "audio": "/audio/unit-17/mayor.mp3", "section": "Comparar", "example": "El barco mayor no cabe todavía." },
+    { "spanish": "menor", "english": "smaller, younger", "audio": "/audio/unit-17/menor.mp3", "section": "Comparar", "example": "La esclusa menor está al norte." },
+    { "spanish": "grande", "english": "big", "audio": "/audio/unit-17/grande.mp3", "section": "Comparar", "example": "Es una obra grande, la más grande de su tiempo." },
+    { "spanish": "pequeño", "english": "small", "audio": "/audio/unit-17/pequeno.mp3", "section": "Comparar", "example": "El barco pequeño pasa primero." },
+    { "spanish": "alto", "english": "tall, high", "audio": "/audio/unit-17/alto.mp3", "section": "Comparar", "example": "El lago está más alto que el mar." },
+    { "spanish": "largo", "english": "long", "audio": "/audio/unit-17/largo.mp3", "section": "Comparar", "example": "El canal es largo, pero no tanto como dicen." },
+    { "spanish": "pesado", "english": "heavy", "audio": "/audio/unit-17/pesado.mp3", "section": "Comparar", "example": "Nada aquí es más pesado que esas puertas." },
+    { "spanish": "este / esta", "english": "this", "audio": "/audio/unit-17/este.mp3", "section": "Comparar", "example": "Este plano es el original." },
+    { "spanish": "ese / esa", "english": "that", "audio": "/audio/unit-17/ese.mp3", "section": "Comparar", "example": "Esa copia no sirve." },
+    { "spanish": "aquel / aquella", "english": "that (over there)", "audio": "/audio/unit-17/aquel.mp3", "section": "Comparar", "example": "Aquella esclusa, la del fondo, es la más nueva." }
+  ],
+  "stages": [
+    {
+      "type": "cutscene",
+      "videoUrl": "",
+      "chiefName": "Jefa Ramírez",
+      "chiefImageSeed": 60,
+      "chiefImageUrl": "/images/characters/chief-ramirez.webp",
+      "briefingLines": [
+        "Séptimo salto, agente. Ciudad de Panamá, 14 de agosto de 1914. Mañana se abre el Canal.",
+        "ESTO ES REAL: el Canal de Panamá no es un corte plano entre dos mares. El lago Gatún está veintiséis metros más alto que el océano, así que las esclusas suben y bajan los barcos como ascensores de agua.",
+        "En la oficina del ingeniero jefe hay una caja de madera con los planos originales de las esclusas. El Cronista los quiere esta noche.",
+        "Tu gramática de hoy es comparar: más… que, menos… que, tan… como. Y los superlativos: el más grande, el mejor, el peor.",
+        "Cuidado con dos irregulares que no llevan «más»: mejor y peor. Se dice «es mejor», nunca «más bueno».",
+        "El ladrón se delata comparando. En 1914 la gente compara el canal con lo que conoce: catedrales, barcos, montañas.",
+        "El Cronista viene de otro siglo y compara con cosas que aquí todavía no existen. Escúchalo con atención.",
+        "Tres pistas, cuatro sospechosos. Solo uno cumple las tres."
+      ]
+    },
+    {
+      "type": "vocabMatch",
+      "pairs": [
+        { "spanish": "la esclusa", "english": "the lock (canal)" },
+        { "spanish": "los planos", "english": "the blueprints" },
+        { "spanish": "el acero", "english": "the steel" },
+        { "spanish": "medir", "english": "to measure" },
+        { "spanish": "pesar", "english": "to weigh" },
+        { "spanish": "más… que", "english": "more… than" },
+        { "spanish": "tan… como", "english": "as… as" },
+        { "spanish": "el mejor", "english": "the best" },
+        { "spanish": "pesado", "english": "heavy" },
+        { "spanish": "aquel / aquella", "english": "that (over there)" }
+      ]
+    },
+    {
+      "type": "swipeSort",
+      "clueReward": "El agente ya distingue una comparación correcta de una imposible. Ahora puede oír qué frases no pueden decirse en 1914.",
+      "prompt": "¿Se puede decir esto en 1914?",
+      "leftLabel": "POSIBLE",
+      "leftHint": "existe en 1914",
+      "rightLabel": "IMPOSIBLE",
+      "rightHint": "todavía no existe",
+      "items": [
+        { "text": "«Esta puerta es más alta que la catedral.»", "category": "left", "explanation": "La catedral existe en 1914. Comparación normal." },
+        { "text": "«Es más grande que un estadio de fútbol americano moderno.»", "category": "right", "explanation": "Nadie en Panamá en 1914 compara así. Delata a un viajero del tiempo." },
+        { "text": "«El lago está más alto que el mar.»", "category": "left", "explanation": "Es verdad y es de la época: 26 metros más alto." },
+        { "text": "«Pesa más que un avión de pasajeros.»", "category": "right", "explanation": "En 1914 no hay aviones de pasajeros." },
+        { "text": "«Este barco es tan largo como la calle principal.»", "category": "left", "explanation": "Comparación con algo que la gente ve todos los días." },
+        { "text": "«Se ve mejor desde un satélite.»", "category": "right", "explanation": "Imposible: no hay satélites." },
+        { "text": "«Es la obra más grande del mundo.»", "category": "left", "explanation": "En 1914 lo decían de verdad." },
+        { "text": "«Costó menos que un teléfono móvil por persona.»", "category": "right", "explanation": "No existe ese objeto ni esa comparación." },
+        { "text": "«Trabajan aquí más hombres que en toda la ciudad.»", "category": "left", "explanation": "Comparación de la época, con personas y lugares reales." },
+        { "text": "«Tardaron menos que en construir el metro de Tokio.»", "category": "right", "explanation": "Anacronismo: no es una referencia de 1914." }
+      ]
+    },
+    {
+      "type": "sentenceBuilder",
+      "clueReward": "El agente construye comparaciones correctas. Ahora las frases del sospechoso suenan aún más fuera de lugar.",
+      "sentences": [
+        { "sentence": "El lago está más alto que el océano", "translation": "The lake is higher than the ocean." },
+        { "sentence": "Esta puerta es tan pesada como aquella", "translation": "This gate is as heavy as that one." },
+        { "sentence": "Es la obra más grande del mundo", "translation": "It is the biggest project in the world." },
+        { "sentence": "Este plano es mejor que esa copia", "translation": "This blueprint is better than that copy." },
+        { "sentence": "El barco pequeño pasa menos despacio que el grande", "translation": "The small ship passes less slowly than the big one." },
+        { "sentence": "Aquella esclusa es la más nueva de las tres", "translation": "That lock over there is the newest of the three." }
+      ]
+    },
+    {
+      "type": "readingComp",
+      "clueReward": "Los planos originales son únicos: no hay copia. El que los quiera tiene que entrar en la oficina del ingeniero jefe.",
+      "passage": "BITÁCORA TEMPORAL — AGENTE DE LA LIGA SOMBRA\nDestino: Ciudad de Panamá. 14 de agosto de 1914.\n\nMañana pasa el primer barco por el Canal. Esta noche la ciudad no duerme.\n\nAprendí algo que no sabía: el Canal no es un corte plano entre dos mares. El lago Gatún está veintiséis metros más alto que el océano. Por eso hay esclusas: cajas enormes de agua que suben el barco y después lo bajan, como un ascensor.\n\nCada puerta de acero es más alta que una casa de tres pisos y pesa cientos de toneladas. Los obreros dicen que son las puertas más pesadas del mundo, y hoy tienen razón.\n\nEn la oficina del ingeniero jefe hay una caja de madera. Dentro están los planos originales de las esclusas, dibujados a mano. No hay copia. Si desaparecen, desaparece cómo se hizo esto.\n\nEsta tarde vino un hombre a mirar la esclusa de Miraflores. Habló mucho. Dijo que la esclusa era «más grande que un estadio de fútbol americano moderno». El ingeniero lo miró raro. Aquí nadie compara así. Aquí se compara con la catedral, con un barco, con la calle principal.\n\nDespués preguntó dónde se guardan los planos originales. No preguntó cómo funcionan. Preguntó dónde están.",
+      "glossary": [
+        { "word": "el corte", "translation": "the cut" },
+        { "word": "el piso", "translation": "the floor, storey" },
+        { "word": "dibujados a mano", "translation": "drawn by hand" },
+        { "word": "la caja", "translation": "the box" },
+        { "word": "raro", "translation": "strange, odd" },
+        { "word": "se guardan", "translation": "they are kept" }
+      ],
+      "questions": [
+        {
+          "id": "u17-r1",
+          "type": "multiple_choice",
+          "text": "¿Por qué necesita esclusas el Canal?",
+          "options": [
+            "Porque el lago está más alto que el océano",
+            "Porque los barcos son muy largos",
+            "Porque hay dos océanos diferentes",
+            "Porque el agua está fría"
+          ],
+          "correctIndex": 0,
+          "explanationEs": "«El lago Gatún está veintiséis metros más alto que el océano. Por eso hay esclusas».",
+          "explanationEn": "Gatún Lake sits 26 m above sea level, so ships must be lifted and lowered."
+        },
+        {
+          "id": "u17-r2",
+          "type": "multiple_choice",
+          "text": "¿Cuántas copias hay de los planos originales?",
+          "options": ["Dos", "Tres", "Ninguna: no hay copia", "Una en cada oficina"],
+          "correctIndex": 2,
+          "explanationEs": "«No hay copia. Si desaparecen, desaparece cómo se hizo esto».",
+          "explanationEn": "None — that is exactly why they are worth stealing."
+        },
+        {
+          "id": "u17-r3",
+          "type": "multiple_choice",
+          "text": "¿Con qué compara la esclusa el hombre que vino a mirar?",
+          "options": [
+            "Con la catedral",
+            "Con un barco",
+            "Con un estadio de fútbol americano moderno",
+            "Con la calle principal"
+          ],
+          "correctIndex": 2,
+          "explanationEs": "Y por eso el ingeniero lo miró raro: en 1914 nadie compara así.",
+          "explanationEn": "An anachronistic comparison — nobody in 1914 measures things that way."
+        },
+        {
+          "id": "u17-r4",
+          "type": "short_answer",
+          "text": "¿Qué preguntó el hombre sobre los planos? (Escribe en español.)",
+          "acceptableAnswers": ["dónde están", "donde estan", "dónde se guardan", "donde se guardan", "preguntó dónde están", "dónde están los planos"],
+          "explanationEs": "«No preguntó cómo funcionan. Preguntó dónde están».",
+          "explanationEn": "He asked WHERE they are, not how they work."
+        }
+      ]
+    },
+    {
+      "type": "listeningComp",
+      "clueReward": "El visitante compara con cosas que no existen, no sabe la altura del lago, y pregunta por la caja de los planos. Tres señales.",
+      "audioUrl": "/audio/unit-17/oficina-canal.mp3",
+      "transcript": "—Es impresionante, ingeniero. Esta esclusa es más grande que un estadio moderno. —¿Más grande que qué? —Que… un estadio. Da igual. ¿Cuánto sube el barco aquí? —Veintiséis metros. Es la pregunta que hace todo el mundo. —Veintiséis. Sí, claro. Menos de lo que pensaba. —¿Menos? Es la obra más grande del mundo. —Perdón. Quería decir más. Ingeniero, ¿esa caja de madera es donde están los planos originales? —Esa caja no le importa a usted. —Solo tengo curiosidad. Es mejor guardarlos en un lugar más seguro. Buenas noches.",
+      "translation": "—It's impressive, engineer. This lock is bigger than a modern stadium. —Bigger than what? —Than… a stadium. Never mind. How far does the ship rise here? —Twenty-six metres. Everyone asks that. —Twenty-six. Right. Less than I thought. —Less? It's the biggest project in the world. —Sorry. I meant more. Engineer, is that wooden box where the original blueprints are? —That box is none of your business. —Just curious. It's better to keep them somewhere safer. Good night.",
+      "retryHint": "Pista: escucha la comparación rara, el número de metros, y qué pregunta sobre la caja de madera.",
+      "passingScore": 0.6,
+      "maxReplays": 4,
+      "questions": [
+        {
+          "question": "¿Con qué compara el visitante la esclusa?",
+          "options": ["Con la catedral", "Con un estadio moderno", "Con un barco", "Con una montaña"],
+          "correctIndex": 1,
+          "explanationEs": "«Esta esclusa es más grande que un estadio moderno» — y el ingeniero no entiende la comparación.",
+          "explanationEn": "A modern stadium — a comparison that means nothing in 1914."
+        },
+        {
+          "question": "¿Cuántos metros sube el barco en la esclusa?",
+          "options": ["Dieciséis", "Veintiséis", "Treinta y seis", "Cuarenta"],
+          "correctIndex": 1,
+          "explanationEs": "«Veintiséis metros. Es la pregunta que hace todo el mundo.»",
+          "explanationEn": "Twenty-six metres."
+        },
+        {
+          "question": "Al oír el número, ¿qué dice el visitante?",
+          "options": [
+            "Que es más de lo que pensaba",
+            "Que es menos de lo que pensaba",
+            "Que no le interesa",
+            "Que ya lo sabía"
+          ],
+          "correctIndex": 1,
+          "explanationEs": "Dice «Menos de lo que pensaba» — y después se corrige. Alguien acostumbrado a obras mayores.",
+          "explanationEn": "He says it is LESS than he expected, then corrects himself."
+        },
+        {
+          "question": "¿Qué pregunta sobre la caja de madera?",
+          "options": [
+            "Cuánto pesa",
+            "Quién la construyó",
+            "Si ahí están los planos originales",
+            "De qué madera es"
+          ],
+          "correctIndex": 2,
+          "explanationEs": "«¿esa caja de madera es donde están los planos originales?»",
+          "explanationEn": "Whether the original blueprints are inside it."
+        },
+        {
+          "question": "¿Qué consejo da antes de irse?",
+          "options": [
+            "Que abran el canal más tarde",
+            "Que guarden los planos en un lugar más seguro",
+            "Que midan otra vez las puertas",
+            "Que llamen a la policía"
+          ],
+          "correctIndex": 1,
+          "explanationEs": "«Es mejor guardarlos en un lugar más seguro» — quiere saber adónde los van a mover.",
+          "explanationEn": "He suggests moving them somewhere safer — so he learns where they go next."
+        }
+      ]
+    },
+    {
+      "type": "dialogueChoice",
+      "clueReward": "El ingeniero confirma las tres: comparó con cosas imposibles, dijo que 26 metros era «menos» de lo esperado, y preguntó por la caja.",
+      "npcName": "Ingeniera jefa Delgado",
+      "npcAvatar": "📐",
+      "startNodeId": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "npcLine": "Soy la ingeniera jefa. Mañana pasa el primer barco y esta noche me falta la caja de los planos originales. Diez años de trabajo dibujados a mano. ¿Quién es usted?",
+          "options": [
+            { "text": "Soy agente de La Liga Sombra, ingeniera. Cuénteme quién estuvo hoy en la oficina.", "isCorrect": true, "nextNodeId": "quien" },
+            { "text": "¿Los planos valen mucho dinero?", "isCorrect": false, "feedback": "Pregunta de ladrón, no de detective. Preséntate primero." },
+            { "text": "Seguro que los movió usted y no se acuerda.", "isCorrect": false, "feedback": "Es tu mejor testigo y lleva tres días sin dormir. No la pierdas." }
+          ]
+        },
+        {
+          "id": "quien",
+          "npcLine": "Cuatro personas. Un capitán de barco, un periodista de Nueva York, el contador de la compañía… y un visitante que se quedó mirando la esclusa mucho rato.",
+          "options": [
+            { "text": "Hábleme del visitante. ¿Cómo hablaba?", "isCorrect": true, "nextNodeId": "visitante" },
+            { "text": "Fue el periodista, seguro.", "isCorrect": false, "feedback": "Todavía no. Pregunta antes de decidir." }
+          ]
+        },
+        {
+          "id": "visitante",
+          "npcLine": "Comparaba mal. Dijo que la esclusa era más grande que un estadio moderno. ¿Qué estadio? Aquí comparamos con la catedral o con un barco. Y cuando le dije veintiséis metros, contestó que era «menos» de lo que pensaba. ¡Menos! Es la obra más grande del mundo.",
+          "options": [
+            { "text": "¿Preguntó por los planos?", "isCorrect": true, "nextNodeId": "planos" },
+            { "text": "Quizá solo estaba nervioso.", "isCorrect": false, "feedback": "Quizá. Pero primero comprueba si preguntó por los planos." }
+          ]
+        },
+        {
+          "id": "planos",
+          "npcLine": "Preguntó si la caja de madera era donde estaban los originales. Y me aconsejó guardarlos en un sitio más seguro. Ahora entiendo para qué: para saber adónde los iba a mover.",
+          "options": [
+            { "text": "¿Los otros tres hicieron algo parecido?", "isCorrect": true, "nextNodeId": "otros" },
+            { "text": "Con eso me basta, gracias.", "isCorrect": false, "feedback": "Casi. Si los otros tres hicieron lo mismo, la pista no separa a nadie." }
+          ]
+        },
+        {
+          "id": "otros",
+          "npcLine": "El capitán preguntó por la caja, sí, pero porque quería los planos de la esclusa para maniobrar mañana. El periodista comparó raro, pero él es de Nueva York y compara con edificios de allá. El contador dijo que veintiséis metros era poco, porque él solo mira números y presupuestos. Cada uno hizo una cosa. Aquel hombre hizo las tres.",
+          "isEnd": true,
+          "endMessage": "Ya tienes el filtro: comparación imposible, «menos de lo que pensaba», y la pregunta por la caja. Busca al que cumple las tres."
+        }
+      ]
+    },
+    {
+      "type": "lineup",
+      "correctSuspectId": "cronista",
+      "hint": "Las TRES pistas: (1) comparó la esclusa con «un estadio moderno», algo que no existe en 1914; (2) dijo que veintiséis metros era MENOS de lo que esperaba; (3) preguntó dónde se guardan los planos originales. Cada uno de los otros tres cumple solo UNA.",
+      "suspects": [
+        {
+          "id": "cronista",
+          "name": "El Visitante de la Esclusa",
+          "realName": "El Cronista",
+          "age": 33,
+          "description": "Se quedó mirando la esclusa de Miraflores mucho rato. Comparó la obra con «un estadio de fútbol americano moderno». Al oír que el barco sube veintiséis metros contestó que era menos de lo que pensaba. Preguntó si los planos originales estaban en la caja de madera y aconsejó moverlos a un lugar «más seguro». Lleva un reloj que no hace ningún ruido.",
+          "imageSeed": 34
+        },
+        {
+          "id": "capitan",
+          "name": "El Capitán del Barco",
+          "realName": "Ezequiel Prado Bermúdez",
+          "age": 49,
+          "description": "Preguntó por la caja de los planos, igual que el ladrón — pero porque mañana tiene que maniobrar su barco dentro de la esclusa y quería medidas exactas. Sabe perfectamente que el lago está veintiséis metros más alto: lo repitió dos veces. Compara todo con otros puertos que conoce.",
+          "imageSeed": 19
+        },
+        {
+          "id": "periodista",
+          "name": "El Periodista de Nueva York",
+          "realName": "Walter Crane Aponte",
+          "age": 37,
+          "description": "Comparó la esclusa con edificios raros, igual que el ladrón — pero con rascacielos de Nueva York, que en 1914 ya existen y él ve todos los días. Le impresionaron los veintiséis metros y lo escribió tres veces en su cuaderno. Nunca preguntó dónde se guardan los planos.",
+          "imageSeed": 26
+        },
+        {
+          "id": "contador",
+          "name": "El Contador de la Compañía",
+          "realName": "Isidoro Lasso Quintero",
+          "age": 58,
+          "description": "Dijo que veintiséis metros le parecía poco, igual que el ladrón — pero porque solo piensa en números y en cuánto costó cada metro. Compara con presupuestos, no con estadios. Entra en la oficina cada día y nunca ha mirado la caja de madera.",
+          "imageSeed": 44
+        }
+      ]
+    }
+  ]
+}

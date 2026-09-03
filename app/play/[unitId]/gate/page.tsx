@@ -6,6 +6,7 @@ import { getVocabReadinessScore } from "@/lib/mastery";
 import { UNITS, ROMAN } from "@/lib/game/units";
 import { hasWorld } from "@/lib/scroll-world/worlds";
 import GateClient from "./GateClient";
+import { loadUnitContent } from "@/lib/game/unit-content";
 
 // Friendly "coming soon" panel rendered for any unit whose content hasn't shipped yet.
 // Replaces the previous silent redirect-to-mission-board, which made missing units
@@ -48,27 +49,8 @@ function ComingSoonPanel({ unitNumber }: { unitNumber: number }) {
 
 // Unit content registry — mirrors the one in /play/[unitId]/page.tsx
 function getUnitContent(unitNumber: number) {
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
-  if (unitNumber === 1) return require("@/content/unit-01.json");
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
-  if (unitNumber === 2) return require("@/content/unit-02.json");
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
-  if (unitNumber === 3) return require("@/content/unit-03.json");
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
-  if (unitNumber === 4) return require("@/content/unit-04.json");
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
-  if (unitNumber === 5) return require("@/content/unit-05.json");
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
-  if (unitNumber === 6) return require("@/content/unit-06.json");
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
-  if (unitNumber === 7) return require("@/content/unit-07.json");
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
-  if (unitNumber === 8) return require("@/content/unit-08.json");
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
-  if (unitNumber === 9) return require("@/content/unit-09.json");
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
-  if (unitNumber === 10) return require("@/content/unit-10.json");
-  return null;
+  // One registry for every route — see lib/game/unit-content.ts for why.
+  return loadUnitContent(unitNumber);
 }
 
 interface PageProps {

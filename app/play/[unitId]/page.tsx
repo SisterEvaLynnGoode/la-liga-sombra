@@ -1,45 +1,16 @@
 import { redirect } from "next/navigation";
 import { getStudentSession } from "@/lib/auth/session";
 import { createClient } from "@/lib/supabase/server";
-import type { UnitContent } from "@/lib/types/unit-content";
 import { getSkillWeights } from "@/lib/mastery";
 import { generateStakeoutQuestions } from "@/lib/question-generator";
 import { getOverdueReviewTerms } from "@/lib/spaced-repetition";
 import UnitPlayer from "./UnitPlayer";
+import { loadUnitContent } from "@/lib/game/unit-content";
 
 // Unit content registry — add new units here as they're built
-function getUnitContent(unitNumber: number): UnitContent | null {
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
-  if (unitNumber === 1) return require("@/content/unit-01.json") as UnitContent;
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
-  if (unitNumber === 2) return require("@/content/unit-02.json") as UnitContent;
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
-  if (unitNumber === 3) return require("@/content/unit-03.json") as UnitContent;
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
-  if (unitNumber === 4) return require("@/content/unit-04.json") as UnitContent;
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
-  if (unitNumber === 5) return require("@/content/unit-05.json") as UnitContent;
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
-  if (unitNumber === 6) return require("@/content/unit-06.json") as UnitContent;
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
-  if (unitNumber === 7) return require("@/content/unit-07.json") as UnitContent;
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
-  if (unitNumber === 8) return require("@/content/unit-08.json") as UnitContent;
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
-  if (unitNumber === 9) return require("@/content/unit-09.json") as UnitContent;
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
-  if (unitNumber === 10) return require("@/content/unit-10.json") as UnitContent;
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
-  if (unitNumber === 11) return require("@/content/unit-11.json") as UnitContent;
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
-  if (unitNumber === 12) return require("@/content/unit-12.json") as UnitContent;
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
-  if (unitNumber === 13) return require("@/content/unit-13.json") as UnitContent;
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
-  if (unitNumber === 14) return require("@/content/unit-14.json") as UnitContent;
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
-  if (unitNumber === 15) return require("@/content/unit-15.json") as UnitContent;
-  return null;
+function getUnitContent(unitNumber: number) {
+  // One registry for every route — see lib/game/unit-content.ts for why.
+  return loadUnitContent(unitNumber);
 }
 
 interface PageProps {

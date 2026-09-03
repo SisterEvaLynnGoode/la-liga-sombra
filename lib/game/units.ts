@@ -115,4 +115,37 @@ export const UNITS: UnitMeta[] = [
     description: "Havana in 1954 and the mambo — direct and indirect object pronouns together (me lo, se la)",
     criminal: "El Cronista",      stolenItem: "El Disco Maestro",      rotation: -2.4, themeColor: "#b8860b",
   },
+  // ── "La Última Estación" — the Casos 16-20 season ──
+  // Same time-travel arc, but from here the student is in a faction chosen by
+  // how Operación Reloj de Arena ended. See lib/season/factions.ts.
+  {
+    number: 16, country: "Uruguay",             countryCode: "UY", flag: "🇺🇾",
+    titleEs: "El Balón de la Final", titleEn: "The Final's Ball",
+    description: "Montevideo 1930 and the first World Cup — reflexive verbs and daily routine",
+    criminal: "El Cronista",      stolenItem: "El Balón de la Final",  rotation: 1.9,  themeColor: "#2f7fa8",
+  },
+  {
+    number: 17, country: "Panamá",              countryCode: "PA", flag: "🇵🇦",
+    titleEs: "Los Planos del Ingeniero", titleEn: "The Engineer's Blueprints",
+    description: "The Canal opening in 1914 — comparatives, superlatives and demonstratives",
+    criminal: "El Cronista",      stolenItem: "Los Planos del Ingeniero", rotation: -1.7, themeColor: "#0f6f6f",
+  },
+  {
+    number: 18, country: "Paraguay",            countryCode: "PY", flag: "🇵🇾",
+    titleEs: "El Patrón de Ñandutí", titleEn: "The Ñandutí Pattern",
+    description: "Itauguá, the harp and spiderweb lace — affirmative tú commands as how-to instructions",
+    criminal: "El Cronista",      stolenItem: "El Patrón de Ñandutí",  rotation: 2.3,  themeColor: "#8b3a62",
+  },
+  {
+    number: 19, country: "Venezuela",           countryCode: "VE", flag: "🇻🇪",
+    titleEs: "El Mapa del Explorador", titleEn: "The Explorer's Map",
+    description: "The 1937 Angel Falls expedition — gentle introduction to the preterite (fue, llegó, vio, tuvo)",
+    criminal: "El Cronista",      stolenItem: "El Mapa del Explorador", rotation: -2.0, themeColor: "#3f7f3f",
+  },
+  {
+    number: 20, country: "Bolivia",             countryCode: "BO", flag: "🇧🇴",
+    titleEs: "La Clave de la Puerta del Sol", titleEn: "The Sun Gate Keystone",
+    description: "Tiwanaku and Lake Titicaca — the imperfect (era, había, tenía) against the preterite",
+    criminal: "El Cronista",      stolenItem: "La Clave de la Puerta del Sol", rotation: 1.6, themeColor: "#7a5c2e",
+  },
 ];

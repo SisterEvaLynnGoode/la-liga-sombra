@@ -1,0 +1,688 @@
+{
+  "unitNumber": 19,
+  "country": "Venezuela",
+  "city": "Canaima",
+  "caseTitle": "El Mapa del Explorador",
+  "caseDescription": "El Cronista viaja a la selva de Canaima en 1937 para robar el mapa que marca la ruta hasta el Salto Ángel, la cascada más alta del mundo.",
+  "criminalName": "El Cronista",
+  "bonusClue": "El Cronista cuenta lo que pasó ayer sin haber estado ayer. Dice «llegó», «vio», «tuvo» con demasiada seguridad. Sabe el pasado porque lo leyó, no porque lo vivió.",
+  "vocab": [
+    {
+      "spanish": "la selva",
+      "english": "the jungle",
+      "audio": "/audio/unit-19/selva.mp3",
+      "section": "La Expedición",
+      "example": "La selva empieza donde termina el río."
+    },
+    {
+      "spanish": "el río",
+      "english": "the river",
+      "audio": "/audio/unit-19/rio.mp3",
+      "section": "La Expedición",
+      "example": "Subimos el río en curiara."
+    },
+    {
+      "spanish": "la cascada",
+      "english": "the waterfall",
+      "audio": "/audio/unit-19/cascada.mp3",
+      "section": "La Expedición",
+      "example": "La cascada cae casi mil metros."
+    },
+    {
+      "spanish": "el tepuy",
+      "english": "the tepui (table mountain)",
+      "audio": "/audio/unit-19/tepuy.mp3",
+      "section": "La Expedición",
+      "example": "Un tepuy es una montaña con la cima plana."
+    },
+    {
+      "spanish": "la cima",
+      "english": "the summit, the top",
+      "audio": "/audio/unit-19/cima.mp3",
+      "section": "La Expedición",
+      "example": "La cima está siempre entre nubes."
+    },
+    {
+      "spanish": "el mapa",
+      "english": "the map",
+      "audio": "/audio/unit-19/mapa.mp3",
+      "section": "La Expedición",
+      "example": "El mapa marca la única ruta segura."
+    },
+    {
+      "spanish": "la ruta",
+      "english": "the route",
+      "audio": "/audio/unit-19/ruta.mp3",
+      "section": "La Expedición",
+      "example": "Sin la ruta, la selva se cierra detrás de ti."
+    },
+    {
+      "spanish": "la avioneta",
+      "english": "the small plane",
+      "audio": "/audio/unit-19/avioneta.mp3",
+      "section": "La Expedición",
+      "example": "El explorador llegó en avioneta."
+    },
+    {
+      "spanish": "el explorador",
+      "english": "the explorer",
+      "audio": "/audio/unit-19/explorador.mp3",
+      "section": "La Expedición",
+      "example": "El explorador dibujó el mapa a mano."
+    },
+    {
+      "spanish": "el guía",
+      "english": "the guide",
+      "audio": "/audio/unit-19/guia.mp3",
+      "section": "La Expedición",
+      "example": "El guía conoce el río desde niño."
+    },
+    {
+      "spanish": "la lluvia",
+      "english": "the rain",
+      "audio": "/audio/unit-19/lluvia.mp3",
+      "section": "La Expedición",
+      "example": "Con la lluvia, el río sube dos metros."
+    },
+    {
+      "spanish": "la niebla",
+      "english": "the fog",
+      "audio": "/audio/unit-19/niebla.mp3",
+      "section": "La Expedición",
+      "example": "La niebla tapó la cascada toda la mañana."
+    },
+    {
+      "spanish": "la brújula",
+      "english": "the compass",
+      "audio": "/audio/unit-19/brujula.mp3",
+      "section": "La Expedición",
+      "example": "Aquí la brújula falla cerca de la roca."
+    },
+    {
+      "spanish": "el campamento",
+      "english": "the camp",
+      "audio": "/audio/unit-19/campamento.mp3",
+      "section": "La Expedición",
+      "example": "El campamento está al lado del río."
+    },
+    {
+      "spanish": "peligroso",
+      "english": "dangerous",
+      "audio": "/audio/unit-19/peligroso.mp3",
+      "section": "La Expedición",
+      "example": "El paso es peligroso después de la lluvia."
+    },
+    {
+      "spanish": "ayer",
+      "english": "yesterday",
+      "audio": "/audio/unit-19/ayer.mp3",
+      "section": "La Expedición",
+      "example": "Ayer nadie subió al tepuy."
+    },
+    {
+      "spanish": "fue",
+      "english": "he/she went; he/she was",
+      "audio": "/audio/unit-19/fue.mp3",
+      "section": "Lo que pasó",
+      "example": "Ayer fue al campamento del norte."
+    },
+    {
+      "spanish": "llegó",
+      "english": "he/she arrived",
+      "audio": "/audio/unit-19/llego.mp3",
+      "section": "Lo que pasó",
+      "example": "Llegó a las seis de la tarde."
+    },
+    {
+      "spanish": "vio",
+      "english": "he/she saw",
+      "audio": "/audio/unit-19/vio.mp3",
+      "section": "Lo que pasó",
+      "example": "Vio la cascada solo un minuto."
+    },
+    {
+      "spanish": "hizo",
+      "english": "he/she did, made",
+      "audio": "/audio/unit-19/hizo.mp3",
+      "section": "Lo que pasó",
+      "example": "¿Qué hizo ayer por la mañana?"
+    },
+    {
+      "spanish": "tuvo",
+      "english": "he/she had",
+      "audio": "/audio/unit-19/tuvo.mp3",
+      "section": "Lo que pasó",
+      "example": "Tuvo suerte con la niebla."
+    },
+    {
+      "spanish": "dijo",
+      "english": "he/she said",
+      "audio": "/audio/unit-19/dijo.mp3",
+      "section": "Lo que pasó",
+      "example": "Dijo que no conocía el río."
+    },
+    {
+      "spanish": "estuvo",
+      "english": "he/she was (location)",
+      "audio": "/audio/unit-19/estuvo.mp3",
+      "section": "Lo que pasó",
+      "example": "Estuvo en el campamento toda la noche."
+    },
+    {
+      "spanish": "salió",
+      "english": "he/she left, went out",
+      "audio": "/audio/unit-19/salio.mp3",
+      "section": "Lo que pasó",
+      "example": "Salió antes del amanecer."
+    },
+    {
+      "spanish": "volvió",
+      "english": "he/she came back",
+      "audio": "/audio/unit-19/volvio.mp3",
+      "section": "Lo que pasó",
+      "example": "Volvió con los zapatos secos."
+    },
+    {
+      "spanish": "habló",
+      "english": "he/she spoke",
+      "audio": "/audio/unit-19/hablo.mp3",
+      "section": "Lo que pasó",
+      "example": "Habló con el guía dos veces."
+    },
+    {
+      "spanish": "buscó",
+      "english": "he/she looked for",
+      "audio": "/audio/unit-19/busco.mp3",
+      "section": "Lo que pasó",
+      "example": "Buscó el mapa en la carpa."
+    },
+    {
+      "spanish": "anoche",
+      "english": "last night",
+      "audio": "/audio/unit-19/anoche.mp3",
+      "section": "Lo que pasó",
+      "example": "Anoche llovió sin parar."
+    },
+    {
+      "spanish": "esta mañana",
+      "english": "this morning",
+      "audio": "/audio/unit-19/esta-manana.mp3",
+      "section": "Lo que pasó",
+      "example": "Esta mañana el mapa ya no estaba."
+    },
+    {
+      "spanish": "hace dos días",
+      "english": "two days ago",
+      "audio": "/audio/unit-19/hace-dos-dias.mp3",
+      "section": "Lo que pasó",
+      "example": "Hace dos días llegó la expedición."
+    },
+    {
+      "spanish": "nunca",
+      "english": "never",
+      "audio": "/audio/unit-19/nunca.mp3",
+      "section": "Lo que pasó",
+      "example": "Nunca estuvo aquí antes… eso dice."
+    }
+  ],
+  "stages": [
+    {
+      "type": "cutscene",
+      "videoUrl": "",
+      "chiefName": "Jefa Ramírez",
+      "chiefImageSeed": 60,
+      "chiefImageUrl": "/images/characters/chief-ramirez.webp",
+      "briefingLines": [
+        "Noveno salto, agente. Canaima, Venezuela, 1937. Selva, ríos y montañas de cima plana.",
+        "ESTO ES REAL: el Salto Ángel es la cascada más alta del mundo, casi mil metros. En 1937 casi nadie del exterior la había visto, y llegar hasta ella solo era posible en avioneta o remontando el río con un guía.",
+        "En el campamento hay un mapa dibujado a mano con la única ruta segura hasta la base. El Cronista lo quiere.",
+        "Hoy empieza algo nuevo, agente: el pasado. Hasta ahora todo lo contábamos en presente. A partir de aquí vas a RECONOCER el pretérito.",
+        "No tienes que conjugarlo todavía. Solo tienes que oírlo: fue, llegó, vio, hizo, tuvo, dijo, estuvo. Son los siete que más vas a encontrar.",
+        "Y una advertencia. Después del último caso, tu facción tiene una fuente de información. Hoy esa fuente te va a fallar.",
+        "No te fíes de lo que te llegue fácil. Comprueba cada dato contra lo que digan los testigos.",
+        "Tres pistas, cuatro sospechosos. Solo uno cumple las tres."
+      ]
+    },
+    {
+      "type": "vocabMatch",
+      "pairs": [
+        {
+          "spanish": "la selva",
+          "english": "the jungle"
+        },
+        {
+          "spanish": "la cascada",
+          "english": "the waterfall"
+        },
+        {
+          "spanish": "el tepuy",
+          "english": "the table mountain"
+        },
+        {
+          "spanish": "el mapa",
+          "english": "the map"
+        },
+        {
+          "spanish": "la niebla",
+          "english": "the fog"
+        },
+        {
+          "spanish": "fue",
+          "english": "he/she went"
+        },
+        {
+          "spanish": "llegó",
+          "english": "he/she arrived"
+        },
+        {
+          "spanish": "vio",
+          "english": "he/she saw"
+        },
+        {
+          "spanish": "tuvo",
+          "english": "he/she had"
+        },
+        {
+          "spanish": "anoche",
+          "english": "last night"
+        }
+      ]
+    },
+    {
+      "type": "swipeSort",
+      "clueReward": "El agente ya oye la diferencia entre lo que pasa y lo que pasó. Ahora puede ordenar los testimonios de anoche.",
+      "prompt": "¿AHORA o ANOCHE?",
+      "leftLabel": "AHORA",
+      "leftHint": "presente",
+      "rightLabel": "ANOCHE",
+      "rightHint": "pretérito, ya pasó",
+      "items": [
+        {
+          "text": "«El guía sube el río.»",
+          "category": "left",
+          "explanation": "sube — presente."
+        },
+        {
+          "text": "«El guía subió el río anoche.»",
+          "category": "right",
+          "explanation": "subió — pretérito."
+        },
+        {
+          "text": "«Llega a las seis.»",
+          "category": "left",
+          "explanation": "llega — presente."
+        },
+        {
+          "text": "«Llegó a las seis.»",
+          "category": "right",
+          "explanation": "llegó — pretérito. Escucha el acento al final."
+        },
+        {
+          "text": "«Veo la cascada desde aquí.»",
+          "category": "left",
+          "explanation": "veo — presente."
+        },
+        {
+          "text": "«Vio la cascada un minuto.»",
+          "category": "right",
+          "explanation": "vio — pretérito irregular."
+        },
+        {
+          "text": "«Tiene suerte con la niebla.»",
+          "category": "left",
+          "explanation": "tiene — presente."
+        },
+        {
+          "text": "«Tuvo suerte con la niebla.»",
+          "category": "right",
+          "explanation": "tuvo — pretérito irregular de tener."
+        },
+        {
+          "text": "«Está en el campamento.»",
+          "category": "left",
+          "explanation": "está — presente."
+        },
+        {
+          "text": "«Estuvo en el campamento toda la noche.»",
+          "category": "right",
+          "explanation": "estuvo — pretérito irregular de estar."
+        },
+        {
+          "text": "«Dice que no conoce el río.»",
+          "category": "left",
+          "explanation": "dice — presente."
+        },
+        {
+          "text": "«Dijo que no conocía el río.»",
+          "category": "right",
+          "explanation": "dijo — pretérito irregular de decir."
+        }
+      ]
+    },
+    {
+      "type": "sentenceBuilder",
+      "clueReward": "El agente reconstruye la noche entera en pretérito. Ahora cualquier hueco en un testimonio se ve enseguida.",
+      "sentences": [
+        {
+          "sentence": "Anoche llovió sin parar",
+          "translation": "Last night it rained without stopping."
+        },
+        {
+          "sentence": "El explorador llegó en avioneta",
+          "translation": "The explorer arrived by small plane."
+        },
+        {
+          "sentence": "Vio la cascada solo un minuto",
+          "translation": "He saw the waterfall for only a minute."
+        },
+        {
+          "sentence": "Estuvo en el campamento toda la noche",
+          "translation": "He was at the camp all night."
+        },
+        {
+          "sentence": "Salió antes del amanecer y volvió con los zapatos secos",
+          "translation": "He left before dawn and came back with dry shoes."
+        },
+        {
+          "sentence": "Esta mañana el mapa ya no estaba",
+          "translation": "This morning the map was no longer there."
+        }
+      ]
+    },
+    {
+      "type": "readingComp",
+      "clueReward": "Anoche llovió. Quien salió del campamento tiene que volver mojado. El que volvió seco no salió por el camino que dice.",
+      "passage": "BITÁCORA TEMPORAL — AGENTE DE LA LIGA SOMBRA\nDestino: Canaima, Venezuela. 1937.\n\nEl campamento está al lado del río. Detrás empieza la selva y, más allá, los tepuyes: montañas enormes con la cima plana, siempre entre nubes.\n\nDesde uno de ellos cae el Salto Ángel: casi mil metros de agua. Es la cascada más alta del mundo. En 1937 muy poca gente de fuera la ha visto.\n\nLlegar no es fácil. O vas en avioneta, o subes el río con un guía que conozca el paso. El explorador dibujó a mano un mapa con la única ruta segura. No hay copia.\n\nAnoche llovió sin parar. El río subió dos metros y el camino de la selva se convirtió en barro. Cualquiera que saliera del campamento volvería mojado hasta las rodillas. Eso lo sabe todo el mundo aquí.\n\nEsta mañana el mapa ya no estaba en la carpa del explorador.\n\nHay un hombre en el campamento que cuenta lo de ayer con mucha seguridad. Dice que la expedición llegó hace dos días, que el explorador vio la cascada solo un minuto por la niebla, y que anoche nadie subió al tepuy. Todo es verdad. El problema es que él llegó esta mañana.\n\nY volvió al campamento con los zapatos secos.",
+      "glossary": [
+        {
+          "word": "más allá",
+          "translation": "beyond"
+        },
+        {
+          "word": "el barro",
+          "translation": "the mud"
+        },
+        {
+          "word": "la carpa",
+          "translation": "the tent"
+        },
+        {
+          "word": "hasta las rodillas",
+          "translation": "up to the knees"
+        },
+        {
+          "word": "seco",
+          "translation": "dry"
+        },
+        {
+          "word": "la seguridad",
+          "translation": "certainty, confidence"
+        }
+      ],
+      "questions": [
+        {
+          "id": "u19-r1",
+          "type": "multiple_choice",
+          "text": "¿Qué pasó anoche?",
+          "options": [
+            "Hubo niebla",
+            "Llovió sin parar",
+            "Llegó una avioneta",
+            "Subieron al tepuy"
+          ],
+          "correctIndex": 1,
+          "explanationEs": "«Anoche llovió sin parar. El río subió dos metros».",
+          "explanationEn": "It rained all night — which is what makes dry shoes impossible."
+        },
+        {
+          "id": "u19-r2",
+          "type": "multiple_choice",
+          "text": "¿Cómo se puede llegar al Salto Ángel en 1937?",
+          "options": [
+            "En tren o en autobús",
+            "Solo a pie",
+            "En avioneta, o subiendo el río con un guía",
+            "Por una carretera nueva"
+          ],
+          "correctIndex": 2,
+          "explanationEs": "«O vas en avioneta, o subes el río con un guía que conozca el paso».",
+          "explanationEn": "By small plane, or up the river with a guide."
+        },
+        {
+          "id": "u19-r3",
+          "type": "multiple_choice",
+          "text": "¿Por qué es raro lo que cuenta el hombre?",
+          "options": [
+            "Porque miente sobre la cascada",
+            "Porque cuenta lo de ayer con seguridad, pero él llegó esta mañana",
+            "Porque no habla español",
+            "Porque no conoce al explorador"
+          ],
+          "correctIndex": 1,
+          "explanationEs": "«Todo es verdad. El problema es que él llegó esta mañana».",
+          "explanationEn": "Everything he says is true — but he wasn't there to see it."
+        },
+        {
+          "id": "u19-r4",
+          "type": "short_answer",
+          "text": "¿Cómo volvió al campamento? (Escribe en español: ¿mojado o seco?)",
+          "acceptableAnswers": [
+            "seco",
+            "con los zapatos secos",
+            "volvió seco",
+            "los zapatos secos",
+            "seco / con los zapatos secos"
+          ],
+          "explanationEs": "«volvió al campamento con los zapatos secos» — imposible después de esa lluvia.",
+          "explanationEn": "Dry — impossible after a night of rain on a mud path."
+        }
+      ]
+    },
+    {
+      "type": "listeningComp",
+      "clueReward": "El forastero sabe lo que pasó sin haber estado, volvió seco después de una noche de lluvia, y preguntó por la carpa del mapa.",
+      "audioUrl": "/audio/unit-19/campamento-canaima.mp3",
+      "transcript": "—Buenos días. ¿Usted llegó con la expedición? —No. Llegué esta mañana. —Entonces no vio lo de anoche. —Sé lo que pasó. Llovió sin parar, el río subió, y nadie subió al tepuy. El explorador vio la cascada solo un minuto: había mucha niebla. —¿Y cómo sabe usted todo eso? —Hablé con gente. —Con nadie de aquí. Yo estuve despierto toda la noche. Y otra cosa: usted salió al camino hace un rato y volvió con los zapatos secos. Ahí fuera hay barro hasta las rodillas. —Caminé por las piedras. Dígame, ¿el mapa del explorador está en aquella carpa? —¿Por qué le interesa tanto esa carpa?",
+      "translation": "—Good morning. Did you arrive with the expedition? —No. I arrived this morning. —Then you didn't see what happened last night. —I know what happened. It rained without stopping, the river rose, and nobody climbed the tepui. The explorer saw the waterfall for only a minute: there was heavy fog. —And how do you know all that? —I spoke to people. —Not to anyone here. I was awake all night. And another thing: you went out to the path a while ago and came back with dry shoes. Out there the mud is knee-deep. —I walked on the stones. Tell me, is the explorer's map in that tent? —Why are you so interested in that tent?",
+      "retryHint": "Pista: escucha cuándo llegó, cómo sabe lo de anoche, cómo volvió del camino, y por qué carpa pregunta.",
+      "passingScore": 0.6,
+      "maxReplays": 4,
+      "questions": [
+        {
+          "question": "¿Cuándo llegó el forastero?",
+          "options": [
+            "Con la expedición",
+            "Hace dos días",
+            "Anoche",
+            "Esta mañana"
+          ],
+          "correctIndex": 3,
+          "explanationEs": "«Llegué esta mañana» — y aun así cuenta lo de anoche.",
+          "explanationEn": "This morning — yet he narrates last night in detail."
+        },
+        {
+          "question": "Según él, ¿qué pasó anoche?",
+          "options": [
+            "Hubo sol y nadie durmió",
+            "Llovió sin parar y nadie subió al tepuy",
+            "Llegó una avioneta",
+            "El explorador subió a la cima"
+          ],
+          "correctIndex": 1,
+          "explanationEs": "«Llovió sin parar, el río subió, y nadie subió al tepuy».",
+          "explanationEn": "Rain all night, river up, nobody climbed."
+        },
+        {
+          "question": "¿Cuánto tiempo vio la cascada el explorador?",
+          "options": [
+            "Toda la tarde",
+            "Una hora",
+            "Solo un minuto",
+            "No la vio"
+          ],
+          "correctIndex": 2,
+          "explanationEs": "«vio la cascada solo un minuto: había mucha niebla».",
+          "explanationEn": "Only a minute, because of the fog."
+        },
+        {
+          "question": "¿Qué le llama la atención al testigo sobre los zapatos?",
+          "options": [
+            "Que son nuevos",
+            "Que volvió con los zapatos secos aunque hay barro",
+            "Que perdió uno en el río",
+            "Que son demasiado grandes"
+          ],
+          "correctIndex": 1,
+          "explanationEs": "«volvió con los zapatos secos. Ahí fuera hay barro hasta las rodillas».",
+          "explanationEn": "Dry shoes after a night of rain — the physical impossibility."
+        },
+        {
+          "question": "¿Qué pregunta al final?",
+          "options": [
+            "Si el mapa está en aquella carpa",
+            "Cuándo sale la avioneta",
+            "Dónde está el guía",
+            "Si va a llover otra vez"
+          ],
+          "correctIndex": 0,
+          "explanationEs": "«¿el mapa del explorador está en aquella carpa?»",
+          "explanationEn": "Whether the map is in that tent."
+        }
+      ]
+    },
+    {
+      "type": "dialogueChoice",
+      "clueReward": "El guía confirma las tres — y avisa de algo peor: el dato que te llegó «de tu fuente» esta mañana era falso.",
+      "npcName": "Aurelia Sanoja, la guía",
+      "npcAvatar": "🧭",
+      "startNodeId": "start",
+      "nodes": [
+        {
+          "id": "start",
+          "npcLine": "Soy Aurelia. Subo este río desde los once años. Anoche llovió como pocas veces y esta mañana falta el mapa del explorador. Antes de nada, agente: ¿usted recibió información esta mañana?",
+          "options": [
+            {
+              "text": "Sí. Me llegó un dato de mi fuente: que el ladrón salió del campamento anoche.",
+              "isCorrect": true,
+              "nextNodeId": "falso"
+            },
+            {
+              "text": "No necesito información de nadie.",
+              "isCorrect": false,
+              "feedback": "Sí la recibiste. Y hoy importa de dónde vino: dilo."
+            }
+          ]
+        },
+        {
+          "id": "falso",
+          "npcLine": "Ese dato es falso. Anoche nadie salió de este campamento: el río estaba imposible y yo estuve despierta. Alguien le mandó a usted por el camino equivocado a propósito. Piense en quién le da esa información y por qué hoy le mintió.",
+          "options": [
+            {
+              "text": "Entendido. Entonces empiezo otra vez, con los testigos. ¿Quién llegó esta mañana?",
+              "isCorrect": true,
+              "nextNodeId": "quien"
+            },
+            {
+              "text": "Mi fuente nunca falla.",
+              "isCorrect": false,
+              "feedback": "Hoy falló. Ese es el punto: comprueba todo contra los testigos."
+            }
+          ]
+        },
+        {
+          "id": "quien",
+          "npcLine": "Cuatro personas llegaron esta mañana: un piloto, una botánica, un periodista de Caracas… y un hombre que cuenta lo de anoche como si hubiera estado aquí.",
+          "options": [
+            {
+              "text": "Hábleme de él. ¿Qué contó exactamente?",
+              "isCorrect": true,
+              "nextNodeId": "conto"
+            },
+            {
+              "text": "Fue el piloto, seguro: él vuela hasta la cascada.",
+              "isCorrect": false,
+              "feedback": "No adelantes. Pregunta primero."
+            }
+          ]
+        },
+        {
+          "id": "conto",
+          "npcLine": "Contó que llovió, que el río subió, que nadie subió al tepuy y que el explorador vio la cascada un minuto por la niebla. Todo cierto. Y él llegó esta mañana. Después salió al camino y volvió con los zapatos secos, con el barro que hay ahí fuera.",
+          "options": [
+            {
+              "text": "¿Preguntó por el mapa?",
+              "isCorrect": true,
+              "nextNodeId": "mapa"
+            },
+            {
+              "text": "Quizá se lo contó alguien.",
+              "isCorrect": false,
+              "feedback": "Aquí no. Aurelia estuvo despierta toda la noche y no habló con él."
+            }
+          ]
+        },
+        {
+          "id": "mapa",
+          "npcLine": "Preguntó por la carpa del explorador. Los otros tres también hicieron una cosa rara cada uno, se lo aviso, para que no acuse al primero que le suene mal.",
+          "options": [
+            {
+              "text": "Cuénteme qué hizo cada uno.",
+              "isCorrect": true,
+              "nextNodeId": "otros"
+            },
+            {
+              "text": "No hace falta. Ya sé quién fue.",
+              "isCorrect": false,
+              "feedback": "Hoy no. Tu fuente ya te mintió una vez esta mañana — comprueba a los otros tres antes de acusar a nadie."
+            }
+          ]
+        },
+        {
+          "id": "otros",
+          "npcLine": "El piloto volvió con los zapatos secos, sí — porque no bajó de la avioneta hasta la pista de piedra. La botánica preguntó por la carpa del mapa, pero quería las notas de plantas, y llegó ayer, no hoy. El periodista contó lo de anoche con detalle, pero se lo conté yo misma al desayuno. Cada uno, una. Aquel hombre, las tres.",
+          "isEnd": true,
+          "endMessage": "Tienes el filtro y una lección: hoy tu fuente te mintió. Busca al que llegó esta mañana, cuenta anoche como testigo, y volvió seco."
+        }
+      ]
+    },
+    {
+      "type": "lineup",
+      "correctSuspectId": "cronista",
+      "hint": "Las TRES pistas: (1) llegó esta mañana pero cuenta lo de ANOCHE como si lo hubiera visto; (2) volvió del camino con los zapatos SECOS después de una noche de lluvia y barro; (3) preguntó por la carpa donde está el mapa. Cada uno de los otros tres cumple solo UNA. Y recuerda: el dato que te llegó de tu fuente esta mañana era falso.",
+      "suspects": [
+        {
+          "id": "cronista",
+          "name": "El Hombre que Contó Anoche",
+          "realName": "El Cronista",
+          "age": 33,
+          "description": "Llegó esta mañana y aun así contó con seguridad que anoche llovió, que el río subió, que nadie subió al tepuy y que el explorador vio la cascada solo un minuto. Salió al camino embarrado y volvió con los zapatos secos. Preguntó si el mapa estaba en la carpa del explorador. Lleva un reloj que no hace ningún ruido.",
+          "imageSeed": 34
+        },
+        {
+          "id": "piloto",
+          "name": "El Piloto",
+          "realName": "Ramiro Colmenares Ortiz",
+          "age": 44,
+          "description": "Volvió con los zapatos secos, igual que el ladrón — pero porque aterrizó en la pista de piedra y no pisó el camino de barro ni una vez. Llegó esta mañana y no sabe nada de anoche: preguntó tres veces qué había pasado con el río.",
+          "imageSeed": 17
+        },
+        {
+          "id": "botanica",
+          "name": "La Botánica",
+          "realName": "Ligia Herrera Paz",
+          "age": 35,
+          "description": "Preguntó por la carpa del explorador, igual que el ladrón — pero buscaba las notas de plantas del tepuy, no el mapa. Llegó ayer por la tarde, durmió aquí, y volvió del camino con las botas llenas de barro hasta las rodillas.",
+          "imageSeed": 30
+        },
+        {
+          "id": "periodista",
+          "name": "El Periodista de Caracas",
+          "realName": "Teo Marcano Rivas",
+          "age": 28,
+          "description": "Contó lo de anoche con todo detalle, igual que el ladrón — pero porque Aurelia se lo contó en el desayuno y él lo apuntó todo en su cuaderno, con el nombre de ella al lado. Llegó esta mañana, se acercó al río y volvió empapado.",
+          "imageSeed": 25
+        }
+      ]
+    }
+  ]
+}
