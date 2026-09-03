@@ -12,6 +12,7 @@ import BossTab from "@/components/dashboard/tabs/BossTab";
 import BandejaTab from "@/components/dashboard/tabs/BandejaTab";
 import PacingTab from "@/components/dashboard/tabs/PacingTab";
 import GradesTab from "@/components/dashboard/tabs/GradesTab";
+import HoyTab from "@/components/dashboard/tabs/HoyTab";
 import MundosTab from "@/components/dashboard/tabs/MundosTab";
 
 interface ClassRow { id: string; class_code: string; teacher_name: string; period_name: string; student_count: number }
@@ -26,27 +27,46 @@ const PRESET_MESSAGES = [
   "👀 Miren su pantalla",
 ];
 
-type TabId = "overview" | "students" | "units" | "vocab" | "leaderboard" | "export" | "boss" | "bandeja" | "pacing" | "grades" | "mundos";
+type TabId = "hoy" | "overview" | "students" | "units" | "vocab" | "leaderboard" | "export" | "boss" | "bandeja" | "pacing" | "grades" | "mundos";
 
-const TABS: Array<{ id: TabId; label: string; emoji: string }> = [
-  { id: "bandeja",     label: "Inbox",        emoji: "📥" },
-  { id: "overview",    label: "Overview",     emoji: "📊" },
-  { id: "mundos",      label: "Worlds",       emoji: "🌎" },
-  { id: "grades",      label: "Grades",       emoji: "🎓" },
-  { id: "pacing",      label: "Pacing",       emoji: "📅" },
-  { id: "students",    label: "Students",     emoji: "👤" },
-  { id: "units",       label: "Units",        emoji: "🗺️" },
-  { id: "boss",        label: "Bosses",       emoji: "🎯" },
-  { id: "vocab",       label: "Vocabulary",   emoji: "📖" },
-  { id: "leaderboard", label: "Leaderboard",  emoji: "🏆" },
-  { id: "export",      label: "Export",       emoji: "↓" },
+/**
+ * Four tabs you use, and everything else behind "Más".
+ *
+ * There were eleven tabs in one row, in no order, mixing four different jobs:
+ * act now, assess, plan, and admin. Nothing answered "who needs me today"
+ * without visiting three of them.
+ *
+ * PRIMARY is the daily loop — arrive and see who is stuck and whether the class
+ * is on pace, then grade, then look something up about a student, then project
+ * the scoreboard. SECONDARY is real and one click away, but it is reference
+ * material and a year plan, not something read before first period.
+ */
+const PRIMARY: Array<{ id: TabId; label: string; emoji: string }> = [
+  { id: "hoy",         label: "Hoy",      emoji: "☀️" },
+  { id: "grades",      label: "Notas",    emoji: "🎓" },
+  { id: "students",    label: "Agentes",  emoji: "👤" },
+  { id: "leaderboard", label: "Marcador", emoji: "🏆" },
 ];
+
+const SECONDARY: Array<{ id: TabId; label: string; emoji: string }> = [
+  { id: "bandeja",  label: "Inbox (todas las alertas)",  emoji: "📥" },
+  { id: "overview", label: "Overview (cifras de clase)", emoji: "📊" },
+  { id: "vocab",    label: "Vocabulario",                emoji: "📖" },
+  { id: "units",    label: "Estándares ACTFL",           emoji: "🗺️" },
+  { id: "pacing",   label: "Plan de 36 semanas",         emoji: "📅" },
+  { id: "mundos",   label: "Mundos",                     emoji: "🌎" },
+  { id: "boss",     label: "Bosses",                     emoji: "🎯" },
+  { id: "export",   label: "Exportar CSV",               emoji: "↓" },
+];
+
+const TABS = PRIMARY;
 
 export default function DashboardClient({ isAdmin = false }: { isAdmin?: boolean }) {
   const router = useRouter();
   const [classes, setClasses] = useState<ClassRow[]>([]);
   const [selectedClassId, setSelectedClassId] = useState("");
-  const [activeTab, setActiveTab] = useState<TabId>("overview");
+  const [activeTab, setActiveTab] = useState<TabId>("hoy");
+  const [moreOpen, setMoreOpen] = useState(false);
   const [loadingClasses, setLoadingClasses] = useState(true);
   const [alertOpen, setAlertOpen] = useState(false);
   const [alertMsg, setAlertMsg] = useState("");
@@ -224,11 +244,49 @@ export default function DashboardClient({ isAdmin = false }: { isAdmin?: boolean
               )}
             </button>
           ))}
+
+          {/* Everything outside the daily loop. */}
+          <div className="relative">
+            <button
+              onClick={() => setMoreOpen((o) => !o)}
+              className={`flex items-center gap-1.5 px-5 py-3 font-typewriter text-[10px] tracking-[0.2em] uppercase transition-all border-b-2 ${
+                SECONDARY.some((t) => t.id === activeTab)
+                  ? "border-[#c9933a] text-[#e8b455]"
+                  : "border-transparent text-[#8b7355] hover:text-[#c4a882]"
+              }`}
+            >
+              <span>Más</span>
+              <span className="text-[8px]">{moreOpen ? "▲" : "▼"}</span>
+            </button>
+
+            {moreOpen && (
+              <>
+                <div className="fixed inset-0 z-30" onClick={() => setMoreOpen(false)} />
+                <div className="absolute left-0 top-full z-40 min-w-[16rem] border border-[rgba(201,147,58,0.25)] bg-[#14151b] shadow-xl">
+                  {SECONDARY.map((t) => (
+                    <button
+                      key={t.id}
+                      onClick={() => { setActiveTab(t.id); setMoreOpen(false); }}
+                      className={`w-full text-left flex items-center gap-2 px-4 py-2.5 font-typewriter text-[11px] transition-colors ${
+                        activeTab === t.id
+                          ? "text-[#e8b455] bg-[rgba(201,147,58,0.1)]"
+                          : "text-[#c4a882] hover:bg-[rgba(201,147,58,0.06)]"
+                      }`}
+                    >
+                      <span>{t.emoji}</span>
+                      <span>{t.label}</span>
+                    </button>
+                  ))}
+                </div>
+              </>
+            )}
+          </div>
         </div>
       </div>
 
       {/* ── Tab content ──────────────────────────────────────────────────── */}
       <main className="flex-1 overflow-auto p-6">
+        {activeTab === "hoy"         && <HoyTab         classId={selectedClassId} />}
         {activeTab === "bandeja"     && <BandejaTab     classId={selectedClassId} />}
         {activeTab === "overview"    && <OverviewTab    classId={selectedClassId} />}
         {activeTab === "mundos"      && <MundosTab />}
