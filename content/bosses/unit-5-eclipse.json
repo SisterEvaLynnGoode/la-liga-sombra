@@ -244,7 +244,7 @@
             "age": 35,
             "description": "Es una mujer de treinta y cinco años de México. Es de mediana estatura con pelo corto y oscuro.",
             "imageSeed": 45,
-            "imageUrl": "/images/characters/unit-08-vendor-maria.webp"
+            "imageUrl": "/images/characters/unit-5-eclipse-la-arana.webp"
           },
           {
             "id": "el-contador",
@@ -253,7 +253,7 @@
             "age": 55,
             "description": "Es un hombre mayor de cincuenta y cinco años de Venezuela. Es calvo y lleva lentes redondos.",
             "imageSeed": 70,
-            "imageUrl": "/images/characters/unit-08-don-aurelio.webp"
+            "imageUrl": "/images/characters/unit-5-eclipse-el-contador.webp"
           },
           {
             "id": "el-oso",
@@ -262,7 +262,7 @@
             "age": 40,
             "description": "Es un hombre grande y fuerte de cuarenta años de Colombia. Tiene pelo corto y oscuro y una barba gruesa.",
             "imageSeed": 55,
-            "imageUrl": "/images/characters/unit-06-jefe-cocina.webp"
+            "imageUrl": "/images/characters/unit-5-eclipse-el-oso.webp"
           }
         ],
         "normal": [
@@ -318,7 +318,7 @@
             "age": 30,
             "description": "Es un hombre delgado de treinta años de Argentina. Tiene pelo castaño ondulado y lleva lentes de moda.",
             "imageSeed": 38,
-            "imageUrl": "/images/characters/unit-05-fantasma-digital.webp"
+            "imageUrl": "/images/characters/unit-5-eclipse-el-rayo.webp"
           }
         ],
         "hard": [
@@ -338,7 +338,7 @@
             "age": 35,
             "description": "Es una mujer de treinta y cinco años de México. Es de mediana estatura con pelo corto y oscuro.",
             "imageSeed": 45,
-            "imageUrl": "/images/characters/unit-08-vendor-maria.webp"
+            "imageUrl": "/images/characters/unit-5-eclipse-la-arana.webp"
           },
           {
             "id": "el-contador",
@@ -347,7 +347,7 @@
             "age": 55,
             "description": "Es un hombre mayor de cincuenta y cinco años de Venezuela. Es calvo y lleva lentes redondos.",
             "imageSeed": 70,
-            "imageUrl": "/images/characters/unit-08-don-aurelio.webp"
+            "imageUrl": "/images/characters/unit-5-eclipse-el-contador.webp"
           },
           {
             "id": "la-sombra",
@@ -365,7 +365,7 @@
             "age": 40,
             "description": "Es un hombre grande y fuerte de cuarenta años de Colombia. Tiene pelo corto y oscuro y una barba gruesa.",
             "imageSeed": 55,
-            "imageUrl": "/images/characters/unit-06-jefe-cocina.webp"
+            "imageUrl": "/images/characters/unit-5-eclipse-el-oso.webp"
           },
           {
             "id": "el-rayo",
@@ -374,7 +374,7 @@
             "age": 30,
             "description": "Es un hombre delgado de treinta años de Argentina. Tiene pelo castaño ondulado y lleva lentes de moda.",
             "imageSeed": 38,
-            "imageUrl": "/images/characters/unit-05-fantasma-digital.webp"
+            "imageUrl": "/images/characters/unit-5-eclipse-el-rayo.webp"
           },
           {
             "id": "el-musico",
@@ -383,7 +383,7 @@
             "age": 26,
             "description": "Es un hombre joven de la República Dominicana. Tiene pelo rizado oscuro pero es de mediana estatura. Tiene veintiséis años.",
             "imageSeed": 15,
-            "imageUrl": "/images/characters/unit-07-guitarrista.webp"
+            "imageUrl": "/images/characters/unit-5-eclipse-el-musico.webp"
           },
           {
             "id": "el-artista",
@@ -392,7 +392,7 @@
             "age": 31,
             "description": "Es un hombre alto de la República Dominicana. Tiene pelo rizado oscuro y una barba corta. Tiene treinta y un años.",
             "imageSeed": 28,
-            "imageUrl": "/images/characters/unit-07-cantante.webp"
+            "imageUrl": "/images/characters/unit-5-eclipse-el-artista.webp"
           }
         ]
       }
