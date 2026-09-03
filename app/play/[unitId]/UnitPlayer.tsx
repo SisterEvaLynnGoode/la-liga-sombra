@@ -270,7 +270,24 @@ export default function UnitPlayer({ content, unitId, unitNumber, classId, agent
         setEarnedClues((prev) => (prev.length > 0 ? prev.slice(0, -1) : prev));
       }
 
-      // Record stakeout attempt (fire-and-forget)
+      /**
+       * Record the stakeout as ACCURACY, not as time left.
+       *
+       * This used to send `score: result.timeRemaining` against a hardcoded
+       * `maxScore: 90`, and it was wrong three ways at once. A correct answer
+       * ADDS time (capped at START_TIME + 30), so the score could reach 120
+       * against a maximum of 90 — 32 rows in the live table are sitting at up
+       * to 133%, quietly inflating those students' course grades, because
+       * nothing on the server or in the database rejects score > max_score.
+       * The 90 was also hardcoded while cold cases start at 70, so their
+       * denominator was wrong too, and `timeSpentSeconds` collapsed to 0 for
+       * anyone who gained time.
+       *
+       * Accuracy is bounded by construction, is right for both difficulties,
+       * and measures the Spanish rather than the reflexes — which is the same
+       * reason the chase stage is scored on junctions and not on the clock.
+       */
+      const stakeoutStart = isCold ? 70 : 90;
       fetch("/api/game/stage-complete", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -278,9 +295,9 @@ export default function UnitPlayer({ content, unitId, unitNumber, classId, agent
           unitNumber,
           stageIndex: lineupIndex - 1,   // virtual position
           activityType: "stakeout",
-          score: result.timeRemaining,   // time left = performance indicator
-          maxScore: 90,
-          timeSpentSeconds: Math.max(0, 90 - result.timeRemaining),
+          score: result.correctCount,
+          maxScore: Math.max(1, result.totalCount),
+          timeSpentSeconds: Math.max(0, stakeoutStart - result.timeRemaining),
         }),
       }).catch(() => {});
 
@@ -307,7 +324,7 @@ export default function UnitPlayer({ content, unitId, unitNumber, classId, agent
       setCurrentStage(lineupIndex);
       stageStartRef.current = Date.now();
     },
-    [content.bonusClue, unitNumber, lineupIndex]
+    [content.bonusClue, unitNumber, lineupIndex, isCold]
   );
 
   // ── Render ───────────────────────────────────────────────────────────────────

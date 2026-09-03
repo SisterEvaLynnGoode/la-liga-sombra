@@ -92,6 +92,10 @@ export interface Database {
           sis_id: string | null;
           /** La Última Estación faction override; null = derive from the boss ending. */
           faction: string | null;
+          /** Consecutive failed PIN attempts; reset to 0 on a successful login. */
+          failed_logins: number;
+          /** Login refused until this passes. Set when failed_logins hits the threshold. */
+          locked_until: string | null;
           created_at: string;
         };
         Insert: {
@@ -103,6 +107,8 @@ export interface Database {
           pin_salt?: string | null;
           sis_id?: string | null;
           faction?: string | null;
+          failed_logins?: number;
+          locked_until?: string | null;
           created_at?: string;
         };
         Update: {
@@ -114,6 +120,8 @@ export interface Database {
           pin_salt?: string | null;
           sis_id?: string | null;
           faction?: string | null;
+          failed_logins?: number;
+          locked_until?: string | null;
           created_at?: string;
         };
         Relationships: [

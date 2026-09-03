@@ -35,12 +35,12 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "Código de clase no encontrado. Pregúntale a tu profe." }, { status: 404 });
   }
 
-  type StudentRow = { id: string; display_name: string; class_id: string | null; pin_hash: string | null; pin_salt: string | null };
+  type StudentRow = { id: string; display_name: string; class_id: string | null; pin_hash: string | null; pin_salt: string | null; failed_logins: number | null; locked_until: string | null };
 
   // Find student by name + class (case-insensitive)
   const { data: stuData } = await supabase
     .from("students")
-    .select("id, display_name, class_id, pin_hash, pin_salt")
+    .select("id, display_name, class_id, pin_hash, pin_salt, failed_logins, locked_until")
     .eq("class_id", classId)
     .ilike("display_name", normalName)
     .limit(1);
@@ -55,7 +55,7 @@ export async function POST(request: NextRequest) {
       s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().trim();
     const { data: allData } = await supabase
       .from("students")
-      .select("id, display_name, class_id, pin_hash, pin_salt")
+      .select("id, display_name, class_id, pin_hash, pin_salt, failed_logins, locked_until")
       .eq("class_id", classId);
     student = ((allData ?? []) as StudentRow[]).find(
       (s) => norm(s.display_name) === norm(normalName)
@@ -70,8 +70,56 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "Cuenta incompleta. Pídele ayuda a tu profe." }, { status: 400 });
   }
 
+  /**
+   * Lockout after repeated wrong PINs.
+   *
+   * A 4-digit PIN is 10,000 guesses, the class code is written on the board and
+   * every student knows their classmates' names — so signing in as somebody
+   * else was a short script and a minute of wifi, and there was no rate limit
+   * anywhere in the app. Locking the ACCOUNT rather than the IP is deliberate:
+   * a class of Chromebooks shares one school NAT address, so IP throttling
+   * would lock out the whole room the first time anyone mistyped.
+   *
+   * Ten attempts is generous for a student who genuinely forgot, and useless
+   * for a brute force: the window resets the clock on every further guess, so
+   * an attacker gets 10 tries per 15 minutes rather than 10,000 per minute.
+   */
+  const LOCK_THRESHOLD = 10;
+  const LOCK_MINUTES = 15;
+
+  if (student.locked_until && new Date(student.locked_until) > new Date()) {
+    const mins = Math.max(1, Math.ceil((new Date(student.locked_until).getTime() - Date.now()) / 60000));
+    return NextResponse.json(
+      { error: `Demasiados intentos. Espera ${mins} minuto(s) o pídele a tu profe que te cambie el PIN.` },
+      { status: 429 }
+    );
+  }
+
   if (!verifyPin(pin, student.pin_salt, student.pin_hash)) {
-    return NextResponse.json({ error: "PIN incorrecto. Inténtalo de nuevo." }, { status: 401 });
+    const failed = (student.failed_logins ?? 0) + 1;
+    const lockNow = failed >= LOCK_THRESHOLD;
+    await supabase
+      .from("students")
+      .update({
+        failed_logins: lockNow ? 0 : failed,
+        locked_until: lockNow ? new Date(Date.now() + LOCK_MINUTES * 60_000).toISOString() : null,
+      })
+      .eq("id", student.id);
+
+    return NextResponse.json(
+      {
+        error: lockNow
+          ? `Demasiados intentos. Espera ${LOCK_MINUTES} minutos o pídele a tu profe que te cambie el PIN.`
+          : "PIN incorrecto. Inténtalo de nuevo.",
+      },
+      { status: lockNow ? 429 : 401 }
+    );
+  }
+
+  // Correct PIN: clear the counter so a forgetful student is never cumulatively
+  // penalised across days.
+  if ((student.failed_logins ?? 0) > 0 || student.locked_until) {
+    await supabase.from("students").update({ failed_logins: 0, locked_until: null }).eq("id", student.id);
   }
 
   const token = await signToken({

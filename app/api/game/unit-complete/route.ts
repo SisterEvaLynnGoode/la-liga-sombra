@@ -3,6 +3,7 @@ import { getStudentSession } from "@/lib/auth/session";
 import { createClient } from "@/lib/supabase/server";
 import { checkAndAwardUnitBadges } from "@/lib/games/badges";
 import { recomputeAndNotify } from "@/lib/grading";
+import { cleanScore } from "@/lib/games/score-guard";
 
 export async function POST(request: NextRequest) {
   const session = await getStudentSession();
@@ -12,6 +13,12 @@ export async function POST(request: NextRequest) {
     await request.json() as { unitNumber: number; score: number; maxScore: number; timeSpentSeconds: number };
 
   if (!unitNumber) return NextResponse.json({ error: "Missing unitNumber" }, { status: 400 });
+
+  // The lineup result is computed in the browser, so it is not trusted.
+  // Defaults mirror the previous behaviour for callers that omit the fields.
+  const checked = cleanScore({ score: score ?? 1, maxScore: maxScore ?? 1, timeSpentSeconds: timeSpentSeconds ?? 0 });
+  if (!checked.ok) return NextResponse.json({ error: checked.reason }, { status: 400 });
+  const clean = checked.value;
 
   const supabase = createClient();
 
@@ -24,9 +31,9 @@ export async function POST(request: NextRequest) {
     student_id: session.studentId,
     unit_id: unitId,
     activity_type: "lineup",
-    score: score ?? 1,
-    max_score: maxScore ?? 1,
-    time_spent_seconds: timeSpentSeconds ?? 0,
+    score: clean.score,
+    max_score: clean.maxScore,
+    time_spent_seconds: clean.timeSpentSeconds,
   });
 
   // Mark unit completed

@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { getStudentSession } from "@/lib/auth/session";
 import { createClient } from "@/lib/supabase/server";
+import { cleanScore } from "@/lib/games/score-guard";
 
 export async function POST(request: NextRequest) {
   const session = await getStudentSession();
@@ -12,14 +13,18 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "Missing fields" }, { status: 400 });
   }
 
+  // Everything below arrives from the student's own browser. Validate it.
+  const clean = cleanScore({ score, maxScore, timeSpentSeconds });
+  if (!clean.ok) return NextResponse.json({ error: clean.reason }, { status: 400 });
+
   const supabase = createClient();
   const { error } = await supabase.from("attempts").insert({
     student_id: session.studentId,
     unit_id: unitId,
     activity_type: activityType,
-    score,
-    max_score: maxScore,
-    time_spent_seconds: timeSpentSeconds,
+    score: clean.value.score,
+    max_score: clean.value.maxScore,
+    time_spent_seconds: clean.value.timeSpentSeconds,
   });
 
   if (error) {

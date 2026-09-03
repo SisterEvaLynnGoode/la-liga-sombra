@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { getStudentSession } from "@/lib/auth/session";
 import { createClient } from "@/lib/supabase/server";
 import { checkAndAwardUnitBadges } from "@/lib/games/badges";
+import { cleanScore } from "@/lib/games/score-guard";
 
 /**
  * POST /api/game/cold-case-complete
@@ -21,6 +22,12 @@ export async function POST(request: NextRequest) {
 
   if (!unitNumber) return NextResponse.json({ error: "Missing unitNumber" }, { status: 400 });
 
+  // The lineup result is computed in the browser, so it is not trusted.
+  // Defaults mirror the previous behaviour for callers that omit the fields.
+  const checked = cleanScore({ score: score ?? 1, maxScore: maxScore ?? 1, timeSpentSeconds: timeSpentSeconds ?? 0 });
+  if (!checked.ok) return NextResponse.json({ error: checked.reason }, { status: 400 });
+  const clean = checked.value;
+
   const supabase = createClient();
 
   const { data: unitRows } = await supabase.from("units").select("id").eq("number", unitNumber).limit(1);
@@ -32,9 +39,9 @@ export async function POST(request: NextRequest) {
     student_id: session.studentId,
     unit_id: unitId,
     activity_type: "lineup",
-    score: score ?? 1,
-    max_score: maxScore ?? 1,
-    time_spent_seconds: timeSpentSeconds ?? 0,
+    score: clean.score,
+    max_score: clean.maxScore,
+    time_spent_seconds: clean.timeSpentSeconds,
   });
 
   // Update unit_progress cold case fields
@@ -42,7 +49,7 @@ export async function POST(request: NextRequest) {
     .from("unit_progress")
     .update({
       cold_case_completed_at: new Date().toISOString(),
-      cold_case_score: score ?? 1,
+      cold_case_score: clean.score,
     })
     .eq("student_id", session.studentId)
     .eq("unit_id", unitId);

@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { getStudentSession } from "@/lib/auth/session";
 import { createClient } from "@/lib/supabase/server";
 import type { ActivityType } from "@/lib/types/database";
+import { cleanScore } from "@/lib/games/score-guard";
 
 export async function POST(request: NextRequest) {
   const session = await getStudentSession();
@@ -38,13 +39,15 @@ export async function POST(request: NextRequest) {
 
   // Record attempt
   if (activityType && score != null && maxScore != null) {
+    const clean = cleanScore({ score, maxScore, timeSpentSeconds });
+    if (!clean.ok) return NextResponse.json({ error: clean.reason }, { status: 400 });
     await supabase.from("attempts").insert({
       student_id: session.studentId,
       unit_id: unitId,
       activity_type: activityType,
-      score,
-      max_score: maxScore,
-      time_spent_seconds: timeSpentSeconds ?? 0,
+      score: clean.value.score,
+      max_score: clean.value.maxScore,
+      time_spent_seconds: clean.value.timeSpentSeconds,
     });
   }
 
