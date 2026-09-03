@@ -7,39 +7,230 @@
   "criminalName": "El Cronista",
   "bonusClue": "El Cronista habla de la rutina de los jugadores como si viviera con ellos: sabe a qué hora se levantan, se duchan y se acuestan. Nadie de fuera sabe eso.",
   "vocab": [
-    { "spanish": "el Mundial", "english": "the World Cup", "audio": "/audio/unit-16/mundial.mp3", "section": "El Mundial", "example": "Es el primer Mundial de la historia y todo el país está en la calle." },
-    { "spanish": "el balón", "english": "the ball", "audio": "/audio/unit-16/balon.mp3", "section": "El Mundial", "example": "El balón de la final no es un balón cualquiera." },
-    { "spanish": "el equipo", "english": "the team", "audio": "/audio/unit-16/equipo.mp3", "section": "El Mundial", "example": "El equipo se prepara en silencio." },
-    { "spanish": "el jugador", "english": "the player", "audio": "/audio/unit-16/jugador.mp3", "section": "El Mundial", "example": "Cada jugador se viste con calma." },
-    { "spanish": "el partido", "english": "the match", "audio": "/audio/unit-16/partido.mp3", "section": "El Mundial", "example": "El partido empieza a las tres de la tarde." },
-    { "spanish": "el estadio", "english": "the stadium", "audio": "/audio/unit-16/estadio.mp3", "section": "El Mundial", "example": "El Estadio Centenario es nuevo: lo construyeron para este Mundial." },
-    { "spanish": "la final", "english": "the final", "audio": "/audio/unit-16/final.mp3", "section": "El Mundial", "example": "La final es Uruguay contra Argentina." },
-    { "spanish": "el primer tiempo", "english": "the first half", "audio": "/audio/unit-16/primer-tiempo.mp3", "section": "El Mundial", "example": "En el primer tiempo juegan con el balón argentino." },
-    { "spanish": "el segundo tiempo", "english": "the second half", "audio": "/audio/unit-16/segundo-tiempo.mp3", "section": "El Mundial", "example": "En el segundo tiempo cambian de balón." },
-    { "spanish": "el vestuario", "english": "the locker room", "audio": "/audio/unit-16/vestuario.mp3", "section": "El Mundial", "example": "En el vestuario solo entran los jugadores y el utilero." },
-    { "spanish": "el utilero", "english": "the kit man", "audio": "/audio/unit-16/utilero.mp3", "section": "El Mundial", "example": "El utilero cuida el balón como si fuera de oro." },
-    { "spanish": "el árbitro", "english": "the referee", "audio": "/audio/unit-16/arbitro.mp3", "section": "El Mundial", "example": "El árbitro guarda el balón hasta las tres." },
-    { "spanish": "ganar", "english": "to win", "audio": "/audio/unit-16/ganar.mp3", "section": "El Mundial", "example": "Todos quieren ganar la primera copa del mundo." },
-    { "spanish": "perder", "english": "to lose", "audio": "/audio/unit-16/perder.mp3", "section": "El Mundial", "example": "Nadie quiere perder delante de noventa mil personas." },
-    { "spanish": "la copa", "english": "the cup, the trophy", "audio": "/audio/unit-16/copa.mp3", "section": "El Mundial", "example": "La copa está en una mesa, tapada con una tela." },
-
-    { "spanish": "levantarse", "english": "to get up", "audio": "/audio/unit-16/levantarse.mp3", "section": "La Rutina", "example": "Los jugadores se levantan a las seis de la mañana." },
-    { "spanish": "despertarse", "english": "to wake up", "audio": "/audio/unit-16/despertarse.mp3", "section": "La Rutina", "example": "Me despierto antes que el sol." },
-    { "spanish": "ducharse", "english": "to shower", "audio": "/audio/unit-16/ducharse.mp3", "section": "La Rutina", "example": "Se ducha después de entrenar, nunca antes." },
-    { "spanish": "vestirse", "english": "to get dressed", "audio": "/audio/unit-16/vestirse.mp3", "section": "La Rutina", "example": "Se viste de celeste y sale al campo." },
-    { "spanish": "peinarse", "english": "to comb one's hair", "audio": "/audio/unit-16/peinarse.mp3", "section": "La Rutina", "example": "Se peina delante del espejo del vestuario." },
-    { "spanish": "lavarse", "english": "to wash (oneself)", "audio": "/audio/unit-16/lavarse.mp3", "section": "La Rutina", "example": "Se lava las manos antes de tocar el balón." },
-    { "spanish": "acostarse", "english": "to go to bed", "audio": "/audio/unit-16/acostarse.mp3", "section": "La Rutina", "example": "Se acuestan temprano la noche antes del partido." },
-    { "spanish": "prepararse", "english": "to get ready", "audio": "/audio/unit-16/prepararse.mp3", "section": "La Rutina", "example": "El equipo se prepara sin hablar." },
-    { "spanish": "entrenarse", "english": "to train", "audio": "/audio/unit-16/entrenarse.mp3", "section": "La Rutina", "example": "Se entrenan todos los días a las siete." },
-    { "spanish": "llamarse", "english": "to be called", "audio": "/audio/unit-16/llamarse.mp3", "section": "La Rutina", "example": "El utilero se llama Aníbal." },
-    { "spanish": "quedarse", "english": "to stay", "audio": "/audio/unit-16/quedarse.mp3", "section": "La Rutina", "example": "Se queda en el vestuario cuando todos salen." },
-    { "spanish": "irse", "english": "to leave, to go away", "audio": "/audio/unit-16/irse.mp3", "section": "La Rutina", "example": "Se fue sin decir nada." },
-    { "spanish": "temprano", "english": "early", "audio": "/audio/unit-16/temprano.mp3", "section": "La Rutina", "example": "Llegó temprano, dos horas antes del partido." },
-    { "spanish": "tarde", "english": "late", "audio": "/audio/unit-16/tarde.mp3", "section": "La Rutina", "example": "Nadie llega tarde el día de la final." },
-    { "spanish": "antes de", "english": "before", "audio": "/audio/unit-16/antes-de.mp3", "section": "La Rutina", "example": "Antes de salir, se lavan las manos." },
-    { "spanish": "después de", "english": "after", "audio": "/audio/unit-16/despues-de.mp3", "section": "La Rutina", "example": "Después de ducharse, se visten." },
-    { "spanish": "la mañana", "english": "the morning", "audio": "/audio/unit-16/manana.mp3", "section": "La Rutina", "example": "Toda la mañana la gente camina hacia el estadio." }
+    {
+      "spanish": "el Mundial",
+      "english": "the World Cup",
+      "audio": "/audio/unit-16/mundial.mp3",
+      "section": "El Mundial",
+      "example": "Es el primer Mundial de la historia y todo el país está en la calle."
+    },
+    {
+      "spanish": "el balón",
+      "english": "the ball",
+      "audio": "/audio/unit-16/balon.mp3",
+      "section": "El Mundial",
+      "example": "El balón de la final no es un balón cualquiera."
+    },
+    {
+      "spanish": "el equipo",
+      "english": "the team",
+      "audio": "/audio/unit-16/equipo.mp3",
+      "section": "El Mundial",
+      "example": "El equipo se prepara en silencio."
+    },
+    {
+      "spanish": "el jugador",
+      "english": "the player",
+      "audio": "/audio/unit-16/jugador.mp3",
+      "section": "El Mundial",
+      "example": "Cada jugador se viste con calma."
+    },
+    {
+      "spanish": "el partido",
+      "english": "the match",
+      "audio": "/audio/unit-16/partido.mp3",
+      "section": "El Mundial",
+      "example": "El partido empieza a las tres de la tarde."
+    },
+    {
+      "spanish": "el estadio",
+      "english": "the stadium",
+      "audio": "/audio/unit-16/estadio.mp3",
+      "section": "El Mundial",
+      "example": "El Estadio Centenario es nuevo: lo construyeron para este Mundial."
+    },
+    {
+      "spanish": "la final",
+      "english": "the final",
+      "audio": "/audio/unit-16/final.mp3",
+      "section": "El Mundial",
+      "example": "La final es Uruguay contra Argentina."
+    },
+    {
+      "spanish": "el primer tiempo",
+      "english": "the first half",
+      "audio": "/audio/unit-16/primer-tiempo.mp3",
+      "section": "El Mundial",
+      "example": "En el primer tiempo juegan con el balón argentino."
+    },
+    {
+      "spanish": "el segundo tiempo",
+      "english": "the second half",
+      "audio": "/audio/unit-16/segundo-tiempo.mp3",
+      "section": "El Mundial",
+      "example": "En el segundo tiempo cambian de balón."
+    },
+    {
+      "spanish": "el vestuario",
+      "english": "the locker room",
+      "audio": "/audio/unit-16/vestuario.mp3",
+      "section": "El Mundial",
+      "example": "En el vestuario solo entran los jugadores y el utilero."
+    },
+    {
+      "spanish": "el utilero",
+      "english": "the kit man",
+      "audio": "/audio/unit-16/utilero.mp3",
+      "section": "El Mundial",
+      "example": "El utilero cuida el balón como si fuera de oro."
+    },
+    {
+      "spanish": "el árbitro",
+      "english": "the referee",
+      "audio": "/audio/unit-16/arbitro.mp3",
+      "section": "El Mundial",
+      "example": "El árbitro guarda el balón hasta las tres."
+    },
+    {
+      "spanish": "ganar",
+      "english": "to win",
+      "audio": "/audio/unit-16/ganar.mp3",
+      "section": "El Mundial",
+      "example": "Todos quieren ganar la primera copa del mundo."
+    },
+    {
+      "spanish": "perder",
+      "english": "to lose",
+      "audio": "/audio/unit-16/perder.mp3",
+      "section": "El Mundial",
+      "example": "Nadie quiere perder delante de noventa mil personas."
+    },
+    {
+      "spanish": "la copa",
+      "english": "the cup, the trophy",
+      "audio": "/audio/unit-16/copa.mp3",
+      "section": "El Mundial",
+      "example": "La copa está en una mesa, tapada con una tela."
+    },
+    {
+      "spanish": "levantarse",
+      "english": "to get up",
+      "audio": "/audio/unit-16/levantarse.mp3",
+      "section": "La Rutina",
+      "example": "Los jugadores se levantan a las seis de la mañana."
+    },
+    {
+      "spanish": "despertarse",
+      "english": "to wake up",
+      "audio": "/audio/unit-16/despertarse.mp3",
+      "section": "La Rutina",
+      "example": "Me despierto antes que el sol."
+    },
+    {
+      "spanish": "ducharse",
+      "english": "to shower",
+      "audio": "/audio/unit-16/ducharse.mp3",
+      "section": "La Rutina",
+      "example": "Se ducha después de entrenar, nunca antes."
+    },
+    {
+      "spanish": "vestirse",
+      "english": "to get dressed",
+      "audio": "/audio/unit-16/vestirse.mp3",
+      "section": "La Rutina",
+      "example": "Se viste de celeste y sale al campo."
+    },
+    {
+      "spanish": "peinarse",
+      "english": "to comb one's hair",
+      "audio": "/audio/unit-16/peinarse.mp3",
+      "section": "La Rutina",
+      "example": "Se peina delante del espejo del vestuario."
+    },
+    {
+      "spanish": "lavarse",
+      "english": "to wash (oneself)",
+      "audio": "/audio/unit-16/lavarse.mp3",
+      "section": "La Rutina",
+      "example": "Se lava las manos antes de tocar el balón."
+    },
+    {
+      "spanish": "acostarse",
+      "english": "to go to bed",
+      "audio": "/audio/unit-16/acostarse.mp3",
+      "section": "La Rutina",
+      "example": "Se acuestan temprano la noche antes del partido."
+    },
+    {
+      "spanish": "prepararse",
+      "english": "to get ready",
+      "audio": "/audio/unit-16/prepararse.mp3",
+      "section": "La Rutina",
+      "example": "El equipo se prepara sin hablar."
+    },
+    {
+      "spanish": "entrenarse",
+      "english": "to train",
+      "audio": "/audio/unit-16/entrenarse.mp3",
+      "section": "La Rutina",
+      "example": "Se entrenan todos los días a las siete."
+    },
+    {
+      "spanish": "llamarse",
+      "english": "to be called",
+      "audio": "/audio/unit-16/llamarse.mp3",
+      "section": "La Rutina",
+      "example": "El utilero se llama Aníbal."
+    },
+    {
+      "spanish": "quedarse",
+      "english": "to stay",
+      "audio": "/audio/unit-16/quedarse.mp3",
+      "section": "La Rutina",
+      "example": "Se queda en el vestuario cuando todos salen."
+    },
+    {
+      "spanish": "irse",
+      "english": "to leave, to go away",
+      "audio": "/audio/unit-16/irse.mp3",
+      "section": "La Rutina",
+      "example": "Se fue sin decir nada."
+    },
+    {
+      "spanish": "temprano",
+      "english": "early",
+      "audio": "/audio/unit-16/temprano.mp3",
+      "section": "La Rutina",
+      "example": "Llegó temprano, dos horas antes del partido."
+    },
+    {
+      "spanish": "tarde",
+      "english": "late",
+      "audio": "/audio/unit-16/tarde.mp3",
+      "section": "La Rutina",
+      "example": "Nadie llega tarde el día de la final."
+    },
+    {
+      "spanish": "antes de",
+      "english": "before",
+      "audio": "/audio/unit-16/antes-de.mp3",
+      "section": "La Rutina",
+      "example": "Antes de salir, se lavan las manos."
+    },
+    {
+      "spanish": "después de",
+      "english": "after",
+      "audio": "/audio/unit-16/despues-de.mp3",
+      "section": "La Rutina",
+      "example": "Después de ducharse, se visten."
+    },
+    {
+      "spanish": "la mañana",
+      "english": "the morning",
+      "audio": "/audio/unit-16/manana.mp3",
+      "section": "La Rutina",
+      "example": "Toda la mañana la gente camina hacia el estadio."
+    }
   ],
   "stages": [
     {
@@ -62,16 +253,46 @@
     {
       "type": "vocabMatch",
       "pairs": [
-        { "spanish": "el balón", "english": "the ball" },
-        { "spanish": "el vestuario", "english": "the locker room" },
-        { "spanish": "el utilero", "english": "the kit man" },
-        { "spanish": "levantarse", "english": "to get up" },
-        { "spanish": "ducharse", "english": "to shower" },
-        { "spanish": "vestirse", "english": "to get dressed" },
-        { "spanish": "acostarse", "english": "to go to bed" },
-        { "spanish": "el primer tiempo", "english": "the first half" },
-        { "spanish": "la copa", "english": "the trophy" },
-        { "spanish": "entrenarse", "english": "to train" }
+        {
+          "spanish": "el balón",
+          "english": "the ball"
+        },
+        {
+          "spanish": "el vestuario",
+          "english": "the locker room"
+        },
+        {
+          "spanish": "el utilero",
+          "english": "the kit man"
+        },
+        {
+          "spanish": "levantarse",
+          "english": "to get up"
+        },
+        {
+          "spanish": "ducharse",
+          "english": "to shower"
+        },
+        {
+          "spanish": "vestirse",
+          "english": "to get dressed"
+        },
+        {
+          "spanish": "acostarse",
+          "english": "to go to bed"
+        },
+        {
+          "spanish": "el primer tiempo",
+          "english": "the first half"
+        },
+        {
+          "spanish": "la copa",
+          "english": "the trophy"
+        },
+        {
+          "spanish": "entrenarse",
+          "english": "to train"
+        }
       ]
     },
     {
@@ -83,30 +304,96 @@
       "rightLabel": "SIN SE",
       "rightHint": "la acción cae sobre otra cosa",
       "items": [
-        { "text": "El capitán ___ levanta a las seis. (levantar / levantarse)", "category": "left", "explanation": "Se levanta él mismo de la cama → reflexivo." },
-        { "text": "El capitán ___ levanta la copa. (levantar / levantarse)", "category": "right", "explanation": "Levanta la copa: la acción cae sobre la copa, no sobre él." },
-        { "text": "El portero ___ lava las manos antes del partido.", "category": "left", "explanation": "Se lava las manos — sus propias manos → reflexivo." },
-        { "text": "El utilero ___ lava las camisetas del equipo.", "category": "right", "explanation": "Lava las camisetas de otros → no reflexivo." },
-        { "text": "Los jugadores ___ visten de celeste.", "category": "left", "explanation": "Se visten ellos mismos → reflexivo." },
-        { "text": "La madre ___ viste al niño para ir al estadio.", "category": "right", "explanation": "Viste al niño, no a sí misma." },
-        { "text": "El árbitro ___ despierta a las cinco.", "category": "left", "explanation": "Se despierta solo → reflexivo." },
-        { "text": "El ruido ___ despierta a todo el barrio.", "category": "right", "explanation": "El ruido despierta a otros." },
-        { "text": "El equipo ___ prepara en silencio.", "category": "left", "explanation": "Se prepara a sí mismo → reflexivo." },
-        { "text": "El cocinero ___ prepara la comida.", "category": "right", "explanation": "Prepara la comida, no a sí mismo." },
-        { "text": "El forastero ___ queda en el vestuario cuando todos salen.", "category": "left", "explanation": "Se queda → reflexivo. Y muy sospechoso." },
-        { "text": "El forastero ___ guarda el balón en una bolsa.", "category": "right", "explanation": "Guarda el balón: la acción cae sobre el balón." }
+        {
+          "text": "El capitán ___ levanta a las seis. (levantar / levantarse)",
+          "category": "left",
+          "explanation": "Se levanta él mismo de la cama → reflexivo."
+        },
+        {
+          "text": "El capitán ___ levanta la copa. (levantar / levantarse)",
+          "category": "right",
+          "explanation": "Levanta la copa: la acción cae sobre la copa, no sobre él."
+        },
+        {
+          "text": "El portero ___ lava las manos antes del partido.",
+          "category": "left",
+          "explanation": "Se lava las manos — sus propias manos → reflexivo."
+        },
+        {
+          "text": "El utilero ___ lava las camisetas del equipo.",
+          "category": "right",
+          "explanation": "Lava las camisetas de otros → no reflexivo."
+        },
+        {
+          "text": "Los jugadores ___ visten de celeste.",
+          "category": "left",
+          "explanation": "Se visten ellos mismos → reflexivo."
+        },
+        {
+          "text": "La madre ___ viste al niño para ir al estadio.",
+          "category": "right",
+          "explanation": "Viste al niño, no a sí misma."
+        },
+        {
+          "text": "El árbitro ___ despierta a las cinco.",
+          "category": "left",
+          "explanation": "Se despierta solo → reflexivo."
+        },
+        {
+          "text": "El ruido ___ despierta a todo el barrio.",
+          "category": "right",
+          "explanation": "El ruido despierta a otros."
+        },
+        {
+          "text": "El equipo ___ prepara en silencio.",
+          "category": "left",
+          "explanation": "Se prepara a sí mismo → reflexivo."
+        },
+        {
+          "text": "El cocinero ___ prepara la comida.",
+          "category": "right",
+          "explanation": "Prepara la comida, no a sí mismo."
+        },
+        {
+          "text": "El forastero ___ queda en el vestuario cuando todos salen.",
+          "category": "left",
+          "explanation": "Se queda → reflexivo. Y muy sospechoso."
+        },
+        {
+          "text": "El forastero ___ guarda el balón en una bolsa.",
+          "category": "right",
+          "explanation": "Guarda el balón: la acción cae sobre el balón."
+        }
       ]
     },
     {
       "type": "sentenceBuilder",
       "clueReward": "El agente practica la rutina completa. Ahora reconoce de memoria el horario que solo alguien de dentro podría saber.",
       "sentences": [
-        { "sentence": "Los jugadores se levantan a las seis", "translation": "The players get up at six." },
-        { "sentence": "Se duchan después de entrenarse", "translation": "They shower after training." },
-        { "sentence": "El capitán se viste de celeste", "translation": "The captain gets dressed in sky blue." },
-        { "sentence": "Yo me lavo las manos antes del partido", "translation": "I wash my hands before the match." },
-        { "sentence": "El utilero se queda en el vestuario", "translation": "The kit man stays in the locker room." },
-        { "sentence": "Nos acostamos temprano la noche antes", "translation": "We go to bed early the night before." }
+        {
+          "sentence": "Los jugadores se levantan a las seis",
+          "translation": "The players get up at six."
+        },
+        {
+          "sentence": "Se duchan después de entrenarse",
+          "translation": "They shower after training."
+        },
+        {
+          "sentence": "El capitán se viste de celeste",
+          "translation": "The captain gets dressed in sky blue."
+        },
+        {
+          "sentence": "Yo me lavo las manos antes del partido",
+          "translation": "I wash my hands before the match."
+        },
+        {
+          "sentence": "El utilero se queda en el vestuario",
+          "translation": "The kit man stays in the locker room."
+        },
+        {
+          "sentence": "Nos acostamos temprano la noche antes",
+          "translation": "We go to bed early the night before."
+        }
       ]
     },
     {
@@ -114,12 +401,30 @@
       "clueReward": "Dos balones, no uno. Un aficionado de verdad lo sabe. El ladrón no lo sabía y preguntó cuál era «el bueno».",
       "passage": "BITÁCORA TEMPORAL — AGENTE DE LA LIGA SOMBRA\nDestino: Montevideo, Uruguay. 30 de julio de 1930.\n\nEstoy en Montevideo y la ciudad entera camina en la misma dirección. Hoy se juega la primera final del Mundial: Uruguay contra Argentina.\n\nEl Estadio Centenario es nuevo. Lo construyeron para este torneo. Caben noventa mil personas y hoy no falta ninguna.\n\nEn el vestuario todo tiene un horario. Los jugadores se levantan a las seis, se entrenan, se duchan y se visten de celeste. El capitán se peina delante del espejo. Nadie habla mucho.\n\nHay un problema que casi nadie de fuera conoce: los dos países no se ponen de acuerdo sobre el balón. Argentina quiere el suyo; Uruguay quiere el suyo. La solución es rara y verdadera: el primer tiempo se juega con el balón argentino y el segundo tiempo con el uruguayo.\n\nHay un hombre aquí que no es del equipo. Llegó temprano. Sabe a qué hora se levanta cada jugador y a qué hora se acuesta el capitán. Pero cuando el utilero habla de los dos balones, el hombre pregunta: «¿Y cuál es el bueno?».\n\nNadie que ame el fútbol pregunta eso hoy.",
       "glossary": [
-        { "word": "caben", "translation": "(they) fit — from caber" },
-        { "word": "no falta ninguna", "translation": "not one is missing" },
-        { "word": "se ponen de acuerdo", "translation": "they agree" },
-        { "word": "el suyo", "translation": "theirs / their own" },
-        { "word": "el descanso", "translation": "half-time, the break" },
-        { "word": "de fuera", "translation": "from outside" }
+        {
+          "word": "caben",
+          "translation": "(they) fit — from caber"
+        },
+        {
+          "word": "no falta ninguna",
+          "translation": "not one is missing"
+        },
+        {
+          "word": "se ponen de acuerdo",
+          "translation": "they agree"
+        },
+        {
+          "word": "el suyo",
+          "translation": "theirs / their own"
+        },
+        {
+          "word": "el descanso",
+          "translation": "half-time, the break"
+        },
+        {
+          "word": "de fuera",
+          "translation": "from outside"
+        }
       ],
       "questions": [
         {
@@ -140,7 +445,12 @@
           "id": "u16-r2",
           "type": "multiple_choice",
           "text": "¿Qué hacen los jugadores a las seis de la mañana?",
-          "options": ["Se acuestan", "Se levantan", "Se van del estadio", "Se peinan y salen al campo"],
+          "options": [
+            "Se acuestan",
+            "Se levantan",
+            "Se van del estadio",
+            "Se peinan y salen al campo"
+          ],
           "correctIndex": 1,
           "explanationEs": "«Los jugadores se levantan a las seis».",
           "explanationEn": "They get up at six — se levantan."
@@ -163,7 +473,12 @@
           "id": "u16-r4",
           "type": "short_answer",
           "text": "¿De qué color se viste el equipo de Uruguay? (Escribe en español.)",
-          "acceptableAnswers": ["celeste", "de celeste", "se viste de celeste", "color celeste"],
+          "acceptableAnswers": [
+            "celeste",
+            "de celeste",
+            "se viste de celeste",
+            "color celeste"
+          ],
           "explanationEs": "«se visten de celeste» — el color de Uruguay.",
           "explanationEn": "Sky blue — celeste."
         }
@@ -181,21 +496,36 @@
       "questions": [
         {
           "question": "¿A qué hora se levantan los jugadores, según el forastero?",
-          "options": ["A las cinco", "A las seis", "A las siete", "A las ocho"],
+          "options": [
+            "A las cinco",
+            "A las seis",
+            "A las siete",
+            "A las ocho"
+          ],
           "correctIndex": 1,
           "explanationEs": "«Ellos se levantan a las seis, ¿verdad?»",
           "explanationEn": "He says they get up at six — and he is right, which is the problem."
         },
         {
           "question": "¿Qué hace el capitán delante del espejo?",
-          "options": ["Se ducha", "Se acuesta", "Se peina", "Se lava las manos"],
+          "options": [
+            "Se ducha",
+            "Se acuesta",
+            "Se peina",
+            "Se lava las manos"
+          ],
           "correctIndex": 2,
           "explanationEs": "«el capitán se peina siempre delante de ese espejo».",
           "explanationEn": "He combs his hair — se peina."
         },
         {
           "question": "¿Quién se queda con el balón en el descanso?",
-          "options": ["El árbitro", "El capitán", "El utilero", "El forastero"],
+          "options": [
+            "El árbitro",
+            "El capitán",
+            "El utilero",
+            "El forastero"
+          ],
           "correctIndex": 2,
           "explanationEs": "«Yo me quedo con el balón. Soy el utilero.»",
           "explanationEn": "The kit man keeps it — which tells the thief exactly who to get past."
@@ -214,7 +544,12 @@
         },
         {
           "question": "¿Qué dice el forastero que estudia?",
-          "options": ["El fútbol", "Los balones", "Las personas", "Los horarios de los trenes"],
+          "options": [
+            "El fútbol",
+            "Los balones",
+            "Las personas",
+            "Los horarios de los trenes"
+          ],
           "correctIndex": 2,
           "explanationEs": "«Yo estudio a las personas.»",
           "explanationEn": "He studies people — not the game."
@@ -232,33 +567,69 @@
           "id": "start",
           "npcLine": "Buenas. Soy Aníbal, el utilero. Llevo diez años lavando estas camisetas y hoy, justo hoy, me falta el balón del segundo tiempo. ¿Usted quién es?",
           "options": [
-            { "text": "Buenas, Aníbal. Soy agente de La Liga Sombra. Cuénteme quién entró hoy en el vestuario.", "isCorrect": true, "nextNodeId": "quien" },
-            { "text": "¿Cuánto vale ese balón?", "isCorrect": false, "feedback": "Esa es la pregunta del ladrón. Preséntate y pregunta quién entró." },
-            { "text": "Seguro que se le perdió a usted.", "isCorrect": false, "feedback": "Aníbal es tu mejor testigo. Acusarlo de entrada te deja sin información." }
+            {
+              "text": "Buenas, Aníbal. Soy agente de La Liga Sombra. Cuénteme quién entró hoy en el vestuario.",
+              "isCorrect": true,
+              "nextNodeId": "quien"
+            },
+            {
+              "text": "¿Cuánto vale ese balón?",
+              "isCorrect": false,
+              "feedback": "Esa es la pregunta del ladrón. Preséntate y pregunta quién entró."
+            },
+            {
+              "text": "Seguro que se le perdió a usted.",
+              "isCorrect": false,
+              "feedback": "Aníbal es tu mejor testigo. Acusarlo de entrada te deja sin información."
+            }
           ]
         },
         {
           "id": "quien",
           "npcLine": "Hoy entraron cuatro personas que no juegan. Un periodista, el hermano de un jugador, un señor de la federación… y un forastero que llegó dos horas antes, muy temprano.",
           "options": [
-            { "text": "Hábleme del forastero. ¿Qué decía?", "isCorrect": true, "nextNodeId": "forastero" },
-            { "text": "Entonces fue el periodista.", "isCorrect": false, "feedback": "Todavía no tienes pruebas. Pregunta antes de acusar." }
+            {
+              "text": "Hábleme del forastero. ¿Qué decía?",
+              "isCorrect": true,
+              "nextNodeId": "forastero"
+            },
+            {
+              "text": "Entonces fue el periodista.",
+              "isCorrect": false,
+              "feedback": "Todavía no tienes pruebas. Pregunta antes de acusar."
+            }
           ]
         },
         {
           "id": "forastero",
           "npcLine": "Me recitó la rutina del equipo como si viviera aquí: que se levantan a las seis, que se duchan después de entrenarse, que el capitán se peina delante del espejo. Todo exacto. Me dio frío.",
           "options": [
-            { "text": "¿Y sabía de fútbol?", "isCorrect": true, "nextNodeId": "futbol" },
-            { "text": "Mucha gente sabe esas cosas.", "isCorrect": false, "feedback": "No, no la sabe. Ese horario no sale en los periódicos — por eso es una pista." }
+            {
+              "text": "¿Y sabía de fútbol?",
+              "isCorrect": true,
+              "nextNodeId": "futbol"
+            },
+            {
+              "text": "Mucha gente sabe esas cosas.",
+              "isCorrect": false,
+              "feedback": "No, no la sabe. Ese horario no sale en los periódicos — por eso es una pista."
+            }
           ]
         },
         {
           "id": "futbol",
           "npcLine": "Nada. Me preguntó cuál de los dos balones era «el bueno». ¡Hoy, en Montevideo! Hasta los niños saben lo de los dos balones. Y después preguntó quién se queda con el balón en el descanso.",
           "options": [
-            { "text": "¿Los otros tres también preguntaron por el balón?", "isCorrect": true, "nextNodeId": "otros" },
-            { "text": "Gracias, ya tengo suficiente.", "isCorrect": false, "feedback": "Casi. Falta comprobar a los otros tres: si todos preguntaron, la pista no vale." }
+            {
+              "text": "¿Los otros tres también preguntaron por el balón?",
+              "isCorrect": true,
+              "nextNodeId": "otros"
+            },
+            {
+              "text": "Gracias, ya tengo suficiente.",
+              "isCorrect": false,
+              "feedback": "Casi. Falta comprobar a los otros tres: si todos preguntaron, la pista no vale."
+            }
           ]
         },
         {
@@ -280,7 +651,8 @@
           "realName": "El Cronista",
           "age": 33,
           "description": "Llegó dos horas antes del partido, sin acreditación. Recitó la rutina completa del equipo: a qué hora se levantan, cuándo se duchan, dónde se peina el capitán. Preguntó cuál de los dos balones era «el bueno» y quién se queda con él en el descanso. Lleva un reloj que no hace ningún ruido.",
-          "imageSeed": 34
+          "imageSeed": 34,
+          "imageUrl": "/images/characters/unit-16-cronista.webp"
         },
         {
           "id": "periodista",
@@ -288,7 +660,8 @@
           "realName": "Renzo Bentancur Silva",
           "age": 41,
           "description": "Preguntó por el balón, igual que el ladrón — pero porque escribe la crónica del partido para el diario. Sabe de fútbol más que nadie: él mismo explicó lo de los dos balones a los otros periodistas. Llegó tarde y no conoce la rutina del equipo.",
-          "imageSeed": 12
+          "imageSeed": 12,
+          "imageUrl": "/images/characters/unit-16-periodista.webp"
         },
         {
           "id": "hermano",
@@ -296,7 +669,8 @@
           "realName": "Julio Nazzari Peña",
           "age": 24,
           "description": "Llegó temprano al vestuario, igual que el ladrón — pero para abrazar a su hermano antes de la final. Sabe a qué hora se levanta su hermano y nada más. Sigue al equipo desde niño y conoce perfectamente lo de los dos balones.",
-          "imageSeed": 8
+          "imageSeed": 8,
+          "imageUrl": "/images/characters/unit-16-hermano.webp"
         },
         {
           "id": "federacion",
@@ -304,7 +678,8 @@
           "realName": "Aurelio Pintos Márquez",
           "age": 55,
           "description": "Conoce la rutina del equipo, igual que el ladrón — porque el horario lo escribió él en 1929. Pero llegó justo a la hora y nunca se acercó a la mesa del balón. Fue él quien negoció el acuerdo de los dos balones con Argentina.",
-          "imageSeed": 51
+          "imageSeed": 51,
+          "imageUrl": "/images/characters/unit-16-federacion.webp"
         }
       ]
     }

@@ -7,37 +7,216 @@
   "criminalName": "El Cronista",
   "bonusClue": "El Cronista habla del pasado lejano en pretérito, como de una lista de hechos. Los guardianes de Tiwanaku lo cuentan en imperfecto: aquí ERA así, HABÍA gente, se VEÍA el sol. Él recita; ellos recuerdan.",
   "vocab": [
-    { "spanish": "la piedra", "english": "the stone", "audio": "/audio/unit-20/piedra.mp3", "section": "Tiwanaku", "example": "Cada piedra encaja sin cemento." },
-    { "spanish": "la puerta", "english": "the gate, the door", "audio": "/audio/unit-20/puerta.mp3", "section": "Tiwanaku", "example": "La Puerta del Sol está tallada en un solo bloque." },
-    { "spanish": "el sol", "english": "the sun", "audio": "/audio/unit-20/sol.mp3", "section": "Tiwanaku", "example": "El sol entra por la puerta dos veces al año." },
-    { "spanish": "el lago", "english": "the lake", "audio": "/audio/unit-20/lago.mp3", "section": "Tiwanaku", "example": "El lago Titicaca está a casi cuatro mil metros." },
-    { "spanish": "el templo", "english": "the temple", "audio": "/audio/unit-20/templo.mp3", "section": "Tiwanaku", "example": "El templo mira al este, siempre al este." },
-    { "spanish": "la clave", "english": "the keystone; the key", "audio": "/audio/unit-20/clave.mp3", "section": "Tiwanaku", "example": "La piedra clave sostiene todo lo demás." },
-    { "spanish": "el guardián", "english": "the guardian, keeper", "audio": "/audio/unit-20/guardian.mp3", "section": "Tiwanaku", "example": "La guardiana aprendió de su madre." },
-    { "spanish": "la estrella", "english": "the star", "audio": "/audio/unit-20/estrella.mp3", "section": "Tiwanaku", "example": "Aquí se ven más estrellas que en ningún sitio." },
-    { "spanish": "el cielo", "english": "the sky", "audio": "/audio/unit-20/cielo.mp3", "section": "Tiwanaku", "example": "El cielo aquí es enorme y muy frío." },
-    { "spanish": "el equinoccio", "english": "the equinox", "audio": "/audio/unit-20/equinoccio.mp3", "section": "Tiwanaku", "example": "En el equinoccio el sol sale justo en el centro." },
-    { "spanish": "tallar", "english": "to carve", "audio": "/audio/unit-20/tallar.mp3", "section": "Tiwanaku", "example": "Tallaron la puerta en un solo bloque de piedra." },
-    { "spanish": "encajar", "english": "to fit together", "audio": "/audio/unit-20/encajar.mp3", "section": "Tiwanaku", "example": "Las piedras encajan sin cemento." },
-    { "spanish": "sostener", "english": "to hold up, support", "audio": "/audio/unit-20/sostener.mp3", "section": "Tiwanaku", "example": "Esa piedra sostiene el muro entero." },
-    { "spanish": "el frío", "english": "the cold", "audio": "/audio/unit-20/frio.mp3", "section": "Tiwanaku", "example": "De noche el frío corta la cara." },
-    { "spanish": "antiguo", "english": "ancient, old", "audio": "/audio/unit-20/antiguo.mp3", "section": "Tiwanaku", "example": "Es una ciudad antigua, más antigua de lo que parece." },
-    { "spanish": "sagrado", "english": "sacred", "audio": "/audio/unit-20/sagrado.mp3", "section": "Tiwanaku", "example": "Para ellos este lugar era sagrado." },
-
-    { "spanish": "era", "english": "it was, used to be (description)", "audio": "/audio/unit-20/era.mp3", "section": "Antes y aquel día", "example": "Antes esto era una ciudad enorme." },
-    { "spanish": "había", "english": "there was, there were", "audio": "/audio/unit-20/habia.mp3", "section": "Antes y aquel día", "example": "Había gente aquí todos los días." },
-    { "spanish": "tenía", "english": "he/she/it had (used to have)", "audio": "/audio/unit-20/tenia.mp3", "section": "Antes y aquel día", "example": "El templo tenía puertas de oro." },
-    { "spanish": "estaba", "english": "he/she/it was (location, state)", "audio": "/audio/unit-20/estaba.mp3", "section": "Antes y aquel día", "example": "La piedra estaba en el centro del muro." },
-    { "spanish": "veía", "english": "he/she saw, used to see", "audio": "/audio/unit-20/veia.mp3", "section": "Antes y aquel día", "example": "Desde aquí se veía el lago entero." },
-    { "spanish": "vivía", "english": "he/she lived, used to live", "audio": "/audio/unit-20/vivia.mp3", "section": "Antes y aquel día", "example": "Aquí vivía mucha gente." },
-    { "spanish": "hacía frío", "english": "it was cold", "audio": "/audio/unit-20/hacia-frio.mp3", "section": "Antes y aquel día", "example": "Hacía frío y el cielo estaba limpio." },
-    { "spanish": "llegó", "english": "he/she arrived (that day)", "audio": "/audio/unit-20/llego.mp3", "section": "Antes y aquel día", "example": "Aquel día llegó un hombre solo." },
-    { "spanish": "entró", "english": "he/she entered", "audio": "/audio/unit-20/entro.mp3", "section": "Antes y aquel día", "example": "Entró al templo antes del amanecer." },
-    { "spanish": "sacó", "english": "he/she took out", "audio": "/audio/unit-20/saco.mp3", "section": "Antes y aquel día", "example": "Sacó la piedra clave del muro." },
-    { "spanish": "preguntó", "english": "he/she asked", "audio": "/audio/unit-20/pregunto.mp3", "section": "Antes y aquel día", "example": "Preguntó cuál era la piedra clave." },
-    { "spanish": "se fue", "english": "he/she left", "audio": "/audio/unit-20/se-fue.mp3", "section": "Antes y aquel día", "example": "Se fue sin decir adiós." },
-    { "spanish": "siempre", "english": "always", "audio": "/audio/unit-20/siempre.mp3", "section": "Antes y aquel día", "example": "Siempre había alguien cuidando la puerta." },
-    { "spanish": "de repente", "english": "suddenly", "audio": "/audio/unit-20/de-repente.mp3", "section": "Antes y aquel día", "example": "De repente, aquel día, la piedra no estaba." }
+    {
+      "spanish": "la piedra",
+      "english": "the stone",
+      "audio": "/audio/unit-20/piedra.mp3",
+      "section": "Tiwanaku",
+      "example": "Cada piedra encaja sin cemento."
+    },
+    {
+      "spanish": "la puerta",
+      "english": "the gate, the door",
+      "audio": "/audio/unit-20/puerta.mp3",
+      "section": "Tiwanaku",
+      "example": "La Puerta del Sol está tallada en un solo bloque."
+    },
+    {
+      "spanish": "el sol",
+      "english": "the sun",
+      "audio": "/audio/unit-20/sol.mp3",
+      "section": "Tiwanaku",
+      "example": "El sol entra por la puerta dos veces al año."
+    },
+    {
+      "spanish": "el lago",
+      "english": "the lake",
+      "audio": "/audio/unit-20/lago.mp3",
+      "section": "Tiwanaku",
+      "example": "El lago Titicaca está a casi cuatro mil metros."
+    },
+    {
+      "spanish": "el templo",
+      "english": "the temple",
+      "audio": "/audio/unit-20/templo.mp3",
+      "section": "Tiwanaku",
+      "example": "El templo mira al este, siempre al este."
+    },
+    {
+      "spanish": "la clave",
+      "english": "the keystone; the key",
+      "audio": "/audio/unit-20/clave.mp3",
+      "section": "Tiwanaku",
+      "example": "La piedra clave sostiene todo lo demás."
+    },
+    {
+      "spanish": "el guardián",
+      "english": "the guardian, keeper",
+      "audio": "/audio/unit-20/guardian.mp3",
+      "section": "Tiwanaku",
+      "example": "La guardiana aprendió de su madre."
+    },
+    {
+      "spanish": "la estrella",
+      "english": "the star",
+      "audio": "/audio/unit-20/estrella.mp3",
+      "section": "Tiwanaku",
+      "example": "Aquí se ven más estrellas que en ningún sitio."
+    },
+    {
+      "spanish": "el cielo",
+      "english": "the sky",
+      "audio": "/audio/unit-20/cielo.mp3",
+      "section": "Tiwanaku",
+      "example": "El cielo aquí es enorme y muy frío."
+    },
+    {
+      "spanish": "el equinoccio",
+      "english": "the equinox",
+      "audio": "/audio/unit-20/equinoccio.mp3",
+      "section": "Tiwanaku",
+      "example": "En el equinoccio el sol sale justo en el centro."
+    },
+    {
+      "spanish": "tallar",
+      "english": "to carve",
+      "audio": "/audio/unit-20/tallar.mp3",
+      "section": "Tiwanaku",
+      "example": "Tallaron la puerta en un solo bloque de piedra."
+    },
+    {
+      "spanish": "encajar",
+      "english": "to fit together",
+      "audio": "/audio/unit-20/encajar.mp3",
+      "section": "Tiwanaku",
+      "example": "Las piedras encajan sin cemento."
+    },
+    {
+      "spanish": "sostener",
+      "english": "to hold up, support",
+      "audio": "/audio/unit-20/sostener.mp3",
+      "section": "Tiwanaku",
+      "example": "Esa piedra sostiene el muro entero."
+    },
+    {
+      "spanish": "el frío",
+      "english": "the cold",
+      "audio": "/audio/unit-20/frio.mp3",
+      "section": "Tiwanaku",
+      "example": "De noche el frío corta la cara."
+    },
+    {
+      "spanish": "antiguo",
+      "english": "ancient, old",
+      "audio": "/audio/unit-20/antiguo.mp3",
+      "section": "Tiwanaku",
+      "example": "Es una ciudad antigua, más antigua de lo que parece."
+    },
+    {
+      "spanish": "sagrado",
+      "english": "sacred",
+      "audio": "/audio/unit-20/sagrado.mp3",
+      "section": "Tiwanaku",
+      "example": "Para ellos este lugar era sagrado."
+    },
+    {
+      "spanish": "era",
+      "english": "it was, used to be (description)",
+      "audio": "/audio/unit-20/era.mp3",
+      "section": "Antes y aquel día",
+      "example": "Antes esto era una ciudad enorme."
+    },
+    {
+      "spanish": "había",
+      "english": "there was, there were",
+      "audio": "/audio/unit-20/habia.mp3",
+      "section": "Antes y aquel día",
+      "example": "Había gente aquí todos los días."
+    },
+    {
+      "spanish": "tenía",
+      "english": "he/she/it had (used to have)",
+      "audio": "/audio/unit-20/tenia.mp3",
+      "section": "Antes y aquel día",
+      "example": "El templo tenía puertas de oro."
+    },
+    {
+      "spanish": "estaba",
+      "english": "he/she/it was (location, state)",
+      "audio": "/audio/unit-20/estaba.mp3",
+      "section": "Antes y aquel día",
+      "example": "La piedra estaba en el centro del muro."
+    },
+    {
+      "spanish": "veía",
+      "english": "he/she saw, used to see",
+      "audio": "/audio/unit-20/veia.mp3",
+      "section": "Antes y aquel día",
+      "example": "Desde aquí se veía el lago entero."
+    },
+    {
+      "spanish": "vivía",
+      "english": "he/she lived, used to live",
+      "audio": "/audio/unit-20/vivia.mp3",
+      "section": "Antes y aquel día",
+      "example": "Aquí vivía mucha gente."
+    },
+    {
+      "spanish": "hacía frío",
+      "english": "it was cold",
+      "audio": "/audio/unit-20/hacia-frio.mp3",
+      "section": "Antes y aquel día",
+      "example": "Hacía frío y el cielo estaba limpio."
+    },
+    {
+      "spanish": "llegó",
+      "english": "he/she arrived (that day)",
+      "audio": "/audio/unit-20/llego.mp3",
+      "section": "Antes y aquel día",
+      "example": "Aquel día llegó un hombre solo."
+    },
+    {
+      "spanish": "entró",
+      "english": "he/she entered",
+      "audio": "/audio/unit-20/entro.mp3",
+      "section": "Antes y aquel día",
+      "example": "Entró al templo antes del amanecer."
+    },
+    {
+      "spanish": "sacó",
+      "english": "he/she took out",
+      "audio": "/audio/unit-20/saco.mp3",
+      "section": "Antes y aquel día",
+      "example": "Sacó la piedra clave del muro."
+    },
+    {
+      "spanish": "preguntó",
+      "english": "he/she asked",
+      "audio": "/audio/unit-20/pregunto.mp3",
+      "section": "Antes y aquel día",
+      "example": "Preguntó cuál era la piedra clave."
+    },
+    {
+      "spanish": "se fue",
+      "english": "he/she left",
+      "audio": "/audio/unit-20/se-fue.mp3",
+      "section": "Antes y aquel día",
+      "example": "Se fue sin decir adiós."
+    },
+    {
+      "spanish": "siempre",
+      "english": "always",
+      "audio": "/audio/unit-20/siempre.mp3",
+      "section": "Antes y aquel día",
+      "example": "Siempre había alguien cuidando la puerta."
+    },
+    {
+      "spanish": "de repente",
+      "english": "suddenly",
+      "audio": "/audio/unit-20/de-repente.mp3",
+      "section": "Antes y aquel día",
+      "example": "De repente, aquel día, la piedra no estaba."
+    }
   ],
   "stages": [
     {
@@ -61,16 +240,46 @@
     {
       "type": "vocabMatch",
       "pairs": [
-        { "spanish": "la piedra", "english": "the stone" },
-        { "spanish": "la clave", "english": "the keystone" },
-        { "spanish": "el templo", "english": "the temple" },
-        { "spanish": "encajar", "english": "to fit together" },
-        { "spanish": "sagrado", "english": "sacred" },
-        { "spanish": "era", "english": "it was / used to be" },
-        { "spanish": "había", "english": "there was, there were" },
-        { "spanish": "tenía", "english": "used to have" },
-        { "spanish": "sacó", "english": "he/she took out" },
-        { "spanish": "de repente", "english": "suddenly" }
+        {
+          "spanish": "la piedra",
+          "english": "the stone"
+        },
+        {
+          "spanish": "la clave",
+          "english": "the keystone"
+        },
+        {
+          "spanish": "el templo",
+          "english": "the temple"
+        },
+        {
+          "spanish": "encajar",
+          "english": "to fit together"
+        },
+        {
+          "spanish": "sagrado",
+          "english": "sacred"
+        },
+        {
+          "spanish": "era",
+          "english": "it was / used to be"
+        },
+        {
+          "spanish": "había",
+          "english": "there was, there were"
+        },
+        {
+          "spanish": "tenía",
+          "english": "used to have"
+        },
+        {
+          "spanish": "sacó",
+          "english": "he/she took out"
+        },
+        {
+          "spanish": "de repente",
+          "english": "suddenly"
+        }
       ]
     },
     {
@@ -82,30 +291,96 @@
       "rightLabel": "QUÉ PASÓ",
       "rightHint": "pretérito: la acción",
       "items": [
-        { "text": "«Antes esto era una ciudad enorme.»", "category": "left", "explanation": "era — describe cómo eran las cosas." },
-        { "text": "«Aquel día llegó un hombre solo.»", "category": "right", "explanation": "llegó — una acción concreta." },
-        { "text": "«Había gente aquí todos los días.»", "category": "left", "explanation": "había — describe el fondo, algo repetido." },
-        { "text": "«Entró al templo antes del amanecer.»", "category": "right", "explanation": "entró — pasó una vez." },
-        { "text": "«El templo tenía puertas de oro.»", "category": "left", "explanation": "tenía — cómo era el templo." },
-        { "text": "«Sacó la piedra clave del muro.»", "category": "right", "explanation": "sacó — la acción del robo." },
-        { "text": "«Hacía frío y el cielo estaba limpio.»", "category": "left", "explanation": "hacía / estaba — el fondo de la escena." },
-        { "text": "«Preguntó cuál era la piedra clave.»", "category": "right", "explanation": "preguntó — acción puntual." },
-        { "text": "«Desde aquí se veía el lago entero.»", "category": "left", "explanation": "veía — descripción habitual." },
-        { "text": "«Se fue sin decir adiós.»", "category": "right", "explanation": "se fue — acción terminada." },
-        { "text": "«Siempre había alguien cuidando la puerta.»", "category": "left", "explanation": "siempre + había — costumbre." },
-        { "text": "«De repente la piedra no estaba.»", "category": "right", "explanation": "El «de repente» marca el momento en que todo cambió." }
+        {
+          "text": "«Antes esto era una ciudad enorme.»",
+          "category": "left",
+          "explanation": "era — describe cómo eran las cosas."
+        },
+        {
+          "text": "«Aquel día llegó un hombre solo.»",
+          "category": "right",
+          "explanation": "llegó — una acción concreta."
+        },
+        {
+          "text": "«Había gente aquí todos los días.»",
+          "category": "left",
+          "explanation": "había — describe el fondo, algo repetido."
+        },
+        {
+          "text": "«Entró al templo antes del amanecer.»",
+          "category": "right",
+          "explanation": "entró — pasó una vez."
+        },
+        {
+          "text": "«El templo tenía puertas de oro.»",
+          "category": "left",
+          "explanation": "tenía — cómo era el templo."
+        },
+        {
+          "text": "«Sacó la piedra clave del muro.»",
+          "category": "right",
+          "explanation": "sacó — la acción del robo."
+        },
+        {
+          "text": "«Hacía frío y el cielo estaba limpio.»",
+          "category": "left",
+          "explanation": "hacía / estaba — el fondo de la escena."
+        },
+        {
+          "text": "«Preguntó cuál era la piedra clave.»",
+          "category": "right",
+          "explanation": "preguntó — acción puntual."
+        },
+        {
+          "text": "«Desde aquí se veía el lago entero.»",
+          "category": "left",
+          "explanation": "veía — descripción habitual."
+        },
+        {
+          "text": "«Se fue sin decir adiós.»",
+          "category": "right",
+          "explanation": "se fue — acción terminada."
+        },
+        {
+          "text": "«Siempre había alguien cuidando la puerta.»",
+          "category": "left",
+          "explanation": "siempre + había — costumbre."
+        },
+        {
+          "text": "«De repente la piedra no estaba.»",
+          "category": "right",
+          "explanation": "El «de repente» marca el momento en que todo cambió."
+        }
       ]
     },
     {
       "type": "sentenceBuilder",
       "clueReward": "El agente puede contar la noche entera: el fondo en imperfecto, el robo en pretérito. Exactamente como lo cuenta la guardiana.",
       "sentences": [
-        { "sentence": "Hacía frío y el cielo estaba limpio", "translation": "It was cold and the sky was clear." },
-        { "sentence": "Antes aquí vivía mucha gente", "translation": "A lot of people used to live here." },
-        { "sentence": "Aquel día llegó un hombre solo", "translation": "That day a man arrived alone." },
-        { "sentence": "Entró al templo antes del amanecer", "translation": "He entered the temple before dawn." },
-        { "sentence": "Preguntó cuál era la piedra clave", "translation": "He asked which one was the keystone." },
-        { "sentence": "De repente la piedra no estaba", "translation": "Suddenly the stone was not there." }
+        {
+          "sentence": "Hacía frío y el cielo estaba limpio",
+          "translation": "It was cold and the sky was clear."
+        },
+        {
+          "sentence": "Antes aquí vivía mucha gente",
+          "translation": "A lot of people used to live here."
+        },
+        {
+          "sentence": "Aquel día llegó un hombre solo",
+          "translation": "That day a man arrived alone."
+        },
+        {
+          "sentence": "Entró al templo antes del amanecer",
+          "translation": "He entered the temple before dawn."
+        },
+        {
+          "sentence": "Preguntó cuál era la piedra clave",
+          "translation": "He asked which one was the keystone."
+        },
+        {
+          "sentence": "De repente la piedra no estaba",
+          "translation": "Suddenly the stone was not there."
+        }
       ]
     },
     {
@@ -113,12 +388,30 @@
       "clueReward": "La piedra clave no se distingue a simple vista: hay que saber cuál es. Quien preguntó cuál era, no lo sabía — y quería saberlo.",
       "passage": "BITÁCORA TEMPORAL — AGENTE DE LA LIGA SOMBRA\nDestino: Tiwanaku, Bolivia. Junto al lago Titicaca.\n\nEstamos a casi cuatro mil metros. El aire es fino y de noche el frío corta la cara. El cielo aquí es tan grande que parece que las estrellas están más cerca.\n\nAntes esto era una ciudad enorme. Había mercados, había caminos, vivía muchísima gente. Hoy quedan los muros — y los muros son lo increíble: las piedras encajan unas con otras sin nada de cemento.\n\nLa Puerta del Sol está tallada en un solo bloque. En el equinoccio, el sol sale justo alineado con su centro. Ellos sabían mirar el cielo.\n\nEn el muro del templo hay una piedra que no parece especial. Es la clave: sostiene todo el resto. Si alguien la saca, el muro se cae. Desde fuera no se distingue de las demás. Hay que saber cuál es, y eso solo lo saben los guardianes.\n\nLa guardiana se llama Nayra. Cuenta lo de antes en imperfecto, como se cuentan los recuerdos: aquí había gente, el templo tenía puertas de oro, desde arriba se veía el lago entero.\n\nAnoche hacía frío y el cielo estaba limpio. Llegó un hombre solo. Preguntó cuál era la piedra clave. Nayra no se lo dijo.\n\nEsta mañana, de repente, la piedra no estaba.",
       "glossary": [
-        { "word": "el aire es fino", "translation": "the air is thin" },
-        { "word": "el muro", "translation": "the wall" },
-        { "word": "el cemento", "translation": "cement, mortar" },
-        { "word": "alineado", "translation": "aligned" },
-        { "word": "no se distingue", "translation": "it cannot be told apart" },
-        { "word": "el amanecer", "translation": "dawn" }
+        {
+          "word": "el aire es fino",
+          "translation": "the air is thin"
+        },
+        {
+          "word": "el muro",
+          "translation": "the wall"
+        },
+        {
+          "word": "el cemento",
+          "translation": "cement, mortar"
+        },
+        {
+          "word": "alineado",
+          "translation": "aligned"
+        },
+        {
+          "word": "no se distingue",
+          "translation": "it cannot be told apart"
+        },
+        {
+          "word": "el amanecer",
+          "translation": "dawn"
+        }
       ],
       "questions": [
         {
@@ -167,7 +460,12 @@
           "id": "u20-r4",
           "type": "short_answer",
           "text": "¿Cómo encajan las piedras de los muros? (Escribe en español.)",
-          "acceptableAnswers": ["sin cemento", "encajan sin cemento", "sin nada de cemento", "unas con otras sin cemento"],
+          "acceptableAnswers": [
+            "sin cemento",
+            "encajan sin cemento",
+            "sin nada de cemento",
+            "unas con otras sin cemento"
+          ],
           "explanationEs": "«las piedras encajan unas con otras sin nada de cemento».",
           "explanationEn": "Without any mortar — sin cemento."
         }
@@ -256,33 +554,69 @@
           "id": "start",
           "npcLine": "Soy Nayra. Mi madre cuidaba esta puerta y su madre antes que ella. Esta mañana falta la piedra clave del muro del templo. Si no la recupera, el muro se cae este invierno. ¿Quién es usted?",
           "options": [
-            { "text": "Soy agente de La Liga Sombra, Nayra. Cuénteme quién vino anoche.", "isCorrect": true, "nextNodeId": "quien" },
-            { "text": "¿Esa piedra vale mucho en el mercado?", "isCorrect": false, "feedback": "Es un lugar sagrado y ella es su guardiana. Esa pregunta te cierra la puerta." },
-            { "text": "El muro aguantará. No es urgente.", "isCorrect": false, "feedback": "Sí lo es: la clave sostiene el resto. Y acabas de decirle que no te importa." }
+            {
+              "text": "Soy agente de La Liga Sombra, Nayra. Cuénteme quién vino anoche.",
+              "isCorrect": true,
+              "nextNodeId": "quien"
+            },
+            {
+              "text": "¿Esa piedra vale mucho en el mercado?",
+              "isCorrect": false,
+              "feedback": "Es un lugar sagrado y ella es su guardiana. Esa pregunta te cierra la puerta."
+            },
+            {
+              "text": "El muro aguantará. No es urgente.",
+              "isCorrect": false,
+              "feedback": "Sí lo es: la clave sostiene el resto. Y acabas de decirle que no te importa."
+            }
           ]
         },
         {
           "id": "quien",
           "npcLine": "Anoche hacía frío y el cielo estaba limpio. Vinieron cuatro: un arqueólogo, una estudiante de La Paz, un pastor que sube con sus llamas… y un hombre solo que hablaba muy bien y no miraba nunca el cielo.",
           "options": [
-            { "text": "Hábleme de él. ¿Cómo contaba la historia de este lugar?", "isCorrect": true, "nextNodeId": "historia" },
-            { "text": "Fue el arqueólogo: ellos siempre quieren piedras.", "isCorrect": false, "feedback": "No adelantes. Pregunta cómo hablaba." }
+            {
+              "text": "Hábleme de él. ¿Cómo contaba la historia de este lugar?",
+              "isCorrect": true,
+              "nextNodeId": "historia"
+            },
+            {
+              "text": "Fue el arqueólogo: ellos siempre quieren piedras.",
+              "isCorrect": false,
+              "feedback": "No adelantes. Pregunta cómo hablaba."
+            }
           ]
         },
         {
           "id": "historia",
           "npcLine": "Como un libro. «Tiwanaku fue fundada, creció, dominó la región y cayó.» Cuatro fechas seguidas, todo en pretérito. Aquí no contamos así. Aquí decimos que había gente, que el templo tenía puertas de oro, que desde arriba se veía el lago. Lo que se recuerda se dice de otra manera.",
           "options": [
-            { "text": "¿Y preguntó por alguna piedra en concreto?", "isCorrect": true, "nextNodeId": "piedra" },
-            { "text": "Hablar como un libro no es delito.", "isCorrect": false, "feedback": "No lo es. Pero sigue tirando del hilo: pregunta por las piedras." }
+            {
+              "text": "¿Y preguntó por alguna piedra en concreto?",
+              "isCorrect": true,
+              "nextNodeId": "piedra"
+            },
+            {
+              "text": "Hablar como un libro no es delito.",
+              "isCorrect": false,
+              "feedback": "No lo es. Pero sigue tirando del hilo: pregunta por las piedras."
+            }
           ]
         },
         {
           "id": "piedra",
           "npcLine": "Preguntó cuál de todas era la clave. No se lo dije. Desde fuera todas parecen iguales: hay que crecer aquí para saberlo. Y después me preguntó a qué hora me quedo sola.",
           "options": [
-            { "text": "¿Los otros tres hicieron algo parecido?", "isCorrect": true, "nextNodeId": "otros" },
-            { "text": "Suficiente. Ya sé quién fue.", "isCorrect": false, "feedback": "Comprueba a los otros tres. Es el último caso: no te lo juegues a la primera." }
+            {
+              "text": "¿Los otros tres hicieron algo parecido?",
+              "isCorrect": true,
+              "nextNodeId": "otros"
+            },
+            {
+              "text": "Suficiente. Ya sé quién fue.",
+              "isCorrect": false,
+              "feedback": "Comprueba a los otros tres. Es el último caso: no te lo juegues a la primera."
+            }
           ]
         },
         {
@@ -304,7 +638,8 @@
           "realName": "El Cronista",
           "age": 33,
           "description": "Llegó solo anoche. Recitó la historia de Tiwanaku en pretérito, como cuatro fechas de un libro, mientras la guardiana la contaba en imperfecto. Preguntó cuál de las piedras era la clave y, al final, a qué hora se quedaba sola. No miró el cielo ni una vez en un sitio donde todo el mundo lo mira. Lleva un reloj que no hace ningún ruido.",
-          "imageSeed": 34
+          "imageSeed": 34,
+          "imageUrl": "/images/characters/unit-20-cronista.webp"
         },
         {
           "id": "arqueologo",
@@ -312,7 +647,8 @@
           "realName": "Gustavo Mamani Loayza",
           "age": 50,
           "description": "Preguntó cuál era la piedra clave, igual que el ladrón — pero para marcarla como intocable en su plano de conservación, y lo apuntó delante de Nayra. Cuenta el pasado en imperfecto, como ella, porque lleva treinta años escuchando a los guardianes.",
-          "imageSeed": 43
+          "imageSeed": 43,
+          "imageUrl": "/images/characters/unit-20-arqueologo.webp"
         },
         {
           "id": "estudiante",
@@ -320,7 +656,8 @@
           "realName": "Wara Choque Villca",
           "age": 19,
           "description": "Recitó fechas en pretérito, igual que el ladrón — pero porque venía de un examen y las llevaba memorizadas, y se avergonzó cuando Nayra se rió. No se acercó al muro del templo ni preguntó por ninguna piedra.",
-          "imageSeed": 15
+          "imageSeed": 15,
+          "imageUrl": "/images/characters/unit-20-estudiante.webp"
         },
         {
           "id": "pastor",
@@ -328,7 +665,8 @@
           "realName": "Emiliano Ticona Apaza",
           "age": 63,
           "description": "Preguntó a qué hora se quedaba sola Nayra, igual que el ladrón — pero porque le sube comida caliente cuando se queda de guardia, y lo hace desde hace veinte años. Conoce cada piedra del muro y cuenta el pasado igual que ella, en imperfecto.",
-          "imageSeed": 55
+          "imageSeed": 55,
+          "imageUrl": "/images/characters/unit-20-pastor.webp"
         }
       ]
     }

@@ -199,6 +199,21 @@ export async function generateAudio(
 
     const finalBuf = Buffer.concat(stitched);
     writeFileSync(absOutputPath, finalBuf);
+
+    // ⚠ RAW-CONCATENATED MP3s ARE NOT VALID MP3s.
+    //
+    // Gluing encoded MP3 buffers end to end leaves a broken frame at every
+    // seam, and `ffmpeg -v error -i file -f null -` reports "Header missing"
+    // once per join. Browsers mostly muddle through, which is why this went
+    // unnoticed across units 5 and 11-20 until every multi-voice clip in the
+    // game was checked at once. Single-voice clips were always fine.
+    //
+    // Until fluent-ffmpeg is installed, repair the file after writing it:
+    //
+    //   ffmpeg -y -i FILE -c:a libmp3lame -b:a 128k -ar 44100 FILE.fixed.mp3
+    //
+    // Re-encoding decodes the whole stream and writes continuous frames, which
+    // costs about 0.2 s of duration and produces a file that decodes clean.
     console.log(
       `  ✓ Written: ${script.outputPath} (${finalBuf.byteLength} bytes, ${useFfmpeg ? "ffmpeg-stitched" : "raw concat"})`
     );

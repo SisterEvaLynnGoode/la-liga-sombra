@@ -14,6 +14,11 @@ import { unit12Scripts } from "./scripts/unit-12.js";
 import { unit13Scripts } from "./scripts/unit-13.js";
 import { unit14Scripts } from "./scripts/unit-14.js";
 import { unit15Scripts } from "./scripts/unit-15.js";
+import { unit16Scripts } from "./scripts/unit-16.js";
+import { unit17Scripts } from "./scripts/unit-17.js";
+import { unit18Scripts } from "./scripts/unit-18.js";
+import { unit19Scripts } from "./scripts/unit-19.js";
+import { unit20Scripts } from "./scripts/unit-20.js";
 import { unit01ColdScripts } from "./scripts/unit-01-cold.js";
 import { bossEclipseScripts } from "./scripts/boss-eclipse.js";
 import { bossMedianocheScripts } from "./scripts/boss-medianoche.js";
@@ -41,6 +46,11 @@ export const scripts: AudioScript[] = [
   ...unit13Scripts,
   ...unit14Scripts,
   ...unit15Scripts,
+  ...unit16Scripts,
+  ...unit17Scripts,
+  ...unit18Scripts,
+  ...unit19Scripts,
+  ...unit20Scripts,
   // ── Cold Cases ──────────────────────────────────────────────────────────────
   ...unit01ColdScripts,
   // ── Boss Fights ─────────────────────────────────────────────────────────────

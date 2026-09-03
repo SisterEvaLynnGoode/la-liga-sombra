@@ -656,7 +656,8 @@
           "realName": "El Cronista",
           "age": 33,
           "description": "Llegó esta mañana y aun así contó con seguridad que anoche llovió, que el río subió, que nadie subió al tepuy y que el explorador vio la cascada solo un minuto. Salió al camino embarrado y volvió con los zapatos secos. Preguntó si el mapa estaba en la carpa del explorador. Lleva un reloj que no hace ningún ruido.",
-          "imageSeed": 34
+          "imageSeed": 34,
+          "imageUrl": "/images/characters/unit-19-cronista.webp"
         },
         {
           "id": "piloto",
@@ -664,7 +665,8 @@
           "realName": "Ramiro Colmenares Ortiz",
           "age": 44,
           "description": "Volvió con los zapatos secos, igual que el ladrón — pero porque aterrizó en la pista de piedra y no pisó el camino de barro ni una vez. Llegó esta mañana y no sabe nada de anoche: preguntó tres veces qué había pasado con el río.",
-          "imageSeed": 17
+          "imageSeed": 17,
+          "imageUrl": "/images/characters/unit-19-piloto.webp"
         },
         {
           "id": "botanica",
@@ -672,7 +674,8 @@
           "realName": "Ligia Herrera Paz",
           "age": 35,
           "description": "Preguntó por la carpa del explorador, igual que el ladrón — pero buscaba las notas de plantas del tepuy, no el mapa. Llegó ayer por la tarde, durmió aquí, y volvió del camino con las botas llenas de barro hasta las rodillas.",
-          "imageSeed": 30
+          "imageSeed": 30,
+          "imageUrl": "/images/characters/unit-19-botanica.webp"
         },
         {
           "id": "periodista",
@@ -680,7 +683,8 @@
           "realName": "Teo Marcano Rivas",
           "age": 28,
           "description": "Contó lo de anoche con todo detalle, igual que el ladrón — pero porque Aurelia se lo contó en el desayuno y él lo apuntó todo en su cuaderno, con el nombre de ella al lado. Llegó esta mañana, se acercó al río y volvió empapado.",
-          "imageSeed": 25
+          "imageSeed": 25,
+          "imageUrl": "/images/characters/unit-19-periodista.webp"
         }
       ]
     }

@@ -7,39 +7,230 @@
   "criminalName": "El Cronista",
   "bonusClue": "El Cronista pide instrucciones para todo, pero nunca las sigue con las manos. Escucha «pon el hilo aquí» y no pone nada. Quiere el patrón, no el oficio.",
   "vocab": [
-    { "spanish": "el ñandutí", "english": "ñandutí (Paraguayan lace)", "audio": "/audio/unit-18/nanduti.mp3", "section": "El Taller", "example": "El ñandutí es un encaje que imita la tela de araña." },
-    { "spanish": "el encaje", "english": "the lace", "audio": "/audio/unit-18/encaje.mp3", "section": "El Taller", "example": "Este encaje tarda tres semanas." },
-    { "spanish": "el hilo", "english": "the thread", "audio": "/audio/unit-18/hilo.mp3", "section": "El Taller", "example": "Corta el hilo con cuidado." },
-    { "spanish": "la aguja", "english": "the needle", "audio": "/audio/unit-18/aguja.mp3", "section": "El Taller", "example": "Toma la aguja con tres dedos." },
-    { "spanish": "el patrón", "english": "the pattern", "audio": "/audio/unit-18/patron.mp3", "section": "El Taller", "example": "El patrón está dibujado en un papel muy viejo." },
-    { "spanish": "el bastidor", "english": "the frame (embroidery)", "audio": "/audio/unit-18/bastidor.mp3", "section": "El Taller", "example": "Pon la tela en el bastidor y tensa bien." },
-    { "spanish": "la tejedora", "english": "the weaver (f.)", "audio": "/audio/unit-18/tejedora.mp3", "section": "El Taller", "example": "La tejedora aprendió de su abuela." },
-    { "spanish": "tejer", "english": "to weave", "audio": "/audio/unit-18/tejer.mp3", "section": "El Taller", "example": "Aquí se teje desde hace doscientos años." },
-    { "spanish": "el arpa", "english": "the harp", "audio": "/audio/unit-18/arpa.mp3", "section": "El Taller", "example": "El arpa paraguaya no tiene pedales." },
-    { "spanish": "la cuerda", "english": "the string", "audio": "/audio/unit-18/cuerda.mp3", "section": "El Taller", "example": "Toca la cuerda con la uña, no con el dedo." },
-    { "spanish": "la araña", "english": "the spider", "audio": "/audio/unit-18/arana.mp3", "section": "El Taller", "example": "«Ñandutí» significa tela de araña en guaraní." },
-    { "spanish": "la rueda", "english": "the wheel, the round motif", "audio": "/audio/unit-18/rueda.mp3", "section": "El Taller", "example": "Cada rueda del encaje se teje por separado." },
-    { "spanish": "el nudo", "english": "the knot", "audio": "/audio/unit-18/nudo.mp3", "section": "El Taller", "example": "Haz un nudo pequeño y escóndelo." },
-    { "spanish": "la mano", "english": "the hand", "audio": "/audio/unit-18/mano.mp3", "section": "El Taller", "example": "Las manos aprenden antes que la cabeza." },
-    { "spanish": "el dedo", "english": "the finger", "audio": "/audio/unit-18/dedo.mp3", "section": "El Taller", "example": "Usa el dedo para marcar el centro." },
-    { "spanish": "despacio", "english": "slowly", "audio": "/audio/unit-18/despacio.mp3", "section": "El Taller", "example": "Trabaja despacio: el ñandutí no se apura." },
-
-    { "spanish": "toma", "english": "take (tú command)", "audio": "/audio/unit-18/toma.mp3", "section": "Instrucciones", "example": "Toma la aguja." },
-    { "spanish": "pon", "english": "put (tú command)", "audio": "/audio/unit-18/pon.mp3", "section": "Instrucciones", "example": "Pon el hilo en el centro." },
-    { "spanish": "corta", "english": "cut (tú command)", "audio": "/audio/unit-18/corta.mp3", "section": "Instrucciones", "example": "Corta aquí, no allí." },
-    { "spanish": "mira", "english": "look (tú command)", "audio": "/audio/unit-18/mira.mp3", "section": "Instrucciones", "example": "Mira el patrón antes de empezar." },
-    { "spanish": "escucha", "english": "listen (tú command)", "audio": "/audio/unit-18/escucha.mp3", "section": "Instrucciones", "example": "Escucha el arpa mientras tejes." },
-    { "spanish": "haz", "english": "do, make (tú command)", "audio": "/audio/unit-18/haz.mp3", "section": "Instrucciones", "example": "Haz un nudo pequeño." },
-    { "spanish": "ven", "english": "come (tú command)", "audio": "/audio/unit-18/ven.mp3", "section": "Instrucciones", "example": "Ven aquí y siéntate." },
-    { "spanish": "ten", "english": "hold, have (tú command)", "audio": "/audio/unit-18/ten.mp3", "section": "Instrucciones", "example": "Ten paciencia." },
-    { "spanish": "sal", "english": "go out (tú command)", "audio": "/audio/unit-18/sal.mp3", "section": "Instrucciones", "example": "Sal al patio si hace calor." },
-    { "spanish": "di", "english": "say (tú command)", "audio": "/audio/unit-18/di.mp3", "section": "Instrucciones", "example": "Di el nombre de cada rueda." },
-    { "spanish": "empieza", "english": "start (tú command)", "audio": "/audio/unit-18/empieza.mp3", "section": "Instrucciones", "example": "Empieza por el centro, siempre." },
-    { "spanish": "termina", "english": "finish (tú command)", "audio": "/audio/unit-18/termina.mp3", "section": "Instrucciones", "example": "Termina la rueda antes de cortar." },
-    { "spanish": "primero", "english": "first", "audio": "/audio/unit-18/primero.mp3", "section": "Instrucciones", "example": "Primero el centro, después los rayos." },
-    { "spanish": "luego", "english": "then, next", "audio": "/audio/unit-18/luego.mp3", "section": "Instrucciones", "example": "Luego tensa el hilo." },
-    { "spanish": "al final", "english": "at the end", "audio": "/audio/unit-18/al-final.mp3", "section": "Instrucciones", "example": "Al final, corta y esconde el nudo." },
-    { "spanish": "con cuidado", "english": "carefully", "audio": "/audio/unit-18/con-cuidado.mp3", "section": "Instrucciones", "example": "Saca el encaje del bastidor con cuidado." }
+    {
+      "spanish": "el ñandutí",
+      "english": "ñandutí (Paraguayan lace)",
+      "audio": "/audio/unit-18/nanduti.mp3",
+      "section": "El Taller",
+      "example": "El ñandutí es un encaje que imita la tela de araña."
+    },
+    {
+      "spanish": "el encaje",
+      "english": "the lace",
+      "audio": "/audio/unit-18/encaje.mp3",
+      "section": "El Taller",
+      "example": "Este encaje tarda tres semanas."
+    },
+    {
+      "spanish": "el hilo",
+      "english": "the thread",
+      "audio": "/audio/unit-18/hilo.mp3",
+      "section": "El Taller",
+      "example": "Corta el hilo con cuidado."
+    },
+    {
+      "spanish": "la aguja",
+      "english": "the needle",
+      "audio": "/audio/unit-18/aguja.mp3",
+      "section": "El Taller",
+      "example": "Toma la aguja con tres dedos."
+    },
+    {
+      "spanish": "el patrón",
+      "english": "the pattern",
+      "audio": "/audio/unit-18/patron.mp3",
+      "section": "El Taller",
+      "example": "El patrón está dibujado en un papel muy viejo."
+    },
+    {
+      "spanish": "el bastidor",
+      "english": "the frame (embroidery)",
+      "audio": "/audio/unit-18/bastidor.mp3",
+      "section": "El Taller",
+      "example": "Pon la tela en el bastidor y tensa bien."
+    },
+    {
+      "spanish": "la tejedora",
+      "english": "the weaver (f.)",
+      "audio": "/audio/unit-18/tejedora.mp3",
+      "section": "El Taller",
+      "example": "La tejedora aprendió de su abuela."
+    },
+    {
+      "spanish": "tejer",
+      "english": "to weave",
+      "audio": "/audio/unit-18/tejer.mp3",
+      "section": "El Taller",
+      "example": "Aquí se teje desde hace doscientos años."
+    },
+    {
+      "spanish": "el arpa",
+      "english": "the harp",
+      "audio": "/audio/unit-18/arpa.mp3",
+      "section": "El Taller",
+      "example": "El arpa paraguaya no tiene pedales."
+    },
+    {
+      "spanish": "la cuerda",
+      "english": "the string",
+      "audio": "/audio/unit-18/cuerda.mp3",
+      "section": "El Taller",
+      "example": "Toca la cuerda con la uña, no con el dedo."
+    },
+    {
+      "spanish": "la araña",
+      "english": "the spider",
+      "audio": "/audio/unit-18/arana.mp3",
+      "section": "El Taller",
+      "example": "«Ñandutí» significa tela de araña en guaraní."
+    },
+    {
+      "spanish": "la rueda",
+      "english": "the wheel, the round motif",
+      "audio": "/audio/unit-18/rueda.mp3",
+      "section": "El Taller",
+      "example": "Cada rueda del encaje se teje por separado."
+    },
+    {
+      "spanish": "el nudo",
+      "english": "the knot",
+      "audio": "/audio/unit-18/nudo.mp3",
+      "section": "El Taller",
+      "example": "Haz un nudo pequeño y escóndelo."
+    },
+    {
+      "spanish": "la mano",
+      "english": "the hand",
+      "audio": "/audio/unit-18/mano.mp3",
+      "section": "El Taller",
+      "example": "Las manos aprenden antes que la cabeza."
+    },
+    {
+      "spanish": "el dedo",
+      "english": "the finger",
+      "audio": "/audio/unit-18/dedo.mp3",
+      "section": "El Taller",
+      "example": "Usa el dedo para marcar el centro."
+    },
+    {
+      "spanish": "despacio",
+      "english": "slowly",
+      "audio": "/audio/unit-18/despacio.mp3",
+      "section": "El Taller",
+      "example": "Trabaja despacio: el ñandutí no se apura."
+    },
+    {
+      "spanish": "toma",
+      "english": "take (tú command)",
+      "audio": "/audio/unit-18/toma.mp3",
+      "section": "Instrucciones",
+      "example": "Toma la aguja."
+    },
+    {
+      "spanish": "pon",
+      "english": "put (tú command)",
+      "audio": "/audio/unit-18/pon.mp3",
+      "section": "Instrucciones",
+      "example": "Pon el hilo en el centro."
+    },
+    {
+      "spanish": "corta",
+      "english": "cut (tú command)",
+      "audio": "/audio/unit-18/corta.mp3",
+      "section": "Instrucciones",
+      "example": "Corta aquí, no allí."
+    },
+    {
+      "spanish": "mira",
+      "english": "look (tú command)",
+      "audio": "/audio/unit-18/mira.mp3",
+      "section": "Instrucciones",
+      "example": "Mira el patrón antes de empezar."
+    },
+    {
+      "spanish": "escucha",
+      "english": "listen (tú command)",
+      "audio": "/audio/unit-18/escucha.mp3",
+      "section": "Instrucciones",
+      "example": "Escucha el arpa mientras tejes."
+    },
+    {
+      "spanish": "haz",
+      "english": "do, make (tú command)",
+      "audio": "/audio/unit-18/haz.mp3",
+      "section": "Instrucciones",
+      "example": "Haz un nudo pequeño."
+    },
+    {
+      "spanish": "ven",
+      "english": "come (tú command)",
+      "audio": "/audio/unit-18/ven.mp3",
+      "section": "Instrucciones",
+      "example": "Ven aquí y siéntate."
+    },
+    {
+      "spanish": "ten",
+      "english": "hold, have (tú command)",
+      "audio": "/audio/unit-18/ten.mp3",
+      "section": "Instrucciones",
+      "example": "Ten paciencia."
+    },
+    {
+      "spanish": "sal",
+      "english": "go out (tú command)",
+      "audio": "/audio/unit-18/sal.mp3",
+      "section": "Instrucciones",
+      "example": "Sal al patio si hace calor."
+    },
+    {
+      "spanish": "di",
+      "english": "say (tú command)",
+      "audio": "/audio/unit-18/di.mp3",
+      "section": "Instrucciones",
+      "example": "Di el nombre de cada rueda."
+    },
+    {
+      "spanish": "empieza",
+      "english": "start (tú command)",
+      "audio": "/audio/unit-18/empieza.mp3",
+      "section": "Instrucciones",
+      "example": "Empieza por el centro, siempre."
+    },
+    {
+      "spanish": "termina",
+      "english": "finish (tú command)",
+      "audio": "/audio/unit-18/termina.mp3",
+      "section": "Instrucciones",
+      "example": "Termina la rueda antes de cortar."
+    },
+    {
+      "spanish": "primero",
+      "english": "first",
+      "audio": "/audio/unit-18/primero.mp3",
+      "section": "Instrucciones",
+      "example": "Primero el centro, después los rayos."
+    },
+    {
+      "spanish": "luego",
+      "english": "then, next",
+      "audio": "/audio/unit-18/luego.mp3",
+      "section": "Instrucciones",
+      "example": "Luego tensa el hilo."
+    },
+    {
+      "spanish": "al final",
+      "english": "at the end",
+      "audio": "/audio/unit-18/al-final.mp3",
+      "section": "Instrucciones",
+      "example": "Al final, corta y esconde el nudo."
+    },
+    {
+      "spanish": "con cuidado",
+      "english": "carefully",
+      "audio": "/audio/unit-18/con-cuidado.mp3",
+      "section": "Instrucciones",
+      "example": "Saca el encaje del bastidor con cuidado."
+    }
   ],
   "stages": [
     {
@@ -62,16 +253,46 @@
     {
       "type": "vocabMatch",
       "pairs": [
-        { "spanish": "el ñandutí", "english": "Paraguayan lace" },
-        { "spanish": "el hilo", "english": "the thread" },
-        { "spanish": "la aguja", "english": "the needle" },
-        { "spanish": "el patrón", "english": "the pattern" },
-        { "spanish": "el nudo", "english": "the knot" },
-        { "spanish": "toma", "english": "take (tú command)" },
-        { "spanish": "pon", "english": "put (tú command)" },
-        { "spanish": "haz", "english": "do, make (tú command)" },
-        { "spanish": "despacio", "english": "slowly" },
-        { "spanish": "con cuidado", "english": "carefully" }
+        {
+          "spanish": "el ñandutí",
+          "english": "Paraguayan lace"
+        },
+        {
+          "spanish": "el hilo",
+          "english": "the thread"
+        },
+        {
+          "spanish": "la aguja",
+          "english": "the needle"
+        },
+        {
+          "spanish": "el patrón",
+          "english": "the pattern"
+        },
+        {
+          "spanish": "el nudo",
+          "english": "the knot"
+        },
+        {
+          "spanish": "toma",
+          "english": "take (tú command)"
+        },
+        {
+          "spanish": "pon",
+          "english": "put (tú command)"
+        },
+        {
+          "spanish": "haz",
+          "english": "do, make (tú command)"
+        },
+        {
+          "spanish": "despacio",
+          "english": "slowly"
+        },
+        {
+          "spanish": "con cuidado",
+          "english": "carefully"
+        }
       ]
     },
     {
@@ -83,30 +304,96 @@
       "rightLabel": "NO ES MANDATO",
       "rightHint": "describe lo que pasa",
       "items": [
-        { "text": "«Toma la aguja.»", "category": "left", "explanation": "Mandato de tú: toma." },
-        { "text": "«Ella toma la aguja.»", "category": "right", "explanation": "Describe lo que ella hace, no es una orden." },
-        { "text": "«Pon el hilo en el centro.»", "category": "left", "explanation": "Mandato irregular: pon (de poner)." },
-        { "text": "«Yo pongo el hilo en el centro.»", "category": "right", "explanation": "Presente, primera persona." },
-        { "text": "«Haz un nudo pequeño.»", "category": "left", "explanation": "Mandato irregular: haz (de hacer)." },
-        { "text": "«Ella hace un nudo pequeño.»", "category": "right", "explanation": "Descripción, no orden." },
-        { "text": "«Ven aquí y siéntate.»", "category": "left", "explanation": "Dos mandatos: ven (venir) y siéntate." },
-        { "text": "«Viene todos los martes.»", "category": "right", "explanation": "Presente: describe una costumbre." },
-        { "text": "«Ten paciencia.»", "category": "left", "explanation": "Mandato irregular: ten (de tener)." },
-        { "text": "«Tiene mucha paciencia.»", "category": "right", "explanation": "Describe a la persona." },
-        { "text": "«Empieza por el centro, siempre.»", "category": "left", "explanation": "Mandato regular: empieza." },
-        { "text": "«El ñandutí empieza por el centro.»", "category": "right", "explanation": "Explica cómo es, no ordena." }
+        {
+          "text": "«Toma la aguja.»",
+          "category": "left",
+          "explanation": "Mandato de tú: toma."
+        },
+        {
+          "text": "«Ella toma la aguja.»",
+          "category": "right",
+          "explanation": "Describe lo que ella hace, no es una orden."
+        },
+        {
+          "text": "«Pon el hilo en el centro.»",
+          "category": "left",
+          "explanation": "Mandato irregular: pon (de poner)."
+        },
+        {
+          "text": "«Yo pongo el hilo en el centro.»",
+          "category": "right",
+          "explanation": "Presente, primera persona."
+        },
+        {
+          "text": "«Haz un nudo pequeño.»",
+          "category": "left",
+          "explanation": "Mandato irregular: haz (de hacer)."
+        },
+        {
+          "text": "«Ella hace un nudo pequeño.»",
+          "category": "right",
+          "explanation": "Descripción, no orden."
+        },
+        {
+          "text": "«Ven aquí y siéntate.»",
+          "category": "left",
+          "explanation": "Dos mandatos: ven (venir) y siéntate."
+        },
+        {
+          "text": "«Viene todos los martes.»",
+          "category": "right",
+          "explanation": "Presente: describe una costumbre."
+        },
+        {
+          "text": "«Ten paciencia.»",
+          "category": "left",
+          "explanation": "Mandato irregular: ten (de tener)."
+        },
+        {
+          "text": "«Tiene mucha paciencia.»",
+          "category": "right",
+          "explanation": "Describe a la persona."
+        },
+        {
+          "text": "«Empieza por el centro, siempre.»",
+          "category": "left",
+          "explanation": "Mandato regular: empieza."
+        },
+        {
+          "text": "«El ñandutí empieza por el centro.»",
+          "category": "right",
+          "explanation": "Explica cómo es, no ordena."
+        }
       ]
     },
     {
       "type": "sentenceBuilder",
       "clueReward": "El agente puede repetir la receta entera. Cualquiera que la escuche y no mueva las manos se nota enseguida.",
       "sentences": [
-        { "sentence": "Toma la aguja con tres dedos", "translation": "Take the needle with three fingers." },
-        { "sentence": "Pon el hilo en el centro de la rueda", "translation": "Put the thread in the centre of the wheel." },
-        { "sentence": "Haz un nudo pequeño y escóndelo", "translation": "Make a small knot and hide it." },
-        { "sentence": "Primero el centro, luego los rayos", "translation": "First the centre, then the spokes." },
-        { "sentence": "Trabaja despacio y ten paciencia", "translation": "Work slowly and be patient." },
-        { "sentence": "Al final, saca el encaje con cuidado", "translation": "At the end, take the lace out carefully." }
+        {
+          "sentence": "Toma la aguja con tres dedos",
+          "translation": "Take the needle with three fingers."
+        },
+        {
+          "sentence": "Pon el hilo en el centro de la rueda",
+          "translation": "Put the thread in the centre of the wheel."
+        },
+        {
+          "sentence": "Haz un nudo pequeño y escóndelo",
+          "translation": "Make a small knot and hide it."
+        },
+        {
+          "sentence": "Primero el centro, luego los rayos",
+          "translation": "First the centre, then the spokes."
+        },
+        {
+          "sentence": "Trabaja despacio y ten paciencia",
+          "translation": "Work slowly and be patient."
+        },
+        {
+          "sentence": "Al final, saca el encaje con cuidado",
+          "translation": "At the end, take the lace out carefully."
+        }
       ]
     },
     {
@@ -114,19 +401,42 @@
       "clueReward": "El patrón de la abuela es único y está en la caja de madera del taller. Y siempre se empieza por el centro: quien no lo sabe, no ha tejido nunca.",
       "passage": "BITÁCORA TEMPORAL — AGENTE DE LA LIGA SOMBRA\nDestino: Itauguá, Paraguay.\n\nEn este pueblo casi todas las casas tienen un bastidor en el patio. Aquí se teje ñandutí desde hace más de doscientos años.\n\n«Ñandutí» significa tela de araña en guaraní. Y se parece: el encaje se hace en ruedas, y cada rueda se empieza siempre por el centro. Primero el centro, luego los rayos, al final el borde. Nunca al revés.\n\nDoña Ramona enseña a cuatro alumnas en el patio. Enseña con las manos y con órdenes cortas: «Toma la aguja.» «Pon el hilo aquí.» «Haz un nudo pequeño.» «Ten paciencia.» Las alumnas repiten con los dedos, no con la boca.\n\nEn una caja de madera guarda un papel muy viejo: el patrón que dibujó su abuela. Es el único que explica la rueda más difícil, la de dieciséis rayos. No hay copia.\n\nEsta tarde vino un hombre a aprender. Se sentó y pidió que le repitieran cada instrucción dos veces. Doña Ramona se las repitió. Pero él no movió las manos ni una sola vez. Tenía la aguja en la mesa, no en los dedos.\n\nY cuando le tocó empezar su rueda, empezó por el borde.",
       "glossary": [
-        { "word": "el patio", "translation": "the courtyard" },
-        { "word": "el rayo", "translation": "the spoke, ray" },
-        { "word": "el borde", "translation": "the edge" },
-        { "word": "al revés", "translation": "backwards, the other way round" },
-        { "word": "la alumna", "translation": "the student (f.)" },
-        { "word": "le tocó", "translation": "it was his turn" }
+        {
+          "word": "el patio",
+          "translation": "the courtyard"
+        },
+        {
+          "word": "el rayo",
+          "translation": "the spoke, ray"
+        },
+        {
+          "word": "el borde",
+          "translation": "the edge"
+        },
+        {
+          "word": "al revés",
+          "translation": "backwards, the other way round"
+        },
+        {
+          "word": "la alumna",
+          "translation": "the student (f.)"
+        },
+        {
+          "word": "le tocó",
+          "translation": "it was his turn"
+        }
       ],
       "questions": [
         {
           "id": "u18-r1",
           "type": "multiple_choice",
           "text": "¿Qué significa «ñandutí» en guaraní?",
-          "options": ["Aguja", "Tela de araña", "Encaje blanco", "Rueda"],
+          "options": [
+            "Aguja",
+            "Tela de araña",
+            "Encaje blanco",
+            "Rueda"
+          ],
           "correctIndex": 1,
           "explanationEs": "«Ñandutí significa tela de araña en guaraní».",
           "explanationEn": "Spiderweb — and the lace really does look like one."
@@ -135,7 +445,12 @@
           "id": "u18-r2",
           "type": "multiple_choice",
           "text": "¿Por dónde se empieza siempre una rueda?",
-          "options": ["Por el borde", "Por los rayos", "Por el centro", "Por el nudo final"],
+          "options": [
+            "Por el borde",
+            "Por los rayos",
+            "Por el centro",
+            "Por el nudo final"
+          ],
           "correctIndex": 2,
           "explanationEs": "«cada rueda se empieza siempre por el centro… Nunca al revés».",
           "explanationEn": "Always the centre first. This is the clue that catches the thief."
@@ -158,7 +473,13 @@
           "id": "u18-r4",
           "type": "short_answer",
           "text": "¿Cuántos rayos tiene la rueda más difícil? (Escribe el número en español.)",
-          "acceptableAnswers": ["dieciséis", "dieciseis", "16", "dieciséis rayos", "dieciseis rayos"],
+          "acceptableAnswers": [
+            "dieciséis",
+            "dieciseis",
+            "16",
+            "dieciséis rayos",
+            "dieciseis rayos"
+          ],
           "explanationEs": "«la rueda más difícil, la de dieciséis rayos».",
           "explanationEn": "Sixteen — dieciséis."
         }
@@ -176,14 +497,24 @@
       "questions": [
         {
           "question": "¿Qué le pide el alumno a doña Ramona?",
-          "options": ["Que hable más despacio", "Que le repita la instrucción", "Que le preste una aguja", "Que le venda el encaje"],
+          "options": [
+            "Que hable más despacio",
+            "Que le repita la instrucción",
+            "Que le preste una aguja",
+            "Que le venda el encaje"
+          ],
           "correctIndex": 1,
           "explanationEs": "«Perdón, repítamelo, por favor.»",
           "explanationEn": "He asks her to repeat the instruction."
         },
         {
           "question": "¿Dónde tiene la aguja mientras «aprende»?",
-          "options": ["En los dedos", "En el bastidor", "En la mesa", "En el bolsillo"],
+          "options": [
+            "En los dedos",
+            "En el bastidor",
+            "En la mesa",
+            "En el bolsillo"
+          ],
           "correctIndex": 2,
           "explanationEs": "«Tienes la aguja en la mesa» — no está tejiendo.",
           "explanationEn": "On the table — he never actually works."
@@ -237,33 +568,69 @@
           "id": "start",
           "npcLine": "Buenas tardes. Soy Ramona. Enseño ñandutí en este patio desde hace cuarenta años. Hoy me falta el patrón de mi abuela. ¿Y usted quién es?",
           "options": [
-            { "text": "Buenas tardes, doña Ramona. Soy agente de La Liga Sombra. ¿Quién estuvo hoy en el taller?", "isCorrect": true, "nextNodeId": "quien" },
-            { "text": "¿Ese papel viejo vale algo?", "isCorrect": false, "feedback": "Para ella vale su familia entera. Y esa es la pregunta del ladrón." },
-            { "text": "Seguro que lo guardó mal.", "isCorrect": false, "feedback": "Lleva cuarenta años sin perder nada. No empieces acusándola." }
+            {
+              "text": "Buenas tardes, doña Ramona. Soy agente de La Liga Sombra. ¿Quién estuvo hoy en el taller?",
+              "isCorrect": true,
+              "nextNodeId": "quien"
+            },
+            {
+              "text": "¿Ese papel viejo vale algo?",
+              "isCorrect": false,
+              "feedback": "Para ella vale su familia entera. Y esa es la pregunta del ladrón."
+            },
+            {
+              "text": "Seguro que lo guardó mal.",
+              "isCorrect": false,
+              "feedback": "Lleva cuarenta años sin perder nada. No empieces acusándola."
+            }
           ]
         },
         {
           "id": "quien",
           "npcLine": "Cuatro personas nuevas. Una turista, un comerciante de la capital, un músico que vino a tocar el arpa… y un hombre que se sentó a aprender y no aprendió nada.",
           "options": [
-            { "text": "Hábleme de ese hombre. ¿Qué hizo con las manos?", "isCorrect": true, "nextNodeId": "manos" },
-            { "text": "Entonces fue el comerciante.", "isCorrect": false, "feedback": "Todavía no lo sabes. Pregunta primero." }
+            {
+              "text": "Hábleme de ese hombre. ¿Qué hizo con las manos?",
+              "isCorrect": true,
+              "nextNodeId": "manos"
+            },
+            {
+              "text": "Entonces fue el comerciante.",
+              "isCorrect": false,
+              "feedback": "Todavía no lo sabes. Pregunta primero."
+            }
           ]
         },
         {
           "id": "manos",
           "npcLine": "Nada. Ahí está lo raro. Me pidió que repitiera cada instrucción dos veces — «toma la aguja», «pon el hilo», «haz un nudo» — y las repetí. Pero tuvo la aguja en la mesa toda la tarde. Aquí las manos aprenden antes que la cabeza.",
           "options": [
-            { "text": "¿Y cuando le tocó tejer su rueda?", "isCorrect": true, "nextNodeId": "rueda" },
-            { "text": "Quizá le daba vergüenza.", "isCorrect": false, "feedback": "Puede ser. Pero mira qué hizo cuando le tocó el turno." }
+            {
+              "text": "¿Y cuando le tocó tejer su rueda?",
+              "isCorrect": true,
+              "nextNodeId": "rueda"
+            },
+            {
+              "text": "Quizá le daba vergüenza.",
+              "isCorrect": false,
+              "feedback": "Puede ser. Pero mira qué hizo cuando le tocó el turno."
+            }
           ]
         },
         {
           "id": "rueda",
           "npcLine": "Empezó por el borde. ¡Por el borde! Aquí una niña de seis años empieza por el centro. Eso no se olvida, eso es que nunca ha tejido. Y después preguntó si el patrón de mi abuela estaba en la caja.",
           "options": [
-            { "text": "¿Los otros tres hicieron algo parecido?", "isCorrect": true, "nextNodeId": "otros" },
-            { "text": "Ya está claro, gracias.", "isCorrect": false, "feedback": "Casi. Comprueba a los otros tres antes de acusar." }
+            {
+              "text": "¿Los otros tres hicieron algo parecido?",
+              "isCorrect": true,
+              "nextNodeId": "otros"
+            },
+            {
+              "text": "Ya está claro, gracias.",
+              "isCorrect": false,
+              "feedback": "Casi. Comprueba a los otros tres antes de acusar."
+            }
           ]
         },
         {
@@ -285,7 +652,8 @@
           "realName": "El Cronista",
           "age": 33,
           "description": "Se sentó a aprender y pidió que le repitieran cada instrucción dos veces. Tuvo la aguja en la mesa toda la tarde y no movió las manos ni una vez. Cuando le tocó su rueda, empezó por el borde. Preguntó si el patrón de la abuela estaba en la caja de madera. Lleva un reloj que no hace ningún ruido.",
-          "imageSeed": 34
+          "imageSeed": 34,
+          "imageUrl": "/images/characters/unit-18-cronista.webp"
         },
         {
           "id": "turista",
@@ -293,7 +661,8 @@
           "realName": "Hanna Wirth Olmedo",
           "age": 29,
           "description": "Pidió que le repitieran cada instrucción, igual que el ladrón — pero porque casi no habla español y quería entender. Tejió toda la tarde con las manos, torpe pero sin parar, y empezó su rueda por el centro como le enseñaron.",
-          "imageSeed": 22
+          "imageSeed": 22,
+          "imageUrl": "/images/characters/unit-18-turista.webp"
         },
         {
           "id": "musico",
@@ -301,7 +670,8 @@
           "realName": "Cirilo Benítez Rojas",
           "age": 46,
           "description": "No movió las manos sobre el bastidor, igual que el ladrón — porque vino a tocar el arpa para las tejedoras, no a tejer. Ni se acercó a la mesa del ñandutí. Sabe de memoria que se empieza por el centro: creció viendo a su madre tejer.",
-          "imageSeed": 39
+          "imageSeed": 39,
+          "imageUrl": "/images/characters/unit-18-musico.webp"
         },
         {
           "id": "comerciante",
@@ -309,7 +679,8 @@
           "realName": "Nicanor Duarte Escobar",
           "age": 52,
           "description": "Preguntó por la caja del patrón, igual que el ladrón — pero lleva veinte años comprando encaje aquí y quería saber si doña Ramona haría la rueda de dieciséis rayos para un pedido. Se sentó, tejió, y empezó por el centro.",
-          "imageSeed": 47
+          "imageSeed": 47,
+          "imageUrl": "/images/characters/unit-18-comerciante.webp"
         }
       ]
     }
