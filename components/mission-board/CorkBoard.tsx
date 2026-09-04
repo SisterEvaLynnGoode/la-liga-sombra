@@ -71,7 +71,7 @@ export default function CorkBoard({ caseFiles, bossEntries = [] }: Props) {
           </p>
           <div className="w-full h-px bg-[#c9933a] mt-1 opacity-40" />
           <p className="font-typewriter text-[9px] tracking-[0.2em] text-[#8b5e10] mt-1">
-            La Liga Sombra · 10 países · 10 casos
+            La Liga Sombra · 20 países · 20 casos
           </p>
         </div>
       </div>
