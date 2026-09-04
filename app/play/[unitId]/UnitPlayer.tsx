@@ -521,7 +521,20 @@ export default function UnitPlayer({ content, unitId, unitNumber, classId, agent
             options={stage.options}
             correctIndex={stage.correctIndex}
             questions={stage.questions}
-            maxReplays={isCold ? 1 : (stage.maxReplays ?? 3)}
+            /*
+              At least one listen per question. Caso 2 authored 3 replays for a
+              5-question, 28-second clip, so a student was on "última
+              oportunidad" at question 2 and answered the last three from
+              memory. Failing then sends them back to question 1 with the whole
+              set to redo, which is what "the questions don't change" looks
+              like from a student's seat.
+
+              Cold cases keep their single deliberate listen: that stage is the
+              harder replay of a case already solved.
+            */
+            maxReplays={
+              isCold ? 1 : Math.max(stage.maxReplays ?? 3, stage.questions?.length ?? 1)
+            }
             unitId={unitId}
             onComplete={handleStageComplete}
           />

@@ -127,35 +127,74 @@ export default function ListeningComprehension({
   const exhausted     = replaysLeft <= 0;
 
   // ── Audio event wiring ────────────────────────────────────────────────────
+  //
+  // THE BUG THIS FIXES
+  //
+  // This effect used to wait only for `canplaythrough`. That event fires once.
+  // When the mp3 is already in the browser cache the element reaches
+  // readyState 4 during the same tick it is created, which is BEFORE React runs
+  // this effect and attaches the listener. The event is then already gone and
+  // never fires again, so the component sat in "loading" until the 20 second
+  // timeout and told the student "El audio no se cargó" about a file that was
+  // fully loaded and ready to play.
+  //
+  // Cached is the normal case, not the edge case: the second student on a
+  // Chromebook, anyone who reloads, anyone who retries the stage. Verified by
+  // reloading the stage and reading audio.readyState === 4 while the spinner
+  // was still on screen.
+  //
+  // So: check readyState first, and listen for the earlier `canplay` and
+  // `loadeddata` events as well. Any of them means we can start.
   useEffect(() => {
     const audio = audioRef.current;
     if (!audio) return;
 
-    // If canplaythrough hasn't fired by now, treat the audio as unavailable.
-    const timer = setTimeout(() => {
-      if (phase === "loading") setPhase("loadError");
-    }, AUDIO_LOAD_TIMEOUT_MS);
-    setLoadErrorTimer(timer);
+    // Listeners go on FIRST and stay on for the life of the element, so that
+    // "↺ Reintentar" (which calls audio.load() again) still has something
+    // listening. The readiness checks below are only a catch-up for events that
+    // already fired; they must not skip the wiring.
+    let timer: ReturnType<typeof setTimeout> | null = null;
+    const clear = () => { if (timer) clearTimeout(timer); };
 
     const onCanPlay = () => {
-      clearTimeout(timer);
+      clear();
       // Only transition to "ready" if we're still in "loading" —
       // don't override "answering" or later phases if the user already clicked play.
       setPhase((current) => (current === "loading" ? "ready" : current));
     };
     const onError = () => {
-      clearTimeout(timer);
+      clear();
       setPhase("loadError");
     };
     const onEnded = () => setIsPlaying(false);
 
     audio.addEventListener("canplaythrough", onCanPlay);
+    audio.addEventListener("canplay", onCanPlay);
+    audio.addEventListener("loadeddata", onCanPlay);
     audio.addEventListener("error", onError);
     audio.addEventListener("ended", onEnded);
 
+    // A missing or undecodable file sets audio.error before this effect runs,
+    // so the listener above never hears it and the student watches a spinner
+    // for twenty seconds before being offered the transcript.
+    if (audio.error) {
+      setPhase("loadError");
+    } else if (audio.readyState >= 3) {
+      // HAVE_FUTURE_DATA or better: enough is buffered to begin.
+      setPhase((current) => (current === "loading" ? "ready" : current));
+    } else {
+      // Nothing has signalled either way yet, so fall back to the timeout.
+      timer = setTimeout(() => {
+        setPhase((current) => (current === "loading" ? "loadError" : current));
+      }, AUDIO_LOAD_TIMEOUT_MS);
+      setLoadErrorTimer(timer);
+    }
+
     return () => {
-      clearTimeout(timer);
+      clear();
       audio.removeEventListener("canplaythrough", onCanPlay);
+      audio.removeEventListener("canplay", onCanPlay);
+      audio.removeEventListener("loadeddata", onCanPlay);
       audio.removeEventListener("error", onError);
       audio.removeEventListener("ended", onEnded);
     };
@@ -307,10 +346,21 @@ export default function ListeningComprehension({
   function handleRetryLoad() {
     const audio = audioRef.current;
     if (!audio) return;
+    if (loadErrorTimer) clearTimeout(loadErrorTimer);
+
+    // Already buffered: the previous failure was the readiness race, not the
+    // network. Go straight back to ready rather than making the student wait
+    // out another twenty seconds for audio that is sitting right there.
+    if (audio.readyState >= 3) {
+      setPhase("ready");
+      return;
+    }
+
     setPhase("loading");
     audio.load();
-    if (loadErrorTimer) clearTimeout(loadErrorTimer);
-    const timer = setTimeout(() => setPhase("loadError"), AUDIO_LOAD_TIMEOUT_MS);
+    const timer = setTimeout(() => {
+      setPhase((current) => (current === "loading" ? "loadError" : current));
+    }, AUDIO_LOAD_TIMEOUT_MS);
     setLoadErrorTimer(timer);
   }
 
@@ -386,10 +436,19 @@ export default function ListeningComprehension({
           </div>
         )}
 
+        {/*
+          The element lives OUTSIDE the phase check on purpose. It used to be
+          inside the player panel, which is hidden in loadError, so entering
+          that phase unmounted the audio and left audioRef.current null. That
+          made "↺ Reintentar" a dead button: handleRetryLoad returns early when
+          the ref is null, so the one control offered to a student whose audio
+          failed did nothing at all. It is hidden either way.
+        */}
+        <audio ref={audioRef} src={audioUrl} className="hidden" preload="auto" />
+
         {/* ── Audio player ──────────────────────────────────────────────── */}
         {phase !== "loadError" && phase !== "resultFail" && phase !== "resultPass" && (
           <div className="border border-[rgba(201,147,58,0.3)] bg-[#1a1614] p-5 rounded-sm space-y-4">
-            <audio ref={audioRef} src={audioUrl} className="hidden" preload="auto" />
 
             {/* Volume hint */}
             <div className="flex items-center gap-2 text-[#8b7355]">
