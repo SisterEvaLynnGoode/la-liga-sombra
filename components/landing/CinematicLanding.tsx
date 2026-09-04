@@ -25,12 +25,16 @@ const CRIMINALS = [
   { img: "/images/characters/unit-08-coleccionista-local.webp", name: "El Coleccionista",  crime: "El Tesoro Inca desaparecido",   país: "Perú",            flag: "🇵🇪", caso: "VIII" },
 ];
 
-const COUNTRIES = ["🇲🇽","🇵🇷","🇪🇸","🇨🇷","🇦🇷","🇨🇴","🇨🇱","🇵🇪","🇩🇴","🇪🇨"];
+/** Every country a case actually visits, in case order (unit 1 through 20). */
+const COUNTRIES = [
+  "🇲🇽","🇵🇷","🇪🇸","🇨🇷","🇦🇷","🇨🇴","🇨🇱","🇵🇪","🇩🇴","🇪🇨",
+  "🇭🇳","🇬🇹","🇸🇻","🇳🇮","🇨🇺","🇺🇾","🇵🇦","🇵🇾","🇻🇪","🇧🇴",
+];
 
 const STEPS = [
-  { n: "01", title: "Investiga",  desc: "Entrevista testigos, escucha testimonios y examina la evidencia — todo en español.", icon: "M15.5 14h-.79l-.28-.27a6.5 6.5 0 1 0-.7.7l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0A4.5 4.5 0 1 1 14 9.5 4.5 4.5 0 0 1 9.5 14z" },
-  { n: "02", title: "Descifra",   desc: "Cada palabra nueva es una pista. La gramática ES la evidencia que resuelve el caso.", icon: "M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41a2 2 0 0 0-4 0H8a4 4 0 0 1 8 0c0 .88-.36 1.68-.93 2.25z" },
-  { n: "03", title: "Acusa",      desc: "Usa tus pistas para identificar al culpable en la rueda de reconocimiento. Cierra el caso.", icon: "M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" },
+  { n: "01", title: "Investiga",  desc: "Entrevistas a los testigos, escuchas sus declaraciones y revisas la evidencia. Todo en español.", icon: "M15.5 14h-.79l-.28-.27a6.5 6.5 0 1 0-.7.7l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0A4.5 4.5 0 1 1 14 9.5 4.5 4.5 0 0 1 9.5 14z" },
+  { n: "02", title: "Descifra",   desc: "Cada palabra nueva es una pista. Si no entiendes el tiempo verbal, se te escapa el sospechoso.", icon: "M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 17h-2v-2h2v2zm2.07-7.75l-.9.92C13.45 12.9 13 13.5 13 15h-2v-.5c0-1.1.45-2.1 1.17-2.83l1.24-1.26c.37-.36.59-.86.59-1.41a2 2 0 0 0-4 0H8a4 4 0 0 1 8 0c0 .88-.36 1.68-.93 2.25z" },
+  { n: "03", title: "Acusa",      desc: "Señalas al culpable en la rueda de reconocimiento y explicas por qué. Caso cerrado.", icon: "M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z" },
 ];
 
 export default function CinematicLanding() {
@@ -123,7 +127,7 @@ export default function CinematicLanding() {
           <div data-reveal="0" className="reveal mb-6 inline-flex items-center gap-3 px-5 py-2 border border-[rgba(201,147,58,0.35)] bg-[rgba(13,11,10,0.6)] backdrop-blur-sm">
             <span className="w-2 h-2 rounded-full bg-[#c0392b] animate-pulse" />
             <span className="font-typewriter text-[11px] tracking-[0.3em] uppercase text-[#e8b455]">
-              Expediente abierto · 10 países · 20 casos
+              Expediente abierto · 20 países · 20 casos
             </span>
           </div>
 
@@ -135,6 +139,10 @@ export default function CinematicLanding() {
           <p data-reveal="240" className="reveal mt-6 font-typewriter text-[#e8d3a0] text-base sm:text-lg max-w-xl leading-relaxed drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)]">
             Una banda de ladrones recorre el mundo hispano robando tesoros culturales.
             <span className="text-[#f5e6c8]"> Solo un agente que domine el español puede detenerlos.</span>
+          </p>
+
+          <p data-reveal="290" className="reveal mt-3 font-typewriter text-[13px] text-[#a89070] drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)]">
+            Se juega en el navegador. Sin descargas, sin correo, sin contraseñas.
           </p>
 
           <div data-reveal="360" className="reveal mt-10 flex flex-col sm:flex-row gap-4 w-full max-w-sm sm:max-w-none sm:w-auto">
@@ -153,8 +161,24 @@ export default function CinematicLanding() {
             </Link>
           </div>
 
+          {/*
+            The way in for anyone who is not a student. A teacher or an
+            administrator who lands here has no reason to make an account
+            before they have seen the thing, so give them the playable
+            activities first and the sign-up later.
+          */}
+          <p data-reveal="450" className="reveal mt-6 font-typewriter text-xs text-[#a89070] drop-shadow-[0_2px_12px_rgba(0,0,0,0.95)]">
+            ¿Eres maestro, maestra o administrador?{" "}
+            <Link
+              href="/showcase"
+              className="inline-block px-2 py-1 text-[#e8b455] underline decoration-[rgba(201,147,58,0.5)] underline-offset-4 hover:text-[#f5e6c8] transition-colors"
+            >
+              Prueba las actividades sin crear una cuenta →
+            </Link>
+          </p>
+
           {/* Scroll cue */}
-          <div data-reveal="600" className="reveal absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
+          <div data-reveal="600" className="reveal scroll-cue-wrap absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2">
             <span className="font-typewriter text-[10px] tracking-[0.4em] uppercase text-[#8b7355]">Descubre a los sospechosos</span>
             <span className="scroll-cue block w-px h-10 bg-gradient-to-b from-[#c9933a] to-transparent" />
           </div>
@@ -166,10 +190,11 @@ export default function CinematicLanding() {
         <div className="marquee flex items-center gap-12 whitespace-nowrap font-typewriter text-xs tracking-[0.3em] uppercase text-[#8b7355]">
           {[0, 1].map((k) => (
             <div key={k} className="flex items-center gap-12 shrink-0" aria-hidden={k === 1}>
-              <span>10 países</span><span className="text-[#c9933a]">◆</span>
-              <span>10 casos principales</span><span className="text-[#c9933a]">◆</span>
+              <span>20 países</span><span className="text-[#c9933a]">◆</span>
+              <span>20 casos</span><span className="text-[#c9933a]">◆</span>
               <span>10 casos fríos</span><span className="text-[#c9933a]">◆</span>
-              <span>1 misión especial</span><span className="text-[#c9933a]">◆</span>
+              <span>3 jefes finales</span><span className="text-[#c9933a]">◆</span>
+              <span>689 palabras</span><span className="text-[#c9933a]">◆</span>
               <span className="text-[#e8b455]">Español 1 · ACTFL</span><span className="text-[#c9933a]">◆</span>
               <span>{COUNTRIES.join("  ")}</span><span className="text-[#c9933a]">◆</span>
             </div>
@@ -194,7 +219,7 @@ export default function CinematicLanding() {
               SE <span className="text-[#e8b455]">BUSCA</span>
             </h2>
             <p className="mt-4 font-typewriter text-sm text-[#8b7355] max-w-lg mx-auto">
-              Estos son los ladrones de La Liga Sombra — fotografiados por nuestros agentes de campo. ¿Puedes atraparlos a todos?
+              Ocho de los veinte. Nuestros agentes de campo los fotografiaron y los perdieron. ¿Puedes atraparlos a todos?
             </p>
           </div>
 
@@ -262,14 +287,19 @@ export default function CinematicLanding() {
           <div data-reveal="0" className="reveal">
             <p className="font-typewriter text-xs tracking-[0.45em] uppercase text-[#8b7355] mb-3">Para maestros</p>
             <h2 className="font-display font-black text-3xl sm:text-4xl text-[#f5e6c8] leading-tight mb-5">
-              Un semestre completo de Español 1, <span className="text-[#e8b455]">listo para tu clase</span>
+              Un año entero de Español 1, <span className="text-[#e8b455]">listo para el lunes</span>
             </h2>
+            <p className="font-typewriter text-sm text-[#a89070] mb-5 leading-relaxed">
+              No es una actividad para el viernes. Es el plan del curso, con el trabajo en papel
+              que lo acompaña.
+            </p>
             <ul className="space-y-3 font-typewriter text-sm text-[#c4a882]">
               {[
-                "Plan de 18 semanas alineado a ACTFL (Novice Low → Intermediate Low)",
-                "Panel del maestro con dominio de vocabulario y gramática en vivo",
+                "36 semanas planificadas, de Novice Low a Intermediate Low (ACTFL)",
+                "20 casos en 20 países, más 10 casos fríos para quien termine antes",
+                "Panel del maestro: quién va atrasado, en qué palabra falla y qué hacer hoy",
                 "Hojas de trabajo imprimibles, Pasaporte Cultural y rúbricas",
-                "Sin correos ni contraseñas: los estudiantes entran con un código de clase",
+                "Los estudiantes entran con un código de clase. Sin correos, sin contraseñas.",
               ].map((t) => (
                 <li key={t} className="flex gap-3">
                   <svg viewBox="0 0 24 24" className="w-4 h-4 fill-[#c9933a] shrink-0 mt-0.5" aria-hidden><path d="M9 16.17L4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z" /></svg>
@@ -277,12 +307,23 @@ export default function CinematicLanding() {
                 </li>
               ))}
             </ul>
-            <Link
-              href="/teacher/login"
-              className="mt-8 inline-flex items-center gap-2 font-typewriter text-xs tracking-[0.25em] uppercase px-7 py-3 border border-[#c9933a] text-[#e8b455] hover:bg-[rgba(201,147,58,0.1)] hover:shadow-[0_0_20px_rgba(201,147,58,0.3)] transition-all cursor-pointer"
-            >
-              Portal de maestros →
-            </Link>
+            <div className="mt-8 flex flex-wrap items-center gap-3">
+              <Link
+                href="/showcase"
+                className="inline-flex items-center gap-2 font-typewriter text-xs tracking-[0.25em] uppercase px-7 py-3 bg-[rgba(201,147,58,0.12)] border border-[#c9933a] text-[#e8b455] hover:bg-[rgba(201,147,58,0.22)] hover:shadow-[0_0_20px_rgba(201,147,58,0.3)] transition-all cursor-pointer"
+              >
+                Ver las actividades →
+              </Link>
+              <Link
+                href="/teacher/login"
+                className="inline-flex items-center gap-2 font-typewriter text-xs tracking-[0.25em] uppercase px-7 py-3 border border-[rgba(201,147,58,0.4)] text-[#c4a882] hover:text-[#e8b455] hover:border-[#c9933a] transition-all cursor-pointer"
+              >
+                Portal de maestros
+              </Link>
+            </div>
+            <p className="mt-3 font-typewriter text-[11px] text-[#8b7355]">
+              Crear una clase es gratis y toma un minuto.
+            </p>
           </div>
           <div data-reveal="150" className="reveal relative">
             <div className="relative aspect-[4/3] border border-[rgba(201,147,58,0.25)] overflow-hidden shadow-[0_20px_60px_rgba(0,0,0,0.7)]" style={{ transform: "rotate(1.2deg)" }}>
@@ -292,6 +333,62 @@ export default function CinematicLanding() {
             </div>
             <div className="absolute -top-3 -right-3 rotate-6 border-2 border-[#c0392b] px-3 py-1 font-display font-black text-sm text-[#c0392b] bg-[rgba(13,11,10,0.85)]">CLASIFICADO</div>
           </div>
+        </div>
+      </section>
+
+      {/*
+        ═══ PARA DIRECTORES Y DISTRITOS ═══════════════════════════════════
+        An administrator evaluating this has three questions and none of them
+        are about the story: what does it run on, what does it collect, and
+        what does it cost. They are answered here in plain language, above the
+        link to the full page, because a person doing a review at 4pm should
+        not have to click to find out whether it is worth clicking.
+      */}
+      <section className="relative py-20 px-6 bg-[#111218] border-y border-[rgba(201,147,58,0.12)]">
+        <div className="max-w-5xl mx-auto">
+          <div data-reveal="0" className="reveal text-center mb-12">
+            <p className="font-typewriter text-xs tracking-[0.45em] uppercase text-[#8b7355] mb-3">
+              Para directores y distritos
+            </p>
+            <h2 className="font-display font-black text-3xl sm:text-4xl text-[#f5e6c8]">
+              Lo que preguntan primero
+            </h2>
+          </div>
+
+          <div className="grid md:grid-cols-3 gap-6">
+            {[
+              {
+                q: "¿En qué se juega?",
+                a: "En el navegador de cualquier Chromebook. No hay nada que instalar ni que actualizar, y funciona igual en septiembre que en mayo.",
+              },
+              {
+                q: "¿Qué datos recoge?",
+                a: "Un apodo y un PIN de 4 dígitos que se guarda cifrado. Ni nombres reales, ni correos, ni fotos, ni ubicación. Nada se vende ni se comparte.",
+              },
+              {
+                q: "¿Cuánto cuesta?",
+                a: "Nada para el maestro o la maestra. El curso completo, el panel y las hojas imprimibles están incluidos.",
+              },
+            ].map((c, i) => (
+              <div
+                key={c.q}
+                data-reveal={String(i * 120)}
+                className="reveal border border-[rgba(201,147,58,0.2)] bg-[#0d0b0a] p-7"
+              >
+                <h3 className="font-display font-bold text-lg text-[#e8b455] mb-2">{c.q}</h3>
+                <p className="font-typewriter text-sm text-[#c4a882] leading-relaxed">{c.a}</p>
+              </div>
+            ))}
+          </div>
+
+          <p data-reveal="0" className="reveal mt-10 text-center font-typewriter text-xs text-[#8b7355]">
+            <Link
+              href="/about"
+              className="inline-block px-3 py-2 text-[#e8b455] underline decoration-[rgba(201,147,58,0.4)] underline-offset-4 hover:text-[#f5e6c8] transition-colors"
+            >
+              Privacidad, alineación y cómo se usa en clase →
+            </Link>
+          </p>
         </div>
       </section>
 
@@ -326,6 +423,15 @@ export default function CinematicLanding() {
               Ya soy agente
             </Link>
           </div>
+          <p className="reveal mt-7 font-typewriter text-xs text-[#8b7355]" data-reveal="380">
+            ¿Buscas la versión para maestros?{" "}
+            <Link
+              href="/teacher/login"
+              className="inline-block px-2 py-1 text-[#e8b455] underline decoration-[rgba(201,147,58,0.4)] underline-offset-4 hover:text-[#f5e6c8] transition-colors"
+            >
+              Abre una clase gratis →
+            </Link>
+          </p>
         </div>
       </section>
 
@@ -334,9 +440,20 @@ export default function CinematicLanding() {
         <span className="font-typewriter text-[10px] tracking-widest uppercase text-[#8b7355]">
           La Liga Sombra · Español 1 · Que Chévere Level 1
         </span>
-        <div className="flex items-center gap-5">
-          <Link href="/about" className="font-typewriter text-[10px] tracking-widest uppercase text-[#4a3a2a] hover:text-[#c9933a] transition-colors">Acerca de</Link>
-          <Link href="/teacher/login" className="font-typewriter text-[10px] tracking-widest uppercase text-[#4a3a2a] hover:text-[#c9933a] transition-colors">Maestros →</Link>
+        <div className="flex flex-wrap items-center justify-center gap-2">
+          {[
+            { href: "/showcase", label: "Probar el juego" },
+            { href: "/about", label: "Privacidad y datos" },
+            { href: "/teacher/login", label: "Maestros →" },
+          ].map((l) => (
+            <Link
+              key={l.href}
+              href={l.href}
+              className="px-3 py-2 font-typewriter text-[10px] tracking-widest uppercase text-[#6b5a45] hover:text-[#c9933a] transition-colors"
+            >
+              {l.label}
+            </Link>
+          ))}
         </div>
       </footer>
     </div>
@@ -358,6 +475,10 @@ const CSS = `
 .landing-root .fog-pan { animation: lls-fog 18s ease-in-out infinite alternate; }
 @keyframes lls-cue { 0%,100% { transform: translateY(0); opacity: 1; } 50% { transform: translateY(8px); opacity: 0.4; } }
 .landing-root .scroll-cue { animation: lls-cue 2s ease-in-out infinite; }
+/* On a Chromebook (768px tall) the cue lands within a few pixels of the teacher
+   link above it. The cue is decoration and the link is a way in, so the cue is
+   the one that goes. */
+@media (max-height: 820px) { .landing-root .scroll-cue-wrap { display: none; } }
 @media (prefers-reduced-motion: reduce) {
   .landing-root .reveal { opacity: 1 !important; transform: none !important; transition: none !important; }
   .landing-root .marquee, .landing-root .hero-drift, .landing-root .fog-pan, .landing-root .scroll-cue { animation: none !important; }

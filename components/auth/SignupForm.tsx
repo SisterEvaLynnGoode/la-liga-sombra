@@ -102,16 +102,25 @@ export default function SignupForm() {
           </div>
           <button
             onClick={handleCodeNext}
-            className="w-full clip-skew py-3 font-typewriter text-sm tracking-[0.2em] uppercase bg-[#8b1a1a] text-[#f5e6c8] border border-[#c0392b] hover:bg-[#c0392b] transition-colors"
+            className="w-full clip-skew min-h-[44px] py-3 font-typewriter text-sm tracking-[0.2em] uppercase bg-[#8b1a1a] text-[#f5e6c8] border border-[#c0392b] hover:bg-[#c0392b] transition-colors"
           >
             Continuar →
           </button>
-          <p className="font-typewriter text-xs text-center text-[#8b7355]">
-            ¿Ya tienes una cuenta?{" "}
-            <Link href="/login" className="text-[#c9933a] hover:underline">
-              Continuar misión
+          {/*
+            This was a text link inside a 12px sentence, about 100px wide. Every
+            returning student has to hit it, on a Chromebook trackpad, and they
+            were missing it. It is a full-width button now with the same 44px
+            minimum height as the primary action above.
+          */}
+          <div className="pt-1 text-center">
+            <p className="font-typewriter text-xs text-[#8b7355] mb-2">¿Ya tienes una cuenta?</p>
+            <Link
+              href="/login"
+              className="flex w-full min-h-[44px] items-center justify-center px-4 font-typewriter text-sm tracking-[0.2em] uppercase text-[#e8b455] border border-[rgba(201,147,58,0.45)] hover:bg-[rgba(201,147,58,0.12)] hover:border-[#c9933a] transition-colors"
+            >
+              Continuar misión →
             </Link>
-          </p>
+          </div>
         </div>
       )}
 
