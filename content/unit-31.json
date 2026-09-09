@@ -1,0 +1,608 @@
+{
+  "unitNumber": 31,
+  "country": "Estados Unidos",
+  "city": "Nuevo México",
+  "caseTitle": "El Que Todavía Dice Truje",
+  "caseDescription": "En Nuevo México se habla un español de hace cuatrocientos años, con palabras que ya no se usan en ningún otro sitio. Falta la grabación de un anciano que todavía las dice. Usa el subjuntivo de duda para buscar a alguien que quede, si es que queda alguien.",
+  "criminalName": "La Curadora",
+  "bonusClue": "Buscaba una voz, no un objeto: preguntó si quedaba alguien que todavía hablara así.",
+  "vocab": [
+    {
+      "spanish": "el santero",
+      "english": "the santo carver",
+      "audio": "/audio/unit-31/el-santero.mp3",
+      "section": "Nuevo México",
+      "example": "El santero talla los santos en madera."
+    },
+    {
+      "spanish": "el retablo",
+      "english": "the painted panel",
+      "audio": "/audio/unit-31/el-retablo.mp3",
+      "section": "Nuevo México"
+    },
+    {
+      "spanish": "el bulto",
+      "english": "the carved saint",
+      "audio": "/audio/unit-31/el-bulto.mp3",
+      "section": "Nuevo México"
+    },
+    {
+      "spanish": "la madera",
+      "english": "the wood",
+      "audio": "/audio/unit-31/la-madera.mp3",
+      "section": "Nuevo México"
+    },
+    {
+      "spanish": "el adobe",
+      "english": "adobe",
+      "audio": "/audio/unit-31/el-adobe.mp3",
+      "section": "Nuevo México"
+    },
+    {
+      "spanish": "la viga",
+      "english": "the roof beam",
+      "audio": "/audio/unit-31/la-viga.mp3",
+      "section": "Nuevo México"
+    },
+    {
+      "spanish": "el santuario",
+      "english": "the sanctuary",
+      "audio": "/audio/unit-31/el-santuario.mp3",
+      "section": "Nuevo México"
+    },
+    {
+      "spanish": "la tierra",
+      "english": "the earth / soil",
+      "audio": "/audio/unit-31/la-tierra.mp3",
+      "section": "Nuevo México"
+    },
+    {
+      "spanish": "el chile verde",
+      "english": "green chile",
+      "audio": "/audio/unit-31/el-chile-verde.mp3",
+      "section": "Nuevo México"
+    },
+    {
+      "spanish": "el chile rojo",
+      "english": "red chile",
+      "audio": "/audio/unit-31/el-chile-rojo.mp3",
+      "section": "Nuevo México"
+    },
+    {
+      "spanish": "el anciano",
+      "english": "the elder (m)",
+      "audio": "/audio/unit-31/el-anciano.mp3",
+      "section": "Nuevo México"
+    },
+    {
+      "spanish": "la anciana",
+      "english": "the elder (f)",
+      "audio": "/audio/unit-31/la-anciana.mp3",
+      "section": "Nuevo México"
+    },
+    {
+      "spanish": "el dicho",
+      "english": "the saying",
+      "audio": "/audio/unit-31/el-dicho.mp3",
+      "section": "Nuevo México"
+    },
+    {
+      "spanish": "la palabra",
+      "english": "the word",
+      "audio": "/audio/unit-14/palabra.mp3",
+      "section": "Nuevo México"
+    },
+    {
+      "spanish": "tallar",
+      "english": "to carve",
+      "audio": "/audio/unit-11/tallar.mp3",
+      "section": "Nuevo México"
+    },
+    {
+      "spanish": "rezar",
+      "english": "to pray",
+      "audio": "/audio/unit-31/rezar.mp3",
+      "section": "Nuevo México"
+    },
+    {
+      "spanish": "desaparecer",
+      "english": "to disappear",
+      "audio": "/audio/unit-31/desaparecer.mp3",
+      "section": "Nuevo México"
+    },
+    {
+      "spanish": "no creo que",
+      "english": "I do not think that",
+      "audio": "/audio/unit-31/no-creo-que.mp3",
+      "section": "El subjuntivo de duda"
+    },
+    {
+      "spanish": "dudo que",
+      "english": "I doubt that",
+      "audio": "/audio/unit-31/dudo-que.mp3",
+      "section": "El subjuntivo de duda"
+    },
+    {
+      "spanish": "no hay nadie que",
+      "english": "there is no one who",
+      "audio": "/audio/unit-31/no-hay-nadie-que.mp3",
+      "section": "El subjuntivo de duda"
+    },
+    {
+      "spanish": "busco a alguien que",
+      "english": "I am looking for someone who",
+      "audio": "/audio/unit-31/busco-a-alguien-que.mp3",
+      "section": "El subjuntivo de duda",
+      "example": "Busco a alguien que todavía hable asina."
+    },
+    {
+      "spanish": "es posible que",
+      "english": "it is possible that",
+      "audio": "/audio/unit-31/es-posible-que.mp3",
+      "section": "El subjuntivo de duda"
+    },
+    {
+      "spanish": "quede",
+      "english": "remains (subj.)",
+      "audio": "/audio/unit-31/quede.mp3",
+      "section": "El subjuntivo de duda"
+    },
+    {
+      "spanish": "hable",
+      "english": "he/she speaks (subj.)",
+      "audio": "/audio/unit-31/hable.mp3",
+      "section": "El subjuntivo de duda"
+    },
+    {
+      "spanish": "conozca",
+      "english": "he/she knows (subj.)",
+      "audio": "/audio/unit-31/conozca.mp3",
+      "section": "El subjuntivo de duda"
+    },
+    {
+      "spanish": "pueda",
+      "english": "he/she can (subj.)",
+      "audio": "/audio/unit-31/pueda.mp3",
+      "section": "El subjuntivo de duda"
+    },
+    {
+      "spanish": "exista",
+      "english": "it exists (subj.)",
+      "audio": "/audio/unit-31/exista.mp3",
+      "section": "El subjuntivo de duda"
+    },
+    {
+      "spanish": "truje",
+      "english": "I brought (old New Mexican Spanish)",
+      "audio": "/audio/unit-31/truje.mp3",
+      "section": "Español antiguo de Nuevo México",
+      "example": "Truje la madera del monte."
+    },
+    {
+      "spanish": "asina",
+      "english": "like that (old New Mexican Spanish)",
+      "audio": "/audio/unit-31/asina.mp3",
+      "section": "Español antiguo de Nuevo México"
+    },
+    {
+      "spanish": "muncho",
+      "english": "a lot (old New Mexican Spanish)",
+      "audio": "/audio/unit-31/muncho.mp3",
+      "section": "Español antiguo de Nuevo México"
+    }
+  ],
+  "stages": [
+    {
+      "type": "cutscene",
+      "videoUrl": "/videos/unit-31-intro.mp4",
+      "briefingLines": [
+        "Nuevo México. Y aquí hay que empezar por una fecha: mil seiscientos diez.",
+        "Santa Fe se fundó ese año. Antes que muchas ciudades del este de este país.",
+        "Esas familias llevan cuatrocientos años hablando español en el mismo sitio.",
+        "Y su español guardó palabras que ya nadie más dice: truje, asina, muncho.",
+        "No son errores, agente. Son palabras de hace cuatrocientos años que aquí no se perdieron.",
+        "Quedan muy pocas personas que hablen asina. Y falta la grabación de una de ellas.",
+        "Hoy usas el subjuntivo de duda: no creo que quede nadie, busco a alguien que hable así."
+      ],
+      "chiefName": "Jefa Ramírez",
+      "chiefImageSeed": 12,
+      "chiefImageUrl": "/images/characters/chief-ramirez.webp"
+    },
+    {
+      "type": "vocabMatch",
+      "pairs": [
+        {
+          "spanish": "el santero",
+          "english": "the santo carver"
+        },
+        {
+          "spanish": "el retablo",
+          "english": "the painted panel"
+        },
+        {
+          "spanish": "la madera",
+          "english": "the wood"
+        },
+        {
+          "spanish": "el anciano",
+          "english": "the elder (m)"
+        },
+        {
+          "spanish": "truje",
+          "english": "I brought (old New Mexican Spanish)"
+        },
+        {
+          "spanish": "asina",
+          "english": "like that (old New Mexican Spanish)"
+        },
+        {
+          "spanish": "muncho",
+          "english": "a lot (old New Mexican Spanish)"
+        },
+        {
+          "spanish": "no creo que",
+          "english": "I do not think that"
+        },
+        {
+          "spanish": "busco a alguien que",
+          "english": "I am looking for someone who"
+        },
+        {
+          "spanish": "quede",
+          "english": "remains (subj.)"
+        }
+      ]
+    },
+    {
+      "type": "swipeSort",
+      "prompt": "¿Duda o certeza?",
+      "leftLabel": "Duda (subjuntivo)",
+      "leftHint": "No creo que, dudo que, busco a alguien que",
+      "rightLabel": "Certeza (indicativo)",
+      "rightHint": "Sé que, es verdad que, conozco a alguien que",
+      "clueReward": "Buscaba a alguien que hablara el español antiguo. No quería un objeto: quería una voz.",
+      "items": [
+        {
+          "text": "No creo que quede nadie",
+          "category": "left"
+        },
+        {
+          "text": "Dudo que hable asina",
+          "category": "left"
+        },
+        {
+          "text": "Busco a alguien que sepa",
+          "category": "left"
+        },
+        {
+          "text": "No hay nadie que lo conozca",
+          "category": "left"
+        },
+        {
+          "text": "Es posible que exista",
+          "category": "left"
+        },
+        {
+          "text": "Espero que pueda venir",
+          "category": "left"
+        },
+        {
+          "text": "Sé que queda uno",
+          "category": "right",
+          "explanation": "Certeza: indicativo."
+        },
+        {
+          "text": "Es verdad que habla asina",
+          "category": "right"
+        },
+        {
+          "text": "Conozco a alguien que sabe",
+          "category": "right"
+        },
+        {
+          "text": "Hay una persona que lo conoce",
+          "category": "right"
+        }
+      ]
+    },
+    {
+      "type": "sentenceBuilder",
+      "sentences": [
+        {
+          "sentence": "Busco a alguien que todavía diga truje.",
+          "translation": "I am looking for someone who still says truje."
+        },
+        {
+          "sentence": "No creo que quede mucha gente.",
+          "translation": "I do not think there are many people left."
+        },
+        {
+          "sentence": "Dudo que exista otra grabación.",
+          "translation": "I doubt another recording exists."
+        },
+        {
+          "sentence": "Es posible que el anciano recuerde la palabra.",
+          "translation": "It is possible the elder remembers the word."
+        },
+        {
+          "sentence": "No hay nadie que hable asina en la ciudad.",
+          "translation": "There is nobody who speaks that way in the city."
+        }
+      ]
+    },
+    {
+      "type": "readingComp",
+      "passage": "En los pueblos de las montañas todavía se oyen palabras muy antiguas. La gente dice truje en vez de traje, y asina en vez de así, y muncho en vez de mucho. No son errores: son palabras del español de hace cuatrocientos años que aquí nunca se perdieron, porque estos pueblos estuvieron muy lejos de todo durante mucho tiempo. Los abuelos las usan sin pensar. Los nietos casi no las dicen. Los lingüistas graban a los ancianos porque no creen que queden muchos años para escucharlas.",
+      "glossary": [
+        {
+          "word": "el pueblo",
+          "translation": "the village"
+        },
+        {
+          "word": "en vez de",
+          "translation": "instead of"
+        },
+        {
+          "word": "se perdieron",
+          "translation": "were lost"
+        },
+        {
+          "word": "lejos",
+          "translation": "far"
+        },
+        {
+          "word": "los nietos",
+          "translation": "the grandchildren"
+        },
+        {
+          "word": "graban",
+          "translation": "they record"
+        }
+      ],
+      "questions": [
+        {
+          "id": "u31-r1",
+          "text": "¿Qué dice la gente en vez de «así»?",
+          "type": "multiple_choice",
+          "options": [
+            "Truje",
+            "Asina",
+            "Muncho",
+            "Ansí"
+          ],
+          "correctIndex": 1,
+          "explanationEs": "«asina en vez de así».",
+          "explanationEn": "Asina."
+        },
+        {
+          "id": "u31-r2",
+          "text": "¿Por qué se conservaron esas palabras?",
+          "type": "multiple_choice",
+          "options": [
+            "Las enseñan en la escuela",
+            "Los pueblos estuvieron muy lejos de todo",
+            "Vinieron de España hace poco",
+            "Las inventaron aquí"
+          ],
+          "correctIndex": 1,
+          "explanationEs": "«porque estos pueblos estuvieron muy lejos de todo».",
+          "explanationEn": "The villages were very isolated."
+        },
+        {
+          "id": "u31-r3",
+          "text": "¿Quiénes las usan sin pensar?",
+          "type": "multiple_choice",
+          "options": [
+            "Los nietos",
+            "Los abuelos",
+            "Los lingüistas",
+            "Los turistas"
+          ],
+          "correctIndex": 1,
+          "explanationEs": "«Los abuelos las usan sin pensar».",
+          "explanationEn": "The grandparents."
+        },
+        {
+          "id": "u31-r4",
+          "text": "¿Por qué graban a los ancianos?",
+          "type": "multiple_choice",
+          "options": [
+            "Para la radio",
+            "Porque no creen que queden muchos años para escucharlas",
+            "Para un concurso",
+            "Porque hablan despacio"
+          ],
+          "correctIndex": 1,
+          "explanationEs": "«no creen que queden muchos años».",
+          "explanationEn": "They doubt many years remain to hear them."
+        }
+      ]
+    },
+    {
+      "type": "listeningComp",
+      "audioUrl": "/audio/unit-31/testimonio-santero.mp3",
+      "transcript": "Yo tallo santos como los tallaba mi padre. Truje esta madera del monte, asina, en el hombro, como siempre. Vino una señora y preguntó si quedaba alguien que hablara como yo. Le dije que muncho ya no. Que quedamos pocos. Ella grabó mi voz un rato largo y me dio las gracias. Después se llevó la cinta del museo del pueblo, la del viejo don Amadeo. Esa voz ya no se puede volver a grabar: don Amadeo murió hace dos años.",
+      "translation": "I carve saints the way my father carved them. I brought this wood down from the mountain, like this, on my shoulder, as always. A woman came and asked if there was anyone left who spoke like me. I told her not many any more. That few of us remain. She recorded my voice for a long while and thanked me. Then she took the tape from the village museum, the one of old don Amadeo. That voice cannot be recorded again: don Amadeo died two years ago.",
+      "retryHint": "Pista: escucha las palabras antiguas y qué preguntó ella exactamente.",
+      "passingScore": 0.6,
+      "maxReplays": 5,
+      "clueReward": "Buscaba una voz, no un objeto: preguntó si quedaba alguien que todavía hablara así.",
+      "questions": [
+        {
+          "question": "¿Qué hace el testigo?",
+          "options": [
+            "Pinta casas",
+            "Talla santos de madera",
+            "Vende chile",
+            "Graba música"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "question": "¿Qué palabra antigua usa para «traje»?",
+          "options": [
+            "Asina",
+            "Muncho",
+            "Truje",
+            "Ansina"
+          ],
+          "correctIndex": 2
+        },
+        {
+          "question": "¿Qué preguntó la señora?",
+          "options": [
+            "Cuánto costaba un santo",
+            "Si quedaba alguien que hablara como él",
+            "Dónde estaba el museo",
+            "Su nombre"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "question": "¿Qué se llevó ella?",
+          "options": [
+            "Un santo",
+            "La cinta de don Amadeo",
+            "La madera",
+            "Nada"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "question": "¿Por qué no se puede volver a grabar esa voz?",
+          "options": [
+            "Está muy lejos",
+            "Don Amadeo murió hace dos años",
+            "No quiere hablar",
+            "Se perdió el aparato"
+          ],
+          "correctIndex": 1
+        }
+      ]
+    },
+    {
+      "type": "dialogueChoice",
+      "npcName": "Amadeo Trujillo, santero de Chimayó",
+      "npcAvatar": "/images/characters/unit-31-curadora.webp",
+      "clueReward": "El santero recordó la pregunta: ella buscaba una voz, no un objeto.",
+      "startNodeId": "n1",
+      "nodes": [
+        {
+          "id": "n1",
+          "npcLine": "Pase, agente. Siéntese. Truje café del fuego, si gusta.",
+          "options": [
+            {
+              "text": "¿Cree que quede alguien que hable como usted?",
+              "isCorrect": true,
+              "feedback": "Bien: duda + subjuntivo.",
+              "nextNodeId": "n2"
+            },
+            {
+              "text": "¿Cree que queda alguien que habla como usted?",
+              "isCorrect": false,
+              "feedback": "Tras la duda va subjuntivo: quede, hable."
+            },
+            {
+              "text": "¿Cree que quedó alguien?",
+              "isCorrect": false,
+              "feedback": "Subjuntivo, no pretérito."
+            }
+          ]
+        },
+        {
+          "id": "n2",
+          "npcLine": "Pocos. Muncho pocos ya. Los viejos se van y con ellos se van las palabras.",
+          "options": [
+            {
+              "text": "¿Busca ella a alguien que hable asina?",
+              "isCorrect": true,
+              "feedback": "Correcto.",
+              "nextNodeId": "n3"
+            },
+            {
+              "text": "¿Busca ella a alguien que habla asina?",
+              "isCorrect": false,
+              "feedback": "Antecedente desconocido: subjuntivo."
+            },
+            {
+              "text": "¿Buscó ella a alguien que hablaba?",
+              "isCorrect": false,
+              "feedback": "Subjuntivo."
+            }
+          ]
+        },
+        {
+          "id": "n3",
+          "npcLine": "Eso mismo preguntó. No quería un santo. No quería madera. Quería una voz.",
+          "options": [
+            {
+              "text": "¿Duda usted que vuelva la cinta?",
+              "isCorrect": true,
+              "feedback": "Bien.",
+              "nextNodeId": "n4"
+            },
+            {
+              "text": "¿Duda usted que vuelve la cinta?",
+              "isCorrect": false,
+              "feedback": "«Dudo que» pide subjuntivo: vuelva."
+            },
+            {
+              "text": "¿Duda usted que volvió la cinta?",
+              "isCorrect": false,
+              "feedback": "Subjuntivo."
+            }
+          ]
+        },
+        {
+          "id": "n4",
+          "npcLine": "Dudo que vuelva. Pero mientras yo viva, aquí se seguirá diciendo truje. Eso no se lo lleva nadie.",
+          "isEnd": true,
+          "endMessage": "Ella buscaba una voz, no un objeto."
+        }
+      ]
+    },
+    {
+      "type": "lineup",
+      "correctSuspectId": "s31-b",
+      "hint": "No buscaba un objeto sino una voz: preguntó si quedaba alguien que hablara el español antiguo.",
+      "suspects": [
+        {
+          "id": "s31-a",
+          "name": "El Lingüista",
+          "realName": "Marcos Otero",
+          "age": 39,
+          "description": "Graba a los ancianos para la universidad y siempre deja una copia en el museo del pueblo. Habla como la gente de aquí.",
+          "imageSeed": 25,
+          "imageUrl": "/images/characters/unit-31-s31-a.webp"
+        },
+        {
+          "id": "s31-b",
+          "name": "La Señora de Fuera",
+          "realName": "desconocida",
+          "age": 46,
+          "description": "Preguntó si quedaba alguien que hablara el español antiguo. No buscaba objetos sino voces. Llevaba guantes blancos.",
+          "imageSeed": 45,
+          "imageUrl": "/images/characters/unit-31-curadora.webp"
+        },
+        {
+          "id": "s31-c",
+          "name": "La Sobrina",
+          "realName": "Rosalía Trujillo",
+          "age": 33,
+          "description": "Cuida a su tío y aprende a tallar. Dice asina y truje como toda su familia desde niña.",
+          "imageSeed": 39,
+          "imageUrl": "/images/characters/unit-31-s31-c.webp"
+        },
+        {
+          "id": "s31-d",
+          "name": "El Turista",
+          "realName": "Greg Hollis",
+          "age": 58,
+          "description": "Vino a comprar un retablo para su casa y pagó en efectivo. No entendió ni una palabra de la conversación.",
+          "imageSeed": 17,
+          "imageUrl": "/images/characters/unit-31-s31-d.webp"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,621 @@
+{
+  "unitNumber": 22,
+  "country": "España",
+  "city": "Madrid",
+  "caseTitle": "La Sala Vacía",
+  "caseDescription": "El cuadro volvió al Prado, pero la noche del robo sigue sin explicación. Los verbos de esa noche no son regulares: fue, hizo, tuvo, dijo, vino, puso. Reconstruye lo que pasó en la sala y descubre quién lo dejó pasar.",
+  "criminalName": "El Guardia de la Noche",
+  "bonusClue": "El cómplice tuvo la llave, dijo que no vio nada y no estuvo en su puesto a las dos.",
+  "vocab": [
+    {
+      "spanish": "fui",
+      "english": "I went / I was",
+      "audio": "/audio/unit-22/fui.mp3",
+      "section": "El Prado"
+    },
+    {
+      "spanish": "fue",
+      "english": "he/she went / was",
+      "audio": "/audio/unit-19/fue.mp3",
+      "section": "El Prado",
+      "example": "Fue la noche más larga del museo."
+    },
+    {
+      "spanish": "fueron",
+      "english": "they went / were",
+      "audio": "/audio/unit-22/fueron.mp3",
+      "section": "El Prado"
+    },
+    {
+      "spanish": "hice",
+      "english": "I did / made",
+      "audio": "/audio/unit-22/hice.mp3",
+      "section": "El Prado"
+    },
+    {
+      "spanish": "hizo",
+      "english": "he/she did / made",
+      "audio": "/audio/unit-19/hizo.mp3",
+      "section": "El Prado"
+    },
+    {
+      "spanish": "hicieron",
+      "english": "they did / made",
+      "audio": "/audio/unit-22/hicieron.mp3",
+      "section": "El Prado"
+    },
+    {
+      "spanish": "tuve",
+      "english": "I had",
+      "audio": "/audio/unit-22/tuve.mp3",
+      "section": "El Prado"
+    },
+    {
+      "spanish": "tuvo",
+      "english": "he/she had",
+      "audio": "/audio/unit-19/tuvo.mp3",
+      "section": "El Prado"
+    },
+    {
+      "spanish": "tuvieron",
+      "english": "they had",
+      "audio": "/audio/unit-22/tuvieron.mp3",
+      "section": "El Prado"
+    },
+    {
+      "spanish": "dije",
+      "english": "I said",
+      "audio": "/audio/unit-22/dije.mp3",
+      "section": "El Prado"
+    },
+    {
+      "spanish": "dijo",
+      "english": "he/she said",
+      "audio": "/audio/unit-19/dijo.mp3",
+      "section": "El Prado",
+      "example": "El guardia dijo que no vio nada."
+    },
+    {
+      "spanish": "dijeron",
+      "english": "they said",
+      "audio": "/audio/unit-22/dijeron.mp3",
+      "section": "El Prado"
+    },
+    {
+      "spanish": "vine",
+      "english": "I came",
+      "audio": "/audio/unit-22/vine.mp3",
+      "section": "El Prado"
+    },
+    {
+      "spanish": "vino",
+      "english": "he/she came",
+      "audio": "/audio/unit-22/vino.mp3",
+      "section": "El Prado"
+    },
+    {
+      "spanish": "vinieron",
+      "english": "they came",
+      "audio": "/audio/unit-22/vinieron.mp3",
+      "section": "El Prado"
+    },
+    {
+      "spanish": "puse",
+      "english": "I put",
+      "audio": "/audio/unit-22/puse.mp3",
+      "section": "El Prado"
+    },
+    {
+      "spanish": "puso",
+      "english": "he/she put",
+      "audio": "/audio/unit-22/puso.mp3",
+      "section": "El Prado",
+      "example": "Puso la copia dentro del marco."
+    },
+    {
+      "spanish": "pusieron",
+      "english": "they put",
+      "audio": "/audio/unit-22/pusieron.mp3",
+      "section": "El Prado"
+    },
+    {
+      "spanish": "estuve",
+      "english": "I was (location)",
+      "audio": "/audio/unit-22/estuve.mp3",
+      "section": "El Prado"
+    },
+    {
+      "spanish": "estuvo",
+      "english": "he/she was (location)",
+      "audio": "/audio/unit-19/estuvo.mp3",
+      "section": "El Prado"
+    },
+    {
+      "spanish": "pude",
+      "english": "I could",
+      "audio": "/audio/unit-22/pude.mp3",
+      "section": "El Prado"
+    },
+    {
+      "spanish": "pudo",
+      "english": "he/she could",
+      "audio": "/audio/unit-22/pudo.mp3",
+      "section": "El Prado"
+    },
+    {
+      "spanish": "quiso",
+      "english": "he/she wanted",
+      "audio": "/audio/unit-22/quiso.mp3",
+      "section": "El Prado"
+    },
+    {
+      "spanish": "supo",
+      "english": "he/she found out",
+      "audio": "/audio/unit-22/supo.mp3",
+      "section": "El Prado"
+    },
+    {
+      "spanish": "trajo",
+      "english": "he/she brought",
+      "audio": "/audio/unit-22/trajo.mp3",
+      "section": "El Prado"
+    },
+    {
+      "spanish": "dio",
+      "english": "he/she gave",
+      "audio": "/audio/unit-22/dio.mp3",
+      "section": "El Prado"
+    },
+    {
+      "spanish": "vio",
+      "english": "he/she saw",
+      "audio": "/audio/unit-19/vio.mp3",
+      "section": "El Prado"
+    },
+    {
+      "spanish": "anduvo",
+      "english": "he/she walked around",
+      "audio": "/audio/unit-22/anduvo.mp3",
+      "section": "El Prado"
+    },
+    {
+      "spanish": "el guardia",
+      "english": "the guard",
+      "audio": "/audio/unit-22/el-guardia.mp3",
+      "section": "La sala"
+    },
+    {
+      "spanish": "el marco",
+      "english": "the frame",
+      "audio": "/audio/unit-22/el-marco.mp3",
+      "section": "La sala"
+    },
+    {
+      "spanish": "la sala",
+      "english": "the room / gallery",
+      "audio": "/audio/unit-22/la-sala.mp3",
+      "section": "La sala"
+    }
+  ],
+  "stages": [
+    {
+      "type": "cutscene",
+      "videoUrl": "/videos/unit-22-intro.mp4",
+      "briefingLines": [
+        "Segundo expediente. Madrid, el Museo del Prado.",
+        "El cuadro ya volvió a su marco. Eso no es lo que investigamos.",
+        "Investigamos las cuatro horas en las que nadie miró la sala catorce.",
+        "Y aquí el pretérito se pone difícil: fue, hizo, tuvo, dijo, vino, puso, estuvo, pudo.",
+        "No siguen ninguna regla. Hay que conocerlos, y hoy los vas a conocer.",
+        "Alguien tuvo una llave que no le tocaba. Encuéntralo."
+      ],
+      "chiefName": "Jefa Ramírez",
+      "chiefImageSeed": 12,
+      "chiefImageUrl": "/images/characters/chief-ramirez.webp"
+    },
+    {
+      "type": "vocabMatch",
+      "pairs": [
+        {
+          "spanish": "fue",
+          "english": "he/she went / was"
+        },
+        {
+          "spanish": "hizo",
+          "english": "he/she did / made"
+        },
+        {
+          "spanish": "tuvo",
+          "english": "he/she had"
+        },
+        {
+          "spanish": "dijo",
+          "english": "he/she said"
+        },
+        {
+          "spanish": "vino",
+          "english": "he/she came"
+        },
+        {
+          "spanish": "puso",
+          "english": "he/she put"
+        },
+        {
+          "spanish": "estuvo",
+          "english": "he/she was (location)"
+        },
+        {
+          "spanish": "pudo",
+          "english": "he/she could"
+        },
+        {
+          "spanish": "el guardia",
+          "english": "the guard"
+        },
+        {
+          "spanish": "la sala",
+          "english": "the room / gallery"
+        }
+      ]
+    },
+    {
+      "type": "swipeSort",
+      "prompt": "¿Regular o irregular en pretérito?",
+      "leftLabel": "Regular",
+      "leftHint": "Sigue la regla: -é, -ó, -í, -ió",
+      "rightLabel": "Irregular",
+      "rightHint": "Hay que aprenderlo de memoria",
+      "clueReward": "En su declaración, el sospechoso solo usó verbos irregulares al hablar de sí mismo. Los tenía ensayados.",
+      "items": [
+        {
+          "text": "habló",
+          "category": "left"
+        },
+        {
+          "text": "comió",
+          "category": "left"
+        },
+        {
+          "text": "abrió",
+          "category": "left"
+        },
+        {
+          "text": "miró",
+          "category": "left"
+        },
+        {
+          "text": "escribió",
+          "category": "left"
+        },
+        {
+          "text": "fue",
+          "category": "right",
+          "explanation": "Ser e ir comparten la misma forma."
+        },
+        {
+          "text": "hizo",
+          "category": "right"
+        },
+        {
+          "text": "tuvo",
+          "category": "right"
+        },
+        {
+          "text": "dijo",
+          "category": "right"
+        },
+        {
+          "text": "puso",
+          "category": "right"
+        },
+        {
+          "text": "vino",
+          "category": "right"
+        },
+        {
+          "text": "estuvo",
+          "category": "right"
+        }
+      ]
+    },
+    {
+      "type": "sentenceBuilder",
+      "sentences": [
+        {
+          "sentence": "El guardia tuvo la llave esa noche.",
+          "translation": "The guard had the key that night."
+        },
+        {
+          "sentence": "Nadie vino a la sala catorce.",
+          "translation": "Nobody came to room fourteen."
+        },
+        {
+          "sentence": "Puso una copia dentro del marco.",
+          "translation": "He put a copy inside the frame."
+        },
+        {
+          "sentence": "No pudo abrir la vitrina.",
+          "translation": "He could not open the case."
+        },
+        {
+          "sentence": "Dijo que no vio nada.",
+          "translation": "He said he did not see anything."
+        }
+      ]
+    },
+    {
+      "type": "readingComp",
+      "passage": "La noche del robo hubo tres guardias en el museo. El primero estuvo en la entrada toda la noche. El segundo hizo su ronda cada hora y no vio nada raro. El tercero dijo que fue al almacén a las dos de la mañana, pero el almacén estuvo cerrado desde la una. Nadie vino a buscarlo. Cuando volvió, a las tres, el marco de la sala catorce tuvo dentro una copia en papel, y el cuadro ya no estuvo allí.",
+      "glossary": [
+        {
+          "word": "la ronda",
+          "translation": "the rounds / patrol"
+        },
+        {
+          "word": "el almacén",
+          "translation": "the storeroom"
+        },
+        {
+          "word": "raro",
+          "translation": "strange"
+        },
+        {
+          "word": "la copia",
+          "translation": "the copy"
+        },
+        {
+          "word": "el marco",
+          "translation": "the frame"
+        },
+        {
+          "word": "hubo",
+          "translation": "there were"
+        }
+      ],
+      "questions": [
+        {
+          "id": "u22-r1",
+          "text": "¿Cuántos guardias hubo esa noche?",
+          "type": "multiple_choice",
+          "options": [
+            "Dos",
+            "Tres",
+            "Cuatro",
+            "Uno"
+          ],
+          "correctIndex": 1,
+          "explanationEs": "«hubo tres guardias en el museo».",
+          "explanationEn": "There were three guards."
+        },
+        {
+          "id": "u22-r2",
+          "text": "¿Qué problema tiene la historia del tercer guardia?",
+          "type": "multiple_choice",
+          "options": [
+            "Fue al almacén y estuvo cerrado desde la una",
+            "No hizo la ronda",
+            "Se durmió",
+            "Llegó tarde"
+          ],
+          "correctIndex": 0,
+          "explanationEs": "Dijo que fue al almacén, pero el almacén estuvo cerrado.",
+          "explanationEn": "The storeroom was already closed."
+        },
+        {
+          "id": "u22-r3",
+          "text": "¿Qué puso alguien dentro del marco?",
+          "type": "multiple_choice",
+          "options": [
+            "Nada",
+            "Una copia en papel",
+            "Otro cuadro",
+            "Una carta"
+          ],
+          "correctIndex": 1,
+          "explanationEs": "«el marco tuvo dentro una copia en papel».",
+          "explanationEn": "A paper copy."
+        },
+        {
+          "id": "u22-r4",
+          "text": "¿A qué hora volvió el tercer guardia?",
+          "type": "multiple_choice",
+          "options": [
+            "A la una",
+            "A las dos",
+            "A las tres",
+            "A las cuatro"
+          ],
+          "correctIndex": 2,
+          "explanationEs": "«Cuando volvió, a las tres».",
+          "explanationEn": "At three."
+        }
+      ]
+    },
+    {
+      "type": "listeningComp",
+      "audioUrl": "/audio/unit-22/declaracion-guardia.mp3",
+      "transcript": "Buenas noches. Hice mi ronda a la una, como siempre. Todo estuvo normal. Después fui al almacén a buscar una linterna. Estuve allí veinte minutos. No vi a nadie y nadie vino a buscarme. Cuando volví a la sala catorce, a las tres, el cuadro ya no estuvo en la pared. Yo no tuve la llave de esa sala. Se lo juro.",
+      "translation": "Good evening. I did my rounds at one, as always. Everything was normal. Then I went to the storeroom to get a flashlight. I was there twenty minutes. I did not see anyone and nobody came looking for me. When I returned to room fourteen, at three, the painting was no longer on the wall. I did not have the key to that room. I swear.",
+      "retryHint": "Pista: compara lo que dice con las horas del informe.",
+      "passingScore": 0.6,
+      "maxReplays": 5,
+      "clueReward": "El cómplice tuvo la llave, dijo que no vio nada y no estuvo en su puesto a las dos.",
+      "questions": [
+        {
+          "question": "¿A qué hora hizo la ronda?",
+          "options": [
+            "A la una",
+            "A las dos",
+            "A las tres",
+            "A medianoche"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "question": "¿Adónde fue después?",
+          "options": [
+            "A la entrada",
+            "Al almacén",
+            "A su casa",
+            "A la sala catorce"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "question": "¿Cuánto tiempo estuvo allí?",
+          "options": [
+            "Cinco minutos",
+            "Veinte minutos",
+            "Una hora",
+            "Toda la noche"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "question": "¿Qué dice sobre la llave?",
+          "options": [
+            "Que la perdió",
+            "Que no la tuvo",
+            "Que se la dio a otro",
+            "Que la usó"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "question": "¿Qué encontró a las tres?",
+          "options": [
+            "El cuadro en la pared",
+            "La sala cerrada",
+            "El cuadro ya no estuvo",
+            "A un ladrón"
+          ],
+          "correctIndex": 2
+        }
+      ]
+    },
+    {
+      "type": "dialogueChoice",
+      "npcName": "Sra. Beltrán, restauradora del museo",
+      "npcAvatar": "/images/characters/unit-03-carlos-metroista.webp",
+      "clueReward": "La restauradora confirmó que la copia se puso en el marco antes de la medianoche.",
+      "startNodeId": "n1",
+      "nodes": [
+        {
+          "id": "n1",
+          "npcLine": "Yo restauro los marcos. Vi la copia por la mañana. ¿Qué necesita saber?",
+          "options": [
+            {
+              "text": "¿Quién puso la copia ahí?",
+              "isCorrect": true,
+              "feedback": "Bien: puso, pretérito irregular.",
+              "nextNodeId": "n2"
+            },
+            {
+              "text": "¿Quién pone la copia ahí?",
+              "isCorrect": false,
+              "feedback": "Presente. Pregunta por esa noche."
+            },
+            {
+              "text": "¿Quién ponía la copia?",
+              "isCorrect": false,
+              "feedback": "Eso es imperfecto. Aún no llegamos ahí."
+            }
+          ]
+        },
+        {
+          "id": "n2",
+          "npcLine": "No lo sé. Pero le digo una cosa: el papel estuvo seco. Llevó horas allí.",
+          "options": [
+            {
+              "text": "¿Entonces alguien vino antes de medianoche?",
+              "isCorrect": true,
+              "feedback": "Exacto.",
+              "nextNodeId": "n3"
+            },
+            {
+              "text": "¿Entonces alguien viene ahora?",
+              "isCorrect": false,
+              "feedback": "Pretérito, agente."
+            },
+            {
+              "text": "¿Entonces alguien vendrá?",
+              "isCorrect": false,
+              "feedback": "Pretérito, agente."
+            }
+          ]
+        },
+        {
+          "id": "n3",
+          "npcLine": "Eso creo. Y tuvo tiempo. No hizo las cosas con prisa: el corte fue perfecto.",
+          "options": [
+            {
+              "text": "¿Quién tuvo llave de la sala catorce?",
+              "isCorrect": true,
+              "feedback": "La pregunta correcta.",
+              "nextNodeId": "n4"
+            },
+            {
+              "text": "¿Quién tiene llave?",
+              "isCorrect": false,
+              "feedback": "Esa noche, no hoy."
+            },
+            {
+              "text": "¿Quién tendrá llave?",
+              "isCorrect": false,
+              "feedback": "Esa noche, no mañana."
+            }
+          ]
+        },
+        {
+          "id": "n4",
+          "npcLine": "Tres personas. Y una de ellas dijo que no la tuvo. Ahí empezaría yo.",
+          "isEnd": true,
+          "endMessage": "La copia llevaba horas en el marco: el cómplice entró antes de medianoche."
+        }
+      ]
+    },
+    {
+      "type": "lineup",
+      "correctSuspectId": "s22-b",
+      "hint": "Tuvo llave de la sala catorce, dijo que no la tuvo, y no estuvo en su puesto a las dos.",
+      "suspects": [
+        {
+          "id": "s22-a",
+          "name": "El de la Entrada",
+          "realName": "Tomás Aguirre",
+          "age": 38,
+          "description": "Estuvo en la puerta principal toda la noche. Cuatro cámaras lo vieron y nunca se movió de allí.",
+          "imageSeed": 8,
+          "imageUrl": "/images/characters/unit-22-s22-a.webp"
+        },
+        {
+          "id": "s22-b",
+          "name": "El del Almacén",
+          "realName": "Ignacio Serra",
+          "age": 44,
+          "description": "Dijo que fue al almacén a las dos, pero el almacén estuvo cerrado desde la una. Tuvo llave de la sala catorce.",
+          "imageSeed": 23,
+          "imageUrl": "/images/characters/unit-22-s22-b.webp"
+        },
+        {
+          "id": "s22-c",
+          "name": "La Restauradora",
+          "realName": "Pilar Beltrán",
+          "age": 50,
+          "description": "Trabajó hasta las ocho de la tarde y se fue a su casa. No tuvo llave de las salas, solo del taller.",
+          "imageSeed": 41,
+          "imageUrl": "/images/characters/unit-22-s22-c.webp"
+        },
+        {
+          "id": "s22-d",
+          "name": "El de la Ronda",
+          "realName": "Marco Díaz",
+          "age": 29,
+          "description": "Hizo su ronda cada hora y firmó el libro seis veces. Nunca tuvo la llave de la sala catorce.",
+          "imageSeed": 17,
+          "imageUrl": "/images/characters/unit-22-s22-d.webp"
+        }
+      ]
+    }
+  ]
+}

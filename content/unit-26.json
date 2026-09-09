@@ -1,0 +1,616 @@
+{
+  "unitNumber": 26,
+  "country": "Guinea Ecuatorial",
+  "city": "Malabo",
+  "caseTitle": "El País Número Veintiuno",
+  "caseDescription": "Hay un país al que El Cronista nunca llegó: Guinea Ecuatorial, el único país de África donde el español es lengua oficial. Alguien lo esperaba en Malabo. Usa el presente perfecto —ha robado, ha llegado, he visto— y los mandatos para cerrar el expediente.",
+  "criminalName": "El Que Esperaba en Malabo",
+  "bonusClue": "El cómplice ha esperado tres semanas en el puerto y no ha dicho a nadie por qué.",
+  "vocab": [
+    {
+      "spanish": "ha robado",
+      "english": "he/she has stolen",
+      "audio": "/audio/unit-26/ha-robado.mp3",
+      "section": "Presente perfecto",
+      "example": "Ha robado veinte tesoros en veinte países."
+    },
+    {
+      "spanish": "ha llegado",
+      "english": "he/she has arrived",
+      "audio": "/audio/unit-26/ha-llegado.mp3",
+      "section": "Presente perfecto"
+    },
+    {
+      "spanish": "he visto",
+      "english": "I have seen",
+      "audio": "/audio/unit-26/he-visto.mp3",
+      "section": "Presente perfecto"
+    },
+    {
+      "spanish": "ha dicho",
+      "english": "he/she has said",
+      "audio": "/audio/unit-26/ha-dicho.mp3",
+      "section": "Malabo y Bioko"
+    },
+    {
+      "spanish": "ha hecho",
+      "english": "he/she has done",
+      "audio": "/audio/unit-26/ha-hecho.mp3",
+      "section": "Malabo y Bioko"
+    },
+    {
+      "spanish": "ha puesto",
+      "english": "he/she has put",
+      "audio": "/audio/unit-26/ha-puesto.mp3",
+      "section": "Malabo y Bioko"
+    },
+    {
+      "spanish": "ha vuelto",
+      "english": "he/she has returned",
+      "audio": "/audio/unit-26/ha-vuelto.mp3",
+      "section": "Malabo y Bioko"
+    },
+    {
+      "spanish": "ha escrito",
+      "english": "he/she has written",
+      "audio": "/audio/unit-26/ha-escrito.mp3",
+      "section": "Malabo y Bioko"
+    },
+    {
+      "spanish": "ha abierto",
+      "english": "he/she has opened",
+      "audio": "/audio/unit-26/ha-abierto.mp3",
+      "section": "Malabo y Bioko"
+    },
+    {
+      "spanish": "hemos encontrado",
+      "english": "we have found",
+      "audio": "/audio/unit-26/hemos-encontrado.mp3",
+      "section": "Malabo y Bioko"
+    },
+    {
+      "spanish": "han visto",
+      "english": "they have seen",
+      "audio": "/audio/unit-26/han-visto.mp3",
+      "section": "Malabo y Bioko"
+    },
+    {
+      "spanish": "todavía no",
+      "english": "not yet",
+      "audio": "/audio/unit-26/todavia-no.mp3",
+      "section": "Presente perfecto"
+    },
+    {
+      "spanish": "ya",
+      "english": "already",
+      "audio": "/audio/unit-26/ya.mp3",
+      "section": "Presente perfecto"
+    },
+    {
+      "spanish": "nunca",
+      "english": "never",
+      "audio": "/audio/unit-19/nunca.mp3",
+      "section": "Malabo y Bioko"
+    },
+    {
+      "spanish": "alguna vez",
+      "english": "ever",
+      "audio": "/audio/unit-26/alguna-vez.mp3",
+      "section": "Malabo y Bioko"
+    },
+    {
+      "spanish": "no vayas",
+      "english": "don't go",
+      "audio": "/audio/unit-26/no-vayas.mp3",
+      "section": "Mandatos"
+    },
+    {
+      "spanish": "no toques",
+      "english": "don't touch",
+      "audio": "/audio/unit-26/no-toques.mp3",
+      "section": "Mandatos"
+    },
+    {
+      "spanish": "no salgas",
+      "english": "don't leave",
+      "audio": "/audio/unit-26/no-salgas.mp3",
+      "section": "Malabo y Bioko"
+    },
+    {
+      "spanish": "no lo dejes escapar",
+      "english": "don't let him escape",
+      "audio": "/audio/unit-26/no-lo-dejes-escapar.mp3",
+      "section": "Malabo y Bioko",
+      "example": "¡No lo dejes escapar!"
+    },
+    {
+      "spanish": "espere",
+      "english": "wait (formal)",
+      "audio": "/audio/unit-26/espere.mp3",
+      "section": "Mandatos"
+    },
+    {
+      "spanish": "escuche",
+      "english": "listen (formal)",
+      "audio": "/audio/unit-26/escuche.mp3",
+      "section": "Mandatos"
+    },
+    {
+      "spanish": "mire",
+      "english": "look (formal)",
+      "audio": "/audio/unit-26/mire.mp3",
+      "section": "Malabo y Bioko"
+    },
+    {
+      "spanish": "venga",
+      "english": "come (formal)",
+      "audio": "/audio/unit-26/venga.mp3",
+      "section": "Malabo y Bioko"
+    },
+    {
+      "spanish": "siga",
+      "english": "continue (formal)",
+      "audio": "/audio/unit-26/siga.mp3",
+      "section": "Malabo y Bioko"
+    },
+    {
+      "spanish": "dígame",
+      "english": "tell me (formal)",
+      "audio": "/audio/unit-26/digame.mp3",
+      "section": "Malabo y Bioko"
+    },
+    {
+      "spanish": "la isla",
+      "english": "the island",
+      "audio": "/audio/unit-26/la-isla.mp3",
+      "section": "Malabo y Bioko"
+    },
+    {
+      "spanish": "el bosque",
+      "english": "the forest",
+      "audio": "/audio/unit-26/el-bosque.mp3",
+      "section": "Malabo y Bioko"
+    },
+    {
+      "spanish": "el tambor",
+      "english": "the drum",
+      "audio": "/audio/unit-15/tambor.mp3",
+      "section": "Malabo y Bioko"
+    },
+    {
+      "spanish": "la playa",
+      "english": "the beach",
+      "audio": "/audio/unit-07/playa.mp3",
+      "section": "Malabo y Bioko"
+    },
+    {
+      "spanish": "la lengua",
+      "english": "the language",
+      "audio": "/audio/unit-26/la-lengua.mp3",
+      "section": "Malabo y Bioko"
+    }
+  ],
+  "stages": [
+    {
+      "type": "cutscene",
+      "videoUrl": "/videos/unit-26-intro.mp4",
+      "briefingLines": [
+        "Último expediente de este bloque, agente. Y el más raro.",
+        "Guinea Ecuatorial. El único país de África donde el español es lengua oficial.",
+        "El Cronista nunca llegó aquí. Nunca robó nada en Malabo.",
+        "Pero alguien lo estaba esperando en el puerto. Tres semanas. Todos los días.",
+        "Hoy dos cosas: el presente perfecto, para decir lo que ha hecho hasta ahora.",
+        "Y los mandatos, porque vas a dirigir el operativo tú.",
+        "Ha robado veinte tesoros. No lo dejes escapar el veintiuno."
+      ],
+      "chiefName": "Jefa Ramírez",
+      "chiefImageSeed": 12,
+      "chiefImageUrl": "/images/characters/chief-ramirez.webp"
+    },
+    {
+      "type": "vocabMatch",
+      "pairs": [
+        {
+          "spanish": "ha robado",
+          "english": "he/she has stolen"
+        },
+        {
+          "spanish": "ha llegado",
+          "english": "he/she has arrived"
+        },
+        {
+          "spanish": "he visto",
+          "english": "I have seen"
+        },
+        {
+          "spanish": "ha dicho",
+          "english": "he/she has said"
+        },
+        {
+          "spanish": "ha hecho",
+          "english": "he/she has done"
+        },
+        {
+          "spanish": "todavía no",
+          "english": "not yet"
+        },
+        {
+          "spanish": "ya",
+          "english": "already"
+        },
+        {
+          "spanish": "no toques",
+          "english": "don't touch"
+        },
+        {
+          "spanish": "espere",
+          "english": "wait (formal)"
+        },
+        {
+          "spanish": "la isla",
+          "english": "the island"
+        }
+      ]
+    },
+    {
+      "type": "swipeSort",
+      "prompt": "¿Es presente perfecto o un mandato?",
+      "leftLabel": "Presente perfecto",
+      "leftHint": "Lo que ha pasado hasta ahora",
+      "rightLabel": "Mandato",
+      "rightHint": "Una orden",
+      "clueReward": "Habla del robo en presente perfecto: para él, todavía no ha terminado.",
+      "items": [
+        {
+          "text": "ha robado",
+          "category": "left"
+        },
+        {
+          "text": "ha llegado",
+          "category": "left"
+        },
+        {
+          "text": "he visto",
+          "category": "left"
+        },
+        {
+          "text": "ha dicho",
+          "category": "left"
+        },
+        {
+          "text": "hemos encontrado",
+          "category": "left"
+        },
+        {
+          "text": "han visto",
+          "category": "left"
+        },
+        {
+          "text": "no vayas",
+          "category": "right",
+          "explanation": "Mandato negativo con tú."
+        },
+        {
+          "text": "no toques",
+          "category": "right"
+        },
+        {
+          "text": "espere",
+          "category": "right",
+          "explanation": "Mandato formal con usted."
+        },
+        {
+          "text": "escuche",
+          "category": "right"
+        },
+        {
+          "text": "mire",
+          "category": "right"
+        },
+        {
+          "text": "dígame",
+          "category": "right"
+        }
+      ]
+    },
+    {
+      "type": "sentenceBuilder",
+      "sentences": [
+        {
+          "sentence": "Ha robado veinte tesoros en veinte países.",
+          "translation": "He has stolen twenty treasures in twenty countries."
+        },
+        {
+          "sentence": "Todavía no ha dicho nada.",
+          "translation": "He still has not said anything."
+        },
+        {
+          "sentence": "Hemos encontrado la última pieza.",
+          "translation": "We have found the last piece."
+        },
+        {
+          "sentence": "No toques nada sin guantes.",
+          "translation": "Do not touch anything without gloves."
+        },
+        {
+          "sentence": "Espere aquí y no lo deje escapar.",
+          "translation": "Wait here and do not let him escape."
+        }
+      ]
+    },
+    {
+      "type": "readingComp",
+      "passage": "Malabo está en la isla de Bioko, y Bioko es una montaña verde en medio del mar. Guinea Ecuatorial es el único país de África donde el español es lengua oficial, y allí se habla también fang, bubi y francés. En el puerto, un hombre ha esperado todos los días durante tres semanas. Ha llegado siempre a la misma hora y se ha sentado en el mismo banco. No ha hablado con nadie. Los pescadores ya lo conocen, pero todavía no saben su nombre ni qué espera.",
+      "glossary": [
+        {
+          "word": "la isla",
+          "translation": "the island"
+        },
+        {
+          "word": "la montaña",
+          "translation": "the mountain"
+        },
+        {
+          "word": "el puerto",
+          "translation": "the port"
+        },
+        {
+          "word": "el banco",
+          "translation": "the bench"
+        },
+        {
+          "word": "los pescadores",
+          "translation": "the fishermen"
+        },
+        {
+          "word": "lengua oficial",
+          "translation": "official language"
+        }
+      ],
+      "questions": [
+        {
+          "id": "u26-r1",
+          "text": "¿Dónde está Malabo?",
+          "type": "multiple_choice",
+          "options": [
+            "En el continente",
+            "En la isla de Bioko",
+            "En Camerún",
+            "En una montaña de Fang"
+          ],
+          "correctIndex": 1,
+          "explanationEs": "«Malabo está en la isla de Bioko».",
+          "explanationEn": "On the island of Bioko."
+        },
+        {
+          "id": "u26-r2",
+          "text": "¿Qué tiene de especial Guinea Ecuatorial?",
+          "type": "multiple_choice",
+          "options": [
+            "Es el país más grande de África",
+            "Es el único país de África con el español como lengua oficial",
+            "No tiene costa",
+            "Solo se habla francés"
+          ],
+          "correctIndex": 1,
+          "explanationEs": "«el único país de África donde el español es lengua oficial».",
+          "explanationEn": "The only country in Africa with Spanish as an official language."
+        },
+        {
+          "id": "u26-r3",
+          "text": "¿Cuánto tiempo ha esperado el hombre?",
+          "type": "multiple_choice",
+          "options": [
+            "Tres días",
+            "Tres semanas",
+            "Tres meses",
+            "Tres años"
+          ],
+          "correctIndex": 1,
+          "explanationEs": "«ha esperado todos los días durante tres semanas».",
+          "explanationEn": "Three weeks."
+        },
+        {
+          "id": "u26-r4",
+          "text": "¿Qué saben los pescadores de él?",
+          "type": "multiple_choice",
+          "options": [
+            "Su nombre",
+            "Qué espera",
+            "Lo conocen pero no saben su nombre",
+            "Nada en absoluto"
+          ],
+          "correctIndex": 2,
+          "explanationEs": "«ya lo conocen, pero todavía no saben su nombre».",
+          "explanationEn": "They know him by sight only."
+        }
+      ]
+    },
+    {
+      "type": "listeningComp",
+      "audioUrl": "/audio/unit-26/testimonio-puerto.mp3",
+      "transcript": "Yo trabajo en el puerto desde niño. Ese hombre ha venido todos los días durante tres semanas. Ha llegado siempre a las seis de la mañana y se ha sentado en el mismo banco, mirando el mar. Nunca ha hablado con nadie. Un día le he preguntado qué esperaba y me ha dicho una sola cosa: «Un barco que ya no va a llegar». Todavía no sé qué significa.",
+      "translation": "I have worked at the port since I was a boy. That man has come every day for three weeks. He has always arrived at six in the morning and has sat on the same bench, looking at the sea. He has never spoken to anyone. One day I asked him what he was waiting for and he told me only one thing: 'A ship that is not going to arrive now.' I still do not know what it means.",
+      "retryHint": "Pista: escucha cuánto tiempo, a qué hora y qué respondió.",
+      "passingScore": 0.6,
+      "maxReplays": 5,
+      "clueReward": "El cómplice ha esperado tres semanas en el puerto y no ha dicho a nadie por qué.",
+      "questions": [
+        {
+          "question": "¿Cuánto tiempo ha venido el hombre?",
+          "options": [
+            "Tres días",
+            "Tres semanas",
+            "Tres meses",
+            "Un año"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "question": "¿A qué hora ha llegado siempre?",
+          "options": [
+            "A las cinco",
+            "A las seis",
+            "A las siete",
+            "A mediodía"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "question": "¿Con cuántas personas ha hablado?",
+          "options": [
+            "Con todos",
+            "Con dos",
+            "Con nadie",
+            "Con los pescadores"
+          ],
+          "correctIndex": 2
+        },
+        {
+          "question": "¿Qué ha dicho que espera?",
+          "options": [
+            "Un amigo",
+            "Un barco que ya no va a llegar",
+            "Un tren",
+            "Nada"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "question": "¿Entiende el testigo lo que significa?",
+          "options": [
+            "Sí",
+            "Todavía no",
+            "Dice que sí pero miente",
+            "No lo escuchó"
+          ],
+          "correctIndex": 1
+        }
+      ]
+    },
+    {
+      "type": "dialogueChoice",
+      "npcName": "Bita Nsue, pescadora del puerto",
+      "npcAvatar": "/images/characters/unit-19-cronista.webp",
+      "clueReward": "La pescadora describió al hombre del banco: llegó hace tres semanas, justo cuando cayó El Cronista.",
+      "startNodeId": "n1",
+      "nodes": [
+        {
+          "id": "n1",
+          "npcLine": "Buenos días, agente. ¿Es por el hombre del banco?",
+          "options": [
+            {
+              "text": "¿Qué ha hecho ese hombre estas semanas?",
+              "isCorrect": true,
+              "feedback": "Bien: presente perfecto.",
+              "nextNodeId": "n2"
+            },
+            {
+              "text": "¿Qué hizo ese hombre en 1954?",
+              "isCorrect": false,
+              "feedback": "Pregunta por lo que sigue pasando ahora."
+            },
+            {
+              "text": "¿Qué hacía ese hombre de niño?",
+              "isCorrect": false,
+              "feedback": "Eso no nos sirve hoy."
+            }
+          ]
+        },
+        {
+          "id": "n2",
+          "npcLine": "Ha venido cada mañana. Se ha sentado ahí y ha mirado el mar. Nada más.",
+          "options": [
+            {
+              "text": "¿Ha hablado con alguien?",
+              "isCorrect": true,
+              "feedback": "Correcto.",
+              "nextNodeId": "n3"
+            },
+            {
+              "text": "¿Habló con alguien ayer?",
+              "isCorrect": false,
+              "feedback": "Usa el presente perfecto: hasta ahora."
+            },
+            {
+              "text": "¿Hablará con alguien?",
+              "isCorrect": false,
+              "feedback": "Presente perfecto, por favor."
+            }
+          ]
+        },
+        {
+          "id": "n3",
+          "npcLine": "Con nadie. Solo una vez me dijo que esperaba un barco. Yo creo que esperaba a una persona.",
+          "options": [
+            {
+              "text": "¿Cuándo ha llegado por primera vez?",
+              "isCorrect": true,
+              "feedback": "Esa es la clave.",
+              "nextNodeId": "n4"
+            },
+            {
+              "text": "¿Cuándo llegará?",
+              "isCorrect": false,
+              "feedback": "Ya está aquí. Pregunta desde cuándo."
+            },
+            {
+              "text": "¿Cuándo llegaba antes?",
+              "isCorrect": false,
+              "feedback": "Presente perfecto."
+            }
+          ]
+        },
+        {
+          "id": "n4",
+          "npcLine": "Hace tres semanas exactas. El mismo día que salió en la radio la noticia de la detención.",
+          "isEnd": true,
+          "endMessage": "El hombre del banco llegó el día exacto de la detención de El Cronista."
+        }
+      ]
+    },
+    {
+      "type": "lineup",
+      "correctSuspectId": "s26-c",
+      "hint": "Ha llegado al puerto hace exactamente tres semanas, el día de la detención, y no ha hablado con nadie.",
+      "suspects": [
+        {
+          "id": "s26-a",
+          "name": "El Capitán",
+          "realName": "Nicolás Obama Eyang",
+          "age": 49,
+          "description": "Ha trabajado en el puerto veinte años y todos lo conocen. Ha hablado con medio Malabo esta semana.",
+          "imageSeed": 17,
+          "imageUrl": "/images/characters/unit-26-s26-a.webp"
+        },
+        {
+          "id": "s26-b",
+          "name": "El Comerciante",
+          "realName": "Salomón Bibang",
+          "age": 38,
+          "description": "Ha llegado a Malabo hace dos meses por negocios y ha vendido en el mercado todos los días.",
+          "imageSeed": 26,
+          "imageUrl": "/images/characters/unit-26-s26-b.webp"
+        },
+        {
+          "id": "s26-c",
+          "name": "El Hombre del Banco",
+          "realName": "desconocido",
+          "age": 45,
+          "description": "Ha llegado hace tres semanas exactas, el día de la detención. Ha esperado cada mañana y no ha hablado con nadie.",
+          "imageSeed": 29,
+          "imageUrl": "/images/characters/unit-26-s26-c.webp"
+        },
+        {
+          "id": "s26-d",
+          "name": "La Bióloga",
+          "realName": "Chantal Ndong",
+          "age": 31,
+          "description": "Ha venido a estudiar los bosques de Bioko y ha pasado casi todo el tiempo en la montaña, no en el puerto.",
+          "imageSeed": 45,
+          "imageUrl": "/images/characters/unit-26-s26-d.webp"
+        }
+      ]
+    }
+  ]
+}

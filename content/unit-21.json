@@ -1,0 +1,641 @@
+{
+  "unitNumber": 21,
+  "country": "México",
+  "city": "Guadalajara",
+  "caseTitle": "El Primer Expediente",
+  "caseDescription": "El Cronista está detenido, pero no habla. Volvemos al primer caso: la Guitarra del Sol. Alguien de Guadalajara le abrió la puerta esa noche y nadie sabe quién. Usa el pretérito de los verbos regulares para reconstruir, paso por paso, qué pasó.",
+  "criminalName": "El Que Abrió la Puerta",
+  "bonusClue": "El cómplice trabajó esa noche, habló poco y salió antes de las once.",
+  "vocab": [
+    {
+      "spanish": "llegué",
+      "english": "I arrived",
+      "audio": "/audio/unit-21/llegue.mp3",
+      "section": "El primer caso"
+    },
+    {
+      "spanish": "llegó",
+      "english": "he/she arrived",
+      "audio": "/audio/unit-19/llego.mp3",
+      "section": "El primer caso",
+      "example": "El hombre llegó a las nueve."
+    },
+    {
+      "spanish": "llegaron",
+      "english": "they arrived",
+      "audio": "/audio/unit-21/llegaron.mp3",
+      "section": "El primer caso"
+    },
+    {
+      "spanish": "tomé",
+      "english": "I took",
+      "audio": "/audio/unit-21/tome.mp3",
+      "section": "El primer caso"
+    },
+    {
+      "spanish": "tomó",
+      "english": "he/she took",
+      "audio": "/audio/unit-21/tomo.mp3",
+      "section": "El primer caso"
+    },
+    {
+      "spanish": "tomaron",
+      "english": "they took",
+      "audio": "/audio/unit-21/tomaron.mp3",
+      "section": "El primer caso"
+    },
+    {
+      "spanish": "hablé",
+      "english": "I spoke",
+      "audio": "/audio/unit-21/hable.mp3",
+      "section": "El primer caso"
+    },
+    {
+      "spanish": "habló",
+      "english": "he/she spoke",
+      "audio": "/audio/unit-19/hablo.mp3",
+      "section": "El primer caso"
+    },
+    {
+      "spanish": "hablaron",
+      "english": "they spoke",
+      "audio": "/audio/unit-21/hablaron.mp3",
+      "section": "El primer caso"
+    },
+    {
+      "spanish": "entró",
+      "english": "he/she entered",
+      "audio": "/audio/unit-20/entro.mp3",
+      "section": "El primer caso"
+    },
+    {
+      "spanish": "salió",
+      "english": "he/she left",
+      "audio": "/audio/unit-19/salio.mp3",
+      "section": "El primer caso",
+      "example": "Salió por la puerta de atrás."
+    },
+    {
+      "spanish": "escuchó",
+      "english": "he/she listened",
+      "audio": "/audio/unit-21/escucho.mp3",
+      "section": "El primer caso",
+      "example": "Nadie escuchó nada esa noche."
+    },
+    {
+      "spanish": "miró",
+      "english": "he/she looked",
+      "audio": "/audio/unit-21/miro.mp3",
+      "section": "El primer caso"
+    },
+    {
+      "spanish": "compró",
+      "english": "he/she bought",
+      "audio": "/audio/unit-21/compro.mp3",
+      "section": "El primer caso"
+    },
+    {
+      "spanish": "trabajó",
+      "english": "he/she worked",
+      "audio": "/audio/unit-21/trabajo.mp3",
+      "section": "El primer caso"
+    },
+    {
+      "spanish": "cantó",
+      "english": "he/she sang",
+      "audio": "/audio/unit-21/canto.mp3",
+      "section": "El primer caso"
+    },
+    {
+      "spanish": "tocó",
+      "english": "he/she played (an instrument)",
+      "audio": "/audio/unit-21/toco.mp3",
+      "section": "El primer caso"
+    },
+    {
+      "spanish": "comió",
+      "english": "he/she ate",
+      "audio": "/audio/unit-21/comio.mp3",
+      "section": "El primer caso"
+    },
+    {
+      "spanish": "bebió",
+      "english": "he/she drank",
+      "audio": "/audio/unit-21/bebio.mp3",
+      "section": "El primer caso"
+    },
+    {
+      "spanish": "volvió",
+      "english": "he/she returned",
+      "audio": "/audio/unit-19/volvio.mp3",
+      "section": "El primer caso"
+    },
+    {
+      "spanish": "aprendió",
+      "english": "he/she learned",
+      "audio": "/audio/unit-21/aprendio.mp3",
+      "section": "El primer caso"
+    },
+    {
+      "spanish": "corrió",
+      "english": "he/she ran",
+      "audio": "/audio/unit-21/corrio.mp3",
+      "section": "El primer caso"
+    },
+    {
+      "spanish": "escribió",
+      "english": "he/she wrote",
+      "audio": "/audio/unit-21/escribio.mp3",
+      "section": "El primer caso"
+    },
+    {
+      "spanish": "abrió",
+      "english": "he/she opened",
+      "audio": "/audio/unit-21/abrio.mp3",
+      "section": "El primer caso"
+    },
+    {
+      "spanish": "vivió",
+      "english": "he/she lived",
+      "audio": "/audio/unit-21/vivio.mp3",
+      "section": "El primer caso"
+    },
+    {
+      "spanish": "recibió",
+      "english": "he/she received",
+      "audio": "/audio/unit-21/recibio.mp3",
+      "section": "El primer caso"
+    },
+    {
+      "spanish": "subió",
+      "english": "he/she went up",
+      "audio": "/audio/unit-21/subio.mp3",
+      "section": "El primer caso"
+    },
+    {
+      "spanish": "decidió",
+      "english": "he/she decided",
+      "audio": "/audio/unit-21/decidio.mp3",
+      "section": "El primer caso"
+    },
+    {
+      "spanish": "ayer",
+      "english": "yesterday",
+      "audio": "/audio/unit-19/ayer.mp3",
+      "section": "Contar el pasado"
+    },
+    {
+      "spanish": "anoche",
+      "english": "last night",
+      "audio": "/audio/unit-19/anoche.mp3",
+      "section": "Contar el pasado"
+    },
+    {
+      "spanish": "la semana pasada",
+      "english": "last week",
+      "audio": "/audio/unit-21/la-semana-pasada.mp3",
+      "section": "Contar el pasado"
+    },
+    {
+      "spanish": "primero",
+      "english": "first",
+      "audio": "/audio/unit-18/primero.mp3",
+      "section": "Contar el pasado"
+    },
+    {
+      "spanish": "después",
+      "english": "afterwards",
+      "audio": "/audio/unit-21/despues.mp3",
+      "section": "Contar el pasado"
+    },
+    {
+      "spanish": "por fin",
+      "english": "finally",
+      "audio": "/audio/unit-21/por-fin.mp3",
+      "section": "Contar el pasado"
+    }
+  ],
+  "stages": [
+    {
+      "type": "cutscene",
+      "videoUrl": "/videos/unit-21-intro.mp4",
+      "briefingLines": [
+        "Agente, siéntate. El Cronista está en una celda y no dice ni una palabra.",
+        "Veinte robos. Veinte líneas del tiempo rotas. Y él sonríe.",
+        "Así que no vamos a preguntarle a él. Vamos a preguntarle a la gente que estuvo allí.",
+        "Hoy volvemos al primer caso: Guadalajara, la Guitarra del Sol.",
+        "Tu trabajo cambia hoy. Ya no buscas a un ladrón: reconstruyes una noche.",
+        "Para eso necesitas el pretérito. Llegó. Tomó. Salió. Acciones terminadas.",
+        "Cada verbo que pongas mal es una línea falsa en el expediente. Escribe la verdad."
+      ],
+      "chiefName": "Jefa Ramírez",
+      "chiefImageSeed": 12,
+      "chiefImageUrl": "/images/characters/chief-ramirez.webp"
+    },
+    {
+      "type": "vocabMatch",
+      "pairs": [
+        {
+          "spanish": "llegó",
+          "english": "he/she arrived"
+        },
+        {
+          "spanish": "salió",
+          "english": "he/she left"
+        },
+        {
+          "spanish": "entró",
+          "english": "he/she entered"
+        },
+        {
+          "spanish": "escuchó",
+          "english": "he/she listened"
+        },
+        {
+          "spanish": "miró",
+          "english": "he/she looked"
+        },
+        {
+          "spanish": "compró",
+          "english": "he/she bought"
+        },
+        {
+          "spanish": "escribió",
+          "english": "he/she wrote"
+        },
+        {
+          "spanish": "abrió",
+          "english": "he/she opened"
+        },
+        {
+          "spanish": "ayer",
+          "english": "yesterday"
+        },
+        {
+          "spanish": "anoche",
+          "english": "last night"
+        }
+      ]
+    },
+    {
+      "type": "swipeSort",
+      "prompt": "¿Acción terminada (pretérito) o palabra de tiempo?",
+      "leftLabel": "Pretérito",
+      "leftHint": "Una acción que ya terminó",
+      "rightLabel": "Cuándo",
+      "rightHint": "Palabra que sitúa la acción en el tiempo",
+      "clueReward": "El informe original mezcló los tiempos: alguien contó como costumbre algo que pasó una sola vez.",
+      "items": [
+        {
+          "text": "llegó",
+          "category": "left",
+          "explanation": "Acción terminada: llegó y ya está."
+        },
+        {
+          "text": "tomó",
+          "category": "left"
+        },
+        {
+          "text": "habló",
+          "category": "left"
+        },
+        {
+          "text": "escribió",
+          "category": "left"
+        },
+        {
+          "text": "abrió",
+          "category": "left"
+        },
+        {
+          "text": "salió",
+          "category": "left"
+        },
+        {
+          "text": "ayer",
+          "category": "right"
+        },
+        {
+          "text": "anoche",
+          "category": "right"
+        },
+        {
+          "text": "la semana pasada",
+          "category": "right"
+        },
+        {
+          "text": "primero",
+          "category": "right"
+        },
+        {
+          "text": "después",
+          "category": "right"
+        },
+        {
+          "text": "por fin",
+          "category": "right",
+          "explanation": "Cierra la secuencia."
+        }
+      ]
+    },
+    {
+      "type": "sentenceBuilder",
+      "sentences": [
+        {
+          "sentence": "El hombre llegó a las nueve.",
+          "translation": "The man arrived at nine."
+        },
+        {
+          "sentence": "Tomó la guitarra y salió.",
+          "translation": "He took the guitar and left."
+        },
+        {
+          "sentence": "Nadie escuchó nada anoche.",
+          "translation": "Nobody heard anything last night."
+        },
+        {
+          "sentence": "Primero habló con el guardia.",
+          "translation": "First he spoke with the guard."
+        },
+        {
+          "sentence": "Por fin abrió la puerta de atrás.",
+          "translation": "He finally opened the back door."
+        }
+      ]
+    },
+    {
+      "type": "readingComp",
+      "passage": "Don Rodrigo trabajó en el salón durante treinta años. Esa noche cerró a las diez, como siempre. Primero limpió el escenario. Después guardó las sillas. A las diez y media escuchó un ruido en el pasillo, pero no miró. «Aquí nunca pasa nada», pensó. A las once salió por la puerta de atrás y la dejó abierta, porque la llave no funcionó. A la mañana siguiente, la Guitarra del Sol no estuvo en su lugar.",
+      "glossary": [
+        {
+          "word": "cerró",
+          "translation": "closed"
+        },
+        {
+          "word": "limpió",
+          "translation": "cleaned"
+        },
+        {
+          "word": "guardó",
+          "translation": "put away"
+        },
+        {
+          "word": "el ruido",
+          "translation": "the noise"
+        },
+        {
+          "word": "el pasillo",
+          "translation": "the hallway"
+        },
+        {
+          "word": "la llave",
+          "translation": "the key"
+        }
+      ],
+      "questions": [
+        {
+          "id": "u21-r1",
+          "text": "¿Qué hizo don Rodrigo primero?",
+          "type": "multiple_choice",
+          "options": [
+            "Limpió el escenario",
+            "Guardó las sillas",
+            "Abrió la puerta",
+            "Escuchó un ruido"
+          ],
+          "correctIndex": 0,
+          "explanationEs": "El texto dice «Primero limpió el escenario».",
+          "explanationEn": "First he cleaned the stage."
+        },
+        {
+          "id": "u21-r2",
+          "text": "¿Por qué dejó la puerta abierta?",
+          "type": "multiple_choice",
+          "options": [
+            "Porque salió con prisa",
+            "Porque la llave no funcionó",
+            "Porque olvidó cerrarla",
+            "Porque alguien se lo pidió"
+          ],
+          "correctIndex": 1,
+          "explanationEs": "«la dejó abierta, porque la llave no funcionó».",
+          "explanationEn": "The key did not work."
+        },
+        {
+          "id": "u21-r3",
+          "text": "¿A qué hora escuchó el ruido?",
+          "type": "multiple_choice",
+          "options": [
+            "A las diez",
+            "A las diez y media",
+            "A las once",
+            "A la medianoche"
+          ],
+          "correctIndex": 1,
+          "explanationEs": "«A las diez y media escuchó un ruido».",
+          "explanationEn": "At ten thirty."
+        },
+        {
+          "id": "u21-r4",
+          "text": "¿Qué NO hizo don Rodrigo?",
+          "type": "multiple_choice",
+          "options": [
+            "Cerró el salón",
+            "Guardó las sillas",
+            "Miró en el pasillo",
+            "Salió por atrás"
+          ],
+          "correctIndex": 2,
+          "explanationEs": "«escuchó un ruido en el pasillo, pero no miró».",
+          "explanationEn": "He heard the noise but did not look."
+        }
+      ]
+    },
+    {
+      "type": "listeningComp",
+      "audioUrl": "/audio/unit-21/testimonio-rodrigo.mp3",
+      "transcript": "Buenas tardes. Soy don Rodrigo. Esa noche cerré a las diez. Limpié el escenario y guardé las sillas. A las diez y media escuché pasos en el pasillo. No miré. Salí a las once por la puerta de atrás. La llave no funcionó y dejé la puerta abierta. Lo siento mucho. Yo no vi a nadie, pero alguien entró después.",
+      "translation": "Good afternoon. I am don Rodrigo. That night I closed at ten. I cleaned the stage and put away the chairs. At ten thirty I heard footsteps in the hallway. I did not look. I left at eleven through the back door. The key did not work and I left the door open. I am very sorry. I did not see anyone, but somebody came in afterwards.",
+      "retryHint": "Pista: escucha las horas y el orden de las acciones.",
+      "passingScore": 0.6,
+      "maxReplays": 5,
+      "clueReward": "El cómplice trabajó esa noche, habló poco y salió antes de las once.",
+      "questions": [
+        {
+          "question": "¿A qué hora cerró don Rodrigo?",
+          "options": [
+            "A las nueve",
+            "A las diez",
+            "A las once",
+            "A medianoche"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "question": "¿Qué escuchó a las diez y media?",
+          "options": [
+            "Música",
+            "Pasos",
+            "Una guitarra",
+            "Nada"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "question": "¿Por qué quedó abierta la puerta?",
+          "options": [
+            "Salió con prisa",
+            "La llave no funcionó",
+            "La rompió",
+            "La abrió el ladrón"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "question": "¿Qué hizo primero?",
+          "options": [
+            "Guardó las sillas",
+            "Limpió el escenario",
+            "Salió",
+            "Cerró la puerta"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "question": "¿Vio a alguien?",
+          "options": [
+            "Sí, a un hombre alto",
+            "Sí, a dos personas",
+            "No vio a nadie",
+            "Vio al Cronista"
+          ],
+          "correctIndex": 2
+        }
+      ]
+    },
+    {
+      "type": "dialogueChoice",
+      "npcName": "Doña Elvira, vecina del salón",
+      "npcAvatar": "/images/characters/unit-01-don-rodrigo.webp",
+      "clueReward": "La vecina vio salir a alguien del salón a las once y diez, con las manos vacías.",
+      "startNodeId": "n1",
+      "nodes": [
+        {
+          "id": "n1",
+          "npcLine": "Yo vivo enfrente. Esa noche no dormí bien. ¿Qué quiere saber, agente?",
+          "options": [
+            {
+              "text": "¿Usted miró la calle anoche?",
+              "isCorrect": true,
+              "feedback": "Bien: pretérito, acción terminada.",
+              "nextNodeId": "n2"
+            },
+            {
+              "text": "¿Usted mira la calle?",
+              "isCorrect": false,
+              "feedback": "Cuidado: eso es presente. Pregunta por anoche."
+            },
+            {
+              "text": "¿Usted mirará la calle?",
+              "isCorrect": false,
+              "feedback": "Eso es futuro. Necesitas el pretérito."
+            }
+          ]
+        },
+        {
+          "id": "n2",
+          "npcLine": "Sí, miré por la ventana como a las once. Vi salir a una persona.",
+          "options": [
+            {
+              "text": "¿Qué llevó en las manos?",
+              "isCorrect": true,
+              "feedback": "Correcto.",
+              "nextNodeId": "n3"
+            },
+            {
+              "text": "¿Qué lleva en las manos?",
+              "isCorrect": false,
+              "feedback": "Presente otra vez. Fue anoche."
+            },
+            {
+              "text": "¿Qué llevaba de niño?",
+              "isCorrect": false,
+              "feedback": "Eso no viene al caso."
+            }
+          ]
+        },
+        {
+          "id": "n3",
+          "npcLine": "No llevó nada. Las manos vacías. Por eso me pareció raro.",
+          "options": [
+            {
+              "text": "¿Y volvió a entrar?",
+              "isCorrect": true,
+              "feedback": "Buena pregunta.",
+              "nextNodeId": "n4"
+            },
+            {
+              "text": "¿Y vuelve a entrar?",
+              "isCorrect": false,
+              "feedback": "Pretérito, por favor."
+            },
+            {
+              "text": "¿Y va a entrar?",
+              "isCorrect": false,
+              "feedback": "Pretérito, por favor."
+            }
+          ]
+        },
+        {
+          "id": "n4",
+          "npcLine": "No volvió. Caminó hasta la esquina y subió a un coche. Eso es todo lo que vi.",
+          "isEnd": true,
+          "endMessage": "Doña Elvira confirmó la hora: las once y diez, con las manos vacías."
+        }
+      ]
+    },
+    {
+      "type": "lineup",
+      "correctSuspectId": "s21-c",
+      "hint": "Salió a las once y diez con las manos vacías, y no volvió a entrar. Trabajó esa noche.",
+      "suspects": [
+        {
+          "id": "s21-a",
+          "name": "El Músico",
+          "realName": "Aurelio Cifuentes",
+          "age": 41,
+          "description": "Tocó en el salón esa noche y se fue a las nueve y media. Llevó su propio instrumento en la mano.",
+          "imageSeed": 21,
+          "imageUrl": "/images/characters/unit-21-s21-a.webp"
+        },
+        {
+          "id": "s21-b",
+          "name": "La Cocinera",
+          "realName": "Marta Beltrán",
+          "age": 52,
+          "description": "Trabajó en la cocina hasta las diez. Salió por la puerta principal con dos bolsas grandes.",
+          "imageSeed": 45,
+          "imageUrl": "/images/characters/unit-21-s21-b.webp"
+        },
+        {
+          "id": "s21-c",
+          "name": "El Ayudante",
+          "realName": "Nicolás Prado",
+          "age": 23,
+          "description": "Limpió el salón esa noche. Salió a las once y diez sin nada en las manos y no volvió a entrar.",
+          "imageSeed": 33,
+          "imageUrl": "/images/characters/unit-21-s21-c.webp"
+        },
+        {
+          "id": "s21-d",
+          "name": "El Portero",
+          "realName": "Julián Ocampo",
+          "age": 60,
+          "description": "Cerró la puerta principal a las diez y se quedó dentro toda la noche. No salió hasta el amanecer.",
+          "imageSeed": 14,
+          "imageUrl": "/images/characters/unit-21-s21-d.webp"
+        }
+      ]
+    }
+  ]
+}

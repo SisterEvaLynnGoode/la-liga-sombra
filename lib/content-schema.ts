@@ -358,9 +358,12 @@ export const AcademiaConfigSchema = z.object({
 // ─── Unit root ────────────────────────────────────────────────────────────────
 
 export const UnitContentSchema = z.object({
-  // 1–10 = Semester 1; 11–20 = Semester 2 time-travel arc
-  // (see docs/SEMESTER_2_CURRICULUM_MAP.md)
-  unitNumber: z.number().int().min(1).max(20),
+  // 1-10   Semester 1 (present day, ten countries)
+  // 11-20  Semester 2 time-travel arc  (docs/SEMESTER_2_CURRICULUM_MAP.md)
+  // 21-26  Chapter 3 Arc A, El Expediente Cronista (docs/SEMESTER_3_CURRICULUM_MAP.md)
+  // 27-32  Chapter 3 Arc B, La Coleccion, the Spanish-speaking USA
+  //        (docs/CHAPTER_3B_USA_CURRICULUM_MAP.md)
+  unitNumber: z.number().int().min(1).max(32),
   country: z.string().min(1),
   city: z.string().min(1),
   caseTitle: z.string().min(1),

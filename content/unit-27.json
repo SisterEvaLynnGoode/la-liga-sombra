@@ -1,0 +1,629 @@
+{
+  "unitNumber": 27,
+  "country": "Estados Unidos",
+  "city": "Los Ángeles",
+  "caseTitle": "La Pared que Faltaba",
+  "caseDescription": "Alguien cortó un trozo de mural de una pared de Boyle Heights y se lo llevó. No lo rompió: lo cortó con cuidado, como quien guarda algo en una caja. Usa el futuro para hablar de lo que pasará con el barrio si nadie lo devuelve.",
+  "criminalName": "La Curadora",
+  "bonusClue": "La Curadora habla un español perfecto y de ningún sitio: no dice órale, ni carnal, ni mezcla inglés.",
+  "vocab": [
+    {
+      "spanish": "el mural",
+      "english": "the mural",
+      "audio": "/audio/unit-27/el-mural.mp3",
+      "section": "El mural",
+      "example": "El mural cuenta la historia de la cuadra."
+    },
+    {
+      "spanish": "la pared",
+      "english": "the wall",
+      "audio": "/audio/unit-27/la-pared.mp3",
+      "section": "El mural"
+    },
+    {
+      "spanish": "el barrio",
+      "english": "the neighborhood",
+      "audio": "/audio/unit-27/el-barrio.mp3",
+      "section": "El mural"
+    },
+    {
+      "spanish": "el pincel",
+      "english": "the paintbrush",
+      "audio": "/audio/unit-27/el-pincel.mp3",
+      "section": "El mural"
+    },
+    {
+      "spanish": "la pintura",
+      "english": "the paint",
+      "audio": "/audio/unit-27/la-pintura.mp3",
+      "section": "El mural"
+    },
+    {
+      "spanish": "el andamio",
+      "english": "the scaffolding",
+      "audio": "/audio/unit-27/el-andamio.mp3",
+      "section": "El mural"
+    },
+    {
+      "spanish": "borrar",
+      "english": "to erase",
+      "audio": "/audio/unit-27/borrar.mp3",
+      "section": "El mural"
+    },
+    {
+      "spanish": "pintar",
+      "english": "to paint",
+      "audio": "/audio/unit-27/pintar.mp3",
+      "section": "El mural"
+    },
+    {
+      "spanish": "cubrir",
+      "english": "to cover",
+      "audio": "/audio/unit-27/cubrir.mp3",
+      "section": "El mural"
+    },
+    {
+      "spanish": "restaurar",
+      "english": "to restore",
+      "audio": "/audio/unit-27/restaurar.mp3",
+      "section": "El mural"
+    },
+    {
+      "spanish": "desaparecerá",
+      "english": "it will disappear",
+      "audio": "/audio/unit-27/desaparecera.mp3",
+      "section": "El futuro",
+      "example": "Si nadie hace nada, el mural desaparecerá."
+    },
+    {
+      "spanish": "cambiará",
+      "english": "it will change",
+      "audio": "/audio/unit-27/cambiara.mp3",
+      "section": "El futuro"
+    },
+    {
+      "spanish": "volverá",
+      "english": "it will return",
+      "audio": "/audio/unit-27/volvera.mp3",
+      "section": "El futuro"
+    },
+    {
+      "spanish": "pintaremos",
+      "english": "we will paint",
+      "audio": "/audio/unit-27/pintaremos.mp3",
+      "section": "El futuro"
+    },
+    {
+      "spanish": "cerrarán",
+      "english": "they will close",
+      "audio": "/audio/unit-27/cerraran.mp3",
+      "section": "El futuro"
+    },
+    {
+      "spanish": "será",
+      "english": "it will be",
+      "audio": "/audio/unit-27/sera.mp3",
+      "section": "El futuro"
+    },
+    {
+      "spanish": "habrá",
+      "english": "there will be",
+      "audio": "/audio/unit-27/habra.mp3",
+      "section": "El futuro"
+    },
+    {
+      "spanish": "haré",
+      "english": "I will do",
+      "audio": "/audio/unit-27/hare.mp3",
+      "section": "El futuro"
+    },
+    {
+      "spanish": "dirán",
+      "english": "they will say",
+      "audio": "/audio/unit-27/diran.mp3",
+      "section": "El futuro"
+    },
+    {
+      "spanish": "podremos",
+      "english": "we will be able to",
+      "audio": "/audio/unit-27/podremos.mp3",
+      "section": "El futuro"
+    },
+    {
+      "spanish": "vendrá",
+      "english": "he/she will come",
+      "audio": "/audio/unit-27/vendra.mp3",
+      "section": "El futuro"
+    },
+    {
+      "spanish": "tendremos",
+      "english": "we will have",
+      "audio": "/audio/unit-27/tendremos.mp3",
+      "section": "El futuro"
+    },
+    {
+      "spanish": "sabremos",
+      "english": "we will know",
+      "audio": "/audio/unit-27/sabremos.mp3",
+      "section": "El futuro"
+    },
+    {
+      "spanish": "el lowrider",
+      "english": "the lowrider",
+      "audio": "/audio/unit-27/el-lowrider.mp3",
+      "section": "El mural"
+    },
+    {
+      "spanish": "el taller",
+      "english": "the workshop",
+      "audio": "/audio/unit-27/el-taller.mp3",
+      "section": "El mural"
+    },
+    {
+      "spanish": "la cuadra",
+      "english": "the block",
+      "audio": "/audio/unit-27/la-cuadra.mp3",
+      "section": "El mural"
+    },
+    {
+      "spanish": "órale",
+      "english": "hey / right on",
+      "audio": "/audio/unit-27/orale.mp3",
+      "section": "Caló del barrio"
+    },
+    {
+      "spanish": "carnal",
+      "english": "brother / close friend",
+      "audio": "/audio/unit-27/carnal.mp3",
+      "section": "Caló del barrio",
+      "example": "Gracias, carnal."
+    },
+    {
+      "spanish": "firme",
+      "english": "cool, solid",
+      "audio": "/audio/unit-27/firme.mp3",
+      "section": "Caló del barrio"
+    },
+    {
+      "spanish": "mañana",
+      "english": "tomorrow",
+      "audio": "/audio/unit-10/manana.mp3",
+      "section": "El mural"
+    },
+    {
+      "spanish": "algún día",
+      "english": "someday",
+      "audio": "/audio/unit-27/algun-dia.mp3",
+      "section": "El mural"
+    },
+    {
+      "spanish": "pronto",
+      "english": "soon",
+      "audio": "/audio/unit-10/pronto.mp3",
+      "section": "El mural"
+    }
+  ],
+  "stages": [
+    {
+      "type": "cutscene",
+      "videoUrl": "/videos/unit-27-intro.mp4",
+      "briefingLines": [
+        "Nuevo bloque, agente. Y un problema nuevo.",
+        "Hace ochenta años, en Los Ángeles, pintaron un mural en una pared de Olvera Street.",
+        "A los pocos años lo taparon con pintura blanca porque a alguien no le gustó lo que decía.",
+        "Estuvo escondido setenta años. Lo recuperaron. Está otra vez a la vista.",
+        "Y ahora alguien ha empezado otra vez, pero con cuidado: corta el mural y se lo lleva.",
+        "Dice que lo salva. Dice que en una pared se estropea y en una caja no.",
+        "Un mural en una caja es una pintura. Un mural en una pared es un barrio.",
+        "Hoy trabajas en futuro: qué pasará con esa cuadra si no lo devolvemos."
+      ],
+      "chiefName": "Jefa Ramírez",
+      "chiefImageSeed": 12,
+      "chiefImageUrl": "/images/characters/chief-ramirez.webp"
+    },
+    {
+      "type": "vocabMatch",
+      "pairs": [
+        {
+          "spanish": "el mural",
+          "english": "the mural"
+        },
+        {
+          "spanish": "la pared",
+          "english": "the wall"
+        },
+        {
+          "spanish": "el barrio",
+          "english": "the neighborhood"
+        },
+        {
+          "spanish": "borrar",
+          "english": "to erase"
+        },
+        {
+          "spanish": "desaparecerá",
+          "english": "it will disappear"
+        },
+        {
+          "spanish": "cambiará",
+          "english": "it will change"
+        },
+        {
+          "spanish": "volverá",
+          "english": "it will return"
+        },
+        {
+          "spanish": "será",
+          "english": "it will be"
+        },
+        {
+          "spanish": "órale",
+          "english": "hey / right on"
+        },
+        {
+          "spanish": "carnal",
+          "english": "brother / close friend"
+        }
+      ]
+    },
+    {
+      "type": "swipeSort",
+      "prompt": "¿Habla del futuro o de ahora mismo?",
+      "leftLabel": "Futuro",
+      "leftHint": "Todavía no ha pasado",
+      "rightLabel": "Presente",
+      "rightHint": "Está pasando ahora",
+      "clueReward": "No usó ni una palabra del barrio. Ni órale, ni carnal, ni una sola mezcla con inglés.",
+      "items": [
+        {
+          "text": "desaparecerá",
+          "category": "left"
+        },
+        {
+          "text": "cambiará",
+          "category": "left"
+        },
+        {
+          "text": "volverá",
+          "category": "left"
+        },
+        {
+          "text": "pintaremos",
+          "category": "left"
+        },
+        {
+          "text": "cerrarán",
+          "category": "left"
+        },
+        {
+          "text": "habrá",
+          "category": "left"
+        },
+        {
+          "text": "tendremos",
+          "category": "left"
+        },
+        {
+          "text": "sabremos",
+          "category": "left"
+        },
+        {
+          "text": "pinta",
+          "category": "right"
+        },
+        {
+          "text": "cierra",
+          "category": "right"
+        },
+        {
+          "text": "hay",
+          "category": "right"
+        },
+        {
+          "text": "tenemos",
+          "category": "right",
+          "explanation": "Presente: lo tenemos ya."
+        }
+      ]
+    },
+    {
+      "type": "sentenceBuilder",
+      "sentences": [
+        {
+          "sentence": "Si nadie hace nada, el mural desaparecerá.",
+          "translation": "If nobody does anything, the mural will disappear."
+        },
+        {
+          "sentence": "Pintaremos la pared otra vez.",
+          "translation": "We will paint the wall again."
+        },
+        {
+          "sentence": "El barrio cambiará, pero la historia volverá.",
+          "translation": "The neighborhood will change, but the history will come back."
+        },
+        {
+          "sentence": "Nadie sabrá qué había aquí.",
+          "translation": "Nobody will know what was here."
+        },
+        {
+          "sentence": "Un día tendremos nuestro mural de vuelta.",
+          "translation": "One day we will have our mural back."
+        }
+      ]
+    },
+    {
+      "type": "readingComp",
+      "passage": "En mil novecientos treinta y dos, un pintor mexicano pintó un mural enorme en una pared del centro de Los Ángeles. A mucha gente le gustó. A otra gente no, porque el mural decía cosas incómodas. Dos años después lo cubrieron con pintura blanca. Estuvo escondido casi setenta años. Nadie lo veía, pero seguía allí debajo. En dos mil doce lo limpiaron y lo abrieron al público otra vez. Los vecinos dicen: «Lo taparon, pero no lo borraron. Volverá a estar donde estaba».",
+      "glossary": [
+        {
+          "word": "el pintor",
+          "translation": "the painter"
+        },
+        {
+          "word": "incómodas",
+          "translation": "uncomfortable"
+        },
+        {
+          "word": "cubrieron",
+          "translation": "they covered"
+        },
+        {
+          "word": "escondido",
+          "translation": "hidden"
+        },
+        {
+          "word": "debajo",
+          "translation": "underneath"
+        },
+        {
+          "word": "los vecinos",
+          "translation": "the neighbors"
+        }
+      ],
+      "questions": [
+        {
+          "id": "u27-r1",
+          "text": "¿Por qué cubrieron el mural?",
+          "type": "multiple_choice",
+          "options": [
+            "Estaba viejo",
+            "Decía cosas incómodas",
+            "La pared se caía",
+            "Nadie lo veía"
+          ],
+          "correctIndex": 1,
+          "explanationEs": "«A otra gente no, porque el mural decía cosas incómodas».",
+          "explanationEn": "Because it said uncomfortable things."
+        },
+        {
+          "id": "u27-r2",
+          "text": "¿Cuánto tiempo estuvo escondido?",
+          "type": "multiple_choice",
+          "options": [
+            "Dos años",
+            "Veinte años",
+            "Casi setenta años",
+            "Cien años"
+          ],
+          "correctIndex": 2,
+          "explanationEs": "«Estuvo escondido casi setenta años».",
+          "explanationEn": "Almost seventy years."
+        },
+        {
+          "id": "u27-r3",
+          "text": "¿Qué pasó en 2012?",
+          "type": "multiple_choice",
+          "options": [
+            "Lo pintaron otra vez",
+            "Lo limpiaron y lo abrieron al público",
+            "Lo vendieron",
+            "Lo cortaron"
+          ],
+          "correctIndex": 1,
+          "explanationEs": "«En dos mil doce lo limpiaron y lo abrieron al público».",
+          "explanationEn": "It was cleaned and reopened."
+        },
+        {
+          "id": "u27-r4",
+          "text": "¿Qué dicen los vecinos?",
+          "type": "multiple_choice",
+          "options": [
+            "Que lo borraron para siempre",
+            "Que lo taparon pero no lo borraron",
+            "Que no les importa",
+            "Que lo van a tapar otra vez"
+          ],
+          "correctIndex": 1,
+          "explanationEs": "«Lo taparon, pero no lo borraron».",
+          "explanationEn": "They covered it but did not erase it."
+        }
+      ]
+    },
+    {
+      "type": "listeningComp",
+      "audioUrl": "/audio/unit-27/testimonio-muralista.mp3",
+      "transcript": "Órale, agente, mire esta pared. Aquí trabajó mi abuelo y aquí trabajo yo. El mural lo pintamos entre catorce personas del barrio, todas de aquí, todas de la cuadra. Ayer vino una señora muy amable. Habló muy bonito, muy correcto, pero raro: no dijo ni una palabra de aquí. Dijo que el mural estará mejor guardado. Yo le dije que no, carnal, que una pared no se guarda. Hoy falta un pedazo.",
+      "translation": "Hey, agent, look at this wall. My grandfather worked here and I work here. Fourteen people from the neighborhood painted the mural, all from here, all from this block. Yesterday a very polite woman came. She spoke beautifully, very correctly, but odd: she did not say a single word from around here. She said the mural will be better kept safe. I told her no, brother, a wall is not something you put away. Today a piece is missing.",
+      "retryHint": "Pista: fíjate en cómo hablaba la señora, no solo en lo que dijo.",
+      "passingScore": 0.6,
+      "maxReplays": 5,
+      "clueReward": "La Curadora habla un español perfecto y de ningún sitio: no dice órale, ni carnal, ni mezcla inglés.",
+      "questions": [
+        {
+          "question": "¿Cuántas personas pintaron el mural?",
+          "options": [
+            "Una",
+            "Cuatro",
+            "Catorce",
+            "Cuarenta"
+          ],
+          "correctIndex": 2
+        },
+        {
+          "question": "¿De dónde eran los pintores?",
+          "options": [
+            "De todo el país",
+            "Todos del barrio",
+            "De México",
+            "No se sabe"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "question": "¿Qué le llamó la atención de la señora?",
+          "options": [
+            "Gritaba mucho",
+            "Habló muy correcto pero sin ninguna palabra de aquí",
+            "No hablaba español",
+            "Era del barrio"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "question": "¿Qué dijo ella del mural?",
+          "options": [
+            "Que lo iba a pintar",
+            "Que estará mejor guardado",
+            "Que era feo",
+            "Que no valía nada"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "question": "¿Qué pasó hoy?",
+          "options": [
+            "Volvió la señora",
+            "Falta un pedazo del mural",
+            "Pintaron otro mural",
+            "No pasó nada"
+          ],
+          "correctIndex": 1
+        }
+      ]
+    },
+    {
+      "type": "dialogueChoice",
+      "npcName": "Lupe Arredondo, muralista del barrio",
+      "npcAvatar": "/images/characters/unit-27-curadora.webp",
+      "clueReward": "La muralista notó que la mujer no usaba ni una sola palabra del barrio.",
+      "startNodeId": "n1",
+      "nodes": [
+        {
+          "id": "n1",
+          "npcLine": "Órale. Usted es del gobierno, ¿verdad? Pues mire lo que hicieron con mi pared.",
+          "options": [
+            {
+              "text": "¿Qué pasará con el mural ahora?",
+              "isCorrect": true,
+              "feedback": "Bien: futuro.",
+              "nextNodeId": "n2"
+            },
+            {
+              "text": "¿Qué pasó con el mural en 1932?",
+              "isCorrect": false,
+              "feedback": "Eso ya lo sabemos. Pregunta por lo que viene."
+            },
+            {
+              "text": "¿Qué pasaba con el mural?",
+              "isCorrect": false,
+              "feedback": "Futuro, agente."
+            }
+          ]
+        },
+        {
+          "id": "n2",
+          "npcLine": "Si no vuelve, la gente se olvidará. Los niños crecerán sin verlo. Así se pierde un barrio.",
+          "options": [
+            {
+              "text": "¿Cómo hablaba la mujer que vino?",
+              "isCorrect": true,
+              "feedback": "Esa es la pregunta clave.",
+              "nextNodeId": "n3"
+            },
+            {
+              "text": "¿Cómo hablará la mujer?",
+              "isCorrect": false,
+              "feedback": "Ya vino. Pregunta cómo hablaba."
+            },
+            {
+              "text": "¿Cómo hablo yo?",
+              "isCorrect": false,
+              "feedback": "Céntrate, agente."
+            }
+          ]
+        },
+        {
+          "id": "n3",
+          "npcLine": "Perfecto. Demasiado perfecto. Ni «órale», ni «carnal», ni una palabra en inglés. Nadie habla así.",
+          "options": [
+            {
+              "text": "¿Volverá esa mujer?",
+              "isCorrect": true,
+              "feedback": "Correcto.",
+              "nextNodeId": "n4"
+            },
+            {
+              "text": "¿Volvió esa mujer?",
+              "isCorrect": false,
+              "feedback": "Futuro: lo que va a pasar."
+            },
+            {
+              "text": "¿Volvía esa mujer?",
+              "isCorrect": false,
+              "feedback": "Futuro, por favor."
+            }
+          ]
+        },
+        {
+          "id": "n4",
+          "npcLine": "Volverá. La gente como ella siempre vuelve, porque cree que nos está haciendo un favor.",
+          "isEnd": true,
+          "endMessage": "La mujer hablaba un español perfecto y sin ninguna marca regional."
+        }
+      ]
+    },
+    {
+      "type": "lineup",
+      "correctSuspectId": "s27-d",
+      "hint": "Habló un español correcto y sin ninguna palabra del barrio, y llevaba guantes blancos.",
+      "suspects": [
+        {
+          "id": "s27-a",
+          "name": "El Fotógrafo",
+          "realName": "Beto Ramírez",
+          "age": 34,
+          "description": "Vino a fotografiar el mural para un libro del barrio. Habla como todos aquí y conoce a la familia de Lupe.",
+          "imageSeed": 25,
+          "imageUrl": "/images/characters/unit-27-s27-a.webp"
+        },
+        {
+          "id": "s27-b",
+          "name": "El Contratista",
+          "realName": "Danny Salas",
+          "age": 47,
+          "description": "Trabaja en la cuadra pintando casas. Usa el mismo caló que los vecinos y todos lo conocen desde niño.",
+          "imageSeed": 17,
+          "imageUrl": "/images/characters/unit-27-s27-b.webp"
+        },
+        {
+          "id": "s27-c",
+          "name": "La Estudiante",
+          "realName": "Xiomara León",
+          "age": 20,
+          "description": "Estudia arte y viene a copiar el mural en su cuaderno. Mezcla inglés y español en cada frase.",
+          "imageSeed": 48,
+          "imageUrl": "/images/characters/unit-27-s27-c.webp"
+        },
+        {
+          "id": "s27-d",
+          "name": "La Señora Amable",
+          "realName": "desconocida",
+          "age": 46,
+          "description": "Habló un español perfecto y sin ninguna marca regional. Llevaba guantes blancos y dijo que el mural estará mejor guardado.",
+          "imageSeed": 45,
+          "imageUrl": "/images/characters/unit-27-curadora.webp"
+        }
+      ]
+    }
+  ]
+}

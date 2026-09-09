@@ -1,0 +1,590 @@
+{
+  "unitNumber": 29,
+  "country": "Estados Unidos",
+  "city": "San Antonio",
+  "caseTitle": "Por Amor y Para la Familia",
+  "caseDescription": "Falta el acordeón de un maestro del conjunto: un instrumento alemán que en Texas se volvió la música más tejana que hay. Usa por y para para saber por qué lo tocaba y para quién, y compara los instrumentos para encontrar el que se llevaron.",
+  "criminalName": "La Curadora",
+  "bonusClue": "Preguntó por el acordeón más antiguo, no por el más caro: buscaba historia, no dinero.",
+  "vocab": [
+    {
+      "spanish": "el acordeón",
+      "english": "the accordion",
+      "audio": "/audio/unit-29/el-acordeon.mp3",
+      "section": "El conjunto",
+      "example": "El acordeón llegó a Texas con los alemanes."
+    },
+    {
+      "spanish": "el bajo sexto",
+      "english": "the bajo sexto",
+      "audio": "/audio/unit-29/el-bajo-sexto.mp3",
+      "section": "El conjunto"
+    },
+    {
+      "spanish": "el conjunto",
+      "english": "the conjunto band",
+      "audio": "/audio/unit-29/el-conjunto.mp3",
+      "section": "El conjunto"
+    },
+    {
+      "spanish": "la cuerda",
+      "english": "the string",
+      "audio": "/audio/unit-18/cuerda.mp3",
+      "section": "El conjunto"
+    },
+    {
+      "spanish": "el fuelle",
+      "english": "the bellows",
+      "audio": "/audio/unit-29/el-fuelle.mp3",
+      "section": "El conjunto"
+    },
+    {
+      "spanish": "la gira",
+      "english": "the tour",
+      "audio": "/audio/unit-29/la-gira.mp3",
+      "section": "El conjunto"
+    },
+    {
+      "spanish": "la grabadora",
+      "english": "the recorder",
+      "audio": "/audio/unit-29/la-grabadora.mp3",
+      "section": "El conjunto"
+    },
+    {
+      "spanish": "prestar",
+      "english": "to lend",
+      "audio": "/audio/unit-15/prestar.mp3",
+      "section": "El conjunto"
+    },
+    {
+      "spanish": "heredar",
+      "english": "to inherit",
+      "audio": "/audio/unit-29/heredar.mp3",
+      "section": "El conjunto"
+    },
+    {
+      "spanish": "por",
+      "english": "for / because of / through",
+      "audio": "/audio/unit-29/por.mp3",
+      "section": "Por y para"
+    },
+    {
+      "spanish": "para",
+      "english": "for / in order to",
+      "audio": "/audio/unit-29/para.mp3",
+      "section": "Por y para"
+    },
+    {
+      "spanish": "por amor",
+      "english": "out of love",
+      "audio": "/audio/unit-29/por-amor.mp3",
+      "section": "Por y para",
+      "example": "Tocaba por amor, no por dinero."
+    },
+    {
+      "spanish": "para su familia",
+      "english": "for his family",
+      "audio": "/audio/unit-29/para-su-familia.mp3",
+      "section": "Por y para",
+      "example": "Tocaba para su familia todos los domingos."
+    },
+    {
+      "spanish": "por eso",
+      "english": "that is why",
+      "audio": "/audio/unit-29/por-eso.mp3",
+      "section": "Por y para"
+    },
+    {
+      "spanish": "para siempre",
+      "english": "forever",
+      "audio": "/audio/unit-29/para-siempre.mp3",
+      "section": "Por y para"
+    },
+    {
+      "spanish": "por primera vez",
+      "english": "for the first time",
+      "audio": "/audio/unit-29/por-primera-vez.mp3",
+      "section": "Por y para"
+    },
+    {
+      "spanish": "más que",
+      "english": "more than",
+      "audio": "/audio/unit-29/mas-que.mp3",
+      "section": "Comparar"
+    },
+    {
+      "spanish": "menos que",
+      "english": "less than",
+      "audio": "/audio/unit-29/menos-que.mp3",
+      "section": "Comparar"
+    },
+    {
+      "spanish": "tan como",
+      "english": "as ... as",
+      "audio": "/audio/unit-29/tan-como.mp3",
+      "section": "Comparar"
+    },
+    {
+      "spanish": "mejor que",
+      "english": "better than",
+      "audio": "/audio/unit-29/mejor-que.mp3",
+      "section": "Comparar"
+    },
+    {
+      "spanish": "peor que",
+      "english": "worse than",
+      "audio": "/audio/unit-29/peor-que.mp3",
+      "section": "Comparar"
+    },
+    {
+      "spanish": "mayor que",
+      "english": "older than",
+      "audio": "/audio/unit-29/mayor-que.mp3",
+      "section": "Comparar"
+    },
+    {
+      "spanish": "el mejor",
+      "english": "the best",
+      "audio": "/audio/unit-17/el-mejor.mp3",
+      "section": "Comparar"
+    },
+    {
+      "spanish": "el peor",
+      "english": "the worst",
+      "audio": "/audio/unit-17/el-peor.mp3",
+      "section": "Comparar"
+    },
+    {
+      "spanish": "la misión",
+      "english": "the mission",
+      "audio": "/audio/unit-29/la-mision.mp3",
+      "section": "El conjunto"
+    },
+    {
+      "spanish": "la frontera",
+      "english": "the border",
+      "audio": "/audio/unit-29/la-frontera.mp3",
+      "section": "El conjunto"
+    },
+    {
+      "spanish": "el rancho",
+      "english": "the ranch",
+      "audio": "/audio/unit-29/el-rancho.mp3",
+      "section": "El conjunto"
+    }
+  ],
+  "stages": [
+    {
+      "type": "cutscene",
+      "videoUrl": "/videos/unit-29-intro.mp4",
+      "briefingLines": [
+        "San Antonio, Texas. Y una lección de historia antes de empezar.",
+        "El acordeón no vino de México. Vino de Alemania, con los que llegaron a Texas en el siglo diecinueve.",
+        "Los músicos mexicoamericanos lo tomaron, lo juntaron con el bajo sexto, y nació el conjunto.",
+        "Un instrumento alemán y una guitarra mexicana haciendo la música más tejana que existe.",
+        "Eso no es una copia de nada. Eso se hizo aquí.",
+        "Falta el acordeón de un maestro. Hoy usas por y para: por qué tocaba y para quién."
+      ],
+      "chiefName": "Jefa Ramírez",
+      "chiefImageSeed": 12,
+      "chiefImageUrl": "/images/characters/chief-ramirez.webp"
+    },
+    {
+      "type": "vocabMatch",
+      "pairs": [
+        {
+          "spanish": "el acordeón",
+          "english": "the accordion"
+        },
+        {
+          "spanish": "el bajo sexto",
+          "english": "the bajo sexto"
+        },
+        {
+          "spanish": "el conjunto",
+          "english": "the conjunto band"
+        },
+        {
+          "spanish": "por",
+          "english": "for / because of / through"
+        },
+        {
+          "spanish": "para",
+          "english": "for / in order to"
+        },
+        {
+          "spanish": "por amor",
+          "english": "out of love"
+        },
+        {
+          "spanish": "para su familia",
+          "english": "for his family"
+        },
+        {
+          "spanish": "mejor que",
+          "english": "better than"
+        },
+        {
+          "spanish": "el mejor",
+          "english": "the best"
+        },
+        {
+          "spanish": "la frontera",
+          "english": "the border"
+        }
+      ]
+    },
+    {
+      "type": "swipeSort",
+      "prompt": "¿Se dice con POR o con PARA?",
+      "leftLabel": "POR",
+      "leftHint": "Motivo, causa, a cambio de",
+      "rightLabel": "PARA",
+      "rightHint": "Destinatario, propósito, fecha",
+      "clueReward": "Preguntó para quién tocaba, no por cuánto valía. Buscaba la historia, no el precio.",
+      "items": [
+        {
+          "text": "por amor",
+          "category": "left",
+          "explanation": "El motivo: lo hizo por amor."
+        },
+        {
+          "text": "por eso",
+          "category": "left"
+        },
+        {
+          "text": "por primera vez",
+          "category": "left"
+        },
+        {
+          "text": "por la mañana",
+          "category": "left"
+        },
+        {
+          "text": "por dinero",
+          "category": "left"
+        },
+        {
+          "text": "para su familia",
+          "category": "right",
+          "explanation": "El destinatario."
+        },
+        {
+          "text": "para siempre",
+          "category": "right"
+        },
+        {
+          "text": "para tocar mejor",
+          "category": "right"
+        },
+        {
+          "text": "para el domingo",
+          "category": "right"
+        },
+        {
+          "text": "para ti",
+          "category": "right"
+        }
+      ]
+    },
+    {
+      "type": "sentenceBuilder",
+      "sentences": [
+        {
+          "sentence": "Tocaba por amor, no por dinero.",
+          "translation": "He played out of love, not for money."
+        },
+        {
+          "sentence": "Compró el acordeón para su hija.",
+          "translation": "He bought the accordion for his daughter."
+        },
+        {
+          "sentence": "Este acordeón es más antiguo que el otro.",
+          "translation": "This accordion is older than the other one."
+        },
+        {
+          "sentence": "Tocó para su familia por primera vez.",
+          "translation": "He played for his family for the first time."
+        },
+        {
+          "sentence": "Es el mejor bajo sexto del salón.",
+          "translation": "It is the best bajo sexto in the hall."
+        }
+      ]
+    },
+    {
+      "type": "readingComp",
+      "passage": "Don Nica aprendió a tocar a los once años. Su padre le compró un acordeón usado por veinte dólares. No lo compró para ganar dinero: lo compró para que el niño tuviera algo suyo. Don Nica tocó sesenta años en salones de baile por todo el sur de Texas. Nunca cobró mucho. Decía que tocaba por gusto y para la gente, y que un músico que toca solo por dinero se oye distinto. Su acordeón era más viejo que él y sonaba mejor que todos los nuevos.",
+      "glossary": [
+        {
+          "word": "usado",
+          "translation": "used, second-hand"
+        },
+        {
+          "word": "ganar",
+          "translation": "to earn"
+        },
+        {
+          "word": "el salón de baile",
+          "translation": "the dance hall"
+        },
+        {
+          "word": "cobró",
+          "translation": "he charged"
+        },
+        {
+          "word": "por gusto",
+          "translation": "for the pleasure of it"
+        },
+        {
+          "word": "sonaba",
+          "translation": "it sounded"
+        }
+      ],
+      "questions": [
+        {
+          "id": "u29-r1",
+          "text": "¿Por cuánto compró el padre el acordeón?",
+          "type": "multiple_choice",
+          "options": [
+            "Por diez dólares",
+            "Por veinte dólares",
+            "Por cien dólares",
+            "No lo compró"
+          ],
+          "correctIndex": 1,
+          "explanationEs": "«le compró un acordeón usado por veinte dólares».",
+          "explanationEn": "For twenty dollars."
+        },
+        {
+          "id": "u29-r2",
+          "text": "¿Para qué lo compró?",
+          "type": "multiple_choice",
+          "options": [
+            "Para ganar dinero",
+            "Para que el niño tuviera algo suyo",
+            "Para venderlo",
+            "Para la escuela"
+          ],
+          "correctIndex": 1,
+          "explanationEs": "«lo compró para que el niño tuviera algo suyo».",
+          "explanationEn": "So the boy would have something of his own."
+        },
+        {
+          "id": "u29-r3",
+          "text": "¿Por qué decía don Nica que tocaba?",
+          "type": "multiple_choice",
+          "options": [
+            "Por dinero",
+            "Por gusto y para la gente",
+            "Por obligación",
+            "Por fama"
+          ],
+          "correctIndex": 1,
+          "explanationEs": "«tocaba por gusto y para la gente».",
+          "explanationEn": "For pleasure and for the people."
+        },
+        {
+          "id": "u29-r4",
+          "text": "¿Cómo era su acordeón?",
+          "type": "multiple_choice",
+          "options": [
+            "Más nuevo que los otros",
+            "Más viejo que él y sonaba mejor que los nuevos",
+            "Peor que los nuevos",
+            "Igual que todos"
+          ],
+          "correctIndex": 1,
+          "explanationEs": "«era más viejo que él y sonaba mejor que todos los nuevos».",
+          "explanationEn": "Older than him and better sounding."
+        }
+      ]
+    },
+    {
+      "type": "listeningComp",
+      "audioUrl": "/audio/unit-29/testimonio-conjunto.mp3",
+      "transcript": "Mi abuelo tocó con don Nica cuarenta años. El acordeón ese es más viejo que yo y que mi mamá. No vale mucho dinero, ¿sabe? Vale por lo que tocó. La señora vino el sábado y no preguntó por el precio. Preguntó por el más antiguo. Preguntó para quién tocaba don Nica y por qué. Y cuando le dije que tocaba para su familia, sonrió y apuntó algo. El domingo el estuche estaba vacío.",
+      "translation": "My grandfather played with don Nica for forty years. That accordion is older than me and than my mother. It is not worth much money, you know? It is worth something for what it played. The woman came on Saturday and did not ask about the price. She asked for the oldest one. She asked who don Nica played for and why. And when I told her he played for his family, she smiled and wrote something down. On Sunday the case was empty.",
+      "retryHint": "Pista: fíjate en qué preguntó ella y qué NO preguntó.",
+      "passingScore": 0.6,
+      "maxReplays": 5,
+      "clueReward": "Preguntó por el acordeón más antiguo, no por el más caro: buscaba historia, no dinero.",
+      "questions": [
+        {
+          "question": "¿Cuánto tiempo tocaron juntos?",
+          "options": [
+            "Cuatro años",
+            "Catorce años",
+            "Cuarenta años",
+            "Toda la vida"
+          ],
+          "correctIndex": 2
+        },
+        {
+          "question": "¿Por qué vale el acordeón?",
+          "options": [
+            "Por el dinero",
+            "Por lo que tocó",
+            "Por la marca",
+            "Por ser nuevo"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "question": "¿Qué NO preguntó la señora?",
+          "options": [
+            "Por el más antiguo",
+            "Por el precio",
+            "Para quién tocaba",
+            "Por qué tocaba"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "question": "¿Qué hizo cuando supo que tocaba para su familia?",
+          "options": [
+            "Se fue",
+            "Sonrió y apuntó algo",
+            "Se enojó",
+            "Pagó"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "question": "¿Qué encontraron el domingo?",
+          "options": [
+            "El acordeón roto",
+            "El estuche vacío",
+            "Otro acordeón",
+            "Nada raro"
+          ],
+          "correctIndex": 1
+        }
+      ]
+    },
+    {
+      "type": "dialogueChoice",
+      "npcName": "Yolanda Cavazos, nieta de don Nica",
+      "npcAvatar": "/images/characters/unit-29-curadora.webp",
+      "clueReward": "La nieta recordó la pregunta exacta: por el más antiguo, no por el más caro.",
+      "startNodeId": "n1",
+      "nodes": [
+        {
+          "id": "n1",
+          "npcLine": "Ese acordeón lo tocó mi abuelo sesenta años. Pregúnteme lo que sea.",
+          "options": [
+            {
+              "text": "¿Para quién tocaba su abuelo?",
+              "isCorrect": true,
+              "feedback": "Bien: para + destinatario.",
+              "nextNodeId": "n2"
+            },
+            {
+              "text": "¿Por quién tocaba su abuelo?",
+              "isCorrect": false,
+              "feedback": "Aquí necesitas PARA: el destinatario."
+            },
+            {
+              "text": "¿Para qué tocaba por su abuelo?",
+              "isCorrect": false,
+              "feedback": "Están cambiados."
+            }
+          ]
+        },
+        {
+          "id": "n2",
+          "npcLine": "Para la familia y para la gente del salón. Nunca para los de fuera.",
+          "options": [
+            {
+              "text": "¿Y por qué no cobraba más?",
+              "isCorrect": true,
+              "feedback": "Correcto: por + motivo.",
+              "nextNodeId": "n3"
+            },
+            {
+              "text": "¿Y para qué no cobraba más?",
+              "isCorrect": false,
+              "feedback": "El motivo va con POR."
+            },
+            {
+              "text": "¿Y por quién no cobraba?",
+              "isCorrect": false,
+              "feedback": "Pregunta el motivo."
+            }
+          ]
+        },
+        {
+          "id": "n3",
+          "npcLine": "Porque decía que la música no era suya. Era de todos. Tocaba por gusto.",
+          "options": [
+            {
+              "text": "¿Este acordeón es más antiguo que los otros?",
+              "isCorrect": true,
+              "feedback": "Buena comparación.",
+              "nextNodeId": "n4"
+            },
+            {
+              "text": "¿Este acordeón es más antiguo de los otros?",
+              "isCorrect": false,
+              "feedback": "Se dice «más antiguo QUE»."
+            },
+            {
+              "text": "¿Este acordeón es tan antiguo de los otros?",
+              "isCorrect": false,
+              "feedback": "Se dice «tan antiguo COMO»."
+            }
+          ]
+        },
+        {
+          "id": "n4",
+          "npcLine": "El más antiguo de todos. Y eso fue exactamente lo que ella preguntó. No preguntó el precio.",
+          "isEnd": true,
+          "endMessage": "La mujer preguntó por el acordeón más antiguo, no por el más caro."
+        }
+      ]
+    },
+    {
+      "type": "lineup",
+      "correctSuspectId": "s29-a",
+      "hint": "Preguntó por el instrumento más antiguo y no por el precio, y apuntó la respuesta en una libreta.",
+      "suspects": [
+        {
+          "id": "s29-a",
+          "name": "La Señora de la Libreta",
+          "realName": "desconocida",
+          "age": 46,
+          "description": "Preguntó por el acordeón más antiguo y nunca por el precio. Apuntó todo en una libreta y llevaba guantes blancos.",
+          "imageSeed": 45,
+          "imageUrl": "/images/characters/unit-29-curadora.webp"
+        },
+        {
+          "id": "s29-b",
+          "name": "El Coleccionista",
+          "realName": "Hank Villarreal",
+          "age": 55,
+          "description": "Compra y vende instrumentos y siempre pregunta primero cuánto cuesta. Ofreció dinero por el bajo sexto.",
+          "imageSeed": 23,
+          "imageUrl": "/images/characters/unit-29-s29-b.webp"
+        },
+        {
+          "id": "s29-c",
+          "name": "El Sobrino",
+          "realName": "Beto Cavazos",
+          "age": 30,
+          "description": "Toca el bajo sexto en el mismo salón y tiene llave del cuarto. Conoce el acordeón desde niño.",
+          "imageSeed": 17,
+          "imageUrl": "/images/characters/unit-29-s29-c.webp"
+        },
+        {
+          "id": "s29-d",
+          "name": "La Maestra",
+          "realName": "Norma Peña",
+          "age": 42,
+          "description": "Enseña conjunto a los niños del barrio los sábados. Vino a pedir prestado un acordeón para una clase.",
+          "imageSeed": 39,
+          "imageUrl": "/images/characters/unit-29-s29-d.webp"
+        }
+      ]
+    }
+  ]
+}

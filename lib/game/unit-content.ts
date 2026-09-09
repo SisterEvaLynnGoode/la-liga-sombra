@@ -21,7 +21,7 @@
 import type { UnitContent } from "@/lib/types/unit-content";
 
 /** Highest case with a content file. Bump when a new caso ships. */
-export const MAX_UNIT = 20;
+export const MAX_UNIT = 32;
 
 function pad(n: number): string {
   return String(n).padStart(2, "0");

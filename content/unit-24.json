@@ -1,0 +1,579 @@
+{
+  "unitNumber": 24,
+  "country": "Chile",
+  "city": "Viña del Mar",
+  "caseTitle": "Mientras Cantaba",
+  "caseDescription": "El festival estaba lleno y todo pasaba a la vez. Aquí el imperfecto pone el fondo y el pretérito corta: mientras la cantante cantaba, alguien entró. Aprende a usar los dos juntos y encontrarás el minuto exacto en el que desapareció el trofeo.",
+  "criminalName": "El Técnico del Segundo Turno",
+  "bonusClue": "Mientras todos miraban el escenario, el cómplice salió por la puerta de prensa.",
+  "vocab": [
+    {
+      "spanish": "mientras",
+      "english": "while",
+      "audio": "/audio/unit-24/mientras.mp3",
+      "section": "Unir las dos acciones",
+      "example": "Mientras la cantante cantaba, alguien entró."
+    },
+    {
+      "spanish": "de repente",
+      "english": "suddenly",
+      "audio": "/audio/unit-20/de-repente.mp3",
+      "section": "Unir las dos acciones",
+      "example": "De repente se apagaron las luces."
+    },
+    {
+      "spanish": "de pronto",
+      "english": "all at once",
+      "audio": "/audio/unit-24/de-pronto.mp3",
+      "section": "Unir las dos acciones"
+    },
+    {
+      "spanish": "cuando",
+      "english": "when",
+      "audio": "/audio/unit-24/cuando.mp3",
+      "section": "Unir las dos acciones"
+    },
+    {
+      "spanish": "entonces",
+      "english": "then",
+      "audio": "/audio/unit-24/entonces.mp3",
+      "section": "Unir las dos acciones"
+    },
+    {
+      "spanish": "mientras tanto",
+      "english": "meanwhile",
+      "audio": "/audio/unit-24/mientras-tanto.mp3",
+      "section": "Unir las dos acciones"
+    },
+    {
+      "spanish": "empezó",
+      "english": "it began",
+      "audio": "/audio/unit-24/empezo.mp3",
+      "section": "El festival"
+    },
+    {
+      "spanish": "terminó",
+      "english": "it ended",
+      "audio": "/audio/unit-24/termino.mp3",
+      "section": "El festival"
+    },
+    {
+      "spanish": "apareció",
+      "english": "he/she appeared",
+      "audio": "/audio/unit-24/aparecio.mp3",
+      "section": "El festival"
+    },
+    {
+      "spanish": "desapareció",
+      "english": "he/she disappeared",
+      "audio": "/audio/unit-24/desaparecio.mp3",
+      "section": "El festival"
+    },
+    {
+      "spanish": "interrumpió",
+      "english": "he/she interrupted",
+      "audio": "/audio/unit-24/interrumpio.mp3",
+      "section": "El festival"
+    },
+    {
+      "spanish": "gritó",
+      "english": "he/she shouted",
+      "audio": "/audio/unit-24/grito.mp3",
+      "section": "El festival"
+    },
+    {
+      "spanish": "se fue",
+      "english": "he/she left",
+      "audio": "/audio/unit-20/se-fue.mp3",
+      "section": "El festival"
+    },
+    {
+      "spanish": "se cayó",
+      "english": "he/she fell",
+      "audio": "/audio/unit-24/se-cayo.mp3",
+      "section": "El festival"
+    },
+    {
+      "spanish": "estaba cantando",
+      "english": "he/she was singing",
+      "audio": "/audio/unit-24/estaba-cantando.mp3",
+      "section": "El festival"
+    },
+    {
+      "spanish": "estaba mirando",
+      "english": "he/she was watching",
+      "audio": "/audio/unit-24/estaba-mirando.mp3",
+      "section": "El festival"
+    },
+    {
+      "spanish": "estaba esperando",
+      "english": "he/she was waiting",
+      "audio": "/audio/unit-24/estaba-esperando.mp3",
+      "section": "El festival"
+    },
+    {
+      "spanish": "estaba hablando",
+      "english": "he/she was talking",
+      "audio": "/audio/unit-24/estaba-hablando.mp3",
+      "section": "El festival"
+    },
+    {
+      "spanish": "el escenario",
+      "english": "the stage",
+      "audio": "/audio/unit-24/el-escenario.mp3",
+      "section": "El festival"
+    },
+    {
+      "spanish": "el público",
+      "english": "the audience",
+      "audio": "/audio/unit-24/el-publico.mp3",
+      "section": "El festival"
+    },
+    {
+      "spanish": "la entrada",
+      "english": "the entrance",
+      "audio": "/audio/unit-24/la-entrada.mp3",
+      "section": "El festival"
+    },
+    {
+      "spanish": "de pronto todo cambió",
+      "english": "suddenly everything changed",
+      "audio": "/audio/unit-24/de-pronto-todo-cambio.mp3",
+      "section": "El festival"
+    },
+    {
+      "spanish": "no se dio cuenta",
+      "english": "he/she didn't notice",
+      "audio": "/audio/unit-24/no-se-dio-cuenta.mp3",
+      "section": "El festival"
+    },
+    {
+      "spanish": "se dio cuenta",
+      "english": "he/she realised",
+      "audio": "/audio/unit-24/se-dio-cuenta.mp3",
+      "section": "El festival"
+    }
+  ],
+  "stages": [
+    {
+      "type": "cutscene",
+      "videoUrl": "/videos/unit-24-intro.mp4",
+      "briefingLines": [
+        "Cuarto expediente. Viña del Mar, la noche de la final.",
+        "Todo pasaba al mismo tiempo: la gente gritaba, la cantante cantaba, las cámaras grababan.",
+        "Y en algún punto de ese ruido, alguien entró y salió con el trofeo.",
+        "Hoy usas los dos tiempos juntos. El imperfecto es el fondo: lo que estaba pasando.",
+        "El pretérito es el corte: lo que ocurrió de repente.",
+        "Mientras la cantante cantaba —fondo— alguien entró —corte—.",
+        "Encuentra el corte y encontrarás a tu hombre."
+      ],
+      "chiefName": "Jefa Ramírez",
+      "chiefImageSeed": 12,
+      "chiefImageUrl": "/images/characters/chief-ramirez.webp"
+    },
+    {
+      "type": "vocabMatch",
+      "pairs": [
+        {
+          "spanish": "mientras",
+          "english": "while"
+        },
+        {
+          "spanish": "de repente",
+          "english": "suddenly"
+        },
+        {
+          "spanish": "de pronto",
+          "english": "all at once"
+        },
+        {
+          "spanish": "cuando",
+          "english": "when"
+        },
+        {
+          "spanish": "entonces",
+          "english": "then"
+        },
+        {
+          "spanish": "empezó",
+          "english": "it began"
+        },
+        {
+          "spanish": "terminó",
+          "english": "it ended"
+        },
+        {
+          "spanish": "apareció",
+          "english": "he/she appeared"
+        },
+        {
+          "spanish": "gritó",
+          "english": "he/she shouted"
+        },
+        {
+          "spanish": "el escenario",
+          "english": "the stage"
+        }
+      ]
+    },
+    {
+      "type": "swipeSort",
+      "prompt": "¿Fondo que seguía pasando, o corte que ocurrió de repente?",
+      "leftLabel": "Fondo (imperfecto)",
+      "leftHint": "Estaba pasando",
+      "rightLabel": "Corte (pretérito)",
+      "rightHint": "Ocurrió de golpe",
+      "clueReward": "Contó el fondo en imperfecto y el corte en pretérito sin equivocarse ni una vez: conocía el minuto exacto.",
+      "items": [
+        {
+          "text": "la cantante cantaba",
+          "category": "left"
+        },
+        {
+          "text": "el público miraba",
+          "category": "left"
+        },
+        {
+          "text": "las luces brillaban",
+          "category": "left"
+        },
+        {
+          "text": "estaba esperando",
+          "category": "left"
+        },
+        {
+          "text": "llovía fuera",
+          "category": "left"
+        },
+        {
+          "text": "todos aplaudían",
+          "category": "left"
+        },
+        {
+          "text": "alguien entró",
+          "category": "right",
+          "explanation": "El corte en medio del fondo."
+        },
+        {
+          "text": "se apagó la luz",
+          "category": "right"
+        },
+        {
+          "text": "gritó una mujer",
+          "category": "right"
+        },
+        {
+          "text": "apareció un hombre",
+          "category": "right"
+        },
+        {
+          "text": "terminó la canción",
+          "category": "right"
+        },
+        {
+          "text": "desapareció el trofeo",
+          "category": "right"
+        }
+      ]
+    },
+    {
+      "type": "sentenceBuilder",
+      "sentences": [
+        {
+          "sentence": "Mientras la cantante cantaba, alguien entró.",
+          "translation": "While the singer was singing, someone came in."
+        },
+        {
+          "sentence": "El público miraba cuando se apagó la luz.",
+          "translation": "The audience was watching when the light went out."
+        },
+        {
+          "sentence": "De repente gritó una mujer.",
+          "translation": "Suddenly a woman shouted."
+        },
+        {
+          "sentence": "Todos aplaudían y nadie miró la puerta.",
+          "translation": "Everyone was clapping and nobody looked at the door."
+        },
+        {
+          "sentence": "Cuando terminó la canción, el trofeo ya no estaba.",
+          "translation": "When the song ended, the trophy was gone."
+        }
+      ]
+    },
+    {
+      "type": "readingComp",
+      "passage": "Eran las once y el teatro estaba lleno. La cantante cantaba la última canción y todo el mundo miraba el escenario. Las cámaras grababan. Mientras tanto, en el pasillo de prensa, no había nadie. A las once y cuarto se apagaron dos luces durante veinte segundos. Cuando volvieron, la puerta de prensa estaba abierta. Nadie la vio abrirse porque todos miraban hacia el otro lado. A las once y media terminó la canción y el trofeo ya no estuvo en su sitio.",
+      "glossary": [
+        {
+          "word": "lleno",
+          "translation": "full"
+        },
+        {
+          "word": "grababan",
+          "translation": "were recording"
+        },
+        {
+          "word": "el pasillo",
+          "translation": "the corridor"
+        },
+        {
+          "word": "se apagaron",
+          "translation": "went out"
+        },
+        {
+          "word": "volvieron",
+          "translation": "came back"
+        },
+        {
+          "word": "hacia",
+          "translation": "toward"
+        }
+      ],
+      "questions": [
+        {
+          "id": "u24-r1",
+          "text": "¿Qué pasaba mientras la cantante cantaba?",
+          "type": "multiple_choice",
+          "options": [
+            "Todos miraban el escenario",
+            "Todos salían",
+            "Nadie miraba",
+            "Llovía dentro"
+          ],
+          "correctIndex": 0,
+          "explanationEs": "«todo el mundo miraba el escenario».",
+          "explanationEn": "Everyone was watching the stage."
+        },
+        {
+          "id": "u24-r2",
+          "text": "¿Qué ocurrió a las once y cuarto?",
+          "type": "multiple_choice",
+          "options": [
+            "Terminó la canción",
+            "Se apagaron dos luces",
+            "Llegó la policía",
+            "Gritó una mujer"
+          ],
+          "correctIndex": 1,
+          "explanationEs": "«se apagaron dos luces durante veinte segundos».",
+          "explanationEn": "Two lights went out."
+        },
+        {
+          "id": "u24-r3",
+          "text": "¿Por qué nadie vio abrirse la puerta?",
+          "type": "multiple_choice",
+          "options": [
+            "Estaba muy oscuro",
+            "Todos miraban hacia el otro lado",
+            "La puerta no hacía ruido",
+            "No había nadie"
+          ],
+          "correctIndex": 1,
+          "explanationEs": "«porque todos miraban hacia el otro lado».",
+          "explanationEn": "Everyone was looking the other way."
+        },
+        {
+          "id": "u24-r4",
+          "text": "¿Cuándo desapareció el trofeo?",
+          "type": "multiple_choice",
+          "options": [
+            "Antes del concierto",
+            "Entre las once y cuarto y las once y media",
+            "A medianoche",
+            "Por la mañana"
+          ],
+          "correctIndex": 1,
+          "explanationEs": "Las luces se apagaron a las 11:15 y a las 11:30 ya no estuvo.",
+          "explanationEn": "Between 11:15 and 11:30."
+        }
+      ]
+    },
+    {
+      "type": "listeningComp",
+      "audioUrl": "/audio/unit-24/testimonio-camara.mp3",
+      "transcript": "Yo llevaba la cámara tres esa noche. Estaba grabando el escenario. La cantante cantaba y el público aplaudía. De repente se apagaron dos luces. Yo seguí grabando porque no podía moverme. Cuando volvió la luz, vi que la puerta de prensa estaba abierta. Antes estaba cerrada, se lo aseguro. No vi salir a nadie porque miraba por la cámara.",
+      "translation": "I was on camera three that night. I was recording the stage. The singer was singing and the audience was clapping. Suddenly two lights went out. I kept recording because I could not move. When the light came back, I saw that the press door was open. Before it was closed, I assure you. I did not see anyone leave because I was looking through the camera.",
+      "retryHint": "Pista: separa lo que estaba pasando de lo que ocurrió de golpe.",
+      "passingScore": 0.6,
+      "maxReplays": 5,
+      "clueReward": "Mientras todos miraban el escenario, el cómplice salió por la puerta de prensa.",
+      "questions": [
+        {
+          "question": "¿Qué estaba haciendo el testigo?",
+          "options": [
+            "Mirando al público",
+            "Grabando el escenario",
+            "Buscando el trofeo",
+            "Hablando por radio"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "question": "¿Qué hacía la cantante?",
+          "options": [
+            "Hablaba",
+            "Cantaba",
+            "Bailaba",
+            "Se iba"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "question": "¿Qué ocurrió de repente?",
+          "options": [
+            "Terminó la canción",
+            "Se apagaron dos luces",
+            "Gritó alguien",
+            "Llegó la policía"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "question": "¿Cómo estaba la puerta antes?",
+          "options": [
+            "Abierta",
+            "Cerrada",
+            "Rota",
+            "Sin llave"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "question": "¿Por qué no vio salir a nadie?",
+          "options": [
+            "Estaba oscuro",
+            "Miraba por la cámara",
+            "Se fue",
+            "Se durmió"
+          ],
+          "correctIndex": 1
+        }
+      ]
+    },
+    {
+      "type": "dialogueChoice",
+      "npcName": "Paula Sotelo, jefa de prensa",
+      "npcAvatar": "/images/characters/unit-07-periodista.webp",
+      "clueReward": "La jefa de prensa confirmó que el pasillo estaba vacío desde las once.",
+      "startNodeId": "n1",
+      "nodes": [
+        {
+          "id": "n1",
+          "npcLine": "El pasillo de prensa era mi responsabilidad. Pregunte.",
+          "options": [
+            {
+              "text": "¿Qué hacía usted cuando se apagaron las luces?",
+              "isCorrect": true,
+              "feedback": "Perfecto: fondo + corte.",
+              "nextNodeId": "n2"
+            },
+            {
+              "text": "¿Qué hizo usted cuando se apagaban las luces?",
+              "isCorrect": false,
+              "feedback": "Al revés: el corte son las luces."
+            },
+            {
+              "text": "¿Qué hace usted?",
+              "isCorrect": false,
+              "feedback": "Presente no."
+            }
+          ]
+        },
+        {
+          "id": "n2",
+          "npcLine": "Estaba en la sala grande, mirando el escenario como todos. No había nadie en el pasillo.",
+          "options": [
+            {
+              "text": "¿Quién trabajaba en el pasillo esa noche?",
+              "isCorrect": true,
+              "feedback": "Bien.",
+              "nextNodeId": "n3"
+            },
+            {
+              "text": "¿Quién trabajó ayer?",
+              "isCorrect": false,
+              "feedback": "Necesitas la costumbre de esa noche."
+            },
+            {
+              "text": "¿Quién trabajará mañana?",
+              "isCorrect": false,
+              "feedback": "Pasado, agente."
+            }
+          ]
+        },
+        {
+          "id": "n3",
+          "npcLine": "Solo el técnico del segundo turno. Entraba a las once y salía a la una.",
+          "options": [
+            {
+              "text": "¿Y lo vio salir?",
+              "isCorrect": true,
+              "feedback": "Buena pregunta.",
+              "nextNodeId": "n4"
+            },
+            {
+              "text": "¿Y lo ve salir?",
+              "isCorrect": false,
+              "feedback": "En pasado."
+            },
+            {
+              "text": "¿Y lo verá salir?",
+              "isCorrect": false,
+              "feedback": "En pasado."
+            }
+          ]
+        },
+        {
+          "id": "n4",
+          "npcLine": "No. Cuando volví al pasillo, a las once y media, ya no estaba. Y su turno terminaba a la una.",
+          "isEnd": true,
+          "endMessage": "El técnico del segundo turno se fue una hora y media antes del final de su turno."
+        }
+      ]
+    },
+    {
+      "type": "lineup",
+      "correctSuspectId": "s24-a",
+      "hint": "Trabajaba en el pasillo de prensa esa noche y se fue mucho antes del final de su turno.",
+      "suspects": [
+        {
+          "id": "s24-a",
+          "name": "El Técnico",
+          "realName": "Rodrigo Pizarro",
+          "age": 31,
+          "description": "Entraba a las once y su turno terminaba a la una, pero a las once y media ya no estaba en el pasillo.",
+          "imageSeed": 25,
+          "imageUrl": "/images/characters/unit-24-s24-a.webp"
+        },
+        {
+          "id": "s24-b",
+          "name": "La Camarógrafa",
+          "realName": "Ana Lagos",
+          "age": 27,
+          "description": "Estaba grabando desde la cámara tres y no se movió en toda la noche. La grabación lo confirma.",
+          "imageSeed": 47,
+          "imageUrl": "/images/characters/unit-24-s24-b.webp"
+        },
+        {
+          "id": "s24-c",
+          "name": "El Acomodador",
+          "realName": "Beto Fuentes",
+          "age": 22,
+          "description": "Trabajaba en la sala grande, entre el público. Diez personas lo vieron allí a las once y cuarto.",
+          "imageSeed": 11,
+          "imageUrl": "/images/characters/unit-24-s24-c.webp"
+        },
+        {
+          "id": "s24-d",
+          "name": "La Jefa de Prensa",
+          "realName": "Paula Sotelo",
+          "age": 45,
+          "description": "Estaba en la sala grande mirando el escenario y volvió al pasillo a las once y media.",
+          "imageSeed": 39,
+          "imageUrl": "/images/characters/unit-24-s24-d.webp"
+        }
+      ]
+    }
+  ]
+}

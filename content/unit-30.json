@@ -1,0 +1,608 @@
+{
+  "unitNumber": 30,
+  "country": "Estados Unidos",
+  "city": "Miami",
+  "caseTitle": "Ojalá que Vuelva",
+  "caseDescription": "En la Calle Ocho falta la cafetera de una ventanita y la libreta con la receta. Sesenta años sirviendo el mismo café. Usa el subjuntivo de deseo y emoción —quiero que, espero que, ojalá que— para entender qué se llevaron de verdad.",
+  "criminalName": "La Curadora",
+  "bonusClue": "Se llevó la libreta con la receta, no solo la máquina: quería la memoria, no el metal.",
+  "vocab": [
+    {
+      "spanish": "la ventanita",
+      "english": "the walk-up window",
+      "audio": "/audio/unit-30/la-ventanita.mp3",
+      "section": "La ventanita",
+      "example": "En la ventanita se pide un cafecito."
+    },
+    {
+      "spanish": "el cafecito",
+      "english": "the little coffee",
+      "audio": "/audio/unit-30/el-cafecito.mp3",
+      "section": "La ventanita"
+    },
+    {
+      "spanish": "la colada",
+      "english": "the shared coffee",
+      "audio": "/audio/unit-30/la-colada.mp3",
+      "section": "La ventanita",
+      "example": "Una colada se comparte entre todos."
+    },
+    {
+      "spanish": "el cortadito",
+      "english": "the cortadito",
+      "audio": "/audio/unit-30/el-cortadito.mp3",
+      "section": "La ventanita"
+    },
+    {
+      "spanish": "la cafetera",
+      "english": "the coffee maker",
+      "audio": "/audio/unit-30/la-cafetera.mp3",
+      "section": "La ventanita"
+    },
+    {
+      "spanish": "el mostrador",
+      "english": "the counter",
+      "audio": "/audio/unit-30/el-mostrador.mp3",
+      "section": "La ventanita"
+    },
+    {
+      "spanish": "la receta",
+      "english": "the recipe",
+      "audio": "/audio/unit-06/receta.mp3",
+      "section": "La ventanita"
+    },
+    {
+      "spanish": "el cuaderno",
+      "english": "the notebook",
+      "audio": "/audio/unit-02/cuaderno.mp3",
+      "section": "La ventanita"
+    },
+    {
+      "spanish": "la libreta",
+      "english": "the notepad",
+      "audio": "/audio/unit-30/la-libreta.mp3",
+      "section": "La ventanita"
+    },
+    {
+      "spanish": "el dominó",
+      "english": "dominoes",
+      "audio": "/audio/unit-30/el-domino.mp3",
+      "section": "La ventanita"
+    },
+    {
+      "spanish": "la ficha",
+      "english": "the domino tile",
+      "audio": "/audio/unit-30/la-ficha.mp3",
+      "section": "La ventanita"
+    },
+    {
+      "spanish": "el exilio",
+      "english": "exile",
+      "audio": "/audio/unit-30/el-exilio.mp3",
+      "section": "La ventanita"
+    },
+    {
+      "spanish": "extrañar",
+      "english": "to miss (someone)",
+      "audio": "/audio/unit-30/extranar.mp3",
+      "section": "La ventanita"
+    },
+    {
+      "spanish": "recordar",
+      "english": "to remember",
+      "audio": "/audio/unit-30/recordar.mp3",
+      "section": "La ventanita"
+    },
+    {
+      "spanish": "regresar",
+      "english": "to return",
+      "audio": "/audio/unit-30/regresar.mp3",
+      "section": "La ventanita"
+    },
+    {
+      "spanish": "quiero que",
+      "english": "I want that ...",
+      "audio": "/audio/unit-30/quiero-que.mp3",
+      "section": "El subjuntivo"
+    },
+    {
+      "spanish": "espero que",
+      "english": "I hope that ...",
+      "audio": "/audio/unit-30/espero-que.mp3",
+      "section": "El subjuntivo"
+    },
+    {
+      "spanish": "ojalá que",
+      "english": "I hope / God willing",
+      "audio": "/audio/unit-30/ojala-que.mp3",
+      "section": "El subjuntivo",
+      "example": "Ojalá que vuelva la cafetera."
+    },
+    {
+      "spanish": "me alegra que",
+      "english": "it makes me happy that",
+      "audio": "/audio/unit-30/me-alegra-que.mp3",
+      "section": "El subjuntivo"
+    },
+    {
+      "spanish": "siento que",
+      "english": "I am sorry that",
+      "audio": "/audio/unit-30/siento-que.mp3",
+      "section": "El subjuntivo"
+    },
+    {
+      "spanish": "vuelva",
+      "english": "he/she returns (subj.)",
+      "audio": "/audio/unit-30/vuelva.mp3",
+      "section": "El subjuntivo"
+    },
+    {
+      "spanish": "recuerden",
+      "english": "they remember (subj.)",
+      "audio": "/audio/unit-30/recuerden.mp3",
+      "section": "El subjuntivo"
+    },
+    {
+      "spanish": "pruebes",
+      "english": "you try (subj.)",
+      "audio": "/audio/unit-30/pruebes.mp3",
+      "section": "El subjuntivo"
+    },
+    {
+      "spanish": "sepa",
+      "english": "he/she knows (subj.)",
+      "audio": "/audio/unit-30/sepa.mp3",
+      "section": "El subjuntivo"
+    },
+    {
+      "spanish": "esté",
+      "english": "he/she is (subj.)",
+      "audio": "/audio/unit-30/este.mp3",
+      "section": "El subjuntivo"
+    },
+    {
+      "spanish": "vaya",
+      "english": "he/she goes (subj.)",
+      "audio": "/audio/unit-30/vaya.mp3",
+      "section": "El subjuntivo"
+    },
+    {
+      "spanish": "tenga",
+      "english": "he/she has (subj.)",
+      "audio": "/audio/unit-30/tenga.mp3",
+      "section": "El subjuntivo"
+    },
+    {
+      "spanish": "sea",
+      "english": "he/she is (subj.)",
+      "audio": "/audio/unit-30/sea.mp3",
+      "section": "El subjuntivo"
+    },
+    {
+      "spanish": "asere",
+      "english": "buddy (Cuban)",
+      "audio": "/audio/unit-30/asere.mp3",
+      "section": "Español cubano"
+    },
+    {
+      "spanish": "¿qué bolá?",
+      "english": "what is up? (Cuban)",
+      "audio": "/audio/unit-30/que-bola.mp3",
+      "section": "Español cubano"
+    }
+  ],
+  "stages": [
+    {
+      "type": "cutscene",
+      "videoUrl": "/videos/unit-30-intro.mp4",
+      "briefingLines": [
+        "Miami. La Calle Ocho.",
+        "Hay una ventana en la pared donde la gente pide café de pie, en la acera.",
+        "Pides una colada, te dan cinco vasitos, y se la repartes con desconocidos. Así, todos los días.",
+        "La familia que la abrió llegó de Cuba y pensó que volvería en unos meses. Nunca volvió.",
+        "Se llevaron la cafetera. Y también la libreta con la receta, escrita a mano.",
+        "Hoy usas el subjuntivo de deseo: quiero que, espero que, ojalá que.",
+        "Es el modo verbal de la gente que espera algo que no depende de ella. Aquí se entiende bien."
+      ],
+      "chiefName": "Jefa Ramírez",
+      "chiefImageSeed": 12,
+      "chiefImageUrl": "/images/characters/chief-ramirez.webp"
+    },
+    {
+      "type": "vocabMatch",
+      "pairs": [
+        {
+          "spanish": "la ventanita",
+          "english": "the walk-up window"
+        },
+        {
+          "spanish": "el cafecito",
+          "english": "the little coffee"
+        },
+        {
+          "spanish": "la colada",
+          "english": "the shared coffee"
+        },
+        {
+          "spanish": "la cafetera",
+          "english": "the coffee maker"
+        },
+        {
+          "spanish": "la receta",
+          "english": "the recipe"
+        },
+        {
+          "spanish": "ojalá que",
+          "english": "I hope / God willing"
+        },
+        {
+          "spanish": "espero que",
+          "english": "I hope that ..."
+        },
+        {
+          "spanish": "vuelva",
+          "english": "he/she returns (subj.)"
+        },
+        {
+          "spanish": "asere",
+          "english": "buddy (Cuban)"
+        },
+        {
+          "spanish": "¿qué bolá?",
+          "english": "what is up? (Cuban)"
+        }
+      ]
+    },
+    {
+      "type": "swipeSort",
+      "prompt": "¿Pide subjuntivo o no?",
+      "leftLabel": "Lleva subjuntivo",
+      "leftHint": "Deseo, emoción, ojalá",
+      "rightLabel": "No lleva subjuntivo",
+      "rightHint": "Solo informa de un hecho",
+      "clueReward": "Quería que la receta estuviera en una vitrina, no en una taza.",
+      "items": [
+        {
+          "text": "Quiero que vuelva",
+          "category": "left"
+        },
+        {
+          "text": "Espero que recuerden",
+          "category": "left"
+        },
+        {
+          "text": "Ojalá que sea verdad",
+          "category": "left"
+        },
+        {
+          "text": "Me alegra que estés aquí",
+          "category": "left"
+        },
+        {
+          "text": "Siento que se vaya",
+          "category": "left"
+        },
+        {
+          "text": "Quiero que pruebes el café",
+          "category": "left"
+        },
+        {
+          "text": "Sé que vuelve",
+          "category": "right",
+          "explanation": "Saber informa: indicativo."
+        },
+        {
+          "text": "Es verdad que está aquí",
+          "category": "right"
+        },
+        {
+          "text": "Veo que se va",
+          "category": "right"
+        },
+        {
+          "text": "Dice que lo recuerda",
+          "category": "right"
+        }
+      ]
+    },
+    {
+      "type": "sentenceBuilder",
+      "sentences": [
+        {
+          "sentence": "Ojalá que vuelva la cafetera.",
+          "translation": "I hope the coffee maker comes back."
+        },
+        {
+          "sentence": "Espero que recuerden la receta.",
+          "translation": "I hope they remember the recipe."
+        },
+        {
+          "sentence": "Quiero que pruebes este cafecito.",
+          "translation": "I want you to try this little coffee."
+        },
+        {
+          "sentence": "Me alegra que la gente venga cada mañana.",
+          "translation": "I am glad people come every morning."
+        },
+        {
+          "sentence": "Siento que se lleven nuestra libreta.",
+          "translation": "I am sorry they are taking our notebook."
+        }
+      ]
+    },
+    {
+      "type": "readingComp",
+      "passage": "La ventanita abrió en mil novecientos sesenta y cinco. La abuela escribió la receta en una libreta pequeña y nunca la cambió. Cada mañana los vecinos piden una colada y la reparten entre cinco o seis personas, muchas veces con gente que no conocen. No es solo café: es la razón por la que la gente se para en la acera y habla. La abuela decía siempre: «Ojalá que esto siga cuando yo no esté». Ahora falta la cafetera, y falta la libreta, que era lo único escrito de su mano.",
+      "glossary": [
+        {
+          "word": "la acera",
+          "translation": "the sidewalk"
+        },
+        {
+          "word": "reparten",
+          "translation": "they share out"
+        },
+        {
+          "word": "la razón",
+          "translation": "the reason"
+        },
+        {
+          "word": "se para",
+          "translation": "stops, stands"
+        },
+        {
+          "word": "siga",
+          "translation": "continues (subj.)"
+        },
+        {
+          "word": "lo único",
+          "translation": "the only thing"
+        }
+      ],
+      "questions": [
+        {
+          "id": "u30-r1",
+          "text": "¿Cuándo abrió la ventanita?",
+          "type": "multiple_choice",
+          "options": [
+            "En 1955",
+            "En 1965",
+            "En 1975",
+            "En 1985"
+          ],
+          "correctIndex": 1,
+          "explanationEs": "«La ventanita abrió en mil novecientos sesenta y cinco».",
+          "explanationEn": "In 1965."
+        },
+        {
+          "id": "u30-r2",
+          "text": "¿Con quién comparten la colada?",
+          "type": "multiple_choice",
+          "options": [
+            "Solo con la familia",
+            "Muchas veces con gente que no conocen",
+            "Con nadie",
+            "Con los turistas"
+          ],
+          "correctIndex": 1,
+          "explanationEs": "«muchas veces con gente que no conocen».",
+          "explanationEn": "Often with people they do not know."
+        },
+        {
+          "id": "u30-r3",
+          "text": "Según el texto, la ventanita es sobre todo...",
+          "type": "multiple_choice",
+          "options": [
+            "Un negocio grande",
+            "La razón por la que la gente se para y habla",
+            "Una tienda de recuerdos",
+            "Un museo"
+          ],
+          "correctIndex": 1,
+          "explanationEs": "«es la razón por la que la gente se para en la acera y habla».",
+          "explanationEn": "A reason for people to stop and talk."
+        },
+        {
+          "id": "u30-r4",
+          "text": "¿Por qué importa tanto la libreta?",
+          "type": "multiple_choice",
+          "options": [
+            "Es muy cara",
+            "Era lo único escrito de la mano de la abuela",
+            "Es muy antigua",
+            "Está en inglés"
+          ],
+          "correctIndex": 1,
+          "explanationEs": "«era lo único escrito de su mano».",
+          "explanationEn": "It was the only thing in her handwriting."
+        }
+      ]
+    },
+    {
+      "type": "listeningComp",
+      "audioUrl": "/audio/unit-30/testimonio-ventanita.mp3",
+      "transcript": "¿Qué bolá, asere? Mire, mi abuela abrió esta ventanita en el sesenta y cinco. Ella siempre decía: ojalá que esto siga cuando yo no esté. Vino una señora el martes. Muy amable. Me preguntó si quería que la receta estuviera en un museo. Yo le dije que no, que quiero que la gente la beba, no que la mire. Ella dijo que era una lástima. El miércoles no estaba la cafetera. Y lo que más duele: se llevó la libreta.",
+      "translation": "What's up, my friend? Look, my grandmother opened this window in sixty-five. She always said: I hope this continues when I am gone. A woman came on Tuesday. Very polite. She asked me if I wanted the recipe to be in a museum. I told her no, that I want people to drink it, not look at it. She said it was a shame. On Wednesday the coffee maker was gone. And what hurts most: she took the notebook.",
+      "retryHint": "Pista: escucha la diferencia entre beberla y mirarla.",
+      "passingScore": 0.6,
+      "maxReplays": 5,
+      "clueReward": "Se llevó la libreta con la receta, no solo la máquina: quería la memoria, no el metal.",
+      "questions": [
+        {
+          "question": "¿En qué año abrió la ventanita?",
+          "options": [
+            "En 1955",
+            "En 1965",
+            "En 1975",
+            "En 1995"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "question": "¿Qué decía siempre la abuela?",
+          "options": [
+            "Que vendería el negocio",
+            "Ojalá que esto siga cuando yo no esté",
+            "Que volvería a Cuba",
+            "Nada"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "question": "¿Qué le propuso la señora?",
+          "options": [
+            "Comprar el café",
+            "Que la receta estuviera en un museo",
+            "Enseñarle a cocinar",
+            "Pagarle"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "question": "¿Qué respondió el testigo?",
+          "options": [
+            "Que sí",
+            "Que quiere que la gente la beba, no que la mire",
+            "Que lo pensaría",
+            "Que se fuera"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "question": "¿Qué le duele más?",
+          "options": [
+            "La cafetera",
+            "La libreta",
+            "El dinero",
+            "La ventana"
+          ],
+          "correctIndex": 1
+        }
+      ]
+    },
+    {
+      "type": "dialogueChoice",
+      "npcName": "Yuniel Casal, nieto de la fundadora",
+      "npcAvatar": "/images/characters/unit-30-curadora.webp",
+      "clueReward": "El nieto contó que ella pidió la libreta antes que la máquina.",
+      "startNodeId": "n1",
+      "nodes": [
+        {
+          "id": "n1",
+          "npcLine": "¿Qué bolá, agente? Pase, le sirvo un cafecito mientras hablamos.",
+          "options": [
+            {
+              "text": "Espero que me cuente qué pasó el martes.",
+              "isCorrect": true,
+              "feedback": "Bien: espero que + subjuntivo.",
+              "nextNodeId": "n2"
+            },
+            {
+              "text": "Espero que me cuenta qué pasó.",
+              "isCorrect": false,
+              "feedback": "Después de «espero que» va subjuntivo: cuente."
+            },
+            {
+              "text": "Espero que me contó qué pasó.",
+              "isCorrect": false,
+              "feedback": "Subjuntivo, no pretérito."
+            }
+          ]
+        },
+        {
+          "id": "n2",
+          "npcLine": "Vino, pidió un cafecito y luego preguntó por la libreta. Antes que por la máquina.",
+          "options": [
+            {
+              "text": "¿Quiere usted que la libreta vuelva?",
+              "isCorrect": true,
+              "feedback": "Correcto.",
+              "nextNodeId": "n3"
+            },
+            {
+              "text": "¿Quiere usted que la libreta vuelve?",
+              "isCorrect": false,
+              "feedback": "«Quiere que» pide subjuntivo: vuelva."
+            },
+            {
+              "text": "¿Quiere usted que la libreta volvió?",
+              "isCorrect": false,
+              "feedback": "Subjuntivo."
+            }
+          ]
+        },
+        {
+          "id": "n3",
+          "npcLine": "Claro que sí. Ojalá que vuelva. Sin esa libreta el café no sabe igual, se lo juro.",
+          "options": [
+            {
+              "text": "Me alegra que hable conmigo.",
+              "isCorrect": true,
+              "feedback": "Bien.",
+              "nextNodeId": "n4"
+            },
+            {
+              "text": "Me alegra que habla conmigo.",
+              "isCorrect": false,
+              "feedback": "«Me alegra que» pide subjuntivo: hable."
+            },
+            {
+              "text": "Me alegra que habló conmigo.",
+              "isCorrect": false,
+              "feedback": "Subjuntivo."
+            }
+          ]
+        },
+        {
+          "id": "n4",
+          "npcLine": "Para eso estamos, asere. Y le digo algo: ella hablaba lindo, pero no era de ningún lado.",
+          "isEnd": true,
+          "endMessage": "Ella preguntó por la libreta antes que por la máquina."
+        }
+      ]
+    },
+    {
+      "type": "lineup",
+      "correctSuspectId": "s30-c",
+      "hint": "Preguntó por la libreta de la receta antes que por la máquina, y no era de ningún lugar por su forma de hablar.",
+      "suspects": [
+        {
+          "id": "s30-a",
+          "name": "El Vecino",
+          "realName": "Papo Estévez",
+          "age": 68,
+          "description": "Viene cada mañana desde hace treinta años y juega dominó en la esquina. Dice asere en cada frase.",
+          "imageSeed": 14,
+          "imageUrl": "/images/characters/unit-30-s30-a.webp"
+        },
+        {
+          "id": "s30-b",
+          "name": "La Repartidora",
+          "realName": "Mayelin Roque",
+          "age": 35,
+          "description": "Trae el pan todos los días a las cinco. Conoce la ventanita pero nunca ha entrado detrás del mostrador.",
+          "imageSeed": 44,
+          "imageUrl": "/images/characters/unit-30-s30-b.webp"
+        },
+        {
+          "id": "s30-c",
+          "name": "La Señora Amable",
+          "realName": "desconocida",
+          "age": 46,
+          "description": "Preguntó por la libreta de la receta antes que por la cafetera. Habló con mucha educación y sin acento de ningún lugar.",
+          "imageSeed": 45,
+          "imageUrl": "/images/characters/unit-30-curadora.webp"
+        },
+        {
+          "id": "s30-d",
+          "name": "El Sobrino",
+          "realName": "Alexis Casal",
+          "age": 27,
+          "description": "Trabaja en la ventanita los fines de semana y conoce la receta de memoria. No necesita la libreta.",
+          "imageSeed": 8,
+          "imageUrl": "/images/characters/unit-30-s30-d.webp"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,616 @@
+{
+  "unitNumber": 23,
+  "country": "Perú",
+  "city": "Cusco",
+  "caseTitle": "Como Era Antes",
+  "caseDescription": "En Cusco no preguntamos qué pasó, sino cómo era todo antes de que él llegara. Usa el imperfecto —era, había, tenía, iba, veía— para describir el sitio, la rutina de la gente y lo que se hacía todos los días. El que mintió cambió un detalle de esa rutina.",
+  "criminalName": "La Que Marcó las Piedras",
+  "bonusClue": "El cómplice trabajaba allí todos los días y conocía el orden exacto de las piedras.",
+  "vocab": [
+    {
+      "spanish": "era",
+      "english": "he/she/it was (description)",
+      "audio": "/audio/unit-20/era.mp3",
+      "section": "Cusco",
+      "example": "El sitio era tranquilo por la mañana."
+    },
+    {
+      "spanish": "eran",
+      "english": "they were",
+      "audio": "/audio/unit-23/eran.mp3",
+      "section": "Cusco"
+    },
+    {
+      "spanish": "estaba",
+      "english": "he/she/it was (location/state)",
+      "audio": "/audio/unit-20/estaba.mp3",
+      "section": "Cusco"
+    },
+    {
+      "spanish": "estaban",
+      "english": "they were",
+      "audio": "/audio/unit-23/estaban.mp3",
+      "section": "Cusco"
+    },
+    {
+      "spanish": "había",
+      "english": "there was / there were",
+      "audio": "/audio/unit-20/habia.mp3",
+      "section": "Cusco",
+      "example": "Había turistas solo los domingos."
+    },
+    {
+      "spanish": "tenía",
+      "english": "he/she had",
+      "audio": "/audio/unit-20/tenia.mp3",
+      "section": "Cusco"
+    },
+    {
+      "spanish": "tenían",
+      "english": "they had",
+      "audio": "/audio/unit-23/tenian.mp3",
+      "section": "Cusco"
+    },
+    {
+      "spanish": "iba",
+      "english": "he/she was going / used to go",
+      "audio": "/audio/unit-23/iba.mp3",
+      "section": "Cusco",
+      "example": "Iba al mercado cada día."
+    },
+    {
+      "spanish": "iban",
+      "english": "they used to go",
+      "audio": "/audio/unit-23/iban.mp3",
+      "section": "Cusco"
+    },
+    {
+      "spanish": "veía",
+      "english": "he/she saw / used to see",
+      "audio": "/audio/unit-20/veia.mp3",
+      "section": "Cusco"
+    },
+    {
+      "spanish": "hacía",
+      "english": "it was (weather) / used to do",
+      "audio": "/audio/unit-23/hacia.mp3",
+      "section": "Cusco"
+    },
+    {
+      "spanish": "llovía",
+      "english": "it was raining",
+      "audio": "/audio/unit-23/llovia.mp3",
+      "section": "Cusco"
+    },
+    {
+      "spanish": "vivía",
+      "english": "he/she used to live",
+      "audio": "/audio/unit-20/vivia.mp3",
+      "section": "Cusco"
+    },
+    {
+      "spanish": "trabajaba",
+      "english": "he/she used to work",
+      "audio": "/audio/unit-23/trabajaba.mp3",
+      "section": "Cusco"
+    },
+    {
+      "spanish": "hablaba",
+      "english": "he/she used to speak",
+      "audio": "/audio/unit-23/hablaba.mp3",
+      "section": "Cusco"
+    },
+    {
+      "spanish": "comía",
+      "english": "he/she used to eat",
+      "audio": "/audio/unit-23/comia.mp3",
+      "section": "Cusco"
+    },
+    {
+      "spanish": "sabía",
+      "english": "he/she knew",
+      "audio": "/audio/unit-23/sabia.mp3",
+      "section": "Cusco"
+    },
+    {
+      "spanish": "conocía",
+      "english": "he/she knew (a person/place)",
+      "audio": "/audio/unit-23/conocia.mp3",
+      "section": "Cusco"
+    },
+    {
+      "spanish": "quería",
+      "english": "he/she wanted",
+      "audio": "/audio/unit-23/queria.mp3",
+      "section": "Cusco"
+    },
+    {
+      "spanish": "podía",
+      "english": "he/she could",
+      "audio": "/audio/unit-23/podia.mp3",
+      "section": "Cusco"
+    },
+    {
+      "spanish": "llevaba",
+      "english": "he/she was wearing / carrying",
+      "audio": "/audio/unit-23/llevaba.mp3",
+      "section": "Cusco"
+    },
+    {
+      "spanish": "usaba",
+      "english": "he/she used to use",
+      "audio": "/audio/unit-23/usaba.mp3",
+      "section": "Cusco"
+    },
+    {
+      "spanish": "siempre",
+      "english": "always",
+      "audio": "/audio/unit-11/siempre.mp3",
+      "section": "Rutina"
+    },
+    {
+      "spanish": "cada día",
+      "english": "every day",
+      "audio": "/audio/unit-23/cada-dia.mp3",
+      "section": "Rutina"
+    },
+    {
+      "spanish": "todos los días",
+      "english": "every day",
+      "audio": "/audio/unit-23/todos-los-dias.mp3",
+      "section": "Rutina"
+    },
+    {
+      "spanish": "a menudo",
+      "english": "often",
+      "audio": "/audio/unit-23/a-menudo.mp3",
+      "section": "Rutina"
+    },
+    {
+      "spanish": "normalmente",
+      "english": "normally",
+      "audio": "/audio/unit-23/normalmente.mp3",
+      "section": "Rutina"
+    },
+    {
+      "spanish": "en aquella época",
+      "english": "in that era",
+      "audio": "/audio/unit-23/en-aquella-epoca.mp3",
+      "section": "Rutina"
+    },
+    {
+      "spanish": "de niño",
+      "english": "as a boy",
+      "audio": "/audio/unit-23/de-nino.mp3",
+      "section": "Rutina"
+    },
+    {
+      "spanish": "de niña",
+      "english": "as a girl",
+      "audio": "/audio/unit-23/de-nina.mp3",
+      "section": "Rutina"
+    }
+  ],
+  "stages": [
+    {
+      "type": "cutscene",
+      "videoUrl": "/videos/unit-23-intro.mp4",
+      "briefingLines": [
+        "Tercer expediente. Cusco.",
+        "Aquí no basta con saber qué pasó. Hay que saber cómo era todo antes.",
+        "Para eso existe el imperfecto: era, había, tenía, iba, veía.",
+        "No describe un momento. Describe un fondo: lo normal, lo de siempre, lo de todos los días.",
+        "El pretérito te dice qué ocurrió. El imperfecto te dice en qué mundo ocurrió.",
+        "Alguien conocía ese mundo demasiado bien. Encuéntrala."
+      ],
+      "chiefName": "Jefa Ramírez",
+      "chiefImageSeed": 12,
+      "chiefImageUrl": "/images/characters/chief-ramirez.webp"
+    },
+    {
+      "type": "vocabMatch",
+      "pairs": [
+        {
+          "spanish": "era",
+          "english": "he/she/it was (description)"
+        },
+        {
+          "spanish": "había",
+          "english": "there was / there were"
+        },
+        {
+          "spanish": "tenía",
+          "english": "he/she had"
+        },
+        {
+          "spanish": "iba",
+          "english": "he/she was going / used to go"
+        },
+        {
+          "spanish": "veía",
+          "english": "he/she saw / used to see"
+        },
+        {
+          "spanish": "trabajaba",
+          "english": "he/she used to work"
+        },
+        {
+          "spanish": "siempre",
+          "english": "always"
+        },
+        {
+          "spanish": "cada día",
+          "english": "every day"
+        },
+        {
+          "spanish": "normalmente",
+          "english": "normally"
+        },
+        {
+          "spanish": "llevaba",
+          "english": "he/she was wearing / carrying"
+        }
+      ]
+    },
+    {
+      "type": "swipeSort",
+      "prompt": "¿Describe el fondo (imperfecto) o cuenta un hecho (pretérito)?",
+      "leftLabel": "Imperfecto",
+      "leftHint": "Cómo era, lo de siempre",
+      "rightLabel": "Pretérito",
+      "rightHint": "Qué pasó una vez",
+      "clueReward": "Describió la rutina del sitio con demasiado detalle: sabía cómo era todo antes de llegar.",
+      "items": [
+        {
+          "text": "era",
+          "category": "left",
+          "explanation": "Descripción, no acción."
+        },
+        {
+          "text": "había",
+          "category": "left"
+        },
+        {
+          "text": "tenía",
+          "category": "left"
+        },
+        {
+          "text": "iba",
+          "category": "left"
+        },
+        {
+          "text": "trabajaba",
+          "category": "left"
+        },
+        {
+          "text": "veía",
+          "category": "left"
+        },
+        {
+          "text": "llegó",
+          "category": "right"
+        },
+        {
+          "text": "entró",
+          "category": "right"
+        },
+        {
+          "text": "tomó",
+          "category": "right"
+        },
+        {
+          "text": "fue",
+          "category": "right"
+        },
+        {
+          "text": "dijo",
+          "category": "right"
+        },
+        {
+          "text": "salió",
+          "category": "right",
+          "explanation": "Acción terminada."
+        }
+      ]
+    },
+    {
+      "type": "sentenceBuilder",
+      "sentences": [
+        {
+          "sentence": "El sitio era tranquilo por la mañana.",
+          "translation": "The site was quiet in the morning."
+        },
+        {
+          "sentence": "Había turistas solo los domingos.",
+          "translation": "There were tourists only on Sundays."
+        },
+        {
+          "sentence": "Ella iba al mercado cada día.",
+          "translation": "She went to the market every day."
+        },
+        {
+          "sentence": "Los guardias tenían una rutina fija.",
+          "translation": "The guards had a fixed routine."
+        },
+        {
+          "sentence": "Todos los días veía las mismas piedras.",
+          "translation": "Every day she saw the same stones."
+        }
+      ]
+    },
+    {
+      "type": "readingComp",
+      "passage": "Antes del robo, el sitio era muy tranquilo. Por la mañana no había casi nadie. Los trabajadores llegaban a las siete y limpiaban el camino de piedra. Doña Aurora iba cada día al mercado y volvía a las once con pan y fruta para todos. Los guardias tenían una rutina fija: uno estaba arriba y el otro abajo, siempre. Nadie tocaba las piedras. Todo el mundo sabía cuál era su sitio, y por eso nadie miraba dos veces.",
+      "glossary": [
+        {
+          "word": "tranquilo",
+          "translation": "quiet"
+        },
+        {
+          "word": "el camino",
+          "translation": "the path"
+        },
+        {
+          "word": "volvía",
+          "translation": "she used to return"
+        },
+        {
+          "word": "la rutina",
+          "translation": "the routine"
+        },
+        {
+          "word": "fija",
+          "translation": "fixed"
+        },
+        {
+          "word": "tocaba",
+          "translation": "used to touch"
+        }
+      ],
+      "questions": [
+        {
+          "id": "u23-r1",
+          "text": "¿Cómo era el sitio antes del robo?",
+          "type": "multiple_choice",
+          "options": [
+            "Ruidoso",
+            "Tranquilo",
+            "Peligroso",
+            "Cerrado"
+          ],
+          "correctIndex": 1,
+          "explanationEs": "«el sitio era muy tranquilo».",
+          "explanationEn": "It was very quiet."
+        },
+        {
+          "id": "u23-r2",
+          "text": "¿Qué hacía doña Aurora cada día?",
+          "type": "multiple_choice",
+          "options": [
+            "Limpiaba el camino",
+            "Iba al mercado",
+            "Guardaba las llaves",
+            "Contaba las piedras"
+          ],
+          "correctIndex": 1,
+          "explanationEs": "«Doña Aurora iba cada día al mercado».",
+          "explanationEn": "She went to the market every day."
+        },
+        {
+          "id": "u23-r3",
+          "text": "¿Cómo era la rutina de los guardias?",
+          "type": "multiple_choice",
+          "options": [
+            "Cambiaba cada semana",
+            "Uno arriba y otro abajo, siempre",
+            "No tenían rutina",
+            "Trabajaban juntos"
+          ],
+          "correctIndex": 1,
+          "explanationEs": "«uno estaba arriba y el otro abajo, siempre».",
+          "explanationEn": "One above, one below, always."
+        },
+        {
+          "id": "u23-r4",
+          "text": "¿Por qué nadie miraba dos veces?",
+          "type": "multiple_choice",
+          "options": [
+            "Porque no había luz",
+            "Porque todos sabían cuál era su sitio",
+            "Porque estaban cansados",
+            "Porque llovía"
+          ],
+          "correctIndex": 1,
+          "explanationEs": "«Todo el mundo sabía cuál era su sitio».",
+          "explanationEn": "Everyone knew their place."
+        }
+      ]
+    },
+    {
+      "type": "listeningComp",
+      "audioUrl": "/audio/unit-23/testimonio-aurora.mp3",
+      "transcript": "Yo trabajaba allí desde hace veinte años. Todo era igual todos los días. Llegaba a las siete. Limpiaba el camino. A las nueve iba al mercado y volvía a las once. Había dos guardias y siempre estaban en el mismo sitio. Nadie tocaba las piedras, nunca. Pero esa semana algo era distinto: alguien movía las piedras de noche, y por la mañana no estaban donde debían estar.",
+      "translation": "I had worked there for twenty years. Everything was the same every day. I arrived at seven. I cleaned the path. At nine I went to the market and came back at eleven. There were two guards and they were always in the same place. Nobody touched the stones, ever. But that week something was different: someone was moving the stones at night, and in the morning they were not where they should have been.",
+      "retryHint": "Pista: escucha lo que era normal y lo que cambió esa semana.",
+      "passingScore": 0.6,
+      "maxReplays": 5,
+      "clueReward": "El cómplice trabajaba allí todos los días y conocía el orden exacto de las piedras.",
+      "questions": [
+        {
+          "question": "¿Cuánto tiempo trabajaba allí?",
+          "options": [
+            "Dos años",
+            "Diez años",
+            "Veinte años",
+            "Treinta años"
+          ],
+          "correctIndex": 2
+        },
+        {
+          "question": "¿A qué hora llegaba?",
+          "options": [
+            "A las seis",
+            "A las siete",
+            "A las nueve",
+            "A las once"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "question": "¿Qué hacía a las nueve?",
+          "options": [
+            "Limpiaba",
+            "Iba al mercado",
+            "Volvía a casa",
+            "Contaba las piedras"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "question": "¿Cuántos guardias había?",
+          "options": [
+            "Uno",
+            "Dos",
+            "Tres",
+            "Ninguno"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "question": "¿Qué era distinto esa semana?",
+          "options": [
+            "Había más turistas",
+            "Alguien movía las piedras",
+            "Llovía mucho",
+            "Faltaba un guardia"
+          ],
+          "correctIndex": 1
+        }
+      ]
+    },
+    {
+      "type": "dialogueChoice",
+      "npcName": "Don Efraín, guía del sitio",
+      "npcAvatar": "/images/characters/unit-08-don-aurelio.webp",
+      "clueReward": "El guía confirmó que solo el personal conocía el orden exacto de las piedras.",
+      "startNodeId": "n1",
+      "nodes": [
+        {
+          "id": "n1",
+          "npcLine": "Llevo aquí media vida. Pregúnteme lo que quiera, agente.",
+          "options": [
+            {
+              "text": "¿Cómo era el sitio antes?",
+              "isCorrect": true,
+              "feedback": "Bien: imperfecto para describir.",
+              "nextNodeId": "n2"
+            },
+            {
+              "text": "¿Cómo fue el sitio antes?",
+              "isCorrect": false,
+              "feedback": "El pretérito corta la acción. Aquí describes."
+            },
+            {
+              "text": "¿Cómo será el sitio?",
+              "isCorrect": false,
+              "feedback": "Futuro no. Describe el pasado."
+            }
+          ]
+        },
+        {
+          "id": "n2",
+          "npcLine": "Era tranquilo. Había poca gente entre semana y todos nos conocíamos.",
+          "options": [
+            {
+              "text": "¿Quién sabía el orden de las piedras?",
+              "isCorrect": true,
+              "feedback": "Buena pregunta.",
+              "nextNodeId": "n3"
+            },
+            {
+              "text": "¿Quién supo el orden?",
+              "isCorrect": false,
+              "feedback": "«Sabía» describe un conocimiento continuo."
+            },
+            {
+              "text": "¿Quién sabrá el orden?",
+              "isCorrect": false,
+              "feedback": "Pasado, por favor."
+            }
+          ]
+        },
+        {
+          "id": "n3",
+          "npcLine": "Solo nosotros. Los turistas no lo veían. Para ellos todas las piedras eran iguales.",
+          "options": [
+            {
+              "text": "¿Alguien venía de noche normalmente?",
+              "isCorrect": true,
+              "feedback": "Correcto.",
+              "nextNodeId": "n4"
+            },
+            {
+              "text": "¿Alguien vino anoche?",
+              "isCorrect": false,
+              "feedback": "Pregunta por la costumbre, no por una vez."
+            },
+            {
+              "text": "¿Alguien viene de noche?",
+              "isCorrect": false,
+              "feedback": "En pasado."
+            }
+          ]
+        },
+        {
+          "id": "n4",
+          "npcLine": "Nadie. Por eso, cuando alguien empezó a venir de noche, no fue un turista.",
+          "isEnd": true,
+          "endMessage": "Solo el personal conocía el orden de las piedras."
+        }
+      ]
+    },
+    {
+      "type": "lineup",
+      "correctSuspectId": "s23-d",
+      "hint": "Trabajaba allí todos los días, conocía el orden de las piedras y podía entrar de noche.",
+      "suspects": [
+        {
+          "id": "s23-a",
+          "name": "El Turista",
+          "realName": "Peter Hallam",
+          "age": 34,
+          "description": "Visitaba el sitio por primera vez y solo estuvo dos días. Para él todas las piedras eran iguales.",
+          "imageSeed": 6,
+          "imageUrl": "/images/characters/unit-23-s23-a.webp"
+        },
+        {
+          "id": "s23-b",
+          "name": "El Vendedor",
+          "realName": "Wilmer Ccahua",
+          "age": 47,
+          "description": "Vendía agua en la puerta y nunca entraba al sitio. Trabajaba solo cuando había turistas.",
+          "imageSeed": 30,
+          "imageUrl": "/images/characters/unit-23-s23-b.webp"
+        },
+        {
+          "id": "s23-c",
+          "name": "La Estudiante",
+          "realName": "Rosa Chávez",
+          "age": 19,
+          "description": "Estudiaba arqueología y venía los sábados. No tenía llave y nunca se quedaba de noche.",
+          "imageSeed": 48,
+          "imageUrl": "/images/characters/unit-23-s23-c.webp"
+        },
+        {
+          "id": "s23-d",
+          "name": "La Restauradora",
+          "realName": "Aurora Ttito",
+          "age": 56,
+          "description": "Trabajaba en el sitio todos los días desde hacía veinte años. Conocía el orden exacto de cada piedra y tenía llave.",
+          "imageSeed": 44,
+          "imageUrl": "/images/characters/unit-23-s23-d.webp"
+        }
+      ]
+    }
+  ]
+}

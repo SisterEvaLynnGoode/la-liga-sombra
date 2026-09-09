@@ -1,0 +1,604 @@
+{
+  "unitNumber": 28,
+  "country": "Estados Unidos",
+  "city": "Nueva York",
+  "caseTitle": "La Cinta del Café",
+  "caseDescription": "En un café de El Barrio hay una cinta con la única grabación de un poema que el autor nunca escribió en papel. Ahora no está. Usa el condicional para preguntar qué haría cada testigo y para imaginar lo que se perdería si esa voz desapareciera.",
+  "criminalName": "La Curadora",
+  "bonusClue": "Nadie la oyó cambiar de idioma ni una sola vez: hablaba solo en español, y sin acento de ningún sitio.",
+  "vocab": [
+    {
+      "spanish": "el poema",
+      "english": "the poem",
+      "audio": "/audio/unit-14/poema.mp3",
+      "section": "El café de poesía"
+    },
+    {
+      "spanish": "el poeta",
+      "english": "the poet",
+      "audio": "/audio/unit-14/poeta.mp3",
+      "section": "El café de poesía"
+    },
+    {
+      "spanish": "la poeta",
+      "english": "the poet (f)",
+      "audio": "/audio/unit-28/la-poeta.mp3",
+      "section": "El café de poesía"
+    },
+    {
+      "spanish": "el escenario abierto",
+      "english": "the open mic",
+      "audio": "/audio/unit-28/el-escenario-abierto.mp3",
+      "section": "El café de poesía"
+    },
+    {
+      "spanish": "el verso",
+      "english": "the verse",
+      "audio": "/audio/unit-14/verso.mp3",
+      "section": "El café de poesía"
+    },
+    {
+      "spanish": "la azotea",
+      "english": "the rooftop",
+      "audio": "/audio/unit-28/la-azotea.mp3",
+      "section": "El café de poesía"
+    },
+    {
+      "spanish": "la casita",
+      "english": "the little house (community space)",
+      "audio": "/audio/unit-28/la-casita.mp3",
+      "section": "El café de poesía",
+      "example": "La casita del solar es de todos."
+    },
+    {
+      "spanish": "la plena",
+      "english": "plena (music)",
+      "audio": "/audio/unit-28/la-plena.mp3",
+      "section": "El café de poesía"
+    },
+    {
+      "spanish": "la bomba",
+      "english": "bomba (music)",
+      "audio": "/audio/unit-28/la-bomba.mp3",
+      "section": "El café de poesía"
+    },
+    {
+      "spanish": "recitar",
+      "english": "to recite",
+      "audio": "/audio/unit-28/recitar.mp3",
+      "section": "El café de poesía"
+    },
+    {
+      "spanish": "aplaudir",
+      "english": "to applaud",
+      "audio": "/audio/unit-28/aplaudir.mp3",
+      "section": "El café de poesía"
+    },
+    {
+      "spanish": "grabar",
+      "english": "to record",
+      "audio": "/audio/unit-28/grabar.mp3",
+      "section": "El café de poesía"
+    },
+    {
+      "spanish": "haría",
+      "english": "I/he/she would do",
+      "audio": "/audio/unit-28/haria.mp3",
+      "section": "El condicional",
+      "example": "¿Qué haría usted en mi lugar?"
+    },
+    {
+      "spanish": "diría",
+      "english": "I/he/she would say",
+      "audio": "/audio/unit-28/diria.mp3",
+      "section": "El condicional"
+    },
+    {
+      "spanish": "sería",
+      "english": "it would be",
+      "audio": "/audio/unit-28/seria.mp3",
+      "section": "El condicional"
+    },
+    {
+      "spanish": "podría",
+      "english": "I/he/she could",
+      "audio": "/audio/unit-28/podria.mp3",
+      "section": "El condicional"
+    },
+    {
+      "spanish": "tendría",
+      "english": "I/he/she would have",
+      "audio": "/audio/unit-28/tendria.mp3",
+      "section": "El condicional"
+    },
+    {
+      "spanish": "iría",
+      "english": "I/he/she would go",
+      "audio": "/audio/unit-28/iria.mp3",
+      "section": "El condicional"
+    },
+    {
+      "spanish": "gustaría",
+      "english": "would like",
+      "audio": "/audio/unit-28/gustaria.mp3",
+      "section": "El condicional"
+    },
+    {
+      "spanish": "vendría",
+      "english": "he/she would come",
+      "audio": "/audio/unit-28/vendria.mp3",
+      "section": "El condicional"
+    },
+    {
+      "spanish": "querría",
+      "english": "he/she would want",
+      "audio": "/audio/unit-28/querria.mp3",
+      "section": "El condicional"
+    },
+    {
+      "spanish": "pondría",
+      "english": "he/she would put",
+      "audio": "/audio/unit-28/pondria.mp3",
+      "section": "El condicional"
+    },
+    {
+      "spanish": "saldría",
+      "english": "he/she would leave",
+      "audio": "/audio/unit-28/saldria.mp3",
+      "section": "El condicional"
+    },
+    {
+      "spanish": "¿qué harías tú?",
+      "english": "what would you do?",
+      "audio": "/audio/unit-28/que-harias-tu.mp3",
+      "section": "El café de poesía"
+    },
+    {
+      "spanish": "en tu lugar",
+      "english": "in your place",
+      "audio": "/audio/unit-28/en-tu-lugar.mp3",
+      "section": "El café de poesía"
+    },
+    {
+      "spanish": "chévere",
+      "english": "cool, great",
+      "audio": "/audio/unit-28/chevere.mp3",
+      "section": "Español del Caribe",
+      "example": "El poema estuvo bien chévere."
+    },
+    {
+      "spanish": "la guagua",
+      "english": "the bus (Caribbean)",
+      "audio": "/audio/unit-28/la-guagua.mp3",
+      "section": "Español del Caribe"
+    },
+    {
+      "spanish": "el bloque",
+      "english": "the block",
+      "audio": "/audio/unit-28/el-bloque.mp3",
+      "section": "El café de poesía"
+    }
+  ],
+  "stages": [
+    {
+      "type": "cutscene",
+      "videoUrl": "/videos/unit-28-intro.mp4",
+      "briefingLines": [
+        "Nueva York. El Barrio, y más abajo, Loisaida: el Lower East Side dicho en español.",
+        "Aquí hay un café donde la gente lee poemas en voz alta desde mil novecientos setenta y tres.",
+        "Poemas en español, en inglés, y muchas veces en los dos a la vez, en la misma frase.",
+        "Eso no es un error, agente. Eso es una manera de escribir, y aquí la inventaron.",
+        "Uno de esos poemas solo existe en una cinta. El autor nunca lo escribió en papel.",
+        "La cinta ha desaparecido. Y la mujer de los guantes blancos estuvo allí el jueves.",
+        "Hoy usas el condicional: qué harías tú, qué diría él, qué se perdería."
+      ],
+      "chiefName": "Jefa Ramírez",
+      "chiefImageSeed": 12,
+      "chiefImageUrl": "/images/characters/chief-ramirez.webp"
+    },
+    {
+      "type": "vocabMatch",
+      "pairs": [
+        {
+          "spanish": "el poema",
+          "english": "the poem"
+        },
+        {
+          "spanish": "el poeta",
+          "english": "the poet"
+        },
+        {
+          "spanish": "la casita",
+          "english": "the little house (community space)"
+        },
+        {
+          "spanish": "haría",
+          "english": "I/he/she would do"
+        },
+        {
+          "spanish": "diría",
+          "english": "I/he/she would say"
+        },
+        {
+          "spanish": "sería",
+          "english": "it would be"
+        },
+        {
+          "spanish": "podría",
+          "english": "I/he/she could"
+        },
+        {
+          "spanish": "gustaría",
+          "english": "would like"
+        },
+        {
+          "spanish": "chévere",
+          "english": "cool, great"
+        },
+        {
+          "spanish": "la guagua",
+          "english": "the bus (Caribbean)"
+        }
+      ]
+    },
+    {
+      "type": "swipeSort",
+      "prompt": "¿Condicional (lo que haría) o futuro (lo que hará)?",
+      "leftLabel": "Condicional",
+      "leftHint": "Lo que haría, si pudiera",
+      "rightLabel": "Futuro",
+      "rightHint": "Lo que hará de verdad",
+      "clueReward": "No cambió de idioma ni una vez. Aquí eso es tan raro como no respirar.",
+      "items": [
+        {
+          "text": "haría",
+          "category": "left"
+        },
+        {
+          "text": "diría",
+          "category": "left"
+        },
+        {
+          "text": "sería",
+          "category": "left"
+        },
+        {
+          "text": "podría",
+          "category": "left"
+        },
+        {
+          "text": "tendría",
+          "category": "left"
+        },
+        {
+          "text": "iría",
+          "category": "left"
+        },
+        {
+          "text": "hará",
+          "category": "right"
+        },
+        {
+          "text": "dirá",
+          "category": "right"
+        },
+        {
+          "text": "será",
+          "category": "right"
+        },
+        {
+          "text": "podrá",
+          "category": "right"
+        },
+        {
+          "text": "tendrá",
+          "category": "right"
+        },
+        {
+          "text": "irá",
+          "category": "right",
+          "explanation": "Futuro: irá seguro."
+        }
+      ]
+    },
+    {
+      "type": "sentenceBuilder",
+      "sentences": [
+        {
+          "sentence": "¿Qué harías tú en mi lugar?",
+          "translation": "What would you do in my place?"
+        },
+        {
+          "sentence": "Yo diría la verdad.",
+          "translation": "I would tell the truth."
+        },
+        {
+          "sentence": "Sin esa cinta, el poema no existiría.",
+          "translation": "Without that tape, the poem would not exist."
+        },
+        {
+          "sentence": "Me gustaría escucharlo otra vez.",
+          "translation": "I would like to hear it again."
+        },
+        {
+          "sentence": "Nadie podría repetirlo igual.",
+          "translation": "Nobody could repeat it the same way."
+        }
+      ]
+    },
+    {
+      "type": "readingComp",
+      "passage": "El café abrió en mil novecientos setenta y tres, en un apartamento pequeño. Los poetas leían de pie, sin micrófono, y el público respondía en voz alta. Muchos poemas empezaban en español y terminaban en inglés, o cambiaban de idioma en medio de una frase. Eso tiene un nombre y no es un defecto: es la manera de hablar de mucha gente aquí. Un poeta leyó una vez un poema muy largo y nunca lo escribió. Alguien lo grabó en una cinta. Esa cinta es la única copia que existe en el mundo.",
+      "glossary": [
+        {
+          "word": "de pie",
+          "translation": "standing"
+        },
+        {
+          "word": "el público",
+          "translation": "the audience"
+        },
+        {
+          "word": "el idioma",
+          "translation": "the language"
+        },
+        {
+          "word": "en medio de",
+          "translation": "in the middle of"
+        },
+        {
+          "word": "el defecto",
+          "translation": "the flaw"
+        },
+        {
+          "word": "la copia",
+          "translation": "the copy"
+        }
+      ],
+      "questions": [
+        {
+          "id": "u28-r1",
+          "text": "¿Cómo leían los poetas?",
+          "type": "multiple_choice",
+          "options": [
+            "Sentados",
+            "De pie y sin micrófono",
+            "Por radio",
+            "En silencio"
+          ],
+          "correctIndex": 1,
+          "explanationEs": "«Los poetas leían de pie, sin micrófono».",
+          "explanationEn": "Standing, without a microphone."
+        },
+        {
+          "id": "u28-r2",
+          "text": "¿Qué pasaba con los idiomas en los poemas?",
+          "type": "multiple_choice",
+          "options": [
+            "Solo usaban inglés",
+            "Solo usaban español",
+            "Cambiaban de idioma en medio de una frase",
+            "Traducían todo"
+          ],
+          "correctIndex": 2,
+          "explanationEs": "«cambiaban de idioma en medio de una frase».",
+          "explanationEn": "They switched mid-sentence."
+        },
+        {
+          "id": "u28-r3",
+          "text": "Según el texto, cambiar de idioma es...",
+          "type": "multiple_choice",
+          "options": [
+            "Un defecto",
+            "La manera de hablar de mucha gente de aquí",
+            "Un error de los jóvenes",
+            "Algo prohibido"
+          ],
+          "correctIndex": 1,
+          "explanationEs": "«no es un defecto: es la manera de hablar de mucha gente aquí».",
+          "explanationEn": "Not a flaw, but how many people here speak."
+        },
+        {
+          "id": "u28-r4",
+          "text": "¿Por qué es importante la cinta?",
+          "type": "multiple_choice",
+          "options": [
+            "Es muy antigua",
+            "Es la única copia del poema en el mundo",
+            "La grabó un famoso",
+            "Está en inglés"
+          ],
+          "correctIndex": 1,
+          "explanationEs": "«Esa cinta es la única copia que existe en el mundo».",
+          "explanationEn": "It is the only copy in the world."
+        }
+      ]
+    },
+    {
+      "type": "listeningComp",
+      "audioUrl": "/audio/unit-28/testimonio-cafe.mp3",
+      "transcript": "Yo abro el café todos los jueves. Ese día vino una mujer que no conocía. Muy correcta, muy educada. Preguntó por la cinta. Me dijo que la cinta estaría más segura en un archivo. Yo le dije que sin el café ese poema no significaría nada. Ella sonrió. Aquí todos mezclamos, hablamos mitad y mitad, decimos chévere, decimos la guagua. Ella no. Ella hablaba como un libro. Al día siguiente la cinta no estaba.",
+      "translation": "I open the cafe every Thursday. That day a woman I did not know came in. Very correct, very polite. She asked about the tape. She told me the tape would be safer in an archive. I told her that without the cafe that poem would not mean anything. She smiled. Here we all mix, we speak half and half, we say chevere, we say la guagua. Not her. She spoke like a book. The next day the tape was gone.",
+      "retryHint": "Pista: escucha cómo describe la manera de hablar de la mujer.",
+      "passingScore": 0.6,
+      "maxReplays": 5,
+      "clueReward": "Nadie la oyó cambiar de idioma ni una sola vez: hablaba solo en español, y sin acento de ningún sitio.",
+      "questions": [
+        {
+          "question": "¿Qué día vino la mujer?",
+          "options": [
+            "El lunes",
+            "El jueves",
+            "El sábado",
+            "El domingo"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "question": "¿Qué dijo ella de la cinta?",
+          "options": [
+            "Que la compraría",
+            "Que estaría más segura en un archivo",
+            "Que era falsa",
+            "Que la copiaría"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "question": "¿Qué le respondió el testigo?",
+          "options": [
+            "Que se la vendía",
+            "Que sin el café el poema no significaría nada",
+            "Que no era suya",
+            "Nada"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "question": "¿Cómo hablan en el café, según él?",
+          "options": [
+            "Solo español",
+            "Solo inglés",
+            "Mitad y mitad",
+            "Muy correcto"
+          ],
+          "correctIndex": 2
+        },
+        {
+          "question": "¿Cómo hablaba ella?",
+          "options": [
+            "Como la gente del barrio",
+            "Como un libro",
+            "Con acento cubano",
+            "No hablaba español"
+          ],
+          "correctIndex": 1
+        }
+      ]
+    },
+    {
+      "type": "dialogueChoice",
+      "npcName": "Rafi Villanueva, poeta del café",
+      "npcAvatar": "/images/characters/unit-28-curadora.webp",
+      "clueReward": "El poeta confirmó que la mujer nunca mezcló idiomas ni usó una palabra caribeña.",
+      "startNodeId": "n1",
+      "nodes": [
+        {
+          "id": "n1",
+          "npcLine": "Bienvenido al café, agente. Aquí se lee de pie. ¿Qué quiere saber?",
+          "options": [
+            {
+              "text": "¿Qué haría usted si la cinta no volviera?",
+              "isCorrect": true,
+              "feedback": "Bien: condicional.",
+              "nextNodeId": "n2"
+            },
+            {
+              "text": "¿Qué hizo usted ayer?",
+              "isCorrect": false,
+              "feedback": "Pregunta por lo hipotético, no por lo real."
+            },
+            {
+              "text": "¿Qué hará usted mañana?",
+              "isCorrect": false,
+              "feedback": "Condicional, no futuro."
+            }
+          ]
+        },
+        {
+          "id": "n2",
+          "npcLine": "¿Yo? Lo leería de memoria. Pero no sonaría igual. Su voz no la tengo yo.",
+          "options": [
+            {
+              "text": "¿Quién podría repetirlo igual?",
+              "isCorrect": true,
+              "feedback": "Correcto.",
+              "nextNodeId": "n3"
+            },
+            {
+              "text": "¿Quién podrá repetirlo?",
+              "isCorrect": false,
+              "feedback": "Condicional: quién podría."
+            },
+            {
+              "text": "¿Quién pudo repetirlo?",
+              "isCorrect": false,
+              "feedback": "Condicional, agente."
+            }
+          ]
+        },
+        {
+          "id": "n3",
+          "npcLine": "Nadie. Por eso la cinta valía tanto. Y ella lo sabía, se lo aseguro.",
+          "options": [
+            {
+              "text": "¿Cómo sabría ella lo que valía?",
+              "isCorrect": true,
+              "feedback": "Buena pregunta.",
+              "nextNodeId": "n4"
+            },
+            {
+              "text": "¿Cómo sabrá ella?",
+              "isCorrect": false,
+              "feedback": "Condicional."
+            },
+            {
+              "text": "¿Cómo supo ella ayer?",
+              "isCorrect": false,
+              "feedback": "Condicional."
+            }
+          ]
+        },
+        {
+          "id": "n4",
+          "npcLine": "Porque tenía una lista. Y hablaba raro: nunca mezcló, nunca dijo chévere, nada. Como un libro.",
+          "isEnd": true,
+          "endMessage": "La mujer llevaba una lista y no mezcló idiomas ni una sola vez."
+        }
+      ]
+    },
+    {
+      "type": "lineup",
+      "correctSuspectId": "s28-b",
+      "hint": "Nunca mezcló idiomas, nunca usó una palabra del Caribe, y llevaba una lista y guantes blancos.",
+      "suspects": [
+        {
+          "id": "s28-a",
+          "name": "El Poeta Joven",
+          "realName": "Rafi Villanueva",
+          "age": 24,
+          "description": "Lee en el café cada jueves y mezcla los dos idiomas en cada poema. Dice chévere en cada frase.",
+          "imageSeed": 11,
+          "imageUrl": "/images/characters/unit-28-s28-a.webp"
+        },
+        {
+          "id": "s28-b",
+          "name": "La Mujer de la Lista",
+          "realName": "desconocida",
+          "age": 46,
+          "description": "Nunca mezcló idiomas ni usó una palabra caribeña. Habló como un libro, llevaba guantes blancos y una lista.",
+          "imageSeed": 45,
+          "imageUrl": "/images/characters/unit-28-curadora.webp"
+        },
+        {
+          "id": "s28-c",
+          "name": "La Dueña",
+          "realName": "Milagros Ortiz",
+          "age": 61,
+          "description": "Abre el café desde hace treinta años. Habla mitad en inglés y mitad en español, a veces en la misma frase.",
+          "imageSeed": 39,
+          "imageUrl": "/images/characters/unit-28-s28-c.webp"
+        },
+        {
+          "id": "s28-d",
+          "name": "El Percusionista",
+          "realName": "Tito Nazario",
+          "age": 52,
+          "description": "Toca la plena en el solar de al lado los domingos. Dice la guagua y conoce a todos en la cuadra.",
+          "imageSeed": 21,
+          "imageUrl": "/images/characters/unit-28-s28-d.webp"
+        }
+      ]
+    }
+  ]
+}

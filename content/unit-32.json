@@ -1,0 +1,615 @@
+{
+  "unitNumber": 32,
+  "country": "Estados Unidos",
+  "city": "Chicago",
+  "caseTitle": "Aquí Se Inventó",
+  "caseDescription": "Último caso. En Chicago hay una calle con dos banderas de acero y otra calle llena de murales, y entre las dos se inventó un sándwich que no existe en ningún otro sitio. Usa el se impersonal y pasivo para demostrar una cosa: que esto no se copió, se hizo aquí.",
+  "criminalName": "La Curadora",
+  "bonusClue": "Su error fue decir que aquí no se inventó nada: todo lo que se llevó se hizo en este país.",
+  "vocab": [
+    {
+      "spanish": "el jibarito",
+      "english": "the jibarito sandwich",
+      "audio": "/audio/unit-32/el-jibarito.mp3",
+      "section": "Chicago",
+      "example": "El jibarito se hace con plátano en vez de pan."
+    },
+    {
+      "spanish": "el plátano",
+      "english": "the plantain",
+      "audio": "/audio/unit-32/el-platano.mp3",
+      "section": "Chicago"
+    },
+    {
+      "spanish": "el pan",
+      "english": "the bread",
+      "audio": "/audio/unit-32/el-pan.mp3",
+      "section": "Chicago"
+    },
+    {
+      "spanish": "la bandera",
+      "english": "the flag",
+      "audio": "/audio/unit-32/la-bandera.mp3",
+      "section": "Chicago",
+      "example": "La bandera de acero cruza la calle entera."
+    },
+    {
+      "spanish": "el acero",
+      "english": "steel",
+      "audio": "/audio/unit-17/acero.mp3",
+      "section": "Chicago"
+    },
+    {
+      "spanish": "el paseo",
+      "english": "the promenade",
+      "audio": "/audio/unit-32/el-paseo.mp3",
+      "section": "Chicago"
+    },
+    {
+      "spanish": "el arco",
+      "english": "the arch",
+      "audio": "/audio/unit-32/el-arco.mp3",
+      "section": "Chicago"
+    },
+    {
+      "spanish": "la calle",
+      "english": "the street",
+      "audio": "/audio/unit-03/calle.mp3",
+      "section": "Chicago"
+    },
+    {
+      "spanish": "el museo",
+      "english": "the museum",
+      "audio": "/audio/unit-32/el-museo.mp3",
+      "section": "Chicago"
+    },
+    {
+      "spanish": "la cocina",
+      "english": "the kitchen",
+      "audio": "/audio/unit-13/cocina.mp3",
+      "section": "Chicago"
+    },
+    {
+      "spanish": "el letrero",
+      "english": "the sign",
+      "audio": "/audio/unit-32/el-letrero.mp3",
+      "section": "Chicago"
+    },
+    {
+      "spanish": "la esquina",
+      "english": "the corner",
+      "audio": "/audio/unit-32/la-esquina.mp3",
+      "section": "Chicago"
+    },
+    {
+      "spanish": "inventar",
+      "english": "to invent",
+      "audio": "/audio/unit-32/inventar.mp3",
+      "section": "Chicago"
+    },
+    {
+      "spanish": "fundar",
+      "english": "to found",
+      "audio": "/audio/unit-32/fundar.mp3",
+      "section": "Chicago"
+    },
+    {
+      "spanish": "construir",
+      "english": "to build",
+      "audio": "/audio/unit-17/construir.mp3",
+      "section": "Chicago"
+    },
+    {
+      "spanish": "levantar",
+      "english": "to raise",
+      "audio": "/audio/unit-32/levantar.mp3",
+      "section": "Chicago"
+    },
+    {
+      "spanish": "se habla",
+      "english": "one speaks / is spoken",
+      "audio": "/audio/unit-32/se-habla.mp3",
+      "section": "El se impersonal"
+    },
+    {
+      "spanish": "se inventó",
+      "english": "it was invented",
+      "audio": "/audio/unit-32/se-invento.mp3",
+      "section": "El se impersonal",
+      "example": "Aquí se inventó el jibarito."
+    },
+    {
+      "spanish": "se hizo",
+      "english": "it was made",
+      "audio": "/audio/unit-32/se-hizo.mp3",
+      "section": "El se impersonal"
+    },
+    {
+      "spanish": "se construyó",
+      "english": "it was built",
+      "audio": "/audio/unit-32/se-construyo.mp3",
+      "section": "El se impersonal"
+    },
+    {
+      "spanish": "se dice",
+      "english": "it is said",
+      "audio": "/audio/unit-32/se-dice.mp3",
+      "section": "El se impersonal"
+    },
+    {
+      "spanish": "se vende",
+      "english": "it is sold",
+      "audio": "/audio/unit-32/se-vende.mp3",
+      "section": "El se impersonal"
+    },
+    {
+      "spanish": "se necesita",
+      "english": "it is needed",
+      "audio": "/audio/unit-32/se-necesita.mp3",
+      "section": "El se impersonal"
+    },
+    {
+      "spanish": "se prohíbe",
+      "english": "it is forbidden",
+      "audio": "/audio/unit-32/se-prohibe.mp3",
+      "section": "El se impersonal"
+    },
+    {
+      "spanish": "se me olvidó",
+      "english": "I forgot (it slipped from me)",
+      "audio": "/audio/unit-32/se-me-olvido.mp3",
+      "section": "El se accidental"
+    },
+    {
+      "spanish": "se nos perdió",
+      "english": "we lost it",
+      "audio": "/audio/unit-32/se-nos-perdio.mp3",
+      "section": "El se accidental"
+    },
+    {
+      "spanish": "aquí",
+      "english": "here",
+      "audio": "/audio/unit-12/aqui.mp3",
+      "section": "Chicago"
+    },
+    {
+      "spanish": "juntos",
+      "english": "together",
+      "audio": "/audio/unit-32/juntos.mp3",
+      "section": "Chicago"
+    },
+    {
+      "spanish": "juntas",
+      "english": "together (f)",
+      "audio": "/audio/unit-32/juntas.mp3",
+      "section": "Chicago"
+    },
+    {
+      "spanish": "el vecino",
+      "english": "the neighbor",
+      "audio": "/audio/unit-13/vecino.mp3",
+      "section": "Chicago"
+    },
+    {
+      "spanish": "la comunidad",
+      "english": "the community",
+      "audio": "/audio/unit-32/la-comunidad.mp3",
+      "section": "Chicago"
+    }
+  ],
+  "stages": [
+    {
+      "type": "cutscene",
+      "videoUrl": "/videos/unit-32-intro.mp4",
+      "briefingLines": [
+        "Último caso, agente. Chicago. Y aquí se cierra todo.",
+        "En una calle hay dos banderas de acero de cuarenta y cinco toneladas cruzando de lado a lado.",
+        "No hay otra cosa igual en todo el país. Se construyeron aquí, en mil novecientos noventa y cinco.",
+        "A pocas cuadras hay murales pintados por la gente del barrio y un museo que no cobra entrada.",
+        "Y en un restaurante de esa zona se inventó un sándwich que usa plátano en vez de pan.",
+        "En Puerto Rico no existe. Se inventó aquí, en Chicago, en mil novecientos noventa y seis.",
+        "Ella dice que todo esto es una copia de otro sitio. Se equivoca, y hoy lo vas a demostrar.",
+        "Para eso está el se impersonal: aquí se inventó, aquí se hizo, aquí se construyó."
+      ],
+      "chiefName": "Jefa Ramírez",
+      "chiefImageSeed": 12,
+      "chiefImageUrl": "/images/characters/chief-ramirez.webp"
+    },
+    {
+      "type": "vocabMatch",
+      "pairs": [
+        {
+          "spanish": "el jibarito",
+          "english": "the jibarito sandwich"
+        },
+        {
+          "spanish": "el plátano",
+          "english": "the plantain"
+        },
+        {
+          "spanish": "la bandera",
+          "english": "the flag"
+        },
+        {
+          "spanish": "el acero",
+          "english": "steel"
+        },
+        {
+          "spanish": "el museo",
+          "english": "the museum"
+        },
+        {
+          "spanish": "se habla",
+          "english": "one speaks / is spoken"
+        },
+        {
+          "spanish": "se inventó",
+          "english": "it was invented"
+        },
+        {
+          "spanish": "se hizo",
+          "english": "it was made"
+        },
+        {
+          "spanish": "se construyó",
+          "english": "it was built"
+        },
+        {
+          "spanish": "la comunidad",
+          "english": "the community"
+        }
+      ]
+    },
+    {
+      "type": "swipeSort",
+      "prompt": "¿Se dice quién lo hizo, o no se dice?",
+      "leftLabel": "No se dice quién (se)",
+      "leftHint": "Se inventó, se hizo, se habla",
+      "rightLabel": "Se dice quién",
+      "rightHint": "Alguien concreto lo hizo",
+      "clueReward": "Dijo que aquí no se inventó nada. Todo lo que se llevó se hizo en este país.",
+      "items": [
+        {
+          "text": "Aquí se inventó el jibarito",
+          "category": "left"
+        },
+        {
+          "text": "Se hicieron los murales en 1978",
+          "category": "left"
+        },
+        {
+          "text": "Se construyó la bandera en 1995",
+          "category": "left"
+        },
+        {
+          "text": "Aquí se habla español",
+          "category": "left"
+        },
+        {
+          "text": "Se vende pan en la esquina",
+          "category": "left"
+        },
+        {
+          "text": "Se dice que es el mejor",
+          "category": "left"
+        },
+        {
+          "text": "Mi abuela inventó la receta",
+          "category": "right"
+        },
+        {
+          "text": "Los vecinos pintaron el mural",
+          "category": "right"
+        },
+        {
+          "text": "La ciudad construyó el arco",
+          "category": "right"
+        },
+        {
+          "text": "Nosotros hablamos español",
+          "category": "right",
+          "explanation": "Sujeto claro: nosotros."
+        }
+      ]
+    },
+    {
+      "type": "sentenceBuilder",
+      "sentences": [
+        {
+          "sentence": "Aquí se inventó el jibarito.",
+          "translation": "The jibarito was invented here."
+        },
+        {
+          "sentence": "Se hicieron los murales entre todos.",
+          "translation": "The murals were made by everyone together."
+        },
+        {
+          "sentence": "En esta calle se habla español y también inglés.",
+          "translation": "On this street Spanish is spoken, and English too."
+        },
+        {
+          "sentence": "Se construyeron las banderas en mil novecientos noventa y cinco.",
+          "translation": "The flags were built in 1995."
+        },
+        {
+          "sentence": "Se nos perdió la receta original.",
+          "translation": "We lost the original recipe."
+        }
+      ]
+    },
+    {
+      "type": "readingComp",
+      "passage": "En Chicago viven juntas dos comunidades grandes: la mexicana y la puertorriqueña. En una calle se levantaron dos banderas enormes de acero, una en cada extremo, y entre ellas se abrieron tiendas, panaderías y centros comunitarios. En otro barrio se pintaron murales en las paredes de las escuelas y se fundó un museo que no cobra entrada. Y en un restaurante de la ciudad se inventó un sándwich que se hace con plátano frito en vez de pan. En la isla no se conoce. Aquí se come todos los días.",
+      "glossary": [
+        {
+          "word": "juntas",
+          "translation": "together"
+        },
+        {
+          "word": "se levantaron",
+          "translation": "were raised"
+        },
+        {
+          "word": "el extremo",
+          "translation": "the end"
+        },
+        {
+          "word": "la panadería",
+          "translation": "the bakery"
+        },
+        {
+          "word": "no cobra entrada",
+          "translation": "charges no admission"
+        },
+        {
+          "word": "frito",
+          "translation": "fried"
+        }
+      ],
+      "questions": [
+        {
+          "id": "u32-r1",
+          "text": "¿Qué dos comunidades viven juntas?",
+          "type": "multiple_choice",
+          "options": [
+            "La cubana y la mexicana",
+            "La mexicana y la puertorriqueña",
+            "La española y la cubana",
+            "La peruana y la chilena"
+          ],
+          "correctIndex": 1,
+          "explanationEs": "«la mexicana y la puertorriqueña».",
+          "explanationEn": "Mexican and Puerto Rican."
+        },
+        {
+          "id": "u32-r2",
+          "text": "¿Qué se levantó en una calle?",
+          "type": "multiple_choice",
+          "options": [
+            "Un museo",
+            "Dos banderas de acero",
+            "Una escuela",
+            "Un mercado"
+          ],
+          "correctIndex": 1,
+          "explanationEs": "«se levantaron dos banderas enormes de acero».",
+          "explanationEn": "Two huge steel flags."
+        },
+        {
+          "id": "u32-r3",
+          "text": "¿Con qué se hace el sándwich?",
+          "type": "multiple_choice",
+          "options": [
+            "Con pan",
+            "Con plátano frito",
+            "Con arroz",
+            "Con maíz"
+          ],
+          "correctIndex": 1,
+          "explanationEs": "«se hace con plátano frito en vez de pan».",
+          "explanationEn": "With fried plantain instead of bread."
+        },
+        {
+          "id": "u32-r4",
+          "text": "¿Se conoce ese sándwich en la isla?",
+          "type": "multiple_choice",
+          "options": [
+            "Sí, en todas partes",
+            "No, allí no se conoce",
+            "Solo en la capital",
+            "Se inventó allí"
+          ],
+          "correctIndex": 1,
+          "explanationEs": "«En la isla no se conoce. Aquí se come todos los días».",
+          "explanationEn": "No, it is unknown there."
+        }
+      ]
+    },
+    {
+      "type": "listeningComp",
+      "audioUrl": "/audio/unit-32/testimonio-cocina.mp3",
+      "transcript": "Aquí se abre a las seis. Mi papá trabajó en esta cocina treinta años. El sándwich se inventó en este barrio, no en la isla. Se hace con plátano en vez de pan y se come con la mano. La señora vino y dijo que era una versión de otra cosa, una copia. Le dije que no: aquí se inventó, aquí se hizo, y está escrito en la pared desde el noventa y seis. Se nos perdió la receta original esa noche. Pero la sé de memoria, y eso no se lo puede llevar nadie.",
+      "translation": "Here we open at six. My father worked in this kitchen for thirty years. The sandwich was invented in this neighborhood, not on the island. It is made with plantain instead of bread and eaten with your hands. The woman came and said it was a version of something else, a copy. I told her no: it was invented here, it was made here, and it has been written on the wall since ninety-six. We lost the original recipe that night. But I know it by heart, and nobody can take that.",
+      "retryHint": "Pista: escucha cuántas veces dice «se inventó» y «se hizo».",
+      "passingScore": 0.6,
+      "maxReplays": 5,
+      "clueReward": "Su error fue decir que aquí no se inventó nada: todo lo que se llevó se hizo en este país.",
+      "questions": [
+        {
+          "question": "¿A qué hora se abre la cocina?",
+          "options": [
+            "A las cinco",
+            "A las seis",
+            "A las siete",
+            "A las ocho"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "question": "¿Dónde se inventó el sándwich?",
+          "options": [
+            "En la isla",
+            "En este barrio",
+            "En Nueva York",
+            "No se sabe"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "question": "¿Con qué se hace?",
+          "options": [
+            "Con pan",
+            "Con plátano",
+            "Con arroz",
+            "Con maíz"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "question": "¿Qué dijo la señora?",
+          "options": [
+            "Que era muy bueno",
+            "Que era una copia de otra cosa",
+            "Que lo compraría",
+            "Nada"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "question": "¿Qué pasó con la receta original?",
+          "options": [
+            "Se vendió",
+            "Se nos perdió esa noche",
+            "Se quemó",
+            "Sigue en la pared"
+          ],
+          "correctIndex": 1
+        }
+      ]
+    },
+    {
+      "type": "dialogueChoice",
+      "npcName": "Nilda Figueroa, cocinera de la esquina",
+      "npcAvatar": "/images/characters/unit-32-curadora.webp",
+      "clueReward": "La cocinera lo dijo claro: no se copió de ningún sitio, se hizo aquí.",
+      "startNodeId": "n1",
+      "nodes": [
+        {
+          "id": "n1",
+          "npcLine": "Siéntese, agente. Aquí se come de pie o sentado, como usted quiera.",
+          "options": [
+            {
+              "text": "¿Dónde se inventó el jibarito?",
+              "isCorrect": true,
+              "feedback": "Bien: se impersonal.",
+              "nextNodeId": "n2"
+            },
+            {
+              "text": "¿Dónde inventó el jibarito?",
+              "isCorrect": false,
+              "feedback": "Falta el «se»: no decimos quién."
+            },
+            {
+              "text": "¿Dónde se inventará?",
+              "isCorrect": false,
+              "feedback": "Ya se inventó. Pasado."
+            }
+          ]
+        },
+        {
+          "id": "n2",
+          "npcLine": "Aquí. En esta cuadra, en el noventa y seis. Está escrito en esa pared.",
+          "options": [
+            {
+              "text": "¿Y las banderas, cuándo se construyeron?",
+              "isCorrect": true,
+              "feedback": "Correcto.",
+              "nextNodeId": "n3"
+            },
+            {
+              "text": "¿Y las banderas, cuándo construyeron?",
+              "isCorrect": false,
+              "feedback": "Falta el «se»."
+            },
+            {
+              "text": "¿Y las banderas, cuándo se construyen?",
+              "isCorrect": false,
+              "feedback": "Pasado: se construyeron."
+            }
+          ]
+        },
+        {
+          "id": "n3",
+          "npcLine": "En el noventa y cinco. Cuarenta y cinco toneladas cada una. No hay otras iguales.",
+          "options": [
+            {
+              "text": "¿Qué se dice en el barrio de la señora?",
+              "isCorrect": true,
+              "feedback": "Buena pregunta.",
+              "nextNodeId": "n4"
+            },
+            {
+              "text": "¿Qué dice en el barrio?",
+              "isCorrect": false,
+              "feedback": "Usa el se impersonal."
+            },
+            {
+              "text": "¿Qué se dirá?",
+              "isCorrect": false,
+              "feedback": "Presente: qué se dice."
+            }
+          ]
+        },
+        {
+          "id": "n4",
+          "npcLine": "Se dice que vino a salvarnos de nosotros mismos. Y mire: aquí no se copió nada. Se hizo.",
+          "isEnd": true,
+          "endMessage": "Nada de esto se copió: se inventó en este barrio."
+        }
+      ]
+    },
+    {
+      "type": "lineup",
+      "correctSuspectId": "s32-a",
+      "hint": "Dijo que todo esto era una copia de otro sitio, y se llevó la receta que se escribió aquí.",
+      "suspects": [
+        {
+          "id": "s32-a",
+          "name": "La Señora de los Guantes",
+          "realName": "desconocida",
+          "age": 46,
+          "description": "Dijo que el sándwich era una copia de otra cosa. Se llevó la receta original y hablaba sin acento de ningún lugar.",
+          "imageSeed": 45,
+          "imageUrl": "/images/characters/unit-32-curadora.webp"
+        },
+        {
+          "id": "s32-b",
+          "name": "El Muralista",
+          "realName": "Chuy Ordóñez",
+          "age": 36,
+          "description": "Pintó tres murales en la calle 16 y conoce a todos. Mezcla inglés y español en cada frase.",
+          "imageSeed": 25,
+          "imageUrl": "/images/characters/unit-32-s32-b.webp"
+        },
+        {
+          "id": "s32-c",
+          "name": "La Bibliotecaria",
+          "realName": "Marisol Rentería",
+          "age": 44,
+          "description": "Trabaja en el centro comunitario y guarda las fotos del barrio. Ayudó a documentar la historia del sándwich.",
+          "imageSeed": 39,
+          "imageUrl": "/images/characters/unit-32-s32-c.webp"
+        },
+        {
+          "id": "s32-d",
+          "name": "El Repartidor",
+          "realName": "Édgar Pabón",
+          "age": 29,
+          "description": "Trae los plátanos tres veces por semana desde hace seis años. Entra por la puerta de atrás y todos lo conocen.",
+          "imageSeed": 17,
+          "imageUrl": "/images/characters/unit-32-s32-d.webp"
+        }
+      ]
+    }
+  ]
+}

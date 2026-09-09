@@ -1,0 +1,552 @@
+{
+  "unitNumber": 25,
+  "country": "Cuba",
+  "city": "La Habana",
+  "caseTitle": "Se Lo Pidió Dos Veces",
+  "caseDescription": "Volvemos al estudio de La Habana. El disco maestro volvió, pero falta saber quién se lo dio a quién y cuándo. Usa los dos pronombres juntos —se lo, me la, te los— con el pretérito y el imperfecto para ordenar la cadena de manos.",
+  "criminalName": "La Voz del Estudio",
+  "bonusClue": "El cómplice se lo pidió dos veces al ingeniero y se lo llevó cuando nadie miraba.",
+  "vocab": [
+    {
+      "spanish": "se lo dio",
+      "english": "he/she gave it to him/her",
+      "audio": "/audio/unit-25/se-lo-dio.mp3",
+      "section": "Pronombres dobles",
+      "example": "El ingeniero se lo dio sin preguntar."
+    },
+    {
+      "spanish": "se la pidió",
+      "english": "he/she asked her for it",
+      "audio": "/audio/unit-25/se-la-pidio.mp3",
+      "section": "Pronombres dobles"
+    },
+    {
+      "spanish": "me lo dio",
+      "english": "he/she gave it to me",
+      "audio": "/audio/unit-25/me-lo-dio.mp3",
+      "section": "Pronombres dobles"
+    },
+    {
+      "spanish": "te la mandó",
+      "english": "he/she sent it to you",
+      "audio": "/audio/unit-25/te-la-mando.mp3",
+      "section": "Pronombres dobles"
+    },
+    {
+      "spanish": "nos los trajo",
+      "english": "he/she brought them to us",
+      "audio": "/audio/unit-25/nos-los-trajo.mp3",
+      "section": "Pronombres dobles"
+    },
+    {
+      "spanish": "entregó",
+      "english": "he/she handed over",
+      "audio": "/audio/unit-25/entrego.mp3",
+      "section": "El estudio"
+    },
+    {
+      "spanish": "prestó",
+      "english": "he/she lent",
+      "audio": "/audio/unit-25/presto.mp3",
+      "section": "El estudio"
+    },
+    {
+      "spanish": "devolvió",
+      "english": "he/she returned (something)",
+      "audio": "/audio/unit-25/devolvio.mp3",
+      "section": "El estudio"
+    },
+    {
+      "spanish": "pidió",
+      "english": "he/she asked for",
+      "audio": "/audio/unit-25/pidio.mp3",
+      "section": "El estudio"
+    },
+    {
+      "spanish": "pagó",
+      "english": "he/she paid",
+      "audio": "/audio/unit-25/pago.mp3",
+      "section": "El estudio"
+    },
+    {
+      "spanish": "mostró",
+      "english": "he/she showed",
+      "audio": "/audio/unit-25/mostro.mp3",
+      "section": "El estudio"
+    },
+    {
+      "spanish": "regaló",
+      "english": "he/she gave as a gift",
+      "audio": "/audio/unit-25/regalo.mp3",
+      "section": "El estudio"
+    },
+    {
+      "spanish": "mandó",
+      "english": "he/she sent",
+      "audio": "/audio/unit-25/mando.mp3",
+      "section": "El estudio"
+    },
+    {
+      "spanish": "quitó",
+      "english": "he/she took away",
+      "audio": "/audio/unit-25/quito.mp3",
+      "section": "El estudio"
+    },
+    {
+      "spanish": "grabó",
+      "english": "he/she recorded",
+      "audio": "/audio/unit-25/grabo.mp3",
+      "section": "El estudio",
+      "example": "Grabó la última toma a las dos."
+    },
+    {
+      "spanish": "sonó",
+      "english": "it sounded / rang",
+      "audio": "/audio/unit-25/sono.mp3",
+      "section": "El estudio"
+    },
+    {
+      "spanish": "el disco",
+      "english": "the record",
+      "audio": "/audio/unit-15/disco.mp3",
+      "section": "El estudio"
+    },
+    {
+      "spanish": "la grabación",
+      "english": "the recording",
+      "audio": "/audio/unit-15/grabacion.mp3",
+      "section": "El estudio"
+    },
+    {
+      "spanish": "la clave",
+      "english": "the clave / the key",
+      "audio": "/audio/unit-15/clave.mp3",
+      "section": "El estudio"
+    },
+    {
+      "spanish": "el ensayo",
+      "english": "the rehearsal",
+      "audio": "/audio/unit-15/ensayo.mp3",
+      "section": "El estudio"
+    },
+    {
+      "spanish": "la cinta",
+      "english": "the tape",
+      "audio": "/audio/unit-15/cinta.mp3",
+      "section": "El estudio"
+    }
+  ],
+  "stages": [
+    {
+      "type": "cutscene",
+      "videoUrl": "/videos/unit-25-intro.mp4",
+      "briefingLines": [
+        "Quinto expediente. La Habana, mil novecientos cincuenta y cuatro.",
+        "El disco maestro está de vuelta en el estudio. Pero pasó por muchas manos esa noche.",
+        "Y cuando hay muchas manos, el español usa dos pronombres a la vez.",
+        "Se lo dio. Me la pidió. Te los mandó. Primero a quién, después qué.",
+        "Ordena la cadena de manos y sabrás en qué mano se rompió."
+      ],
+      "chiefName": "Jefa Ramírez",
+      "chiefImageSeed": 12,
+      "chiefImageUrl": "/images/characters/chief-ramirez.webp"
+    },
+    {
+      "type": "vocabMatch",
+      "pairs": [
+        {
+          "spanish": "se lo dio",
+          "english": "he/she gave it to him/her"
+        },
+        {
+          "spanish": "se la pidió",
+          "english": "he/she asked her for it"
+        },
+        {
+          "spanish": "me lo dio",
+          "english": "he/she gave it to me"
+        },
+        {
+          "spanish": "entregó",
+          "english": "he/she handed over"
+        },
+        {
+          "spanish": "prestó",
+          "english": "he/she lent"
+        },
+        {
+          "spanish": "devolvió",
+          "english": "he/she returned (something)"
+        },
+        {
+          "spanish": "pidió",
+          "english": "he/she asked for"
+        },
+        {
+          "spanish": "grabó",
+          "english": "he/she recorded"
+        },
+        {
+          "spanish": "el disco",
+          "english": "the record"
+        },
+        {
+          "spanish": "la cinta",
+          "english": "the tape"
+        }
+      ]
+    },
+    {
+      "type": "swipeSort",
+      "prompt": "¿La frase lleva los dos pronombres en el orden correcto?",
+      "leftLabel": "Correcto",
+      "leftHint": "Primero la persona, después la cosa",
+      "rightLabel": "Incorrecto",
+      "rightHint": "Están al revés o falta uno",
+      "clueReward": "Recordó quién le dio qué a quién, en orden, sin dudar. Estuvo delante.",
+      "items": [
+        {
+          "text": "se lo dio",
+          "category": "left",
+          "explanation": "Persona (se) + cosa (lo)."
+        },
+        {
+          "text": "me la pidió",
+          "category": "left"
+        },
+        {
+          "text": "te lo mandó",
+          "category": "left"
+        },
+        {
+          "text": "nos los trajo",
+          "category": "left"
+        },
+        {
+          "text": "se la entregó",
+          "category": "left"
+        },
+        {
+          "text": "lo se dio",
+          "category": "right",
+          "explanation": "El orden está invertido."
+        },
+        {
+          "text": "la me pidió",
+          "category": "right"
+        },
+        {
+          "text": "lo te mandó",
+          "category": "right"
+        },
+        {
+          "text": "los nos trajo",
+          "category": "right"
+        },
+        {
+          "text": "la se entregó",
+          "category": "right"
+        }
+      ]
+    },
+    {
+      "type": "sentenceBuilder",
+      "sentences": [
+        {
+          "sentence": "El ingeniero se lo dio sin preguntar.",
+          "translation": "The engineer gave it to him without asking."
+        },
+        {
+          "sentence": "Ella me la pidió dos veces.",
+          "translation": "She asked me for it twice."
+        },
+        {
+          "sentence": "Se lo llevó cuando nadie miraba.",
+          "translation": "He took it when nobody was looking."
+        },
+        {
+          "sentence": "Nos los trajo a las tres de la mañana.",
+          "translation": "He brought them to us at three in the morning."
+        },
+        {
+          "sentence": "Yo se la devolví al día siguiente.",
+          "translation": "I returned it to him the next day."
+        }
+      ]
+    },
+    {
+      "type": "readingComp",
+      "passage": "Esa noche el estudio estaba lleno. Rogelio, el ingeniero, grabó la última toma a las dos. Cuando terminó, guardó el disco maestro en su caja. A las dos y media, alguien se lo pidió. Rogelio dijo que no. A las tres se lo pidió otra vez, y esta vez Rogelio se lo dio, porque estaba cansado y quería irse a casa. La persona le prometió que se lo devolvería por la mañana. Nunca se lo devolvió.",
+      "glossary": [
+        {
+          "word": "la toma",
+          "translation": "the take"
+        },
+        {
+          "word": "guardó",
+          "translation": "put away"
+        },
+        {
+          "word": "la caja",
+          "translation": "the case"
+        },
+        {
+          "word": "prometió",
+          "translation": "promised"
+        },
+        {
+          "word": "devolvería",
+          "translation": "would return"
+        },
+        {
+          "word": "cansado",
+          "translation": "tired"
+        }
+      ],
+      "questions": [
+        {
+          "id": "u25-r1",
+          "text": "¿Cuántas veces le pidieron el disco a Rogelio?",
+          "type": "multiple_choice",
+          "options": [
+            "Una",
+            "Dos",
+            "Tres",
+            "Ninguna"
+          ],
+          "correctIndex": 1,
+          "explanationEs": "Se lo pidió a las dos y media y otra vez a las tres.",
+          "explanationEn": "Twice."
+        },
+        {
+          "id": "u25-r2",
+          "text": "¿Por qué se lo dio la segunda vez?",
+          "type": "multiple_choice",
+          "options": [
+            "Le pagaron",
+            "Estaba cansado y quería irse",
+            "Se lo ordenaron",
+            "No era suyo"
+          ],
+          "correctIndex": 1,
+          "explanationEs": "«porque estaba cansado y quería irse a casa».",
+          "explanationEn": "He was tired and wanted to go home."
+        },
+        {
+          "id": "u25-r3",
+          "text": "¿Qué le prometió esa persona?",
+          "type": "multiple_choice",
+          "options": [
+            "Que se lo devolvería por la mañana",
+            "Que lo grabaría",
+            "Que no diría nada",
+            "Que pagaría"
+          ],
+          "correctIndex": 0,
+          "explanationEs": "«le prometió que se lo devolvería por la mañana».",
+          "explanationEn": "To return it in the morning."
+        },
+        {
+          "id": "u25-r4",
+          "text": "¿A qué hora grabó la última toma?",
+          "type": "multiple_choice",
+          "options": [
+            "A la una",
+            "A las dos",
+            "A las dos y media",
+            "A las tres"
+          ],
+          "correctIndex": 1,
+          "explanationEs": "«grabó la última toma a las dos».",
+          "explanationEn": "At two."
+        }
+      ]
+    },
+    {
+      "type": "listeningComp",
+      "audioUrl": "/audio/unit-25/testimonio-rogelio.mp3",
+      "transcript": "Mira, asere, yo estaba cansadísimo. Grabé la última toma a las dos y guardé el disco. A las dos y media vino y me lo pidió. Le dije que no. A las tres volvió y me lo pidió otra vez. Y se lo di. Se lo di porque quería irme a mi casa. Me prometió que me lo devolvía por la mañana. Nunca me lo devolvió. Y yo se lo conté a todo el mundo.",
+      "translation": "Look, my friend, I was exhausted. I recorded the last take at two and put the disc away. At two thirty he came and asked me for it. I said no. At three he came back and asked me for it again. And I gave it to him. I gave it to him because I wanted to go home. He promised me he would return it in the morning. He never returned it. And I told everyone about it.",
+      "retryHint": "Pista: cuenta las veces y escucha quién le da qué a quién.",
+      "passingScore": 0.6,
+      "maxReplays": 5,
+      "clueReward": "El cómplice se lo pidió dos veces al ingeniero y se lo llevó cuando nadie miraba.",
+      "questions": [
+        {
+          "question": "¿A qué hora grabó la última toma?",
+          "options": [
+            "A la una",
+            "A las dos",
+            "A las tres",
+            "A las cuatro"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "question": "¿Cuántas veces se lo pidieron?",
+          "options": [
+            "Una",
+            "Dos",
+            "Tres",
+            "Cuatro"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "question": "¿Por qué se lo dio al final?",
+          "options": [
+            "Le pagaron",
+            "Quería irse a su casa",
+            "Se lo ordenaron",
+            "Tenía miedo"
+          ],
+          "correctIndex": 1
+        },
+        {
+          "question": "¿Qué le prometió?",
+          "options": [
+            "Que se lo devolvía por la mañana",
+            "Que se lo pagaba",
+            "Que no decía nada",
+            "Nada"
+          ],
+          "correctIndex": 0
+        },
+        {
+          "question": "¿Se lo devolvió?",
+          "options": [
+            "Sí, al día siguiente",
+            "Sí, una semana después",
+            "No, nunca",
+            "No lo sabe"
+          ],
+          "correctIndex": 2
+        }
+      ]
+    },
+    {
+      "type": "dialogueChoice",
+      "npcName": "Rogelio Prats, ingeniero de sonido",
+      "npcAvatar": "/images/characters/unit-15-cronista.webp",
+      "clueReward": "Rogelio identificó la voz: fue alguien que trabajaba dentro del estudio.",
+      "startNodeId": "n1",
+      "nodes": [
+        {
+          "id": "n1",
+          "npcLine": "Asere, ya conté esto veinte veces. Pero bueno, pregunte.",
+          "options": [
+            {
+              "text": "¿Quién se lo pidió?",
+              "isCorrect": true,
+              "feedback": "Correcto: se + lo.",
+              "nextNodeId": "n2"
+            },
+            {
+              "text": "¿Quién lo se pidió?",
+              "isCorrect": false,
+              "feedback": "El orden va al revés: primero la persona."
+            },
+            {
+              "text": "¿Quién pidió lo?",
+              "isCorrect": false,
+              "feedback": "Faltan los pronombres juntos."
+            }
+          ]
+        },
+        {
+          "id": "n2",
+          "npcLine": "Una persona del estudio. La conocía de vista, pero no de nombre.",
+          "options": [
+            {
+              "text": "¿Y usted se lo dio?",
+              "isCorrect": true,
+              "feedback": "Bien.",
+              "nextNodeId": "n3"
+            },
+            {
+              "text": "¿Y usted lo se dio?",
+              "isCorrect": false,
+              "feedback": "Orden invertido."
+            },
+            {
+              "text": "¿Y usted dio?",
+              "isCorrect": false,
+              "feedback": "Usa los dos pronombres."
+            }
+          ]
+        },
+        {
+          "id": "n3",
+          "npcLine": "Se lo di a las tres. Estaba cansado y quería irme. Fue un error, ya lo sé.",
+          "options": [
+            {
+              "text": "¿Se lo devolvió alguna vez?",
+              "isCorrect": true,
+              "feedback": "Buena pregunta.",
+              "nextNodeId": "n4"
+            },
+            {
+              "text": "¿Lo se devolvió?",
+              "isCorrect": false,
+              "feedback": "Orden invertido otra vez."
+            },
+            {
+              "text": "¿Devolvió lo?",
+              "isCorrect": false,
+              "feedback": "Los dos pronombres, juntos y en orden."
+            }
+          ]
+        },
+        {
+          "id": "n4",
+          "npcLine": "Nunca. Y le digo una cosa: hablaba como nosotros. Era de aquí. De dentro del estudio.",
+          "isEnd": true,
+          "endMessage": "El cómplice trabajaba dentro del estudio y Rogelio lo conocía de vista."
+        }
+      ]
+    },
+    {
+      "type": "lineup",
+      "correctSuspectId": "s25-b",
+      "hint": "Trabajaba dentro del estudio, se lo pidió dos veces y prometió devolverlo por la mañana.",
+      "suspects": [
+        {
+          "id": "s25-a",
+          "name": "El Trompetista",
+          "realName": "Cheo Valdés",
+          "age": 36,
+          "description": "Tocó en la sesión y se fue a la una y media, antes de la última toma. Rogelio lo vio salir.",
+          "imageSeed": 21,
+          "imageUrl": "/images/characters/unit-25-s25-a.webp"
+        },
+        {
+          "id": "s25-b",
+          "name": "La Ayudante",
+          "realName": "Nilda Cruz",
+          "age": 29,
+          "description": "Trabajaba en el estudio y conocía la caja del disco. Se lo pidió a Rogelio a las dos y media y otra vez a las tres.",
+          "imageSeed": 44,
+          "imageUrl": "/images/characters/unit-25-s25-b.webp"
+        },
+        {
+          "id": "s25-c",
+          "name": "El Portero",
+          "realName": "Ismael Font",
+          "age": 58,
+          "description": "Estuvo en la puerta toda la noche y nunca subió a la sala de control. No conocía la caja.",
+          "imageSeed": 14,
+          "imageUrl": "/images/characters/unit-25-s25-c.webp"
+        },
+        {
+          "id": "s25-d",
+          "name": "El Cantante",
+          "realName": "Bebo Lara",
+          "age": 33,
+          "description": "Cantó la última toma y se fue directo a casa. Nunca entró en la sala de control esa noche.",
+          "imageSeed": 8,
+          "imageUrl": "/images/characters/unit-25-s25-d.webp"
+        }
+      ]
+    }
+  ]
+}
