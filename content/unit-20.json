@@ -221,7 +221,7 @@
   "stages": [
     {
       "type": "cutscene",
-      "videoUrl": "",
+      "videoUrl": "/videos/unit-20-intro.mp4",
       "chiefName": "Jefa Ramírez",
       "chiefImageSeed": 60,
       "chiefImageUrl": "/images/characters/chief-ramirez.webp",

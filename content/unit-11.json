@@ -263,8 +263,7 @@
   "stages": [
     {
       "type": "cutscene",
-      "videoUrl": "",
-      "subtitleUrl": "",
+      "videoUrl": "/videos/unit-11-intro.mp4",
       "chiefName": "Jefa Ramírez",
       "chiefImageSeed": 60,
       "briefingLines": [
@@ -284,7 +283,6 @@
     {
       "type": "cutscene",
       "videoUrl": "",
-      "subtitleUrl": "",
       "chiefName": "Jefa Ramírez",
       "chiefImageSeed": 60,
       "briefingLines": [

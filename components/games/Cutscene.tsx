@@ -143,7 +143,12 @@ export default function Cutscene({
         <div className="absolute inset-0 flex flex-col items-center justify-center gap-6 bg-[#0d0b0a]">
           <div className="border border-[rgba(201,147,58,0.2)] bg-[#1a1614] px-8 py-5 text-center max-w-sm">
             <p className="font-typewriter text-[10px] tracking-[0.35em] uppercase text-[#8b7355] mb-2">Mensaje Entrante</p>
-            <p className="font-display font-bold text-lg text-[#f5e6c8]">Jefe {chiefName ?? "Ramírez"}</p>
+            {/*
+              chiefName already carries the title. Prefixing "Jefe" here printed
+              "Jefe Jefa Ramírez" on all 31 cutscenes, which is both a doubled
+              title and the wrong gender for her, in a Spanish class.
+            */}
+            <p className="font-display font-bold text-lg text-[#f5e6c8]">{chiefName ?? "Jefa Ramírez"}</p>
             <p className="font-typewriter text-xs text-[#8b7355] mt-1">Video · {subtitleUrl ? "Subtítulos disponibles" : "Sin subtítulos"}</p>
           </div>
           <button onClick={handlePlay} className="w-20 h-20 rounded-full border-4 border-[#c9933a] bg-[rgba(201,147,58,0.1)] hover:bg-[rgba(201,147,58,0.2)] flex items-center justify-center text-4xl transition-all hover:scale-105">
@@ -224,7 +229,7 @@ function FallbackBriefing({ chiefName, chiefImageUrl, briefingLines, fallbackIma
         <div className="flex items-center justify-between mb-5">
           <div>
             <p className="font-typewriter text-[10px] tracking-[0.4em] uppercase text-[#8b7355]">La Liga Sombra · Archivo Confidencial</p>
-            <h1 className="font-display font-black text-2xl text-[#f5e6c8]">Briefing del Jefe</h1>
+            <h1 className="font-display font-black text-2xl text-[#f5e6c8]">Briefing de {chiefName ?? "la Jefa Ramírez"}</h1>
           </div>
           <div className="border-4 border-[#c0392b] px-3 py-1 opacity-90" style={{ transform: "rotate(-4deg)" }}>
             <span className="font-display font-black text-[#c0392b] text-sm tracking-[0.3em] uppercase">Clasificado</span>
@@ -236,7 +241,7 @@ function FallbackBriefing({ chiefName, chiefImageUrl, briefingLines, fallbackIma
             <CharacterPortrait
               characterId="chief-ramirez"
               imageUrl={chiefImageUrl ?? (fallbackImage ?? undefined)}
-              altText={chiefName ?? "Jefe"}
+              altText={chiefName ?? "Jefa Ramírez"}
               size="small"
               grayscale={!!fallbackImage}
               name={chiefName ?? undefined}
