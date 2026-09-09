@@ -129,7 +129,44 @@ endings. Build it on the existing `swipeSort` shell if possible.
 
 ---
 
-## 6. Asset reserve — MUST be generated before the subscriptions lapse
+## 6. Asset reserve — BOUGHT AND BANKED (2026-09-08) ✅
+
+Everything Chapter 3 needs from a paid service now exists on disk. **Both subscriptions can be
+cancelled.** Authoring the six casos from here needs no API at all.
+
+**Audio — 170 clips, all decode-verified (0.79s–1.49s).**
+139 newly generated for 1,052 billable characters; the other 31 terms already had clips and
+were pointed at the existing paths rather than regenerated. The word lists live in
+`content/_chapter-3-vocab.json` (underscore prefix = the project's existing "not a unit"
+convention, so the prebuild validators skip it). `scripts/generate-audio/vocab.ts` gained a
+`--manifest` flag for exactly this: buying clips for casos that are not authored yet, without
+putting an incomplete `unit-NN.json` into `content/` and failing the build.
+
+**Video — 8 clips, 5.04s each, H.264 crf 26, silent, 1280×720**, matching the 30 already shipped:
+
+| File | Shot |
+|---|---|
+| `unit-21-intro.mp4` | Guadalajara: the recovered guitar back behind glass, a guard's chair pulled up to it |
+| `unit-22-intro.mp4` | The Prado: the painting rehung, a velvet rope and an empty stool in front |
+| `unit-23-intro.mp4` | Cusco: survey string lines and numbered pegs across the Inca wall |
+| `unit-24-intro.mp4` | Viña del Mar the morning after: empty amphitheatre, one spotlight on nothing |
+| `unit-25-intro.mp4` | Havana: the master disc back on the lathe under a dust cover, ledger beside it |
+| `unit-26-intro.mp4` | Malabo, Bioko at dawn: the waterfront, boats on black sand, the peak in cloud |
+| `chapter-3-vault.mp4` | El Cronista's archive: a circular vault of drawers and disagreeing clocks |
+| `chapter-3-interrogation.mp4` | The agency interrogation room: two chairs, one lamp, one closed file |
+
+The reopened-case intros deliberately show each location **after** the recovery rather than
+reusing the original footage — same place, colder, with the evidence of an investigation in it.
+
+**Art — El Cronista canonised.** Casos 11–15 regenerated from the Caso 17 portrait as an
+explicit image reference, so all ten are now one man: same face, era-appropriate clothing.
+Brief written into `content/characters/recurring.json` as `el-cronista`.
+
+**Total spend:** 1,052 ElevenLabs characters and roughly 100 Higgsfield credits.
+
+---
+
+## 6b. Original plan (kept for the record)
 
 Nothing here may depend on post-cancellation generation. The build order is therefore:
 

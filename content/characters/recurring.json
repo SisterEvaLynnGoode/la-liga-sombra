@@ -8,9 +8,15 @@
     "skinTone": "trigueña",
     "build": "mediano, porte autoritario, hombros anchos",
     "hair": "cabello negro con canas en las sienes, corto y formal",
-    "distinctiveFeatures": ["mandíbula marcada", "mirada firme y directa", "insignia de la agencia en la solapa"],
+    "distinctiveFeatures": [
+      "mandíbula marcada",
+      "mirada firme y directa",
+      "insignia de la agencia en la solapa"
+    ],
     "clothing": "traje oscuro formal, camisa blanca con corbata burdeos, insignia de La Liga Sombra",
-    "accessories": ["insignia plateada de la agencia"],
+    "accessories": [
+      "insignia plateada de la agencia"
+    ],
     "expression": "expresión seria y autoritaria, confianza en sí mismo",
     "pose": "retrato de busto, postura erguida, tres cuartos de perfil",
     "spanishDescription": "El Jefe Ramírez dirige La Liga Sombra. Es serio, experimentado y siempre está alerta. Confía en ti, agente.",
@@ -27,9 +33,17 @@
     "skinTone": "blanca",
     "build": "alto y delgado, presencia imponente",
     "hair": "cabello blanco, perfectamente peinado hacia atrás",
-    "distinctiveFeatures": ["guantes blancos de cuero", "monóculo dorado en el ojo derecho", "cicatriz fina en la mejilla izquierda"],
+    "distinctiveFeatures": [
+      "guantes blancos de cuero",
+      "monóculo dorado en el ojo derecho",
+      "cicatriz fina en la mejilla izquierda"
+    ],
     "clothing": "traje a medida en color gris carbón, camisa blanca, pañuelo de seda en el bolsillo",
-    "accessories": ["monóculo dorado", "guantes blancos de cuero", "bastón con cabeza de águila plateada"],
+    "accessories": [
+      "monóculo dorado",
+      "guantes blancos de cuero",
+      "bastón con cabeza de águila plateada"
+    ],
     "expression": "sonrisa fría y calculadora, mirada que evalúa todo",
     "pose": "retrato de busto, ligeramente ladeado, aire misterioso",
     "spanishDescription": "El Coleccionista es el villano principal. Nadie sabe su identidad real. Colecciona artefactos históricos de toda América Latina por medios ilegales.",
@@ -46,9 +60,15 @@
     "skinTone": "morena",
     "build": "mediano, delgado, movimientos cuidadosos",
     "hair": "cabello oscuro, algo largo, descuidado",
-    "distinctiveFeatures": ["ojeras pronunciadas", "manos nerviosas que siempre están en movimiento", "aspecto de cansancio crónico"],
+    "distinctiveFeatures": [
+      "ojeras pronunciadas",
+      "manos nerviosas que siempre están en movimiento",
+      "aspecto de cansancio crónico"
+    ],
     "clothing": "chaqueta de lino oscuro arrugada, camisa abierta al cuello",
-    "accessories": ["teléfono celular siempre en mano"],
+    "accessories": [
+      "teléfono celular siempre en mano"
+    ],
     "expression": "expresión tensa y alerta, como alguien que siempre está escondiendo algo",
     "pose": "retrato de busto, ligeramente inclinado hacia adelante",
     "spanishDescription": "El Tejedor es el lugarteniente de El Coleccionista. Coordina operaciones en Buenos Aires. Está enfermo del corazón pero sigue trabajando.",
@@ -67,7 +87,10 @@
     "skinTone": "morena",
     "build": "alto y delgado, ágil",
     "hair": "cabello rizado oscuro, voluminoso",
-    "distinctiveFeatures": ["cabello rizado muy característico", "siempre parece saber exactamente adónde va"],
+    "distinctiveFeatures": [
+      "cabello rizado muy característico",
+      "siempre parece saber exactamente adónde va"
+    ],
     "clothing": "ropa informal pero cuidada, camiseta oscura",
     "accessories": [],
     "expression": "expresión segura de sí mismo, inteligente",
@@ -76,5 +99,32 @@
     "country": "República Dominicana",
     "currentImageUrl": "https://randomuser.me/api/portraits/men/22.jpg",
     "notes": "Appears as a lineup suspect in the Unit 5 boss fight. The curly dark hair is the key identifying feature."
+  },
+  {
+    "id": "el-cronista",
+    "role": "recurring",
+    "name": "El Cronista",
+    "realName": "desconocido",
+    "age": 42,
+    "gender": "hombre",
+    "skinTone": "muy pálida",
+    "build": "alto y delgado, de hombros estrechos",
+    "hair": "cabello negro peinado hacia atrás con raya alta, entradas marcadas en las sienes",
+    "distinctiveFeatures": [
+      "bigote negro fino y muy recortado",
+      "pómulos altos y mejillas hundidas",
+      "cejas oscuras y espesas sobre ojos hundidos",
+      "mirada de reojo, vigilante, nunca sorprendida",
+      "manos pálidas y limpias, sin callos ni marcas de trabajo"
+    ],
+    "clothing": "la ropa de la época que visita, siempre demasiado nueva y demasiado limpia para el lugar",
+    "accessories": [
+      "un reloj que no hace ningún ruido"
+    ],
+    "expression": "observa de reojo, tranquilo, como quien ya sabe cómo termina todo",
+    "pose": "retrato de busto, tres cuartos de perfil, mirando de reojo hacia el espectador",
+    "spanishDescription": "Es un hombre alto y delgado. Tiene el pelo negro peinado hacia atrás y un bigote fino. Es muy pálido. Sus manos siempre están limpias. Nunca hace ruido cuando camina. Lleva ropa de la época, pero siempre está demasiado nueva.",
+    "country": "ninguno — viaja por el tiempo",
+    "_canonNote": "THE FACE IS CONSTANT; ONLY THE CLOTHING CHANGES BY ERA. He appeared in Casos 11-20 under a different alias each time (El Forastero Pálido, El Falso Astrónomo, ...) and was drawn as ten different men, five of them unrelated across Casos 11-15. Canon fixed 2026-09-08 from the Caso 17 portrait, which the 16-20 set already agreed on. Students identify him by behaviour (clean hands, silent step, no foot tapping to the clave) AND, from Chapter 3 on, by this face."
   }
 ]

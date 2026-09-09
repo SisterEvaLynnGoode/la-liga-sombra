@@ -58,15 +58,39 @@ interface Job { audio: string; spanish: string; unit: string }
 
 const jobs: Job[] = [];
 const seen = new Set<string>();
+
+function take(vocab: Array<{ spanish: string; audio?: string }> | undefined, unit: string) {
+  for (const v of vocab ?? []) {
+    if (!v.audio || seen.has(v.audio)) continue;
+    seen.add(v.audio);
+    jobs.push({ audio: v.audio, spanish: v.spanish, unit });
+  }
+}
+
 for (const file of readdirSync("content").filter((f) => /^unit-.*\.json$/.test(f)).sort()) {
   const d = JSON.parse(readFileSync(join("content", file), "utf-8")) as {
     vocab?: Array<{ spanish: string; audio?: string }>;
   };
-  for (const v of d.vocab ?? []) {
-    if (!v.audio || seen.has(v.audio)) continue;
-    seen.add(v.audio);
-    jobs.push({ audio: v.audio, spanish: v.spanish, unit: file });
+  take(d.vocab, file);
+}
+
+// A vocabulary manifest can supply work for casos that are not authored yet.
+// Chapter 3 needed this: the ElevenLabs subscription is being cancelled, so the
+// clips had to be bought before the casos could be written, and an unfinished
+// unit-NN.json in content/ would fail the prebuild validators.
+//
+//   npx tsx scripts/generate-audio/vocab.ts --manifest content/_chapter-3-vocab.json
+const manifestAt = args.indexOf("--manifest");
+if (manifestAt >= 0) {
+  const mPath = args[manifestAt + 1];
+  if (!mPath || !existsSync(mPath)) {
+    console.error(`--manifest needs a path to an existing file (got ${mPath ?? "nothing"})`);
+    process.exit(1);
   }
+  const m = JSON.parse(readFileSync(mPath, "utf-8")) as {
+    casos?: Array<{ unitNumber: number; vocab?: Array<{ spanish: string; audio?: string }> }>;
+  };
+  for (const c of m.casos ?? []) take(c.vocab, `${mPath}#${c.unitNumber}`);
 }
 
 const pending = jobs.filter((j) => !existsSync(join(ROOT, "public", j.audio.replace(/^\//, ""))));

@@ -1,0 +1,897 @@
+{
+  "_comment": "Chapter 3 vocabulary manifest. Audio-reserve source so clips can be bought before the ElevenLabs subscription lapses; the casos themselves are authored later with no API needed.",
+  "casos": [
+    {
+      "unitNumber": 21,
+      "grammarFocus": "Pretérito regular",
+      "reopened": "Caso I · México, Guadalajara",
+      "vocab": [
+        {
+          "spanish": "llegué",
+          "english": "I arrived",
+          "audio": "/audio/unit-21/llegue.mp3"
+        },
+        {
+          "spanish": "llegó",
+          "english": "he/she arrived",
+          "audio": "/audio/unit-19/llego.mp3"
+        },
+        {
+          "spanish": "llegaron",
+          "english": "they arrived",
+          "audio": "/audio/unit-21/llegaron.mp3"
+        },
+        {
+          "spanish": "tomé",
+          "english": "I took",
+          "audio": "/audio/unit-21/tome.mp3"
+        },
+        {
+          "spanish": "tomó",
+          "english": "he/she took",
+          "audio": "/audio/unit-21/tomo.mp3"
+        },
+        {
+          "spanish": "tomaron",
+          "english": "they took",
+          "audio": "/audio/unit-21/tomaron.mp3"
+        },
+        {
+          "spanish": "hablé",
+          "english": "I spoke",
+          "audio": "/audio/unit-21/hable.mp3"
+        },
+        {
+          "spanish": "habló",
+          "english": "he/she spoke",
+          "audio": "/audio/unit-19/hablo.mp3"
+        },
+        {
+          "spanish": "hablaron",
+          "english": "they spoke",
+          "audio": "/audio/unit-21/hablaron.mp3"
+        },
+        {
+          "spanish": "entró",
+          "english": "he/she entered",
+          "audio": "/audio/unit-20/entro.mp3"
+        },
+        {
+          "spanish": "salió",
+          "english": "he/she left",
+          "audio": "/audio/unit-19/salio.mp3"
+        },
+        {
+          "spanish": "escuchó",
+          "english": "he/she listened",
+          "audio": "/audio/unit-21/escucho.mp3"
+        },
+        {
+          "spanish": "miró",
+          "english": "he/she looked",
+          "audio": "/audio/unit-21/miro.mp3"
+        },
+        {
+          "spanish": "compró",
+          "english": "he/she bought",
+          "audio": "/audio/unit-21/compro.mp3"
+        },
+        {
+          "spanish": "trabajó",
+          "english": "he/she worked",
+          "audio": "/audio/unit-21/trabajo.mp3"
+        },
+        {
+          "spanish": "cantó",
+          "english": "he/she sang",
+          "audio": "/audio/unit-21/canto.mp3"
+        },
+        {
+          "spanish": "tocó",
+          "english": "he/she played (an instrument)",
+          "audio": "/audio/unit-21/toco.mp3"
+        },
+        {
+          "spanish": "comió",
+          "english": "he/she ate",
+          "audio": "/audio/unit-21/comio.mp3"
+        },
+        {
+          "spanish": "bebió",
+          "english": "he/she drank",
+          "audio": "/audio/unit-21/bebio.mp3"
+        },
+        {
+          "spanish": "volvió",
+          "english": "he/she returned",
+          "audio": "/audio/unit-19/volvio.mp3"
+        },
+        {
+          "spanish": "aprendió",
+          "english": "he/she learned",
+          "audio": "/audio/unit-21/aprendio.mp3"
+        },
+        {
+          "spanish": "corrió",
+          "english": "he/she ran",
+          "audio": "/audio/unit-21/corrio.mp3"
+        },
+        {
+          "spanish": "escribió",
+          "english": "he/she wrote",
+          "audio": "/audio/unit-21/escribio.mp3"
+        },
+        {
+          "spanish": "abrió",
+          "english": "he/she opened",
+          "audio": "/audio/unit-21/abrio.mp3"
+        },
+        {
+          "spanish": "vivió",
+          "english": "he/she lived",
+          "audio": "/audio/unit-21/vivio.mp3"
+        },
+        {
+          "spanish": "recibió",
+          "english": "he/she received",
+          "audio": "/audio/unit-21/recibio.mp3"
+        },
+        {
+          "spanish": "subió",
+          "english": "he/she went up",
+          "audio": "/audio/unit-21/subio.mp3"
+        },
+        {
+          "spanish": "decidió",
+          "english": "he/she decided",
+          "audio": "/audio/unit-21/decidio.mp3"
+        },
+        {
+          "spanish": "ayer",
+          "english": "yesterday",
+          "audio": "/audio/unit-19/ayer.mp3"
+        },
+        {
+          "spanish": "anoche",
+          "english": "last night",
+          "audio": "/audio/unit-19/anoche.mp3"
+        },
+        {
+          "spanish": "la semana pasada",
+          "english": "last week",
+          "audio": "/audio/unit-21/la-semana-pasada.mp3"
+        },
+        {
+          "spanish": "primero",
+          "english": "first",
+          "audio": "/audio/unit-18/primero.mp3"
+        },
+        {
+          "spanish": "después",
+          "english": "afterwards",
+          "audio": "/audio/unit-21/despues.mp3"
+        },
+        {
+          "spanish": "por fin",
+          "english": "finally",
+          "audio": "/audio/unit-21/por-fin.mp3"
+        }
+      ]
+    },
+    {
+      "unitNumber": 22,
+      "grammarFocus": "Pretérito irregular",
+      "reopened": "Caso III · España, Museo del Prado",
+      "vocab": [
+        {
+          "spanish": "fui",
+          "english": "I went / I was",
+          "audio": "/audio/unit-22/fui.mp3"
+        },
+        {
+          "spanish": "fue",
+          "english": "he/she went / was",
+          "audio": "/audio/unit-19/fue.mp3"
+        },
+        {
+          "spanish": "fueron",
+          "english": "they went / were",
+          "audio": "/audio/unit-22/fueron.mp3"
+        },
+        {
+          "spanish": "hice",
+          "english": "I did / made",
+          "audio": "/audio/unit-22/hice.mp3"
+        },
+        {
+          "spanish": "hizo",
+          "english": "he/she did / made",
+          "audio": "/audio/unit-19/hizo.mp3"
+        },
+        {
+          "spanish": "hicieron",
+          "english": "they did / made",
+          "audio": "/audio/unit-22/hicieron.mp3"
+        },
+        {
+          "spanish": "tuve",
+          "english": "I had",
+          "audio": "/audio/unit-22/tuve.mp3"
+        },
+        {
+          "spanish": "tuvo",
+          "english": "he/she had",
+          "audio": "/audio/unit-19/tuvo.mp3"
+        },
+        {
+          "spanish": "tuvieron",
+          "english": "they had",
+          "audio": "/audio/unit-22/tuvieron.mp3"
+        },
+        {
+          "spanish": "dije",
+          "english": "I said",
+          "audio": "/audio/unit-22/dije.mp3"
+        },
+        {
+          "spanish": "dijo",
+          "english": "he/she said",
+          "audio": "/audio/unit-19/dijo.mp3"
+        },
+        {
+          "spanish": "dijeron",
+          "english": "they said",
+          "audio": "/audio/unit-22/dijeron.mp3"
+        },
+        {
+          "spanish": "vine",
+          "english": "I came",
+          "audio": "/audio/unit-22/vine.mp3"
+        },
+        {
+          "spanish": "vino",
+          "english": "he/she came",
+          "audio": "/audio/unit-22/vino.mp3"
+        },
+        {
+          "spanish": "vinieron",
+          "english": "they came",
+          "audio": "/audio/unit-22/vinieron.mp3"
+        },
+        {
+          "spanish": "puse",
+          "english": "I put",
+          "audio": "/audio/unit-22/puse.mp3"
+        },
+        {
+          "spanish": "puso",
+          "english": "he/she put",
+          "audio": "/audio/unit-22/puso.mp3"
+        },
+        {
+          "spanish": "pusieron",
+          "english": "they put",
+          "audio": "/audio/unit-22/pusieron.mp3"
+        },
+        {
+          "spanish": "estuve",
+          "english": "I was (location)",
+          "audio": "/audio/unit-22/estuve.mp3"
+        },
+        {
+          "spanish": "estuvo",
+          "english": "he/she was (location)",
+          "audio": "/audio/unit-19/estuvo.mp3"
+        },
+        {
+          "spanish": "pude",
+          "english": "I could",
+          "audio": "/audio/unit-22/pude.mp3"
+        },
+        {
+          "spanish": "pudo",
+          "english": "he/she could",
+          "audio": "/audio/unit-22/pudo.mp3"
+        },
+        {
+          "spanish": "quiso",
+          "english": "he/she wanted",
+          "audio": "/audio/unit-22/quiso.mp3"
+        },
+        {
+          "spanish": "supo",
+          "english": "he/she found out",
+          "audio": "/audio/unit-22/supo.mp3"
+        },
+        {
+          "spanish": "trajo",
+          "english": "he/she brought",
+          "audio": "/audio/unit-22/trajo.mp3"
+        },
+        {
+          "spanish": "dio",
+          "english": "he/she gave",
+          "audio": "/audio/unit-22/dio.mp3"
+        },
+        {
+          "spanish": "vio",
+          "english": "he/she saw",
+          "audio": "/audio/unit-19/vio.mp3"
+        },
+        {
+          "spanish": "anduvo",
+          "english": "he/she walked around",
+          "audio": "/audio/unit-22/anduvo.mp3"
+        },
+        {
+          "spanish": "el guardia",
+          "english": "the guard",
+          "audio": "/audio/unit-22/el-guardia.mp3"
+        },
+        {
+          "spanish": "el marco",
+          "english": "the frame",
+          "audio": "/audio/unit-22/el-marco.mp3"
+        },
+        {
+          "spanish": "la sala",
+          "english": "the room / gallery",
+          "audio": "/audio/unit-22/la-sala.mp3"
+        }
+      ]
+    },
+    {
+      "unitNumber": 23,
+      "grammarFocus": "Imperfecto",
+      "reopened": "Caso VIII · Perú, Cusco",
+      "vocab": [
+        {
+          "spanish": "era",
+          "english": "he/she/it was (description)",
+          "audio": "/audio/unit-20/era.mp3"
+        },
+        {
+          "spanish": "eran",
+          "english": "they were",
+          "audio": "/audio/unit-23/eran.mp3"
+        },
+        {
+          "spanish": "estaba",
+          "english": "he/she/it was (location/state)",
+          "audio": "/audio/unit-20/estaba.mp3"
+        },
+        {
+          "spanish": "estaban",
+          "english": "they were",
+          "audio": "/audio/unit-23/estaban.mp3"
+        },
+        {
+          "spanish": "había",
+          "english": "there was / there were",
+          "audio": "/audio/unit-20/habia.mp3"
+        },
+        {
+          "spanish": "tenía",
+          "english": "he/she had",
+          "audio": "/audio/unit-20/tenia.mp3"
+        },
+        {
+          "spanish": "tenían",
+          "english": "they had",
+          "audio": "/audio/unit-23/tenian.mp3"
+        },
+        {
+          "spanish": "iba",
+          "english": "he/she was going / used to go",
+          "audio": "/audio/unit-23/iba.mp3"
+        },
+        {
+          "spanish": "iban",
+          "english": "they used to go",
+          "audio": "/audio/unit-23/iban.mp3"
+        },
+        {
+          "spanish": "veía",
+          "english": "he/she saw / used to see",
+          "audio": "/audio/unit-20/veia.mp3"
+        },
+        {
+          "spanish": "hacía",
+          "english": "it was (weather) / used to do",
+          "audio": "/audio/unit-23/hacia.mp3"
+        },
+        {
+          "spanish": "llovía",
+          "english": "it was raining",
+          "audio": "/audio/unit-23/llovia.mp3"
+        },
+        {
+          "spanish": "vivía",
+          "english": "he/she used to live",
+          "audio": "/audio/unit-20/vivia.mp3"
+        },
+        {
+          "spanish": "trabajaba",
+          "english": "he/she used to work",
+          "audio": "/audio/unit-23/trabajaba.mp3"
+        },
+        {
+          "spanish": "hablaba",
+          "english": "he/she used to speak",
+          "audio": "/audio/unit-23/hablaba.mp3"
+        },
+        {
+          "spanish": "comía",
+          "english": "he/she used to eat",
+          "audio": "/audio/unit-23/comia.mp3"
+        },
+        {
+          "spanish": "sabía",
+          "english": "he/she knew",
+          "audio": "/audio/unit-23/sabia.mp3"
+        },
+        {
+          "spanish": "conocía",
+          "english": "he/she knew (a person/place)",
+          "audio": "/audio/unit-23/conocia.mp3"
+        },
+        {
+          "spanish": "quería",
+          "english": "he/she wanted",
+          "audio": "/audio/unit-23/queria.mp3"
+        },
+        {
+          "spanish": "podía",
+          "english": "he/she could",
+          "audio": "/audio/unit-23/podia.mp3"
+        },
+        {
+          "spanish": "llevaba",
+          "english": "he/she was wearing / carrying",
+          "audio": "/audio/unit-23/llevaba.mp3"
+        },
+        {
+          "spanish": "usaba",
+          "english": "he/she used to use",
+          "audio": "/audio/unit-23/usaba.mp3"
+        },
+        {
+          "spanish": "siempre",
+          "english": "always",
+          "audio": "/audio/unit-11/siempre.mp3"
+        },
+        {
+          "spanish": "cada día",
+          "english": "every day",
+          "audio": "/audio/unit-23/cada-dia.mp3"
+        },
+        {
+          "spanish": "todos los días",
+          "english": "every day",
+          "audio": "/audio/unit-23/todos-los-dias.mp3"
+        },
+        {
+          "spanish": "a menudo",
+          "english": "often",
+          "audio": "/audio/unit-23/a-menudo.mp3"
+        },
+        {
+          "spanish": "normalmente",
+          "english": "normally",
+          "audio": "/audio/unit-23/normalmente.mp3"
+        },
+        {
+          "spanish": "en aquella época",
+          "english": "in that era",
+          "audio": "/audio/unit-23/en-aquella-epoca.mp3"
+        },
+        {
+          "spanish": "de niño",
+          "english": "as a boy",
+          "audio": "/audio/unit-23/de-nino.mp3"
+        },
+        {
+          "spanish": "de niña",
+          "english": "as a girl",
+          "audio": "/audio/unit-23/de-nina.mp3"
+        }
+      ]
+    },
+    {
+      "unitNumber": 24,
+      "grammarFocus": "Pretérito vs. imperfecto I",
+      "reopened": "Caso VII · Chile, Viña del Mar",
+      "vocab": [
+        {
+          "spanish": "mientras",
+          "english": "while",
+          "audio": "/audio/unit-24/mientras.mp3"
+        },
+        {
+          "spanish": "de repente",
+          "english": "suddenly",
+          "audio": "/audio/unit-20/de-repente.mp3"
+        },
+        {
+          "spanish": "de pronto",
+          "english": "all at once",
+          "audio": "/audio/unit-24/de-pronto.mp3"
+        },
+        {
+          "spanish": "cuando",
+          "english": "when",
+          "audio": "/audio/unit-24/cuando.mp3"
+        },
+        {
+          "spanish": "entonces",
+          "english": "then",
+          "audio": "/audio/unit-24/entonces.mp3"
+        },
+        {
+          "spanish": "mientras tanto",
+          "english": "meanwhile",
+          "audio": "/audio/unit-24/mientras-tanto.mp3"
+        },
+        {
+          "spanish": "empezó",
+          "english": "it began",
+          "audio": "/audio/unit-24/empezo.mp3"
+        },
+        {
+          "spanish": "terminó",
+          "english": "it ended",
+          "audio": "/audio/unit-24/termino.mp3"
+        },
+        {
+          "spanish": "apareció",
+          "english": "he/she appeared",
+          "audio": "/audio/unit-24/aparecio.mp3"
+        },
+        {
+          "spanish": "desapareció",
+          "english": "he/she disappeared",
+          "audio": "/audio/unit-24/desaparecio.mp3"
+        },
+        {
+          "spanish": "interrumpió",
+          "english": "he/she interrupted",
+          "audio": "/audio/unit-24/interrumpio.mp3"
+        },
+        {
+          "spanish": "gritó",
+          "english": "he/she shouted",
+          "audio": "/audio/unit-24/grito.mp3"
+        },
+        {
+          "spanish": "se fue",
+          "english": "he/she left",
+          "audio": "/audio/unit-20/se-fue.mp3"
+        },
+        {
+          "spanish": "se cayó",
+          "english": "he/she fell",
+          "audio": "/audio/unit-24/se-cayo.mp3"
+        },
+        {
+          "spanish": "estaba cantando",
+          "english": "he/she was singing",
+          "audio": "/audio/unit-24/estaba-cantando.mp3"
+        },
+        {
+          "spanish": "estaba mirando",
+          "english": "he/she was watching",
+          "audio": "/audio/unit-24/estaba-mirando.mp3"
+        },
+        {
+          "spanish": "estaba esperando",
+          "english": "he/she was waiting",
+          "audio": "/audio/unit-24/estaba-esperando.mp3"
+        },
+        {
+          "spanish": "estaba hablando",
+          "english": "he/she was talking",
+          "audio": "/audio/unit-24/estaba-hablando.mp3"
+        },
+        {
+          "spanish": "el escenario",
+          "english": "the stage",
+          "audio": "/audio/unit-24/el-escenario.mp3"
+        },
+        {
+          "spanish": "el público",
+          "english": "the audience",
+          "audio": "/audio/unit-24/el-publico.mp3"
+        },
+        {
+          "spanish": "la entrada",
+          "english": "the entrance",
+          "audio": "/audio/unit-24/la-entrada.mp3"
+        },
+        {
+          "spanish": "de pronto todo cambió",
+          "english": "suddenly everything changed",
+          "audio": "/audio/unit-24/de-pronto-todo-cambio.mp3"
+        },
+        {
+          "spanish": "no se dio cuenta",
+          "english": "he/she didn't notice",
+          "audio": "/audio/unit-24/no-se-dio-cuenta.mp3"
+        },
+        {
+          "spanish": "se dio cuenta",
+          "english": "he/she realised",
+          "audio": "/audio/unit-24/se-dio-cuenta.mp3"
+        }
+      ]
+    },
+    {
+      "unitNumber": 25,
+      "grammarFocus": "Pretérito vs. imperfecto II · pronombres dobles",
+      "reopened": "Caso XV · Cuba, La Habana",
+      "vocab": [
+        {
+          "spanish": "se lo dio",
+          "english": "he/she gave it to him/her",
+          "audio": "/audio/unit-25/se-lo-dio.mp3"
+        },
+        {
+          "spanish": "se la pidió",
+          "english": "he/she asked her for it",
+          "audio": "/audio/unit-25/se-la-pidio.mp3"
+        },
+        {
+          "spanish": "me lo dio",
+          "english": "he/she gave it to me",
+          "audio": "/audio/unit-25/me-lo-dio.mp3"
+        },
+        {
+          "spanish": "te la mandó",
+          "english": "he/she sent it to you",
+          "audio": "/audio/unit-25/te-la-mando.mp3"
+        },
+        {
+          "spanish": "nos los trajo",
+          "english": "he/she brought them to us",
+          "audio": "/audio/unit-25/nos-los-trajo.mp3"
+        },
+        {
+          "spanish": "entregó",
+          "english": "he/she handed over",
+          "audio": "/audio/unit-25/entrego.mp3"
+        },
+        {
+          "spanish": "prestó",
+          "english": "he/she lent",
+          "audio": "/audio/unit-25/presto.mp3"
+        },
+        {
+          "spanish": "devolvió",
+          "english": "he/she returned (something)",
+          "audio": "/audio/unit-25/devolvio.mp3"
+        },
+        {
+          "spanish": "pidió",
+          "english": "he/she asked for",
+          "audio": "/audio/unit-25/pidio.mp3"
+        },
+        {
+          "spanish": "pagó",
+          "english": "he/she paid",
+          "audio": "/audio/unit-25/pago.mp3"
+        },
+        {
+          "spanish": "mostró",
+          "english": "he/she showed",
+          "audio": "/audio/unit-25/mostro.mp3"
+        },
+        {
+          "spanish": "regaló",
+          "english": "he/she gave as a gift",
+          "audio": "/audio/unit-25/regalo.mp3"
+        },
+        {
+          "spanish": "mandó",
+          "english": "he/she sent",
+          "audio": "/audio/unit-25/mando.mp3"
+        },
+        {
+          "spanish": "quitó",
+          "english": "he/she took away",
+          "audio": "/audio/unit-25/quito.mp3"
+        },
+        {
+          "spanish": "grabó",
+          "english": "he/she recorded",
+          "audio": "/audio/unit-25/grabo.mp3"
+        },
+        {
+          "spanish": "sonó",
+          "english": "it sounded / rang",
+          "audio": "/audio/unit-25/sono.mp3"
+        },
+        {
+          "spanish": "el disco",
+          "english": "the record",
+          "audio": "/audio/unit-15/disco.mp3"
+        },
+        {
+          "spanish": "la grabación",
+          "english": "the recording",
+          "audio": "/audio/unit-15/grabacion.mp3"
+        },
+        {
+          "spanish": "la clave",
+          "english": "the clave / the key",
+          "audio": "/audio/unit-15/clave.mp3"
+        },
+        {
+          "spanish": "el ensayo",
+          "english": "the rehearsal",
+          "audio": "/audio/unit-15/ensayo.mp3"
+        },
+        {
+          "spanish": "la cinta",
+          "english": "the tape",
+          "audio": "/audio/unit-15/cinta.mp3"
+        }
+      ]
+    },
+    {
+      "unitNumber": 26,
+      "grammarFocus": "Presente perfecto · mandatos",
+      "reopened": "Guinea Ecuatorial · Malabo y Bioko",
+      "vocab": [
+        {
+          "spanish": "ha robado",
+          "english": "he/she has stolen",
+          "audio": "/audio/unit-26/ha-robado.mp3"
+        },
+        {
+          "spanish": "ha llegado",
+          "english": "he/she has arrived",
+          "audio": "/audio/unit-26/ha-llegado.mp3"
+        },
+        {
+          "spanish": "he visto",
+          "english": "I have seen",
+          "audio": "/audio/unit-26/he-visto.mp3"
+        },
+        {
+          "spanish": "ha dicho",
+          "english": "he/she has said",
+          "audio": "/audio/unit-26/ha-dicho.mp3"
+        },
+        {
+          "spanish": "ha hecho",
+          "english": "he/she has done",
+          "audio": "/audio/unit-26/ha-hecho.mp3"
+        },
+        {
+          "spanish": "ha puesto",
+          "english": "he/she has put",
+          "audio": "/audio/unit-26/ha-puesto.mp3"
+        },
+        {
+          "spanish": "ha vuelto",
+          "english": "he/she has returned",
+          "audio": "/audio/unit-26/ha-vuelto.mp3"
+        },
+        {
+          "spanish": "ha escrito",
+          "english": "he/she has written",
+          "audio": "/audio/unit-26/ha-escrito.mp3"
+        },
+        {
+          "spanish": "ha abierto",
+          "english": "he/she has opened",
+          "audio": "/audio/unit-26/ha-abierto.mp3"
+        },
+        {
+          "spanish": "hemos encontrado",
+          "english": "we have found",
+          "audio": "/audio/unit-26/hemos-encontrado.mp3"
+        },
+        {
+          "spanish": "han visto",
+          "english": "they have seen",
+          "audio": "/audio/unit-26/han-visto.mp3"
+        },
+        {
+          "spanish": "todavía no",
+          "english": "not yet",
+          "audio": "/audio/unit-26/todavia-no.mp3"
+        },
+        {
+          "spanish": "ya",
+          "english": "already",
+          "audio": "/audio/unit-26/ya.mp3"
+        },
+        {
+          "spanish": "nunca",
+          "english": "never",
+          "audio": "/audio/unit-19/nunca.mp3"
+        },
+        {
+          "spanish": "alguna vez",
+          "english": "ever",
+          "audio": "/audio/unit-26/alguna-vez.mp3"
+        },
+        {
+          "spanish": "no vayas",
+          "english": "don't go",
+          "audio": "/audio/unit-26/no-vayas.mp3"
+        },
+        {
+          "spanish": "no toques",
+          "english": "don't touch",
+          "audio": "/audio/unit-26/no-toques.mp3"
+        },
+        {
+          "spanish": "no salgas",
+          "english": "don't leave",
+          "audio": "/audio/unit-26/no-salgas.mp3"
+        },
+        {
+          "spanish": "no lo dejes escapar",
+          "english": "don't let him escape",
+          "audio": "/audio/unit-26/no-lo-dejes-escapar.mp3"
+        },
+        {
+          "spanish": "espere",
+          "english": "wait (formal)",
+          "audio": "/audio/unit-26/espere.mp3"
+        },
+        {
+          "spanish": "escuche",
+          "english": "listen (formal)",
+          "audio": "/audio/unit-26/escuche.mp3"
+        },
+        {
+          "spanish": "mire",
+          "english": "look (formal)",
+          "audio": "/audio/unit-26/mire.mp3"
+        },
+        {
+          "spanish": "venga",
+          "english": "come (formal)",
+          "audio": "/audio/unit-26/venga.mp3"
+        },
+        {
+          "spanish": "siga",
+          "english": "continue (formal)",
+          "audio": "/audio/unit-26/siga.mp3"
+        },
+        {
+          "spanish": "dígame",
+          "english": "tell me (formal)",
+          "audio": "/audio/unit-26/digame.mp3"
+        },
+        {
+          "spanish": "la isla",
+          "english": "the island",
+          "audio": "/audio/unit-26/la-isla.mp3"
+        },
+        {
+          "spanish": "el bosque",
+          "english": "the forest",
+          "audio": "/audio/unit-26/el-bosque.mp3"
+        },
+        {
+          "spanish": "el tambor",
+          "english": "the drum",
+          "audio": "/audio/unit-15/tambor.mp3"
+        },
+        {
+          "spanish": "la playa",
+          "english": "the beach",
+          "audio": "/audio/unit-07/playa.mp3"
+        },
+        {
+          "spanish": "la lengua",
+          "english": "the language",
+          "audio": "/audio/unit-26/la-lengua.mp3"
+        }
+      ]
+    }
+  ]
+}
