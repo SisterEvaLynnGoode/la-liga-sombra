@@ -1,0 +1,937 @@
+{
+  "_comment": "Chapter 3 Arc B (Casos 27-32, the Spanish-speaking USA) vocabulary manifest. Bought before the ElevenLabs subscription lapses; the casos are authored later with no API needed.",
+  "casos": [
+    {
+      "unitNumber": 27,
+      "grammarFocus": "Futuro simple",
+      "place": "Los Angeles - Chicano",
+      "vocab": [
+        {
+          "spanish": "el mural",
+          "english": "the mural",
+          "audio": "/audio/unit-27/el-mural.mp3"
+        },
+        {
+          "spanish": "la pared",
+          "english": "the wall",
+          "audio": "/audio/unit-27/la-pared.mp3"
+        },
+        {
+          "spanish": "el barrio",
+          "english": "the neighborhood",
+          "audio": "/audio/unit-27/el-barrio.mp3"
+        },
+        {
+          "spanish": "el pincel",
+          "english": "the paintbrush",
+          "audio": "/audio/unit-27/el-pincel.mp3"
+        },
+        {
+          "spanish": "la pintura",
+          "english": "the paint",
+          "audio": "/audio/unit-27/la-pintura.mp3"
+        },
+        {
+          "spanish": "el andamio",
+          "english": "the scaffolding",
+          "audio": "/audio/unit-27/el-andamio.mp3"
+        },
+        {
+          "spanish": "borrar",
+          "english": "to erase",
+          "audio": "/audio/unit-27/borrar.mp3"
+        },
+        {
+          "spanish": "pintar",
+          "english": "to paint",
+          "audio": "/audio/unit-27/pintar.mp3"
+        },
+        {
+          "spanish": "cubrir",
+          "english": "to cover",
+          "audio": "/audio/unit-27/cubrir.mp3"
+        },
+        {
+          "spanish": "restaurar",
+          "english": "to restore",
+          "audio": "/audio/unit-27/restaurar.mp3"
+        },
+        {
+          "spanish": "desaparecerá",
+          "english": "it will disappear",
+          "audio": "/audio/unit-27/desaparecera.mp3"
+        },
+        {
+          "spanish": "cambiará",
+          "english": "it will change",
+          "audio": "/audio/unit-27/cambiara.mp3"
+        },
+        {
+          "spanish": "volverá",
+          "english": "it will return",
+          "audio": "/audio/unit-27/volvera.mp3"
+        },
+        {
+          "spanish": "pintaremos",
+          "english": "we will paint",
+          "audio": "/audio/unit-27/pintaremos.mp3"
+        },
+        {
+          "spanish": "cerrarán",
+          "english": "they will close",
+          "audio": "/audio/unit-27/cerraran.mp3"
+        },
+        {
+          "spanish": "será",
+          "english": "it will be",
+          "audio": "/audio/unit-27/sera.mp3"
+        },
+        {
+          "spanish": "habrá",
+          "english": "there will be",
+          "audio": "/audio/unit-27/habra.mp3"
+        },
+        {
+          "spanish": "haré",
+          "english": "I will do",
+          "audio": "/audio/unit-27/hare.mp3"
+        },
+        {
+          "spanish": "dirán",
+          "english": "they will say",
+          "audio": "/audio/unit-27/diran.mp3"
+        },
+        {
+          "spanish": "podremos",
+          "english": "we will be able to",
+          "audio": "/audio/unit-27/podremos.mp3"
+        },
+        {
+          "spanish": "vendrá",
+          "english": "he/she will come",
+          "audio": "/audio/unit-27/vendra.mp3"
+        },
+        {
+          "spanish": "tendremos",
+          "english": "we will have",
+          "audio": "/audio/unit-27/tendremos.mp3"
+        },
+        {
+          "spanish": "sabremos",
+          "english": "we will know",
+          "audio": "/audio/unit-27/sabremos.mp3"
+        },
+        {
+          "spanish": "el lowrider",
+          "english": "the lowrider",
+          "audio": "/audio/unit-27/el-lowrider.mp3"
+        },
+        {
+          "spanish": "el taller",
+          "english": "the workshop",
+          "audio": "/audio/unit-27/el-taller.mp3"
+        },
+        {
+          "spanish": "la cuadra",
+          "english": "the block",
+          "audio": "/audio/unit-27/la-cuadra.mp3"
+        },
+        {
+          "spanish": "órale",
+          "english": "hey / right on",
+          "audio": "/audio/unit-27/orale.mp3"
+        },
+        {
+          "spanish": "carnal",
+          "english": "brother / close friend",
+          "audio": "/audio/unit-27/carnal.mp3"
+        },
+        {
+          "spanish": "firme",
+          "english": "cool, solid",
+          "audio": "/audio/unit-27/firme.mp3"
+        },
+        {
+          "spanish": "mañana",
+          "english": "tomorrow",
+          "audio": "/audio/unit-10/manana.mp3"
+        },
+        {
+          "spanish": "algún día",
+          "english": "someday",
+          "audio": "/audio/unit-27/algun-dia.mp3"
+        },
+        {
+          "spanish": "pronto",
+          "english": "soon",
+          "audio": "/audio/unit-10/pronto.mp3"
+        }
+      ]
+    },
+    {
+      "unitNumber": 28,
+      "grammarFocus": "Condicional",
+      "place": "Nueva York - Nuyorican",
+      "vocab": [
+        {
+          "spanish": "el poema",
+          "english": "the poem",
+          "audio": "/audio/unit-14/poema.mp3"
+        },
+        {
+          "spanish": "el poeta",
+          "english": "the poet",
+          "audio": "/audio/unit-14/poeta.mp3"
+        },
+        {
+          "spanish": "la poeta",
+          "english": "the poet (f)",
+          "audio": "/audio/unit-28/la-poeta.mp3"
+        },
+        {
+          "spanish": "el escenario abierto",
+          "english": "the open mic",
+          "audio": "/audio/unit-28/el-escenario-abierto.mp3"
+        },
+        {
+          "spanish": "el verso",
+          "english": "the verse",
+          "audio": "/audio/unit-14/verso.mp3"
+        },
+        {
+          "spanish": "la azotea",
+          "english": "the rooftop",
+          "audio": "/audio/unit-28/la-azotea.mp3"
+        },
+        {
+          "spanish": "la casita",
+          "english": "the little house (community space)",
+          "audio": "/audio/unit-28/la-casita.mp3"
+        },
+        {
+          "spanish": "la plena",
+          "english": "plena (music)",
+          "audio": "/audio/unit-28/la-plena.mp3"
+        },
+        {
+          "spanish": "la bomba",
+          "english": "bomba (music)",
+          "audio": "/audio/unit-28/la-bomba.mp3"
+        },
+        {
+          "spanish": "recitar",
+          "english": "to recite",
+          "audio": "/audio/unit-28/recitar.mp3"
+        },
+        {
+          "spanish": "aplaudir",
+          "english": "to applaud",
+          "audio": "/audio/unit-28/aplaudir.mp3"
+        },
+        {
+          "spanish": "grabar",
+          "english": "to record",
+          "audio": "/audio/unit-28/grabar.mp3"
+        },
+        {
+          "spanish": "haría",
+          "english": "I/he/she would do",
+          "audio": "/audio/unit-28/haria.mp3"
+        },
+        {
+          "spanish": "diría",
+          "english": "I/he/she would say",
+          "audio": "/audio/unit-28/diria.mp3"
+        },
+        {
+          "spanish": "sería",
+          "english": "it would be",
+          "audio": "/audio/unit-28/seria.mp3"
+        },
+        {
+          "spanish": "podría",
+          "english": "I/he/she could",
+          "audio": "/audio/unit-28/podria.mp3"
+        },
+        {
+          "spanish": "tendría",
+          "english": "I/he/she would have",
+          "audio": "/audio/unit-28/tendria.mp3"
+        },
+        {
+          "spanish": "iría",
+          "english": "I/he/she would go",
+          "audio": "/audio/unit-28/iria.mp3"
+        },
+        {
+          "spanish": "gustaría",
+          "english": "would like",
+          "audio": "/audio/unit-28/gustaria.mp3"
+        },
+        {
+          "spanish": "vendría",
+          "english": "he/she would come",
+          "audio": "/audio/unit-28/vendria.mp3"
+        },
+        {
+          "spanish": "querría",
+          "english": "he/she would want",
+          "audio": "/audio/unit-28/querria.mp3"
+        },
+        {
+          "spanish": "pondría",
+          "english": "he/she would put",
+          "audio": "/audio/unit-28/pondria.mp3"
+        },
+        {
+          "spanish": "saldría",
+          "english": "he/she would leave",
+          "audio": "/audio/unit-28/saldria.mp3"
+        },
+        {
+          "spanish": "¿qué harías tú?",
+          "english": "what would you do?",
+          "audio": "/audio/unit-28/que-harias-tu.mp3"
+        },
+        {
+          "spanish": "en tu lugar",
+          "english": "in your place",
+          "audio": "/audio/unit-28/en-tu-lugar.mp3"
+        },
+        {
+          "spanish": "chévere",
+          "english": "cool, great",
+          "audio": "/audio/unit-28/chevere.mp3"
+        },
+        {
+          "spanish": "la guagua",
+          "english": "the bus (Caribbean)",
+          "audio": "/audio/unit-28/la-guagua.mp3"
+        },
+        {
+          "spanish": "el bloque",
+          "english": "the block",
+          "audio": "/audio/unit-28/el-bloque.mp3"
+        }
+      ]
+    },
+    {
+      "unitNumber": 29,
+      "grammarFocus": "Por y para - comparativos",
+      "place": "San Antonio - Tejano",
+      "vocab": [
+        {
+          "spanish": "el acordeón",
+          "english": "the accordion",
+          "audio": "/audio/unit-29/el-acordeon.mp3"
+        },
+        {
+          "spanish": "el bajo sexto",
+          "english": "the bajo sexto",
+          "audio": "/audio/unit-29/el-bajo-sexto.mp3"
+        },
+        {
+          "spanish": "el conjunto",
+          "english": "the conjunto band",
+          "audio": "/audio/unit-29/el-conjunto.mp3"
+        },
+        {
+          "spanish": "la cuerda",
+          "english": "the string",
+          "audio": "/audio/unit-18/cuerda.mp3"
+        },
+        {
+          "spanish": "el fuelle",
+          "english": "the bellows",
+          "audio": "/audio/unit-29/el-fuelle.mp3"
+        },
+        {
+          "spanish": "la gira",
+          "english": "the tour",
+          "audio": "/audio/unit-29/la-gira.mp3"
+        },
+        {
+          "spanish": "la grabadora",
+          "english": "the recorder",
+          "audio": "/audio/unit-29/la-grabadora.mp3"
+        },
+        {
+          "spanish": "prestar",
+          "english": "to lend",
+          "audio": "/audio/unit-15/prestar.mp3"
+        },
+        {
+          "spanish": "heredar",
+          "english": "to inherit",
+          "audio": "/audio/unit-29/heredar.mp3"
+        },
+        {
+          "spanish": "por",
+          "english": "for / because of / through",
+          "audio": "/audio/unit-29/por.mp3"
+        },
+        {
+          "spanish": "para",
+          "english": "for / in order to",
+          "audio": "/audio/unit-29/para.mp3"
+        },
+        {
+          "spanish": "por amor",
+          "english": "out of love",
+          "audio": "/audio/unit-29/por-amor.mp3"
+        },
+        {
+          "spanish": "para su familia",
+          "english": "for his family",
+          "audio": "/audio/unit-29/para-su-familia.mp3"
+        },
+        {
+          "spanish": "por eso",
+          "english": "that is why",
+          "audio": "/audio/unit-29/por-eso.mp3"
+        },
+        {
+          "spanish": "para siempre",
+          "english": "forever",
+          "audio": "/audio/unit-29/para-siempre.mp3"
+        },
+        {
+          "spanish": "por primera vez",
+          "english": "for the first time",
+          "audio": "/audio/unit-29/por-primera-vez.mp3"
+        },
+        {
+          "spanish": "más que",
+          "english": "more than",
+          "audio": "/audio/unit-29/mas-que.mp3"
+        },
+        {
+          "spanish": "menos que",
+          "english": "less than",
+          "audio": "/audio/unit-29/menos-que.mp3"
+        },
+        {
+          "spanish": "tan como",
+          "english": "as ... as",
+          "audio": "/audio/unit-29/tan-como.mp3"
+        },
+        {
+          "spanish": "mejor que",
+          "english": "better than",
+          "audio": "/audio/unit-29/mejor-que.mp3"
+        },
+        {
+          "spanish": "peor que",
+          "english": "worse than",
+          "audio": "/audio/unit-29/peor-que.mp3"
+        },
+        {
+          "spanish": "mayor que",
+          "english": "older than",
+          "audio": "/audio/unit-29/mayor-que.mp3"
+        },
+        {
+          "spanish": "el mejor",
+          "english": "the best",
+          "audio": "/audio/unit-17/el-mejor.mp3"
+        },
+        {
+          "spanish": "el peor",
+          "english": "the worst",
+          "audio": "/audio/unit-17/el-peor.mp3"
+        },
+        {
+          "spanish": "la misión",
+          "english": "the mission",
+          "audio": "/audio/unit-29/la-mision.mp3"
+        },
+        {
+          "spanish": "la frontera",
+          "english": "the border",
+          "audio": "/audio/unit-29/la-frontera.mp3"
+        },
+        {
+          "spanish": "el rancho",
+          "english": "the ranch",
+          "audio": "/audio/unit-29/el-rancho.mp3"
+        }
+      ]
+    },
+    {
+      "unitNumber": 30,
+      "grammarFocus": "Subjuntivo I - voluntad y emocion",
+      "place": "Miami - Cubano",
+      "vocab": [
+        {
+          "spanish": "la ventanita",
+          "english": "the walk-up window",
+          "audio": "/audio/unit-30/la-ventanita.mp3"
+        },
+        {
+          "spanish": "el cafecito",
+          "english": "the little coffee",
+          "audio": "/audio/unit-30/el-cafecito.mp3"
+        },
+        {
+          "spanish": "la colada",
+          "english": "the shared coffee",
+          "audio": "/audio/unit-30/la-colada.mp3"
+        },
+        {
+          "spanish": "el cortadito",
+          "english": "the cortadito",
+          "audio": "/audio/unit-30/el-cortadito.mp3"
+        },
+        {
+          "spanish": "la cafetera",
+          "english": "the coffee maker",
+          "audio": "/audio/unit-30/la-cafetera.mp3"
+        },
+        {
+          "spanish": "el mostrador",
+          "english": "the counter",
+          "audio": "/audio/unit-30/el-mostrador.mp3"
+        },
+        {
+          "spanish": "la receta",
+          "english": "the recipe",
+          "audio": "/audio/unit-06/receta.mp3"
+        },
+        {
+          "spanish": "el cuaderno",
+          "english": "the notebook",
+          "audio": "/audio/unit-02/cuaderno.mp3"
+        },
+        {
+          "spanish": "la libreta",
+          "english": "the notepad",
+          "audio": "/audio/unit-30/la-libreta.mp3"
+        },
+        {
+          "spanish": "el dominó",
+          "english": "dominoes",
+          "audio": "/audio/unit-30/el-domino.mp3"
+        },
+        {
+          "spanish": "la ficha",
+          "english": "the domino tile",
+          "audio": "/audio/unit-30/la-ficha.mp3"
+        },
+        {
+          "spanish": "el exilio",
+          "english": "exile",
+          "audio": "/audio/unit-30/el-exilio.mp3"
+        },
+        {
+          "spanish": "extrañar",
+          "english": "to miss (someone)",
+          "audio": "/audio/unit-30/extranar.mp3"
+        },
+        {
+          "spanish": "recordar",
+          "english": "to remember",
+          "audio": "/audio/unit-30/recordar.mp3"
+        },
+        {
+          "spanish": "regresar",
+          "english": "to return",
+          "audio": "/audio/unit-30/regresar.mp3"
+        },
+        {
+          "spanish": "quiero que",
+          "english": "I want that ...",
+          "audio": "/audio/unit-30/quiero-que.mp3"
+        },
+        {
+          "spanish": "espero que",
+          "english": "I hope that ...",
+          "audio": "/audio/unit-30/espero-que.mp3"
+        },
+        {
+          "spanish": "ojalá que",
+          "english": "I hope / God willing",
+          "audio": "/audio/unit-30/ojala-que.mp3"
+        },
+        {
+          "spanish": "me alegra que",
+          "english": "it makes me happy that",
+          "audio": "/audio/unit-30/me-alegra-que.mp3"
+        },
+        {
+          "spanish": "siento que",
+          "english": "I am sorry that",
+          "audio": "/audio/unit-30/siento-que.mp3"
+        },
+        {
+          "spanish": "vuelva",
+          "english": "he/she returns (subj.)",
+          "audio": "/audio/unit-30/vuelva.mp3"
+        },
+        {
+          "spanish": "recuerden",
+          "english": "they remember (subj.)",
+          "audio": "/audio/unit-30/recuerden.mp3"
+        },
+        {
+          "spanish": "pruebes",
+          "english": "you try (subj.)",
+          "audio": "/audio/unit-30/pruebes.mp3"
+        },
+        {
+          "spanish": "sepa",
+          "english": "he/she knows (subj.)",
+          "audio": "/audio/unit-30/sepa.mp3"
+        },
+        {
+          "spanish": "esté",
+          "english": "he/she is (subj.)",
+          "audio": "/audio/unit-30/este.mp3"
+        },
+        {
+          "spanish": "vaya",
+          "english": "he/she goes (subj.)",
+          "audio": "/audio/unit-30/vaya.mp3"
+        },
+        {
+          "spanish": "tenga",
+          "english": "he/she has (subj.)",
+          "audio": "/audio/unit-30/tenga.mp3"
+        },
+        {
+          "spanish": "sea",
+          "english": "he/she is (subj.)",
+          "audio": "/audio/unit-30/sea.mp3"
+        },
+        {
+          "spanish": "asere",
+          "english": "buddy (Cuban)",
+          "audio": "/audio/unit-30/asere.mp3"
+        },
+        {
+          "spanish": "¿qué bolá?",
+          "english": "what is up? (Cuban)",
+          "audio": "/audio/unit-30/que-bola.mp3"
+        }
+      ]
+    },
+    {
+      "unitNumber": 31,
+      "grammarFocus": "Subjuntivo II - duda y lo desconocido",
+      "place": "Nuevo Mexico - Hispano",
+      "vocab": [
+        {
+          "spanish": "el santero",
+          "english": "the santo carver",
+          "audio": "/audio/unit-31/el-santero.mp3"
+        },
+        {
+          "spanish": "el retablo",
+          "english": "the painted panel",
+          "audio": "/audio/unit-31/el-retablo.mp3"
+        },
+        {
+          "spanish": "el bulto",
+          "english": "the carved saint",
+          "audio": "/audio/unit-31/el-bulto.mp3"
+        },
+        {
+          "spanish": "la madera",
+          "english": "the wood",
+          "audio": "/audio/unit-31/la-madera.mp3"
+        },
+        {
+          "spanish": "el adobe",
+          "english": "adobe",
+          "audio": "/audio/unit-31/el-adobe.mp3"
+        },
+        {
+          "spanish": "la viga",
+          "english": "the roof beam",
+          "audio": "/audio/unit-31/la-viga.mp3"
+        },
+        {
+          "spanish": "el santuario",
+          "english": "the sanctuary",
+          "audio": "/audio/unit-31/el-santuario.mp3"
+        },
+        {
+          "spanish": "la tierra",
+          "english": "the earth / soil",
+          "audio": "/audio/unit-31/la-tierra.mp3"
+        },
+        {
+          "spanish": "el chile verde",
+          "english": "green chile",
+          "audio": "/audio/unit-31/el-chile-verde.mp3"
+        },
+        {
+          "spanish": "el chile rojo",
+          "english": "red chile",
+          "audio": "/audio/unit-31/el-chile-rojo.mp3"
+        },
+        {
+          "spanish": "el anciano",
+          "english": "the elder (m)",
+          "audio": "/audio/unit-31/el-anciano.mp3"
+        },
+        {
+          "spanish": "la anciana",
+          "english": "the elder (f)",
+          "audio": "/audio/unit-31/la-anciana.mp3"
+        },
+        {
+          "spanish": "el dicho",
+          "english": "the saying",
+          "audio": "/audio/unit-31/el-dicho.mp3"
+        },
+        {
+          "spanish": "la palabra",
+          "english": "the word",
+          "audio": "/audio/unit-14/palabra.mp3"
+        },
+        {
+          "spanish": "tallar",
+          "english": "to carve",
+          "audio": "/audio/unit-11/tallar.mp3"
+        },
+        {
+          "spanish": "rezar",
+          "english": "to pray",
+          "audio": "/audio/unit-31/rezar.mp3"
+        },
+        {
+          "spanish": "desaparecer",
+          "english": "to disappear",
+          "audio": "/audio/unit-31/desaparecer.mp3"
+        },
+        {
+          "spanish": "no creo que",
+          "english": "I do not think that",
+          "audio": "/audio/unit-31/no-creo-que.mp3"
+        },
+        {
+          "spanish": "dudo que",
+          "english": "I doubt that",
+          "audio": "/audio/unit-31/dudo-que.mp3"
+        },
+        {
+          "spanish": "no hay nadie que",
+          "english": "there is no one who",
+          "audio": "/audio/unit-31/no-hay-nadie-que.mp3"
+        },
+        {
+          "spanish": "busco a alguien que",
+          "english": "I am looking for someone who",
+          "audio": "/audio/unit-31/busco-a-alguien-que.mp3"
+        },
+        {
+          "spanish": "es posible que",
+          "english": "it is possible that",
+          "audio": "/audio/unit-31/es-posible-que.mp3"
+        },
+        {
+          "spanish": "quede",
+          "english": "remains (subj.)",
+          "audio": "/audio/unit-31/quede.mp3"
+        },
+        {
+          "spanish": "hable",
+          "english": "he/she speaks (subj.)",
+          "audio": "/audio/unit-31/hable.mp3"
+        },
+        {
+          "spanish": "conozca",
+          "english": "he/she knows (subj.)",
+          "audio": "/audio/unit-31/conozca.mp3"
+        },
+        {
+          "spanish": "pueda",
+          "english": "he/she can (subj.)",
+          "audio": "/audio/unit-31/pueda.mp3"
+        },
+        {
+          "spanish": "exista",
+          "english": "it exists (subj.)",
+          "audio": "/audio/unit-31/exista.mp3"
+        },
+        {
+          "spanish": "truje",
+          "english": "I brought (old New Mexican Spanish)",
+          "audio": "/audio/unit-31/truje.mp3"
+        },
+        {
+          "spanish": "asina",
+          "english": "like that (old New Mexican Spanish)",
+          "audio": "/audio/unit-31/asina.mp3"
+        },
+        {
+          "spanish": "muncho",
+          "english": "a lot (old New Mexican Spanish)",
+          "audio": "/audio/unit-31/muncho.mp3"
+        }
+      ]
+    },
+    {
+      "unitNumber": 32,
+      "grammarFocus": "Se impersonal y pasivo",
+      "place": "Chicago - Mexicano y Boricua",
+      "vocab": [
+        {
+          "spanish": "el jibarito",
+          "english": "the jibarito sandwich",
+          "audio": "/audio/unit-32/el-jibarito.mp3"
+        },
+        {
+          "spanish": "el plátano",
+          "english": "the plantain",
+          "audio": "/audio/unit-32/el-platano.mp3"
+        },
+        {
+          "spanish": "el pan",
+          "english": "the bread",
+          "audio": "/audio/unit-32/el-pan.mp3"
+        },
+        {
+          "spanish": "la bandera",
+          "english": "the flag",
+          "audio": "/audio/unit-32/la-bandera.mp3"
+        },
+        {
+          "spanish": "el acero",
+          "english": "steel",
+          "audio": "/audio/unit-17/acero.mp3"
+        },
+        {
+          "spanish": "el paseo",
+          "english": "the promenade",
+          "audio": "/audio/unit-32/el-paseo.mp3"
+        },
+        {
+          "spanish": "el arco",
+          "english": "the arch",
+          "audio": "/audio/unit-32/el-arco.mp3"
+        },
+        {
+          "spanish": "la calle",
+          "english": "the street",
+          "audio": "/audio/unit-03/calle.mp3"
+        },
+        {
+          "spanish": "el museo",
+          "english": "the museum",
+          "audio": "/audio/unit-32/el-museo.mp3"
+        },
+        {
+          "spanish": "la cocina",
+          "english": "the kitchen",
+          "audio": "/audio/unit-13/cocina.mp3"
+        },
+        {
+          "spanish": "el letrero",
+          "english": "the sign",
+          "audio": "/audio/unit-32/el-letrero.mp3"
+        },
+        {
+          "spanish": "la esquina",
+          "english": "the corner",
+          "audio": "/audio/unit-32/la-esquina.mp3"
+        },
+        {
+          "spanish": "inventar",
+          "english": "to invent",
+          "audio": "/audio/unit-32/inventar.mp3"
+        },
+        {
+          "spanish": "fundar",
+          "english": "to found",
+          "audio": "/audio/unit-32/fundar.mp3"
+        },
+        {
+          "spanish": "construir",
+          "english": "to build",
+          "audio": "/audio/unit-17/construir.mp3"
+        },
+        {
+          "spanish": "levantar",
+          "english": "to raise",
+          "audio": "/audio/unit-32/levantar.mp3"
+        },
+        {
+          "spanish": "se habla",
+          "english": "one speaks / is spoken",
+          "audio": "/audio/unit-32/se-habla.mp3"
+        },
+        {
+          "spanish": "se inventó",
+          "english": "it was invented",
+          "audio": "/audio/unit-32/se-invento.mp3"
+        },
+        {
+          "spanish": "se hizo",
+          "english": "it was made",
+          "audio": "/audio/unit-32/se-hizo.mp3"
+        },
+        {
+          "spanish": "se construyó",
+          "english": "it was built",
+          "audio": "/audio/unit-32/se-construyo.mp3"
+        },
+        {
+          "spanish": "se dice",
+          "english": "it is said",
+          "audio": "/audio/unit-32/se-dice.mp3"
+        },
+        {
+          "spanish": "se vende",
+          "english": "it is sold",
+          "audio": "/audio/unit-32/se-vende.mp3"
+        },
+        {
+          "spanish": "se necesita",
+          "english": "it is needed",
+          "audio": "/audio/unit-32/se-necesita.mp3"
+        },
+        {
+          "spanish": "se prohíbe",
+          "english": "it is forbidden",
+          "audio": "/audio/unit-32/se-prohibe.mp3"
+        },
+        {
+          "spanish": "se me olvidó",
+          "english": "I forgot (it slipped from me)",
+          "audio": "/audio/unit-32/se-me-olvido.mp3"
+        },
+        {
+          "spanish": "se nos perdió",
+          "english": "we lost it",
+          "audio": "/audio/unit-32/se-nos-perdio.mp3"
+        },
+        {
+          "spanish": "aquí",
+          "english": "here",
+          "audio": "/audio/unit-12/aqui.mp3"
+        },
+        {
+          "spanish": "juntos",
+          "english": "together",
+          "audio": "/audio/unit-32/juntos.mp3"
+        },
+        {
+          "spanish": "juntas",
+          "english": "together (f)",
+          "audio": "/audio/unit-32/juntas.mp3"
+        },
+        {
+          "spanish": "el vecino",
+          "english": "the neighbor",
+          "audio": "/audio/unit-13/vecino.mp3"
+        },
+        {
+          "spanish": "la comunidad",
+          "english": "the community",
+          "audio": "/audio/unit-32/la-comunidad.mp3"
+        }
+      ]
+    }
+  ]
+}

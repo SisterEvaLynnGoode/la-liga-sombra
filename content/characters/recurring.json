@@ -126,5 +126,34 @@
     "spanishDescription": "Es un hombre alto y delgado. Tiene el pelo negro peinado hacia atrás y un bigote fino. Es muy pálido. Sus manos siempre están limpias. Nunca hace ruido cuando camina. Lleva ropa de la época, pero siempre está demasiado nueva.",
     "country": "ninguno — viaja por el tiempo",
     "_canonNote": "THE FACE IS CONSTANT; ONLY THE CLOTHING CHANGES BY ERA. He appeared in Casos 11-20 under a different alias each time (El Forastero Pálido, El Falso Astrónomo, ...) and was drawn as ten different men, five of them unrelated across Casos 11-15. Canon fixed 2026-09-08 from the Caso 17 portrait, which the 16-20 set already agreed on. Students identify him by behaviour (clean hands, silent step, no foot tapping to the clave) AND, from Chapter 3 on, by this face."
+  },
+  {
+    "id": "la-curadora",
+    "role": "recurring",
+    "name": "La Curadora",
+    "realName": "desconocido",
+    "age": 46,
+    "gender": "mujer",
+    "skinTone": "clara",
+    "build": "alta, delgada, muy erguida",
+    "hair": "cabello castano oscuro recogido en un mono bajo, perfectamente liso, sin un pelo suelto",
+    "distinctiveFeatures": [
+      "guantes blancos de algodon de conservadora de museo, siempre puestos",
+      "gafas de montura fina de metal",
+      "un solo pendiente pequeno de perla",
+      "postura de catalogo: quieta, simetrica, sin gestos",
+      "nunca toca nada con las manos desnudas"
+    ],
+    "clothing": "traje sastre gris o negro impecable, sin color, sin patron, sin nada regional",
+    "accessories": [
+      "guantes blancos",
+      "una libreta de inventario de tapa dura",
+      "una linterna de bolsillo"
+    ],
+    "expression": "amable y paciente, la sonrisa de quien esta segura de estar ayudando",
+    "pose": "retrato de busto, tres cuartos, manos enguantadas visibles",
+    "spanishDescription": "Es una mujer alta y delgada. Lleva un traje gris y guantes blancos. Habla un espanol perfecto: demasiado perfecto. No dice orale, ni asere, ni chevere. No mezcla ingles. No suena de ningun lugar.",
+    "country": "ninguno - dice que el arte no tiene pais",
+    "_canonNote": "CANON FIXED BEFORE ANY ART WAS GENERATED, deliberately, because El Cronista shipped as ten different men across Casos 11-20 and had to be regenerated. The face is constant across Casos 27-32; only the setting changes. She always wears the white curator gloves - they are the visual echo of El Cronista's unnaturally clean hands, and the two are siblings by design. Her TELL is linguistic, not visual: she speaks flawless region-less textbook Spanish while every genuine witness in Arc B sounds like somewhere specific. Never write a witness's regional speech as an error; hers is the deviation."
   }
 ]
