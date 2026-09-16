@@ -125,8 +125,8 @@ export async function getOverdueTermsForBriefing(
     }
   }
 
-  // 5. Find overdue terms
-  const overdue: BriefingTerm[] = [];
+  // 5. Find overdue terms, then keep the 3 most overdue.
+  const due: ChosenTerm[] = [];
 
   for (const row of mastery) {
     if (!row.attempts || !row.last_seen) continue;
@@ -137,30 +137,69 @@ export async function getOverdueTermsForBriefing(
     const score = overdueScore(acc, row.last_seen);
     if (score < 1) continue; // not yet due
 
-    // Build 4-option MC
-    const distractors = shuffle(
-      allEnglish.filter((e) => e.toLowerCase() !== meta.english.toLowerCase())
-    ).slice(0, 3);
+    due.push({ spanish: row.vocab_term, english: meta.english, audio: meta.audio,
+               unitNumber: meta.unitNumber, acc, score });
+  }
 
+  const chosen = due.sort((a, b) => b.score - a.score).slice(0, 3);
+
+  return buildBriefingOptions(chosen, allEnglish);
+}
+
+// ── Option builder (pure, so it can be tested without a database) ─────────────
+
+export interface ChosenTerm {
+  spanish: string; english: string; audio?: string; unitNumber: number; acc: number; score: number;
+}
+
+export function buildBriefingOptions(chosen: ChosenTerm[], allEnglish: string[]): BriefingTerm[] {
+  // Build the options AFTER choosing, so the three questions can be kept apart.
+  //
+  // Options used to be built per term, independently, from every unlocked word.
+  // A student early in the year has one unit unlocked, which is twelve words, so
+  // three independent draws of three distractors overlapped heavily: in a
+  // reproduction, question 1 and question 3 shared three of their four answers.
+  // A student reported that "the options never change", and from her seat they
+  // didn't. Distractors now avoid anything already shown earlier in the same
+  // briefing, and never use another question's own answer, which would also
+  // hand out that answer before it is asked. When the pool is too small to keep
+  // them fully apart, it falls back to reuse rather than showing fewer options.
+  const answers = new Set(chosen.map((c) => c.english.toLowerCase()));
+  const shown = new Set<string>();
+  const uniqueEnglish = Array.from(new Set(allEnglish));
+  const out: BriefingTerm[] = [];
+
+  for (const c of chosen) {
+    const own = c.english.toLowerCase();
+    const pool = uniqueEnglish.filter((e) => e.toLowerCase() !== own);
+    const fresh = shuffle(pool.filter((e) => !shown.has(e.toLowerCase()) && !answers.has(e.toLowerCase())));
+    const notAnswers = shuffle(pool.filter((e) => !answers.has(e.toLowerCase())));
+    const anything = shuffle(pool);
+
+    const distractors: string[] = [];
+    for (const src of [fresh, notAnswers, anything]) {
+      for (const e of src) {
+        if (distractors.length >= 3) break;
+        if (!distractors.includes(e)) distractors.push(e);
+      }
+    }
     if (distractors.length < 3) continue;
 
-    const opts = shuffle([meta.english, ...distractors]);
-    overdue.push({
-      spanish:      row.vocab_term,
-      english:      meta.english,
-      audio:        meta.audio,
-      unitNumber:   meta.unitNumber,
-      accuracy:     Math.round(acc * 100) / 100,
-      overdueScore: score,
+    distractors.forEach((d) => shown.add(d.toLowerCase()));
+    const opts = shuffle([c.english, ...distractors]);
+    out.push({
+      spanish:      c.spanish,
+      english:      c.english,
+      audio:        c.audio,
+      unitNumber:   c.unitNumber,
+      accuracy:     Math.round(c.acc * 100) / 100,
+      overdueScore: c.score,
       options:      opts,
-      correctIndex: opts.indexOf(meta.english),
+      correctIndex: opts.indexOf(c.english),
     });
   }
 
-  // 6. Return top 3 most overdue
-  return overdue
-    .sort((a, b) => b.overdueScore - a.overdueScore)
-    .slice(0, 3);
+  return out;
 }
 
 // ── Streak helper ─────────────────────────────────────────────────────────────

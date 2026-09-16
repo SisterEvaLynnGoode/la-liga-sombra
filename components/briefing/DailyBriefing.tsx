@@ -23,7 +23,7 @@ type Feedback = "correct" | "wrong" | null;
 // ── Chief config ───────────────────────────────────────────────────────────────
 
 const CHIEF_IMG   = "/images/characters/chief-ramirez.webp";
-const CHIEF_NAME  = "El Jefe Ramírez";
+const CHIEF_NAME  = "La Jefa Ramírez";
 const INTRO_TEXT  = "Recluta, antes de tu misión hoy, repasemos lo esencial.";
 const OUTRO_PASS  = "Excelente trabajo. Continúa con tu misión, agente.";
 const OUTRO_SKIP  = "Entendido. Recuerda repasar más tarde, agente.";
@@ -55,6 +55,10 @@ export default function DailyBriefing({ terms, onComplete }: Props) {
   const [qIndex, setQIndex]   = useState(0);
   const [answers, setAnswers] = useState<Array<{ spanish: string; correct: boolean }>>([]);
   const [feedback, setFeedback] = useState<Feedback>(null);
+  /** Which option the student clicked, so a wrong pick can be marked as wrong. */
+  const [picked, setPicked]     = useState<number | null>(null);
+  /** Answers including the current question, held until the student moves on. */
+  const [pending, setPending]   = useState<Array<{ spanish: string; correct: boolean }> | null>(null);
   const [canSkip, setCanSkip] = useState(false);
   const [skipped, setSkipped] = useState(false);
 
@@ -91,24 +95,37 @@ export default function DailyBriefing({ terms, onComplete }: Props) {
     setPhase("questions");
   }
 
+  /**
+   * A student reported that "it doesn't matter which one I click." She was
+   * right. Feedback used to be a faint lighter-blue outline on a blue screen,
+   * identical for a right and a wrong answer, and it advanced on its own after
+   * 0.6s or 1.4s. There was no tick, no cross, no word, and no time to read the
+   * correction. Now a right answer turns green with "¡Correcto!" and moves on by
+   * itself, and a wrong answer turns red, shows the correct one in green with
+   * the meaning spelled out, and waits for the student to press Siguiente. A
+   * mistake is the one moment the warm-up can teach something, so it must not
+   * scroll past.
+   */
   function handleAnswer(optionIndex: number) {
     if (feedback || doneRef.current) return;
     const q = terms[qIndex];
     const correct = optionIndex === q.correctIndex;
 
+    setPicked(optionIndex);
     setFeedback(correct ? "correct" : "wrong");
     const newAnswers = [...answers, { spanish: q.spanish, correct }];
+    setPending(newAnswers);
 
-    setTimeout(() => {
-      setFeedback(null);
-      setAnswers(newAnswers);
-      if (qIndex + 1 >= terms.length) {
-        setPhase("outro");
-      } else {
-        setQIndex(qIndex + 1);
-        // Auto-play audio for next term if available
-      }
-    }, correct ? 600 : 1400);
+    if (correct) setTimeout(() => advance(newAnswers), 1100);
+  }
+
+  function advance(committed: Array<{ spanish: string; correct: boolean }>) {
+    setFeedback(null);
+    setPicked(null);
+    setPending(null);
+    setAnswers(committed);
+    if (qIndex + 1 >= terms.length) setPhase("outro");
+    else setQIndex(qIndex + 1);
   }
 
   function playAudio(url?: string) {
@@ -286,29 +303,58 @@ export default function DailyBriefing({ terms, onComplete }: Props) {
         {q.audio && (
           <p className="font-typewriter text-[9px] text-[rgba(74,158,255,0.3)] mt-2">▶ Toca para escuchar</p>
         )}
-        {feedback === "wrong" && (
-          <p className="font-typewriter text-sm text-[#4a9eff] mt-3 font-bold">{q.english}</p>
-        )}
       </div>
 
-      {/* Options */}
+      {/* Options — green and red on purpose. The rest of the screen is blue, so
+          feedback in blue was invisible. */}
       <div className="grid grid-cols-2 gap-2">
         {q.options.map((opt, i) => {
-          let style = "border-[rgba(74,158,255,0.15)] text-[#c8d8f0] hover:border-[rgba(74,158,255,0.5)] hover:bg-[rgba(74,158,255,0.05)]";
+          let style = "border-[rgba(74,158,255,0.25)] text-[#c8d8f0] hover:border-[rgba(74,158,255,0.6)] hover:bg-[rgba(74,158,255,0.06)]";
+          let mark = "";
           if (feedback) {
-            if (i === q.correctIndex) style = "border-[#4a9eff] bg-[rgba(74,158,255,0.15)] text-[#4a9eff]";
-            else if (feedback === "wrong") style = "border-[rgba(74,158,255,0.06)] text-[rgba(74,158,255,0.25)]";
+            if (i === q.correctIndex) {
+              style = "border-2 border-[#3ecf7a] bg-[rgba(62,207,122,0.18)] text-[#8ff0b8]";
+              mark = "✓ ";
+            } else if (i === picked) {
+              style = "border-2 border-[#ff5d5d] bg-[rgba(255,93,93,0.16)] text-[#ffb3b3]";
+              mark = "✗ ";
+            } else {
+              style = "border-[rgba(74,158,255,0.08)] text-[rgba(200,216,240,0.3)]";
+            }
           }
           return (
-            <button key={i} disabled={!!feedback} onClick={() => handleAnswer(i)}
-              className={`border px-4 py-3 font-typewriter text-sm text-left transition-all disabled:cursor-default ${style}`}
+            <button key={`${qIndex}-${i}`} disabled={!!feedback} onClick={() => handleAnswer(i)}
+              className={`border min-h-[48px] px-4 py-3 font-typewriter text-sm text-left transition-all disabled:cursor-default ${style}`}
             >
-              <span className="text-[rgba(74,158,255,0.35)] mr-2">{String.fromCharCode(65 + i)})</span>
-              {opt}
+              <span className="opacity-60 mr-2">{String.fromCharCode(65 + i)})</span>
+              <span className="font-bold">{mark}</span>{opt}
             </button>
           );
         })}
       </div>
+
+      {feedback === "correct" && (
+        <p className="text-center font-display font-bold text-2xl text-[#3ecf7a]" role="status">
+          ✓ ¡Correcto!
+        </p>
+      )}
+
+      {feedback === "wrong" && pending && (
+        <div className="border-2 border-[#ff5d5d] bg-[rgba(255,93,93,0.08)] px-5 py-4 space-y-3" role="status">
+          <p className="font-display font-bold text-xl text-[#ff8a8a]">✗ No es correcto</p>
+          <p className="font-typewriter text-sm text-[#c8d8f0] leading-relaxed">
+            <span className="font-bold text-white">{q.spanish}</span> significa{" "}
+            <span className="font-bold text-[#8ff0b8]">{q.english}</span>.
+          </p>
+          <button
+            onClick={() => advance(pending)}
+            autoFocus
+            className="w-full min-h-[48px] font-typewriter text-sm tracking-[0.2em] uppercase border border-[#4a9eff] text-[#4a9eff] hover:bg-[rgba(74,158,255,0.12)] transition-all"
+          >
+            {qIndex + 1 >= terms.length ? "Ver resultado →" : "Siguiente →"}
+          </button>
+        </div>
+      )}
     </div>
   );
 }
