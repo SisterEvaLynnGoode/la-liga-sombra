@@ -6,7 +6,8 @@ import { CAN_DO, CAN_DO_SCALE } from "@/lib/can-do";
 import SpeakPractice from "./SpeakPractice";
 
 // Roman numerals for case numbers I–X
-const ROMAN = ["I","II","III","IV","V","VI","VII","VIII","IX","X"];
+// Shared list (I–XXXII). A local ten-item copy used to wrap: Caso 11 printed as "I".
+import { ROMAN } from "@/lib/game/units";
 
 // Canonical unit order — used to derive next-unit country name
 const UNIT_COUNTRIES = ["México","Puerto Rico","España","Costa Rica","Argentina","Colombia","Chile","Perú","Rep. Dominicana","Ecuador"];
@@ -29,7 +30,7 @@ export default function BadgeModal({ caseTitle, country, criminalName, unitNumbe
   const router = useRouter();
   const mins = Math.floor(totalTimeSeconds / 60);
   const secs = totalTimeSeconds % 60;
-  const roman = ROMAN[(unitNumber - 1) % ROMAN.length] ?? String(unitNumber);
+  const roman = ROMAN[unitNumber - 1] ?? String(unitNumber);
   const nextCountry = UNIT_COUNTRIES[unitNumber] ?? null; // unitNumber is 1-based, array is 0-based
 
   // ── Can-do self-assessment (Workstream B4) ─────────────────────────────────

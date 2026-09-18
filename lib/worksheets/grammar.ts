@@ -12,6 +12,8 @@
  * Everything is plain text so it prints clean in black and white.
  */
 
+import { GRAMMAR_CHAPTER_3 } from "./grammar-chapter-3";
+
 export interface GrammarExample {
   es: string;
   en: string;
@@ -659,6 +661,8 @@ export const GRAMMAR: Record<number, GrammarLesson> = {
       ],
     },
   },
+  // Casos 21-32 (Spanish 2) live in their own file.
+  ...GRAMMAR_CHAPTER_3,
 };
 
 /** Fallback for units without an authored grammar lesson yet. */

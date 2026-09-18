@@ -150,4 +150,78 @@ export const UNITS: UnitMeta[] = [
     description: "Tiwanaku and Lake Titicaca — the imperfect (era, había, tenía) against the preterite",
     criminal: "El Cronista",      stolenItem: "La Clave de la Puerta del Sol", rotation: 1.6, themeColor: "#7a5c2e",
   },
+  // ── Chapter 3 · Arc A, "El Expediente Cronista": reopened case files ──
+  {
+    number: 21, country: "México", countryCode: "MX", flag: "🇲🇽",
+    titleEs: "El Primer Expediente", titleEn: "The First Case File",
+    description: "Guadalajara reopened — the regular preterite (llegó, tomó, salió)",
+    criminal: "El Que Abrió la Puerta", stolenItem: "La Guitarra del Sol", rotation: -1.8, themeColor: "#c0392b",
+  },
+  {
+    number: 22, country: "España", countryCode: "ES", flag: "🇪🇸",
+    titleEs: "La Sala Vacía", titleEn: "The Empty Gallery",
+    description: "The Prado, room fourteen — the irregular preterite (fue, hizo, tuvo, dijo, vino, puso)",
+    criminal: "El Guardia de la Noche", stolenItem: "Pintura de Velázquez", rotation: 1.4, themeColor: "#9b2226",
+  },
+  {
+    number: 23, country: "Perú", countryCode: "PE", flag: "🇵🇪",
+    titleEs: "Como Era Antes", titleEn: "How It Used to Be",
+    description: "Cusco — the imperfect: routines and descriptions (era, había, tenía, iba)",
+    criminal: "La Que Marcó las Piedras", stolenItem: "El Tesoro Inca", rotation: -1.2, themeColor: "#b45309",
+  },
+  {
+    number: 24, country: "Chile", countryCode: "CL", flag: "🇨🇱",
+    titleEs: "Mientras Cantaba", titleEn: "While She Was Singing",
+    description: "Viña del Mar — preterite vs imperfect: the background and the interruption",
+    criminal: "El Técnico del Segundo Turno", stolenItem: "El Trofeo del Festival", rotation: 2.0, themeColor: "#8b1a1a",
+  },
+  {
+    number: 25, country: "Cuba", countryCode: "CU", flag: "🇨🇺",
+    titleEs: "Se Lo Pidió Dos Veces", titleEn: "He Asked Twice",
+    description: "Havana 1954 — preterite vs imperfect with double object pronouns",
+    criminal: "La Voz del Estudio", stolenItem: "El Disco Maestro", rotation: -2.2, themeColor: "#b8860b",
+  },
+  {
+    number: 26, country: "Guinea Ecuatorial", countryCode: "GQ", flag: "🇬🇶",
+    titleEs: "El País Número Veintiuno", titleEn: "The Twenty-First Country",
+    description: "Malabo — the present perfect (ha llegado) and commands",
+    criminal: "El Que Esperaba en Malabo", stolenItem: "La Entrega que Nunca Llegó", rotation: 1.7, themeColor: "#2f6b4f",
+  },
+  // ── Chapter 3 · Arc B, "La Colección": the Spanish-speaking United States ──
+  {
+    number: 27, country: "Estados Unidos", countryCode: "US", flag: "🇺🇸",
+    titleEs: "La Pared que Faltaba", titleEn: "The Missing Wall",
+    description: "Los Ángeles, Chicano — the simple future (cambiará, volverá)",
+    criminal: "La Curadora", stolenItem: "Un Fragmento del Mural", rotation: -1.6, themeColor: "#c2410c",
+  },
+  {
+    number: 28, country: "Estados Unidos", countryCode: "US", flag: "🇺🇸",
+    titleEs: "La Cinta del Café", titleEn: "The Tape from the Cafe",
+    description: "Nueva York, Nuyorican — the conditional (sería, haría)",
+    criminal: "La Curadora", stolenItem: "La Cinta del Poeta", rotation: 1.3, themeColor: "#1d4e89",
+  },
+  {
+    number: 29, country: "Estados Unidos", countryCode: "US", flag: "🇺🇸",
+    titleEs: "Por Amor y Para la Familia", titleEn: "Out of Love and For the Family",
+    description: "San Antonio, Tejano — por vs para and comparisons",
+    criminal: "La Curadora", stolenItem: "El Acordeón de Don Nica", rotation: -2.0, themeColor: "#7c2d12",
+  },
+  {
+    number: 30, country: "Estados Unidos", countryCode: "US", flag: "🇺🇸",
+    titleEs: "Ojalá que Vuelva", titleEn: "I Hope It Comes Back",
+    description: "Miami, Cubano — the subjunctive of wishes and emotion (ojalá que, espero que)",
+    criminal: "La Curadora", stolenItem: "La Cafetera y la Libreta", rotation: 1.9, themeColor: "#0e7490",
+  },
+  {
+    number: 31, country: "Estados Unidos", countryCode: "US", flag: "🇺🇸",
+    titleEs: "El Que Todavía Dice Truje", titleEn: "The One Who Still Says Truje",
+    description: "Nuevo México, Hispano — the subjunctive of doubt (no creo que, dudo que)",
+    criminal: "La Curadora", stolenItem: "La Grabación del Anciano", rotation: -1.4, themeColor: "#a16207",
+  },
+  {
+    number: 32, country: "Estados Unidos", countryCode: "US", flag: "🇺🇸",
+    titleEs: "Aquí Se Inventó", titleEn: "It Was Invented Here",
+    description: "Chicago, Mexicano y Boricua — the impersonal and passive se (se inventó, se hizo)",
+    criminal: "La Curadora", stolenItem: "La Receta del Jibarito", rotation: 2.2, themeColor: "#991b1b",
+  },
 ];

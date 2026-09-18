@@ -80,10 +80,25 @@ function shuffleSeeded<T>(arr: T[], seed: number): T[] {
 
 const LETTERS = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
-/** Strip parenthetical glosses and slashes so the "answer" word is clean. */
+/**
+ * Strip glosses so the "answer" word is clean.
+ *
+ * A SPACED slash separates alternatives ("screen / monitor", "alto / alta"),
+ * so only the first is kept. An UNSPACED slash is part of the meaning
+ * ("he/she arrived", "él/ella viene") and is kept whole. This used to split on
+ * every slash, which turned 118 "he/she …" glosses into the single word "he":
+ * Caso 25's matching column printed "he" ten times. Parentheticals are removed
+ * wherever they sit rather than cut at the first "(", which had reduced
+ * "(to) him/her/you formal" to an empty answer.
+ */
 function primaryForm(s: string): string {
-  // Take the part before "/" or "(" — keeps "alto" from "alto / alta (m/f)"
-  return s.split("/")[0].split("(")[0].split("—")[0].trim();
+  const cleaned = s
+    .replace(/\([^)]*\)/g, " ")
+    .split(/\s+\/\s+/)[0]
+    .split("—")[0]
+    .replace(/\s+/g, " ")
+    .trim();
+  return cleaned || s.trim();
 }
 
 /** Scramble a word's letters deterministically (and ensure it differs from the original). */
@@ -124,7 +139,20 @@ export function buildWorksheetPacket(unit: {
   );
 
   // ── 1. Matching (first 10 terms) ────────────────────────────────────────────
-  const matchPool = cleanVocab.slice(0, 10);
+  // Skip terms whose Spanish or English repeats an earlier one (el poeta / la
+  // poeta both gloss as "the poet"): two identical answers make the column
+  // unanswerable.
+  const matchPool: VocabPair[] = [];
+  const seenEs = new Set<string>();
+  const seenEn = new Set<string>();
+  for (const v of cleanVocab) {
+    const es = primaryForm(v.spanish).toLowerCase();
+    const en = primaryForm(v.english).toLowerCase();
+    if (seenEs.has(es) || seenEn.has(en)) continue;
+    seenEs.add(es); seenEn.add(en);
+    matchPool.push(v);
+    if (matchPool.length === 10) break;
+  }
   const matchSpanish = matchPool.map((v) => primaryForm(v.spanish));
   const englishShuffled = shuffleSeeded(
     matchPool.map((v, i) => ({ text: primaryForm(v.english), correctIndex: i })),
@@ -174,7 +202,7 @@ export function buildWorksheetPacket(unit: {
   };
 
   // ── 5. Detective writing prompts (Informe Final) ─────────────────────────────
-  const writingPrompts = buildWritingPrompts(unit, cleanVocab);
+  const writingPrompts = buildWritingPrompts(unit, cleanVocab, grammar.title);
 
   return {
     unitNumber: unit.unitNumber,
@@ -199,10 +227,22 @@ export function buildWorksheetPacket(unit: {
 }
 
 function buildWritingPrompts(
-  unit: { country: string; criminalName: string },
-  vocab: VocabPair[]
+  unit: { unitNumber: number; country: string; city?: string; criminalName: string },
+  vocab: VocabPair[],
+  grammarTitle: string
 ): string[] {
   const sample = vocab.slice(0, 5).map((v) => primaryForm(v.spanish));
+  // Spanish 2: the report should practise the week's grammar, not just the
+  // words. "Describe the suspect" alone would never touch the preterite or
+  // the subjunctive the whole week was built around.
+  if (unit.unitNumber >= 21) {
+    const place = unit.city ?? unit.country;
+    return [
+      `Escribe un informe de 5–6 oraciones sobre el caso en ${place}. Usa la gramática de esta semana: ${grammarTitle}. Subraya cada verbo que la usa. / Write a 5–6 sentence report on the case in ${place} using this week's grammar (${grammarTitle}). Underline every verb that uses it.`,
+      `Describe a "${unit.criminalName}" en 3 oraciones: cómo es, qué hizo y qué va a pasar ahora. / Describe "${unit.criminalName}" in 3 sentences: what they are like, what they did, and what happens now.`,
+      `Usa estas palabras en oraciones originales: ${sample.join(", ")}. / Use these words in original sentences: ${sample.join(", ")}.`,
+    ];
+  }
   return [
     `Describe al sospechoso "${unit.criminalName}" en 3 oraciones. Usa el vocabulario de la unidad. / Describe the suspect "${unit.criminalName}" in 3 sentences using this unit's vocabulary.`,
     `Escribe un informe corto (4–5 oraciones) sobre tu caso en ${unit.country}. Incluye al menos cuatro palabras nuevas. / Write a short report (4–5 sentences) about your case in ${unit.country}. Include at least four new words.`,

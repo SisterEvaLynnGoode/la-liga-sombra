@@ -9,7 +9,8 @@ interface Props {
   onDismiss: () => void;
 }
 
-const ROMAN = ["I","II","III","IV","V","VI","VII","VIII","IX","X"];
+// Shared list (I–XXXII). A local ten-item copy used to wrap: Caso 11 printed as "I".
+import { ROMAN } from "@/lib/game/units";
 
 export default function ClueReveal({ clue, clueNumber, unitNumber, onDismiss }: Props) {
   const [dismissed, setDismissed] = useState(false);

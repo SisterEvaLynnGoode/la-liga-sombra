@@ -3,7 +3,8 @@
 import { useState } from "react";
 import Link from "next/link";
 
-const ROMAN = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"];
+// Shared list (I–XXXII). A local ten-item copy used to wrap: Caso 11 printed as "I".
+import { ROMAN } from "@/lib/game/units";
 
 export interface CountryEntry {
   number: number;
@@ -178,7 +179,7 @@ function Booklet({ countries }: { countries: CountryEntry[] }) {
         </p>
         <div className="grid grid-cols-2 gap-3">
           {countries.map((c) => {
-            const roman = ROMAN[(c.number - 1) % ROMAN.length] ?? String(c.number);
+            const roman = ROMAN[c.number - 1] ?? String(c.number);
             return (
               <div key={c.number} className="border-2 border-black p-3 flex items-center gap-3">
                 <div className="w-12 h-12 rounded-full border-2 border-dashed border-black flex items-center justify-center shrink-0">
@@ -201,7 +202,7 @@ function Booklet({ countries }: { countries: CountryEntry[] }) {
 
       {/* One page per country */}
       {countries.map((c) => {
-        const roman = ROMAN[(c.number - 1) % ROMAN.length] ?? String(c.number);
+        const roman = ROMAN[c.number - 1] ?? String(c.number);
         return (
           <section key={c.number} className="ws-page">
             <div className="border-b-2 border-black pb-2 mb-4 flex items-end justify-between">

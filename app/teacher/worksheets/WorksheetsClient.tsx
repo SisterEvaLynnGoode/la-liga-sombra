@@ -4,7 +4,8 @@ import { useState } from "react";
 import Link from "next/link";
 import type { WorksheetPacket } from "@/lib/worksheets/generate";
 
-const ROMAN = ["I", "II", "III", "IV", "V", "VI", "VII", "VIII", "IX", "X"];
+// Shared list (I–XXXII). A local ten-item copy used to wrap: Caso 11 printed as "I".
+import { ROMAN } from "@/lib/game/units";
 
 interface Props {
   packets: WorksheetPacket[];
@@ -44,7 +45,7 @@ export default function WorksheetsClient({ packets }: Props) {
     );
   }
 
-  const roman = ROMAN[(packet.unitNumber - 1) % ROMAN.length] ?? String(packet.unitNumber);
+  const roman = ROMAN[packet.unitNumber - 1] ?? String(packet.unitNumber);
 
   return (
     <div className="min-h-screen bg-[#0c0e14]">
@@ -635,7 +636,7 @@ function AnswerKey({ packet, roman }: { packet: WorksheetPacket; roman: string }
 
       <p className="font-serif text-[11px] italic mt-5 border-t-2 border-black pt-2">
         Open response: the Grammar &ldquo;Field Report&rdquo;, Culture &ldquo;Compare Cultures&rdquo;, and the Culture project are produced work.
-        Look for correct use of unit vocabulary and the {g.title} structure; accept reasonable spelling and word order at the Novice level.
+        Look for correct use of unit vocabulary and the {g.title} structure; accept reasonable spelling and word order at the {packet.unitNumber >= 21 ? "Novice High level (Spanish 2)" : "Novice level"}.
       </p>
     </section>
   );
