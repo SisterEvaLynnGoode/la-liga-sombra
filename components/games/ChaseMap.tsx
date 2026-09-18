@@ -130,7 +130,7 @@ function LocationPin({
 }) {
   const colors = {
     idle:    "border-[rgba(201,147,58,0.3)] bg-[rgba(13,11,10,0.85)] text-[#8b7355] hover:border-[rgba(201,147,58,0.6)] hover:text-[#c4a882]",
-    target:  "border-[#c9933a] bg-[rgba(201,147,58,0.15)] text-[#e8b455] shadow-[0_0_12px_rgba(201,147,58,0.4)] animate-pulse",
+    target:  "border-[#c9933a] bg-[rgba(201,147,58,0.15)] text-[#e8b455] shadow-[0_0_12px_rgba(201,147,58,0.4)]",
     visited: "border-[rgba(201,147,58,0.5)] bg-[rgba(201,147,58,0.1)] text-[#c9933a]",
     wrong:   "border-[#c0392b] bg-[rgba(192,57,43,0.15)] text-[#c0392b] shadow-[0_0_8px_rgba(192,57,43,0.3)]",
   };
@@ -146,7 +146,7 @@ function LocationPin({
         transform: "translate(-50%, -100%)",
       }}
       className={`
-        group flex flex-col items-center gap-0.5 transition-all duration-200
+        group flex flex-col items-center gap-0.5
         focus:outline-none focus:ring-2 focus:ring-[#c9933a] rounded-sm
         ${state === "visited" ? "cursor-default" : "cursor-pointer"}
       `}
@@ -155,7 +155,7 @@ function LocationPin({
       <div
         className={`
           px-2 py-1 border text-[9px] font-typewriter tracking-wide whitespace-nowrap
-          backdrop-blur-sm transition-all duration-200 ${colors[state]}
+          transition-colors duration-200 ${colors[state]}
         `}
       >
         {location.name}
@@ -169,15 +169,22 @@ function LocationPin({
           : "bg-[#8b7355]"
         }`}
       />
-      {/* Pin dot */}
+      {/* Pin dot. The target used to pulse its whole label, which carried a
+          backdrop blur: re-blurring the map behind it every frame made the
+          pulse stutter on Chromebooks. Now only a ring around the dot pings,
+          which is opacity and scale alone and costs the GPU nothing. */}
       <div
-        className={`w-2 h-2 rounded-full border transition-colors ${
+        className={`relative w-2 h-2 rounded-full border transition-colors ${
           state === "visited" ? "bg-[#c9933a] border-[#c9933a]"
           : state === "wrong" ? "bg-[#c0392b] border-[#c0392b]"
           : state === "target" ? "bg-[#e8b455] border-[#e8b455]"
           : "bg-[#2a2420] border-[#8b7355]"
         }`}
-      />
+      >
+        {state === "target" && (
+          <span className="absolute -inset-1.5 rounded-full border border-[#e8b455] animate-ping" aria-hidden />
+        )}
+      </div>
     </button>
   );
 }

@@ -137,7 +137,7 @@ export default function TimedFlashcards({
           </div>
           <div className="h-2 bg-[#2c2220] rounded-full overflow-hidden">
             <div
-              className={`h-full ${timerColor} rounded-full transition-all duration-1000`}
+              className={`h-full ${timerColor} rounded-full transition-all duration-1000 ease-linear`}
               style={{ width: `${pct}%` }}
             />
           </div>

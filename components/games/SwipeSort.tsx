@@ -53,7 +53,11 @@ export default function SwipeSort({
   // snap back instead of registering.
   const [dx, setDx] = useState(0);
   const dxRef = useRef(0);
+  // Which side the answered card went to. While `gone` is false it only leans
+  // that way and stays readable, because the feedback is printed on the card;
+  // once the feedback has been held long enough it flies off.
   const [flyOut, setFlyOut] = useState<"left" | "right" | null>(null);
+  const [gone, setGone] = useState(false);
   const dragStartX = useRef<number | null>(null);
   const shownAtRef = useRef(Date.now());
   const completedRef = useRef(false);
@@ -102,17 +106,22 @@ export default function SwipeSort({
         latencyMs: Date.now() - shownAtRef.current,
       });
 
-      // Hold the feedback long enough to read, then advance.
+      // Hold the feedback long enough to read, fly the card off, then advance.
+      // The card used to go invisible the instant it was answered, which hid
+      // the very feedback it was carrying and left an empty gap on screen.
+      const hold = correct ? 850 : 1700;
+      window.setTimeout(() => setGone(true), hold);
       window.setTimeout(() => {
         const next = index + 1;
         setDx(0);
         dxRef.current = 0;
         setFlyOut(null);
+        setGone(false);
         setFeedback(null);
         setLocked(false);
         if (next >= deck.length) finish(newScore, elapsed);
         else setIndex(next);
-      }, correct ? 850 : 1700);
+      }, hold + 260);
     },
     [locked, status, deck, index, score, elapsed, unitId, leftLabel, rightLabel, updateMastery, finish]
   );
@@ -158,9 +167,12 @@ export default function SwipeSort({
 
   const card = deck[index];
 
-  // Card transform: follow the finger, or fly off-screen when committed.
-  const translateX = flyOut === "left" ? -600 : flyOut === "right" ? 600 : dx;
+  // Card transform: follow the finger; once answered, lean toward the chosen
+  // side while the feedback shows, then fly off-screen.
+  const dir = flyOut === "left" ? -1 : flyOut === "right" ? 1 : 0;
+  const translateX = flyOut ? dir * (gone ? 520 : 30) : dx;
   const rotate = translateX / 22;
+  const dragging = dragStartX.current !== null;
   // Which side is "armed" (past halfway to commit) — used to highlight the target zone.
   const arming = dx <= -COMMIT_PX / 2 ? "left" : dx >= COMMIT_PX / 2 ? "right" : null;
 
@@ -213,7 +225,14 @@ export default function SwipeSort({
               />
 
               {/* Card */}
-              <div className="flex-1 flex items-center justify-center min-w-0">
+              {/* Keyed so each new card mounts fresh in the middle and fades up,
+                  instead of the old element sliding back across from the side
+                  the previous card left by. */}
+              <div
+                key={index}
+                className="flex-1 flex items-center justify-center min-w-0"
+                style={{ animation: "fadeUp 0.28s cubic-bezier(0.22,1,0.36,1) both" }}
+              >
                 <div
                   role="group"
                   aria-label="Card — swipe left or right, or use the arrow keys"
@@ -232,8 +251,13 @@ export default function SwipeSort({
                   `}
                   style={{
                     transform: `translateX(${translateX}px) rotate(${rotate}deg)`,
-                    transition: dragStartX.current !== null ? "none" : "transform 0.35s cubic-bezier(0.22,1,0.36,1)",
-                    opacity: flyOut ? 0 : 1,
+                    transition: dragging
+                      ? "none"
+                      : gone
+                        ? "transform 0.26s cubic-bezier(0.55,0,1,0.45), opacity 0.22s ease-in"
+                        : "transform 0.35s cubic-bezier(0.22,1,0.36,1), background-color 0.2s, border-color 0.2s",
+                    opacity: gone ? 0 : 1,
+                    willChange: "transform",
                   }}
                 >
                   <p className="font-typewriter text-[10px] tracking-[0.3em] uppercase text-[#8b7355] mb-3">Pista</p>

@@ -37,7 +37,13 @@ type Slots = Record<SlotKey, string | null>;
 
 function DraggableForm({ id, form, isUsed }: { id: string; form: string; isUsed: boolean }) {
   const { attributes, listeners, setNodeRef, transform, isDragging } = useDraggable({ id });
-  const style = { transform: CSS.Translate.toString(transform ?? { x: 0, y: 0, scaleX: 1, scaleY: 1 }) };
+  // No transition on transform: the tile must track the pointer exactly. It
+  // used to carry `transition-all`, which eased every pointer move over 150 ms
+  // and left the tile trailing behind the finger like it was on elastic.
+  const style = {
+    transform: CSS.Translate.toString(transform ?? { x: 0, y: 0, scaleX: 1, scaleY: 1 }),
+    ...(isDragging ? { zIndex: 50, position: "relative" as const } : {}),
+  };
 
   if (isUsed) {
     return (
@@ -53,7 +59,7 @@ function DraggableForm({ id, form, isUsed }: { id: string; form: string; isUsed:
       style={style}
       {...attributes}
       {...listeners}
-      className={`px-4 py-2 border font-typewriter text-sm rounded-sm cursor-grab active:cursor-grabbing select-none touch-none transition-all focus:outline-none focus:ring-2 focus:ring-[#c9933a] focus:ring-offset-1 focus:ring-offset-[#0d0b0a]
+      className={`px-4 py-2 border font-typewriter text-sm rounded-sm cursor-grab active:cursor-grabbing select-none touch-none transition-colors focus:outline-none focus:ring-2 focus:ring-[#c9933a] focus:ring-offset-1 focus:ring-offset-[#0d0b0a]
         ${isDragging
           ? "border-[#c9933a] bg-[rgba(201,147,58,0.1)] text-[#e8b455] opacity-50"
           : "border-[rgba(201,147,58,0.3)] bg-[#1a1614] text-[#c4a882] hover:border-[rgba(201,147,58,0.6)] hover:bg-[rgba(201,147,58,0.05)]"

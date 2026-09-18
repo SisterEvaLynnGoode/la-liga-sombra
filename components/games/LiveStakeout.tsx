@@ -15,7 +15,7 @@ interface Props {
 
 const VISIBLE = 4;          // cards shown at once
 const ROTATION_SEC = 8;     // seconds between rotations
-const PROGRESS_TICK = 200;  // ms between progress-bar updates
+const ROTATION_CHECK = 250; // ms between checks for the next rotation
 
 function shuffle<T>(arr: T[]): T[] {
   const a = [...arr];
@@ -29,25 +29,21 @@ function shuffle<T>(arr: T[]): T[] {
 // ── Surveillance camera card ─────────────────────────────────────────────────
 function SceneCard({
   scene,
-  rotationFrac,  // 0→1 how far through current rotation cycle
   onClick,
   flash,         // "correct" | "wrong" | null
   disabled,
 }: {
   scene: StakeoutScene;
-  rotationFrac: number;
   onClick: () => void;
   flash: "correct" | "wrong" | null;
   disabled: boolean;
 }) {
-  const barWidth = Math.max(0, 100 - rotationFrac * 100);
-
   return (
     <button
       onClick={onClick}
       disabled={disabled}
       className={`
-        relative overflow-hidden border-2 text-left transition-all duration-200
+        relative overflow-hidden border-2 text-left transition-[border-color,box-shadow] duration-200
         focus:outline-none focus:ring-2 focus:ring-[#c9933a]
         ${disabled ? "cursor-default" : "cursor-pointer"}
         ${flash === "correct"
@@ -65,7 +61,9 @@ function SceneCard({
           image icons and a running timer. The photos were also random, so they
           never depicted the action anyway: the answer is, and always was, in
           `currentAction` below. */}
-      <div className="relative bg-[#050403]">
+      {/* A quick camera-cut fade each rotation: the cards remount when the
+          feeds rotate, and without it all four swapped in one hard blink. */}
+      <div className="relative bg-[#050403]" style={{ animation: "camCut 0.32s ease-out both" }}>
         {scene.imageUrl ? (
           // eslint-disable-next-line @next/next/no-img-element
           <img
@@ -141,11 +139,15 @@ function SceneCard({
         </p>
       </div>
 
-      {/* Rotation countdown bar — drains right→left */}
-      <div className="h-0.5 bg-[#1a1614] w-full">
+      {/* Rotation countdown bar — drains right→left.
+          A CSS animation, not a width set from state: the state version stepped
+          five times a second and re-rendered all four cards on every step. This
+          one runs on the compositor and restarts on its own each time the cards
+          remount for a rotation. */}
+      <div className="h-0.5 bg-[#1a1614] w-full overflow-hidden">
         <div
-          className="h-full bg-[#c9933a] transition-none"
-          style={{ width: `${barWidth}%` }}
+          className="h-full w-full bg-[#c9933a] origin-left"
+          style={{ animation: `drain ${ROTATION_SEC}s linear both` }}
         />
       </div>
     </button>
@@ -172,7 +174,7 @@ function CountdownTimer({ seconds, max }: { seconds: number; max: number }) {
       {/* Time bar */}
       <div className="w-24 h-1 bg-[#2a2420] rounded-full overflow-hidden">
         <div
-          className={`h-full rounded-full transition-all duration-1000 ${
+          className={`h-full rounded-full transition-all duration-1000 ease-linear ${
             isCritical ? "bg-[#c0392b]" : isLow ? "bg-[#e8b455]" : "bg-[#c9933a]"
           }`}
           style={{ width: `${(seconds / max) * 100}%` }}
@@ -199,9 +201,18 @@ export default function LiveStakeout({
     return [others[0], others[1], others[2], target, ...others.slice(3)];
   });
 
+  // Decode every feed up front so a rotation never shows a half-loaded image.
+  useEffect(() => {
+    for (const sc of queue) {
+      if (!sc.imageUrl) continue;
+      const img = new Image();
+      img.src = sc.imageUrl;
+      void img.decode?.().catch(() => {});
+    }
+  }, [queue]);
+
   const [timeLeft, setTimeLeft] = useState(timeLimit);
   const [windowStart, setWindowStart] = useState(0);
-  const [rotationFrac, setRotationFrac] = useState(0); // 0→1 within current 8s window
   const [wrongFlashIdx, setWrongFlashIdx] = useState<number | null>(null);
   const [correctIdx, setCorrectIdx] = useState<number | null>(null);
   const [phase, setPhase] = useState<"playing" | "found" | "timeout">("playing");
@@ -244,15 +255,12 @@ export default function LiveStakeout({
 
     const id = setInterval(() => {
       const elapsed = Date.now() - rotationOrigin.current;
-      const frac = (elapsed % (ROTATION_SEC * 1000)) / (ROTATION_SEC * 1000);
-      setRotationFrac(frac);
-
       const newStep = Math.floor(elapsed / (ROTATION_SEC * 1000));
       if (newStep > step) {
         step = newStep;
         setWindowStart((prev) => (prev + 1) % queue.length);
       }
-    }, PROGRESS_TICK);
+    }, ROTATION_CHECK);
 
     return () => clearInterval(id);
   }, [phase, queue.length]);
@@ -386,7 +394,6 @@ export default function LiveStakeout({
             <SceneCard
               key={`${windowStart}-${i}`}
               scene={scene}
-              rotationFrac={rotationFrac}
               onClick={() => handleClick(scene, i)}
               flash={
                 correctIdx === i ? "correct"
