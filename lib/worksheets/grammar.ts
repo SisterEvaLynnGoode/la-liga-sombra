@@ -661,6 +661,207 @@ export const GRAMMAR: Record<number, GrammarLesson> = {
       ],
     },
   },
+  16: {
+    title: "Reflexive Verbs & the Daily Routine (me levanto, se viste)",
+    briefing:
+      "Montevideo, 1930: in the Uruguay locker room everything runs on a schedule, and El Cronista is hiding in it. To describe a routine you need REFLEXIVE verbs — actions a person does to themselves. You spot them by the -SE on the infinitive: levantarse, ducharse, vestirse. The se changes to match the person and goes BEFORE the conjugated verb: me levanto, te levantas, se levanta, nos levantamos, se levantan. Compare: Lavo el balón (I wash the ball) but Me lavo (I wash myself). The pronoun is the whole difference. Some are stem-changers too: despertarse (e→ie) → me despierto; acostarse (o→ue) → me acuesto; vestirse (e→i) → me visto. Put the day in order with temprano, tarde, antes de and después de.",
+    examples: [
+      { es: "Los jugadores se levantan a las seis y se entrenan.", en: "The players get up at six and train." },
+      { es: "El capitán se peina delante del espejo.", en: "The captain combs his hair in front of the mirror." },
+      { es: "Yo me despierto temprano, pero me acuesto tarde.", en: "I wake up early, but I go to bed late." },
+    ],
+    referenceTable: {
+      caption: "Reflexive pronoun + verb — the pronoun matches the person",
+      headers: ["", "Pronombre", "levantarse", "vestirse (e→i)"],
+      rows: [
+        ["yo", "me", "me levanto", "me visto"],
+        ["tú", "te", "te levantas", "te vistes"],
+        ["él / ella / usted", "se", "se levanta", "se viste"],
+        ["nosotros", "nos", "nos levantamos", "nos vestimos"],
+        ["ellos / ustedes", "se", "se levantan", "se visten"],
+      ],
+    },
+    drills: [
+      { prompt: "Los jugadores ____ levantan a las seis. (¿qué pronombre?)", answer: "se" },
+      { prompt: "Yo ____ ducho después del partido. (¿qué pronombre?)", answer: "me" },
+      { prompt: "Nosotros ____ entrenamos por la mañana. (¿qué pronombre?)", answer: "nos" },
+      { prompt: "El capitán se ____ de celeste. (vestirse)", answer: "viste" },
+      { prompt: "¿A qué hora te ____ tú? (despertarse)", answer: "despiertas" },
+      { prompt: "El utilero se ____ muy tarde. (acostarse)", answer: "acuesta" },
+    ],
+    secondDrill: {
+      title: "The Locker Room Schedule",
+      instructions: "Write the full reflexive verb (pronoun + verb) for the person in parentheses.",
+      items: [
+        { prompt: "(yo) ____ a las seis. (levantarse)", answer: "Me levanto" },
+        { prompt: "(tú) ____ antes del partido. (prepararse)", answer: "Te preparas" },
+        { prompt: "(el árbitro) ____ en el vestuario. (quedarse)", answer: "Se queda" },
+        { prompt: "(nosotros) ____ después de ganar. (ducharse)", answer: "Nos duchamos" },
+        { prompt: "(los jugadores) ____ temprano. (irse)", answer: "Se van" },
+      ],
+    },
+  },
+  17: {
+    title: "Comparisons, Superlatives & Demonstratives (más… que, el mejor, este / ese / aquel)",
+    briefing:
+      "Panama, 1914: the night before the Canal opens, and the thief gives himself away by comparing things wrong. To compare two things: más + adjective + que (more … than), menos + adjective + que (less … than), tan + adjective + como (as … as). The adjective still agrees: la puerta es más alta que la casa. To say something is the most, add the article: el barco más grande, las puertas más pesadas. Four irregulars skip 'más': mejor (better), peor (worse), mayor (older / bigger), menor (younger / smaller). Never say 'más bueno'. Then point at things by distance: este / esta (this, right here), ese / esa (that, near you), aquel / aquella (that, way over there). Plurals: estos, esos, aquellos.",
+    examples: [
+      { es: "El lago Gatún está veintiséis metros más alto que el océano.", en: "Gatún Lake is twenty-six meters higher than the ocean." },
+      { es: "Estas puertas son las más pesadas del mundo.", en: "These gates are the heaviest in the world." },
+      { es: "Este plano es mejor que ese, pero aquel es el más importante.", en: "This blueprint is better than that one, but that one over there is the most important." },
+    ],
+    referenceTable: {
+      caption: "Comparing and pointing",
+      headers: ["Comparar", "Irregulares", "Señalar (distancia)"],
+      rows: [
+        ["más … que (more … than)", "bueno → mejor", "este / esta — aquí"],
+        ["menos … que (less … than)", "malo → peor", "ese / esa — ahí"],
+        ["tan … como (as … as)", "viejo → mayor", "aquel / aquella — allá"],
+        ["el / la más … (the most …)", "joven → menor", "estos · esos · aquellos"],
+      ],
+    },
+    drills: [
+      { prompt: "La esclusa es ____ grande que el barco. (more)", answer: "más" },
+      { prompt: "El barco es ____ largo como el canal. ¡Imposible! (as … as)", answer: "tan" },
+      { prompt: "Este ingeniero es ____ que el otro. (better)", answer: "mejor" },
+      { prompt: "Son las puertas ____ pesadas del mundo. (the most)", answer: "más" },
+      { prompt: "____ planos de aquí son los originales. (these)", answer: "Estos" },
+      { prompt: "____ barco de allá, lejos, es el primero. (that, over there)", answer: "Aquel" },
+    ],
+    secondDrill: {
+      title: "Compare the Canal",
+      instructions: "Complete each sentence. The English tells you which structure to use.",
+      items: [
+        { prompt: "El océano es ____ grande ____ el lago. (more … than)", answer: "más … que" },
+        { prompt: "El obrero es ____ alto ____ el ingeniero. (as … as)", answer: "tan … como" },
+        { prompt: "La máquina vieja es ____ que la nueva. (worse)", answer: "peor" },
+        { prompt: "El ingeniero jefe es ____ que su ayudante. (older)", answer: "mayor" },
+        { prompt: "____ esclusa, ahí cerca de ti, es la más alta. (that)", answer: "Esa" },
+      ],
+    },
+  },
+  18: {
+    title: "Affirmative Tú Commands — How to Make Ñandutí (toma, pon, haz)",
+    briefing:
+      "In Itauguá, Doña Ramona teaches ñandutí the way crafts have always been taught: with short, gentle orders. 'Toma la aguja. Pon el hilo aquí. Haz un nudo pequeño.' Those are AFFIRMATIVE TÚ COMMANDS, used with a friend, a classmate or a student. For regular verbs, use the él / ella form of the present: tomar → toma, mirar → mira, cortar → corta, escuchar → escucha, empezar → empieza, terminar → termina. Eight common verbs are irregular and have to be memorized: poner → pon, hacer → haz, venir → ven, tener → ten, salir → sal, decir → di, ir → ve, ser → sé. Order the steps with primero, luego, al final, and soften them with despacio and con cuidado. Ñandutí means 'spiderweb' in Guaraní, Paraguay's other official language — and like a web, every wheel starts from the center.",
+    examples: [
+      { es: "Primero toma la aguja. Luego pon el hilo en el centro.", en: "First take the needle. Then put the thread in the center." },
+      { es: "Haz un nudo pequeño y ten paciencia.", en: "Make a small knot and be patient." },
+      { es: "Ven aquí y mira la rueda con cuidado.", en: "Come here and look at the wheel carefully." },
+    ],
+    referenceTable: {
+      caption: "Regular = the él/ella form · Eight irregulars to memorize",
+      headers: ["Regular", "Mandato", "Irregular", "Mandato"],
+      rows: [
+        ["tomar", "toma", "poner", "pon"],
+        ["mirar", "mira", "hacer", "haz"],
+        ["cortar", "corta", "venir", "ven"],
+        ["escuchar", "escucha", "tener", "ten"],
+        ["empezar", "empieza", "salir", "sal"],
+        ["terminar", "termina", "decir · ir · ser", "di · ve · sé"],
+      ],
+    },
+    drills: [
+      { prompt: "____ la aguja con la mano derecha. (tomar)", answer: "Toma" },
+      { prompt: "____ el hilo en el centro. (poner)", answer: "Pon" },
+      { prompt: "____ un nudo pequeño. (hacer)", answer: "Haz" },
+      { prompt: "____ paciencia, es difícil. (tener)", answer: "Ten" },
+      { prompt: "____ aquí, al bastidor. (venir)", answer: "Ven" },
+      { prompt: "____ el hilo al final. (cortar)", answer: "Corta" },
+    ],
+    secondDrill: {
+      title: "Teach a Classmate",
+      instructions: "Doña Ramona is busy. Give your classmate each instruction as a tú command.",
+      items: [
+        { prompt: "(escuchar) ____ a la maestra.", answer: "Escucha" },
+        { prompt: "(empezar) ____ por el centro.", answer: "Empieza" },
+        { prompt: "(salir) ____ al patio con el bastidor.", answer: "Sal" },
+        { prompt: "(decir) ____ «gracias» a Doña Ramona.", answer: "Di" },
+        { prompt: "(terminar) ____ la rueda despacio.", answer: "Termina" },
+      ],
+    },
+  },
+  19: {
+    title: "Recognizing the Preterite — Now or Last Night? (fue, llegó, vio)",
+    briefing:
+      "Canaima, 1937. Until now every case happened in the present. Here the past begins — but for this case your job is only to RECOGNIZE it, not to build it. The preterite tells you something already happened and is finished. Three clues give it away. First, the ending: an accented -ó (llegó, salió, habló, buscó, volvió) usually means he / she did it. Second, a short irregular form that looks nothing like its infinitive: fue (went / was), vio (saw), hizo (did / made), tuvo (had), dijo (said), estuvo (was). Third, the time words around it: ayer, anoche, esta mañana, hace dos días. Careful with the accent: hablo is 'I speak' now; habló is 'he spoke' yesterday. And fue can mean both 'went' (ir) and 'was' (ser) — the sentence tells you which.",
+    examples: [
+      { es: "Anoche llovió sin parar y el río subió dos metros.", en: "Last night it rained nonstop and the river rose two meters." },
+      { es: "El explorador llegó al campamento y habló con el guía.", en: "The explorer arrived at the camp and spoke with the guide." },
+      { es: "Ayer el guía vio al ladrón cerca del mapa.", en: "Yesterday the guide saw the thief near the map." },
+    ],
+    referenceTable: {
+      caption: "The seven you'll meet most — recognize them, don't conjugate yet",
+      headers: ["Pretérito", "Infinitivo", "Significa"],
+      rows: [
+        ["fue", "ir / ser", "he/she went · he/she was"],
+        ["llegó", "llegar", "he/she arrived"],
+        ["vio", "ver", "he/she saw"],
+        ["hizo", "hacer", "he/she did, made"],
+        ["tuvo", "tener", "he/she had"],
+        ["dijo", "decir", "he/she said"],
+        ["estuvo", "estar", "he/she was (location)"],
+      ],
+    },
+    drills: [
+      { prompt: "Ayer el explorador ____ al campamento. (llegar — pasado)", answer: "llegó" },
+      { prompt: "Anoche el guía ____ una luz en la selva. (ver — pasado)", answer: "vio" },
+      { prompt: "Esta mañana el ladrón ____ el mapa del campamento. (sacar — pasado: -ó)", answer: "sacó" },
+      { prompt: "Hace dos días la avioneta ____ del río. (salir — pasado)", answer: "salió" },
+      { prompt: "El guía nos ____ que la ruta es peligrosa. (decir — pasado)", answer: "dijo" },
+      { prompt: "Ayer el explorador ____ al tepuy. (ir — pasado)", answer: "fue" },
+    ],
+    secondDrill: {
+      title: "¿Ahora o Anoche?",
+      instructions: "Read each sentence. Write AHORA if it is happening now (present) or ANOCHE if it already happened (preterite).",
+      items: [
+        { prompt: "El guía habla con el explorador. →", answer: "AHORA" },
+        { prompt: "El guía habló con el explorador. →", answer: "ANOCHE" },
+        { prompt: "El ladrón busca el mapa. →", answer: "AHORA" },
+        { prompt: "El ladrón tuvo el mapa una hora. →", answer: "ANOCHE" },
+        { prompt: "La avioneta volvió sin el explorador. →", answer: "ANOCHE" },
+      ],
+    },
+  },
+  20: {
+    title: "Recognizing the Imperfect — How It WAS vs. What HAPPENED (era, había · llegó)",
+    briefing:
+      "Tiwanaku, by Lake Titicaca, the last jump of the year. You already recognize the preterite: it tells what HAPPENED, once — llegó, entró, sacó, se fue. Now meet its partner, the IMPERFECT, which describes how things WERE: the scene, the weather, what people used to do. Its forms are easy to spot. Many end in -aba (estaba) or -ía (tenía, había, vivía, veía), and the most common one is era (it was). Había means both 'there was' and 'there were'. Hacía frío means 'it was cold'. Words like siempre point to the imperfect — something that was always so. De repente points to the preterite — something suddenly happened. Think of it like a story: the imperfect is the background painting; the preterite is the thing that moves across it. This case asks you to recognize the difference, not to produce every form.",
+    examples: [
+      { es: "Antes esto era una ciudad enorme. Había mercados y vivía mucha gente.", en: "Before, this was a huge city. There were markets and many people lived here." },
+      { es: "Hacía frío y el guardián estaba junto a la puerta.", en: "It was cold and the guardian was next to the gate." },
+      { es: "De repente, un hombre llegó, sacó la piedra y se fue.", en: "Suddenly, a man arrived, took out the stone and left." },
+    ],
+    referenceTable: {
+      caption: "¿Cómo ERA o qué PASÓ?",
+      headers: ["CÓMO ERA — imperfecto", "QUÉ PASÓ — pretérito"],
+      rows: [
+        ["era · estaba · había", "llegó · entró"],
+        ["tenía · vivía · veía", "sacó · preguntó"],
+        ["hacía frío", "se fue"],
+        ["siempre (always)", "de repente (suddenly)"],
+      ],
+    },
+    drills: [
+      { prompt: "Antes, Tiwanaku ____ una ciudad enorme. (ser — cómo era)", answer: "era" },
+      { prompt: "____ mercados y caminos. (haber — cómo era)", answer: "Había" },
+      { prompt: "Esa noche ____ mucho frío. (hacer — cómo era)", answer: "hacía" },
+      { prompt: "El guardián siempre ____ junto a la puerta. (estar — cómo era)", answer: "estaba" },
+      { prompt: "De repente, un hombre ____ al templo. (entrar — qué pasó)", answer: "entró" },
+      { prompt: "El hombre ____ la piedra clave. (sacar — qué pasó)", answer: "sacó" },
+    ],
+    secondDrill: {
+      title: "¿Cómo Era o Qué Pasó?",
+      instructions: "Write ERA if the verb describes the scene (imperfect) or PASÓ if it tells something that happened (preterite).",
+      items: [
+        { prompt: "El templo tenía una puerta de piedra. →", answer: "ERA" },
+        { prompt: "Un hombre preguntó por la piedra clave. →", answer: "PASÓ" },
+        { prompt: "El cielo estaba lleno de estrellas. →", answer: "ERA" },
+        { prompt: "El guardián vivía cerca del lago. →", answer: "ERA" },
+        { prompt: "El ladrón se fue antes del amanecer. →", answer: "PASÓ" },
+      ],
+    },
+  },
   // Casos 21-32 (Spanish 2) live in their own file.
   ...GRAMMAR_CHAPTER_3,
 };
