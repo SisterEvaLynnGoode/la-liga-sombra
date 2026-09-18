@@ -129,29 +129,41 @@ export default function ChaseScene({
   useEffect(() => { laneRef.current = lane; }, [lane]);
   useEffect(() => { phaseRef.current = phase; }, [phase]);
 
+  // Everything else the loop needs, also by ref. The loop used to list these as
+  // effect dependencies, so every answer (gap), every new junction and every
+  // image load tore the loop down and rebuilt it — resetting its clock and the
+  // suspect's stride mid-motion, which read as a hitch on every junction.
+  const gapRef = useRef(gap);
+  const exitsRef = useRef<string[]>([]);
+  const laneCountRef = useRef(laneCount);
+  const approachRef = useRef(approachSeconds);
+  const resolveRef = useRef<() => void>(() => {});
+  useEffect(() => { gapRef.current = gap; }, [gap]);
+  useEffect(() => {
+    exitsRef.current = junction?.exits.map((e) => e.label) ?? [];
+    laneCountRef.current = laneCount;
+  }, [junction, laneCount]);
+  useEffect(() => { approachRef.current = approachSeconds; }, [approachSeconds]);
+
   const canvasRef = useRef<HTMLCanvasElement>(null);
 
   /**
    * The street plate and the suspect sprite.
    *
    * Held in refs and drawn only once `complete` — a half-decoded image draws as
-   * nothing, and the loop must not care whether they ever arrive. `assetTick`
-   * exists purely to force one repaint per image so the first frame is not
-   * stuck on the geometric fallback after the art lands.
+   * nothing, and the loop must not care whether they ever arrive. The loop
+   * repaints every frame, so the art simply appears on the first frame after it
+   * decodes.
    */
   const bgRef = useRef<HTMLImageElement | null>(null);
   const spriteRef = useRef<HTMLImageElement | null>(null);
-  const [assetTick, setAssetTick] = useState(0);
 
   useEffect(() => {
-    const bump = () => setAssetTick((n) => n + 1);
     const bg = new Image();
-    bg.onload = bump;
     bg.src = background;
     bgRef.current = bg;
 
     const sp = new Image();
-    sp.onload = bump;
     sp.src = suspectSprite;
     spriteRef.current = sp;
   }, [background, suspectSprite]);
@@ -189,6 +201,7 @@ export default function ChaseScene({
       instructionEn: junction.instructionEn,
     });
   }, [junction, unitId]);
+  useEffect(() => { resolveRef.current = resolveJunction; }, [resolveJunction]);
 
   // ── Advance past the feedback card ──────────────────────────────────────
   function next() {
@@ -226,62 +239,93 @@ export default function ChaseScene({
 
   // ── The loop ────────────────────────────────────────────────────────────
   /**
-   * Driven by setInterval, not requestAnimationFrame, and it paints one frame
-   * synchronously before the timer starts.
+   * requestAnimationFrame for smoothness, with a timer as a safety net.
    *
-   * rAF only fires when the browser is actually compositing. A tab that is
-   * backgrounded, occluded, or rendered in a host that does not composite gets
-   * NO callbacks at all — and because the junction used to resolve inside the
-   * rAF callback, the whole stage froze on a black rectangle with no way
-   * forward. Verified: rAF was requested once and the callback never fired.
+   * This loop used to run on a bare 30 fps setInterval, because rAF never fires
+   * in a host that is not compositing (a backgrounded tab, some embedded
+   * previews), and the stage froze on a black rectangle. That fixed the freeze
+   * but made the motion visibly choppy: 30 fps, on a timer that drifts against
+   * the display's refresh, so frames arrived unevenly and signs juddered.
    *
-   * A 30 fps interval is more than enough for a scrolling sign and a marker,
-   * costs nothing on a low-end GPU, and keeps the game advancing wherever
-   * timers run. The immediate first paint means the canvas is never blank even
-   * for the first 33 ms.
+   * Now rAF drives every frame, so motion is locked to the screen. A 100 ms
+   * watchdog only steps the game when rAF has gone quiet for longer than that,
+   * so the no-composite case still advances — just without the smoothness,
+   * which nobody can see in that case anyway.
+   *
+   * The loop is started once per run and reads everything through refs. It
+   * keeps its own clock, so nothing resets mid-motion.
    */
+  const running = phase === "running";
   useEffect(() => {
+    if (!running) return;
     const cv = canvasRef.current;
     if (!cv) return;
     const ctx = cv.getContext("2d");
     if (!ctx) return;
 
-    let last = performance.now();
-    let scroll = 0;
+    // Draw at the device's real pixel density. A 900-wide canvas stretched over
+    // a sharper screen is soft, and soft edges make motion look smeary.
+    const dpr = Math.min(2, Math.max(1, window.devicePixelRatio || 1));
+    cv.width = Math.round(W * dpr);
+    cv.height = Math.round(H * dpr);
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
-    const paint = () => {
+    let last = performance.now();
+    let time = 0;                         // seconds, never wraps
+    let shownGap = gapRef.current;        // eases toward the real gap
+    let shownLane = laneRef.current;      // eases toward the chosen lane
+    let raf = 0;
+    let stopped = false;
+
+    const tick = (now: number) => {
+      const dt = Math.min(0.1, Math.max(0, (now - last) / 1000)); // a stall cannot teleport anything
+      last = now;
+      time += dt;
+
+      // Frame-rate-independent easing: the same feel at 30, 60 or 120 Hz.
+      shownGap += (gapRef.current - shownGap) * (1 - Math.exp(-dt * 3));
+      shownLane += (laneRef.current - shownLane) * (1 - Math.exp(-dt * 16));
+
+      if (phaseRef.current === "running" && !resolvingRef.current) {
+        progressRef.current += dt / approachRef.current;
+        if (progressRef.current >= 1) {
+          progressRef.current = 1;
+          resolveRef.current();
+        }
+      }
+
       draw(ctx, {
-        scroll,
-        laneCount,
+        time,
+        laneCount: laneCountRef.current,
         lane: laneRef.current,
+        shownLane,
         progress: progressRef.current,
-        exits: junction?.exits.map((e) => e.label) ?? [],
-        gap,
+        exits: exitsRef.current,
+        gap: shownGap,
         bg: bgRef.current,
         sprite: spriteRef.current,
       });
     };
 
-    const tick = () => {
-      const now = performance.now();
-      const dt = Math.min(0.25, (now - last) / 1000);  // clamp so a throttled
-      last = now;                                       // tab cannot teleport
-      scroll = (scroll + dt * 140) % 40;
-
-      if (phaseRef.current === "running" && !resolvingRef.current) {
-        progressRef.current += dt / approachSeconds;
-        if (progressRef.current >= 1) {
-          progressRef.current = 1;
-          resolveJunction();
-        }
-      }
-      paint();
+    const frame = (now: number) => {
+      if (stopped) return;
+      tick(now);
+      raf = requestAnimationFrame(frame);
     };
 
-    paint();                                   // never show an empty canvas
-    const id = setInterval(tick, 33);          // ~30 fps
-    return () => clearInterval(id);
-  }, [junction, laneCount, approachSeconds, resolveJunction, gap, phase, assetTick]);
+    tick(last);                                   // never show an empty canvas
+    raf = requestAnimationFrame(frame);
+    const watchdog = setInterval(() => {
+      const now = performance.now();
+      if (now - last > 100) tick(now);            // rAF has stalled; keep the game moving
+    }, 100);
+
+    return () => {
+      stopped = true;
+      cancelAnimationFrame(raf);
+      clearInterval(watchdog);
+    };
+  }, [running]);
 
   // ── Briefing ────────────────────────────────────────────────────────────
   if (phase === "briefing") {
@@ -458,9 +502,10 @@ export default function ChaseScene({
  */
 
 interface DrawState {
-  scroll: number;
+  time: number;         // seconds since the run started; drives the stride
   laneCount: number;
-  lane: number;
+  lane: number;         // the chosen lane (which sign is highlighted)
+  shownLane: number;    // the marker's eased position between lanes
   progress: number;
   exits: string[];
   gap: number;
@@ -475,7 +520,7 @@ const VP_Y = 0.34;
 const lerp = (a: number, b: number, t: number) => a + (b - a) * t;
 
 function draw(ctx: CanvasRenderingContext2D, s: DrawState) {
-  const { laneCount, lane, progress, exits, gap, bg, sprite, scroll } = s;
+  const { laneCount, lane, shownLane, progress, exits, gap, bg, sprite, time } = s;
 
   ctx.clearRect(0, 0, W, H);
 
@@ -508,7 +553,10 @@ function draw(ctx: CanvasRenderingContext2D, s: DrawState) {
   const near = 1 - Math.min(1, gap / 200);            // 0 far … 1 caught
   const sy = lerp(vpy + 4, H * 0.58, near);
   const sx = lerp(vpx, W * 0.5, near * 0.55);
-  const bob = Math.sin(scroll * 0.45) * (2 + near * 4);
+  // A continuous clock, not a wrapping counter: the old counter wrapped every
+  // ~0.3 s at a point where the sine was not back at zero, so the suspect
+  // visibly jumped several times a second.
+  const bob = Math.abs(Math.sin(time * 9)) * -(2 + near * 5);
 
   if (sprite && sprite.complete && sprite.naturalWidth) {
     const sh = lerp(H * 0.09, H * 0.31, near);
@@ -532,8 +580,10 @@ function draw(ctx: CanvasRenderingContext2D, s: DrawState) {
   }
 
   // ── Junction signs, rushing out of the distance ───────────────────────
-  const p = progress;
-  const ease = p * p;                                  // accelerate toward the camera
+  // smoothstep-into-quadratic: starts gently, accelerates toward the camera,
+  // without the old curve's near-standstill at the far end.
+  const p = Math.min(1, Math.max(0, progress));
+  const ease = p * p * (1.6 - 0.6 * p);
   const rowY = lerp(vpy + 10, PLAYER_Y - 6, ease);
   const rowW = lerp(W * 0.10, W * 0.94, ease);
   const rowCx = lerp(vpx, W / 2, ease);
@@ -548,7 +598,8 @@ function draw(ctx: CanvasRenderingContext2D, s: DrawState) {
     const on = i === lane;
 
     ctx.save();
-    ctx.globalAlpha = Math.min(1, 0.25 + ease * 1.4);
+    // Fade in from nothing out of the haze instead of popping in at 25%.
+    ctx.globalAlpha = Math.min(1, p * 4);
     // Both states keep an opaque dark plate. A translucent gold fill looked
     // better in isolation and turned to mush the moment a sign crossed the
     // pool of lamplight on the road — the selection reads from the border and
@@ -560,7 +611,11 @@ function draw(ctx: CanvasRenderingContext2D, s: DrawState) {
     ctx.fill();
     ctx.stroke();
 
-    if (scale > 0.42) {
+    // Labels fade in as the sign becomes readable rather than appearing at a
+    // hard threshold, and scale continuously instead of in whole-pixel steps.
+    const textAlpha = Math.min(1, Math.max(0, (scale - 0.34) / 0.16));
+    if (textAlpha > 0) {
+      ctx.globalAlpha *= textAlpha;
       ctx.textAlign = "center";
       ctx.textBaseline = "middle";
       ctx.shadowColor = "rgba(0,0,0,0.9)";
@@ -574,7 +629,7 @@ function draw(ctx: CanvasRenderingContext2D, s: DrawState) {
 
   // ── Your lane, at the bottom edge ─────────────────────────────────────
   const laneW = (W * 0.94) / laneCount;
-  const px = W / 2 - (W * 0.94) / 2 + laneW * (lane + 0.5);
+  const px = W / 2 - (W * 0.94) / 2 + laneW * (shownLane + 0.5);   // glides between lanes
   ctx.fillStyle = GOLD_HI;
   ctx.beginPath();
   ctx.moveTo(px, H - 12);
@@ -612,9 +667,11 @@ function roundRect(ctx: CanvasRenderingContext2D, x: number, y: number, w: numbe
 
 /** Shrink a label until it fits its sign rather than letting it overflow. */
 function fitText(ctx: CanvasRenderingContext2D, text: string, cx: number, cy: number, maxW: number, start = 15) {
-  let size = start;
-  const set = () => { ctx.font = `600 ${size}px ui-sans-serif, system-ui, sans-serif`; };
-  set();
-  while (ctx.measureText(text).width > maxW && size > 7) { size -= 1; set(); }
+  // One measurement and a proportional shrink, not a 1px-at-a-time loop: the
+  // loop snapped between whole sizes as the sign grew, so labels shimmered.
+  const font = (px: number) => `600 ${px.toFixed(2)}px ui-sans-serif, system-ui, sans-serif`;
+  ctx.font = font(start);
+  const w = ctx.measureText(text).width;
+  if (w > maxW && w > 0) ctx.font = font(Math.max(6, start * (maxW / w)));
   ctx.fillText(text, cx, cy);
 }
