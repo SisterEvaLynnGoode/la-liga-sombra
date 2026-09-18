@@ -1,0 +1,585 @@
+{
+  "id": "unit-26-ultima-cronica",
+  "title": "Operación Última Crónica",
+  "subtitle": "Misión Especial — El Cronista, cara a cara",
+  "description": "Seis expedientes reabiertos, seis cómplices y un hombre en un banco de Malabo. Esta mañana El Cronista pidió papel y lápiz: quiere contar su versión. Él miente con los verbos. Tú sabes cómo pasó de verdad.",
+  "unlockAfterUnit": 26,
+  "nextUnit": 27,
+  "totalStages": 7,
+  "basePoints": 500,
+  "pointsMultiplier": {
+    "easy": 1.0,
+    "normal": 1.5,
+    "hard": 2.0
+  },
+  "collaborationBonus": 100,
+  "completionBadge": "operacion_cronica_completada",
+  "briefingLine": "Agente, el hombre del banco de Malabo está en la sala dos. El Cronista está en la sala uno. Y esta mañana, por primera vez, pidió papel y lápiz: quiere contar su versión. Cuidado, porque miente con los verbos. Todo lo que aprendiste estas seis semanas — el pretérito, el imperfecto, la diferencia entre los dos — lo vas a necesitar hoy. ¿Cómo prefieres entrar?",
+  "ethicalChoiceAfterStage": 3,
+  "stages": [
+    {
+      "type": "readingComp",
+      "country": "Sala uno",
+      "title": "La Versión del Cronista",
+      "clueReward": "Seis noches, seis mentiras. En cada ciudad alguien lo ayudó: una puerta, una llave, unas piedras, unas luces, un disco, un banco. El Cronista no trabajaba solo — y el hombre del banco está en la sala dos.",
+      "passage": "MI VERSIÓN — escrita por El Cronista, sala uno\n\nNunca robé nada. Yo solo coleccionaba momentos.\n\nEn Guadalajara la puerta estaba abierta cuando llegué. Nadie me ayudó. Entré, tomé la guitarra y salí. Fue fácil.\n\nEn Madrid el museo estaba vacío. No había guardias esa noche. Puse una copia en el marco y me fui.\n\nEn Cusco no conocía a nadie. Movía las piedras yo solo, de noche, una por una.\n\nEn Viña del Mar la cantante cantaba y el público miraba el escenario. Mientras todos miraban, entré por la puerta de prensa. Nadie apagó las luces.\n\nEn La Habana nadie me dio el disco. Lo encontré en la mesa del estudio.\n\nEn Malabo no me esperaba nadie. Nunca tuve cómplices.\n\nTrabajé solo. Siempre trabajaba solo.",
+      "glossary": [
+        {
+          "word": "coleccionar",
+          "translation": "to collect"
+        },
+        {
+          "word": "el marco",
+          "translation": "picture frame"
+        },
+        {
+          "word": "la puerta de prensa",
+          "translation": "press door"
+        },
+        {
+          "word": "el cómplice",
+          "translation": "accomplice"
+        },
+        {
+          "word": "apagar",
+          "translation": "to turn off"
+        },
+        {
+          "word": "de noche",
+          "translation": "at night"
+        }
+      ],
+      "questions": {
+        "easy": [
+          {
+            "id": "e1",
+            "text": "¿Quién escribe este texto?",
+            "type": "multiple_choice",
+            "options": [
+              "El hombre del banco",
+              "El Cronista",
+              "La Jefa Ramírez",
+              "Don Rodrigo"
+            ],
+            "correctIndex": 1,
+            "explanationEs": "Lo dice arriba: «escrita por El Cronista».",
+            "explanationEn": "It says so at the top: \"escrita por El Cronista.\""
+          },
+          {
+            "id": "e2",
+            "text": "Según El Cronista, ¿cómo estaba la puerta en Guadalajara cuando llegó?",
+            "type": "multiple_choice",
+            "options": [
+              "Vigilada",
+              "Rota",
+              "Cerrada con llave",
+              "Abierta"
+            ],
+            "correctIndex": 3,
+            "explanationEs": "«La puerta estaba abierta cuando llegué».",
+            "explanationEn": "\"La puerta estaba abierta cuando llegué.\""
+          },
+          {
+            "id": "e3",
+            "text": "¿Qué dice El Cronista al final?",
+            "type": "multiple_choice",
+            "options": [
+              "Que quiere volver a Malabo",
+              "Que siempre trabajaba solo",
+              "Que tenía seis cómplices",
+              "Que devolvió todo"
+            ],
+            "correctIndex": 1,
+            "explanationEs": "«Trabajé solo. Siempre trabajaba solo».",
+            "explanationEn": "\"Trabajé solo. Siempre trabajaba solo.\""
+          }
+        ],
+        "normal": [
+          {
+            "id": "n1",
+            "text": "Él dice: «No había guardias esa noche» en Madrid. ¿Qué sabes tú del Caso 22?",
+            "type": "multiple_choice",
+            "options": [
+              "Los guardias estaban de vacaciones",
+              "El museo estaba cerrado por obras",
+              "Solo había un guardia",
+              "Había tres guardias en el museo"
+            ],
+            "correctIndex": 3,
+            "explanationEs": "En el Caso 22 hubo tres guardias, y uno dijo que fue al almacén a las dos.",
+            "explanationEn": "In Caso 22 there were three guards, and one claimed he went to the storeroom at two."
+          },
+          {
+            "id": "n2",
+            "text": "Él dice: «Nadie apagó las luces» en Viña del Mar. ¿Qué pasó de verdad?",
+            "type": "multiple_choice",
+            "options": [
+              "Dos luces se apagaron veinte segundos a las once y cuarto",
+              "La cantante apagó las luces",
+              "Las luces nunca se apagaron",
+              "Se apagó todo el teatro"
+            ],
+            "correctIndex": 0,
+            "explanationEs": "A las once y cuarto se apagaron dos luces durante veinte segundos. Alguien las apagó.",
+            "explanationEn": "At 11:15 two lights went out for twenty seconds. Somebody turned them off."
+          },
+          {
+            "id": "n3",
+            "text": "Él dice: «Nadie me dio el disco» en La Habana. ¿Qué pasó de verdad?",
+            "type": "multiple_choice",
+            "options": [
+              "La ayudante se lo pidió dos veces a Rogelio y él se lo dio",
+              "Rogelio lo tiró a la basura",
+              "El disco nunca estuvo en el estudio",
+              "Celia se lo regaló"
+            ],
+            "correctIndex": 0,
+            "explanationEs": "Se lo pidió dos veces, y a las tres Rogelio se lo dio.",
+            "explanationEn": "She asked for it twice, and at three Rogelio handed it over."
+          },
+          {
+            "id": "n4",
+            "text": "En Cusco dice que movía las piedras él solo. ¿Por qué es imposible?",
+            "type": "multiple_choice",
+            "options": [
+              "Los guardias movían las piedras",
+              "En Cusco no hay piedras",
+              "Las piedras eran de plástico",
+              "Solo la restauradora conocía el orden exacto de las piedras"
+            ],
+            "correctIndex": 3,
+            "explanationEs": "La restauradora trabajaba allí veinte años y conocía el orden de cada piedra.",
+            "explanationEn": "The restorer had worked there twenty years and knew the order of every stone."
+          }
+        ],
+        "hard": [
+          {
+            "id": "h1",
+            "text": "«La puerta estaba abierta cuando llegué». ¿Por qué usa «estaba» y no «estuvo»?",
+            "type": "multiple_choice",
+            "options": [
+              "Porque la puerta estuvo abierta muchos años",
+              "Describe cómo era la escena en ese momento: es el fondo",
+              "Porque habla del futuro",
+              "Porque es una acción terminada"
+            ],
+            "correctIndex": 1,
+            "explanationEs": "El imperfecto pinta el fondo (la puerta estaba abierta); el pretérito cuenta la acción (llegué).",
+            "explanationEn": "The imperfect paints the background (the door was open); the preterite tells the action (I arrived)."
+          },
+          {
+            "id": "h2",
+            "text": "«Siempre trabajaba solo». ¿Qué quiere que creas con el imperfecto?",
+            "type": "multiple_choice",
+            "options": [
+              "Que trabajó solo una vez",
+              "Que trabajar solo era su costumbre, no una sola vez",
+              "Que ya no trabaja",
+              "Que va a trabajar solo mañana"
+            ],
+            "correctIndex": 1,
+            "explanationEs": "El imperfecto con «siempre» presenta una costumbre. Por eso miente mejor: suena a regla.",
+            "explanationEn": "Imperfect with \"siempre\" presents a habit. That's why it's a better lie: it sounds like a rule."
+          },
+          {
+            "id": "h3",
+            "text": "¿Cuántos cómplices tuvo El Cronista en total, según los seis expedientes?",
+            "type": "multiple_choice",
+            "options": [
+              "Veinte, uno por cada robo",
+              "Ninguno",
+              "Seis, uno en cada ciudad",
+              "Uno, el hombre del banco"
+            ],
+            "correctIndex": 2,
+            "explanationEs": "Guadalajara, Madrid, Cusco, Viña del Mar, La Habana, Malabo: un cómplice en cada expediente.",
+            "explanationEn": "Guadalajara, Madrid, Cusco, Viña del Mar, Havana, Malabo: one accomplice in every file."
+          },
+          {
+            "id": "h4",
+            "text": "«Yo solo coleccionaba momentos». ¿Qué palabra de su frase te hace pensar en otra persona?",
+            "type": "multiple_choice",
+            "options": [
+              "Yo: habla de sí mismo",
+              "Momentos: le gusta el tiempo",
+              "Solo: trabaja solo",
+              "Coleccionaba: alguien tiene una colección"
+            ],
+            "correctIndex": 3,
+            "explanationEs": "Un ladrón no colecciona. Un coleccionista sí. ¿Para quién eran las piezas?",
+            "explanationEn": "A thief doesn't collect. A collector does. Who were the pieces for?"
+          }
+        ]
+      }
+    },
+    {
+      "type": "swipeSort",
+      "country": "Sala uno",
+      "title": "Fondo o Acción",
+      "clueReward": "El expediente está corregido. Ahora cada noche se lee como pasó: lo que había alrededor en imperfecto, lo que él y sus cómplices hicieron en pretérito. El Cronista lo lee de reojo y, por primera vez, deja de sonreír.",
+      "prompt": "El Cronista dicta; tú corriges el expediente. ¿El verbo va en pretérito o en imperfecto?",
+      "leftLabel": "PRETÉRITO",
+      "leftHint": "acción terminada, un momento",
+      "rightLabel": "IMPERFECTO",
+      "rightHint": "fondo, costumbre, descripción",
+      "items": [
+        {
+          "text": "Don Rodrigo ___ (cerrar) el salón a las diez esa noche.",
+          "category": "left",
+          "explanation": "una acción terminada, a una hora — cerró"
+        },
+        {
+          "text": "Don Rodrigo ___ (trabajar) en el salón desde hacía treinta años.",
+          "category": "right",
+          "explanation": "una situación que duraba — trabajaba"
+        },
+        {
+          "text": "El guardia ___ (decir) que fue al almacén a las dos.",
+          "category": "left",
+          "explanation": "lo dijo una vez — dijo"
+        },
+        {
+          "text": "En Cusco los guardias siempre ___ (tener) una rutina fija.",
+          "category": "right",
+          "explanation": "costumbre, con «siempre» — tenían"
+        },
+        {
+          "text": "Doña Aurora ___ (ir) al mercado todos los días.",
+          "category": "right",
+          "explanation": "costumbre: «todos los días» — iba"
+        },
+        {
+          "text": "Eran las once y la cantante ___ (cantar) la última canción.",
+          "category": "right",
+          "explanation": "el fondo de la escena — cantaba"
+        },
+        {
+          "text": "A las once y cuarto ___ (apagarse) dos luces.",
+          "category": "left",
+          "explanation": "la acción que corta el fondo — se apagaron"
+        },
+        {
+          "text": "Todo el mundo ___ (mirar) el escenario.",
+          "category": "right",
+          "explanation": "lo que pasaba alrededor — miraba"
+        },
+        {
+          "text": "Rogelio ___ (grabar) la última toma a las dos.",
+          "category": "left",
+          "explanation": "una acción terminada, a una hora — grabó"
+        },
+        {
+          "text": "Rogelio ___ (estar) cansado y quería irse a casa.",
+          "category": "right",
+          "explanation": "cómo estaba: descripción — estaba"
+        },
+        {
+          "text": "A las tres, por fin, Rogelio se lo ___ (dar).",
+          "category": "left",
+          "explanation": "el momento exacto — se lo dio"
+        },
+        {
+          "text": "La cantante ___ (terminar) la canción a las once y media.",
+          "category": "left",
+          "explanation": "una acción terminada — terminó"
+        },
+        {
+          "text": "El hombre del banco ___ (llegar) a Malabo el día de la detención.",
+          "category": "left",
+          "explanation": "un día concreto — llegó"
+        },
+        {
+          "text": "El Cronista ___ (ser) alto, pálido y muy tranquilo.",
+          "category": "right",
+          "explanation": "descripción de una persona — era"
+        },
+        {
+          "text": "Nadie ___ (ver) abrirse la puerta de prensa.",
+          "category": "left",
+          "explanation": "un momento concreto que nadie vio — vio"
+        },
+        {
+          "text": "Por la mañana el sitio de Cusco ___ (ser) muy tranquilo.",
+          "category": "right",
+          "explanation": "cómo era antes: descripción — era"
+        }
+      ]
+    },
+    {
+      "type": "interrogation",
+      "country": "Sala dos",
+      "title": "El Hombre del Banco",
+      "clueReward": "El hombre del banco no era un ladrón: era el que pagaba. Y el dinero no era suyo. Venía de una mujer con guantes blancos, que hablaba un español perfecto y de ningún lugar, y que guardaba las veinte piezas en «la colección».",
+      "character": {
+        "name": "El Hombre del Banco",
+        "role": "cómplice detenido en el puerto de Malabo",
+        "description": "Esperó tres semanas en el mismo banco del puerto, cada mañana, sin hablar con nadie. Ahora está en la sala dos, con las manos sobre la mesa. Contesta despacio y en pasado, como quien ya no tiene nada que proteger.",
+        "imageUrl": "/images/characters/unit-26-s26-c.webp"
+      },
+      "questionBank": [
+        {
+          "id": "q1",
+          "spanish": "¿Cuándo llegó usted a Malabo?",
+          "english": "When did you arrive in Malabo?",
+          "response": "Llegué el día que lo detuvieron a él. Ni un día antes, ni un día después.",
+          "responseEnglish": "I arrived the day they arrested him. Not one day before, not one day after.",
+          "infoRevealed": null,
+          "isUseful": false
+        },
+        {
+          "id": "q2",
+          "spanish": "¿Qué esperaba usted en el puerto?",
+          "english": "What were you waiting for at the port?",
+          "response": "Lo esperaba a él. Yo no robaba nada, agente: yo le pagaba. Cada vez que él entregaba una pieza, yo le daba el dinero.",
+          "responseEnglish": "I was waiting for him. I didn't steal anything, agent: I paid him. Every time he delivered a piece, I gave him the money.",
+          "infoRevealed": "El hombre del banco no robaba: le pagaba a El Cronista por cada pieza.",
+          "isUseful": true
+        },
+        {
+          "id": "q3",
+          "spanish": "¿Le gustaba a usted Malabo?",
+          "english": "Did you like Malabo?",
+          "response": "Me gustaba el mar. Todas las mañanas miraba los barcos de pesca. Pero no estaba allí de vacaciones.",
+          "responseEnglish": "I liked the sea. Every morning I watched the fishing boats. But I wasn't there on vacation.",
+          "infoRevealed": null,
+          "isUseful": false
+        },
+        {
+          "id": "q4",
+          "spanish": "¿Quién le daba el dinero a usted?",
+          "english": "Who gave you the money?",
+          "response": "Una mujer. Nunca me dijo su nombre. Llevaba guantes blancos siempre, hasta para tomar café. Y hablaba un español perfecto… pero de ningún sitio. Nunca supe de dónde era.",
+          "responseEnglish": "A woman. She never told me her name. She always wore white gloves, even to drink coffee. And she spoke perfect Spanish… but from nowhere. I never found out where she was from.",
+          "infoRevealed": "Una mujer con guantes blancos, que hablaba un español de ningún lugar, pagaba todo.",
+          "isUseful": true
+        },
+        {
+          "id": "q5",
+          "spanish": "¿Conocía usted a los otros cómplices?",
+          "english": "Did you know the other accomplices?",
+          "response": "No. Él nunca nos presentaba. Cada uno sabía una sola cosa: una puerta, una llave, una luz. Nadie sabía la historia entera.",
+          "responseEnglish": "No. He never introduced us. Each of us knew one single thing: a door, a key, a light. Nobody knew the whole story.",
+          "infoRevealed": null,
+          "isUseful": false
+        },
+        {
+          "id": "q6",
+          "spanish": "¿Adónde iban las piezas después?",
+          "english": "Where did the pieces go afterward?",
+          "response": "A una colección. Ella lo decía así: «la colección», como si fuera un lugar sagrado. Estaba en Estados Unidos, pero nunca me dijo la ciudad.",
+          "responseEnglish": "To a collection. She said it that way: \"the collection,\" as if it were a sacred place. It was in the United States, but she never told me the city.",
+          "infoRevealed": "Las veinte piezas iban a «la colección», en Estados Unidos.",
+          "isUseful": true
+        },
+        {
+          "id": "q7",
+          "spanish": "¿Por qué no habló usted con nadie en tres semanas?",
+          "english": "Why didn't you talk to anyone for three weeks?",
+          "response": "Porque ella me lo pidió. Me dijo: «No hable con nadie hasta que él llegue». Y él nunca llegó.",
+          "responseEnglish": "Because she asked me to. She told me: \"Don't talk to anyone until he arrives.\" And he never arrived.",
+          "infoRevealed": null,
+          "isUseful": false
+        },
+        {
+          "id": "q8",
+          "spanish": "¿Cuántas veces vio usted a El Cronista?",
+          "english": "How many times did you see El Cronista?",
+          "response": "Dos veces en diez años. La primera vez tenía la misma cara que hoy. Exactamente la misma.",
+          "responseEnglish": "Twice in ten years. The first time he had the same face as today. Exactly the same.",
+          "infoRevealed": null,
+          "isUseful": false
+        }
+      ],
+      "requiredInfo": [
+        "El hombre del banco no robaba: le pagaba a El Cronista por cada pieza.",
+        "Una mujer con guantes blancos, que hablaba un español de ningún lugar, pagaba todo.",
+        "Las veinte piezas iban a «la colección», en Estados Unidos."
+      ],
+      "maxQuestions": 6
+    },
+    {
+      "type": "sentenceBuilder",
+      "country": "El informe",
+      "title": "El Informe Verdadero",
+      "clueReward": "El informe está completo: seis noches contadas en el tiempo correcto, seis cómplices con nombre, y una línea nueva al final que nadie había escrito antes — «una mujer le pagaba por cada pieza».",
+      "sentences": [
+        {
+          "sentence": "El ayudante abrió la puerta de atrás",
+          "translation": "The assistant opened the back door. (pretérito: a finished action)"
+        },
+        {
+          "sentence": "El guardia tenía la llave de la sala catorce",
+          "translation": "The guard had the key to room fourteen. (imperfecto: a situation, not an event)"
+        },
+        {
+          "sentence": "La restauradora conocía el orden de las piedras",
+          "translation": "The restorer knew the order of the stones. (imperfecto: something she knew all along)"
+        },
+        {
+          "sentence": "Mientras la cantante cantaba el técnico apagó las luces",
+          "translation": "While the singer was singing, the technician turned off the lights. (imperfecto for the background, pretérito for the interruption)"
+        },
+        {
+          "sentence": "La ayudante se lo pidió dos veces a Rogelio",
+          "translation": "The assistant asked Rogelio for it twice. (se lo = to him, it — the record)"
+        },
+        {
+          "sentence": "El hombre del banco ha esperado tres semanas",
+          "translation": "The man on the bench has waited three weeks. (presente perfecto: it reaches up to now)"
+        },
+        {
+          "sentence": "El Cronista no trabajaba solo",
+          "translation": "El Cronista didn't work alone. (imperfecto: the truth about his habit)"
+        },
+        {
+          "sentence": "Una mujer le pagaba por cada pieza",
+          "translation": "A woman paid him for every piece. (imperfecto: it happened again and again)"
+        }
+      ]
+    },
+    {
+      "type": "listeningComp",
+      "country": "El teléfono del banco",
+      "title": "El Mensaje de Voz",
+      "clueReward": "Es la primera vez que la oyes. Una voz tranquila, educada, perfecta — y sin ningún lugar dentro. Ya sabes dónde va a empezar: en Los Ángeles, en una pared.",
+      "audioUrl": "/audio/boss-cronica/mensaje-de-voz.mp3",
+      "transcript": "Buenas tardes. Soy yo. Ya sé que él no ha llegado, y ya sé por qué. No se preocupe: yo me encargo. Las piezas que él me trajo están bien guardadas en la colección, lejos de la calle y del sol. A partir de ahora voy a trabajar yo misma. Empezaré en Los Ángeles, en una pared que alguien pintó hace muchos años. La caja de la colección tiene dos números: veinte, por las piezas que tengo, y seis, por las ciudades que me quedan. Súmelos. Y no me llame más.",
+      "translation": "Good afternoon. It's me. I know he hasn't arrived, and I know why. Don't worry: I'll take care of it. The pieces he brought me are safely stored in the collection, far from the street and the sun. From now on I'm going to work myself. I'll start in Los Angeles, on a wall someone painted many years ago. The collection's safe has two numbers: twenty, for the pieces I have, and six, for the cities I have left. Add them. And don't call me again.",
+      "questions": [
+        {
+          "question": "¿Quién no ha llegado?",
+          "options": [
+            "Un pescador de Malabo",
+            "El hombre del banco",
+            "El Cronista",
+            "La Jefa Ramírez"
+          ],
+          "correctIndex": 2,
+          "explanationEs": "«Ya sé que él no ha llegado, y ya sé por qué»: lo detuvieron."
+        },
+        {
+          "question": "¿Dónde están las piezas que él le trajo?",
+          "options": [
+            "En la colección, lejos de la calle y del sol",
+            "En la sala uno",
+            "En un museo de Madrid",
+            "En el puerto de Malabo"
+          ],
+          "correctIndex": 0,
+          "explanationEs": "«Están bien guardadas en la colección, lejos de la calle y del sol»."
+        },
+        {
+          "question": "¿Dónde va a empezar a trabajar ella?",
+          "options": [
+            "En La Habana, en el estudio",
+            "En Chicago, en un restaurante",
+            "En Los Ángeles, en una pared pintada hace muchos años",
+            "En Malabo, en el puerto"
+          ],
+          "correctIndex": 2,
+          "explanationEs": "«Empezaré en Los Ángeles, en una pared que alguien pintó hace muchos años»."
+        },
+        {
+          "question": "«Empezaré en Los Ángeles». ¿Qué tiempo verbal es «empezaré»?",
+          "options": [
+            "El presente perfecto: hasta ahora",
+            "El imperfecto: una costumbre",
+            "El pretérito: algo que ya pasó",
+            "El futuro: algo que va a pasar"
+          ],
+          "correctIndex": 3,
+          "explanationEs": "Empezaré = futuro. Es el tiempo del próximo caso, y es el tiempo de sus planes."
+        }
+      ],
+      "maxReplays": 2,
+      "codeAnswer": "26",
+      "codeHint": "Suma los dos números del mensaje: veinte + seis = ___"
+    }
+  ],
+  "ethicalChoice": {
+    "context": "En la sala uno, El Cronista lee tu informe despacio. Cuando llega a la última línea — «una mujer le pagaba por cada pieza» — deja el papel sobre la mesa y te mira de frente por primera vez. Ya no sonríe.",
+    "speakerName": "El Cronista",
+    "speakerLine": "Muy bien, agente. Tienes las seis noches. Tienes a los seis. Pero no tienes a la que pagaba, y sin mí no la vas a encontrar. Te propongo algo: dame mi libreta y déjame escribir la historia de verdad, entera, con mi letra. Es lo único que te pido. Después te digo dónde están las veinte piezas.",
+    "options": [
+      {
+        "key": "A",
+        "emoji": "📓",
+        "title": "Darle la libreta",
+        "description": "Aceptas. Le das su libreta y lo dejas escribir su crónica completa, a su manera, antes de hablar con nadie.",
+        "effect": "Encuentras las veinte piezas. Pero él escribe la historia, y él decide qué nombre se queda fuera.",
+        "requiresSentence": false
+      },
+      {
+        "key": "B",
+        "emoji": "⚖️",
+        "title": "Cerrar el expediente",
+        "description": "No hay trato. El informe va completo al juez tal como está: seis noches, seis cómplices, veinte piezas.",
+        "effect": "El Cronista y sus seis cómplices son condenados. Pero la mujer que pagaba sigue libre, y él no dice su nombre.",
+        "requiresSentence": false
+      },
+      {
+        "key": "C",
+        "emoji": "🤝",
+        "title": "Contestarle en español",
+        "description": "No le das la libreta y no cierras el expediente todavía. Le contestas en español, en pasado: le dices lo que ya sabes que hizo, y le ofreces un trato por la verdad entera. Escribe tu respuesta.",
+        "effect": "Si tu español es claro y está en pasado, recuperas las veinte piezas Y él dice el nombre de la compradora.",
+        "requiresSentence": true,
+        "requiredWords": [
+          "robaste",
+          "vendiste",
+          "trabajaste",
+          "hiciste",
+          "dijiste",
+          "pagaba",
+          "pagó",
+          "trabajabas",
+          "tenías",
+          "sabías",
+          "mentiste",
+          "trato",
+          "acuerdo",
+          "ofrezco",
+          "prometo"
+        ]
+      }
+    ]
+  },
+  "endings": {
+    "A": {
+      "id": "la_ultima_cronica",
+      "title": "La Última Crónica",
+      "badge": "testigo_de_la_cronica",
+      "description": [
+        "Le das la libreta. El Cronista escribe toda la noche sin levantar la cabeza.",
+        "Por la mañana hay cuarenta páginas. Son los veinte robos, contados por fin como pasaron: lo que había alrededor, lo que él hacía, lo que hicieron los demás.",
+        "Las veinte piezas aparecen en la lista, una por una, con su lugar. Pero la página con el nombre de la compradora está arrancada.",
+        "La Jefa Ramírez lee la última línea en voz alta: «Yo solo miraba. Ella decidía qué valía la pena guardar»."
+      ],
+      "finalClue": "En la libreta queda la marca de la página arrancada. Con un lápiz se lee lo que estaba escrito encima: «guantes blancos · Los Ángeles · una pared»."
+    },
+    "B": {
+      "id": "el_expediente_cerrado",
+      "title": "El Expediente Cerrado",
+      "badge": "cazador_implacable",
+      "description": [
+        "No hay trato. El informe va completo al juez: seis noches, seis cómplices, veinte piezas.",
+        "El Cronista escucha la sentencia sin decir nada. Cuando se lo llevan, te mira de reojo, como siempre.",
+        "Las piezas que ya estaban en la colección siguen allí. Nadie sabe dónde es «allí».",
+        "La Jefa Ramírez cierra la carpeta: «Tienes al hombre y a sus cómplices, agente. Pero alguien pagaba, y ese alguien sigue libre»."
+      ],
+      "finalClue": "En el bolsillo del hombre del banco aparece un recibo de una tienda de Los Ángeles: dos pares de guantes blancos de algodón, de los que usan en los museos."
+    },
+    "C": {
+      "id": "la_cronica_verdadera",
+      "title": "La Crónica Verdadera",
+      "badge": "maestro_negociador_boss",
+      "description": [
+        "Tu español fue claro y estaba en pasado: no le preguntaste qué haría. Le dijiste lo que hizo.",
+        "El Cronista se ríe por primera vez. «Tienes razón. No trabajaba solo». Y habla durante dos horas.",
+        "Cada pieza tiene un lugar en su historia, y cada lugar tiene una dirección. La agencia empieza a devolverlas esa misma semana.",
+        "Al final dice el nombre que nadie había dicho: «La llaman La Curadora. Y ahora que yo no estoy, va a salir ella misma»."
+      ],
+      "finalClue": "«No roba tesoros de reyes», dice El Cronista antes de volver a su celda. «Roba lo que hace un barrio. Va a empezar en Los Ángeles, con una pared»."
+    }
+  }
+}

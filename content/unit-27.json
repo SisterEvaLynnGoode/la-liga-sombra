@@ -504,7 +504,7 @@
     {
       "type": "dialogueChoice",
       "npcName": "Lupe Arredondo, muralista del barrio",
-      "npcAvatar": "/images/characters/unit-27-curadora.webp",
+      "npcAvatar": "🎨",
       "clueReward": "La muralista notó que la mujer no usaba ni una sola palabra del barrio.",
       "startNodeId": "n1",
       "nodes": [

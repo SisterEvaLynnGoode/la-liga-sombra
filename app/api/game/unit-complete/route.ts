@@ -49,6 +49,8 @@ export async function POST(request: NextRequest) {
     5:  "unit-5-eclipse",
     8:  "unit-8-medianoche",
     15: "unit-15-reloj-arena",
+    26: "unit-26-ultima-cronica",
+    32: "unit-32-coleccion",
   };
 
   const bossId = BOSS_AFTER_UNIT[unitNumber];

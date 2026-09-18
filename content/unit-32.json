@@ -490,7 +490,7 @@
     {
       "type": "dialogueChoice",
       "npcName": "Nilda Figueroa, cocinera de la esquina",
-      "npcAvatar": "/images/characters/unit-32-curadora.webp",
+      "npcAvatar": "👩‍🍳",
       "clueReward": "La cocinera lo dijo claro: no se copió de ningún sitio, se hizo aquí.",
       "startNodeId": "n1",
       "nodes": [

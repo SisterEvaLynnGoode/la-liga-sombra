@@ -29,6 +29,8 @@ const BOSS_NAMES: Record<string, string> = {
   "unit-5-eclipse":      "Operación Eclipse (Unit 5)",
   "unit-8-medianoche":   "Operación Medianoche (Unit 8)",
   "unit-15-reloj-arena": "Operación Reloj de Arena (Unit 15)",
+  "unit-26-ultima-cronica": "Operación Última Crónica (Unit 26)",
+  "unit-32-coleccion":   "Operación La Colección (Unit 32)",
 };
 
 const ENDING_LABELS: Record<string, { label: string; emoji: string }> = {
@@ -38,13 +40,24 @@ const ENDING_LABELS: Record<string, { label: string; emoji: string }> = {
   la_detencion:       { label: "La Detención",           emoji: "⚖️" },
   el_acuerdo:         { label: "El Acuerdo",             emoji: "🤝" },
   maestro_negociador: { label: "El Maestro Negociador",  emoji: "🤝" },
+  la_ultima_cronica:     { label: "La Última Crónica",     emoji: "📓" },
+  el_expediente_cerrado: { label: "El Expediente Cerrado", emoji: "⚖️" },
+  la_cronica_verdadera:  { label: "La Crónica Verdadera",  emoji: "🤝" },
+  la_vitrina:            { label: "La Vitrina",            emoji: "🏛️" },
+  la_prueba:             { label: "La Prueba",             emoji: "⚖️" },
+  de_vuelta_al_barrio:   { label: "De Vuelta al Barrio",   emoji: "🗣️" },
 };
 
-const CHOICE_LABELS: Record<string, string> = {
-  A: "🕊️ Allow warning",
-  B: "⚖️ Press the interrogation",
-  C: "🤝 Negotiate in Spanish",
+// Per boss: the A/B/C options mean different things in each one. This used to
+// be a single Eclipse list, so every later boss reported Eclipse's choices.
+const CHOICE_LABELS: Record<string, Record<"A" | "B" | "C", string>> = {
+  "unit-5-eclipse":         { A: "🕊️ Allow the warning",    B: "⚖️ Press the interrogation", C: "🤝 Negotiate in Spanish" },
+  "unit-8-medianoche":      { A: "⚖️ Name her in the report", B: "🕊️ Protect the source",     C: "🤝 Negotiate in Spanish" },
+  "unit-15-reloj-arena":    { A: "⏳ Take the machine",       B: "⚖️ Refuse and arrest him",  C: "🤝 Negotiate in Spanish" },
+  "unit-26-ultima-cronica": { A: "📓 Give him the notebook",  B: "⚖️ Close the file",         C: "🤝 Answer in Spanish (past tense)" },
+  "unit-32-coleccion":      { A: "🏛️ Sign: national museum",  B: "⚖️ Arrest her now",         C: "🗣️ Answer in Spanish" },
 };
+const CHOICE_FALLBACK = { A: "Option A", B: "Option B", C: "🤝 Spanish sentence" };
 
 export default function BossTab({ classId }: { classId: string }) {
   const { data, loading, lastUpdated, refetch } = useClassData<BossResponse>("/api/teacher/dashboard/boss", classId);
@@ -133,13 +146,13 @@ export default function BossTab({ classId }: { classId: string }) {
             {(b.choiceDist.A + b.choiceDist.B + b.choiceDist.C) > 0 && (
               <div className="px-5 py-3 border-t border-[rgba(192,57,43,0.1)]">
                 <p className="font-typewriter text-[9px] uppercase text-[#8b4a4a] mb-2">
-                  💡 Ethical decision (Costa Rica) — class-discussion fodder
+                  💡 Ethical decision — class-discussion fodder
                 </p>
                 <div className="flex flex-wrap gap-3">
                   {(["A","B","C"] as const).map((k) => (
                     b.choiceDist[k] > 0 && (
                       <div key={k} className="font-typewriter text-[10px] text-[#c4a882]">
-                        {CHOICE_LABELS[k]}: <span className="text-[#e8b455]">{b.choiceDist[k]}</span>
+                        {(CHOICE_LABELS[b.bossId] ?? CHOICE_FALLBACK)[k]}: <span className="text-[#e8b455]">{b.choiceDist[k]}</span>
                       </div>
                     )
                   ))}
@@ -181,7 +194,7 @@ export default function BossTab({ classId }: { classId: string }) {
                       {s.difficulty === "easy" ? "🔍 Silenciosa" : s.difficulty === "hard" ? "🔥 Relámpago" : s.difficulty === "normal" ? "⚡ Estándar" : "—"}
                     </td>
                     <td className="py-2.5 pr-3 font-typewriter text-xs text-[#8b7355]">
-                      {s.ethicalChoice ? CHOICE_LABELS[s.ethicalChoice]?.slice(3) ?? s.ethicalChoice : "—"}
+                      {s.ethicalChoice ? (CHOICE_LABELS[b.bossId] ?? CHOICE_FALLBACK)[s.ethicalChoice as "A" | "B" | "C"] ?? s.ethicalChoice : "—"}
                     </td>
                     <td className="py-2.5 pr-3 font-typewriter text-xs text-[#8b7355]">
                       {s.ending ? (ENDING_LABELS[s.ending]?.emoji + " " + ENDING_LABELS[s.ending]?.label) : "—"}

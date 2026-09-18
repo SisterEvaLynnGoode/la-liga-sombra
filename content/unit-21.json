@@ -365,7 +365,7 @@
     },
     {
       "type": "readingComp",
-      "passage": "Don Rodrigo trabajó en el salón durante treinta años. Esa noche cerró a las diez, como siempre. Primero limpió el escenario. Después guardó las sillas. A las diez y media escuchó un ruido en el pasillo, pero no miró. «Aquí nunca pasa nada», pensó. A las once salió por la puerta de atrás y la dejó abierta, porque la llave no funcionó. A la mañana siguiente, la Guitarra del Sol no estuvo en su lugar.",
+      "passage": "Don Rodrigo trabajó en el salón durante treinta años. Esa noche cerró a las diez, como siempre. Primero limpió el escenario. Después guardó las sillas. A las diez y media escuchó un ruido en el pasillo, pero no miró. «Aquí nunca pasa nada», pensó. A las once salió por la puerta de atrás y la dejó abierta, porque la llave no funcionó. A la mañana siguiente, Don Rodrigo encontró vacío el lugar de la Guitarra del Sol.",
       "glossary": [
         {
           "word": "cerró",
@@ -516,7 +516,7 @@
     {
       "type": "dialogueChoice",
       "npcName": "Doña Elvira, vecina del salón",
-      "npcAvatar": "/images/characters/unit-01-don-rodrigo.webp",
+      "npcAvatar": "👵",
       "clueReward": "La vecina vio salir a alguien del salón a las once y diez, con las manos vacías.",
       "startNodeId": "n1",
       "nodes": [

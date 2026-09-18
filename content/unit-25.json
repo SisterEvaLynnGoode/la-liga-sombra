@@ -427,7 +427,7 @@
     {
       "type": "dialogueChoice",
       "npcName": "Rogelio Prats, ingeniero de sonido",
-      "npcAvatar": "/images/characters/unit-15-cronista.webp",
+      "npcAvatar": "🎙️",
       "clueReward": "Rogelio identificó la voz: fue alguien que trabajaba dentro del estudio.",
       "startNodeId": "n1",
       "nodes": [

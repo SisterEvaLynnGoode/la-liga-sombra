@@ -14,7 +14,11 @@ export type BossEnding =
   // Operación Reloj de Arena
   | "trato_del_reloj" | "la_detencion" | "el_acuerdo"
   // Operación Medianoche
-  | "expediente_completo" | "fuente_protegida" | "la_inmunidad";
+  | "expediente_completo" | "fuente_protegida" | "la_inmunidad"
+  // Operación Última Crónica
+  | "la_ultima_cronica" | "el_expediente_cerrado" | "la_cronica_verdadera"
+  // Operación La Colección
+  | "la_vitrina" | "la_prueba" | "de_vuelta_al_barrio";
 export type BossPhase =
   | "briefing"
   | "stage1" | "stage2" | "stage3" | "stage4"

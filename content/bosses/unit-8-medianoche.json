@@ -53,9 +53,9 @@
             "type": "multiple_choice",
             "options": [
               "A las diez",
+              "A las siete",
               "A las nueve",
-              "A las doce",
-              "A las siete"
+              "A las doce"
             ],
             "correctIndex": 0,
             "explanationEs": "«A las diez llegó un hombre con una camioneta blanca».",
@@ -66,12 +66,12 @@
             "text": "¿Por dónde entró el hombre?",
             "type": "multiple_choice",
             "options": [
-              "Por la cocina",
-              "Por la puerta principal",
               "Por la ventana",
-              "Por el mercado"
+              "Por la cocina",
+              "Por el mercado",
+              "Por la puerta principal"
             ],
-            "correctIndex": 0,
+            "correctIndex": 1,
             "explanationEs": "«No entró por la puerta principal. Entró por la cocina».",
             "explanationEn": "\"No entró por la puerta principal. Entró por la cocina.\""
           },
@@ -81,9 +81,9 @@
             "type": "multiple_choice",
             "options": [
               "Medianoche",
+              "Receta",
               "Mercado",
-              "Camioneta",
-              "Receta"
+              "Camioneta"
             ],
             "correctIndex": 0,
             "explanationEs": "«Escuché una sola palabra: medianoche».",
@@ -96,12 +96,12 @@
             "text": "¿Qué hizo la chef a las nueve?",
             "type": "multiple_choice",
             "options": [
+              "Cerró el restaurante y volvió a casa",
               "Limpió la cocina y guardó las especias",
-              "Cocinó el ajiaco",
               "Habló con el hombre",
-              "Cerró el restaurante y volvió a casa"
+              "Cocinó el ajiaco"
             ],
-            "correctIndex": 0,
+            "correctIndex": 1,
             "explanationEs": "«A las nueve limpié la cocina y guardé las especias» — limpié y guardé son pretérito.",
             "explanationEn": "\"A las nueve limpié la cocina y guardé las especias\" — both preterite."
           },
@@ -110,12 +110,12 @@
             "text": "¿Por qué el hombre no consiguió la receta?",
             "type": "multiple_choice",
             "options": [
-              "Porque la receta no está escrita",
-              "Porque la chef la guardó en el banco",
               "Porque la policía llegó primero",
-              "Porque la chef la quemó"
+              "Porque la chef la quemó",
+              "Porque la chef la guardó en el banco",
+              "Porque la receta no está escrita"
             ],
-            "correctIndex": 0,
+            "correctIndex": 3,
             "explanationEs": "«La receta no está escrita — está en mi cabeza».",
             "explanationEn": "\"La receta no está escrita — está en mi cabeza.\""
           },
@@ -124,12 +124,12 @@
             "text": "¿Cuánto tiempo estuvo el hombre en la cocina?",
             "type": "multiple_choice",
             "options": [
-              "Veinte minutos",
               "Diez minutos",
-              "Una hora",
-              "Toda la noche"
+              "Toda la noche",
+              "Veinte minutos",
+              "Una hora"
             ],
-            "correctIndex": 0,
+            "correctIndex": 2,
             "explanationEs": "«El hombre estuvo aquí veinte minutos» — estuvo es el pretérito de estar.",
             "explanationEn": "\"El hombre estuvo aquí veinte minutos\" — estuvo is the preterite of estar."
           },
@@ -139,9 +139,9 @@
             "type": "multiple_choice",
             "options": [
               "Un papel con un número de puesto",
-              "Una foto del cuaderno",
+              "El menú del restaurante",
               "Dinero para la receta",
-              "El menú del restaurante"
+              "Una foto del cuaderno"
             ],
             "correctIndex": 0,
             "explanationEs": "«Dejó algo en la mesa: un papel con un número de puesto del Mercado de San Pedro».",
@@ -154,12 +154,12 @@
             "text": "La chef dice «tomó una foto de mi cuaderno». ¿Por qué es importante?",
             "type": "multiple_choice",
             "options": [
-              "Porque se llevó la receta sin llevarse nada",
               "Porque el cuaderno era muy caro",
+              "Porque el cuaderno no era de ella",
               "Porque la foto salió mal",
-              "Porque el cuaderno no era de ella"
+              "Porque se llevó la receta sin llevarse nada"
             ],
-            "correctIndex": 0,
+            "correctIndex": 3,
             "explanationEs": "No robó ningún objeto — copió la información. Por eso «la camioneta no llevó nada de mi cocina».",
             "explanationEn": "He stole no object — he copied the information. That's why \"la camioneta no llevó nada de mi cocina.\""
           },
@@ -168,12 +168,12 @@
             "text": "Toda la declaración está en pretérito. ¿Por qué?",
             "type": "multiple_choice",
             "options": [
-              "Porque cuenta lo que pasó anoche, ya terminado",
               "Porque está pasando ahora mismo",
+              "Porque es una costumbre que se repite",
               "Porque va a pasar mañana",
-              "Porque es una costumbre que se repite"
+              "Porque cuenta lo que pasó anoche, ya terminado"
             ],
-            "correctIndex": 0,
+            "correctIndex": 3,
             "explanationEs": "El pretérito cuenta acciones terminadas. Anoche terminó; por eso llegó, entró, habló, miró.",
             "explanationEn": "The preterite reports finished actions. Last night is over — hence llegó, entró, habló, miró."
           },
@@ -182,12 +182,12 @@
             "text": "¿Quién llamó a quién por teléfono?",
             "type": "multiple_choice",
             "options": [
+              "El hombre llamó al mercado de Cusco",
               "Alguien llamó al hombre de la camioneta",
-              "El hombre llamó a la chef",
               "La chef llamó a la policía",
-              "El hombre llamó al mercado de Cusco"
+              "El hombre llamó a la chef"
             ],
-            "correctIndex": 0,
+            "correctIndex": 1,
             "explanationEs": "«Alguien lo llamó por teléfono» — lo = al hombre. Él recibió la llamada, no la hizo.",
             "explanationEn": "\"Alguien lo llamó\" — lo = the man. He received the call; he did not make it."
           },
@@ -196,12 +196,12 @@
             "text": "¿Qué dice el papel del hombre sobre la noche de anoche?",
             "type": "multiple_choice",
             "options": [
-              "Que Cartagena y Cusco son partes del mismo plan",
               "Que el hombre compró algo en Cusco",
               "Que la chef trabajó en Cusco",
+              "Que Cartagena y Cusco son partes del mismo plan",
               "Que la camioneta vino de Cusco"
             ],
-            "correctIndex": 0,
+            "correctIndex": 2,
             "explanationEs": "Un hombre en Cartagena con el número de un puesto de Cusco conecta los dos casos en una sola noche.",
             "explanationEn": "A man in Cartagena carrying a Cusco stall number ties the two cases into one night."
           }
@@ -445,21 +445,21 @@
         {
           "question": "¿Dónde guardó todo?",
           "options": [
-            "En la caja del almacén nueve",
-            "En la camioneta blanca",
             "En el puesto del mercado",
-            "En la oficina de la agencia"
+            "En la caja del almacén nueve",
+            "En la oficina de la agencia",
+            "En la camioneta blanca"
           ],
-          "correctIndex": 0,
+          "correctIndex": 1,
           "explanationEs": "«Ya guardé todo en la caja del almacén nueve» — guardé es pretérito."
         },
         {
           "question": "«No hablé con nadie, no llamé a nadie.» ¿Qué tiempo verbal usa?",
           "options": [
             "El pretérito — habla de algo terminado",
-            "El presente — habla de ahora",
+            "El futuro",
             "El presente progresivo",
-            "El futuro"
+            "El presente — habla de ahora"
           ],
           "correctIndex": 0,
           "explanationEs": "hablé y llamé llevan la terminación -é del pretérito de yo."
@@ -467,23 +467,23 @@
         {
           "question": "¿A qué hora llegó el segundo?",
           "options": [
-            "A las diez",
             "A las nueve",
             "A las cinco",
+            "A las diez",
             "A las doce"
           ],
-          "correctIndex": 0,
+          "correctIndex": 2,
           "explanationEs": "«El segundo llegó a las diez»."
         },
         {
           "question": "«Si no llego a las doce, no llegué nunca.» ¿Qué quiere decir?",
           "options": [
-            "Que si falla, va a desaparecer",
             "Que siempre llega tarde",
+            "Que si falla, va a desaparecer",
             "Que no sabe la hora",
             "Que ya llegó antes"
           ],
-          "correctIndex": 0,
+          "correctIndex": 1,
           "explanationEs": "Es una amenaza sobre sí mismo: o está a las doce, o se va para siempre."
         }
       ],

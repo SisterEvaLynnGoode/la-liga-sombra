@@ -20,6 +20,8 @@ const BOSS_AFTER_UNIT: Record<number, { id: string; title: string; subtitle: str
   5:  { id: "unit-5-eclipse",      title: "Operación Eclipse",       subtitle: "Misión Especial — La Liga Sombra" },
   8:  { id: "unit-8-medianoche",   title: "Operación Medianoche",     subtitle: "Misión Especial — El Topo" },
   15: { id: "unit-15-reloj-arena", title: "Operación Reloj de Arena", subtitle: "Misión Especial — El Cronista" },
+  26: { id: "unit-26-ultima-cronica", title: "Operación Última Crónica", subtitle: "Misión Especial — El Cronista, cara a cara" },
+  32: { id: "unit-32-coleccion",   title: "Operación La Colección",   subtitle: "Misión Final — La Curadora" },
 };
 
 export const metadata = { title: "Sala de Investigación — La Liga Sombra" };

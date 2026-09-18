@@ -51,9 +51,9 @@
             "type": "multiple_choice",
             "options": [
               "Juan",
-              "Pablo",
               "Miguel",
-              "Carlos"
+              "Carlos",
+              "Pablo"
             ],
             "correctIndex": 0
           },
@@ -63,9 +63,9 @@
             "type": "multiple_choice",
             "options": [
               "Buenos Aires",
+              "San Juan",
               "Guadalajara",
-              "Madrid",
-              "San Juan"
+              "Madrid"
             ],
             "correctIndex": 0
           },
@@ -76,8 +76,8 @@
             "options": [
               "veinticinco",
               "treinta",
-              "diecinueve",
-              "veintinueve"
+              "veintinueve",
+              "diecinueve"
             ],
             "correctIndex": 0
           },
@@ -86,12 +86,12 @@
             "text": "¿Cómo se llama el contacto en San Juan?",
             "type": "multiple_choice",
             "options": [
-              "Ricardo",
-              "Roberto",
+              "Rafael",
               "Rodrigo",
-              "Rafael"
+              "Roberto",
+              "Ricardo"
             ],
-            "correctIndex": 0
+            "correctIndex": 3
           }
         ],
         "normal": [
@@ -100,48 +100,48 @@
             "text": "¿Cómo se llama el autor de la carta?",
             "type": "multiple_choice",
             "options": [
-              "Juan",
+              "Carlos",
               "Pablo",
               "Miguel",
-              "Carlos"
+              "Juan"
             ],
-            "correctIndex": 0
+            "correctIndex": 3
           },
           {
             "id": "n2",
             "text": "¿De dónde es el autor?",
             "type": "multiple_choice",
             "options": [
-              "Buenos Aires",
               "Guadalajara",
               "Madrid",
+              "Buenos Aires",
               "San Juan"
             ],
-            "correctIndex": 0
+            "correctIndex": 2
           },
           {
             "id": "n3",
             "text": "¿Cuántos años tiene el hermano del autor?",
             "type": "multiple_choice",
             "options": [
-              "veinticinco",
-              "treinta",
+              "veintinueve",
               "diecinueve",
-              "veintinueve"
+              "treinta",
+              "veinticinco"
             ],
-            "correctIndex": 0
+            "correctIndex": 3
           },
           {
             "id": "n4",
             "text": "¿Cómo es físicamente el contacto Ricardo?",
             "type": "multiple_choice",
             "options": [
-              "Alto y pelo rizado oscuro",
-              "Bajo y pelo liso rubio",
+              "Alto y pelo liso negro",
               "Mediano y pelo corto castaño",
-              "Alto y pelo liso negro"
+              "Alto y pelo rizado oscuro",
+              "Bajo y pelo liso rubio"
             ],
-            "correctIndex": 0
+            "correctIndex": 2
           },
           {
             "id": "n5",
@@ -584,34 +584,34 @@
         {
           "question": "¿Cuándo llega la hermana de El Tejedor a Buenos Aires?",
           "options": [
-            "el quince",
-            "el veinte",
+            "el treinta",
             "el doce",
-            "el treinta"
+            "el veinte",
+            "el quince"
           ],
-          "correctIndex": 0,
+          "correctIndex": 3,
           "explanationEs": "Dice: 'Mi hermana viene a Buenos Aires el quince.'"
         },
         {
           "question": "¿Cuántos años tiene la primera víctima mencionada?",
           "options": [
+            "74",
             "25",
             "30",
-            "19",
-            "74"
+            "19"
           ],
-          "correctIndex": 0,
+          "correctIndex": 1,
           "explanationEs": "Los tres números son: veinticinco (25), treinta (30), diecinueve (19)."
         },
         {
           "question": "¿Qué es el código según El Tejedor?",
           "options": [
-            "La suma de los años de sus tres víctimas",
             "Una fecha importante",
-            "El nombre de El Coleccionista",
-            "Un número de teléfono"
+            "Un número de teléfono",
+            "La suma de los años de sus tres víctimas",
+            "El nombre de El Coleccionista"
           ],
-          "correctIndex": 0,
+          "correctIndex": 2,
           "explanationEs": "El Tejedor dice: 'El código es la suma de los años de mis tres víctimas.'"
         }
       ]

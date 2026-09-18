@@ -483,7 +483,7 @@
     {
       "type": "dialogueChoice",
       "npcName": "Yuniel Casal, nieto de la fundadora",
-      "npcAvatar": "/images/characters/unit-30-curadora.webp",
+      "npcAvatar": "☕",
       "clueReward": "El nieto contó que ella pidió la libreta antes que la máquina.",
       "startNodeId": "n1",
       "nodes": [

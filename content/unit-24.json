@@ -303,7 +303,7 @@
     },
     {
       "type": "readingComp",
-      "passage": "Eran las once y el teatro estaba lleno. La cantante cantaba la última canción y todo el mundo miraba el escenario. Las cámaras grababan. Mientras tanto, en el pasillo de prensa, no había nadie. A las once y cuarto se apagaron dos luces durante veinte segundos. Cuando volvieron, la puerta de prensa estaba abierta. Nadie la vio abrirse porque todos miraban hacia el otro lado. A las once y media terminó la canción y el trofeo ya no estuvo en su sitio.",
+      "passage": "Eran las once y el teatro estaba lleno. La cantante cantaba la última canción y todo el mundo miraba el escenario. Las cámaras grababan. Mientras tanto, en el pasillo de prensa, no había nadie. A las once y cuarto se apagaron dos luces durante veinte segundos. Cuando volvieron, la puerta de prensa estaba abierta. Nadie la vio abrirse porque todos miraban hacia el otro lado. A las once y media terminó la canción y el trofeo ya no estaba en su sitio.",
       "glossary": [
         {
           "word": "lleno",
@@ -384,7 +384,7 @@
             "Por la mañana"
           ],
           "correctIndex": 1,
-          "explanationEs": "Las luces se apagaron a las 11:15 y a las 11:30 ya no estuvo.",
+          "explanationEs": "Las luces se apagaron a las 11:15 y a las 11:30 ya no estaba.",
           "explanationEn": "Between 11:15 and 11:30."
         }
       ]
@@ -454,7 +454,7 @@
     {
       "type": "dialogueChoice",
       "npcName": "Paula Sotelo, jefa de prensa",
-      "npcAvatar": "/images/characters/unit-07-periodista.webp",
+      "npcAvatar": "🎤",
       "clueReward": "La jefa de prensa confirmó que el pasillo estaba vacío desde las once.",
       "startNodeId": "n1",
       "nodes": [

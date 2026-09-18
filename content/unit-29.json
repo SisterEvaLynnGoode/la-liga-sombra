@@ -465,7 +465,7 @@
     {
       "type": "dialogueChoice",
       "npcName": "Yolanda Cavazos, nieta de don Nica",
-      "npcAvatar": "/images/characters/unit-29-curadora.webp",
+      "npcAvatar": "🪗",
       "clueReward": "La nieta recordó la pregunta exacta: por el más antiguo, no por el más caro.",
       "startNodeId": "n1",
       "nodes": [

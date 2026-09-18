@@ -26,7 +26,9 @@ export type BadgeType =
   | "diplomatico" | "cazador_implacable" | "maestro_negociador_boss"
   | "agente_elite_boss" | "agente_estandar" | "agente_cuidadoso"
   | "operacion_reloj_completada" | "guardian_del_tiempo"
-  | "operacion_medianoche_completada" | "protector_de_fuentes";
+  | "operacion_medianoche_completada" | "protector_de_fuentes"
+  | "operacion_cronica_completada" | "testigo_de_la_cronica"
+  | "operacion_coleccion_completada" | "voz_del_barrio";
 
 // Supabase v2 requires Relationships and CompositeTypes for correct type inference
 export interface Database {

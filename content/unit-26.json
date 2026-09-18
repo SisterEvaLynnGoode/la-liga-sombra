@@ -491,7 +491,7 @@
     {
       "type": "dialogueChoice",
       "npcName": "Bita Nsue, pescadora del puerto",
-      "npcAvatar": "/images/characters/unit-19-cronista.webp",
+      "npcAvatar": "🎣",
       "clueReward": "La pescadora describió al hombre del banco: llegó hace tres semanas, justo cuando cayó El Cronista.",
       "startNodeId": "n1",
       "nodes": [

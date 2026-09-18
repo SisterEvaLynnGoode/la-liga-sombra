@@ -345,7 +345,7 @@
     },
     {
       "type": "readingComp",
-      "passage": "La noche del robo hubo tres guardias en el museo. El primero estuvo en la entrada toda la noche. El segundo hizo su ronda cada hora y no vio nada raro. El tercero dijo que fue al almacén a las dos de la mañana, pero el almacén estuvo cerrado desde la una. Nadie vino a buscarlo. Cuando volvió, a las tres, el marco de la sala catorce tuvo dentro una copia en papel, y el cuadro ya no estuvo allí.",
+      "passage": "La noche del robo hubo tres guardias en el museo. El primero estuvo en la entrada toda la noche. El segundo hizo su ronda cada hora y no vio nada raro. El tercero dijo que fue al almacén a las dos de la mañana, pero el almacén estuvo cerrado desde la una. Nadie vino a buscarlo. Cuando volvió, a las tres, encontró una copia en papel en el marco de la sala catorce. Alguien se llevó el cuadro y dejó la copia.",
       "glossary": [
         {
           "word": "la ronda",
@@ -412,7 +412,7 @@
             "Una carta"
           ],
           "correctIndex": 1,
-          "explanationEs": "«el marco tuvo dentro una copia en papel».",
+          "explanationEs": "«encontró una copia en papel en el marco de la sala catorce».",
           "explanationEn": "A paper copy."
         },
         {
@@ -434,7 +434,7 @@
     {
       "type": "listeningComp",
       "audioUrl": "/audio/unit-22/declaracion-guardia.mp3",
-      "transcript": "Buenas noches. Hice mi ronda a la una, como siempre. Todo estuvo normal. Después fui al almacén a buscar una linterna. Estuve allí veinte minutos. No vi a nadie y nadie vino a buscarme. Cuando volví a la sala catorce, a las tres, el cuadro ya no estuvo en la pared. Yo no tuve la llave de esa sala. Se lo juro.",
+      "transcript": "Buenas noches. Hice mi ronda a la una, como siempre. Todo estuvo normal. Después fui al almacén a buscar una linterna. Estuve allí veinte minutos. No vi a nadie y nadie vino a buscarme. Cuando volví a la sala catorce, a las tres, vi la pared vacía. Yo no tuve la llave de esa sala. Se lo juro.",
       "translation": "Good evening. I did my rounds at one, as always. Everything was normal. Then I went to the storeroom to get a flashlight. I was there twenty minutes. I did not see anyone and nobody came looking for me. When I returned to room fourteen, at three, the painting was no longer on the wall. I did not have the key to that room. I swear.",
       "retryHint": "Pista: compara lo que dice con las horas del informe.",
       "passingScore": 0.6,
@@ -486,7 +486,7 @@
           "options": [
             "El cuadro en la pared",
             "La sala cerrada",
-            "El cuadro ya no estuvo",
+            "La pared vacía",
             "A un ladrón"
           ],
           "correctIndex": 2
@@ -496,7 +496,7 @@
     {
       "type": "dialogueChoice",
       "npcName": "Sra. Beltrán, restauradora del museo",
-      "npcAvatar": "/images/characters/unit-03-carlos-metroista.webp",
+      "npcAvatar": "🧑‍🎨",
       "clueReward": "La restauradora confirmó que la copia se puso en el marco antes de la medianoche.",
       "startNodeId": "n1",
       "nodes": [

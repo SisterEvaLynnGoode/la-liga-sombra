@@ -1,0 +1,584 @@
+{
+  "id": "unit-32-coleccion",
+  "title": "Operación La Colección",
+  "subtitle": "Misión Final — La Curadora",
+  "description": "Un almacén sin nombre en las afueras de Chicago. Seis salas, seis ciudades, seis piezas en vitrinas perfectas. La Curadora te espera en la sala del fondo, con los guantes puestos. Todo lo que aprendiste este año, en una sola noche.",
+  "unlockAfterUnit": 32,
+  "nextUnit": 0,
+  "totalStages": 7,
+  "basePoints": 600,
+  "pointsMultiplier": {
+    "easy": 1.0,
+    "normal": 1.5,
+    "hard": 2.0
+  },
+  "collaborationBonus": 100,
+  "completionBadge": "operacion_coleccion_completada",
+  "briefingLine": "Agente, la encontramos. No en una casa: en un almacén sin nombre, en las afueras de Chicago. Hay seis salas y todo está limpio, etiquetado y en vitrinas. Ella está en la sala del fondo, esperándote, con los guantes puestos. Este es el último caso del año, y vas a necesitar todo lo que aprendiste: el futuro, el condicional, por y para, el subjuntivo, el se. ¿Cómo prefieres entrar?",
+  "ethicalChoiceAfterStage": 3,
+  "stages": [
+    {
+      "type": "readingComp",
+      "country": "Sala de entrada",
+      "title": "El Catálogo",
+      "clueReward": "Seis etiquetas perfectas y seis mentiras. Cada pieza tiene un origen, un autor y un barrio, y ella los borró todos con la misma palabra: copia. Detrás de la sala de entrada se oyen voces grabadas.",
+      "passage": "CATÁLOGO DE LA COLECCIÓN — escrito por La Curadora\n\nPieza 1. Fragmento de mural. Origen: desconocido. Pintura de la calle, sin valor artístico. Aquí estará protegido del sol y de la lluvia.\n\nPieza 2. Cinta de audio. Poema en una lengua mezclada. Sería mejor en un español correcto.\n\nPieza 3. Acordeón. Instrumento alemán. No es música de México ni de Texas: es una copia.\n\nPieza 4. Cafetera y libreta con una receta cubana. Espero que en la colección nadie la use nunca más.\n\nPieza 5. Grabación de un anciano de Nuevo México. Habla con errores: dice «truje» y «asina». No creo que sea español de verdad.\n\nPieza 6. Receta de un sándwich de plátano. Aquí no se inventó nada: es una copia de la isla.\n\nNota final: En la colección todo está limpio, quieto y a salvo. En la calle, todo cambia.",
+      "glossary": [
+        {
+          "word": "el catálogo",
+          "translation": "catalog"
+        },
+        {
+          "word": "el fragmento",
+          "translation": "fragment, piece"
+        },
+        {
+          "word": "el origen",
+          "translation": "origin"
+        },
+        {
+          "word": "la cinta",
+          "translation": "tape"
+        },
+        {
+          "word": "mezclado/a",
+          "translation": "mixed"
+        },
+        {
+          "word": "a salvo",
+          "translation": "safe"
+        }
+      ],
+      "questions": {
+        "easy": [
+          {
+            "id": "e1",
+            "text": "¿Cuántas piezas hay en el catálogo?",
+            "type": "multiple_choice",
+            "options": [
+              "Veinte",
+              "Tres",
+              "Doce",
+              "Seis"
+            ],
+            "correctIndex": 3,
+            "explanationEs": "Pieza 1 hasta Pieza 6: una por cada ciudad.",
+            "explanationEn": "Piece 1 through Piece 6: one per city."
+          },
+          {
+            "id": "e2",
+            "text": "Según La Curadora, ¿cómo es el acordeón?",
+            "type": "multiple_choice",
+            "options": [
+              "Mexicano y original",
+              "Alemán, y una copia",
+              "Nuevo y caro",
+              "Roto y viejo"
+            ],
+            "correctIndex": 1,
+            "explanationEs": "«Instrumento alemán… es una copia».",
+            "explanationEn": "\"Instrumento alemán… es una copia.\""
+          },
+          {
+            "id": "e3",
+            "text": "Según ella, ¿qué pasa en la calle?",
+            "type": "multiple_choice",
+            "options": [
+              "Nada pasa",
+              "Todo cambia",
+              "Todo está a salvo",
+              "Todo está limpio"
+            ],
+            "correctIndex": 1,
+            "explanationEs": "«En la calle, todo cambia». Para ella, eso es malo.",
+            "explanationEn": "\"En la calle, todo cambia.\" To her, that's bad."
+          }
+        ],
+        "normal": [
+          {
+            "id": "n1",
+            "text": "Ella escribe que el mural es de origen «desconocido». ¿Qué sabes tú del Caso 27?",
+            "type": "multiple_choice",
+            "options": [
+              "Se pintó en papel y luego se pegó",
+              "Se pintó en un museo de Madrid",
+              "Nadie sabe dónde se pintó",
+              "Se pintó en una pared de Boyle Heights, en Los Ángeles"
+            ],
+            "correctIndex": 3,
+            "explanationEs": "El mural se cortó de una pared de Boyle Heights. Tiene origen y tiene barrio.",
+            "explanationEn": "The mural was cut from a wall in Boyle Heights. It has an origin and a neighborhood."
+          },
+          {
+            "id": "n2",
+            "text": "«Sería mejor en un español correcto». ¿Qué piensa ella del poema?",
+            "type": "multiple_choice",
+            "options": [
+              "Que el poema es muy bonito",
+              "Que el poema es muy largo",
+              "Que el poeta habla muy despacio",
+              "Que mezclar español e inglés es un error"
+            ],
+            "correctIndex": 3,
+            "explanationEs": "Para ella, la lengua mezclada es un defecto. En el Caso 28 aprendiste que no lo es.",
+            "explanationEn": "To her, the mixed language is a defect. In Caso 28 you learned it isn't."
+          },
+          {
+            "id": "n3",
+            "text": "Según ella, ¿por qué el acordeón es una copia?",
+            "type": "multiple_choice",
+            "options": [
+              "Porque nadie lo tocó nunca",
+              "Porque es muy nuevo",
+              "Porque es de plástico",
+              "Porque el instrumento vino de Alemania"
+            ],
+            "correctIndex": 3,
+            "explanationEs": "Es verdad que el acordeón llegó con los alemanes. Pero la música que se hizo con él es tejana.",
+            "explanationEn": "It's true the accordion came with German settlers. But the music made with it is Tejano."
+          },
+          {
+            "id": "n4",
+            "text": "«Espero que en la colección nadie la use nunca más». ¿Qué quiere ella para la cafetera?",
+            "type": "multiple_choice",
+            "options": [
+              "Que hagan café para todos",
+              "Que se quede quieta en una vitrina",
+              "Que la limpien cada día",
+              "Que vuelva a la ventanita"
+            ],
+            "correctIndex": 1,
+            "explanationEs": "Quiere una cafetera que no hace café: un objeto quieto, lejos de la gente.",
+            "explanationEn": "She wants a coffee maker that makes no coffee: a still object, far from people."
+          }
+        ],
+        "hard": [
+          {
+            "id": "h1",
+            "text": "Ella dice que el anciano habla «con errores». Según el Caso 31, ¿qué son «truje» y «asina»?",
+            "type": "multiple_choice",
+            "options": [
+              "Palabras inventadas ayer",
+              "Errores de un niño",
+              "Palabras en inglés",
+              "Palabras del español de hace cuatrocientos años que allí nunca se perdieron"
+            ],
+            "correctIndex": 3,
+            "explanationEs": "No son errores: son español antiguo, vivo en Nuevo México desde hace cuatro siglos.",
+            "explanationEn": "They aren't mistakes: they're old Spanish, alive in New Mexico for four centuries."
+          },
+          {
+            "id": "h2",
+            "text": "«Aquí no se inventó nada». ¿Qué se inventó en Chicago en 1996?",
+            "type": "multiple_choice",
+            "options": [
+              "El jibarito, un sándwich con plátano en vez de pan",
+              "El mural de Olvera Street",
+              "La colada cubana",
+              "El acordeón"
+            ],
+            "correctIndex": 0,
+            "explanationEs": "El jibarito se inventó en Chicago. En la isla no existe.",
+            "explanationEn": "The jibarito was invented in Chicago. It doesn't exist on the island."
+          },
+          {
+            "id": "h3",
+            "text": "¿Qué tienen en común las seis piezas?",
+            "type": "multiple_choice",
+            "options": [
+              "Todas son muy antiguas",
+              "Todas son de oro",
+              "Todas se hicieron en comunidades hispanas de Estados Unidos",
+              "Todas son de España"
+            ],
+            "correctIndex": 2,
+            "explanationEs": "Seis ciudades de Estados Unidos, seis comunidades. Eso es lo que ella no quiere ver.",
+            "explanationEn": "Six US cities, six communities. That's exactly what she refuses to see."
+          },
+          {
+            "id": "h4",
+            "text": "Ella escribe «estará», «sería», «espero que nadie la use», «no creo que sea». ¿Qué tiene de raro su español?",
+            "type": "multiple_choice",
+            "options": [
+              "Mezcla inglés y español",
+              "Es perfecto y correcto, pero no suena de ningún lugar",
+              "Tiene muchos errores",
+              "Usa palabras de Nuevo México"
+            ],
+            "correctIndex": 1,
+            "explanationEs": "Usa toda la gramática del año sin un solo error, y sin una sola palabra de ningún sitio. Esa es su marca.",
+            "explanationEn": "She uses the whole year's grammar without one mistake, and without one word from anywhere. That's her tell."
+          }
+        ]
+      }
+    },
+    {
+      "type": "swipeSort",
+      "country": "Sala de las voces",
+      "title": "¿Quién Habla?",
+      "clueReward": "Ya la oyes. Entre todas las voces del almacén, solo una no viene de ningún sitio. Las otras tienen calle, cocina, música y abuelos. Ninguna es un error: todas son información. Su voz sale de la sala del fondo.",
+      "prompt": "En el almacén hay voces grabadas. ¿Es alguien del barrio o es La Curadora? Escucha las palabras: ella no suena de ningún lugar.",
+      "leftLabel": "EL BARRIO",
+      "leftHint": "suena de un lugar",
+      "rightLabel": "LA CURADORA",
+      "rightHint": "no suena de ningún lugar",
+      "items": [
+        {
+          "text": "¡Órale, carnal! Ese mural estaba bien firme.",
+          "category": "left",
+          "explanation": "«órale», «carnal», «firme»: palabras de Los Ángeles. Suena de un lugar."
+        },
+        {
+          "text": "¡Wepa! El poeta leyó en español y en inglés, y todo el café gritó.",
+          "category": "left",
+          "explanation": "«¡Wepa!» y un poema en dos lenguas: Nueva York. Suena de un lugar."
+        },
+        {
+          "text": "Nos vemos en la casita del lot después del trabajo.",
+          "category": "left",
+          "explanation": "Una casita en un «lot»: español de El Barrio, con inglés adentro. Suena de un lugar."
+        },
+        {
+          "text": "¿Quieres un taquito de papa con huevo pa'l camino?",
+          "category": "left",
+          "explanation": "El taco del desayuno y un «pa'l» de San Antonio. Suena de un lugar."
+        },
+        {
+          "text": "Asere, ¿qué bolá? Vamos a la ventanita por una colada.",
+          "category": "left",
+          "explanation": "«Asere, ¿qué bolá?»: la Calle Ocho de Miami. Suena de un lugar."
+        },
+        {
+          "text": "Mi abuelo dice: «Truje la leña, asina como siempre».",
+          "category": "left",
+          "explanation": "«Truje» y «asina»: español de cuatrocientos años, vivo en Nuevo México. Suena de un lugar."
+        },
+        {
+          "text": "¿Red or green? Aquí pedimos Christmas: los dos chiles.",
+          "category": "left",
+          "explanation": "La pregunta de Nuevo México, y la respuesta también. Suena de un lugar."
+        },
+        {
+          "text": "Vamos al Paseo Boricua a comer un jibarito, que aquí se inventó.",
+          "category": "left",
+          "explanation": "El Paseo Boricua y el jibarito: Chicago. Suena de un lugar."
+        },
+        {
+          "text": "Buenas tardes. Este objeto estará mejor protegido en una vitrina.",
+          "category": "right",
+          "explanation": "Correcto y educado, sin ninguna palabra de ningún sitio. Y habla de guardar, no de usar."
+        },
+        {
+          "text": "Sería preferible que el poema estuviera en un español correcto.",
+          "category": "right",
+          "explanation": "Para ella, mezclar lenguas es un error. Eso lo dice solo La Curadora."
+        },
+        {
+          "text": "No creo que esta música sea auténtica. Es una copia de otro lugar.",
+          "category": "right",
+          "explanation": "«Copia» es su palabra favorita. No suena de ningún lugar."
+        },
+        {
+          "text": "Le ruego que no toque la pieza. Yo me encargo de conservarla.",
+          "category": "right",
+          "explanation": "Nadie del barrio le pide a nadie que no toque su propia cafetera."
+        },
+        {
+          "text": "Quiero que todo esté limpio, quieto y en su sitio.",
+          "category": "right",
+          "explanation": "Limpio, quieto: una cafetera que no hace café. Es La Curadora."
+        },
+        {
+          "text": "El arte no tiene país. Por eso no debe quedarse en un barrio.",
+          "category": "right",
+          "explanation": "Su idea de siempre: sacar las cosas del lugar que las hizo."
+        },
+        {
+          "text": "Este mural no tiene autor conocido. Lo catalogaré como anónimo.",
+          "category": "right",
+          "explanation": "El mural tiene autor y tiene barrio. Ella lo borra con una etiqueta."
+        },
+        {
+          "text": "Espero que la comunidad entienda que lo hago por su bien.",
+          "category": "right",
+          "explanation": "Educada, perfecta, y hablando por la gente sin preguntarle a nadie."
+        }
+      ]
+    },
+    {
+      "type": "sentenceBuilder",
+      "country": "Sala de las etiquetas",
+      "title": "Las Etiquetas Verdaderas",
+      "clueReward": "Seis etiquetas nuevas, escritas con todo lo que aprendiste este año. Ya no dicen «copia» ni «desconocido». Dicen dónde, quién y para quién. Solo falta abrir la sala del fondo.",
+      "sentences": [
+        {
+          "sentence": "Este mural se pintó en Boyle Heights",
+          "translation": "This mural was painted in Boyle Heights. (se pasivo — Caso 32)"
+        },
+        {
+          "sentence": "El barrio lo cuidará cuando vuelva a su pared",
+          "translation": "The neighborhood will take care of it when it goes back to its wall. (futuro + cuando + subjuntivo)"
+        },
+        {
+          "sentence": "Sin esta cinta nadie oiría la voz del poeta",
+          "translation": "Without this tape, nobody would hear the poet's voice. (condicional — Caso 28)"
+        },
+        {
+          "sentence": "Don Nica tocaba por amor y para su familia",
+          "translation": "Don Nica played out of love and for his family. (por = motive, para = recipient — Caso 29)"
+        },
+        {
+          "sentence": "Ojalá que la cafetera vuelva a la ventanita",
+          "translation": "Hopefully the coffee maker goes back to the ventanita. (ojalá que + subjuntivo — Caso 30)"
+        },
+        {
+          "sentence": "No es verdad que el anciano hable con errores",
+          "translation": "It isn't true that the old man speaks with mistakes. (duda + subjuntivo — Caso 31)"
+        },
+        {
+          "sentence": "El jibarito se inventó en Chicago",
+          "translation": "The jibarito was invented in Chicago. (se pasivo — Caso 32)"
+        },
+        {
+          "sentence": "Todo esto se hizo aquí",
+          "translation": "All of this was made here. (se pasivo: the whole year, in five words)"
+        }
+      ]
+    },
+    {
+      "type": "interrogation",
+      "country": "Sala del fondo",
+      "title": "La Curadora",
+      "clueReward": "Ella nunca miente, y eso es lo peor: cree cada palabra. Compró los veinte tesoros de El Cronista, las seis piezas están en la sala del fondo, y las vitrinas se abren con un código que grabó en su propia audioguía.",
+      "character": {
+        "name": "La Curadora",
+        "role": "coleccionista privada",
+        "description": "Alta, muy erguida, con un traje gris y los guantes blancos puestos. No huye y no se esconde. Te recibe en la sala del fondo como si fueras un visitante, con una sonrisa amable y un español perfecto que no suena de ningún sitio.",
+        "imageUrl": "/images/characters/la-curadora.webp"
+      },
+      "questionBank": [
+        {
+          "id": "q1",
+          "spanish": "¿Por qué se llevó usted el mural?",
+          "english": "Why did you take the mural?",
+          "response": "No me lo llevé, agente: lo rescaté. En esa pared se estropearía en diez años. Aquí durará siglos.",
+          "responseEnglish": "I didn't take it, agent: I rescued it. On that wall it would fall apart in ten years. Here it will last for centuries.",
+          "infoRevealed": null,
+          "isUseful": false
+        },
+        {
+          "id": "q2",
+          "spanish": "¿Dónde están las seis piezas?",
+          "english": "Where are the six pieces?",
+          "response": "Aquí mismo, en la sala del fondo. Cada una en su vitrina, con su etiqueta, a veinte grados. Como deben estar.",
+          "responseEnglish": "Right here, in the back room. Each one in its display case, with its label, at twenty degrees. As they should be.",
+          "infoRevealed": "Las seis piezas están en la sala del fondo, cada una en su vitrina.",
+          "isUseful": true
+        },
+        {
+          "id": "q3",
+          "spanish": "¿Qué haría usted si el barrio le pidiera el mural?",
+          "english": "What would you do if the neighborhood asked you for the mural?",
+          "response": "Les diría que no. Con mucho cariño, pero que no. La gente no sabe cuidar lo que tiene.",
+          "responseEnglish": "I'd tell them no. Very kindly, but no. People don't know how to take care of what they have.",
+          "infoRevealed": null,
+          "isUseful": false
+        },
+        {
+          "id": "q4",
+          "spanish": "¿Conoce usted a El Cronista?",
+          "english": "Do you know El Cronista?",
+          "response": "Conocer es mucho decir. Yo le compraba lo que él traía. Veinte piezas en diez años. Cuando lo detuvieron, tuve que salir yo misma.",
+          "responseEnglish": "\"Know\" is a strong word. I bought what he brought. Twenty pieces in ten years. When they arrested him, I had to go out myself.",
+          "infoRevealed": "La Curadora le compró las veinte piezas a El Cronista.",
+          "isUseful": true
+        },
+        {
+          "id": "q5",
+          "spanish": "¿De dónde es usted?",
+          "english": "Where are you from?",
+          "response": "De ninguna parte, agente. El arte no tiene país, y yo tampoco.",
+          "responseEnglish": "From nowhere, agent. Art has no country, and neither do I.",
+          "infoRevealed": null,
+          "isUseful": false
+        },
+        {
+          "id": "q6",
+          "spanish": "¿Cómo se abren las vitrinas?",
+          "english": "How do the display cases open?",
+          "response": "Con un código. Lo grabé en la audioguía de la colección, para no olvidarlo. Yo no escribo números en papel.",
+          "responseEnglish": "With a code. I recorded it in the collection's audio guide so I wouldn't forget it. I don't write numbers on paper.",
+          "infoRevealed": "Las vitrinas se abren con un código que está en la audioguía.",
+          "isUseful": true
+        },
+        {
+          "id": "q7",
+          "spanish": "¿Le gusta a usted el jibarito?",
+          "english": "Do you like the jibarito?",
+          "response": "Nunca lo he probado. No me hace falta probar algo para saber que es una copia.",
+          "responseEnglish": "I've never tried it. I don't need to taste something to know it's a copy.",
+          "infoRevealed": null,
+          "isUseful": false
+        },
+        {
+          "id": "q8",
+          "spanish": "¿Espera usted que la perdonen?",
+          "english": "Do you hope they'll forgive you?",
+          "response": "Espero que algún día me den las gracias. Todo lo que hay aquí sigue existiendo gracias a mí.",
+          "responseEnglish": "I hope that someday they'll thank me. Everything here still exists thanks to me.",
+          "infoRevealed": null,
+          "isUseful": false
+        }
+      ],
+      "requiredInfo": [
+        "Las seis piezas están en la sala del fondo, cada una en su vitrina.",
+        "La Curadora le compró las veinte piezas a El Cronista.",
+        "Las vitrinas se abren con un código que está en la audioguía."
+      ],
+      "maxQuestions": 6
+    },
+    {
+      "type": "listeningComp",
+      "country": "Sala del fondo",
+      "title": "La Audioguía",
+      "clueReward": "Las seis vitrinas se abren a la vez. Adentro está todo: el mural, la cinta, el acordeón, la cafetera con su libreta, la grabación, la receta. Quietos, limpios, en silencio. Esperando volver a casa.",
+      "audioUrl": "/audio/boss-coleccion/audioguia.mp3",
+      "transcript": "Bienvenidos a la colección. Por favor, no toquen nada. Cada pieza de esta sala se rescató de la calle. Aquí no llueve, no hace sol y nadie las usa. Si ustedes las vieran en su barrio, no las reconocerían: estaban sucias, gastadas, llenas de gente. Para abrir las vitrinas, piensen en dos números: las seis ciudades que visité y los veinte tesoros que compré. Multiplíquenlos. Y recuerden: aquí todo estará igual dentro de cien años.",
+      "translation": "Welcome to the collection. Please don't touch anything. Every piece in this room was rescued from the street. Here it doesn't rain, the sun doesn't shine, and nobody uses them. If you saw them in their neighborhood, you wouldn't recognize them: they were dirty, worn, full of people. To open the display cases, think of two numbers: the six cities I visited and the twenty treasures I bought. Multiply them. And remember: here everything will be the same a hundred years from now.",
+      "questions": [
+        {
+          "question": "¿Qué pide la audioguía al principio?",
+          "options": [
+            "Que saquen fotos",
+            "Que no toquen nada",
+            "Que hablen en voz baja",
+            "Que compren una entrada"
+          ],
+          "correctIndex": 1,
+          "explanationEs": "«Por favor, no toquen nada»."
+        },
+        {
+          "question": "Según ella, ¿por qué la colección es mejor que la calle?",
+          "options": [
+            "Porque aquí no llueve, no hace sol y nadie usa las piezas",
+            "Porque aquí todo es gratis",
+            "Porque aquí las piezas son más bonitas",
+            "Porque en la calle hay ladrones"
+          ],
+          "correctIndex": 0,
+          "explanationEs": "«Aquí no llueve, no hace sol y nadie las usa». Para ella, que nadie las use es bueno."
+        },
+        {
+          "question": "«Si ustedes las vieran en su barrio, no las reconocerían». ¿Qué forma es «reconocerían»?",
+          "options": [
+            "El condicional",
+            "El pretérito",
+            "El futuro",
+            "El presente perfecto"
+          ],
+          "correctIndex": 0,
+          "explanationEs": "Reconocerían = condicional, como en el Caso 28: lo que pasaría."
+        },
+        {
+          "question": "¿Qué dice ella que pasará dentro de cien años?",
+          "options": [
+            "Que todo estará igual",
+            "Que todo volverá a la calle",
+            "Que nadie recordará las piezas",
+            "Que la colección cerrará"
+          ],
+          "correctIndex": 0,
+          "explanationEs": "«Aquí todo estará igual dentro de cien años». Eso es exactamente lo que está mal."
+        }
+      ],
+      "maxReplays": 2,
+      "codeAnswer": "120",
+      "codeHint": "Multiplica los dos números de la audioguía: seis × veinte = ___"
+    }
+  ],
+  "ethicalChoice": {
+    "context": "En la sala del fondo, las seis vitrinas brillan bajo una luz blanca. La Curadora no huye. Te ofrece una carpeta con un documento ya preparado y un bolígrafo, con los guantes puestos.",
+    "speakerName": "La Curadora",
+    "speakerLine": "Un museo nacional de Washington quiere la colección entera. Si firma aquí, todo irá a un edificio enorme, con guardias, con aire acondicionado, con millones de visitantes. Nadie lo romperá. Nadie lo robará nunca más. O puede devolverlo a la calle, donde la lluvia lo borrará en diez años. Usted decide qué significa cuidar algo, agente.",
+    "options": [
+      {
+        "key": "A",
+        "emoji": "🏛️",
+        "title": "Firmar: al museo nacional",
+        "description": "Firmas el documento. Las seis piezas van a un gran museo nacional, con guardias y etiquetas nuevas.",
+        "effect": "Estarán a salvo para siempre y millones de personas las verán — lejos de los barrios que las hicieron.",
+        "requiresSentence": false
+      },
+      {
+        "key": "B",
+        "emoji": "⚖️",
+        "title": "Detenerla ahora",
+        "description": "No firmas nada. La detienes ahí mismo, en la sala del fondo.",
+        "effect": "La Curadora va a juicio. Pero las piezas se quedan en el almacén como pruebas hasta que termine, y eso tarda un año.",
+        "requiresSentence": false
+      },
+      {
+        "key": "C",
+        "emoji": "🗣️",
+        "title": "Contestarle en español",
+        "description": "No firmas y no la detienes todavía. Le contestas en español: le dices dónde se hizo cada cosa y qué quieres que pase con ella. Escribe tu respuesta.",
+        "effect": "Si tu español es claro, cada pieza vuelve a su barrio esta misma semana, y ella tiene que ir contigo a cada entrega.",
+        "requiresSentence": true,
+        "requiredWords": [
+          "vuelva",
+          "vuelvan",
+          "devuelva",
+          "devuelvan",
+          "regrese",
+          "regresen",
+          "se hizo",
+          "se hicieron",
+          "se inventó",
+          "se pintó",
+          "volverá",
+          "volverán",
+          "quiero que",
+          "ojalá"
+        ]
+      }
+    ]
+  },
+  "endings": {
+    "A": {
+      "id": "la_vitrina",
+      "title": "La Vitrina",
+      "badge": "diplomatico",
+      "description": [
+        "Firmas. En un mes, las seis piezas están en Washington, en una sala enorme con luz perfecta y un guardia en cada puerta.",
+        "Millones de personas las ven. Leen las etiquetas nuevas — correctas esta vez — y siguen caminando.",
+        "En Boyle Heights, en la pared, queda el hueco del mural. Los vecinos lo pintan de blanco para no verlo.",
+        "La Jefa Ramírez no dice nada durante un rato. Después: «Están a salvo, agente. Pero ¿están en casa?»"
+      ],
+      "finalClue": "La Curadora sale del almacén sin esposas y sin colección. En la puerta te dice, en su español perfecto: «¿Ve? Al final usted pensó como yo»."
+    },
+    "B": {
+      "id": "la_prueba",
+      "title": "La Prueba",
+      "badge": "cazador_implacable",
+      "description": [
+        "Le pones las esposas. Por primera vez se le cae un guante al suelo, y no lo recoge.",
+        "Las seis piezas se quedan en el almacén con una etiqueta nueva: PRUEBA. Nadie las puede tocar hasta el juicio.",
+        "Pasa un año. La cafetera no hace café, la cinta no suena, el acordeón no toca. Pero están enteras, y un día vuelven.",
+        "La Jefa Ramírez firma el último informe del año: «Caso cerrado. Tarde, pero cerrado»."
+      ],
+      "finalClue": "El día que el acordeón vuelve a San Antonio, la nieta de Don Nica lo toca en la puerta del salón de baile. Toca por él y para el barrio."
+    },
+    "C": {
+      "id": "de_vuelta_al_barrio",
+      "title": "De Vuelta al Barrio",
+      "badge": "voz_del_barrio",
+      "description": [
+        "Tu español fue claro. No le hablaste de museos ni de dinero: le dijiste dónde se hizo cada cosa, y para quién.",
+        "Las seis piezas vuelven a casa en seis días. El mural, a su pared. La cinta, al café. El acordeón, a San Antonio. La cafetera y la libreta, a la ventanita. La grabación, a Nuevo México. La receta, a su esquina de Chicago.",
+        "La Curadora tiene que ir contigo a cada entrega. Oye «órale», oye «wepa», oye «asere», oye «truje». Por primera vez no corrige a nadie.",
+        "La Jefa Ramírez te espera en la oficina con dos tazas de café: «Un año entero, agente. Veintiún países, seis ciudades, dos ladrones. Y lo terminaste en español»."
+      ],
+      "finalClue": "En la ventanita de la Calle Ocho, la nieta reparte la primera colada en tacitas. Le da una a La Curadora, que la mira un momento… y se la toma sin guantes."
+    }
+  }
+}

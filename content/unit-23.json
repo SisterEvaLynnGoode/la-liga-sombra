@@ -491,7 +491,7 @@
     {
       "type": "dialogueChoice",
       "npcName": "Don Efraín, guía del sitio",
-      "npcAvatar": "/images/characters/unit-08-don-aurelio.webp",
+      "npcAvatar": "🧭",
       "clueReward": "El guía confirmó que solo el personal conocía el orden exacto de las piedras.",
       "startNodeId": "n1",
       "nodes": [

@@ -28,7 +28,10 @@ export default function EthicalChoice({ choice, onSelect }: Props) {
     if (!selected) return;
     if (selected === "C") {
       if (!validateSentenceC(sentence)) {
-        setError("Tu oración debe tener al menos 5 palabras e incluir una de estas palabras: ofrezco, si, coopera, acuerdo, protejo, prometo.");
+        // Built from this boss's own list. It used to be hardcoded to Eclipse's
+        // words, so every later boss told students to use words it never checks.
+        const examples = (optionC?.requiredWords ?? []).slice(0, 6).join(", ");
+        setError(`Tu oración debe tener al menos 5 palabras e incluir una de estas palabras: ${examples}…`);
         return;
       }
       onSelect("C", sentence.trim());

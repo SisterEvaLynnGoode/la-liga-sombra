@@ -479,7 +479,7 @@
     {
       "type": "dialogueChoice",
       "npcName": "Rafi Villanueva, poeta del café",
-      "npcAvatar": "/images/characters/unit-28-curadora.webp",
+      "npcAvatar": "📝",
       "clueReward": "El poeta confirmó que la mujer nunca mezcló idiomas ni usó una palabra caribeña.",
       "startNodeId": "n1",
       "nodes": [
