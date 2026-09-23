@@ -43,6 +43,9 @@ const FLAG_UI: Record<string, { color: string; bg: string; icon: string }> = {
   stage_skipped:                  { color: "text-[#8b7355]",  bg: "bg-[rgba(139,115,85,0.04)] border-[rgba(139,115,85,0.15)]", icon: "⏭" },
   repeated_skipping:              { color: "text-[#c0392b]",  bg: "bg-[rgba(192,57,43,0.1)]  border-[rgba(192,57,43,0.35)]",  icon: "⚠⏭" },
   mastery_up:                     { color: "text-[#5a9e6f]",  bg: "bg-[rgba(90,158,111,0.08)] border-[rgba(90,158,111,0.4)]", icon: "🎉" },
+  // A student's screen actually crashed. The context carries the error message,
+  // the caso and the device, which is what makes the bug findable afterwards.
+  client_crash:                   { color: "text-[#c0392b]",  bg: "bg-[rgba(192,57,43,0.14)] border-[rgba(192,57,43,0.5)]",  icon: "💥" },
 };
 
 const UNLOCK_ELIGIBLE = new Set(["academia_struggling", "academia_skipped_after_failure"]);

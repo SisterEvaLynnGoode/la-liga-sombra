@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useRef } from "react";
 import Link from "next/link";
 
 export default function GlobalError({
@@ -10,7 +10,33 @@ export default function GlobalError({
   error: Error & { digest?: string };
   reset: () => void;
 }) {
-  useEffect(() => { console.error("App error:", error); }, [error]);
+  // Report it as well as logging it: a console line in a student's browser is
+  // invisible to the teacher, and Vercel's runtime logs expire within a day.
+  const reported = useRef(false);
+
+  useEffect(() => {
+    console.error("App error:", error);
+    if (reported.current) return;   // effects run twice in development
+    reported.current = true;
+    try {
+      void fetch("/api/game/student-flag", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        keepalive: true,
+        body: JSON.stringify({
+          flagType: "client_crash",
+          context: {
+            scope: "app",
+            message: String(error?.message ?? "").slice(0, 300),
+            digest: error?.digest ?? null,
+            stack: String(error?.stack ?? "").split("\n").slice(0, 4).join(" | ").slice(0, 600),
+            url: typeof window !== "undefined" ? window.location.pathname : null,
+            userAgent: typeof navigator !== "undefined" ? navigator.userAgent.slice(0, 200) : null,
+          },
+        }),
+      }).catch(() => {});
+    } catch { /* never crash the crash screen */ }
+  }, [error]);
 
   return (
     <html lang="es">
