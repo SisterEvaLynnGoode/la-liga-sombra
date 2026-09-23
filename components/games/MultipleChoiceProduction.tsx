@@ -11,7 +11,7 @@
 import { useState, useEffect, useCallback, useRef } from "react";
 import GameShell from "./GameShell";
 import { useAttemptTracker } from "@/lib/hooks/useAttemptTracker";
-import { shuffle, formatTime } from "@/lib/games/utils";
+import { seededShuffle, seededRandom, formatTime } from "@/lib/games/utils";
 import { buildOptions } from "@/lib/games/mc-options";
 import type { VocabPair, OnComplete } from "@/lib/games/types";
 import { logItemEvent, flushItemEvents } from "@/lib/events";
@@ -33,6 +33,10 @@ interface MCCard {
 }
 
 function buildCards(vocab: VocabPair[], direction: "en-to-es" | "es-to-en"): MCCard[] {
+  // Seeded from the vocabulary: this runs during render, so the server and the
+  // browser must build the same deck or hydration fails and the card flashes.
+  const seed = vocab.map((v) => v.spanish).join("|") + "::" + direction;
+  const rand = seededRandom(seed);
   const allAnswers = direction === "en-to-es"
     ? vocab.map((v) => v.spanish)
     : vocab.map((v) => v.english);
@@ -53,10 +57,10 @@ function buildCards(vocab: VocabPair[], direction: "en-to-es" | "es-to-en"): MCC
   }
 
   const cards: MCCard[] = [];
-  for (const v of shuffle(vocab)) {
+  for (const v of seededShuffle(vocab, seed)) {
     const prompt   = direction === "en-to-es" ? v.english : v.spanish;
     const correct  = direction === "en-to-es" ? v.spanish : v.english;
-    const built = buildOptions(correct, allAnswers, byPrompt.get(prompt.trim().toLowerCase()) ?? []);
+    const built = buildOptions(correct, allAnswers, byPrompt.get(prompt.trim().toLowerCase()) ?? [], rand);
     if (!built) continue;  // no fair question to build here — drop it rather than rig it
     // spanishTerm is always v.spanish regardless of direction, so mastery is never
     // accidentally stored under the English translation (which caused double-counting).

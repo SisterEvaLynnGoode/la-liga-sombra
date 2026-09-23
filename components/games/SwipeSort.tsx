@@ -3,7 +3,7 @@
 import { useState, useRef, useEffect, useCallback } from "react";
 import GameShell from "./GameShell";
 import { useAttemptTracker } from "@/lib/hooks/useAttemptTracker";
-import { shuffle } from "@/lib/games/utils";
+import { seededShuffle } from "@/lib/games/utils";
 import { logItemEvent, flushItemEvents } from "@/lib/events";
 import type { SwipeSortItem } from "@/lib/types/unit-content";
 import type { OnComplete } from "@/lib/games/types";
@@ -38,7 +38,8 @@ export default function SwipeSort({
 }: Props) {
   const { recordAttempt, updateMastery } = useAttemptTracker("grammar", unitId);
 
-  const [deck] = useState(() => shuffle(items));
+  // Seeded so the server and the browser deal the same deck (hydration).
+  const [deck] = useState(() => seededShuffle(items, items.map((i) => i.text).join("|")));
   const [index, setIndex] = useState(0);
   const [score, setScore] = useState(0);
   const [status, setStatus] = useState<"playing" | "complete">("playing");

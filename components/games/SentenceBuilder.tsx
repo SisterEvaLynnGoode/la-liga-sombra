@@ -26,7 +26,7 @@ import { CSS } from "@dnd-kit/utilities";
 import GameShell from "./GameShell";
 import { useGameTimer } from "@/lib/hooks/useGameTimer";
 import { useAttemptTracker } from "@/lib/hooks/useAttemptTracker";
-import { shuffle, normalizeAnswer } from "@/lib/games/utils";
+import { shuffle, seededShuffle, normalizeAnswer } from "@/lib/games/utils";
 import type { OnComplete } from "@/lib/games/types";
 import { logItemEvent, flushItemEvents, classifyError } from "@/lib/events";
 
@@ -123,10 +123,12 @@ export default function SentenceBuilder({
   const dndId = useId();
 
   const correctTiles = makeTiles(sentence);
-  const [containers, setContainers] = useState<{ bank: string[]; sentence: string[] }>({
-    bank: shuffle(correctTiles).map((t) => t.id),
+  // Seeded by the sentence: the server and the browser must lay the tiles out
+  // in the same order, or hydration fails and the tray re-renders from scratch.
+  const [containers, setContainers] = useState<{ bank: string[]; sentence: string[] }>(() => ({
+    bank: seededShuffle(correctTiles, sentence).map((t) => t.id),
     sentence: [],
-  });
+  }));
   const tileMap = Object.fromEntries(correctTiles.map((t) => [t.id, t.word]));
 
   const [activeId, setActiveId] = useState<string | null>(null);

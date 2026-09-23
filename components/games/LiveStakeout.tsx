@@ -4,6 +4,7 @@ import { useState, useEffect, useRef, useCallback } from "react";
 import type { StakeoutScene } from "@/lib/types/unit-content";
 import type { OnComplete } from "@/lib/games/types";
 import SkipStageButton from "./SkipStageButton";
+import { seededShuffle } from "@/lib/games/utils";
 
 interface Props {
   scenes: StakeoutScene[];
@@ -196,7 +197,8 @@ export default function LiveStakeout({
   // → target is visible in the first rotation window immediately
   const [queue] = useState<StakeoutScene[]>(() => {
     const target = scenes.find((s) => s.isTarget)!;
-    const others = shuffle(scenes.filter((s) => !s.isTarget));
+    // Seeded so the server and the browser build the same queue (hydration).
+    const others = seededShuffle(scenes.filter((s) => !s.isTarget), scenes.map((s) => s.description).join("|"));
     // Guarantee target is in slot 3 of first window (visible from the start)
     return [others[0], others[1], others[2], target, ...others.slice(3)];
   });

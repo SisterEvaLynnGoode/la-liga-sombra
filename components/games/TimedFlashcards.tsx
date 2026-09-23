@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import GameShell from "./GameShell";
 import { useAttemptTracker } from "@/lib/hooks/useAttemptTracker";
-import { shuffle, flexibleMatch, formatTime } from "@/lib/games/utils";
+import { seededShuffle, flexibleMatch, formatTime } from "@/lib/games/utils";
 import type { FlashcardItem, OnComplete } from "@/lib/games/types";
 import { logItemEvent, flushItemEvents } from "@/lib/events";
 
@@ -26,7 +26,8 @@ export default function TimedFlashcards({
 }: Props) {
   const { recordAttempt, updateMastery } = useAttemptTracker("vocab_match", unitId);
 
-  const [deck] = useState(() => shuffle(cards));
+  // Seeded so the server and the browser deal the same deck (hydration).
+  const [deck] = useState(() => seededShuffle(cards, cards.map((c) => c.prompt).join("|")));
   const [index, setIndex] = useState(0);
   const [input, setInput] = useState("");
   const [timeLeft, setTimeLeft] = useState(timeLimit);
