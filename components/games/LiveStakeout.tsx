@@ -18,15 +18,6 @@ const VISIBLE = 4;          // cards shown at once
 const ROTATION_SEC = 8;     // seconds between rotations
 const ROTATION_CHECK = 250; // ms between checks for the next rotation
 
-function shuffle<T>(arr: T[]): T[] {
-  const a = [...arr];
-  for (let i = a.length - 1; i > 0; i--) {
-    const j = Math.floor(Math.random() * (i + 1));
-    [a[i], a[j]] = [a[j], a[i]];
-  }
-  return a;
-}
-
 // ── Surveillance camera card ─────────────────────────────────────────────────
 function SceneCard({
   scene,
