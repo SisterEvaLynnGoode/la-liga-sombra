@@ -44,15 +44,28 @@ interface ManifestEntry {
 let manifestCache: ManifestEntry[] | null = null;
 let manifestFetchPromise: Promise<ManifestEntry[]> | null = null;
 
+/**
+ * The portrait list, with the teacher's review state applied.
+ *
+ * Fetched from /api/characters/manifest rather than the static file in public/,
+ * because the static file only changes on a deploy: a portrait the teacher
+ * rejected on the Characters page stayed on students' screens until someone
+ * edited the repo. The endpoint merges the file with the review state in the
+ * database, so a rejection reaches the room within a minute.
+ *
+ * On any failure the cache is left EMPTY rather than poisoned, which means
+ * portraits fall back to the imageUrl the case itself carries. A flaky network
+ * must never blank the faces mid-case.
+ */
 async function getManifest(): Promise<ManifestEntry[]> {
   if (manifestCache) return manifestCache;
   if (manifestFetchPromise) return manifestFetchPromise;
 
-  manifestFetchPromise = fetch("/images/characters/manifest.json", { cache: "no-store" })
+  manifestFetchPromise = fetch("/api/characters/manifest", { cache: "no-store" })
     .then((r) => r.json())
-    .then((data: ManifestEntry[]) => {
-      manifestCache = data;
-      return data;
+    .then((data: { entries?: ManifestEntry[] }) => {
+      manifestCache = data.entries ?? [];
+      return manifestCache;
     })
     .catch(() => {
       manifestCache = [];
@@ -60,6 +73,21 @@ async function getManifest(): Promise<ManifestEntry[]> {
     });
 
   return manifestFetchPromise;
+}
+
+/**
+ * Has this portrait been pulled by the teacher?
+ *
+ * Most cases hand the portrait straight to this component as `imageUrl` and
+ * never touch the manifest, so a rejection used to do nothing for them. The URL
+ * is checked too: whichever way a portrait arrives, "needs-regen" hides it and
+ * the student sees the placeholder instead of a face the teacher pulled.
+ */
+function isRejected(manifest: ManifestEntry[], url: string | undefined): boolean {
+  if (!url || !manifest.length) return false;
+  const bare = url.split("?")[0];
+  const entry = manifest.find((e) => e.publicUrl === bare);
+  return !!entry && entry.status === "needs-regen";
 }
 
 function lookupManifest(
@@ -132,8 +160,8 @@ export default function CharacterPortrait({
         return;
       }
 
-      // 2. Try imageUrl prop
-      if (imageUrl && imageUrl.trim()) {
+      // 2. Try imageUrl prop — unless the teacher pulled that portrait.
+      if (imageUrl && imageUrl.trim() && !isRejected(manifest, imageUrl)) {
         setResolvedSrc(imageUrl);
         setPhase("loading");
         return;
