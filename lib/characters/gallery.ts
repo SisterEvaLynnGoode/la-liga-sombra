@@ -7,8 +7,7 @@
  * loud instead of rendering a hole.
  */
 
-import fs from "fs";
-import path from "path";
+import { UNITS } from "@/lib/game/units";
 // Static import, NOT a filesystem read of public/. Reading public/ with a
 // dynamic path makes Next's dependency tracer bundle the whole directory into
 // the serverless function — 140 MB of portraits, which blew the 250 MB Vercel
@@ -36,16 +35,40 @@ export interface GalleryCase {
   characters: GalleryCharacter[];
 }
 
-const CONTENT = path.join(process.cwd(), "content");
+/**
+ * Every boss file, by id. Listed rather than globbed for the same reason the
+ * cases are required below.
+ */
+const BOSS_IDS = [
+  "unit-5-eclipse",
+  "unit-8-medianoche",
+  "unit-15-reloj-arena",
+  "unit-26-ultima-cronica",
+  "unit-32-coleccion",
+];
 
 /** Public URLs of every portrait the manifest knows about. */
 const PORTRAITS = new Set(
   (manifestJson as Array<{ publicUrl?: string }>).map((e) => e.publicUrl).filter(Boolean) as string[],
 );
 
-function readJson(p: string): Record<string, unknown> | null {
-  try { return JSON.parse(fs.readFileSync(p, "utf-8")) as Record<string, unknown>; }
-  catch { return null; }
+/**
+ * Load a content file by name.
+ *
+ * `require` and not fs: this module used to readdirSync("content") and read
+ * each file while the page rendered. On Vercel the gallery is a serverless
+ * function whose filesystem holds only what the build traced, and a directory
+ * scan is invisible to the tracer, so the gallery could come up empty in
+ * production while looking perfect locally. A require of a literal-ish path is
+ * traced and bundled — the same way every case is loaded in the game itself.
+ */
+function readJson(name: string): Record<string, unknown> | null {
+  try {
+    // eslint-disable-next-line @typescript-eslint/no-require-imports
+    return require(`@/content/${name}.json`) as Record<string, unknown>;
+  } catch {
+    return null;
+  }
 }
 
 function label(file: string, d: Record<string, unknown>): { label: string; place: string; sort: number } {
@@ -64,12 +87,11 @@ function label(file: string, d: Record<string, unknown>): { label: string; place
 
 export function buildGallery(): GalleryCase[] {
   const files = [
-    ...fs.readdirSync(CONTENT).filter((f) => f.startsWith("unit-") && f.endsWith(".json"))
-      .map((f) => path.join(CONTENT, f)),
-    ...(fs.existsSync(path.join(CONTENT, "bosses"))
-      ? fs.readdirSync(path.join(CONTENT, "bosses")).filter((f) => f.endsWith(".json"))
-          .map((f) => path.join(CONTENT, "bosses", f))
-      : []),
+    ...UNITS.flatMap((u) => {
+      const n = String(u.number).padStart(2, "0");
+      return [`unit-${n}`, `unit-${n}-cold`];
+    }),
+    ...BOSS_IDS.map((id) => `bosses/${id}`),
   ];
 
   const cases: Array<GalleryCase & { sort: number }> = [];
@@ -79,7 +101,7 @@ export function buildGallery(): GalleryCase[] {
     if (!d) continue;
     const stages = (d.stages as Array<Record<string, unknown>>) ?? [];
     const chars: GalleryCharacter[] = [];
-    const base = path.basename(file, ".json");
+    const base = file.split("/").pop() as string;
 
     for (const st of stages) {
       if (st.type === "lineup") {
@@ -115,7 +137,8 @@ function toCharacter(
   const present = Boolean(imageUrl) && PORTRAITS.has(imageUrl!);
   let borrowedFrom: string | undefined;
   if (imageUrl) {
-    const f = path.basename(imageUrl, ".png");
+    // basename without the extension, without pulling in node:path.
+    const f = (imageUrl.split("/").pop() ?? "").replace(/\.[a-z0-9]+$/i, "");
     const own = caseBase.replace(/^unit-(\d)-/, "unit-0$1-");
     if (!f.startsWith(own) && !f.includes(slugify(id)) && !f.includes(slugify(name))) {
       borrowedFrom = f;

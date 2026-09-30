@@ -407,6 +407,30 @@ export interface Database {
           }
         ];
       };
+      character_overrides: {
+        Row: {
+          character_id: string;
+          sheet: unknown | null;
+          status: string | null;
+          updated_at: string;
+          updated_by: string | null;
+        };
+        Insert: {
+          character_id: string;
+          sheet?: unknown | null;
+          status?: string | null;
+          updated_at?: string;
+          updated_by?: string | null;
+        };
+        Update: {
+          character_id?: string;
+          sheet?: unknown | null;
+          status?: string | null;
+          updated_at?: string;
+          updated_by?: string | null;
+        };
+        Relationships: [];
+      };
       badges: {
         Row: {
           id: string;
