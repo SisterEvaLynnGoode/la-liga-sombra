@@ -361,7 +361,9 @@
             "10:00"
           ],
           "explanationEs": "Dijo: «Los veré mañana a las diez» — futuro: veré. Pero su vuelo ya salió.",
-          "explanationEn": "'Los veré mañana a las diez' — future tense veré… but she was already gone."
+          "explanationEn": "'Los veré mañana a las diez' — future tense veré… but she was already gone.",
+          "hint": "Contesta con «a las…» + la hora que dijo.",
+          "hintEn": "Answer with a las + the time he gave."
         }
       ]
     },

@@ -481,7 +481,9 @@
             "dieciseis rayos"
           ],
           "explanationEs": "«la rueda más difícil, la de dieciséis rayos».",
-          "explanationEn": "Sixteen — dieciséis."
+          "explanationEn": "Sixteen — dieciséis.",
+          "hint": "Busca el número de rayos en el texto y escríbelo en palabras. Empieza por «dieci…».",
+          "hintEn": "Find the number of spokes in the text and write it in words. It starts dieci…"
         }
       ]
     },

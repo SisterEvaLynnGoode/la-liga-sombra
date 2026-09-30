@@ -397,7 +397,9 @@
             "no habló de ninguna carrera ni meta",
             "no tenía proyecto pero quería hacerse rico",
             "desapareció cuando desapareció el sombrero"
-          ]
+          ],
+          "hint": "Fue a la feria pero no registró ni presentó ningún proyecto. Empieza con «no registró…».",
+          "hintEn": "He went to the fair but never registered or presented a project. Start with no registró…"
         }
       ]
     },

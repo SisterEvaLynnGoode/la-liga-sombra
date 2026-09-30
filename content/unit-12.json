@@ -534,7 +534,9 @@
             "está en lo alto del templo"
           ],
           "explanationEs": "Posición o lugar → ESTAR. 'El astrónomo está en lo alto del templo.'",
-          "explanationEn": "Location → ESTAR: 'está en lo alto del templo.'"
+          "explanationEn": "Location → ESTAR: 'está en lo alto del templo.'",
+          "hint": "Es POSICIÓN (dónde está), así que usa ESTAR en la forma de él/ella. Una sola palabra.",
+          "hintEn": "This is position, so use ESTAR in the él/ella form. One word."
         }
       ]
     },

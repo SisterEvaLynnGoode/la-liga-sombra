@@ -100,13 +100,27 @@ export default function EthicalChoice({ choice, onSelect }: Props) {
         {/* Option C sentence input */}
         {selected === "C" && (
           <div className="border border-[rgba(201,147,58,0.2)] bg-[#1a1614] p-4 space-y-3">
-            <p className="font-typewriter text-xs text-[#8b7355]">
-              Construye una oración en español ofreciendo un trato a Elena.
-              Usa palabras como: <span className="text-[#e8b455]">ofrezco, si, coopera, acuerdo, protejo, prometo</span>
-            </p>
-            <p className="font-typewriter text-[10px] text-[#4a3a2a]">
-              Ejemplo: &ldquo;Si cooperas, prometo proteger a tu hermano.&rdquo;
-            </p>
+            {/* All three lines used to be Eclipse's: every later boss told the
+                student to make a deal with Elena using Eclipse's words. They now
+                come from the boss being played. */}
+            <p className="font-typewriter text-xs text-[#c4a882]">{optionC?.description}</p>
+            <div className="border-l-2 border-[#c9933a] bg-[rgba(201,147,58,0.06)] px-3 py-2 space-y-1">
+              <p className="font-typewriter text-[10px] tracking-[0.25em] uppercase text-[#c9933a]">
+                💡 Pista
+              </p>
+              {optionC?.sentenceExample && (
+                <p className="font-typewriter text-xs text-[#e8b455] leading-snug">
+                  Ejemplo: &ldquo;{optionC.sentenceExample}&rdquo;
+                </p>
+              )}
+              <p className="font-typewriter text-[10px] text-[#8b7355] leading-snug">
+                Usa al menos una de estas palabras:{" "}
+                <span className="text-[#c4a882]">{(optionC?.requiredWords ?? []).slice(0, 8).join(" · ")}</span>
+              </p>
+              <p className="font-typewriter text-[10px] text-[#6b5a48]">
+                Mínimo 5 palabras. / At least 5 words — you can adapt the example.
+              </p>
+            </div>
             <textarea
               value={sentence}
               onChange={(e) => { setSentence(e.target.value); setError(""); }}

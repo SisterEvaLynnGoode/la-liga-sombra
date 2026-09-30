@@ -401,7 +401,9 @@
             "las 21:00"
           ],
           "explanationEs": "La lavandería cierra a las 21:00 — su excusa del bolso es falsa.",
-          "explanationEn": "The laundry closed at 21:00 — her laundry-bag excuse is fake."
+          "explanationEn": "The laundry closed at 21:00 — her laundry-bag excuse is fake.",
+          "hint": "Busca la hora de cierre en el cartel y escríbela en números, con dos puntos: por ejemplo 21:00.",
+          "hintEn": "Find the closing time on the sign and write it in digits, e.g. 21:00."
         }
       ]
     },

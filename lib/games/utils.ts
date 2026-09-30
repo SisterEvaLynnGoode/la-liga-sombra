@@ -55,6 +55,64 @@ export function checkAnswer(student: string, acceptable: string[]): boolean {
   return acceptable.some((a) => answersMatch(student, a));
 }
 
+/**
+ * Free-response matching, deliberately generous.
+ *
+ * `checkAnswer` demands the whole typed string equal one of the authored
+ * answers, so a student who read the passage correctly and wrote "el 15 de
+ * marzo de 2024, creo" was marked wrong. These questions check comprehension,
+ * not transcription, so an answer that CONTAINS an acceptable answer as whole
+ * words counts. A leading "no" still fails, so a negated sentence is not
+ * accepted on the strength of the word it negates.
+ */
+export function looseCheckAnswer(student: string, acceptable: string[]): boolean {
+  const s = normalizeAnswer(student);
+  if (!s) return false;
+  if (acceptable.some((a) => answersMatch(student, a))) return true;
+  // "no seco" must not pass on the strength of "seco" — unless the right
+  // answer is itself negative ("no registró ningún proyecto"), where a student
+  // starting with "no" is on the correct track.
+  const answerIsNegative = acceptable.some((a) => normalizeAnswer(a).startsWith("no "));
+  if (!answerIsNegative && (s === "no" || s.startsWith("no "))) return false;
+  // normalizeAnswer already stripped punctuation and collapsed runs of space,
+  // so padding both sides turns "contains" into a whole-word test.
+  const padded = ` ${s} `;
+  return acceptable.some((a) => {
+    const n = normalizeAnswer(a);
+    return n.length > 0 && padded.includes(` ${n} `);
+  });
+}
+
+/**
+ * The shape of an answer: first letter of each word, the rest as underscores
+ * ("el quince de marzo" → "e_ q_____ d_ m____"). Printed under a free-response
+ * box so a student can see how many words to write and how each one starts,
+ * without being handed the answer.
+ */
+export function answerShape(answer: string): string {
+  return answer
+    .trim()
+    .split(/\s+/)
+    .map((w) => (w.length <= 1 ? w : w[0] + "_".repeat(Math.min(w.length - 1, 12))))
+    .join(" ");
+}
+
+/**
+ * How much of a target sentence the student actually produced, 0–1.
+ *
+ * The typed dialogue turn asked students to reproduce a whole sentence and
+ * compared it with `flexibleMatch`, which is all-or-nothing: one missing accent
+ * or a dropped "usted" and a 15-word sentence came back wrong. Production
+ * practice should reward the sentence being there, so the caller can accept a
+ * high-enough overlap instead of demanding a transcript.
+ */
+export function wordOverlapRatio(student: string, target: string): number {
+  const t = normalizeAnswer(target).split(" ").filter(Boolean);
+  if (!t.length) return 0;
+  const said = new Set(normalizeAnswer(student).split(" ").filter(Boolean));
+  return t.filter((w) => said.has(w)).length / t.length;
+}
+
 /** Format seconds as M:SS */
 export function formatTime(seconds: number): string {
   const m = Math.floor(seconds / 60);

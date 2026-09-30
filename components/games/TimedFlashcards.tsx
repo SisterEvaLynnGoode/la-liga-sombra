@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import GameShell from "./GameShell";
 import { useAttemptTracker } from "@/lib/hooks/useAttemptTracker";
-import { seededShuffle, flexibleMatch, formatTime } from "@/lib/games/utils";
+import { seededShuffle, flexibleMatch, formatTime, answerShape } from "@/lib/games/utils";
 import type { FlashcardItem, OnComplete } from "@/lib/games/types";
 import { logItemEvent, flushItemEvents } from "@/lib/events";
 
@@ -162,6 +162,14 @@ export default function TimedFlashcards({
               <p className="font-display font-bold text-3xl text-[#f5e6c8]">{card.prompt}</p>
               {card.hint && cardStatus === "idle" && (
                 <p className="font-typewriter text-xs text-[#8b7355] mt-2 italic">{card.hint}</p>
+              )}
+              {/* The shape of the answer — how many words, how each starts.
+                  No card in the game ships a written hint, so under a clock
+                  this was a blank box and nothing else. */}
+              {cardStatus === "idle" && (
+                <p className="font-mono text-sm text-[#c4a882] mt-2 tracking-[0.2em]" aria-label="Forma de la respuesta">
+                  {answerShape(card.answer)}
+                </p>
               )}
               {cardStatus === "correct" && (
                 <p className="font-typewriter text-sm text-[#c9933a] mt-2">✓ {card.answer}</p>

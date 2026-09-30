@@ -410,7 +410,9 @@
             "con efectivo"
           ],
           "explanationEs": "El registro dice: «paga en efectivo» — sin tarjeta, sin nombre real.",
-          "explanationEn": "Cash — no card, no real name."
+          "explanationEn": "Cash — no card, no real name.",
+          "hint": "No pagó con tarjeta. Contesta con «en…» + la palabra para pagar con billetes.",
+          "hintEn": "She did not pay by card. Answer with en + the word for paying in cash."
         }
       ]
     },

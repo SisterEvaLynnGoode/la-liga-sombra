@@ -375,7 +375,9 @@
             "con la izquierda"
           ],
           "explanationEs": "El registro dice: «Letra con la mano izquierda».",
-          "explanationEn": "The log notes left-handed handwriting."
+          "explanationEn": "The log notes left-handed handwriting.",
+          "hint": "Firmó con una mano, y no fue la derecha. Escribe «la mano…» + el adjetivo contrario de derecha.",
+          "hintEn": "He signed with one hand — not the right one. Write la mano + the opposite of derecha."
         }
       ]
     },

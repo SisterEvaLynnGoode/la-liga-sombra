@@ -390,7 +390,9 @@
             "basurero"
           ],
           "explanationEs": "El registro dice: «Su credencial queda en un basurero».",
-          "explanationEn": "She dumped the badge in a trash can."
+          "explanationEn": "She dumped the badge in a trash can.",
+          "hint": "Contesta con «en…» + el lugar donde se tira la basura.",
+          "hintEn": "Answer with en + the place where rubbish is thrown away."
         }
       ]
     },

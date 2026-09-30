@@ -431,7 +431,9 @@
             "en la habitación de la abuela"
           ],
           "explanationEs": "El collar ESTÁ en la habitación — usamos ESTAR para la ubicación.",
-          "explanationEn": "Use estar for location."
+          "explanationEn": "Use estar for location.",
+          "hint": "Contesta con «en…» + el lugar. Está en su habitación, dentro de una caja de color azul.",
+          "hintEn": "Answer with en + the place: her room, inside a blue box."
         }
       ]
     },

@@ -498,7 +498,9 @@
             "es moreno y alto"
           ],
           "explanationEs": "«Alto y moreno» — los adjetivos terminan en -o porque Rodrigo es hombre.",
-          "explanationEn": "Adjectives end in -o to agree with a male person."
+          "explanationEn": "Adjectives end in -o to agree with a male person.",
+          "hint": "Dos adjetivos unidos por «y»: uno de estatura (¿alto o bajo?) y uno del pelo (¿rubio o moreno?).",
+          "hintEn": "Two adjectives joined by y: one for height, one for hair."
         }
       ]
     },

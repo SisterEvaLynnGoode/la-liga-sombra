@@ -2,27 +2,49 @@
   "_comment": "UNIT TEMPLATE — copy this file, rename to unit-XX.json, fill in every field.",
   "_comment2": "Fields marked [REQUIRED] must be filled in. Fields marked [OPTIONAL] can be removed.",
   "_comment3": "Run 'npm run validate' to check your file before committing.",
-
   "unitNumber": 2,
   "country": "España",
   "city": "Madrid",
   "caseTitle": "El Título del Caso",
   "caseDescription": "A 1-2 sentence summary of what was stolen and why students must investigate.",
   "criminalName": "El Alias del Criminal",
-
   "vocab": [
-    { "spanish": "hola",        "english": "hello",       "audio": "/audio/unit-02/hola.mp3" },
-    { "spanish": "adiós",       "english": "goodbye",     "audio": "/audio/unit-02/adios.mp3" },
-    { "spanish": "gracias",     "english": "thank you"    },
-    { "spanish": "por favor",   "english": "please"       },
-    { "spanish": "¿cómo estás?","english": "how are you?" },
-    { "spanish": "bien",        "english": "well/good"    },
-    { "spanish": "mal",         "english": "bad/not well" },
-    { "spanish": "y tú",        "english": "and you?"     }
+    {
+      "spanish": "hola",
+      "english": "hello",
+      "audio": "/audio/unit-02/hola.mp3"
+    },
+    {
+      "spanish": "adiós",
+      "english": "goodbye",
+      "audio": "/audio/unit-02/adios.mp3"
+    },
+    {
+      "spanish": "gracias",
+      "english": "thank you"
+    },
+    {
+      "spanish": "por favor",
+      "english": "please"
+    },
+    {
+      "spanish": "¿cómo estás?",
+      "english": "how are you?"
+    },
+    {
+      "spanish": "bien",
+      "english": "well/good"
+    },
+    {
+      "spanish": "mal",
+      "english": "bad/not well"
+    },
+    {
+      "spanish": "y tú",
+      "english": "and you?"
+    }
   ],
-
   "stages": [
-
     {
       "_comment": "STAGE 1 — Cutscene. Drop your video in /public/videos/unit-XX-intro.mp4",
       "_comment2": "The fallback (no video) shows chiefImageSeed photo + briefingLines as typed text.",
@@ -39,20 +61,36 @@
         "¿Estás listo para tu segunda misión? ¡Buena suerte!"
       ]
     },
-
     {
       "_comment": "STAGE 2 — Vocab Match. 6-10 pairs from the unit's vocab list work best.",
       "type": "vocabMatch",
       "pairs": [
-        { "spanish": "hola",        "english": "hello" },
-        { "spanish": "adiós",       "english": "goodbye" },
-        { "spanish": "gracias",     "english": "thank you" },
-        { "spanish": "por favor",   "english": "please" },
-        { "spanish": "¿cómo estás?","english": "how are you?" },
-        { "spanish": "bien",        "english": "well/good" }
+        {
+          "spanish": "hola",
+          "english": "hello"
+        },
+        {
+          "spanish": "adiós",
+          "english": "goodbye"
+        },
+        {
+          "spanish": "gracias",
+          "english": "thank you"
+        },
+        {
+          "spanish": "por favor",
+          "english": "please"
+        },
+        {
+          "spanish": "¿cómo estás?",
+          "english": "how are you?"
+        },
+        {
+          "spanish": "bien",
+          "english": "well/good"
+        }
       ]
     },
-
     {
       "_comment": "STAGE 3 — Dialogue / Witness Interview.",
       "_comment2": "Each node has an id, npcLine, and either options[] or isEnd:true.",
@@ -109,7 +147,6 @@
         }
       ]
     },
-
     {
       "_comment": "STAGE 4 — Reading Comprehension.",
       "_comment2": "passage: the text to display. glossary: words students can click for translation.",
@@ -118,27 +155,46 @@
       "clueReward": "El sospechoso [description clue 2].",
       "passage": "Write a short note, letter, or document in Spanish, 50-150 words. This is something the thief left behind. Example:\n\nQuerido amigo,\nYa tengo el objeto. Soy [name]. Tengo [age] años y soy de [city]. [More details...]",
       "glossary": [
-        { "word": "querido",   "translation": "dear / beloved" },
-        { "word": "ya",        "translation": "already / now" },
-        { "word": "tengo",     "translation": "I have / I am (age)" }
+        {
+          "word": "querido",
+          "translation": "dear / beloved"
+        },
+        {
+          "word": "ya",
+          "translation": "already / now"
+        },
+        {
+          "word": "tengo",
+          "translation": "I have / I am (age)"
+        }
       ],
       "questions": [
         {
           "id": "r1",
           "text": "¿Cómo se llama el sospechoso?",
           "type": "multiple_choice",
-          "options": ["Option A", "Option B ✓", "Option C", "Option D"],
+          "options": [
+            "Option A",
+            "Option B ✓",
+            "Option C",
+            "Option D"
+          ],
           "correctIndex": 1
         },
         {
           "id": "r2",
           "text": "¿Cuántos años tiene?",
           "type": "short_answer",
-          "acceptableAnswers": ["25", "veinticinco", "veinticinco años"]
+          "acceptableAnswers": [
+            "25",
+            "veinticinco",
+            "veinticinco años"
+          ],
+          "hint": "Pista para el estudiante: dónde mirar y con qué palabra empezar.",
+          "hintEn": "Hint for the student: where to look and which word to start with."
         }
       ]
     },
-
     {
       "_comment": "STAGE 5 — Listening Comprehension.",
       "_comment2": "audioUrl: drop your .mp3 file in /public/audio/unit-XX/phone-call.mp3",
@@ -157,7 +213,6 @@
       "correctIndex": 0,
       "maxReplays": 3
     },
-
     {
       "_comment": "STAGE 6 — Lineup. Exactly 4 suspects. correctSuspectId must match one id.",
       "_comment2": "Descriptions should be 2-3 Spanish sentences. Students must read them to solve the case.",
@@ -200,6 +255,5 @@
         }
       ]
     }
-
   ]
 }

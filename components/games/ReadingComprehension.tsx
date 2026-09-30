@@ -4,7 +4,7 @@ import { useState, useCallback } from "react";
 import GameShell from "./GameShell";
 import { useGameTimer } from "@/lib/hooks/useGameTimer";
 import { useAttemptTracker } from "@/lib/hooks/useAttemptTracker";
-import { checkAnswer } from "@/lib/games/utils";
+import { looseCheckAnswer, answerShape } from "@/lib/games/utils";
 import type { GlossaryEntry, ReadingQuestion, OnComplete } from "@/lib/games/types";
 
 interface Props {
@@ -72,6 +72,17 @@ function QuestionItem({
   const [selected, setSelected] = useState<number | null>(null);
   const [shortInput, setShortInput] = useState("");
   const [result, setResult] = useState<boolean | null>(null);
+  // Free response gets two tries. The first miss says so and leaves the hint up;
+  // only the second one closes the question.
+  const [tries, setTries] = useState(0);
+
+  // The model answer for the scaffold: the shortest acceptable one, because it
+  // is the least a student has to write to be right.
+  const model =
+    question.type === "short_answer"
+      ? [...question.acceptableAnswers].sort((a, b) => a.split(/\s+/).length - b.split(/\s+/).length)[0]
+      : "";
+  const modelWords = model ? model.trim().split(/\s+/) : [];
 
   function handleMCSelect(i: number) {
     if (submitted) return;
@@ -85,10 +96,14 @@ function QuestionItem({
 
   function handleShortAnswer(e: React.FormEvent) {
     e.preventDefault();
-    if (question.type !== "short_answer" || submitted) return;
-    const isCorrect = checkAnswer(shortInput, question.acceptableAnswers);
-    setResult(isCorrect);
-    onAnswer(question.id, shortInput, isCorrect);
+    if (question.type !== "short_answer" || submitted || result !== null) return;
+    const isCorrect = looseCheckAnswer(shortInput, question.acceptableAnswers);
+    const attempt = tries + 1;
+    setTries(attempt);
+    if (isCorrect || attempt >= 2) {
+      setResult(isCorrect);
+      onAnswer(question.id, shortInput, isCorrect);
+    }
   }
 
   return (
@@ -123,13 +138,34 @@ function QuestionItem({
       )}
 
       {question.type === "short_answer" && (
+        <div className="mb-3 border-l-2 border-[#c9933a] bg-[rgba(201,147,58,0.06)] px-3 py-2 space-y-1">
+          <p className="font-typewriter text-[10px] tracking-[0.25em] uppercase text-[#c9933a]">
+            💡 Pista
+          </p>
+          {question.hint && (
+            <p className="font-typewriter text-xs text-[#e8b455] leading-snug">{question.hint}</p>
+          )}
+          {question.hintEn && (
+            <p className="font-typewriter text-[10px] text-[#8b7355] italic leading-snug">{question.hintEn}</p>
+          )}
+          {/* The shape of the answer: how many words, and how each one starts. */}
+          <p className="font-mono text-sm text-[#c4a882] tracking-[0.2em]" aria-label="Forma de la respuesta">
+            {answerShape(model)}
+          </p>
+          <p className="font-typewriter text-[10px] text-[#8b7355]">
+            {modelWords.length} palabra{modelWords.length === 1 ? "" : "s"} · empieza con «{modelWords[0]}»
+          </p>
+        </div>
+      )}
+
+      {question.type === "short_answer" && (
         <form onSubmit={handleShortAnswer} className="flex gap-2">
           <input
             type="text"
             value={shortInput}
             onChange={(e) => setShortInput(e.target.value)}
             disabled={result !== null}
-            placeholder="Escribe tu respuesta…"
+            placeholder={`${modelWords[0] ?? "Escribe"}…`}
             className="flex-1 bg-[#0d0b0a] border border-[rgba(201,147,58,0.3)] focus:border-[#c9933a] focus:outline-none px-3 py-2 font-typewriter text-sm text-[#f5e6c8] placeholder-[#3a3028] transition-colors disabled:opacity-50"
           />
           <button
@@ -140,6 +176,14 @@ function QuestionItem({
             OK
           </button>
         </form>
+      )}
+
+      {/* First miss: keep the question open and point back at the hint. */}
+      {result === null && tries === 1 && (
+        <p className="font-typewriter text-xs mt-2 text-[#e8b455]">
+          Casi. Mira la pista otra vez y prueba una segunda vez.
+          <span className="text-[#8b7355]"> / Close. Check the hint and try once more.</span>
+        </p>
       )}
 
       {result !== null && (

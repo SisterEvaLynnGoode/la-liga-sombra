@@ -117,6 +117,9 @@ export type ReadingQuestion =
       text: string;
       type: "short_answer";
       acceptableAnswers: string[];
+      /** Scaffold shown before the student types (Spanish, then English). */
+      hint?: string;
+      hintEn?: string;
       explanationEs?: string;
       explanationEn?: string;
     };

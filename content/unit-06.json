@@ -922,7 +922,9 @@
             "ese maíz es de la sección B y este es del ajiaco",
             "son ingredientes diferentes",
             "Diego no necesita el maíz del ajiaco"
-          ]
+          ],
+          "hint": "Porque no es el mismo maíz: uno es de la sección B y el otro del ajiaco. Empieza con «son…» + un adjetivo (distintos / diferentes).",
+          "hintEn": "Because it is not the same corn. Start with son + an adjective (distintos / diferentes)."
         }
       ]
     },

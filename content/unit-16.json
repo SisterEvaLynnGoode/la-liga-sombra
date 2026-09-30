@@ -480,7 +480,9 @@
             "color celeste"
           ],
           "explanationEs": "«se visten de celeste» — el color de Uruguay.",
-          "explanationEn": "Sky blue — celeste."
+          "explanationEn": "Sky blue — celeste.",
+          "hint": "Es un azul claro — el color de la camiseta de Uruguay. Escribe solo el color, o «de + color».",
+          "hintEn": "A light blue — Uruguay's shirt colour. Write just the colour, or de + colour."
         }
       ]
     },

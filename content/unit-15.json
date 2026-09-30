@@ -535,7 +535,9 @@
             "rogelio se lo guarda"
           ],
           "explanationEs": "le + lo nunca se dice: se convierte en SE LO.",
-          "explanationEn": "'le + lo' is never allowed in Spanish — it becomes 'se lo'."
+          "explanationEn": "'le + lo' is never allowed in Spanish — it becomes 'se lo'.",
+          "hint": "Primero la persona, después la cosa. «a Celia» → le, pero le + lo se convierte en SE. El disco es masculino: lo.",
+          "hintEn": "Person first, thing second. le + lo becomes SE, and el disco is masculine: lo."
         }
       ]
     },

@@ -542,7 +542,9 @@
             "quince de marzo",
             "el 15 de marzo",
             "el 15 de marzo de 2024"
-          ]
+          ],
+          "hint": "En español la fecha se dice: el + día + de + mes (+ de + año). Aquí 15 = quince y 03 = marzo. Puedes parar en el mes.",
+          "hintEn": "Spanish dates: el + day + de + month (+ de + year). 15 = quince, 03 = marzo. Stopping after the month is fine."
         }
       ]
     },

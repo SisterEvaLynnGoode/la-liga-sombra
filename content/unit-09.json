@@ -431,7 +431,9 @@
             "caminó cerca de la vitrina del taino",
             "mintió sobre su salud",
             "no estaba enferma de verdad"
-          ]
+          ],
+          "hint": "Dijo que le dolía el estómago, pero después comió sin problema. Empieza con «mintió…» o con «comió…».",
+          "hintEn": "She said her stomach hurt, then ate with no trouble. Start with mintió… or comió…"
         }
       ]
     },

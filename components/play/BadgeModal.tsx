@@ -227,6 +227,16 @@ export default function BadgeModal({ caseTitle, country, criminalName, unitNumbe
             <p className="font-typewriter text-[9px] text-[#4a3a2a] mb-2">
               Escribe 2–3 frases en español: ¿qué pasó en este caso? Tu profe lo leerá.
             </p>
+            {/* Sentence frames, printed. A placeholder disappears the moment a
+                student types, which is exactly when they still need it. */}
+            <div className="border-l-2 border-[#c9933a] bg-[rgba(201,147,58,0.06)] px-3 py-2 mb-2 space-y-0.5">
+              <p className="font-typewriter text-[9px] tracking-[0.25em] uppercase text-[#c9933a]">
+                💡 Empieza así
+              </p>
+              <p className="font-typewriter text-[11px] text-[#e8b455] leading-snug">El ladrón robó…</p>
+              <p className="font-typewriter text-[11px] text-[#e8b455] leading-snug">La pista más importante fue…</p>
+              <p className="font-typewriter text-[11px] text-[#e8b455] leading-snug">Al final, yo descubrí que…</p>
+            </div>
             {reportState === "saved" ? (
               <p className="font-typewriter text-xs text-[#c9933a]">✓ Informe enviado al cuartel general.</p>
             ) : (

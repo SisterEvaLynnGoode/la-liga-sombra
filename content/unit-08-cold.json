@@ -411,7 +411,9 @@
             "1000 dólares"
           ],
           "explanationEs": "«Un extranjero cambió mil dólares en billetes nuevos.» Pretérito: cambió.",
-          "explanationEn": "He exchanged a thousand dollars — 'cambió' (preterite)."
+          "explanationEn": "He exchanged a thousand dollars — 'cambió' (preterite).",
+          "hint": "Escribe la cantidad y la moneda: «mil…».",
+          "hintEn": "Write the amount and the currency: mil + …"
         }
       ]
     },

@@ -535,7 +535,8 @@
           "cambio",
           "ayudo",
           "hablo"
-        ]
+        ],
+        "sentenceExample": "Te ofrezco un trato: tú devuelves las cinco piezas y yo hablo por ti."
       }
     ]
   },

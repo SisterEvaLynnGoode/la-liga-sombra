@@ -168,6 +168,8 @@ export interface EthicalChoiceOption {
   effect: string;
   requiresSentence?: boolean;  // Option C — student must write a Spanish sentence
   requiredWords?: string[];    // words the sentence must include (any one)
+  /** A model sentence for this boss, printed above the box before they write. */
+  sentenceExample?: string;
 }
 
 export interface BossEthicalChoice {

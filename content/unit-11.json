@@ -481,7 +481,9 @@
             "talla la piedra con cuidado"
           ],
           "explanationEs": "'Un escultor talla la piedra con cuidado.' Tallar es un verbo -AR: él talla.",
-          "explanationEn": "The sculptor carves the stone — 'tallar' is an -AR verb (él talla)."
+          "explanationEn": "The sculptor carves the stone — 'tallar' is an -AR verb (él talla).",
+          "hint": "Escribe una frase completa en presente: sujeto + verbo + objeto. «El escultor t____ la piedra.»",
+          "hintEn": "Write a full present-tense sentence: subject + verb + object. El escultor t____ la piedra."
         }
       ]
     },

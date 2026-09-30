@@ -54,6 +54,14 @@ export const SAQuestionSchema = z.object({
   text: z.string().min(1),
   type: z.literal("short_answer"),
   acceptableAnswers: z.array(z.string().min(1)).min(1, "Provide at least one acceptable answer"),
+  /**
+   * The scaffold shown BEFORE the student types, in Spanish (hintEn is the
+   * English gloss). Free response was the hardest thing in the game: a blank
+   * box, one attempt, and no clue what shape the answer takes. Optional so old
+   * content still validates, but every authored short answer should carry one.
+   */
+  hint: z.string().optional(),
+  hintEn: z.string().optional(),
   explanationEs: z.string().optional(),
   explanationEn: z.string().optional(),
 });

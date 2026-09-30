@@ -248,7 +248,9 @@
             "su valor",
             "su edad",
             "años y valor"
-          ]
+          ],
+          "hint": "Ella no preguntó por la música: preguntó por el VALOR o la EDAD del instrumento. Empieza con «cuánto…» o «cuántos…».",
+          "hintEn": "She asked what it is worth, or how old it is. Start with cuánto / cuántos."
         },
         {
           "id": "cr3",

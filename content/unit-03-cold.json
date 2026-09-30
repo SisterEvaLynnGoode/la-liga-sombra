@@ -390,7 +390,9 @@
             "3"
           ],
           "explanationEs": "La nota dice: «El mismo hombre visitó la exposición tres veces esta semana».",
-          "explanationEn": "He cased the exhibition three times."
+          "explanationEn": "He cased the exhibition three times.",
+          "hint": "Cuenta las visitas de esta semana en el registro y escribe el número en palabras.",
+          "hintEn": "Count this week's visits in the log and write the number in words."
         }
       ]
     },

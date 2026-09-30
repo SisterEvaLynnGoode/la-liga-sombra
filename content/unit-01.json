@@ -282,7 +282,9 @@
             "34 años"
           ],
           "explanationEs": "La carta dice: «Tengo 34 años» — usamos TENER para la edad.",
-          "explanationEn": "Spanish uses tener (to have) for age, not ser."
+          "explanationEn": "Spanish uses tener (to have) for age, not ser.",
+          "hint": "Busca «34» en la descripción del ladrón. Puedes escribir el número (34) o las palabras (treinta y cuatro).",
+          "hintEn": "Find 34 in the description. Digits or words both count."
         },
         {
           "id": "r3",

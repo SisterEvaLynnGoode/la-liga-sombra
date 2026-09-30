@@ -152,7 +152,9 @@
               "en la oficina principal",
               "oficina",
               "oficina principal"
-            ]
+            ],
+            "hint": "Contesta con «en la…» + el lugar de trabajo que menciona la carta.",
+            "hintEn": "Answer with en la + the workplace the letter mentions."
           }
         ],
         "hard": [
@@ -163,7 +165,9 @@
             "acceptableAnswers": [
               "Juan",
               "juan"
-            ]
+            ],
+            "hint": "Busca la firma al final de la carta. Escribe solo el nombre.",
+            "hintEn": "Look at the signature at the end of the letter. Write just the name."
           },
           {
             "id": "h2",
@@ -174,7 +178,9 @@
               "de Buenos Aires",
               "argentina",
               "Argentina"
-            ]
+            ],
+            "hint": "Busca «Soy de…» en la carta y escribe la ciudad.",
+            "hintEn": "Find Soy de… in the letter and write the city."
           },
           {
             "id": "h3",
@@ -183,7 +189,9 @@
             "acceptableAnswers": [
               "25",
               "veinticinco"
-            ]
+            ],
+            "hint": "Busca «mi hermano tiene…». Escribe el número (25) o en palabras (veinticinco).",
+            "hintEn": "Find mi hermano tiene… Write the number (25) or the words (veinticinco)."
           },
           {
             "id": "h4",
@@ -193,7 +201,9 @@
               "Ricardo, República Dominicana",
               "Ricardo de la República Dominicana",
               "Ricardo"
-            ]
+            ],
+            "hint": "Dos datos: el nombre del contacto y su país. Escribe el nombre, y si puedes añade el país (República…).",
+            "hintEn": "Two things: the contact's name and his country. Write the name, and add the country if you can."
           },
           {
             "id": "h5",
@@ -203,7 +213,9 @@
               "en la oficina",
               "oficina",
               "oficina principal"
-            ]
+            ],
+            "hint": "Contesta con «en la…» + el lugar de trabajo donde está escondido.",
+            "hintEn": "Answer with en la + the workplace where it is hidden."
           },
           {
             "id": "h6",
@@ -214,7 +226,9 @@
               "3:00",
               "tres de la tarde",
               "las tres de la tarde"
-            ]
+            ],
+            "hint": "Contesta con «a las…» + la hora que pide en la carta.",
+            "hintEn": "Answer with a las + the time he asks for in the letter."
           }
         ]
       }
@@ -656,7 +670,8 @@
           "trato",
           "prometo",
           "garantizo"
-        ]
+        ],
+        "sentenceExample": "Si cooperas, prometo proteger a tu hermano."
       }
     ]
   },

@@ -4,7 +4,7 @@ import { useState, useCallback } from "react";
 import GameShell from "./GameShell";
 import { useGameTimer } from "@/lib/hooks/useGameTimer";
 import { useAttemptTracker } from "@/lib/hooks/useAttemptTracker";
-import { flexibleMatch } from "@/lib/games/utils";
+import { flexibleMatch, wordOverlapRatio, answerShape } from "@/lib/games/utils";
 import { logItemEvent, flushItemEvents } from "@/lib/events";
 import type { DialogueNode, OnComplete } from "@/lib/games/types";
 
@@ -30,6 +30,18 @@ interface HistoryEntry {
   npcLine: string;
   chosen?: string;
   wasCorrect?: boolean;
+}
+
+/**
+ * The model shown under a typed turn: the first words in full, the rest as
+ * word shapes (first letter + underscores). A student can read the shape of the
+ * whole sentence and knows exactly what to say. Each miss reveals more, so the
+ * second attempt is easier than the first rather than the same wall of text.
+ */
+function typedModel(target: string, misses: number): string {
+  const words = target.trim().split(/\s+/);
+  const revealed = Math.min(words.length, Math.max(3, Math.ceil(words.length * (misses === 0 ? 0.35 : 0.7))));
+  return words.map((w, i) => (i < revealed ? w : answerShape(w))).join(" ");
 }
 
 export default function DialogueChoice({
@@ -89,7 +101,10 @@ export default function DialogueChoice({
     e?.preventDefault();
     if (!useTypedTurn || !correctOption || !typedInput.trim()) return;
     const target = sub(correctOption.text);
-    const isCorrect = flexibleMatch(typedInput, target);
+    // Accept the sentence when it is genuinely there. An exact match still
+    // counts, and so does saying three quarters of the target's words: this is
+    // production practice, not dictation.
+    const isCorrect = flexibleMatch(typedInput, target) || wordOverlapRatio(typedInput, target) >= 0.75;
     logItemEvent({
       unitId,
       stageType: "dialogueChoice-typed",
@@ -113,10 +128,11 @@ export default function DialogueChoice({
       }
     } else {
       setTypedMisses((m) => m + 1);
-      setTypedInput("");
+      // Leave the text in the box: retyping fifteen words from zero is what
+      // made this the hardest thing in the game.
       setFeedback(
         typedMisses === 0
-          ? "No exactamente — intenta escribirlo de nuevo."
+          ? "Casi — mira el modelo de abajo y corrige lo que falta."
           : "Está bien, recluta — elige la respuesta correcta."
       );
     }
@@ -234,10 +250,23 @@ export default function DialogueChoice({
                   autoFocus
                   className="w-full bg-[#0d0b0a] border border-[rgba(201,147,58,0.3)] focus:border-[#c9933a] focus:outline-none px-4 py-3 font-typewriter text-sm text-[#f5e6c8] placeholder-[#3a3028] transition-colors"
                 />
+                {/* The model answer. After a miss, more of it is filled in. */}
+                {correctOption && (
+                  <div className="border-l-2 border-[#c9933a] bg-[rgba(201,147,58,0.06)] px-3 py-2 space-y-1">
+                    <p className="font-typewriter text-[10px] tracking-[0.25em] uppercase text-[#c9933a]">
+                      💡 Pista — di algo así
+                    </p>
+                    <p className="font-typewriter text-xs text-[#e8b455] leading-snug">
+                      {typedModel(sub(correctOption.text), typedMisses)}
+                    </p>
+                    <p className="font-typewriter text-[10px] text-[#8b7355]">
+                      {sub(correctOption.text).trim().split(/\s+/).length} palabras · copia el modelo y complétalo
+                      <span className="text-[#6b5a48]"> / copy the model and fill in the gaps</span>
+                    </p>
+                  </div>
+                )}
                 <div className="flex items-center justify-between">
-                  <p className="font-typewriter text-[9px] text-[#4a3a2a]">
-                    Pista: {correctOption ? `${sub(correctOption.text).trim().split(/\s+/).length} palabra(s), empieza con "${sub(correctOption.text).trim().charAt(0)}"` : ""}
-                  </p>
+                  <p className="font-typewriter text-[9px] text-[#4a3a2a]" />
                   <button
                     type="submit"
                     disabled={!typedInput.trim()}

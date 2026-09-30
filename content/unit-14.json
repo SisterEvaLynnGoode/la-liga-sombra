@@ -535,7 +535,9 @@
             "a la gente de león le encanta la poesía"
           ],
           "explanationEs": "La gente = una sola cosa (singular) → le encanta.",
-          "explanationEn": "'La gente' is singular in Spanish, so it takes 'le'."
+          "explanationEn": "'La gente' is singular in Spanish, so it takes 'le'.",
+          "hint": "Verbos como encantar usan me, te, LE, nos, les. «La gente» es una sola cosa, así que usa el de él/ella.",
+          "hintEn": "Verbs like encantar use me, te, LE, nos, les. La gente is singular, so use the él/ella one."
         }
       ]
     },

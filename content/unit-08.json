@@ -490,7 +490,9 @@
             "llegó a las ocho antes de la apertura",
             "llegó antes de los compradores normales",
             "llegó antes de que el mercado abriera al público"
-          ]
+          ],
+          "hint": "Compara su hora de llegada con la hora de apertura del mercado. Empieza con «llegó…».",
+          "hintEn": "Compare when he arrived with when the market opened. Start with llegó…"
         }
       ]
     },

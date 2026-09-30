@@ -456,7 +456,9 @@
             "escribe un mensaje",
             "está usando el celular",
             "está escribiendo"
-          ]
+          ],
+          "hint": "Usa el presente progresivo: «está» + verbo terminado en -ndo. Con el celular se escribe o se manda algo.",
+          "hintEn": "Use the present progressive: está + a verb ending in -ndo. On a phone you write or send something."
         }
       ]
     },

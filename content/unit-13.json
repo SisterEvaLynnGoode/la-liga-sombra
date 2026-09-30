@@ -534,7 +534,9 @@
             "almorzamos juntos en el jardín"
           ],
           "explanationEs": "Con nosotros la raíz NO cambia: almorzamos (no 'almuerzamos').",
-          "explanationEn": "With nosotros the stem does NOT change: almorzamos."
+          "explanationEn": "With nosotros the stem does NOT change: almorzamos.",
+          "hint": "Con NOSOTROS la raíz NO cambia: almorzar → almorz- + -amos. Una sola palabra.",
+          "hintEn": "With nosotros the stem does NOT change: almorzar → almorz- + -amos. One word."
         }
       ]
     },

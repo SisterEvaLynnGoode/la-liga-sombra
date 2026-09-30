@@ -381,7 +381,9 @@
             "su reloj"
           ],
           "explanationEs": "El abuelo busca «su reloj de oro para la foto familiar».",
-          "explanationEn": "He wanted his gold watch for the family photo."
+          "explanationEn": "He wanted his gold watch for the family photo.",
+          "hint": "Es un objeto que se lleva en la muñeca y es de oro. Escribe «el reloj de…» + el material.",
+          "hintEn": "Something worn on the wrist, made of gold. Write el reloj de + the material."
         }
       ]
     },

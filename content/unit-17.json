@@ -472,7 +472,9 @@
             "dónde están los planos"
           ],
           "explanationEs": "«No preguntó cómo funcionan. Preguntó dónde están».",
-          "explanationEn": "He asked WHERE they are, not how they work."
+          "explanationEn": "He asked WHERE they are, not how they work.",
+          "hint": "Preguntó por el LUGAR de los planos. Empieza con «dónde…» + el verbo estar.",
+          "hintEn": "He asked WHERE the blueprints are. Start with dónde + the verb estar."
         }
       ]
     },

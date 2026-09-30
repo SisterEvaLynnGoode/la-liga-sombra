@@ -667,7 +667,9 @@
             "El Infante de Velázquez"
           ],
           "explanationEs": "El texto dice que robó «El Infante», una pintura del Museo del Prado.",
-          "explanationEn": "The stolen work is a Prado painting."
+          "explanationEn": "The stolen work is a Prado painting.",
+          "hint": "Es una pintura. Escribe «el cuadro» o el nombre que aparece entre comillas en el texto.",
+          "hintEn": "It is a painting. Write el cuadro, or the name in quotation marks in the text."
         },
         {
           "id": "r3",
