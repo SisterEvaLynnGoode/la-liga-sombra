@@ -25,7 +25,7 @@ export async function GET(request: NextRequest) {
   if (isResponse(guard)) return guard;
 
   const supabase = createClient();
-  const { data: studentsData } = await supabase.from("students").select("id, display_name, created_at, sis_id").eq("class_id", classId);
+  const { data: studentsData } = await supabase.from("students").select("id, display_name, created_at, sis_id").eq("class_id", classId).is("archived_at", null);
   const students = (studentsData ?? []) as Array<{ id: string; display_name: string; created_at: string; sis_id: string | null }>;
   const ids = students.map((s) => s.id);
 

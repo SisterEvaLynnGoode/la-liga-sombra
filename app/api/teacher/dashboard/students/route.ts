@@ -9,9 +9,17 @@ export async function GET(request: NextRequest) {
   if (isResponse(guard)) return guard;
 
   const supabase = createClient();
-  const { data: studentsData } = await supabase
-    .from("students").select("id, display_name, created_at").eq("class_id", classId);
-  const students = (studentsData ?? []) as Array<{ id: string; display_name: string; created_at: string }>;
+  // The roster hides archived students; ?includeArchived=1 is the "show
+  // archived" toggle, which is the only way back to a restore button.
+  const includeArchived = request.nextUrl.searchParams.get("includeArchived") === "1";
+  const studentQuery = supabase
+    .from("students").select("id, display_name, created_at, archived_at").eq("class_id", classId);
+  const { data: studentsData } = includeArchived
+    ? await studentQuery
+    : await studentQuery.is("archived_at", null);
+  const students = (studentsData ?? []) as Array<{
+    id: string; display_name: string; created_at: string; archived_at: string | null;
+  }>;
 
   if (!students.length) return NextResponse.json({ students: [] });
 
@@ -19,7 +27,7 @@ export async function GET(request: NextRequest) {
   const LISTENING_FLAG_TYPES = ["needs_listening_support", "transcript_revealed", "listening_skipped", "academia_skipped_after_failure", "help_requested", "stage_skipped", "repeated_skipping"];
 
   const [progressRes, attemptsRes, masteryRes, badgesRes, academiaRes, stakeoutRes, briefingRes, listeningFlagsRes] = await Promise.all([
-    supabase.from("unit_progress").select("student_id, status, cold_case_completed_at").in("student_id", ids),
+    supabase.from("unit_progress").select("student_id, status, case_solved, credited_at, cold_case_completed_at, unit_id").in("student_id", ids),
     supabase.from("attempts").select("student_id, activity_type, score, max_score, time_spent_seconds, completed_at").in("student_id", ids),
     supabase.from("mastery").select("student_id, attempts, correct").in("student_id", ids),
     supabase.from("badges").select("student_id, id").in("student_id", ids),
@@ -29,7 +37,10 @@ export async function GET(request: NextRequest) {
     supabase.from("student_flags").select("student_id, flag_type").in("student_id", ids).in("flag_type", LISTENING_FLAG_TYPES),
   ]);
 
-  const progress         = (progressRes.data  ?? []) as Array<{ student_id: string; status: string; cold_case_completed_at?: string | null }>;
+  const progress         = (progressRes.data  ?? []) as Array<{
+    student_id: string; status: string; case_solved?: boolean; credited_at?: string | null;
+    cold_case_completed_at?: string | null; unit_id?: string;
+  }>;
   const attempts         = (attemptsRes.data  ?? []) as Array<{ student_id: string; activity_type: string; score: number; max_score: number; time_spent_seconds: number; completed_at: string }>;
   const mastery          = (masteryRes.data   ?? []) as Array<{ student_id: string; attempts: number; correct: number }>;
   const badges           = (badgesRes.data    ?? []) as Array<{ student_id: string; id: string }>;
@@ -47,6 +58,9 @@ export async function GET(request: NextRequest) {
     const myStakeouts = stakeoutRows.filter((r) => r.student_id === s.id);
 
     const unitsCompleted = myProgress.filter((p) => p.status === "completed").length;
+    // Casos granted by a teacher rather than played — the roster shows the
+    // count so "12 solved" is never quietly half credit.
+    const creditedCasos  = myProgress.filter((p) => p.credited_at).length;
     const totalTimeSeconds = myAttempts.reduce((sum, a) => sum + a.time_spent_seconds, 0);
 
     const lastAttempt = myAttempts.reduce<string | null>((latest, a) => {
@@ -132,6 +146,8 @@ export async function GET(request: NextRequest) {
 
     return {
       id: s.id,
+      archived: !!s.archived_at,
+      creditedCasos,
       displayName: s.display_name,
       joinedAt: s.created_at,
       unitsCompleted,

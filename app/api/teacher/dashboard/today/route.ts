@@ -59,7 +59,7 @@ export async function GET(request: NextRequest) {
 
   const [{ data: classRows }, { data: studentsData }] = await Promise.all([
     supabase.from("classes").select("term_start").eq("id", classId).limit(1),
-    supabase.from("students").select("id, display_name").eq("class_id", classId),
+    supabase.from("students").select("id, display_name").eq("class_id", classId).is("archived_at", null),
   ]);
 
   const termStart = (classRows as Array<{ term_start: string | null }> | null)?.[0]?.term_start ?? null;

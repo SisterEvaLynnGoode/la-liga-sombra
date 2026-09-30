@@ -30,7 +30,7 @@ export async function GET(request: NextRequest) {
 
   // Get all students in this class
   const { data: studentsData } = await supabase
-    .from("students").select("id, display_name").eq("class_id", classId);
+    .from("students").select("id, display_name").eq("class_id", classId).is("archived_at", null);
   const students = (studentsData ?? []) as Array<{ id: string; display_name: string }>;
   if (!students.length) return NextResponse.json({ flags: [], unacknowledgedCount: 0, errorPatterns: [] });
 

@@ -21,7 +21,7 @@ export async function GET(request: NextRequest) {
   const gradedThrough = (classData as Array<{ graded_through: number | null }> | null)?.[0]?.graded_through ?? null;
 
   const { data: studentsData } = await supabase
-    .from("students").select("id, display_name, sis_id").eq("class_id", classId);
+    .from("students").select("id, display_name, sis_id").eq("class_id", classId).is("archived_at", null);
   const students = (studentsData ?? []) as Array<{ id: string; display_name: string; sis_id: string | null }>;
   const ids = students.map((s) => s.id);
 

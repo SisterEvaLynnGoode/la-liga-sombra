@@ -41,7 +41,7 @@ export async function getSeasonBoard(classId: string): Promise<SeasonBoard> {
   const { data: studentRows } = await supabase
     .from("students")
     .select("id, display_name, faction")
-    .eq("class_id", classId);
+    .eq("class_id", classId).is("archived_at", null);
   const students = (studentRows ?? []) as Array<{ id: string; display_name: string; faction: string | null }>;
   if (!students.length) return { standings: buildStandings([]), rows: [], unassigned: [] };
 

@@ -3,7 +3,7 @@ import { guardClass, isResponse } from "@/lib/auth/teacher";
 import { createClient } from "@/lib/supabase/server";
 
 async function getStudentIds(supabase: ReturnType<typeof createClient>, classId: string) {
-  const { data } = await supabase.from("students").select("id").eq("class_id", classId);
+  const { data } = await supabase.from("students").select("id").eq("class_id", classId).is("archived_at", null);
   return (data as Array<{ id: string }> | null)?.map((s) => s.id) ?? [];
 }
 
@@ -24,7 +24,7 @@ export async function GET(request: NextRequest) {
 
   // Fetch in parallel
   const [studentsRes, progressRes, attemptsRes, unitsRes, briefingTodayRes, briefingWeekRes] = await Promise.all([
-    supabase.from("students").select("id, display_name, created_at").eq("class_id", classId),
+    supabase.from("students").select("id, display_name, created_at").eq("class_id", classId).is("archived_at", null),
     supabase.from("unit_progress").select("student_id, unit_id, status").in("student_id", studentIds),
     supabase.from("attempts").select("student_id, time_spent_seconds, completed_at").in("student_id", studentIds),
     supabase.from("units").select("id, number, country").order("number"),

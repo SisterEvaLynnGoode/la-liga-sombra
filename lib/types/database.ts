@@ -95,6 +95,7 @@ export interface Database {
           class_code: string;
           pin_hash: string | null;
           pin_salt: string | null;
+          archived_at: string | null;
           sis_id: string | null;
           /** La Última Estación faction override; null = derive from the boss ending. */
           faction: string | null;
@@ -111,6 +112,7 @@ export interface Database {
           class_code: string;
           pin_hash?: string | null;
           pin_salt?: string | null;
+          archived_at?: string | null;
           sis_id?: string | null;
           faction?: string | null;
           failed_logins?: number;
@@ -124,6 +126,7 @@ export interface Database {
           class_code?: string;
           pin_hash?: string | null;
           pin_salt?: string | null;
+          archived_at?: string | null;
           sis_id?: string | null;
           faction?: string | null;
           failed_logins?: number;
@@ -645,6 +648,7 @@ export interface Database {
           stage_index: number;
           cold_case_completed_at: string | null;
           cold_case_score: number | null;
+          credited_at: string | null;
         };
         Insert: {
           id?: string;
@@ -657,6 +661,7 @@ export interface Database {
           stage_index?: number;
           cold_case_completed_at?: string | null;
           cold_case_score?: number | null;
+          credited_at?: string | null;
         };
         Update: {
           id?: string;
@@ -669,6 +674,7 @@ export interface Database {
           stage_index?: number;
           cold_case_completed_at?: string | null;
           cold_case_score?: number | null;
+          credited_at?: string | null;
         };
         Relationships: [
           {

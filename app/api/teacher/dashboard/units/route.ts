@@ -40,7 +40,7 @@ export async function GET(request: NextRequest) {
   if (isResponse(guard)) return guard;
 
   const supabase = createClient();
-  const { data: studentsData } = await supabase.from("students").select("id").eq("class_id", classId);
+  const { data: studentsData } = await supabase.from("students").select("id").eq("class_id", classId).is("archived_at", null);
   const studentIds = (studentsData as Array<{ id: string }> | null)?.map((s) => s.id) ?? [];
   const totalStudents = studentIds.length;
 

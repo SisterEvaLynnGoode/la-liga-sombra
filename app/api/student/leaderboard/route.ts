@@ -9,7 +9,7 @@ export async function GET() {
   const supabase = createClient();
   const { classId, studentId: myId } = session;
 
-  const { data: studentsData } = await supabase.from("students").select("id, display_name").eq("class_id", classId);
+  const { data: studentsData } = await supabase.from("students").select("id, display_name").eq("class_id", classId).is("archived_at", null);
   const students = (studentsData ?? []) as Array<{ id: string; display_name: string }>;
   const ids = students.map((s) => s.id);
 

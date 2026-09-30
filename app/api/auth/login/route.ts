@@ -35,12 +35,12 @@ export async function POST(request: NextRequest) {
     return NextResponse.json({ error: "Código de clase no encontrado. Pregúntale a tu profe." }, { status: 404 });
   }
 
-  type StudentRow = { id: string; display_name: string; class_id: string | null; pin_hash: string | null; pin_salt: string | null; failed_logins: number | null; locked_until: string | null };
+  type StudentRow = { id: string; display_name: string; class_id: string | null; pin_hash: string | null; pin_salt: string | null; failed_logins: number | null; locked_until: string | null; archived_at: string | null };
 
   // Find student by name + class (case-insensitive)
   const { data: stuData } = await supabase
     .from("students")
-    .select("id, display_name, class_id, pin_hash, pin_salt, failed_logins, locked_until")
+    .select("id, display_name, class_id, pin_hash, pin_salt, failed_logins, locked_until, archived_at")
     .eq("class_id", classId)
     .ilike("display_name", normalName)
     .limit(1);
@@ -55,7 +55,7 @@ export async function POST(request: NextRequest) {
       s.normalize("NFD").replace(/[̀-ͯ]/g, "").toLowerCase().trim();
     const { data: allData } = await supabase
       .from("students")
-      .select("id, display_name, class_id, pin_hash, pin_salt, failed_logins, locked_until")
+      .select("id, display_name, class_id, pin_hash, pin_salt, failed_logins, locked_until, archived_at")
       .eq("class_id", classId);
     student = ((allData ?? []) as StudentRow[]).find(
       (s) => norm(s.display_name) === norm(normalName)
@@ -64,6 +64,16 @@ export async function POST(request: NextRequest) {
 
   if (!student) {
     return NextResponse.json({ error: "Agente no encontrado. Revisa tu código de clase y tu nombre." }, { status: 404 });
+  }
+
+  // Archived by the teacher: the row and its work are kept, but the account is
+  // out of play. Worded so a real student archived by mistake goes and asks,
+  // rather than making a second account and splitting their progress.
+  if (student.archived_at) {
+    return NextResponse.json(
+      { error: "Esta cuenta está archivada. Habla con tu profe para volver a activarla." },
+      { status: 403 }
+    );
   }
 
   if (!student.pin_hash || !student.pin_salt) {

@@ -25,7 +25,7 @@ export async function GET(request: NextRequest) {
   const supabase = createClient();
 
   const { data: studentsData } = await supabase
-    .from("students").select("id, display_name").eq("class_id", classId).order("display_name");
+    .from("students").select("id, display_name").eq("class_id", classId).is("archived_at", null).order("display_name");
   const students = (studentsData ?? []) as Array<{ id: string; display_name: string }>;
   const ids = students.map((s) => s.id);
 

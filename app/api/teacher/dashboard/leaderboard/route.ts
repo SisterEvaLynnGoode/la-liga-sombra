@@ -73,7 +73,7 @@ export async function GET(request: NextRequest) {
   const { data: studentsData } = await supabase
     .from("students")
     .select("id, display_name")
-    .eq("class_id", classId);
+    .eq("class_id", classId).is("archived_at", null);
 
   const students = (studentsData ?? []) as Array<{ id: string; display_name: string }>;
   const thisWeek = weekStartOf(new Date().toISOString());
