@@ -154,22 +154,43 @@ export default function SentenceBuilder({
     setActiveId(event.active.id as string);
   }
 
+  /**
+   * Move a word between the bank and the sentence while it is being dragged.
+   *
+   * Every decision happens INSIDE the updater, against `prev`. dnd-kit fires
+   * dragOver many times per second, and the previous version worked out which
+   * container the word was in from `containers` captured in the render closure.
+   * That value is stale for every event fired before React re-renders, so the
+   * same word was moved again and again — each move another setState — until
+   * React gave up with "Maximum update depth exceeded" (error #185) and the
+   * whole caso dropped to the crash screen. Returning `prev` unchanged when
+   * there is nothing to do also lets React bail out instead of re-rendering.
+   */
   function handleDragOver(event: DragOverEvent) {
     const { active, over } = event;
     if (!over) return;
-    const activeId = active.id as string;
-    const overId = over.id as string;
-    const activeContainer = findContainer(activeId);
-    const overContainer = findContainer(overId);
-    if (!activeContainer || !overContainer || activeContainer === overContainer) return;
+    const activeId = String(active.id);
+    const overId = String(over.id);
 
     setContainers((prev) => {
+      const locate = (id: string): "bank" | "sentence" | null =>
+        prev.bank.includes(id) ? "bank"
+        : prev.sentence.includes(id) ? "sentence"
+        : id === "bank" || id === "sentence" ? (id as "bank" | "sentence")
+        : null;
+
+      const activeContainer = locate(activeId);
+      const overContainer = locate(overId);
+      // Already where it belongs (or nothing to move): no state change at all.
+      if (!activeContainer || !overContainer || activeContainer === overContainer) return prev;
+
       const activeItems = [...prev[activeContainer]];
       const overItems = [...prev[overContainer]];
       const activeIndex = activeItems.indexOf(activeId);
+      if (activeIndex < 0) return prev;
       activeItems.splice(activeIndex, 1);
-      // If dragging onto the empty container itself (overId is the container id),
-      // append to end rather than trying to find an item index
+      // Dropping onto the empty container itself (overId is the container id):
+      // append rather than looking for an item index.
       const overIndex = overItems.indexOf(overId);
       const insertAt = overIndex < 0 ? overItems.length : overIndex + 1;
       overItems.splice(insertAt, 0, activeId);
@@ -206,12 +227,15 @@ export default function SentenceBuilder({
     if (!activeContainer || !overContainer) return;
 
     if (activeContainer === overContainer) {
-      const items = [...containers[activeContainer]];
-      const oldIndex = items.indexOf(activeId);
-      const newIndex = items.indexOf(overId);
-      if (oldIndex !== newIndex) {
-        setContainers((prev) => ({ ...prev, [activeContainer]: arrayMove(items, oldIndex, newIndex) }));
-      }
+      // Reorder against the latest state, not the render that created this
+      // handler: dragOver may have moved things since.
+      setContainers((prev) => {
+        const items = prev[activeContainer];
+        const oldIndex = items.indexOf(activeId);
+        const newIndex = items.indexOf(overId);
+        if (oldIndex < 0 || newIndex < 0 || oldIndex === newIndex) return prev;
+        return { ...prev, [activeContainer]: arrayMove(items, oldIndex, newIndex) };
+      });
     }
   }
 

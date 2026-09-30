@@ -5,6 +5,8 @@ export const metadata: Metadata = {
   title: "La Liga Sombra — Detective de Español",
   description:
     "A noir detective game for Spanish 1 students. Travel through Spanish-speaking countries, solve cases, and catch cultural treasure thieves.",
+  // Keep Chrome's translator off the game. See the note on <html> below.
+  other: { google: "notranslate" },
 };
 
 export default function RootLayout({
@@ -13,8 +15,21 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="es">
-      <body className="antialiased bg-[#0d0b0a] text-[#d4c9b8]">
+    /*
+     * translate="no" is load-bearing, not a preference.
+     *
+     * The page is lang="es" and the school Chromebooks run Chrome in English,
+     * so Chrome offered to translate the game and students said yes. The
+     * translator swaps out the very text nodes React is tracking, and React
+     * then crashes on its next update with "Failed to execute 'insertBefore' /
+     * 'removeChild' on 'Node'" — nine crash reports across Casos 3 and 4, every
+     * one of them on a CrOS device. Marking the app notranslate keeps the DOM
+     * React's own, and it also stops a Spanish class from reading the Spanish
+     * in English: the glossary and the Traducir buttons are the way to get help
+     * with a word.
+     */
+    <html lang="es" translate="no">
+      <body className="notranslate antialiased bg-[#0d0b0a] text-[#d4c9b8]">
         {/* Skip navigation for screen readers / keyboard users */}
         <a
           href="#main"
