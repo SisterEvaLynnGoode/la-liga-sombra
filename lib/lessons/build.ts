@@ -201,6 +201,10 @@ export interface BuildLessonInput {
   vocabDeckSlides: number | null;
   /** Caller checks disk; the builder stays pure. */
   hasAudio: boolean;
+  /** Witness clips this case points at, and how many are on disk. */
+  listeningClips?: number;
+  /** Vocabulary words with a recording, out of the case's whole list. */
+  vocabAudioCount?: number;
   hasColdCase: boolean;
   hasScrollWorld: boolean;
   /** Which bell schedule to lay the five work items out against. */
@@ -221,7 +225,7 @@ export function buildLessonPlan(input: BuildLessonInput): LessonPlan {
   if (!grammar || grammar.drills.length === 0)
     gaps.push("No grammar lesson authored — the Day 4 grammar file will print with an empty word bank.");
   if (!culture) gaps.push("No culture lesson authored — there is no Day 5 handout for this case.");
-  if (!input.hasAudio) gaps.push("The listening clip for this case is missing from disk — that stage will play silence.");
+  if (!input.hasAudio) gaps.push("A listening clip this case points at is missing from disk — that stage would play silence.");
   if (!content.vocab.some((v) => v.section))
     gaps.push("Vocabulary is not annotated with sections/examples, so the vocab deck prints word + translation only.");
 
@@ -250,7 +254,16 @@ export function buildLessonPlan(input: BuildLessonInput): LessonPlan {
     { label: "Vocabulary + Grammar files — print", ready: !!grammar && grammar.drills.length > 0, href: "/teacher/worksheets" },
     { label: "Culture file — print", ready: !!culture, href: "/teacher/worksheets" },
     { label: "Cultural Passport page — print", ready: true, href: "/teacher/pasaporte" },
-    { label: "Listening audio", ready: input.hasAudio },
+    {
+      label: input.listeningClips
+        ? `Listening audio — ${input.listeningClips} witness clip${input.listeningClips === 1 ? "" : "s"}, recorded; plays in the case`
+        : "Listening audio — none in this case",
+      ready: input.hasAudio,
+    },
+    {
+      label: `Vocabulary audio — ${input.vocabAudioCount ?? 0} of ${vocabCount} words recorded; students can replay any word`,
+      ready: (input.vocabAudioCount ?? 0) > 0,
+    },
   ];
   if (input.hasColdCase) materials.push({ label: "Cold case (re-play / make-up work)", ready: true, href: `/play/${n}/cold` });
   if (input.hasScrollWorld) materials.push({ label: "Scroll-world flythrough (optional hook)", ready: true, href: `/teacher/mundo/${n}` });

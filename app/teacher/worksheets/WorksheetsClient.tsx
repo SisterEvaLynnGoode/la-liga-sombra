@@ -335,7 +335,14 @@ function VocabularyFiles({ packet, roman }: { packet: WorksheetPacket; roman: st
       <section className="ws-page">
         <SheetHeader roman={roman} country={packet.country} caseTitle={packet.caseTitle} label="Reference · Vocabulary Bank" />
         <h3 className="font-display font-black text-lg uppercase mb-1">Banco de Vocabulario / Vocabulary Bank</h3>
-        <p className="font-serif text-[12px] mb-3">Keep this reference handy while you work. Every key term for Case {roman}.</p>
+        <p className="font-serif text-[12px] mb-1">Keep this reference handy while you work. Every key term for Case {roman}.</p>
+        {/* Every word in the game is recorded, so the paper list should say so:
+            a student revising at home can hear each one instead of guessing. */}
+        <p className="font-serif text-[11px] italic mb-3">
+          🎧 Todas estas palabras tienen audio en el juego — Sala de Entrenamiento → Vocabulario.
+          <span className="not-italic"> / Every word on this list is recorded in the game: open the
+          Training Room to hear it read aloud.</span>
+        </p>
         <table className="w-full border-collapse font-serif text-[12px]">
           <thead>
             <tr>

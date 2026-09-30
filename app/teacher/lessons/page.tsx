@@ -1,5 +1,3 @@
-import fs from "fs";
-import path from "path";
 import { redirect } from "next/navigation";
 import { getTeacherSession } from "@/lib/auth/session";
 import { UNITS } from "@/lib/game/units";
@@ -12,6 +10,7 @@ import { getCultureLesson } from "@/lib/worksheets/culture";
 import type { UnitContent } from "@/lib/types/unit-content";
 import { SCHEDULES, type ScheduleId } from "@/lib/lessons/schedule";
 import LessonsClient from "./LessonsClient";
+import assetManifest from "@/lib/generated/asset-manifest.json";
 
 export const metadata = { title: "Lesson Plans — La Liga Sombra" };
 
@@ -25,14 +24,18 @@ function getUnitContent(n: number, cold = false): UnitContent | null {
   }
 }
 
-/** Disk checks live here so the builder stays pure and testable. */
-function fileExists(rel: string): boolean {
-  try {
-    return fs.existsSync(path.join(process.cwd(), rel));
-  } catch {
-    return false;
-  }
-}
+/**
+ * What media exists, according to the build.
+ *
+ * This used to be fs.existsSync against /public while the page rendered. That
+ * is true locally and false on every production request — Vercel serves /public
+ * from its static layer, so the server function cannot see those files — and
+ * the result was every lesson plan reporting "the listening clip is missing
+ * from disk … that stage will play silence" for audio that plays perfectly.
+ * scripts/build-asset-manifest.mjs records the real filesystem at build time.
+ */
+const AUDIO_ON_DISK = new Set<string>(assetManifest.audio);
+const SCROLL_WORLDS = new Set<string>(assetManifest.scrollWorlds);
 
 export default async function LessonsPage() {
   if (!(await getTeacherSession())) redirect("/teacher/login");
@@ -54,9 +57,8 @@ export default async function LessonsPage() {
     const audioUrls = content.stages
       .map((s) => (s.type === "listeningComp" ? s.audioUrl : null))
       .filter(Boolean) as string[];
-    const hasAudio =
-      audioUrls.length === 0 ||
-      audioUrls.every((u) => fileExists(path.join("public", u.replace(/^\//, ""))));
+    const hasAudio = audioUrls.length === 0 || audioUrls.every((u) => AUDIO_ON_DISK.has(u));
+    const vocabAudioCount = content.vocab.filter((v) => v.audio && AUDIO_ON_DISK.has(v.audio)).length;
 
     const shared = {
       unit,
@@ -67,8 +69,10 @@ export default async function LessonsPage() {
       storyMinutes: story ? buildStoryDeck(content, story).meta.coreMinutes : null,
       vocabDeckSlides: buildDeck(content, grammar).meta.slideCount,
       hasAudio,
+      listeningClips: audioUrls.length,
+      vocabAudioCount,
       hasColdCase: !!getUnitContent(unit.number, true),
-      hasScrollWorld: fileExists(`public/scroll-worlds/unit-${String(unit.number).padStart(2, "0")}`),
+      hasScrollWorld: SCROLL_WORLDS.has(`unit-${String(unit.number).padStart(2, "0")}`),
     };
     for (const sc of SCHEDULES) {
       plansBySchedule[sc.id].push(buildLessonPlan({ ...shared, scheduleId: sc.id as ScheduleId }));
