@@ -170,3 +170,90 @@ export function shuffle<T>(arr: T[]): T[] {
   }
   return a;
 }
+
+// ── Typed production turn ────────────────────────────────────────────────────
+//
+// The dialogue's typed turn used to be whichever question ended the
+// conversation, and in the authored dialogues that is the detective's wrap-up
+// line — up to twenty-four words of it. School-wide the stage was answered
+// correctly once in sixty-three attempts, and the one that landed was the
+// shortest target in the game ("¿Qué más recuerda de la credencial?", six
+// words). Everything from fourteen words up is nought for forty-eight.
+//
+// So a typed target is now chosen for being sayable, and a dialogue with no
+// sayable target stays multiple choice rather than putting up a wall.
+
+/**
+ * Longest target, in words, a Spanish 1 student is asked to produce unaided.
+ *
+ * Mirrored in scripts/validate-questions.mjs, which fails the build when an
+ * authored dialogue would hand the typed turn something longer.
+ */
+export const TYPED_TURN_MAX_WORDS = 8;
+
+/**
+ * Is this line something to ask a beginner to produce from scratch?
+ *
+ * Two tests, both earned from the data. Length, because nothing long has ever
+ * been answered. And one question per turn: "¿Quién es la invitada nueva? ¿De
+ * dónde es?" is inside the word limit and still nought for five across four
+ * students — answering two questions at once in a second language is a
+ * different task from saying one sentence.
+ */
+export function isTypedTargetSuitable(text: string): boolean {
+  const words = text.trim().split(/\s+/).filter(Boolean);
+  if (!words.length || words.length > TYPED_TURN_MAX_WORDS) return false;
+  // "¿" and "?" both count: authored lines are not always fully punctuated.
+  const questions = Math.max(
+    (text.match(/\?/g) ?? []).length,
+    (text.match(/¿/g) ?? []).length
+  );
+  return questions <= 1;
+}
+
+/** The shape this picker needs from a dialogue node, kept structural so
+ *  lib/games/types does not have to be imported here. */
+interface TypedTargetNode {
+  id: string;
+  options?: { text: string; isCorrect?: boolean }[];
+}
+
+/**
+ * Which node's correct option the student types, or null for none.
+ *
+ * The last suitable node wins, so the production turn still falls as late in
+ * the conversation as it can — the point of the original design — without
+ * being pinned to a closing line it cannot carry.
+ */
+export function pickTypedTargetNodeId(nodes: TypedTargetNode[]): string | null {
+  let chosen: string | null = null;
+  for (const node of nodes) {
+    const correct = node.options?.find((o) => o.isCorrect);
+    if (correct && isTypedTargetSuitable(correct.text)) chosen = node.id;
+  }
+  return chosen;
+}
+
+/**
+ * How a typed attempt is graded.
+ *
+ *   pass  — the sentence is there. An exact match, or seven tenths of the
+ *           target's words, which on a six-word line means five of six.
+ *   close — most of it is there and one more look at the model will finish it.
+ *   miss  — not the sentence.
+ *
+ * `close` exists because the old grading was a cliff: 0.75 overlap or zero, so
+ * a student who wrote nearly the whole line got the same mark as one who wrote
+ * nothing. The caller banks a second `close` as a pass rather than spending a
+ * third attempt on a student who has plainly produced the Spanish.
+ */
+export type TypedTurnGrade = "pass" | "close" | "miss";
+
+export function typedTurnGrade(student: string, target: string): TypedTurnGrade {
+  if (!student.trim()) return "miss";
+  if (flexibleMatch(student, target)) return "pass";
+  const overlap = wordOverlapRatio(student, target);
+  if (overlap >= 0.7) return "pass";
+  if (overlap >= 0.45) return "close";
+  return "miss";
+}

@@ -11,11 +11,16 @@
  *   • academia-reconocimiento is a memory match game: 104,000 card flips at 12%
  *     "correct" across the school. A flip that does not pair is how matching
  *     works, not a child failing. Excluded in SQL (migration 041).
- *   • dialogueChoice-typed asks the student to type the detective's own
- *     fifteen-word closing line. It has been answered correctly once in 63
- *     attempts school-wide. That is a stage with the wrong target, not 27
- *     students failing a grammar skill, so it is excluded too — see
- *     migration 041, which is where to undo this once the target is fixed.
+ *   • dialogueChoice-typed used to ask the student to type the detective's own
+ *     closing line, up to twenty-four words of it, and across the school it
+ *     was answered correctly once in 63 attempts. The stage was fixed: it now
+ *     asks for a line of eight words or fewer, grades a near miss as a near
+ *     miss, and logs one event per item instead of one per press of Comprobar.
+ *     So it counts again — but only from the date of that fix. The earlier
+ *     events are still in item_events and still readable there; they are not
+ *     counted, because their targets no longer exist in the content and so
+ *     could never be mastered. Migration 043 holds the cutoff; 041 is the
+ *     history.
  *   • sentenceBuilder logs every press of Comprobar, so a student who shuffles
  *     the word order four times before getting it right logs 1 correct and 3
  *     wrong. Counting rows would score care as failure.
@@ -35,8 +40,18 @@
 import { UNITS } from "@/lib/game/units";
 import { GRAMMAR } from "@/lib/worksheets/grammar";
 
-/** Stages whose event stream is not an ability signal. Mirrored in migration 041. */
-export const EXCLUDED_STAGES = ["academia-reconocimiento", "dialogueChoice-typed"];
+/** Stages whose event stream is not an ability signal. Mirrored in migration 043. */
+export const EXCLUDED_STAGES = ["academia-reconocimiento"];
+
+/**
+ * dialogueChoice-typed counts from here. Earlier events came from the version
+ * whose typed target was the detective's closing line.
+ *
+ * Mirrors typed_dialogue_counted_from() in migration 043, which is what the
+ * aggregates actually apply — this constant is for anything on the TypeScript
+ * side that needs to explain or reproduce the boundary.
+ */
+export const TYPED_DIALOGUE_COUNTED_FROM = new Date("2026-10-07T00:00:00Z");
 
 /** One row of class_skill_summary(): a student's items for one caso + skill. */
 export interface SkillSummaryRow {
