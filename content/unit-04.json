@@ -789,7 +789,7 @@
       "sentences": [
         {
           "sentence": "Marco es el nieto de la abuela Carmen",
-          "translation": "Marco is grandmother Carmen's grandson. (ser = relationship)"
+          "translation": "Marco is the grandson of grandmother Carmen. Spanish keeps that order — el nieto de la abuela Carmen — it has no 's. (ser = relationship)"
         },
         {
           "sentence": "Marco está nervioso y no está tranquilo",
@@ -797,7 +797,7 @@
         },
         {
           "sentence": "El collar no está en la habitación de la abuela",
-          "translation": "The necklace is not in grandmother's room. (estar = location)"
+          "translation": "The necklace is not in the room of the grandmother. Spanish puts the owner last — la habitación de la abuela. (estar = location)"
         },
         {
           "sentence": "La abuela está muy triste porque su collar no está",
