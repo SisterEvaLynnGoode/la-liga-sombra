@@ -129,7 +129,10 @@ export async function GET(request: NextRequest) {
 }
 
 export async function PATCH(request: NextRequest) {
-  const body = await request.json() as { studentId?: string; sisId?: string; classId?: string; gradedThrough?: number | null };
+  const body = await request.json() as {
+    studentId?: string; sisId?: string; reportName?: string;
+    classId?: string; gradedThrough?: number | null;
+  };
 
   // Setting how far the class is graded through — a class-level setting, so it
   // is guarded by class ownership, not by a student.
@@ -155,11 +158,24 @@ export async function PATCH(request: NextRequest) {
     return NextResponse.json({ ok: true, gradedThrough: value });
   }
 
-  const { studentId, sisId } = body;
+  const { studentId, sisId, reportName } = body;
   const guard = await guardStudent(studentId ?? null);
   if (isResponse(guard)) return guard;
 
   const supabase = createClient();
+
+  // The name that goes on a report a family reads. Separate from sis_id so
+  // setting one never clears the other.
+  if (typeof reportName === "string") {
+    const name = reportName.trim().slice(0, 80);
+    const { error } = await supabase
+      .from("students")
+      .update({ report_name: name || null })
+      .eq("id", studentId!);
+    if (error) return NextResponse.json({ error: "DB error" }, { status: 500 });
+    return NextResponse.json({ ok: true, reportName: name || null });
+  }
+
   const clean = typeof sisId === "string" ? sisId.trim().slice(0, 40) : "";
   const { error } = await supabase.from("students").update({ sis_id: clean || null }).eq("id", studentId!);
   if (error) return NextResponse.json({ error: "DB error" }, { status: 500 });

@@ -219,6 +219,40 @@ export interface BossContent {
   endings: Record<EthicalChoiceKey, BossEndingDef>;
 }
 
+// ── Per-stage results ──────────────────────────────────────────────────────────
+
+/** Which skill a boss stage exercises, for the gradebook and parent report. */
+export type BossSkill = "vocab" | "grammar" | "listening" | "reading";
+
+/**
+ * One stage of a boss fight, as played.
+ *
+ * Stored in boss_progress.stage_data.results. Without this a boss had only a
+ * points total with no denominator: impossible to put in a gradebook, and
+ * impossible to tell a parent which part their child found hard.
+ */
+export interface StageResult {
+  index: number;
+  type: string;
+  label: string;
+  skill: BossSkill;
+  score: number;
+  maxScore: number;
+  skipped: boolean;
+  seconds: number;
+}
+
+/** Stage type → the skill it mostly exercises. */
+export const SKILL_BY_STAGE: Record<string, BossSkill> = {
+  readingComp: "reading",
+  listeningComp: "listening",
+  interrogation: "reading",
+  swipeSort: "grammar",
+  sentenceBuilder: "grammar",
+  chaseMap: "listening",
+  lineup: "reading",
+};
+
 // ── Save state ─────────────────────────────────────────────────────────────────
 
 export interface BossState {
@@ -228,7 +262,7 @@ export interface BossState {
   bossId: string;
   difficulty: BossDifficulty | null;
   currentStage: number;
-  stageData: Record<string, unknown>;
+  stageData: Record<string, unknown>;   // { results: StageResult[] }
   ethicalChoices: Array<{ stage: number; choice: EthicalChoiceKey; sentence?: string }>;
   partnerName: string | null;
   startedAt: string;

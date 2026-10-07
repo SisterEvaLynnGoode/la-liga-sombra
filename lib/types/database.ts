@@ -96,6 +96,7 @@ export interface Database {
           pin_hash: string | null;
           pin_salt: string | null;
           archived_at: string | null;
+          report_name: string | null;
           sis_id: string | null;
           /** La Última Estación faction override; null = derive from the boss ending. */
           faction: string | null;
@@ -113,6 +114,7 @@ export interface Database {
           pin_hash?: string | null;
           pin_salt?: string | null;
           archived_at?: string | null;
+          report_name?: string | null;
           sis_id?: string | null;
           faction?: string | null;
           failed_logins?: number;
@@ -127,6 +129,7 @@ export interface Database {
           pin_hash?: string | null;
           pin_salt?: string | null;
           archived_at?: string | null;
+          report_name?: string | null;
           sis_id?: string | null;
           faction?: string | null;
           failed_logins?: number;
@@ -523,6 +526,7 @@ export interface Database {
           skipped_at: string | null;
           final_score: number | null;
           final_ending: string | null;
+          score_pct: number | null;
         };
         Insert: {
           id?: string;
@@ -540,6 +544,7 @@ export interface Database {
           skipped_at?: string | null;
           final_score?: number | null;
           final_ending?: string | null;
+          score_pct?: number | null;
         };
         Update: {
           id?: string;
@@ -557,6 +562,7 @@ export interface Database {
           skipped_at?: string | null;
           final_score?: number | null;
           final_ending?: string | null;
+          score_pct?: number | null;
         };
         Relationships: [
           {
@@ -719,7 +725,29 @@ export interface Database {
       };
     };
     Views: Record<string, never>;
-    Functions: Record<string, never>;
+    Functions: {
+      /** Per-student, per-caso, per-skill item counts (migration 039). */
+      class_skill_summary: {
+        Args: { p_class_id: string };
+        Returns: Array<{
+          student_id: string;
+          unit_id: string | null;
+          skill: string;
+          items: number;
+          mastered: number;
+          first_try: number;
+        }>;
+      };
+      /** Items a student has never answered correctly (migration 039). */
+      student_unmastered_items: {
+        Args: { p_student_id: string; p_limit?: number };
+        Returns: Array<{ unit_id: string | null; skill: string; item_key: string }>;
+      };
+      class_unmastered_items: {
+        Args: { p_class_id: string; p_per_student?: number };
+        Returns: Array<{ student_id: string; unit_id: string | null; skill: string; item_key: string }>;
+      };
+    };
     Enums: {
       unit_status: UnitStatus;
       activity_type: ActivityType;

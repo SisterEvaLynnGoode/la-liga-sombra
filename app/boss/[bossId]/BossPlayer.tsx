@@ -6,7 +6,9 @@ import type {
   BossContent, BossState, BossDifficulty, EthicalChoiceKey, BossEndingDef,
   BossStageContent, BossReadingStage, BossListeningStage, BossChaseStage,
   BossInterrogationStage, BossLineupStage, BossSwipeSortStage, BossSentenceBuilderStage,
+  StageResult,
 } from "@/lib/types/boss";
+import { SKILL_BY_STAGE } from "@/lib/types/boss";
 import type { GameResult } from "@/lib/games/types";
 import type { BadgeType } from "@/lib/types/database";
 
@@ -47,6 +49,18 @@ export default function BossPlayer({ content, initialState, displayName }: Props
   const [savedToast, setSavedToast] = useState(false);
   const [newBadges, setNewBadges] = useState<BadgeType[]>([]);
   const [stageScore, setStageScore] = useState(0);
+  /**
+   * Per-stage results, kept so the boss can be graded.
+   *
+   * boss_progress stored one points total (baseScore x difficulty), which says
+   * nothing about WHICH part a student struggled with and cannot be turned into
+   * a percentage — there was no denominator anywhere. Each stage's score and
+   * max are now recorded as it finishes, which is what the gradebook and the
+   * parent report read.
+   */
+  const [stageResults, setStageResults] = useState<StageResult[]>(
+    () => ((initialState.stageData?.results as StageResult[] | undefined) ?? [])
+  );
   /** Sub-step inside one stage: listening→code, or sentence N of M. */
   const [subStep, setSubStep] = useState(0);
 
@@ -84,7 +98,22 @@ export default function BossPlayer({ content, initialState, displayName }: Props
       setClues((c) => (c.includes(stage.clueReward) ? c : [...c, stage.clueReward]));
     }
     if (result) setStageScore((s) => s + result.score);
-    await advance();
+
+    // Record what this stage was worth before moving on.
+    const entry: StageResult = {
+      index: slotIndex,
+      type: stage.type,
+      label: stage.title || stage.country || stage.type,
+      skill: SKILL_BY_STAGE[stage.type] ?? "vocab",
+      score: result?.score ?? 0,
+      maxScore: result?.maxScore ?? 0,
+      skipped: !!result?.isSkipped,
+      seconds: result?.timeSpent ?? 0,
+    };
+    const results = [...stageResults.filter((r) => r.index !== entry.index), entry]
+      .sort((a, b) => a.index - b.index);
+    setStageResults(results);
+    await advance({ stage_data: { results } });
   }
 
   async function handleEthicalChoice(key: EthicalChoiceKey, sentence?: string) {

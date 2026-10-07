@@ -4,6 +4,7 @@ import { createClient } from "@/lib/supabase/server";
 import type { BadgeType } from "@/lib/types/database";
 import type { BossEnding, BossDifficulty, EthicalChoiceKey } from "@/lib/types/boss";
 import { loadBossContent } from "@/lib/boss/content";
+import type { StageResult } from "@/lib/types/boss";
 
 // Difficulty badges are the same three for every boss — they describe how the
 // student played, not which boss it was.
@@ -42,6 +43,22 @@ export async function POST(request: NextRequest, { params }: Params) {
   const partnerBonus      = hadPartner ? 100 : 0;
   const finalScore        = Math.round(baseScore * pointsMultiplier) + partnerBonus;
 
+  // A percentage for the gradebook, from the per-stage results the player
+  // recorded as it went. final_score is points (stage scores x a difficulty
+  // multiplier, plus a partner bonus) with no denominator anywhere, so it can
+  // rank students but cannot be entered as a grade.
+  const { data: progRows } = await supabase
+    .from("boss_progress")
+    .select("stage_data")
+    .eq("primary_student_id", session.studentId)
+    .eq("boss_id", params.bossId)
+    .limit(1);
+  const results =
+    ((progRows as Array<{ stage_data: { results?: StageResult[] } | null }> | null)?.[0]?.stage_data?.results) ?? [];
+  const earned = results.reduce((n, r) => n + (r.score ?? 0), 0);
+  const possible = results.reduce((n, r) => n + (r.maxScore ?? 0), 0);
+  const scorePct = possible > 0 ? Math.round((earned / possible) * 100) : null;
+
   // Update boss_progress with completion
   await supabase.from("boss_progress").upsert({
     primary_student_id: session.studentId,
@@ -50,6 +67,7 @@ export async function POST(request: NextRequest, { params }: Params) {
     last_saved_at: new Date().toISOString(),
     final_score:   finalScore,
     final_ending:  finalEnding,
+    score_pct:     scorePct,
   }, { onConflict: "primary_student_id,boss_id" });
 
   // Unlock next unit

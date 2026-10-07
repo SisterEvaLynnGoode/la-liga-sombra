@@ -4,6 +4,7 @@ import { Fragment, useState } from "react";
 import { useClassData } from "@/lib/hooks/useClassData";
 import { TabHeader, Loading } from "./OverviewTab";
 import GradebookMatrix from "./GradebookMatrix";
+import BossSkillsView from "./BossSkillsView";
 
 interface GradeRow {
   studentId: string;
@@ -33,11 +34,12 @@ interface GradesData {
   classFurthest: number;
 }
 
-type View = "summary" | "cases" | "weeks";
+type View = "summary" | "cases" | "weeks" | "bosses";
 const VIEWS: Array<{ id: View; label: string }> = [
   { id: "summary", label: "Summary" },
   { id: "cases",   label: "By case" },
   { id: "weeks",   label: "By week" },
+  { id: "bosses",  label: "Bosses & skills" },
 ];
 
 // ACTFL band → chip color (index 0..3)
@@ -137,9 +139,14 @@ export default function GradesTab({ classId }: { classId: string }) {
         ))}
       </div>
 
+      {view === "bosses" && <BossSkillsView classId={classId} />}
+
       {/* ── How completion is being counted ──────────────────────────────
-          The fix for grades sliding backwards every time the class moves on.
-          Shown in every view because it changes what the Summary number means. */}
+          Hidden on Bosses & skills, which does not use the completion
+          denominator at all. */}
+      {view !== "bosses" && (
+      <>
+      {/* The fix for grades sliding backwards every time the class moves on. */}
       <div className="border border-[rgba(201,147,58,0.15)] bg-[rgba(201,147,58,0.04)] px-4 py-3 space-y-2">
         <div className="flex flex-wrap items-center gap-2">
           <span className="font-typewriter text-[9px] tracking-[0.25em] uppercase text-[#8b7355]">
@@ -208,7 +215,7 @@ export default function GradesTab({ classId }: { classId: string }) {
         </p>
       </div>
 
-      {view !== "summary" && <GradebookMatrix classId={classId} mode={view} />}
+      {(view === "cases" || view === "weeks") && <GradebookMatrix classId={classId} mode={view} />}
 
       {view === "summary" && (
       <div className="border border-[rgba(201,147,58,0.15)] bg-[rgba(201,147,58,0.04)] px-4 py-3">
@@ -364,6 +371,8 @@ export default function GradesTab({ classId }: { classId: string }) {
             </tbody>
           </table>
         </div>
+      )}
+      </>
       )}
     </div>
   );
