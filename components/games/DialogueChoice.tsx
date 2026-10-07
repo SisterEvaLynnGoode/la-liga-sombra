@@ -1,10 +1,10 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useMemo } from "react";
 import GameShell from "./GameShell";
 import { useGameTimer } from "@/lib/hooks/useGameTimer";
 import { useAttemptTracker } from "@/lib/hooks/useAttemptTracker";
-import { flexibleMatch, wordOverlapRatio, answerShape } from "@/lib/games/utils";
+import { answerShape, pickTypedTargetNodeId, typedTurnGrade } from "@/lib/games/utils";
 import { logItemEvent, flushItemEvents } from "@/lib/events";
 import type { DialogueNode, OnComplete } from "@/lib/games/types";
 
@@ -17,10 +17,12 @@ interface Props {
   agentName?: string;   // substituted for [nombre] in dialogue text
   unitId?: string;
   /**
-   * Production ramp (Workstream B3): when true, the FINAL question of the
-   * dialogue must be TYPED instead of chosen — the student produces the
-   * Spanish rather than recognizing it. After 2 misses it gracefully falls
-   * back to multiple choice (forgiving design).
+   * Production ramp (Workstream B3): when true, one question in the dialogue
+   * must be TYPED instead of chosen — the student produces the Spanish rather
+   * than recognizing it. Which question is decided by what is sayable (see
+   * pickTypedTargetNodeId), not by which one ends the conversation: aiming it
+   * at the closing line made this the one stage in the game nobody passed.
+   * After 2 misses it gracefully falls back to multiple choice.
    */
   productionMode?: boolean;
   onComplete: OnComplete;
@@ -76,15 +78,21 @@ export default function DialogueChoice({
   const currentNode = nodeMap[currentNodeId];
 
   // ── Typed production turn (B3) ──────────────────────────────────────────────
-  // The final question node (its correct option ends the dialogue) is typed
-  // when productionMode is on. Falls back to MC after 2 misses.
+  // One node of the dialogue is typed when productionMode is on. Falls back to
+  // MC after 2 misses, and to MC entirely when nothing in the dialogue is
+  // short enough to ask for.
   const [typedInput, setTypedInput] = useState("");
   const [typedMisses, setTypedMisses] = useState(0);
   const correctOption = currentNode?.options?.find((o) => o.isCorrect);
-  const isFinalQuestion = !!correctOption &&
-    (!correctOption.nextNodeId || !!nodeMap[correctOption.nextNodeId]?.isEnd);
-  const useTypedTurn = productionMode && isFinalQuestion && typedMisses < 2 &&
-    !!currentNode?.options?.length && status === "playing";
+  // Decided once from the whole dialogue rather than from wherever the student
+  // is standing, so the target cannot change under them mid-conversation.
+  // Null means this dialogue has no sayable target and stays multiple choice.
+  const typedTargetNodeId = useMemo(
+    () => (productionMode ? pickTypedTargetNodeId(nodes) : null),
+    [productionMode, nodes]
+  );
+  const useTypedTurn = !!typedTargetNodeId && typedTargetNodeId === currentNodeId &&
+    typedMisses < 2 && !!correctOption && status === "playing";
 
   const finish = useCallback(
     (correct: number, total: number, t: number) => {
@@ -97,26 +105,34 @@ export default function DialogueChoice({
     [stop, recordAttempt, onComplete]
   );
 
-  function handleTypedSubmit(e?: React.FormEvent) {
-    e?.preventDefault();
-    if (!useTypedTurn || !correctOption || !typedInput.trim()) return;
-    const target = sub(correctOption.text);
-    // Accept the sentence when it is genuinely there. An exact match still
-    // counts, and so does saying three quarters of the target's words: this is
-    // production practice, not dictation.
-    const isCorrect = flexibleMatch(typedInput, target) || wordOverlapRatio(typedInput, target) >= 0.75;
+  function logTypedTurn(target: string, correct: boolean, chosen: string) {
     logItemEvent({
       unitId,
       stageType: "dialogueChoice-typed",
       skill: "grammar",
       itemKey: target,
-      correct: isCorrect,
-      chosen: typedInput.trim(),
+      correct,
+      chosen: chosen.trim(),
       expected: target,
     });
+  }
+
+  function handleTypedSubmit(e?: React.FormEvent) {
+    e?.preventDefault();
+    if (!useTypedTurn || !correctOption || !typedInput.trim()) return;
+    const target = sub(correctOption.text);
+    const grade = typedTurnGrade(typedInput, target);
+    // A near miss on the second attempt is banked as production rather than
+    // spent on a third try. The student has said the sentence; the missing
+    // accent is not what this stage is measuring.
+    const passed = grade === "pass" || (grade === "close" && typedMisses >= 1);
     const newTotal = totalChoices + 1;
     setTotalChoices(newTotal);
-    if (isCorrect) {
+    if (passed) {
+      // One event per item, logged where the turn resolves. Logging every
+      // submit meant a single node produced two or three rows under the same
+      // item_key, all but the last of them a zero.
+      logTypedTurn(target, true, typedInput);
       const newCorrect = correctChoices + 1;
       setCorrectChoices(newCorrect);
       setFeedback(null);
@@ -126,16 +142,22 @@ export default function DialogueChoice({
       } else {
         finish(newCorrect, newTotal, elapsed);
       }
-    } else {
-      setTypedMisses((m) => m + 1);
-      // Leave the text in the box: retyping fifteen words from zero is what
-      // made this the hardest thing in the game.
-      setFeedback(
-        typedMisses === 0
-          ? "Casi — mira el modelo de abajo y corrige lo que falta."
-          : "Está bien, recluta — elige la respuesta correcta."
-      );
+      return;
     }
+    const misses = typedMisses + 1;
+    setTypedMisses(misses);
+    // The second miss hands the node to multiple choice, so that is where the
+    // typed turn ends and where its one event belongs.
+    if (misses >= 2) logTypedTurn(target, false, typedInput);
+    // Leave the text in the box: retyping the whole line from zero is what
+    // made this the hardest thing in the game.
+    setFeedback(
+      misses >= 2
+        ? "Está bien, recluta — elige la respuesta correcta."
+        : grade === "close"
+          ? "Casi — te falta una palabra. Compárala con el modelo de abajo."
+          : "Casi — mira el modelo de abajo y corrige lo que falta."
+    );
   }
 
   function handleChoice(optionIndex: number) {
