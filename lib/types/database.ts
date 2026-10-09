@@ -747,6 +747,22 @@ export interface Database {
         Args: { p_class_id: string; p_per_student?: number };
         Returns: Array<{ student_id: string; unit_id: string | null; skill: string; item_key: string }>;
       };
+      class_error_kinds: {
+        Args: { p_class_id: string };
+        Returns: Array<{ error_kind: string; events: number; students: number }>;
+      };
+      class_latency_by_student: {
+        Args: { p_class_id: string };
+        Returns: Array<{ student_id: string; median_ms: number; timed_events: number }>;
+      };
+      class_case_coverage: {
+        Args: { p_class_id: string };
+        Returns: Array<{ unit_id: string; completed: number; in_progress: number; credited: number }>;
+      };
+      class_first_try_by_case: {
+        Args: { p_class_id: string };
+        Returns: Array<{ student_id: string; unit_id: string; items: number; first_try: number }>;
+      };
     };
     Enums: {
       unit_status: UnitStatus;

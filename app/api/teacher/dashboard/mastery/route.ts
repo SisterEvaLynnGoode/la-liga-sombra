@@ -1,5 +1,5 @@
 /**
- * GET /api/teacher/dashboard/mastery?classId=…[&studentId=…][&unmastered=all]
+ * GET /api/teacher/dashboard/mastery?classId=…[&studentId=…][&unmastered=all][&analytics=1]
  *
  * Boss-fight scores plus the skills profile behind them, for the Notas tab,
  * the admin export and the parent report. One endpoint so those three can
@@ -12,6 +12,10 @@
  * unmastered=all adds every student's missed items in one query, which is what
  * a set of parent report cards needs — otherwise printing a class meant one
  * request per child, each re-running the class aggregate.
+ *
+ * analytics=1 adds the four class-wide aggregates the charted admin report
+ * needs (migration 044): mistake types, answer pace, case coverage, and
+ * first-try accuracy per case.
  */
 import { NextRequest, NextResponse } from "next/server";
 import { guardClass, isResponse } from "@/lib/auth/teacher";
@@ -60,10 +64,24 @@ export interface StudentMastery {
   profile: SkillProfile;
 }
 
+/** The class-wide aggregates behind the charts. Only sent with analytics=1. */
+export interface ClassAnalytics {
+  /** Diagnosed mistake types, biggest first. */
+  errorKinds: Array<{ kind: string; events: number; students: number }>;
+  /** Median answer time per student, for the pace-vs-accuracy chart. */
+  latency: Array<{ studentId: string; medianMs: number; timedEvents: number }>;
+  /** Per case: how many students are where. notStarted is the remainder. */
+  coverage: Array<{ caso: number; completed: number; inProgress: number; credited: number; notStarted: number }>;
+  /** First-try accuracy per student per case — the growth chart. */
+  firstTryByCase: Array<{ studentId: string; caso: number; items: number; firstTry: number }>;
+  rosterSize: number;
+}
+
 export async function GET(request: NextRequest) {
   const classId = request.nextUrl.searchParams.get("classId") ?? "";
   const onlyStudent = request.nextUrl.searchParams.get("studentId");
   const wantAllMisses = request.nextUrl.searchParams.get("unmastered") === "all";
+  const wantAnalytics = request.nextUrl.searchParams.get("analytics") === "1";
   const guard = await guardClass(classId);
   if (isResponse(guard)) return guard;
 
@@ -127,6 +145,39 @@ export async function GET(request: NextRequest) {
   const summary = (summaryRes.data ?? []) as SkillSummaryRow[];
   const cls = ((classRes.data ?? []) as Array<{ class_code: string; period_name: string; teacher_name: string }>)[0] ?? null;
 
+  // The charted report's aggregates. Four more round trips, so they are only
+  // fetched when the caller says it is drawing them.
+  let analytics: ClassAnalytics | null = null;
+  if (wantAnalytics) {
+    const [errRes, latRes, covRes, ftRes] = await Promise.all([
+      supabase.rpc("class_error_kinds", { p_class_id: classId }),
+      supabase.rpc("class_latency_by_student", { p_class_id: classId }),
+      supabase.rpc("class_case_coverage", { p_class_id: classId }),
+      supabase.rpc("class_first_try_by_case", { p_class_id: classId }),
+    ]);
+    const roster = students.length;
+    const coverage = ((covRes.data ?? []) as Array<{ unit_id: string; completed: number; in_progress: number; credited: number }>)
+      .map((r) => {
+        const caso = unitNumberById.get(r.unit_id) ?? 0;
+        const placed = r.completed + r.in_progress + r.credited;
+        return { caso, completed: r.completed, inProgress: r.in_progress, credited: r.credited, notStarted: Math.max(0, roster - placed) };
+      })
+      .filter((r) => r.caso > 0)
+      .sort((a, b) => a.caso - b.caso);
+
+    analytics = {
+      errorKinds: ((errRes.data ?? []) as Array<{ error_kind: string; events: number; students: number }>)
+        .map((r) => ({ kind: r.error_kind, events: r.events, students: r.students })),
+      latency: ((latRes.data ?? []) as Array<{ student_id: string; median_ms: number; timed_events: number }>)
+        .map((r) => ({ studentId: r.student_id, medianMs: r.median_ms, timedEvents: r.timed_events })),
+      coverage,
+      firstTryByCase: ((ftRes.data ?? []) as Array<{ student_id: string; unit_id: string; items: number; first_try: number }>)
+        .map((r) => ({ studentId: r.student_id, caso: unitNumberById.get(r.unit_id) ?? 0, items: r.items, firstTry: r.first_try }))
+        .filter((r) => r.caso > 0),
+      rosterSize: roster,
+    };
+  }
+
   const result: StudentMastery[] = students.map((s) => {
     const mine = bossRows.filter((b) => b.primary_student_id === s.id);
 
@@ -183,6 +234,7 @@ export async function GET(request: NextRequest) {
 
   return NextResponse.json({
     students: result,
+    analytics,
     className: cls ? `${cls.class_code} — ${cls.period_name}` : null,
     teacherName: cls?.teacher_name ?? null,
     generatedAt: new Date().toISOString(),

@@ -4,6 +4,12 @@ import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
 import { practiceFor } from "@/lib/reports/practice";
 import type { SkillBucket } from "@/lib/reports/skills";
+import ClassReport from "./ClassReport";
+import { Letterhead, Pct } from "./shared";
+import {
+  fmtDate, nameFor, statusWord,
+  type GradeRow, type Payload, type Profile, type Student,
+} from "./types";
 
 /**
  * Three printable reports off one dataset.
@@ -20,72 +26,13 @@ import type { SkillBucket } from "@/lib/reports/skills";
  * before it is sent.
  */
 
-interface BossScore {
-  bossId: string;
-  label: string;
-  afterCaso: number;
-  status: "completed" | "in_progress" | "skipped" | "not_started";
-  scorePct: number | null;
-  points: number | null;
-  ending: string | null;
-  completedAt: string | null;
-  stages: Array<{ label: string; skill: string; score: number; maxScore: number; pct: number | null; skipped: boolean }>;
-}
-interface Profile {
-  vocabByTopic: SkillBucket[];
-  grammarBySkill: SkillBucket[];
-  listening: SkillBucket | null;
-  speaking: SkillBucket | null;
-  overallPct: number | null;
-  totalItems: number;
-  totalMastered: number;
-  strengths: SkillBucket[];
-  needsWork: SkillBucket[];
-}
-interface Student {
-  studentId: string;
-  displayName: string;
-  /** The real name, when the teacher has set one. Null falls back to the game handle. */
-  reportName: string | null;
-  sisId: string | null;
-  bosses: BossScore[];
-  bossAveragePct: number | null;
-  bossesGraded: number;
-  profile: Profile;
-}
-interface Payload {
-  students: Student[];
-  className: string | null;
-  teacherName: string | null;
-  generatedAt: string;
-}
-
 type Mode = "class" | "students" | "parent";
 
 const MODES: Array<{ id: Mode; label: string; blurb: string }> = [
-  { id: "class",    label: "Class summary",      blurb: "For your administrator — the whole class on one or two pages." },
+  { id: "class",    label: "Class summary",      blurb: "For your administrator — nine figures, the roster, and a data appendix." },
   { id: "students", label: "Student summaries",  blurb: "One page per student, every topic and every boss fight." },
   { id: "parent",   label: "Parent report cards", blurb: "Two to four pages per child, in English, with practice to do at home." },
 ];
-
-/**
- * The name to print. display_name is whatever the student typed when they
- * joined — "MopHead", "babyskelly" — which is fine in the game and useless on
- * a report a family reads, so the teacher's report_name wins when it is set.
- */
-function nameFor(s: Student): string {
-  return s.reportName?.trim() || s.displayName;
-}
-
-function statusWord(status: BossScore["status"]): string {
-  return status === "in_progress" ? "in progress"
-    : status === "not_started" ? "not started"
-    : status;
-}
-
-function fmtDate(iso: string): string {
-  return new Date(iso).toLocaleDateString("en-US", { month: "long", day: "numeric", year: "numeric" });
-}
 
 /** The practice engine needs to know what sort of skill a weak area is. */
 function kindOf(bucket: SkillBucket, p: Profile): "vocab" | "grammar" | "listening" | "speaking" {
@@ -119,6 +66,7 @@ export default function ReportsClient({
   const [mode, setMode] = useState<Mode>(initialMode);
   const [only, setOnly] = useState<string | null>(initialStudentId);
   const [data, setData] = useState<Payload | null>(null);
+  const [grades, setGrades] = useState<GradeRow[]>([]);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
@@ -128,10 +76,18 @@ export default function ReportsClient({
     setError(null);
     // unmastered=all brings every child's missed items in one query — the
     // practice activities on the parent report are built from them.
-    fetch(`/api/teacher/dashboard/mastery?classId=${encodeURIComponent(classId)}&unmastered=all`)
+    // analytics=1 adds the class-wide aggregates the charts are drawn from.
+    fetch(`/api/teacher/dashboard/mastery?classId=${encodeURIComponent(classId)}&unmastered=all&analytics=1`)
       .then((r) => (r.ok ? r.json() : Promise.reject(new Error(`HTTP ${r.status}`))))
       .then((json) => { if (live) setData(json as Payload); })
       .catch((e) => { if (live) setError(e instanceof Error ? e.message : "Could not load"); });
+
+    // The ACTFL band is already computed by the gradebook. Read it from there
+    // rather than reimplementing the thresholds and letting the two drift.
+    fetch(`/api/teacher/dashboard/grades?classId=${encodeURIComponent(classId)}`)
+      .then((r) => (r.ok ? r.json() : Promise.reject(new Error("grades"))))
+      .then((json) => { if (live) setGrades((json?.rows ?? []) as GradeRow[]); })
+      .catch(() => { /* the band column simply prints a dash */ });
     return () => { live = false; };
   }, [classId]);
 
@@ -223,7 +179,7 @@ export default function ReportsClient({
 
       {data && (
         <div className="ws-root mx-auto my-6 max-w-[820px] bg-white text-black px-10 py-10 print:my-0 print:max-w-none print:px-0 print:py-0">
-          {mode === "class" && <ClassSummary data={data} students={students} />}
+          {mode === "class" && <ClassReport data={data} students={students} grades={grades} />}
           {mode === "students" && students.map((s) => <StudentSummary key={s.studentId} s={s} data={data} />)}
           {mode === "parent" && students.map((s) => <ParentReport key={s.studentId} s={s} data={data} />)}
           {students.length === 0 && (
@@ -314,198 +270,6 @@ function Shell({ children }: { children: React.ReactNode }) {
       </Link>
       <div className="mt-6">{children}</div>
     </div>
-  );
-}
-
-/* ══════════════════════════════════════════════════════════════════════════
-   Letterhead shared by all three reports
-   ══════════════════════════════════════════════════════════════════════════ */
-
-function Letterhead({ data, title, subtitle }: { data: Payload; title: string; subtitle?: string }) {
-  return (
-    <header className="border-b-2 border-black pb-3 mb-5">
-      <div className="flex justify-between items-end gap-4">
-        <div>
-          <p className="font-serif text-[10px] uppercase tracking-[0.3em]">La Liga Sombra · Spanish 1</p>
-          <h1 className="font-serif text-2xl font-bold leading-tight">{title}</h1>
-          {subtitle && <p className="font-serif text-sm italic">{subtitle}</p>}
-        </div>
-        <div className="font-serif text-[10px] text-right leading-snug shrink-0">
-          {data.className && <p>{data.className}</p>}
-          {data.teacherName && <p>{data.teacherName}</p>}
-          <p>{fmtDate(data.generatedAt)}</p>
-        </div>
-      </div>
-    </header>
-  );
-}
-
-/** A table row's percentage, printed so it survives a black-and-white printer. */
-function Pct({ value }: { value: number | null }) {
-  if (value == null) return <span className="text-[#777]">—</span>;
-  return <span className={value < 60 ? "font-bold" : ""}>{value}%</span>;
-}
-
-/* ══════════════════════════════════════════════════════════════════════════
-   1. Class summary — the administrator's page
-   ══════════════════════════════════════════════════════════════════════════ */
-
-function ClassSummary({ data, students }: { data: Payload; students: Student[] }) {
-  const bossMeta = students[0]?.bosses ?? [];
-
-  const graded = students.filter((s) => s.bossAveragePct != null);
-  const classBossAvg = graded.length
-    ? Math.round(graded.reduce((n, s) => n + (s.bossAveragePct ?? 0), 0) / graded.length)
-    : null;
-  const withSkills = students.filter((s) => s.profile.overallPct != null);
-  const classMastery = withSkills.length
-    ? Math.round(withSkills.reduce((n, s) => n + (s.profile.overallPct ?? 0), 0) / withSkills.length)
-    : null;
-
-  // Class-level topic picture: the same topic averaged across every student who
-  // has met it. This is the part an administrator actually acts on — it names
-  // what the class as a whole has and has not learned.
-  const topicAgg = new Map<string, { kind: "Vocabulary" | "Grammar"; items: number; mastered: number; firstTry: number; students: number }>();
-  for (const s of students) {
-    for (const [kind, list] of [["Vocabulary", s.profile.vocabByTopic], ["Grammar", s.profile.grammarBySkill]] as const) {
-      for (const b of list) {
-        const cur = topicAgg.get(b.label) ?? { kind: kind as "Vocabulary" | "Grammar", items: 0, mastered: 0, firstTry: 0, students: 0 };
-        cur.items += b.items;
-        cur.mastered += b.mastered;
-        cur.firstTry += b.firstTry;
-        cur.students += 1;
-        topicAgg.set(b.label, cur);
-      }
-    }
-  }
-  const topics = Array.from(topicAgg.entries())
-    .map(([label, t]) => ({
-      label,
-      kind: t.kind,
-      students: t.students,
-      masteredPct: t.items ? Math.round((t.mastered / t.items) * 100) : null,
-      firstTryPct: t.items ? Math.round((t.firstTry / t.items) * 100) : null,
-    }))
-    .filter((t) => t.students >= 3)
-    .sort((a, b) => (a.firstTryPct ?? 100) - (b.firstTryPct ?? 100));
-
-  return (
-    <>
-      <section className="ws-page">
-        <Letterhead data={data} title="Class Progress Summary" subtitle="Boss assessments and skill mastery" />
-
-        <div className="grid grid-cols-4 gap-3 mb-5">
-          {[
-            ["Students with recorded work", String(students.length)],
-            ["Average boss assessment", classBossAvg != null ? `${classBossAvg}%` : "—"],
-            ["Average skill mastery", classMastery != null ? `${classMastery}%` : "—"],
-            ["Boss assessments graded", String(students.reduce((n, s) => n + s.bossesGraded, 0))],
-          ].map(([label, value]) => (
-            <div key={label} className="border border-black px-3 py-2">
-              <p className="font-serif text-[9px] uppercase tracking-[0.15em] leading-tight">{label}</p>
-              <p className="font-serif text-xl font-bold leading-none mt-1">{value}</p>
-            </div>
-          ))}
-        </div>
-
-        <p className="font-serif text-[11px] leading-relaxed mb-4">
-          <b>How to read this.</b> A <i>boss assessment</i> is a cumulative five-part test the student takes after a
-          block of cases; it is scored out of the points available and is the single number that goes in the gradebook.
-          <i> Skill mastery</i> is the share of individual items — words, sentences, questions — the student has answered
-          correctly at least once. <i>First try</i> is the share they answered correctly the first time they met it, and
-          is the better measure of secure knowledge: mastery rises because the program re-asks an item until the student
-          gets it, which is deliberate, but it means mastery alone reads generously.
-        </p>
-
-        <table className="w-full border-collapse font-serif text-[10px]">
-          <thead>
-            <tr>
-              <th className="border border-black px-1.5 py-1 text-left">Student</th>
-              {bossMeta.map((b) => (
-                <th key={b.bossId} className="border border-black px-1.5 py-1 text-center">
-                  {b.label.replace("Operación ", "")}
-                  <span className="block font-normal text-[8px]">after case {b.afterCaso}</span>
-                </th>
-              ))}
-              <th className="border border-black px-1.5 py-1 text-center">Boss avg.</th>
-              <th className="border border-black px-1.5 py-1 text-center">Mastery</th>
-              <th className="border border-black px-1.5 py-1 text-center">First try</th>
-            </tr>
-          </thead>
-          <tbody>
-            {students.map((s) => {
-              const ft = s.profile.totalItems
-                ? Math.round(
-                    ([...s.profile.vocabByTopic, ...s.profile.grammarBySkill,
-                      ...(s.profile.listening ? [s.profile.listening] : []),
-                      ...(s.profile.speaking ? [s.profile.speaking] : [])]
-                      .reduce((n, b) => n + b.firstTry, 0) / s.profile.totalItems) * 100
-                  )
-                : null;
-              return (
-                <tr key={s.studentId}>
-                  <td className="border border-black px-1.5 py-1">
-                    {nameFor(s)}
-                    {s.reportName && <span className="block text-[8px]">in game: {s.displayName}</span>}
-                  </td>
-                  {s.bosses.map((b) => (
-                    <td key={b.bossId} className="border border-black px-1.5 py-1 text-center">
-                      {b.scorePct != null ? `${b.scorePct}%`
-                        : b.status === "completed" ? "passed"
-                        : b.status === "not_started" ? "—"
-                        : statusWord(b.status)}
-                    </td>
-                  ))}
-                  <td className="border border-black px-1.5 py-1 text-center"><Pct value={s.bossAveragePct} /></td>
-                  <td className="border border-black px-1.5 py-1 text-center"><Pct value={s.profile.overallPct} /></td>
-                  <td className="border border-black px-1.5 py-1 text-center"><Pct value={ft} /></td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
-
-        <p className="font-serif text-[9px] italic mt-2">
-          “passed” marks a boss assessment finished before per-part scores were recorded: the student completed it, but
-          no percentage can honestly be reconstructed. Bold type marks a figure below 60%.
-        </p>
-      </section>
-
-      {topics.length > 0 && (
-        <section className="ws-page">
-          <Letterhead data={data} title="What the Class Has Learned" subtitle="By topic, weakest first" />
-
-          <p className="font-serif text-[11px] leading-relaxed mb-4">
-            Each row is one topic of the course, averaged across every student who has reached it. Topics reached by
-            fewer than three students are left out. Ordered by first-try accuracy, so the rows at the top are where
-            re-teaching would do the most good.
-          </p>
-
-          <table className="w-full border-collapse font-serif text-[10px]">
-            <thead>
-              <tr>
-                <th className="border border-black px-2 py-1 text-left">Topic</th>
-                <th className="border border-black px-2 py-1 text-left">Area</th>
-                <th className="border border-black px-2 py-1 text-center">Students</th>
-                <th className="border border-black px-2 py-1 text-center">Mastery</th>
-                <th className="border border-black px-2 py-1 text-center">First try</th>
-              </tr>
-            </thead>
-            <tbody>
-              {topics.map((t) => (
-                <tr key={`${t.kind}-${t.label}`}>
-                  <td className="border border-black px-2 py-1">{t.label}</td>
-                  <td className="border border-black px-2 py-1">{t.kind}</td>
-                  <td className="border border-black px-2 py-1 text-center">{t.students}</td>
-                  <td className="border border-black px-2 py-1 text-center"><Pct value={t.masteredPct} /></td>
-                  <td className="border border-black px-2 py-1 text-center"><Pct value={t.firstTryPct} /></td>
-                </tr>
-              ))}
-            </tbody>
-          </table>
-        </section>
-      )}
-    </>
   );
 }
 
