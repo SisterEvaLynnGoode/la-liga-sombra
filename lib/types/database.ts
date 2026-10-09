@@ -763,6 +763,22 @@ export interface Database {
         Args: { p_class_id: string };
         Returns: Array<{ student_id: string; unit_id: string; items: number; first_try: number }>;
       };
+      class_growth_windows: {
+        Args: { p_class_id: string };
+        Returns: Array<{
+          student_id: string; learned_14d: number; learned_30d: number;
+          met_14d: number; met_30d: number; first_try_14d: number; first_try_30d: number;
+          active_days_14d: number; active_days_30d: number;
+        }>;
+      };
+      class_error_kinds_by_student: {
+        Args: { p_class_id: string };
+        Returns: Array<{ student_id: string; error_kind: string; events: number }>;
+      };
+      class_case_status_by_student: {
+        Args: { p_class_id: string };
+        Returns: Array<{ student_id: string; unit_id: string; status: string; credited: boolean }>;
+      };
     };
     Enums: {
       unit_status: UnitStatus;

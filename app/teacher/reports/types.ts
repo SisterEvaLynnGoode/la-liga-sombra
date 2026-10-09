@@ -44,6 +44,15 @@ export interface ClassAnalytics {
   latency: Array<{ studentId: string; medianMs: number; timedEvents: number }>;
   coverage: Array<{ caso: number; completed: number; inProgress: number; credited: number; notStarted: number }>;
   firstTryByCase: Array<{ studentId: string; caso: number; items: number; firstTry: number }>;
+  growth: Array<{
+    studentId: string;
+    learned14d: number; learned30d: number;
+    met14d: number; met30d: number;
+    firstTry14d: number; firstTry30d: number;
+    activeDays14d: number; activeDays30d: number;
+  }>;
+  errorsByStudent: Array<{ studentId: string; kind: string; events: number }>;
+  caseStatus: Array<{ studentId: string; caso: number; status: string; credited: boolean }>;
   rosterSize: number;
 }
 

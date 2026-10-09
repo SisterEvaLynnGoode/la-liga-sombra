@@ -2,13 +2,13 @@
 
 import { useEffect, useMemo, useState } from "react";
 import Link from "next/link";
-import { practiceFor } from "@/lib/reports/practice";
 import type { SkillBucket } from "@/lib/reports/skills";
 import ClassReport from "./ClassReport";
+import ParentReport from "./ParentReport";
 import { Letterhead, Pct } from "./shared";
 import {
   fmtDate, nameFor, statusWord,
-  type GradeRow, type Payload, type Profile, type Student,
+  type GradeRow, type Payload, type Student,
 } from "./types";
 
 /**
@@ -33,26 +33,6 @@ const MODES: Array<{ id: Mode; label: string; blurb: string }> = [
   { id: "students", label: "Student summaries",  blurb: "One page per student, every topic and every boss fight." },
   { id: "parent",   label: "Parent report cards", blurb: "Two to four pages per child, in English, with practice to do at home." },
 ];
-
-/** The practice engine needs to know what sort of skill a weak area is. */
-function kindOf(bucket: SkillBucket, p: Profile): "vocab" | "grammar" | "listening" | "speaking" {
-  if (p.listening && bucket.label === p.listening.label) return "listening";
-  if (p.speaking && bucket.label === p.speaking.label) return "speaking";
-  if (p.grammarBySkill.some((b) => b.label === bucket.label)) return "grammar";
-  return "vocab";
-}
-
-/** Plain English for a number, because "72%" alone tells a parent nothing. */
-function masteryWords(b: SkillBucket): string {
-  const m = b.masteredPct ?? 0;
-  const f = b.firstTryPct ?? 0;
-  if (m >= 95 && f >= 85) return "Solid. They knew almost all of this the first time they saw it.";
-  if (m >= 90 && f >= 75) return "Strong. They worked out nearly everything here, most of it straight away.";
-  if (m >= 90) return "They got there on all of it, but needed more than one try on much of it — the knowledge is new rather than secure.";
-  if (m >= 75) return "Mostly there. A few items are still missing, and first attempts are often wrong.";
-  if (m >= 50) return "About half of this is not yet learned. This is where practice pays off fastest.";
-  return "Most of this has not been learned yet. Short, frequent practice will move it quickly.";
-}
 
 export default function ReportsClient({
   classId,
@@ -381,184 +361,6 @@ function BucketTable({ title, buckets }: { title: string; buckets: SkillBucket[]
         </table>
       )}
     </div>
-  );
-}
-
-/* ══════════════════════════════════════════════════════════════════════════
-   3. Parent report card — English, 2–4 pages, with practice to do at home
-   ══════════════════════════════════════════════════════════════════════════ */
-
-function ParentReport({ s, data }: { s: Student; data: Payload }) {
-  const p = s.profile;
-  const gaps = p.needsWork;
-  const bossesTaken = s.bosses.filter((b) => b.status === "completed").length;
-  const casesCovered = Math.max(
-    0,
-    ...p.vocabByTopic.map((b) => b.caso ?? 0),
-    ...p.grammarBySkill.map((b) => b.caso ?? 0)
-  );
-
-  return (
-    <>
-      {/* ── Page 1 — what this is, and how they are doing ──────────────── */}
-      <section className="ws-page">
-        <Letterhead data={data} title={`Spanish Progress Report: ${nameFor(s)}`} />
-
-        <p className="font-serif text-[11.5px] leading-relaxed mb-3">
-          This report covers your child&rsquo;s work in Spanish 1. The class learns through a detective story:
-          students take on cases set in a different Spanish-speaking country each time, and to solve a case they
-          have to understand and use real Spanish — reading a witness statement, listening to a recording,
-          building sentences, choosing the right verb form. The program records every one of those small moments,
-          which is where the numbers below come from.
-        </p>
-
-        <div className="border-2 border-black px-4 py-3 mb-4">
-          <h2 className="font-serif text-sm font-bold uppercase tracking-[0.2em] mb-2">The short version</h2>
-          <div className="grid grid-cols-3 gap-4 mb-2">
-            <div>
-              <p className="font-serif text-[9px] uppercase tracking-[0.15em]">Skills learned</p>
-              <p className="font-serif text-2xl font-bold leading-none">
-                {p.overallPct != null ? `${p.overallPct}%` : "—"}
-              </p>
-              <p className="font-serif text-[9px]">{p.totalMastered} of {p.totalItems} items</p>
-            </div>
-            <div>
-              <p className="font-serif text-[9px] uppercase tracking-[0.15em]">Unit tests</p>
-              <p className="font-serif text-2xl font-bold leading-none">
-                {s.bossAveragePct != null ? `${s.bossAveragePct}%` : "—"}
-              </p>
-              <p className="font-serif text-[9px]">
-                {s.bossAveragePct != null
-                  ? `${bossesTaken} completed`
-                  : bossesTaken > 0 ? `${bossesTaken} completed, not scored` : "none taken yet"}
-              </p>
-            </div>
-            <div>
-              <p className="font-serif text-[9px] uppercase tracking-[0.15em]">Cases reached</p>
-              <p className="font-serif text-2xl font-bold leading-none">{casesCovered || "—"}</p>
-              <p className="font-serif text-[9px]">of 32 in the year</p>
-            </div>
-          </div>
-          <p className="font-serif text-[10px] leading-relaxed">
-            <b>Skills learned</b> is the share of individual Spanish items — words, phrases, sentences — your child
-            has answered correctly. <b>Unit tests</b> are the cumulative assessments at the end of each block of
-            cases. Neither of these is the report-card grade, which also takes homework and class participation into
-            account; they describe what your child can do in Spanish right now.
-          </p>
-        </div>
-
-        {p.strengths.length > 0 && (
-          <>
-            <h2 className="font-serif text-sm font-bold uppercase tracking-[0.2em] border-b border-black mb-2">
-              What {nameFor(s).split(" ")[0]} does well
-            </h2>
-            <div className="space-y-2 mb-4">
-              {p.strengths.map((b) => (
-                <div key={b.label}>
-                  <p className="font-serif text-[11.5px] font-bold">{b.label}</p>
-                  <p className="font-serif text-[11px] leading-snug">
-                    {masteryWords(b)}{" "}
-                    <span className="text-[10px]">
-                      ({b.mastered} of {b.items} items
-                      {b.firstTryPct != null && <>, right first time {b.firstTryPct}% of the time</>})
-                    </span>
-                  </p>
-                </div>
-              ))}
-            </div>
-          </>
-        )}
-
-        {gaps.length === 0 && (
-          <p className="font-serif text-[11.5px] leading-relaxed">
-            Nothing in the record stands out as a weak area right now — your child is keeping up across every topic
-            they have reached. The best thing you can do is keep the habit going: a few minutes of Spanish out loud,
-            a few times a week.
-          </p>
-        )}
-      </section>
-
-      {/* ── Page 2 — growth areas, named plainly ──────────────────────── */}
-      {gaps.length > 0 && (
-        <section className="ws-page">
-          <h2 className="font-serif text-lg font-bold border-b-2 border-black pb-1 mb-3">
-            Where {nameFor(s).split(" ")[0]} needs more practice
-          </h2>
-          <p className="font-serif text-[11px] leading-relaxed mb-4">
-            These are the topics where the record shows the most gaps. A topic appears here either because some of it
-            has not been learned yet, or because first attempts are usually wrong even when your child gets there in
-            the end. Each one has an activity on the next page.
-          </p>
-
-          <div className="space-y-3">
-            {gaps.map((b, i) => (
-              <div key={b.label} className="border border-black px-4 py-3">
-                <p className="font-serif text-[12px] font-bold">{i + 1}. {b.label}</p>
-                <p className="font-serif text-[11px] leading-snug mt-0.5">{masteryWords(b)}</p>
-                <p className="font-serif text-[10px] mt-1">
-                  Learned {b.mastered} of {b.items} items
-                  {b.firstTryPct != null && <> · correct on the first try {b.firstTryPct}% of the time</>}
-                </p>
-              </div>
-            ))}
-          </div>
-
-          <p className="font-serif text-[11px] leading-relaxed mt-4">
-            One note on how to read this: being on this list is normal and expected. Spanish 1 moves quickly, and
-            every student has topics that are still settling. What matters is that the gaps are specific — which is
-            what makes the practice on the next page worth five minutes.
-          </p>
-        </section>
-      )}
-
-      {/* ── Pages 3–4 — the practice ───────────────────────────────────── */}
-      {gaps.length > 0 && (
-        <section className="ws-page">
-          <h2 className="font-serif text-lg font-bold border-b-2 border-black pb-1 mb-3">
-            Five minutes at the kitchen table
-          </h2>
-          <p className="font-serif text-[11px] leading-relaxed mb-4">
-            One activity for each topic above. <b>You do not need to speak Spanish.</b> Each one tells you what to say,
-            what your child should answer, and what counts as right. Nothing here needs a computer, a printer or a
-            login. Twice a week beats one long session.
-          </p>
-
-          <div className="space-y-4">
-            {gaps.map((b, i) => {
-              const act = practiceFor(b, kindOf(b, p));
-              return (
-                <div key={b.label} className="border border-black px-4 py-3 break-inside-avoid">
-                  <p className="font-serif text-[9px] uppercase tracking-[0.2em]">
-                    For: {b.label} · about {act.minutes} minutes
-                  </p>
-                  <p className="font-serif text-[12.5px] font-bold mb-1.5">{i + 1}. {act.title}</p>
-                  <ol className="font-serif text-[11px] leading-relaxed list-decimal pl-5 space-y-0.5">
-                    {act.steps.map((step, j) => <li key={j}>{step}</li>)}
-                  </ol>
-                  {act.items.length > 0 && (
-                    <div className="mt-2 border-t border-black pt-1.5">
-                      <p className="font-serif text-[9px] uppercase tracking-[0.2em]">
-                        Use these — the ones your child has been missing
-                      </p>
-                      <p className="font-serif text-[11px]">{act.items.join(" · ")}</p>
-                    </div>
-                  )}
-                </div>
-              );
-            })}
-          </div>
-
-          <div className="border-t-2 border-black mt-5 pt-3">
-            <h3 className="font-serif text-[12px] font-bold uppercase tracking-[0.15em] mb-1">Questions?</h3>
-            <p className="font-serif text-[11px] leading-relaxed">
-              Your child can also replay any case in the program to raise these numbers — replaying is encouraged, and
-              the record always reflects their current best rather than their first attempt. If you would like to talk
-              through this report, please contact {data.teacherName ?? "your child's Spanish teacher"}.
-            </p>
-          </div>
-        </section>
-      )}
-    </>
   );
 }
 

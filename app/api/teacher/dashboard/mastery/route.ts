@@ -74,6 +74,18 @@ export interface ClassAnalytics {
   coverage: Array<{ caso: number; completed: number; inProgress: number; credited: number; notStarted: number }>;
   /** First-try accuracy per student per case — the growth chart. */
   firstTryByCase: Array<{ studentId: string; caso: number; items: number; firstTry: number }>;
+  /** Trailing-window growth per student — the "what changed recently" block. */
+  growth: Array<{
+    studentId: string;
+    learned14d: number; learned30d: number;
+    met14d: number; met30d: number;
+    firstTry14d: number; firstTry30d: number;
+    activeDays14d: number; activeDays30d: number;
+  }>;
+  /** Diagnosed mistake types per student — the parent report's mistake mix. */
+  errorsByStudent: Array<{ studentId: string; kind: string; events: number }>;
+  /** Each student's own case statuses — the story strip. */
+  caseStatus: Array<{ studentId: string; caso: number; status: string; credited: boolean }>;
   rosterSize: number;
 }
 
@@ -149,11 +161,14 @@ export async function GET(request: NextRequest) {
   // fetched when the caller says it is drawing them.
   let analytics: ClassAnalytics | null = null;
   if (wantAnalytics) {
-    const [errRes, latRes, covRes, ftRes] = await Promise.all([
+    const [errRes, latRes, covRes, ftRes, growthRes, errByRes, statusRes] = await Promise.all([
       supabase.rpc("class_error_kinds", { p_class_id: classId }),
       supabase.rpc("class_latency_by_student", { p_class_id: classId }),
       supabase.rpc("class_case_coverage", { p_class_id: classId }),
       supabase.rpc("class_first_try_by_case", { p_class_id: classId }),
+      supabase.rpc("class_growth_windows", { p_class_id: classId }),
+      supabase.rpc("class_error_kinds_by_student", { p_class_id: classId }),
+      supabase.rpc("class_case_status_by_student", { p_class_id: classId }),
     ]);
     const roster = students.length;
     const coverage = ((covRes.data ?? []) as Array<{ unit_id: string; completed: number; in_progress: number; credited: number }>)
@@ -173,6 +188,22 @@ export async function GET(request: NextRequest) {
       coverage,
       firstTryByCase: ((ftRes.data ?? []) as Array<{ student_id: string; unit_id: string; items: number; first_try: number }>)
         .map((r) => ({ studentId: r.student_id, caso: unitNumberById.get(r.unit_id) ?? 0, items: r.items, firstTry: r.first_try }))
+        .filter((r) => r.caso > 0),
+      growth: ((growthRes.data ?? []) as Array<{
+        student_id: string; learned_14d: number; learned_30d: number;
+        met_14d: number; met_30d: number; first_try_14d: number; first_try_30d: number;
+        active_days_14d: number; active_days_30d: number;
+      }>).map((r) => ({
+        studentId: r.student_id,
+        learned14d: r.learned_14d, learned30d: r.learned_30d,
+        met14d: r.met_14d, met30d: r.met_30d,
+        firstTry14d: r.first_try_14d, firstTry30d: r.first_try_30d,
+        activeDays14d: r.active_days_14d, activeDays30d: r.active_days_30d,
+      })),
+      errorsByStudent: ((errByRes.data ?? []) as Array<{ student_id: string; error_kind: string; events: number }>)
+        .map((r) => ({ studentId: r.student_id, kind: r.error_kind, events: r.events })),
+      caseStatus: ((statusRes.data ?? []) as Array<{ student_id: string; unit_id: string; status: string; credited: boolean }>)
+        .map((r) => ({ studentId: r.student_id, caso: unitNumberById.get(r.unit_id) ?? 0, status: r.status, credited: r.credited }))
         .filter((r) => r.caso > 0),
       rosterSize: roster,
     };
