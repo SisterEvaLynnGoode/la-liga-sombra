@@ -767,10 +767,19 @@ function Appendix({
         rows={[...pace].sort((p, q) => p.x - q.x).map((p) => [esc(p.label), p.x.toFixed(1), Math.round(p.y), p.timed].join(","))}
       />
 
+      {/* Long format, one row per cell, rather than a wide grid. A wide row
+          wraps across several printed lines, and PDF text extraction turns
+          each wrapped line into its own line — which would hand a reader
+          software a corrupted table. Short rows survive that intact. */}
       <Csv
-        title="mastery_grid.csv — every student against every topic (blank = topic not yet met)"
-        header={["topic", ...heatCols.map((s) => esc(nameFor(s)))].join(",")}
-        rows={heatRows.map((t, ri) => [esc(t.label), ...heatValues[ri].map((v) => (v == null ? "" : String(v)))].join(","))}
+        title="mastery_by_student_and_topic.csv — one row per student per topic"
+        header="student,topic,mastery_pct"
+        rows={heatRows.flatMap((t, ri) =>
+          heatCols
+            .map((st, ci) => ({ st, v: heatValues[ri][ci] }))
+            .filter((x) => x.v != null)
+            .map((x) => [esc(nameFor(x.st)), esc(t.label), x.v].join(","))
+        )}
       />
 
       <p className="font-serif text-[9.5px] italic mt-2">
