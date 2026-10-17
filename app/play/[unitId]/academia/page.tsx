@@ -2,33 +2,8 @@ import { redirect } from "next/navigation";
 import { getStudentSession } from "@/lib/auth/session";
 import { createClient } from "@/lib/supabase/server";
 import { getVocabReadinessScore } from "@/lib/mastery";
-import type { UnitContent } from "@/lib/types/unit-content";
+import { loadUnitContent } from "@/lib/game/unit-content";
 import AcademiaWrapper from "./AcademiaWrapper";
-
-// Unit content registry — mirrors /play/[unitId]/page.tsx
-function getUnitContent(unitNumber: number): UnitContent | null {
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
-  if (unitNumber === 1) return require("@/content/unit-01.json") as UnitContent;
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
-  if (unitNumber === 2) return require("@/content/unit-02.json") as UnitContent;
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
-  if (unitNumber === 3) return require("@/content/unit-03.json") as UnitContent;
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
-  if (unitNumber === 4) return require("@/content/unit-04.json") as UnitContent;
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
-  if (unitNumber === 5) return require("@/content/unit-05.json") as UnitContent;
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
-  if (unitNumber === 6) return require("@/content/unit-06.json") as UnitContent;
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
-  if (unitNumber === 7) return require("@/content/unit-07.json") as UnitContent;
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
-  if (unitNumber === 8) return require("@/content/unit-08.json") as UnitContent;
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
-  if (unitNumber === 9) return require("@/content/unit-09.json") as UnitContent;
-  // eslint-disable-next-line @typescript-eslint/no-require-imports
-  if (unitNumber === 10) return require("@/content/unit-10.json") as UnitContent;
-  return null;
-}
 
 interface PageProps {
   params: { unitId: string };
@@ -41,7 +16,12 @@ export default async function AcademiaPage({ params }: PageProps) {
   const unitNumber = parseInt(params.unitId, 10);
   if (isNaN(unitNumber) || unitNumber < 1) redirect("/mission-board");
 
-  const content = getUnitContent(unitNumber);
+  // Was a hand-written `if (unitNumber === n)` chain that stopped at 10, so
+  // every student who reached Caso 11 was redirected away from the vocabulary
+  // training and into the case cold. lib/game/unit-content.ts exists because
+  // two other routes had already drifted apart the same way; this one was
+  // never moved onto it. Adding a case is now adding a JSON file, nothing else.
+  const content = loadUnitContent(unitNumber);
   if (!content) redirect(`/play/${unitNumber}/gate`); // shows Próximamente panel
 
   const supabase = createClient();

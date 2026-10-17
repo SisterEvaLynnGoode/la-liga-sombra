@@ -93,6 +93,9 @@ export default function ParentReport({ s, data }: { s: Student; data: Payload })
     .slice(0, 6)
     .map((b) => ({ label: b.label, knew: b.firstTryPct ?? 0, learned: b.masteredPct ?? 0 }));
   const widestGap = [...knewLearned].sort((x, y) => (y.learned - y.knew) - (x.learned - x.knew))[0];
+  const avgLearned = knewLearned.length
+    ? knewLearned.reduce((n, r) => n + r.learned, 0) / knewLearned.length
+    : 0;
 
   /* ── Mistake mix ────────────────────────────────────────────────────── */
   const myErrors = (a?.errorsByStudent ?? [])
@@ -252,6 +255,12 @@ export default function ParentReport({ s, data }: { s: Student; data: Payload })
               ? `There is too little recorded so far to read a pattern into this — ${first} has met ${p.totalItems} items across ${knewLearned.length} ${knewLearned.length === 1 ? "topic" : "topics"}. It will say more after another case or two.`
               : widestGap && widestGap.learned - widestGap.knew >= 20
               ? `The long line on “${widestGap.label}” means ${first} can do it but it is not automatic yet. That is normal for new material, and repetition — not re-teaching — is what closes it.`
+              : avgLearned < 70
+              // A short line is only good news when the dots are far to the
+              // right. Short and LOW means the material has not been learned
+              // at all, and telling a parent that is "secure knowledge" would
+              // be the most misleading sentence on the page.
+              ? `The lines are short here because both dots are low — these topics have not been learned yet rather than learned securely. The practice on the next page is aimed straight at them.`
               : `The short lines mean ${first} is mostly getting things right first time rather than grinding them out. That is secure knowledge.`
           }
         >

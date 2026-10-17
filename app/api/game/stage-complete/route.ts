@@ -30,12 +30,28 @@ export async function POST(request: NextRequest) {
   const unitId = (unitRows as Array<{ id: string }> | null)?.[0]?.id;
   if (!unitId) return NextResponse.json({ error: "Unit not found" }, { status: 404 });
 
-  // Update stage_index and set status = in_progress
+  // Record how far through the case they are. Always — replaying a finished
+  // case should still resume where they left off.
   await supabase
     .from("unit_progress")
-    .update({ stage_index: stageIndex + 1, status: "in_progress" })
+    .update({ stage_index: stageIndex + 1 })
     .eq("student_id", session.studentId)
     .eq("unit_id", unitId);
+
+  // Status only ever moves FORWARD: available -> in_progress -> completed.
+  //
+  // This used to set in_progress unconditionally, which quietly un-finished a
+  // case every time a student replayed a stage of one they had already solved.
+  // Replaying is encouraged by this whole system, so the students who replayed
+  // most had the most completions erased — 84 rows school-wide were sitting at
+  // in_progress with a completed_at timestamp and case_solved = true, and
+  // anything counting by status read those students as having finished nothing.
+  await supabase
+    .from("unit_progress")
+    .update({ status: "in_progress" })
+    .eq("student_id", session.studentId)
+    .eq("unit_id", unitId)
+    .eq("status", "available");
 
   // Record attempt
   if (activityType && score != null && maxScore != null) {

@@ -28,6 +28,28 @@ export default function VocabMatch({ title = "Memoria de Vocabulario", pairs, un
   const { elapsed, stop } = useGameTimer();
   const { recordAttempt, updateMastery } = useAttemptTracker("vocab_match", unitId);
 
+  /**
+   * A memory board has to fit on one screen, or it is not a memory game.
+   *
+   * This used to deal every pair in the unit at once: Caso 10 has 32 vocab
+   * items, so the Academy dealt 64 cards in a grid 1,969px tall — three
+   * screens on a Chromebook. A student cannot hold a board they cannot see,
+   * so they flip blind. School-wide that produced 104,000 flips at 12%
+   * "accuracy", and one student spent two days on a single board, 82 attempts
+   * for 11 matches, never reaching past the first section of the deck.
+   *
+   * So the deck is dealt in rounds of at most ROUND_MAX pairs, split evenly so
+   * no round is a stub: 32 pairs become four rounds of 8, and 12 pairs become
+   * two of 6. The score is still out of every pair in the unit.
+   */
+  const ROUND_MAX = 8;
+  const roundCount = Math.max(1, Math.ceil(pairs.length / ROUND_MAX));
+  const perRound = Math.ceil(pairs.length / roundCount);
+  const [round, setRound] = useState(0);
+  const roundPairs = pairs.slice(round * perRound, (round + 1) * perRound);
+  /** Offset into `pairs`, so logging and mastery still name the real item. */
+  const roundOffset = round * perRound;
+
   const [cards, setCards] = useState<Card[]>([]);
   const [selected, setSelected] = useState<string[]>([]);
   const [matched, setMatched] = useState(0);
@@ -39,12 +61,20 @@ export default function VocabMatch({ title = "Memoria de Vocabulario", pairs, un
 
   useEffect(() => {
     const deck: Card[] = [];
-    pairs.forEach((pair, i) => {
-      deck.push({ id: `es-${i}`, pairId: i, type: "spanish", content: pair.spanish, isFlipped: false, isMatched: false });
-      deck.push({ id: `en-${i}`, pairId: i, type: "english", content: pair.english, isFlipped: false, isMatched: false });
+    roundPairs.forEach((pair, i) => {
+      const id = roundOffset + i;
+      deck.push({ id: `es-${id}`, pairId: id, type: "spanish", content: pair.spanish, isFlipped: false, isMatched: false });
+      deck.push({ id: `en-${id}`, pairId: id, type: "english", content: pair.english, isFlipped: false, isMatched: false });
     });
     setCards(shuffle(deck));
-  }, [pairs]);
+    setSelected([]);
+    setLastFlipped([]);
+    setIsChecking(false);
+    checkingRef.current = false;
+    // roundPairs is derived from these two, and a new array identity each
+    // render would re-deal the board mid-game.
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [pairs, round]);
 
   const finish = useCallback(
     (finalMatched: number, finalAttempts: number, elapsed: number) => {
@@ -90,7 +120,22 @@ export default function VocabMatch({ title = "Memoria de Vocabulario", pairs, un
           chosen: card.content,
           expected: pairs[card.pairId].english,
         });
-        if (newMatched === pairs.length) finish(newMatched, newAttempts, elapsed);
+        // A round is done when every pair dealt so far has been matched.
+        const dealtThroughThisRound = Math.min(pairs.length, (round + 1) * perRound);
+        if (newMatched === dealtThroughThisRound) {
+          if (round + 1 >= roundCount) {
+            finish(newMatched, newAttempts, elapsed);
+          } else {
+            // Let the student see the last match land before the next board.
+            checkingRef.current = true;
+            setIsChecking(true);
+            setTimeout(() => {
+              setRound((r) => r + 1);
+              setIsChecking(false);
+              checkingRef.current = false;
+            }, 900);
+          }
+        }
       } else {
         logItemEvent({
           unitId,
@@ -118,7 +163,9 @@ export default function VocabMatch({ title = "Memoria de Vocabulario", pairs, un
     }
   }
 
-  const cols = pairs.length <= 4 ? "grid-cols-4" : pairs.length <= 6 ? "grid-cols-4 sm:grid-cols-6" : "grid-cols-4 sm:grid-cols-6";
+  // Four columns, always. A round is at most 8 pairs, so this is at most four
+  // rows — a board a student can see without scrolling, which is the point.
+  const cols = "grid-cols-4";
 
   return (
     <GameShell
@@ -139,6 +186,9 @@ export default function VocabMatch({ title = "Memoria de Vocabulario", pairs, un
         {/* Stats bar */}
         <div className="flex items-center justify-between font-typewriter text-xs text-[#8b7355]">
           <span>Pares encontrados: <span className="text-[#e8b455]">{matched}/{pairs.length}</span></span>
+          {roundCount > 1 && (
+            <span className="text-[#c9933a]">Tablero {round + 1} de {roundCount}</span>
+          )}
           <span>Intentos: <span className="text-[#c4a882]">{flipAttempts}</span></span>
         </div>
 
@@ -148,7 +198,7 @@ export default function VocabMatch({ title = "Memoria de Vocabulario", pairs, un
         </p>
 
         {/* Card grid */}
-        <div className={`grid ${cols} gap-3 justify-center`}>
+        <div className={`grid ${cols} gap-3 justify-items-center mx-auto w-full max-w-[660px]`}>
           {cards.map((card) => {
             const isWrong = lastFlipped.includes(card.id) && !card.isMatched;
             return (
@@ -163,7 +213,7 @@ export default function VocabMatch({ title = "Memoria de Vocabulario", pairs, un
                 }
                 aria-pressed={card.isFlipped}
                 className={`
-                  relative aspect-[3/4] min-w-[80px] max-w-[110px] w-full rounded-sm
+                  relative aspect-[4/3] min-w-[80px] max-w-[150px] w-full rounded-sm
                   flex items-center justify-center text-center p-2
                   transition-all duration-300 select-none
                   focus:outline-none focus:ring-2 focus:ring-[#c9933a] focus:ring-offset-1 focus:ring-offset-[#0d0b0a]
