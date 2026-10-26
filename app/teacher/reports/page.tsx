@@ -20,7 +20,11 @@ export default async function ReportsPage({
   return (
     <ReportsClient
       classId={searchParams.classId ?? ""}
-      initialMode={searchParams.mode === "students" || searchParams.mode === "parent" ? searchParams.mode : "class"}
+      initialMode={
+        searchParams.mode === "students" || searchParams.mode === "parent" || searchParams.mode === "evidence"
+          ? searchParams.mode
+          : "class"
+      }
       initialStudentId={searchParams.studentId ?? null}
     />
   );

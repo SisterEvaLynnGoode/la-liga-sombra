@@ -779,6 +779,30 @@ export interface Database {
         Args: { p_class_id: string };
         Returns: Array<{ student_id: string; unit_id: string; status: string; credited: boolean }>;
       };
+      class_error_trend: {
+        Args: { p_class_id: string };
+        Returns: Array<{ month: string; error_kind: string; events: number; students: number }>;
+      };
+      class_briefings: {
+        Args: { p_class_id: string };
+        Returns: Array<{
+          student_id: string; briefings: number; completed: number; skipped: number;
+          terms_shown: number; terms_correct: number; distinct_days: number;
+          first_day: string | null; last_day: string | null;
+        }>;
+      };
+      class_can_do: {
+        Args: { p_class_id: string };
+        Returns: Array<{ student_id: string; unit_id: string | null; statement_index: number; statement: string; rating: number; created_at: string }>;
+      };
+      class_signals: {
+        Args: { p_class_id: string };
+        Returns: Array<{ flag_type: string; month: string; n: number; students: number; resolved: number }>;
+      };
+      class_sentence_attempts: {
+        Args: { p_class_id: string };
+        Returns: Array<{ expected: string; chosen: string; error_kind: string | null; n: number; students: number }>;
+      };
     };
     Enums: {
       unit_status: UnitStatus;

@@ -321,6 +321,69 @@ export function Dumbbell({
 }
 
 /* ══════════════════════════════════════════════════════════════════════════
+   Plain horizontal bars — magnitude, one series
+   ══════════════════════════════════════════════════════════════════════════ */
+
+export interface BarRow { label: string; value: number; note?: string }
+
+/**
+ * One bar per row, value labelled at the tip.
+ *
+ * Exists because a dumbbell whose hollow end is pinned to zero draws a mark
+ * that carries no information on every row — the reader is invited to compare
+ * two points when there is only one. If the data is a single magnitude, this
+ * is the honest form.
+ */
+export function Bars({
+  rows,
+  max,
+  unit = "%",
+  width = 700,
+}: {
+  rows: BarRow[];
+  /** Domain top. Defaults to the largest value. */
+  max?: number;
+  unit?: string;
+  width?: number;
+}) {
+  const m = { t: 6, r: 58, b: 22, l: 232 };
+  const rowH = 19;
+  const height = m.t + rows.length * rowH + m.b;
+  const w = width - m.l - m.r;
+  const top = max ?? Math.max(1, ...rows.map((r) => r.value));
+  const px = (v: number) => (v / top) * w;
+  const barH = Math.min(12, rowH - 7);
+
+  return (
+    <svg viewBox={`0 0 ${width} ${height}`} width="100%" role="img"
+      aria-label={`Bar chart: ${rows.map((r) => `${r.label} ${r.value}${unit}`).join(", ")}. The table below carries every value.`}>
+      {[0, 0.25, 0.5, 0.75, 1].map((f) => (
+        <g key={f}>
+          <line x1={m.l + f * w} y1={m.t} x2={m.l + f * w} y2={m.t + rows.length * rowH} stroke={INK.grid} strokeWidth="1" />
+          <text x={m.l + f * w} y={height - 8} textAnchor="middle" fontSize="8.5" fill={INK.r700} fontFamily={FONT}>
+            {Math.round(f * top)}{unit}
+          </text>
+        </g>
+      ))}
+      {rows.map((r, i) => {
+        const y = m.t + i * rowH + (rowH - barH) / 2;
+        return (
+          <g key={r.label}>
+            <text x={m.l - 8} y={y + barH - 1} textAnchor="end" fontSize="9" fill={INK.r900} fontFamily={FONT}>
+              {r.label.length > 44 ? r.label.slice(0, 42) + "…" : r.label}
+            </text>
+            <rect x={m.l} y={y} width={Math.max(1, px(r.value))} height={barH} fill={INK.r900} rx="2" />
+            <text x={m.l + px(r.value) + 6} y={y + barH - 1} fontSize="8.5" fill={INK.r700} fontFamily={FONT}>
+              {r.value}{unit}{r.note ? ` ${r.note}` : ""}
+            </text>
+          </g>
+        );
+      })}
+    </svg>
+  );
+}
+
+/* ══════════════════════════════════════════════════════════════════════════
    3 & 6. Horizontal stacked bar — part-to-whole
    ══════════════════════════════════════════════════════════════════════════ */
 

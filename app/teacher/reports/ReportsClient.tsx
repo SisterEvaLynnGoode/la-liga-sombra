@@ -5,6 +5,7 @@ import Link from "next/link";
 import type { SkillBucket } from "@/lib/reports/skills";
 import ClassReport from "./ClassReport";
 import ParentReport from "./ParentReport";
+import EvidenceReport, { type EvidencePayload } from "./EvidenceReport";
 import { Letterhead, Pct } from "./shared";
 import {
   fmtDate, nameFor, statusWord,
@@ -26,12 +27,13 @@ import {
  * before it is sent.
  */
 
-type Mode = "class" | "students" | "parent";
+type Mode = "class" | "students" | "parent" | "evidence";
 
 const MODES: Array<{ id: Mode; label: string; blurb: string }> = [
   { id: "class",    label: "Class summary",      blurb: "For your administrator — nine figures, the roster, and a data appendix." },
   { id: "students", label: "Student summaries",  blurb: "One page per student, every topic and every boss fight." },
   { id: "parent",   label: "Parent report cards", blurb: "Two to four pages per child, in English, with practice to do at home." },
+  { id: "evidence", label: "Evidence of learning",  blurb: "Five pages for an observation: how learning is measured and what the record shows." },
 ];
 
 export default function ReportsClient({
@@ -47,6 +49,7 @@ export default function ReportsClient({
   const [only, setOnly] = useState<string | null>(initialStudentId);
   const [data, setData] = useState<Payload | null>(null);
   const [grades, setGrades] = useState<GradeRow[]>([]);
+  const [evidence, setEvidence] = useState<EvidencePayload | null>(null);
   const [error, setError] = useState<string | null>(null);
 
   useEffect(() => {
@@ -64,6 +67,13 @@ export default function ReportsClient({
 
     // The ACTFL band is already computed by the gradebook. Read it from there
     // rather than reimplementing the thresholds and letting the two drift.
+    // The evidence packet is its own endpoint — five more aggregates that a
+    // parent report has no use for.
+    fetch(`/api/teacher/dashboard/evidence?classId=${encodeURIComponent(classId)}`)
+      .then((r) => (r.ok ? r.json() : Promise.reject(new Error("evidence"))))
+      .then((json) => { if (live) setEvidence(json as EvidencePayload); })
+      .catch(() => { /* the tab shows its own empty state */ });
+
     fetch(`/api/teacher/dashboard/grades?classId=${encodeURIComponent(classId)}`)
       .then((r) => (r.ok ? r.json() : Promise.reject(new Error("grades"))))
       .then((json) => { if (live) setGrades((json?.rows ?? []) as GradeRow[]); })
@@ -162,7 +172,12 @@ export default function ReportsClient({
           {mode === "class" && <ClassReport data={data} students={students} grades={grades} />}
           {mode === "students" && students.map((s) => <StudentSummary key={s.studentId} s={s} data={data} />)}
           {mode === "parent" && students.map((s) => <ParentReport key={s.studentId} s={s} data={data} />)}
-          {students.length === 0 && (
+          {mode === "evidence" && (
+            evidence
+              ? <EvidenceReport data={evidence} />
+              : <p className="font-serif text-sm italic">Gathering the evidence aggregates…</p>
+          )}
+          {students.length === 0 && mode !== "evidence" && (
             <p className="font-serif text-sm">No student in this class has recorded work yet.</p>
           )}
         </div>
