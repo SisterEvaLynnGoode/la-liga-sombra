@@ -1,10 +1,11 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import type { Suspect } from "@/lib/types/unit-content";
 import type { GameResult } from "@/lib/games/types";
 import SkipStageButton from "@/components/games/SkipStageButton";
 import CharacterPortrait from "@/components/CharacterPortrait";
+import { dealOrder } from "@/lib/games/utils";
 
 interface Props {
   suspects: Suspect[];
@@ -22,6 +23,19 @@ export default function LineupStage({ suspects, correctSuspectId, hint, earnedCl
   const [showHint, setShowHint] = useState(false);
   const [isCorrect, setIsCorrect] = useState(false);
   const [startTime] = useState(Date.now());
+
+  // Suspects in display order. The culprit was authored first in 22 of the
+  // game's 31 lineups, so "accuse number one" closed nearly three cases in
+  // four without reading a description. The order is dealt from the lineup's
+  // own content (see dealOrder), so it is the same every time this case is
+  // opened - a student who steps away and comes back, or replays it, sees the
+  // board they left - but it is not the authored order. Selection is by
+  // suspect id throughout, so nothing below depends on position.
+  const lineup = useMemo(() => {
+    const ids = suspects.map((x) => x.id);
+    const correctIdx = ids.indexOf(correctSuspectId);
+    return dealOrder(suspects, correctIdx, `${correctSuspectId}|${ids.join(",")}`, 0).map((o) => o.item);
+  }, [suspects, correctSuspectId]);
 
   function handleConfirm() {
     if (!selected || confirmed) return;
@@ -108,7 +122,7 @@ export default function LineupStage({ suspects, correctSuspectId, hint, earnedCl
 
       {/* Suspect grid — 2×2 on desktop */}
       <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 mb-5">
-        {suspects.map((suspect) => {
+        {lineup.map((suspect) => {
           const isSelected = selected === suspect.id;
           let borderStyle = "border-[rgba(201,147,58,0.15)] hover:border-[rgba(201,147,58,0.4)]";
           if (confirmed) {
@@ -158,7 +172,7 @@ export default function LineupStage({ suspects, correctSuspectId, hint, earnedCl
                 {/* Number badge */}
                 <div className="absolute top-1.5 left-1.5 w-6 h-6 bg-[rgba(0,0,0,0.8)] border border-[rgba(201,147,58,0.3)] flex items-center justify-center">
                   <span className="font-typewriter text-[10px] text-[#8b7355]">
-                    {suspects.indexOf(suspect) + 1}
+                    {lineup.indexOf(suspect) + 1}
                   </span>
                 </div>
               </div>

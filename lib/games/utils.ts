@@ -174,12 +174,14 @@ export interface DisplayOption {
  *
  * WHY THIS EXISTS
  *
- * The reading and listening questions were rendered straight from the content
- * file and labelled A/B/C/D in that order, so the answer sat wherever the
- * author happened to put it. In practice the author put it first: across
- * Casos 3-15 every reading question had correctIndex 0, and Casos 11-15 had it
- * for listening too. A student could score full marks on a passage without
- * reading it, and the score told us nothing about whether they could.
+ * The reading, listening and witness-interview choices were rendered straight
+ * from the content file and labelled A/B/C/D in that order, so the answer sat
+ * wherever the author happened to put it. In practice the author put it first:
+ * across Casos 3-15 every reading question had correctIndex 0, Casos 11-15 had
+ * it for listening too, and in the witness interview ALL 95 dialogue nodes in
+ * the game had the correct reply first. A student could score full marks on a
+ * passage without reading it, and the score told us nothing about whether they
+ * could.
  *
  * Shuffling each question independently fixes the authored bias but leaves it
  * to chance how the answers fall down a stage, and chance happily puts three
@@ -211,13 +213,26 @@ export interface DisplayOption {
  *                  transcript) - shared by every question in that stage.
  * @param ordinal   The question's position in the stage, from 0.
  */
-export function optionOrder(
-  options: string[],
+export interface Ordered<T> {
+  /** The choice itself, exactly as authored. */
+  item: T;
+  /** Its index in the authored array. */
+  orig: number;
+}
+
+/**
+ * The general form, over any kind of choice. `optionOrder` is this for plain
+ * option strings; the witness interview uses it for whole option objects,
+ * which carry their own `isCorrect` and `nextNodeId`, so branching is
+ * unaffected by the order they are shown in.
+ */
+export function dealOrder<T>(
+  items: T[],
   correctIndex: number,
   stageSeed: string,
   ordinal: number
-): DisplayOption[] {
-  const all = options.map((text, orig) => ({ text, orig }));
+): Array<Ordered<T>> {
+  const all = items.map((item, orig) => ({ item, orig }));
   const n = all.length;
   // Nothing sensible to reorder, or an answer index the content got wrong:
   // hand back the authored order rather than hiding the problem.
@@ -241,6 +256,18 @@ export function optionOrder(
   const out = [...distractors];
   out.splice(slot, 0, all[correctIndex]);
   return out;
+}
+
+export function optionOrder(
+  options: string[],
+  correctIndex: number,
+  stageSeed: string,
+  ordinal: number
+): DisplayOption[] {
+  return dealOrder(options, correctIndex, stageSeed, ordinal).map((o) => ({
+    text: o.item,
+    orig: o.orig,
+  }));
 }
 
 export function shuffle<T>(arr: T[]): T[] {

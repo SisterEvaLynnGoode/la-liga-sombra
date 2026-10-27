@@ -4,7 +4,7 @@ import { useState, useCallback, useMemo } from "react";
 import GameShell from "./GameShell";
 import { useGameTimer } from "@/lib/hooks/useGameTimer";
 import { useAttemptTracker } from "@/lib/hooks/useAttemptTracker";
-import { answerShape, pickTypedTargetNodeId, typedTurnGrade } from "@/lib/games/utils";
+import { answerShape, pickTypedTargetNodeId, typedTurnGrade, dealOrder } from "@/lib/games/utils";
 import { logItemEvent, flushItemEvents } from "@/lib/events";
 import type { DialogueNode, OnComplete } from "@/lib/games/types";
 
@@ -76,6 +76,21 @@ export default function DialogueChoice({
   const [totalChoices, setTotalChoices] = useState(0);
 
   const currentNode = nodeMap[currentNodeId];
+
+  // Replies in display order. Every one of the game's 95 dialogue nodes was
+  // authored with the correct reply first, so the witness interview could be
+  // passed by clicking A at each turn. The order is dealt from the node's own
+  // content (see dealOrder), so it is stable across re-render and on the way
+  // back through a replay, and the slot walks from node to node rather than
+  // landing anywhere a student could predict. Each option object carries its
+  // own isCorrect and nextNodeId, so the branching is untouched - and
+  // handleChoice still receives the AUTHORED index, which is what gets logged.
+  const replyOrder = useMemo(() => {
+    const opts = currentNode?.options ?? [];
+    const correctIdx = opts.findIndex((o) => o.isCorrect);
+    const ordinal = Math.max(0, nodes.findIndex((n) => n.id === currentNodeId));
+    return dealOrder(opts, correctIdx, `${npcName}|${startNodeId}`, ordinal);
+  }, [currentNode, currentNodeId, nodes, npcName, startNodeId]);
 
   // ── Typed production turn (B3) ──────────────────────────────────────────────
   // One node of the dialogue is typed when productionMode is on. Falls back to
@@ -303,7 +318,7 @@ export default function DialogueChoice({
               <p className="font-typewriter text-[10px] tracking-widest uppercase text-[#8b7355]">
                 Elige tu respuesta:
               </p>
-              {currentNode.options?.map((opt, i) => (
+              {replyOrder.map(({ item: opt, orig: i }, pos) => (
                 <button
                   key={i}
                   onClick={() => handleChoice(i)}
@@ -317,7 +332,7 @@ export default function DialogueChoice({
                     }
                   `}
                 >
-                  <span className="text-[#8b7355] mr-2">{String.fromCharCode(65 + i)}.</span>
+                  <span className="text-[#8b7355] mr-2">{String.fromCharCode(65 + pos)}.</span>
                   {sub(opt.text)}
                 </button>
               ))}
