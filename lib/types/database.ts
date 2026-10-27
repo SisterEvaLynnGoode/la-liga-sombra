@@ -803,6 +803,13 @@ export interface Database {
         Args: { p_class_id: string };
         Returns: Array<{ expected: string; chosen: string; error_kind: string | null; n: number; students: number }>;
       };
+      class_production_ladder: {
+        Args: { p_class_id: string };
+        Returns: Array<{
+          stage_type: string; skill: string; events: number; correct: number;
+          students: number; avg_words: number | string; first_at: string; last_at: string;
+        }>;
+      };
     };
     Enums: {
       unit_status: UnitStatus;

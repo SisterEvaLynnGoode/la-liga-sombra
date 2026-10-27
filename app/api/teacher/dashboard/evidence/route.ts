@@ -20,6 +20,7 @@ export interface EvidencePayload {
   canDo: Array<{ studentId: string; caso: number | null; statement: string; rating: number; createdAt: string }>;
   signals: Array<{ flagType: string; month: string; n: number; students: number; resolved: number }>;
   sentences: Array<{ expected: string; chosen: string; errorKind: string | null; n: number; students: number }>;
+  ladder: Array<{ stageType: string; skill: string; events: number; correct: number; students: number; avgWords: number }>;
   roster: Array<{ studentId: string; displayName: string; reportName: string | null }>;
   className: string | null;
   teacherName: string | null;
@@ -33,13 +34,14 @@ export async function GET(request: NextRequest) {
 
   const supabase = createClient();
 
-  const [unitsRes, trendRes, briefRes, canDoRes, sigRes, sentRes, rosterRes, classRes] = await Promise.all([
+  const [unitsRes, trendRes, briefRes, canDoRes, sigRes, sentRes, ladderRes, rosterRes, classRes] = await Promise.all([
     supabase.from("units").select("id, number"),
     supabase.rpc("class_error_trend", { p_class_id: classId }),
     supabase.rpc("class_briefings", { p_class_id: classId }),
     supabase.rpc("class_can_do", { p_class_id: classId }),
     supabase.rpc("class_signals", { p_class_id: classId }),
     supabase.rpc("class_sentence_attempts", { p_class_id: classId }),
+    supabase.rpc("class_production_ladder", { p_class_id: classId }),
     supabase.from("students").select("id, display_name, report_name")
       .eq("class_id", classId).is("archived_at", null).order("display_name"),
     supabase.from("classes").select("class_code, period_name, teacher_name").eq("id", classId).limit(1),
@@ -73,6 +75,12 @@ export async function GET(request: NextRequest) {
       .map((r) => ({ flagType: r.flag_type, month: r.month, n: r.n, students: r.students, resolved: r.resolved })),
     sentences: ((sentRes.data ?? []) as Array<{ expected: string; chosen: string; error_kind: string | null; n: number; students: number }>)
       .map((r) => ({ expected: r.expected, chosen: r.chosen, errorKind: r.error_kind, n: r.n, students: r.students })),
+    ladder: ((ladderRes.data ?? []) as Array<{
+      stage_type: string; skill: string; events: number; correct: number; students: number; avg_words: number | string;
+    }>).map((r) => ({
+      stageType: r.stage_type, skill: r.skill, events: r.events, correct: r.correct,
+      students: r.students, avgWords: Number(r.avg_words ?? 0),
+    })),
     roster: ((rosterRes.data ?? []) as Array<{ id: string; display_name: string; report_name: string | null }>)
       .map((r) => ({ studentId: r.id, displayName: r.display_name, reportName: r.report_name })),
     className: cls ? `${cls.class_code} — ${cls.period_name}` : null,
