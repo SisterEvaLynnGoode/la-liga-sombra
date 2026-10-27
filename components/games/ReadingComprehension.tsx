@@ -1,10 +1,10 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useMemo } from "react";
 import GameShell from "./GameShell";
 import { useGameTimer } from "@/lib/hooks/useGameTimer";
 import { useAttemptTracker } from "@/lib/hooks/useAttemptTracker";
-import { looseCheckAnswer, answerShape } from "@/lib/games/utils";
+import { looseCheckAnswer, answerShape, optionOrder } from "@/lib/games/utils";
 import type { GlossaryEntry, ReadingQuestion, OnComplete } from "@/lib/games/types";
 
 interface Props {
@@ -61,11 +61,14 @@ function GlossaryPassage({ passage, glossary = [] }: { passage: string; glossary
 function QuestionItem({
   question,
   index,
+  stageSeed,
   submitted,
   onAnswer,
 }: {
   question: ReadingQuestion;
   index: number;
+  /** The stage's passage, so every question shares one answer-slot walk. */
+  stageSeed: string;
   submitted: boolean;
   onAnswer: (qId: string, value: string | number, isCorrect: boolean) => void;
 }) {
@@ -78,6 +81,18 @@ function QuestionItem({
 
   // The model answer for the scaffold: the shortest acceptable one, because it
   // is the least a student has to write to be right.
+  // Options in display order. Seeded on the question's own text, so the order
+  // is the same on the server and in the browser and the same on every retry,
+  // but is not the order the answer was authored in. `orig` carries the
+  // authored index, which is what gets scored and logged.
+  const display = useMemo(
+    () =>
+      question.type === "multiple_choice"
+        ? optionOrder(question.options, question.correctIndex, stageSeed, index)
+        : [],
+    [question, stageSeed, index]
+  );
+
   const model =
     question.type === "short_answer"
       ? [...question.acceptableAnswers].sort((a, b) => a.split(/\s+/).length - b.split(/\s+/).length)[0]
@@ -115,22 +130,22 @@ function QuestionItem({
 
       {question.type === "multiple_choice" && (
         <div className="space-y-2">
-          {question.options.map((opt, i) => {
+          {display.map(({ text, orig }, pos) => {
             let style = "border-[rgba(201,147,58,0.2)] bg-[#110f0d] text-[#c4a882] hover:border-[rgba(201,147,58,0.4)]";
             if (selected !== null) {
-              if (i === question.correctIndex) style = "border-[#c9933a] bg-[rgba(201,147,58,0.1)] text-[#e8b455]";
-              else if (i === selected && i !== question.correctIndex) style = "border-[#c0392b] bg-[rgba(192,57,43,0.08)] text-[#c0392b] opacity-80";
+              if (orig === question.correctIndex) style = "border-[#c9933a] bg-[rgba(201,147,58,0.1)] text-[#e8b455]";
+              else if (orig === selected && orig !== question.correctIndex) style = "border-[#c0392b] bg-[rgba(192,57,43,0.08)] text-[#c0392b] opacity-80";
               else style = "border-[rgba(201,147,58,0.1)] bg-[#110f0d] text-[#4a3a2a] opacity-50";
             }
             return (
               <button
-                key={i}
-                onClick={() => handleMCSelect(i)}
+                key={orig}
+                onClick={() => handleMCSelect(orig)}
                 disabled={selected !== null}
                 className={`w-full text-left px-3 py-2 border font-typewriter text-sm transition-all focus:outline-none focus:ring-2 focus:ring-[#c9933a] focus:ring-offset-1 focus:ring-offset-[#0d0b0a] ${style}`}
               >
-                <span className="text-[#8b7355] mr-2">{String.fromCharCode(65 + i)}.</span>
-                {opt}
+                <span className="text-[#8b7355] mr-2">{String.fromCharCode(65 + pos)}.</span>
+                {text}
               </button>
             );
           })}
@@ -291,6 +306,7 @@ export default function ReadingComprehension({
               key={q.id}
               question={q}
               index={i}
+              stageSeed={passage}
               submitted={submitted}
               onAnswer={handleAnswer}
             />

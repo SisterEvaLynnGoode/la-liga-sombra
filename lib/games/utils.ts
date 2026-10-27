@@ -162,6 +162,87 @@ export function seededShuffle<T>(arr: T[], seed: string): T[] {
   return a;
 }
 
+export interface DisplayOption {
+  /** The option text as authored. */
+  text: string;
+  /** Its index in the authored `options` array. */
+  orig: number;
+}
+
+/**
+ * Multiple-choice options in display order.
+ *
+ * WHY THIS EXISTS
+ *
+ * The reading and listening questions were rendered straight from the content
+ * file and labelled A/B/C/D in that order, so the answer sat wherever the
+ * author happened to put it. In practice the author put it first: across
+ * Casos 3-15 every reading question had correctIndex 0, and Casos 11-15 had it
+ * for listening too. A student could score full marks on a passage without
+ * reading it, and the score told us nothing about whether they could.
+ *
+ * Shuffling each question independently fixes the authored bias but leaves it
+ * to chance how the answers fall down a stage, and chance happily puts three
+ * of four answers on A. So the answer's slot is DEALT rather than drawn: each
+ * run of n questions shares one shuffled permutation of the n slots, and
+ * question k takes the k-th slot from it. Every position therefore gets used
+ * about equally within a stage and the answers cannot pile onto one letter -
+ * but the sequence is a shuffle, not a march, so there is no "next letter
+ * along" for a student to ride. (Stepping the slots one at a time would have
+ * balanced them just as well and been far easier to crack than always-A.)
+ * The distractors fill the remaining slots in a shuffled order.
+ *
+ * Both the offset and the distractor order are SEEDED ON CONTENT rather than
+ * random:
+ *
+ *   - they are identical on the server and in the browser, so the markup
+ *     matches and React does not throw a hydration error;
+ *   - they are identical every time a student opens the question, so retrying
+ *     behaves as it always has and a printed answer key stays true;
+ *   - they differ from stage to stage, so the walk does not start at A every
+ *     time and the pattern is not learnable.
+ *
+ * Callers keep working in authored indices: `orig` is what gets compared to
+ * correctIndex and what gets logged, so every existing attempt record and
+ * report aggregate stays comparable. Only the display order and the letter
+ * beside each option come from the new order.
+ *
+ * @param stageSeed Stable text identifying the stage (its passage or
+ *                  transcript) - shared by every question in that stage.
+ * @param ordinal   The question's position in the stage, from 0.
+ */
+export function optionOrder(
+  options: string[],
+  correctIndex: number,
+  stageSeed: string,
+  ordinal: number
+): DisplayOption[] {
+  const all = options.map((text, orig) => ({ text, orig }));
+  const n = all.length;
+  // Nothing sensible to reorder, or an answer index the content got wrong:
+  // hand back the authored order rather than hiding the problem.
+  if (n < 2 || correctIndex < 0 || correctIndex >= n) return all;
+
+  const distractors = seededShuffle(
+    all.filter((_, i) => i !== correctIndex),
+    `${stageSeed}#${ordinal}`
+  );
+  // The run of questions this one belongs to, and its place in that run. Each
+  // run deals out one shuffled permutation of the slots. n is per question, so
+  // a stage mixing three- and four-option questions still balances each width
+  // on its own.
+  const run = Math.floor(ordinal / n);
+  const slots = seededShuffle(
+    Array.from({ length: n }, (_, i) => i),
+    `${stageSeed}@${n}/${run}`
+  );
+  const slot = slots[ordinal % n];
+
+  const out = [...distractors];
+  out.splice(slot, 0, all[correctIndex]);
+  return out;
+}
+
 export function shuffle<T>(arr: T[]): T[] {
   const a = [...arr];
   for (let i = a.length - 1; i > 0; i--) {

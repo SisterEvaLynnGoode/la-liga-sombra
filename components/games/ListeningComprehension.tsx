@@ -1,11 +1,12 @@
 "use client";
 
-import { useState, useRef, useCallback, useEffect } from "react";
+import { useState, useRef, useCallback, useEffect, useMemo } from "react";
 import GameShell from "./GameShell";
 import { useGameTimer } from "@/lib/hooks/useGameTimer";
 import { useAttemptTracker } from "@/lib/hooks/useAttemptTracker";
 import type { OnComplete } from "@/lib/games/types";
 import { logItemEvent, flushItemEvents } from "@/lib/events";
+import { optionOrder } from "@/lib/games/utils";
 
 // ── Local question type ───────────────────────────────────────────────────────
 interface LQ {
@@ -125,6 +126,24 @@ export default function ListeningComprehension({
   const replaysLeft   = maxReplaysEff - playCount;
   const correctCount  = correctness.filter(Boolean).length;
   const exhausted     = replaysLeft <= 0;
+
+  // Options in display order — see shuffledOptions. Seeded on the question's
+  // own content so the order is stable across server render, re-render and
+  // retry; `orig` is the authored index, so `selected`, the scoring and the
+  // review screen all keep working in authored indices and every logged
+  // attempt stays comparable with the ones already recorded.
+  // One seed for the whole stage so the answer slots walk evenly down it. The
+  // transcript identifies the stage; the audio URL covers a stage authored
+  // without one.
+  const stageSeed = transcript || audioUrl || "listening";
+
+  const display = useMemo(
+    () =>
+      currentQ
+        ? optionOrder(currentQ.options, currentQ.correctIndex, stageSeed, qIndex)
+        : [],
+    [currentQ, stageSeed, qIndex]
+  );
 
   // ── Audio event wiring ────────────────────────────────────────────────────
   //
@@ -610,7 +629,7 @@ export default function ListeningComprehension({
             </div>
 
             <div className="space-y-2">
-              {currentQ.options.map((opt, i) => {
+              {display.map(({ text: opt, orig: i }, pos) => {
                 let style =
                   "border-[rgba(201,147,58,0.2)] bg-[#1a1614] text-[#c4a882] hover:border-[rgba(201,147,58,0.5)]";
                 if (submitted) {
@@ -630,7 +649,7 @@ export default function ListeningComprehension({
                     disabled={submitted}
                     className={`w-full text-left px-4 py-3 border font-typewriter text-sm transition-all duration-150 focus:outline-none focus:ring-2 focus:ring-[#c9933a] ${style}`}
                   >
-                    <span className="text-[#8b7355] mr-2">{String.fromCharCode(65 + i)}.</span>
+                    <span className="text-[#8b7355] mr-2">{String.fromCharCode(65 + pos)}.</span>
                     {opt}
                   </button>
                 );
