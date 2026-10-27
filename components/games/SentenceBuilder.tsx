@@ -26,7 +26,8 @@ import { CSS } from "@dnd-kit/utilities";
 import GameShell from "./GameShell";
 import { useGameTimer } from "@/lib/hooks/useGameTimer";
 import { useAttemptTracker } from "@/lib/hooks/useAttemptTracker";
-import { shuffle, seededShuffle, normalizeAnswer } from "@/lib/games/utils";
+import { shuffle, seededShuffle } from "@/lib/games/utils";
+import { gradeSentence } from "@/lib/games/spanish";
 import type { OnComplete } from "@/lib/games/types";
 import { logItemEvent, flushItemEvents, classifyError } from "@/lib/events";
 
@@ -132,7 +133,11 @@ export default function SentenceBuilder({
   const tileMap = Object.fromEntries(correctTiles.map((t) => [t.id, t.word]));
 
   const [activeId, setActiveId] = useState<string | null>(null);
-  const [feedback, setFeedback] = useState<"correct" | "wrong" | null>(null);
+  // "accepted" is a correct answer that is not the target string: Spanish
+  // lets the subject pronoun go, so the exercise credits it and explains why
+  // rather than marking good Spanish wrong.
+  const [feedback, setFeedback] = useState<"correct" | "accepted" | "wrong" | null>(null);
+  const [droppedPronoun, setDroppedPronoun] = useState<string | null>(null);
   const [attempts, setAttempts] = useState(0);
   const [status, setStatus] = useState<"playing" | "complete">("playing");
   const [showHint, setShowHint] = useState(false);
@@ -251,10 +256,12 @@ export default function SentenceBuilder({
 
   function handleCheck() {
     const built = containers.sentence.map((id) => tileMap[id]).join(" ");
-    const isCorrect = normalizeAnswer(built) === normalizeAnswer(sentence);
+    const verdict = gradeSentence(sentence, built);
+    const isCorrect = verdict.ok;
     const newAttempts = attempts + 1;
     setAttempts(newAttempts);
-    setFeedback(isCorrect ? "correct" : "wrong");
+    setDroppedPronoun(verdict.droppedPronoun);
+    setFeedback(isCorrect ? (verdict.droppedPronoun ? "accepted" : "correct") : "wrong");
     logItemEvent({
       unitId,
       stageType: "sentenceBuilder",
@@ -326,7 +333,7 @@ export default function SentenceBuilder({
                 id="sentence"
                 className={`
                   min-h-[56px] border-2 border-dashed p-3 flex flex-wrap gap-2 rounded-sm transition-colors
-                  ${feedback === "correct" ? "border-[#c9933a] bg-[rgba(201,147,58,0.05)]"
+                  ${feedback === "correct" || feedback === "accepted" ? "border-[#c9933a] bg-[rgba(201,147,58,0.05)]"
                     : feedback === "wrong" ? "border-[#c0392b] bg-[rgba(192,57,43,0.05)]"
                     : "border-[rgba(201,147,58,0.2)] bg-[#0d0b0a]"}
                 `}
@@ -367,10 +374,20 @@ export default function SentenceBuilder({
 
           {/* Feedback */}
           {feedback && (
-            <div className={`border px-4 py-3 text-center rounded-sm ${feedback === "correct" ? "border-[rgba(201,147,58,0.4)] bg-[rgba(201,147,58,0.08)]" : "border-[rgba(192,57,43,0.3)] bg-[rgba(192,57,43,0.06)]"}`}>
-              <p className={`font-display font-bold ${feedback === "correct" ? "text-[#e8b455]" : "text-[#c0392b]"}`}>
-                {feedback === "correct" ? "¡Perfecto!" : "Not quite — try rearranging the words."}
+            <div className={`border px-4 py-3 text-center rounded-sm ${feedback !== "wrong" ? "border-[rgba(201,147,58,0.4)] bg-[rgba(201,147,58,0.08)]" : "border-[rgba(192,57,43,0.3)] bg-[rgba(192,57,43,0.06)]"}`}>
+              <p className={`font-display font-bold ${feedback !== "wrong" ? "text-[#e8b455]" : "text-[#c0392b]"}`}>
+                {feedback === "correct" ? "¡Perfecto!"
+                  : feedback === "accepted" ? "¡Correcto!"
+                  : "Not quite — try rearranging the words."}
               </p>
+              {/* A pass with nothing said teaches nothing. Name the rule. */}
+              {feedback === "accepted" && droppedPronoun && (
+                <p className="font-typewriter text-[11px] text-[#c4a882] mt-1.5 leading-snug">
+                  You left out <span className="text-[#e8b455]">{droppedPronoun}</span> — and that is good Spanish.
+                  The verb ending already says who is doing it, so the subject pronoun is optional. The model
+                  sentence keeps it for emphasis: <span className="text-[#e8b455]">{sentence}</span>
+                </p>
+              )}
             </div>
           )}
 
@@ -385,7 +402,7 @@ export default function SentenceBuilder({
               </button>
               <button
                 onClick={handleCheck}
-                disabled={containers.sentence.length === 0 || feedback === "correct"}
+                disabled={containers.sentence.length === 0 || feedback === "correct" || feedback === "accepted"}
                 className="flex-1 clip-skew py-2.5 font-typewriter text-sm tracking-[0.2em] uppercase bg-[#8b1a1a] text-[#f5e6c8] border border-[#c0392b] hover:bg-[#c0392b] transition-colors disabled:opacity-40"
               >
                 Comprobar →

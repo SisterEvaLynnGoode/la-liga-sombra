@@ -558,11 +558,20 @@ export default function EvidenceReport({ data }: { data: EvidencePayload }) {
         ))}
 
         <div className="border-t-2 border-black pt-2.5">
-          <h3 className="font-serif text-[12px] font-bold uppercase tracking-[0.12em] mb-1">A correction we owe the record</h3>
+          <h3 className="font-serif text-[12px] font-bold uppercase tracking-[0.12em] mb-1">A correction we owed the record</h3>
           <p className="font-serif text-[11px] leading-relaxed">
-            {acceptableAttempts > 0
-              ? `${acceptableAttempts} attempts in this class were scored as wrong for omitting the subject pronoun — writing “Voy al museo en metro” where the target was “Yo voy al museo en metro”. Spanish permits this, so the students were right and the exercise was wrong. They are excluded from the error figures in this packet, and the activity is being corrected.`
-              : "No scoring artefacts of this kind were found in this class's sentence attempts."}
+            Spanish is a pro-drop language: the verb ending already carries the person, so the subject pronoun is
+            optional and usually left out. &ldquo;Voy al museo en metro&rdquo; is not a worse version of &ldquo;Yo
+            voy al museo en metro&rdquo; — it is the more natural one. The sentence exercises had been comparing
+            the built sentence against the target string, so students who dropped the pronoun were marked wrong
+            for writing correct Spanish. Across the school that happened 46 times to 20 students, and six of them
+            had a sentence sitting in their practice list as &ldquo;not yet learned&rdquo; on that basis alone.
+          </p>
+          <p className="font-serif text-[11px] leading-relaxed mt-1.5">
+            The exercise now accepts it and explains the rule to the student instead of marking it wrong, and the
+            46 affected records have been re-marked — the student&rsquo;s original answer is kept exactly as they
+            built it, so the correction is auditable.
+            {acceptableAttempts > 0 && ` ${acceptableAttempts} attempts in this class are still shown above under that heading.`}
           </p>
         </div>
       </section>

@@ -2,9 +2,9 @@
 
 import { useState, useEffect, useRef, useCallback } from "react";
 import type { StakeoutQuestion } from "@/lib/question-generator";
-import { normalizeAnswer } from "@/lib/games/utils";
 import { playSpanishAudio } from "@/lib/games/speak";
 import { logItemEvent, flushItemEvents, classifyError } from "@/lib/events";
+import { gradeSentence } from "@/lib/games/spanish";
 
 // ── Types ─────────────────────────────────────────────────────────────────────
 
@@ -106,7 +106,9 @@ function SentenceQuestion({
     if (submitted.current) return;
     submitted.current = true;
     const attempt = words.join(" ");
-    const correct = normalizeAnswer(attempt) === normalizeAnswer(q.correctSentence.replace(/[.!?¿¡]/g, ""));
+    // Same rule as the sentence builder: a sentence that differs only by an
+    // omitted subject pronoun is correct Spanish, not a wrong answer.
+    const correct = gradeSentence(q.correctSentence, attempt).ok;
     onAnswer(correct, attempt);
   }
 
