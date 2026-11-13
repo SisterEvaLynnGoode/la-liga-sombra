@@ -4,6 +4,7 @@ import { createClient } from "@/lib/supabase/server";
 import { checkAndAwardUnitBadges } from "@/lib/games/badges";
 import { recomputeAndNotify } from "@/lib/grading";
 import { cleanScore } from "@/lib/games/score-guard";
+import { unlockUnit } from "@/lib/game/unlock";
 
 export async function POST(request: NextRequest) {
   const session = await getStudentSession();
@@ -64,16 +65,9 @@ export async function POST(request: NextRequest) {
       last_saved_at: new Date().toISOString(),
     }, { onConflict: "primary_student_id,boss_id", ignoreDuplicates: true });
   } else {
-    // Normal flow: unlock next unit
-    const { data: nextUnitRows } = await supabase.from("units").select("id").eq("number", unitNumber + 1).limit(1);
-    const nextUnitId = (nextUnitRows as Array<{ id: string }> | null)?.[0]?.id;
-    if (nextUnitId) {
-      await supabase.from("unit_progress")
-        .update({ status: "available" })
-        .eq("student_id", session.studentId)
-        .eq("unit_id", nextUnitId)
-        .eq("status", "locked");
-    }
+    // Normal flow: unlock next unit. unlockUnit creates the row when the
+    // student has none, which is why the chain used to stop dead at Caso 16.
+    await unlockUnit(supabase, session.studentId, unitNumber + 1);
   }
 
   // Check and award all applicable badges (unit_completed, perfect_score, speed_demon, vocab_master, streaks)

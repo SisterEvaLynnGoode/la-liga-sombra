@@ -127,7 +127,7 @@ export default function CinematicLanding() {
           <div data-reveal="0" className="reveal mb-6 inline-flex items-center gap-3 px-5 py-2 border border-[rgba(201,147,58,0.35)] bg-[rgba(13,11,10,0.6)] backdrop-blur-sm">
             <span className="w-2 h-2 rounded-full bg-[#c0392b] animate-pulse" />
             <span className="font-typewriter text-[11px] tracking-[0.3em] uppercase text-[#e8b455]">
-              Expediente abierto · 20 países · 20 casos
+              Expediente abierto · 22 países · 32 casos
             </span>
           </div>
 
@@ -190,8 +190,8 @@ export default function CinematicLanding() {
         <div className="marquee flex items-center gap-12 whitespace-nowrap font-typewriter text-xs tracking-[0.3em] uppercase text-[#8b7355]">
           {[0, 1].map((k) => (
             <div key={k} className="flex items-center gap-12 shrink-0" aria-hidden={k === 1}>
-              <span>20 países</span><span className="text-[#c9933a]">◆</span>
-              <span>20 casos</span><span className="text-[#c9933a]">◆</span>
+              <span>22 países</span><span className="text-[#c9933a]">◆</span>
+              <span>32 casos</span><span className="text-[#c9933a]">◆</span>
               <span>10 casos fríos</span><span className="text-[#c9933a]">◆</span>
               <span>3 jefes finales</span><span className="text-[#c9933a]">◆</span>
               <span>689 palabras</span><span className="text-[#c9933a]">◆</span>
@@ -296,7 +296,7 @@ export default function CinematicLanding() {
             <ul className="space-y-3 font-typewriter text-sm text-[#c4a882]">
               {[
                 "36 semanas planificadas, de Novice Low a Intermediate Low (ACTFL)",
-                "20 casos en 20 países, más 10 casos fríos para quien termine antes",
+                "32 casos en 22 países, más 10 casos fríos para quien termine antes",
                 "Panel del maestro: quién va atrasado, en qué palabra falla y qué hacer hoy",
                 "Hojas de trabajo imprimibles, Pasaporte Cultural y rúbricas",
                 "Los estudiantes entran con un código de clase. Sin correos, sin contraseñas.",

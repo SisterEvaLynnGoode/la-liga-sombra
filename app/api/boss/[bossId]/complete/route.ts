@@ -5,6 +5,7 @@ import type { BadgeType } from "@/lib/types/database";
 import type { BossEnding, BossDifficulty, EthicalChoiceKey } from "@/lib/types/boss";
 import { loadBossContent } from "@/lib/boss/content";
 import type { StageResult } from "@/lib/types/boss";
+import { unlockUnit } from "@/lib/game/unlock";
 
 // Difficulty badges are the same three for every boss — they describe how the
 // student played, not which boss it was.
@@ -70,17 +71,12 @@ export async function POST(request: NextRequest, { params }: Params) {
     score_pct:     scorePct,
   }, { onConflict: "primary_student_id,boss_id" });
 
-  // Unlock next unit
+  // Unlock next unit. The final boss has nextUnit 0 and opens nothing, which
+  // is the end of the game rather than a failure. unlockUnit creates the row
+  // when the student has none: this line is where Operación Reloj de Arena
+  // used to leave a student with the game finished and no next case.
   if (nextUnit) {
-    const { data: unitRows } = await supabase.from("units").select("id").eq("number", nextUnit).limit(1);
-    const nextUnitId = (unitRows as Array<{ id: string }> | null)?.[0]?.id;
-    if (nextUnitId) {
-      await supabase.from("unit_progress")
-        .update({ status: "available" })
-        .eq("student_id", session.studentId)
-        .eq("unit_id", nextUnitId)
-        .eq("status", "locked");
-    }
+    await unlockUnit(supabase, session.studentId, nextUnit);
   }
 
   // Award badges

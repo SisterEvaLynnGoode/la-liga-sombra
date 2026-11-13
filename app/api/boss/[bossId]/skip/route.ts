@@ -2,6 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { getStudentSession } from "@/lib/auth/session";
 import { createClient } from "@/lib/supabase/server";
 import { loadBossContent } from "@/lib/boss/content";
+import { unlockUnit } from "@/lib/game/unlock";
 
 interface Params { params: { bossId: string } }
 
@@ -25,17 +26,10 @@ export async function POST(_req: NextRequest, { params }: Params) {
     last_saved_at: new Date().toISOString(),
   }, { onConflict: "primary_student_id,boss_id" });
 
-  // Unlock next unit
-  const { data: unitRows } = await supabase
-    .from("units").select("id").eq("number", nextUnit).limit(1);
-  const nextUnitId = (unitRows as Array<{ id: string }> | null)?.[0]?.id;
-
-  if (nextUnitId) {
-    await supabase.from("unit_progress")
-      .update({ status: "available" })
-      .eq("student_id", session.studentId)
-      .eq("unit_id", nextUnitId)
-      .eq("status", "locked");
+  // Unlock next unit — same shared helper as finishing it, so skipping cannot
+  // strand a student the way the old locked-row-only update did.
+  if (nextUnit) {
+    await unlockUnit(supabase, session.studentId, nextUnit);
   }
 
   return NextResponse.json({ ok: true, unlockedUnit: nextUnit });
